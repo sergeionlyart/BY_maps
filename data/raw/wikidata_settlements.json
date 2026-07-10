@@ -1,0 +1,5528 @@
+{
+  "head" : {
+    "vars" : [ "item", "ru", "be", "coord", "adminLabel" ]
+  },
+  "results" : {
+    "bindings" : [ {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2280"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Беларусь"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Мінск"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Минск"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(27.561837 53.902246)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2280"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Беларусь"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Мінск"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Минск"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(27.561837 53.902246)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q955359"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Светлогорский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Светлагорск"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Светлогорск"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(29.733333333 52.633333333)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q955468"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Рогачёвский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Рагачоў"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Рогачёв"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(30.05 53.1)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2596958"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Гомель"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Касцюкоўка"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Костюковка"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(30.919444444 52.536944444)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q28075276"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Поречский сельсовет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Парэчча"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Поречье"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(24.124166666 53.909722222)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q19313"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Борисовский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Барысаў"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Борисов"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(28.51198 54.22429)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q19313"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Борисовский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Барысаў"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Борисов"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(28.51198 54.22429)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q102217"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Витебская область"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Віцебск"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Витебск"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(30.166666666 55.183333333)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q102217"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Витебская область"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Віцебск"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Витебск"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(30.166666666 55.183333333)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q750424"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Витебская область"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Наваполацк"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Новополоцк"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(28.666666666 55.533333333)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2678"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Гомельская область"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Гомель"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Гомель"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(30.983333333 52.441666666)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2678"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Гомельская область"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Гомель"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Гомель"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(30.983333333 52.441666666)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q154835"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Могилёвская область"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Магілёў"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Могилёв"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(30.34296 53.90894)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q154835"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Могилёвская область"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Магілёў"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Могилёв"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(30.34296 53.90894)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q207294"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Могилёвская область"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Бабруйск"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Бобруйск"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(29.233333333 53.15)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q207294"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Могилёвская область"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Бабруйск"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Бобруйск"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(29.233333333 53.15)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2995144"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Воложинский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Івянец"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Ивенец"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(26.741388888 53.89)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2995168"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Россонский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Расоны"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Россоны"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(28.814722222 55.904166666)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2995174"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Глусский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Глуск"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Глуск"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(28.686111111 52.898888888)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2993986"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Молодечненский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Радашковічы"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Радошковичи"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(27.233333333 54.15)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2995176"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Радунский сельсовет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Радунь"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Радунь"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(24.997777777 54.053055555)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q6542186"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Браславский повет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Угар"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(26.813333 55.427893)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2479007"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Смолевичский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Зялёны Бор"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Зелёный Бор"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(28.481666666 54.013055555)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2630539"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Дрибинский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Дрыбін"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Дрибин"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(31.093055555 54.119444444)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2630603"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Краснопольский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Краснаполле"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Краснополье"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(31.401401 53.333387)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q955736"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Наровлянский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Нароўля"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Наровля"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(29.5 51.8)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q955992"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Кобринский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Кобрын"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Кобрин"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(24.356666666 52.2125)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2618952"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Зельвенский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Зэльва"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Зельва"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(24.816666666 53.15)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q958617"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Сморгонский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Смаргонь"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Сморгонь"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(26.4 54.483611111)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q958685"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Мостовский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Масты"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Мосты"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(24.533333333 53.4)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2596958"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Гомельский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Касцюкоўка"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Костюковка"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(30.919444444 52.536944444)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2607484"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Лельчицкий район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Лельчыцы"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Лельчицы"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(28.324722222 51.785833333)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q955564"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Житковичский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Жыткавічы"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Житковичи"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(27.8547 52.217094444)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q955717"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Петриковский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Петрыкаў"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Петриков"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(28.5 52.133333333)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q956460"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Берёзовский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Белаазёрск"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Белоозёрск"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(25.178333333 52.471666666)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2470394"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Вороновский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Воранава"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Вороново"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(25.316666666 54.15)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q955740"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Речицкий район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Васілевічы"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Василевичи"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(29.827222222 52.247222222)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2479016"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Речицкий район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Зарэчча"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Заречье"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(30.083333333 52.433333333)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2659511"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Мядельский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Свір"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Свирь"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(26.396944444 54.850833333)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2991136"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Витебский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Руба"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Руба"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(30.311666666 55.302222222)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q200905"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Минская область"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Жодзіна"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Жодино"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(28.321388888 54.094444444)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q140147"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Брестская область"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Брэст"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Брест"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(23.656944444 52.084722222)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q140147"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Брестская область"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Брэст"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Брест"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(23.656944444 52.084722222)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q204150"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Брестская область"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Пінск"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Пинск"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(26.103055555 52.115277777)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q204150"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Брестская область"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Пінск"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Пинск"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(26.103055555 52.115277777)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q237655"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Брестская область"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Баранавічы"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Барановичи"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(26.017777777 53.1325)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q237655"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Брестская область"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Баранавічы"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Барановичи"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(26.017777777 53.1325)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q181376"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Гродненская область"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Гродна"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Гродно"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(23.816666666 53.666666666)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q181376"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Гродненская область"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Гродна"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Гродно"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(23.816666666 53.666666666)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q181376"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Гродненская область"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Гродна"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Гродно"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(23.816666666 53.666666666)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q956159"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Пружанский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Пружаны"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Пружаны"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(24.464444444 52.556666666)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q956207"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Ивановский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Іванава"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Иваново"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(25.533888888 52.147222222)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q956565"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Столинский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Столін"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Столин"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(26.85067172 51.88968313)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q956621"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Столинский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Давыд-Гарадок"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Давид-Городок"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(27.213888888 52.055555555)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q265670"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Житковичский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Тураў"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Туров"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(27.736111111 52.069166666)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q954132"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Лепельский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Лепель"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Лепель"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(28.694444444 54.875)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q955588"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Хойникский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Хойнікі"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Хойники"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(29.966666666 51.9)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q955726"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Ельский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Ельск"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Ельск"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(29.153055555 51.810555555)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q1025883"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Дятловский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Дзятлава"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Дятлово"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(25.4 53.45)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2470405"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Брагинский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Брагін"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Брагин"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(30.266666666 51.783333333)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q956614"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Каменецкий район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Каменец"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Каменец"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(23.808333333 52.402833333)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q956627"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Каменецкий район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Высокае"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Высокое"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(23.366666666 52.366666666)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q981755"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Оршанский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Копысь"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Копысь"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(30.286944444 54.321388888)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q956635"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Ивацевичский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Косава"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Коссово"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(25.15294 52.75802)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q200891"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Дзержинский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Дзяржынск"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Дзержинск"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(27.133333333 53.683333333)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q201439"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Дзержинский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Фаніпаль"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Фаниполь"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(27.333333333 53.75)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q879406"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Берёзовский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Бяроза"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Берёза"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(24.9825 52.533333333)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q954948"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Быховский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Быхаў"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Быхов"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(30.235833333 53.526111111)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q955153"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Кличевский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Клічаў"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Кличев"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(29.341762 53.489453)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q958847"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Гродненский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Скідзель"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Скидель"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(24.25 53.583333333)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q1025869"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Кореличский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Карэлічы"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Кореличи"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(26.1425 53.566388888)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q1076109"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Свислочский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Свіслач"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Свислочь"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(24.1 53.033333333)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q656579"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Малоритский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Маларыта"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Малорита"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(24.080833333 51.797222222)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q955474"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Добрушский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Добруш"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Добруш"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(31.316666666 52.416666666)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q955729"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Буда-Кошелёвский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Буда-Кашалёва"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Буда-Кошелёво"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(30.567777777 52.716944444)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2494383"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Октябрьский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Акцябрскі"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Октябрьский"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(28.882222222 52.643055555)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2630517"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Круглянский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Круглае"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Круглое"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(29.796638888 54.247936111)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2630527"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Белыничский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Бялынічы"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Белыничи"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(29.70958 53.99558)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2659505"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Шарковщинский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Шаркаўшчына"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Шарковщина"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(27.466666666 55.366666666)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2987234"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Ушачский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Ушачы"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Ушачи"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(28.616983 55.179411)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q954343"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Толочинский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Талачын"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Толочин"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(29.693776 54.409299)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q956132"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Лунинецкий район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Лунінец"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Лунинец"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(26.803611111 52.248611111)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q956464"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Лунинецкий район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Мікашэвічы"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Микашевичи"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(27.466666666 52.216666666)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q956471"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Дрогичинский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Драгічын"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Дрогичин"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(25.153055555 52.186666666)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q1460634"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Берестовицкий район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Вялікая Бераставіца"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Большая Берестовица"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(24.020833333 53.195555555)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2494413"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Лоевский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Лоеў"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Лоев"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(30.801111111 51.933333333)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q956607"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Ляховичский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Ляхавічы"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Ляховичи"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(26.263 53.03958)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q1025872"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Лиозненский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Лёзна"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Лиозно"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(30.794722222 55.026111111)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q1033593"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Бешенковичский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Бешанковічы"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Бешенковичи"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(29.457777777 55.045833333)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q200950"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Копыльский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Капыль"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Копыль"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(27.091666666 53.15)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q518559"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Ветковский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Ветка"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Ветка"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(31.180833333 52.559166666)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q738777"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Ивьевский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Іўе"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Ивье"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(25.77026 53.93071)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q954610"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Верхнедвинский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Верхнядзвінск"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Верхнедвинск"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(27.933333333 55.766666666)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2412938"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Богушевский сельсовет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Багушэўск"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Богушевск"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(30.212222222 54.843333333)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2446336"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Городищенский сельсовет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Гарадзішча"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Городище"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(26.013333333 53.322222222)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2471816"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Уваровичский сельсовет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Уваравічы"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Уваровичи"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(30.728611111 52.595555555)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2471884"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Воропаевский сельсовет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Варапаева"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Воропаево"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(27.202222222 55.142777777)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2471902"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Ветринский сельсовет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Ветрына"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Ветрино"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(28.475 55.411666666)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2478344"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Пуховичский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Праўдзінскі"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Правдинский"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(27.826944444 53.523055555)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2657182"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Лынтупский сельсовет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Лынтупы"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Лынтупы"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(26.316666666 55.05)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2659074"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Бобрский сельсовет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Бобр"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Бобр"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(29.275277777 54.342222222)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2659496"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Минский повет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Плешчаніцы"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Плещеницы"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(27.8282758 54.4236126)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2987876"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Бегомльский сельсовет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Бягомль"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Бегомль"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(28.064474 54.729242)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2471143"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Солигорский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Старобін"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Старобин"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(27.466666666 52.733333333)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2617132"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Солигорский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Чырвоная Слабада"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Красная Слобода"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(27.177777777 52.852777777)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2987244"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Несвижский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Гарадзея"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Городея"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(26.539166666 53.314722222)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2446345"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Красносельский сельсовет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Краснасельскі"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Красносельский"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(24.423611111 53.261944444)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2471192"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Кохановский сельсовет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Коханава"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Коханово"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(30.0085 54.454166666)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2471831"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Логишинский сельсовет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Лагішын"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Логишин"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(25.988888888 52.339444444)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2471864"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Речицкий сельсовет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Рэчыца"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Речица"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(26.788333333 51.856944444)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2471892"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Новоельнянский сельсовет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Наваельня"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Новоельня"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(25.580833333 53.460555555)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2478305"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Порозовский сельсовет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Поразава"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Порозово"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(24.366944444 52.936666666)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2479051"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Подсвильский сельсовет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Падсвілле"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Подсвилье"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(27.977222222 55.147222222)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2596938"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Освейский сельсовет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Асвея"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Освея"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(28.108333333 56.016111111)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2656523"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Желудокский сельсовет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Жалудок"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Желудок"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(24.983333333 53.6)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2659496"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Плещеницкий сельсовет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Плешчаніцы"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Плещеницы"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(27.8282758 54.4236126)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2659553"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Кривичский сельсовет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Крывічы"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Кривичи"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(27.290277777 54.71)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q956470"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Ганцевичский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Ганцавічы"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Ганцевичи"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(26.427777777 52.761666666)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2446389"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Полоцкий район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Баравуха"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Боровуха"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(28.598333333 55.586666666)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2630628"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Хотимский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Хоцімск"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Хотимск"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(32.572222222 53.408333333)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q261024"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Островецкий район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Астравец"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Островец"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(25.955277777 54.613611111)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q427584"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Кормянский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Карма"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Корма"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(30.800277777 53.131388888)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q431779"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Щучинский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Шчучын"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Щучин"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(24.7425 53.604444444)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q863576"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Слонимский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Слонім"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Слоним"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(25.316666666 53.083333333)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q241475"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Лидский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Ліда"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Лида"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(25.295833333 53.895555555)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q739491"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Волковысский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Ваўкавыск"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Волковыск"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(24.466666666 53.166666666)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q799939"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Лидский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Бярозаўка"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Берёзовка"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(25.5 53.716666666)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q614294"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Славгородский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Слаўгарад"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Славгород"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(30.996388888 53.445277777)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q954505"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Дубровенский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Дуброўна"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Дубровно"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(30.690151 54.572201)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q955113"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Чаусский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Чавусы"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Чаусы"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(30.966666666 53.8)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q200968"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Логойский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Лагойск"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Логойск"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(27.85 54.2)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q201265"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Смолевичский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Смалявічы"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Смолевичи"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(28.089722222 54.03)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q201403"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Стародорожский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Старыя Дарогі"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Старые Дороги"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(28.265 53.039444444)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q867722"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Чечерский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Чачэрск"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Чечерск"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(30.916666666 52.916666666)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q208609"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Оршанский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Орша"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Орша"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(30.425833333 54.509166666)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q286964"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Оршанский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Барань"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Барань"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(30.317593 54.478666)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q578807"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Оршанский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Балбасава"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Болбасово"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(30.29 54.421944444)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q730175"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Шкловский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Шклоў"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Шклов"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(30.286944444 54.208333333)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q955013"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Костюковичский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Касцюковічы"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Костюковичи"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(32.058492 53.351335)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q603249"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Климовичский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Клімавічы"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Климовичи"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(31.95 53.616666666)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q954265"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Городокский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Гарадок"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Городок"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(29.983333333 55.466666666)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q954618"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Докшицкий район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Докшыцы"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Докшицы"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(27.765093 54.892162)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q954914"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Кричевский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Крычаў"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Кричев"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(31.713888888 53.719444444)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q201203"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Молодечненский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Маладзечна"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Молодечно"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(26.851666666 54.313611111)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q304613"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Шумилинский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Шуміліна"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Шумилино"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(29.617188 55.298898)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q742161"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Осиповичский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Асіповічы"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Осиповичи"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(28.633333333 53.3)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q955126"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Чериковский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Чэрыкаў"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Чериков"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(31.366666666 53.566666666)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q539012"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Поставский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Паставы"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Поставы"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(26.833333333 55.116666666)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q954178"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Чашникский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Новалукомль"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Новолукомль"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(29.154722222 54.665833333)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q954421"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Чашникский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Чашнікі"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Чашники"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(29.164722222 54.853333333)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q1169315"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Уречский сельсовет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Урэчча"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Уречье"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(27.898333333 52.945277777)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q1410290"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Свислочский сельсовет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Свіслач"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Свислочь"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(27.918611111 53.642222222)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2032715"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Сосновоборский сельсовет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Сасновы Бор"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Сосновый Бор"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(29.598333333 52.518333333)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2376719"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Тереховский сельсовет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Церахоўка"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Тереховка"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(31.449166666 52.2175)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2380415"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Стрешинский сельсовет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Стрэшын"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Стрешин"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(30.106388888 52.727777777)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2442844"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Езерищенский сельсовет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Езярышча"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Езерище"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(29.984722222 55.834722222)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2471115"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Суражский сельсовет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Сураж"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Сураж"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(30.722777777 55.405555555)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2471767"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Шерешёвский сельсовет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Шарашова"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Шерешево"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(24.214166666 52.560277777)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2477798"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Росский сельсовет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Рось"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Россь"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(24.4 53.283333333)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2478237"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Яновичский сельсовет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Янавічы"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Яновичи"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(30.7 55.3)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2596984"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Сопоцкинский сельсовет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Сапоцкін"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Сопоцкин"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(23.65 53.833333333)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2596991"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Любчанский сельсовет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Любча"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Любча"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(26.057222222 53.751944444)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2659499"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Руденский сельсовет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Рудзенск"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Руденск"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(27.8645 53.59526)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q200937"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Клецкий район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Клецк"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Клецк"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(26.637222222 53.063611111)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q201230"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Несвижский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Нясвіж"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Несвиж"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(26.681944444 53.218888888)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q201243"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Слуцкий район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Слуцк"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Слуцк"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(27.55 53.016666666)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q201393"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Солигорский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Салігорск"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Солигорск"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(27.5425 52.78416)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q266841"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Миорский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Мёры"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Миоры"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(27.616666666 55.616666666)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q651555"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Миорский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Дзісна"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Дисна"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(28.225833333 55.562777777)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q954812"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Горецкий район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Горкі"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Горки"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(30.983333333 54.283333333)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q955115"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Кировский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Кіраўск"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Кировск"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(29.468514 53.273323)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q181632"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Вилейский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Вілейка"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Вилейка"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(26.916666666 54.483333333)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q200833"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Березинский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Беразіно"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Березино"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(28.983333333 53.833333333)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q201421"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Столбцовский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Стоўбцы"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Столбцы"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(26.733333333 53.483333333)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q278100"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Смиловичская волость"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Смілавічы"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Смиловичи"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(28.009166666 53.7485)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q545484"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Юратишковский сельсовет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Юрацішкі"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Юратишки"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(25.927777777 54.030833333)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q550040"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Домачевский сельсовет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Дамачава"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Домачево"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(23.6 51.75)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q922668"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Мирский сельсовет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Мір"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Мир"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(26.466666666 53.454722222)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q200991"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Любанский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Любань"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Любань"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(27.994444444 52.8)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q201173"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Пуховичский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Мар’іна Горка"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Марьина Горка"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(28.141666666 53.516666666)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q200797"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Полоцкий район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Полацк"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Полоцк"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(28.8 55.483333333)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q628623"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Браславский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Браслаў"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Браслав"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(27.033333333 55.641666666)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q954519"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Сенненский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Сянно"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Сенно"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(29.706244 54.81281)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q201429"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Узденский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Узда"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Узда"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(27.224444444 53.466111111)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q201458"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Червенский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Чэрвень"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Червень"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(28.432222222 53.707777777)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q278100"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Червенский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Смілавічы"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Смиловичи"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(28.009166666 53.7485)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q954114"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Глубокский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Глыбокае"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Глубокое"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(27.683333333 55.133333333)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q200917"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Минский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Заслаўе"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Заславль"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(27.283333333 54.0)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q520162"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Жабинковский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Жабінка"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Жабинка"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(24.023333333 52.200555555)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q599374"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Минский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Мачулішчы"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Мачулищи"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(27.595833333 53.781388888)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q909612"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Речицкий район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Рэчыца"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Речица"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(30.38796 52.3724)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q201218"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Мядельский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Мядзел"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Мядель"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(26.933333333 54.875)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q744167"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Мстиславский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Мсціслаў"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Мстиславль"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(31.7247 54.0196)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q937344"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Калинковичский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Калінкавічы"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Калинковичи"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(29.333333333 52.133333333)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q200960"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Крупский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Крупкі"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Крупки"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(29.136111111 54.325)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q278100"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Минский повет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Смілавічы"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Смиловичи"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(28.009166666 53.7485)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q375228"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Остринский сельсовет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Астрына"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Острино"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(24.530277777 53.730555555)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q576393"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Телеханский сельсовет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Целяханы"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Телеханы"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(25.842222222 52.512777777)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q608888"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Антопольский сельсовет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Антопаль"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Антополь"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(24.786111111 52.203888888)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q615132"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Ружанский сельсовет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Ружаны"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Ружаны"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(24.890833333 52.864444444)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q636403"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Холопеничский сельсовет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Халопенічы"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Холопеничи"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(28.956388888 54.517222222)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q656373"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Комаринский сельсовет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Камарын"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Комарин"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(30.5675 51.438611111)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q734175"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Ореховский сельсовет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Арэхаўск"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Ореховск"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(30.497222222 54.695)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q750998"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Обольский сельсовет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Обаль"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Оболь"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(29.296111111 55.351111111)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q934318"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Видзовский сельсовет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Відзы"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Видзы"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(26.628333333 55.395)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q200876"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Воложинский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Валожын"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Воложин"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(26.516666666 54.083333333)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q722836"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Ошмянский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Ашмяны"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Ошмяны"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(25.9375 54.425)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q837765"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Жлобинский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Жлобін"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Жлобин"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(30.033333333 52.9)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2032635"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Большевистский сельсовет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Бальшавік"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Большевик"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(30.878611111 52.561111111)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2388456"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Озаричский сельсовет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Азарычы"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Озаричи"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(29.267222222 52.463611111)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2471756"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Татарковский сельсовет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Татарка"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Татарка"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(28.819444444 53.254722222)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2471796"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Паричский сельсовет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Парычы"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Паричи"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(29.416111111 52.805555555)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2478258"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Козловщинский сельсовет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Казлоўшчына"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Козловщина"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(25.3 53.316666666)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2596958"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Поколюбичская волость"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Касцюкоўка"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Костюковка"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(30.919444444 52.536944444)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2657362"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Елизовский сельсовет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Ялізава"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Елизово"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(29.004722222 53.396111111)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2659561"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Копаткевичский сельсовет"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Капаткевічы"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Копаткевичи"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(28.815555555 52.314444444)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q278743"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Новогрудский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Навагрудак"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Новогрудок"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(25.825555555 53.599166666)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q386487"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Мозырский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Мазыр"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Мозырь"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(29.233333333 52.05)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q386487"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Мозырский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Мазыр"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Мозырь"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(29.233333333 52.05)"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q587173"
+      },
+      "adminLabel" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Ивацевичский район"
+      },
+      "be" : {
+        "xml:lang" : "be",
+        "type" : "literal",
+        "value" : "Івацэвічы"
+      },
+      "ru" : {
+        "xml:lang" : "ru",
+        "type" : "literal",
+        "value" : "Ивацевичи"
+      },
+      "coord" : {
+        "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "type" : "literal",
+        "value" : "Point(25.338888888 52.709166666)"
+      }
+    } ]
+  }
+}
