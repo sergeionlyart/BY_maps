@@ -20,7 +20,7 @@ if (typeof window !== 'undefined') {
 }
 import type { DataFile, Metric, MapLevel, RaionMode } from '@/lib/types';
 import { valueAt, nearestPoint, formatNumber, formatPct, DTYPE_LABEL } from '@/lib/series';
-import { colorFor, legendStops, CITY_OVERLAY } from '@/lib/scales';
+import { colorFor, legendStops, cityColor, cityRadius, CITY_RAMP } from '@/lib/scales';
 
 interface Props {
   data: DataFile;
@@ -247,14 +247,12 @@ export default function MapView(props: Props) {
         const pop = valueAt(t.pop, year)?.value ?? null;
         const v = territoryMetric(t.id, stateRef.current);
         const overlay = level !== 'city';
-        const r = pop == null ? 0 : Math.max(overlay ? 1.8 : 2.2, Math.sqrt(pop) / (overlay ? 110 : 90));
+        // размер и насыщенность растут и убывают вместе с населением
         map.setFeatureState({ source: 'cities', id: t.id }, {
-          r,
-          color: overlay
-            ? (dark ? CITY_OVERLAY.dark : CITY_OVERLAY.light)
-            : metric === 'change'
-              ? (v == null ? '#9a9891' : colorFor('change', 'city', v))
-              : '#2a78d6',
+          r: cityRadius(pop, overlay),
+          color: !overlay && metric === 'change'
+            ? (v == null ? '#9a9891' : colorFor('change', 'city', v))
+            : cityColor(pop, dark),
         });
       }
     }
@@ -343,7 +341,7 @@ export default function MapView(props: Props) {
           {noCenterScale ? ' — без городских центров' : ''}
         </div>
         {level === 'city' && metric !== 'change' ? (
-          <div>Размер круга — численность населения города</div>
+          <CityLegend dark={dark} />
         ) : (
           stops.map((s) => (
             <div className="lg-row" key={s.label}>
@@ -352,12 +350,7 @@ export default function MapView(props: Props) {
             </div>
           ))
         )}
-        {showCities && level !== 'city' && (
-          <div className="lg-row">
-            <span className="lg-circle" />
-            город (размер — население)
-          </div>
-        )}
+        {showCities && level !== 'city' && <CityLegend dark={dark} />}
         {showBorder1921 && (
           <div className="lg-row">
             <span className="lg-line" />
@@ -365,6 +358,39 @@ export default function MapView(props: Props) {
           </div>
         )}
       </div>
+      {level === 'raion' && year < 1970 && (
+        <div className="map-notice">
+          Районный разрез — с 1970 года. Ранняя динамика видна по городам
+          {year >= 1959 ? ' и областям' : ''} (уровень «Области» — с 1959 г.).
+        </div>
+      )}
+    </div>
+  );
+}
+
+/** Мини-легенда городов: размер и насыщенность растут с населением. */
+function CityLegend({ dark }: { dark: boolean }) {
+  const samples = [
+    { pop: 10_000, label: '10 тыс.' },
+    { pop: 100_000, label: '100 тыс.' },
+    { pop: 1_000_000, label: '1 млн' },
+  ];
+  return (
+    <div className="lg-row lg-cities">
+      <span style={{ marginRight: 2 }}>город:</span>
+      {samples.map((s) => (
+        <span className="lg-city-sample" key={s.pop}>
+          <span
+            className="lg-circle"
+            style={{
+              width: cityRadius(s.pop, true) * 2,
+              height: cityRadius(s.pop, true) * 2,
+              background: cityColor(s.pop, dark),
+            }}
+          />
+          {s.label}
+        </span>
+      ))}
     </div>
   );
 }

@@ -1,6 +1,9 @@
 import { describe, expect, it } from 'vitest';
 import { valueAt, seriesPoints, nearestPoint, formatCompact } from './series';
-import { colorFor, legendStops, SEQ, DIV_NEG, DIV_POS, DIV_MID } from './scales';
+import {
+  colorFor, legendStops, cityColor, cityRadius,
+  SEQ, DIV_NEG, DIV_POS, DIV_MID, CITY_RAMP, CITY_POP_BREAKS,
+} from './scales';
 import type { Series } from './types';
 
 const s: Series = {
@@ -57,6 +60,34 @@ describe('шкалы карты', () => {
   it('легенда согласована со шкалой', () => {
     expect(legendStops('pop', 'raion')).toHaveLength(SEQ.length);
     expect(legendStops('change', 'raion')).toHaveLength(9);
+  });
+});
+
+describe('маркеры городов', () => {
+  it('радиус монотонно растёт с населением (и падает при убыли)', () => {
+    const pops = [10_000, 50_000, 200_000, 1_000_000, 2_000_000];
+    const radii = pops.map((p) => cityRadius(p, true));
+    for (let i = 1; i < radii.length; i++) expect(radii[i]).toBeGreaterThan(radii[i - 1]);
+    expect(cityRadius(null, true)).toBe(0);
+    // весь диапазон умещается в разумные пиксели
+    expect(radii[0]).toBeGreaterThanOrEqual(1.8);
+    expect(radii[radii.length - 1]).toBeLessThan(20);
+  });
+  it('рост малого города заметен (не съеден минимальным радиусом)', () => {
+    // при r ∝ √pop оба значения упирались в пол и город выглядел статичным
+    const d = cityRadius(20_000, true) - cityRadius(10_000, true);
+    expect(d).toBeGreaterThan(0.5);
+  });
+  it('насыщенность ступенчато растёт с населением', () => {
+    const ramp = CITY_RAMP.light;
+    expect(cityColor(1_000, false)).toBe(ramp[0]);
+    expect(cityColor(CITY_POP_BREAKS[0], false)).toBe(ramp[1]);
+    expect(cityColor(2_000_000, false)).toBe(ramp[6]);
+    // рост через порог меняет цвет, убыль возвращает обратно
+    expect(cityColor(99_000, false)).not.toBe(cityColor(101_000, false));
+  });
+  it('тёмная тема использует собственную шкалу', () => {
+    expect(cityColor(2_000_000, true)).toBe(CITY_RAMP.dark[6]);
   });
 });
 

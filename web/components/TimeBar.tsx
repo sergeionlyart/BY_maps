@@ -19,7 +19,7 @@ export default function TimeBar({ year, range, censusYears, onChange }: Props) {
     if (!playing) return;
     let last = performance.now();
     const tick = (now: number) => {
-      if (now - last > 180) {
+      if (now - last > 450) {
         last = now;
         const next = yearRef.current + 1;
         if (next > range[1]) { setPlaying(false); return; }

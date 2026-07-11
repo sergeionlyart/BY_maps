@@ -73,5 +73,32 @@ export function legendStops(metric: Metric, level: MapLevel, noCenter = false): 
 export const CAT = ['#2a78d6', '#1baf7a', '#eda100', '#4a3aa7'];
 export const CAT_DARK = ['#3987e5', '#199e70', '#c98500', '#9085e9'];
 
-/** Города поверх хороплета: тёплый янтарный, контрастный к синей шкале. */
-export const CITY_OVERLAY = { light: '#eda100', dark: '#c98500' };
+/** Города: размер и насыщенность растут с населением (и падают при убыли).
+ *  Пороги фиксированы во времени, чтобы динамика была сопоставимой;
+ *  нижние ступени частые - для наглядности ранних периодов (1897-1959). */
+export const CITY_POP_BREAKS = [5_000, 15_000, 40_000, 100_000, 250_000, 600_000];
+
+/** Янтарная шкала интенсивности: на светлой подложке - от бледного к тёмному,
+ *  на тёмной - от приглушённого к яркому (интенсивность = заметность). */
+export const CITY_RAMP = {
+  light: ['#f4dfa8', '#eecb79', '#e6b54d', '#d99a25', '#c07f0d', '#9e6605', '#7d4f03'],
+  dark: ['#94793a', '#a98a2c', '#bf9c1e', '#d4ad12', '#e8bd18', '#f6cf49', '#ffe081'],
+};
+
+export function cityColor(pop: number | null, dark: boolean): string {
+  if (pop == null) return 'transparent';
+  let i = 0;
+  while (i < CITY_POP_BREAKS.length && pop >= CITY_POP_BREAKS[i]) i++;
+  return CITY_RAMP[dark ? 'dark' : 'light'][i];
+}
+
+/** Радиус круга города, px. Сжатая степенная шкала r ∝ pop^0.4: населения
+ *  городов различаются в сотни раз (5 тыс. - 2 млн), и при r ∝ √pop малые
+ *  города упираются в минимальный радиус и выглядят статичными. Показатель
+ *  0.4 укладывает весь диапазон в 2-17 px: рост райцентра с 10 до 20 тыс.
+ *  виден так же ясно, как рост Минска (важно для периода до 1970 г.). */
+export function cityRadius(pop: number | null, overlay: boolean): number {
+  if (pop == null || pop <= 0) return 0;
+  const k = overlay ? 0.0514 : 0.062;
+  return Math.max(overlay ? 1.8 : 2.1, k * Math.pow(pop, 0.4));
+}
