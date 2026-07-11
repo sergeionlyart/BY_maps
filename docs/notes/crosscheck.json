@@ -1,0 +1,34 @@
+[
+ {
+  "year": 2030,
+  "base": 8753,
+  "wpp_medium": 8688,
+  "wcde_ssp2": 9219,
+  "dev_wpp_pct": 0.7,
+  "dev_wcde_pct": -5.1
+ },
+ {
+  "year": 2040,
+  "base": 8138,
+  "wpp_medium": 8064,
+  "wcde_ssp2": 8906,
+  "dev_wpp_pct": 0.9,
+  "dev_wcde_pct": -8.6
+ },
+ {
+  "year": 2050,
+  "base": 7529,
+  "wpp_medium": 7454,
+  "wcde_ssp2": 8662,
+  "dev_wpp_pct": 1.0,
+  "dev_wcde_pct": -13.1
+ },
+ {
+  "year": 2075,
+  "base": 5912,
+  "wpp_medium": 5716,
+  "wcde_ssp2": 7990,
+  "dev_wpp_pct": 3.4,
+  "dev_wcde_pct": -26.0
+ }
+]

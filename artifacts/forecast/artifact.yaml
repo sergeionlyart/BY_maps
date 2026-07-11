@@ -1,0 +1,98 @@
+# Проверяемый пакет прогноза населения 2026-2075 (v2026.1, этап MVP).
+# Сборка: python -m etl.artifacts.build forecast
+
+id: forecast
+title: "Прогноз населения Беларуси 2026–2075, v2026.1 (страна, области, Минск)"
+version: "1.0.0"
+released: "2026-07-11"
+landing_url: "https://by-population-maps.vercel.app/?sel=BY"
+authors:
+  - "Проект «Население Беларуси, 1897–2026»"
+
+files:
+  - { path: README.md, role: docs }
+  - { path: CHANGELOG.md, role: docs }
+  - { path: AGENT.md, role: docs }
+  - { path: LIMITATIONS.md, role: docs }
+  - { path: PROVENANCE.md, role: docs }
+  - { path: CITATION.cff, role: docs }
+  - { path: LICENSE.md, role: docs }
+  - { path: sources/registry.csv, from: data/raw/registry_wpf1.csv, role: docs }
+  # входные данные (curated, пути повторяют репозиторий - код работает без правок)
+  - { path: data/curated/age_current.csv, from: data/curated/age_current.csv, role: intermediate, license: "CC BY 4.0" }
+  - { path: data/curated/age2009.csv, from: data/curated/age2009.csv, role: intermediate, license: "CC BY 4.0" }
+  - { path: data/curated/age2019.csv, from: data/curated/age2019.csv, role: intermediate, license: "CC BY 4.0" }
+  - { path: data/curated/fertility_oblast.csv, from: data/curated/fertility_oblast.csv, role: intermediate, license: "CC BY 4.0" }
+  - { path: data/curated/mortality.csv, from: data/curated/mortality.csv, role: intermediate, license: "CC BY 4.0 (OWID)/HMD" }
+  - { path: data/curated/migration_internal.csv, from: data/curated/migration_internal.csv, role: intermediate, license: "CC BY 4.0" }
+  - { path: data/curated/oblast_totals.csv, from: data/curated/oblast_totals.csv, role: intermediate, license: "CC BY 4.0" }
+  - { path: data/raw/wpp2024/blr_indicators_medium.csv, from: data/raw/wpp2024/blr_indicators_medium.csv, role: raw, license: "CC BY 3.0 IGO" }
+  - { path: data/raw/wpp2024/blr_total_all_variants.csv, from: data/raw/wpp2024/blr_total_all_variants.csv, role: raw, license: "CC BY 3.0 IGO" }
+  - { path: data/raw/wcde/blr_pop_total_ssp123.csv, from: data/raw/wcde/blr_pop_total_ssp123.csv, role: raw, license: "CC BY 4.0" }
+  # код: пакет etl.forecast как в репозитории + документация данных
+  - { path: etl/__init__.py, from: artifacts/forecast/shims/etl_init.py, role: code }
+  - { path: etl/common.py, from: artifacts/forecast/shims/common.py, role: code }
+  - { path: etl/forecast/__init__.py, from: etl/forecast/__init__.py, role: code }
+  - { path: etl/forecast/data.py, from: etl/forecast/data.py, role: code }
+  - { path: etl/forecast/lifetable.py, from: etl/forecast/lifetable.py, role: code }
+  - { path: etl/forecast/ccmpp.py, from: etl/forecast/ccmpp.py, role: code }
+  - { path: etl/forecast/migration.py, from: etl/forecast/migration.py, role: code }
+  - { path: etl/forecast/run.py, from: etl/forecast/run.py, role: code }
+  - { path: etl/forecast/backtest.py, from: etl/forecast/backtest.py, role: code }
+  - { path: etl/forecast/sensitivity.py, from: etl/forecast/sensitivity.py, role: code }
+  - { path: etl/forecast/scenarios/base.yaml, from: etl/forecast/scenarios/base.yaml, role: params }
+  - { path: etl/forecast/scenarios/optimistic.yaml, from: etl/forecast/scenarios/optimistic.yaml, role: params }
+  - { path: etl/forecast/scenarios/negative.yaml, from: etl/forecast/scenarios/negative.yaml, role: params }
+  - { path: params/assumptions.yaml, role: params }
+  - { path: code/run.sh, role: code }
+  - { path: code/verify.py, role: code }
+  - { path: code/requirements.lock, role: code }
+  - { path: checks/tests/test_invariants.py, role: code }
+  # итоговые данные - ровно те, что на лендинге
+  - { path: data/final/computed_results.json, role: final, license: "CC BY 4.0" }
+  - { path: data/curated/forecast_v2026_1.csv, from: data/curated/forecast_v2026_1.csv, role: final, license: "CC BY 4.0" }
+  - { path: web/public/data/forecast.json, from: web/public/data/forecast.json, role: final, license: "CC BY 4.0" }
+  - { path: docs/notes/backtest_results.json, from: docs/notes/backtest_results.json, role: final, license: "CC BY 4.0" }
+  - { path: docs/notes/sensitivity.json, from: docs/notes/sensitivity.json, role: final, license: "CC BY 4.0" }
+  - { path: docs/notes/validation.md, from: docs/notes/validation.md, role: docs }
+
+sources:
+  - id: wpf1_registry
+    url: "см. sources/registry.csv - полный реестр 18 источников WP-F1 (Белстат OLAP/дата-портал, HMD/HFD via OWID, UN WPP 2024, WCDE v3) с URL, лицензиями и sha256"
+    description: "Все входы прогноза унаследованы от этапа WP-F1"
+    license: "по источникам (см. реестр)"
+    accessed: "2026-07-11"
+
+entrypoints:
+  reproduce: "code/run.sh"
+  verify: "python3 checks/tests/test_invariants.py"
+
+environment:
+  python: ">=3.10"
+  lock: "code/requirements.lock"
+  seed: null   # прогноз детерминирован, случайности нет
+
+# Допуски: прогон детерминирован; 1 человек - на платформенное округление.
+expected_results:
+  - { metric: pop_BY_base_2051, value: 7528557, tolerance: 1,
+      description: "страна, базовый сценарий, 2051 (гейт WP-F4: +-3% от WPP medium-2050 7 453,5 тыс. - выполнен: +1,0%)" }
+  - { metric: pop_BY_base_2075, value: 5969883, tolerance: 1,
+      description: "страна, базовый, 2075" }
+  - { metric: q10_BY_base_2075, value: 5039174, tolerance: 1,
+      description: "нижняя граница 80% интервала, 2075" }
+  - { metric: q90_BY_base_2075, value: 6985592, tolerance: 1,
+      description: "верхняя граница 80% интервала, 2075" }
+  - { metric: pop_BY_optimistic_2075, value: 7105875, tolerance: 1,
+      description: "страна, оптимистический, 2075" }
+  - { metric: pop_BY_negative_2075, value: 4334254, tolerance: 1,
+      description: "страна, негативный, 2075" }
+  - { metric: pop_BY-HM_base_2075, value: 1824625, tolerance: 1,
+      description: "Минск, базовый, 2075 (доля столицы растёт при общей убыли)" }
+  - { metric: pop_BY-VI_base_2075, value: 487513, tolerance: 1,
+      description: "Витебская область, базовый, 2075 (сильнейшая убыль)" }
+  - { metric: backtest_national_err_pct, value: -0.41, tolerance: 0.02,
+      description: "бэктест 2009->2019: ошибка национального итога (гейт +-2%)" }
+  - { metric: backtest_mape_model, value: 2.39, tolerance: 0.02,
+      description: "бэктест: MAPE модели по 7 территориям" }
+  - { metric: backtest_mape_naive, value: 4.13, tolerance: 0.02,
+      description: "бэктест: MAPE наивной экстраполяции (гейт: модель лучше)" }

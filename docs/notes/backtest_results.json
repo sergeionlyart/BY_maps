@@ -1,0 +1,66 @@
+{
+ "national": {
+  "actual": 9413446,
+  "model": 9374533,
+  "naive": 9037682,
+  "model_err_pct": -0.41,
+  "naive_err_pct": -3.99
+ },
+ "oblasts": {
+  "BY-BR": {
+   "actual": 1348115,
+   "model": 1323828,
+   "naive": 1322001,
+   "model_ape": 1.8,
+   "naive_ape": 1.94
+  },
+  "BY-VI": {
+   "actual": 1135731,
+   "model": 1157733,
+   "naive": 1100031,
+   "model_ape": 1.94,
+   "naive_ape": 3.14
+  },
+  "BY-HO": {
+   "actual": 1388512,
+   "model": 1374273,
+   "naive": 1343402,
+   "model_ape": 1.03,
+   "naive_ape": 3.25
+  },
+  "BY-HR": {
+   "actual": 1026816,
+   "model": 1014152,
+   "naive": 970319,
+   "model_ape": 1.23,
+   "naive_ape": 5.5
+  },
+  "BY-MI": {
+   "actual": 1471240,
+   "model": 1392267,
+   "naive": 1298309,
+   "model_ape": 5.37,
+   "naive_ape": 11.75
+  },
+  "BY-MA": {
+   "actual": 1024751,
+   "model": 1065341,
+   "naive": 995964,
+   "model_ape": 3.96,
+   "naive_ape": 2.81
+  },
+  "BY-HM": {
+   "actual": 2018281,
+   "model": 2046938,
+   "naive": 2007655,
+   "model_ape": 1.42,
+   "naive_ape": 0.53
+  }
+ },
+ "mape_model": 2.39,
+ "mape_naive": 4.13,
+ "gates": {
+  "national_within_2pct": true,
+  "beats_naive_mape": true
+ }
+}

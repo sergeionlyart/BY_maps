@@ -3,6 +3,8 @@
 import { useEffect, useMemo, useState } from 'react';
 import dynamic from 'next/dynamic';
 import type { DataFile, Metric, MapLevel, RaionMode } from '@/lib/types';
+import type { ForecastFile, ScenarioId } from '@/lib/forecast';
+import { FORECAST_START } from '@/lib/forecast';
 import TimeBar from '@/components/TimeBar';
 import TerritoryCard from '@/components/TerritoryCard';
 import ComparePanel from '@/components/ComparePanel';
@@ -24,6 +26,8 @@ const BASE_YEARS = [1897, 1959, 1970, 1979, 1989, 1999, 2009, 2019];
 export default function Page() {
   const [data, setData] = useState<DataFile | null>(null);
   const [geo, setGeo] = useState<GeoBundle | null>(null);
+  const [forecast, setForecast] = useState<ForecastFile | null>(null);
+  const [scenario, setScenario] = useState<ScenarioId>('base');
   const [year, setYear] = useState(2019);
   // стартовый вид - главный сюжет проекта: плотность сельской части районов
   // (без городских центров) + города точками поверх
@@ -52,6 +56,7 @@ export default function Page() {
       setData(d);
       setGeo({ adm1, adm2, border1921 });
     });
+    fetch('data/forecast.json').then((r) => (r.ok ? r.json() : null)).then(setForecast);
   }, []);
 
   // выбранная территория - в URL (для диплинков и «назад»)
@@ -127,6 +132,20 @@ export default function Page() {
           </div>
         )}
 
+        {forecast && year > FORECAST_START && (
+          <div className="control-group forecast-scenarios">
+            <span className="control-label">Сценарий прогноза</span>
+            <div className="seg">
+              {forecast.scenarios.map((s) => (
+                <button key={s} className={scenario === s ? 'on' : ''} onClick={() => setScenario(s)}>
+                  {forecast.scenarioMeta[s].name}
+                </button>
+              ))}
+            </div>
+            <MethodDrawer slug="forecast" label="Методика прогноза" />
+          </div>
+        )}
+
         {level !== 'city' && (
           <label className="toggle">
             <input type="checkbox" checked={showCities} onChange={(e) => setShowCities(e.target.checked)} />
@@ -147,6 +166,8 @@ export default function Page() {
           <MapView
             data={data}
             geo={geo}
+            forecast={forecast}
+            scenario={scenario}
             year={year}
             metric={metricSafe}
             level={level}
@@ -177,6 +198,8 @@ export default function Page() {
             ) : tab === 'territory' ? (
               <TerritoryCard
                 data={data}
+                forecast={forecast}
+                scenario={scenario}
                 id={selected}
                 year={year}
                 baseYear={baseYear}
@@ -201,8 +224,9 @@ export default function Page() {
       {data && (
         <TimeBar
           year={year}
-          range={[data.yearRange[0], data.yearRange[1]]}
+          range={[data.yearRange[0], forecast ? forecast.horizon[1] : data.yearRange[1]]}
           censusYears={data.censusYears}
+          forecastStart={forecast ? FORECAST_START : null}
           onChange={setYear}
         />
       )}

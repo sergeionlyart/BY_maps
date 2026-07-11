@@ -6,10 +6,12 @@ interface Props {
   year: number;
   range: [number, number];
   censusYears: number[];
+  /** Год начала прогнозной зоны (визуально отделяется штриховкой). */
+  forecastStart?: number | null;
   onChange: (y: number) => void;
 }
 
-export default function TimeBar({ year, range, censusYears, onChange }: Props) {
+export default function TimeBar({ year, range, censusYears, forecastStart, onChange }: Props) {
   const [playing, setPlaying] = useState(false);
   const raf = useRef<number>(0);
   const yearRef = useRef(year);
@@ -45,8 +47,20 @@ export default function TimeBar({ year, range, censusYears, onChange }: Props) {
       >
         {playing ? '❚❚' : '▶'}
       </button>
-      <div className="year-display">{year}</div>
+      <div className="year-display">
+        {year}
+        {forecastStart != null && year > forecastStart && (
+          <span className="forecast-flag">прогноз</span>
+        )}
+      </div>
       <div className="slider-zone">
+        {forecastStart != null && (
+          <div
+            className="forecast-zone"
+            style={{ left: `${pct(forecastStart)}%`, width: `${100 - pct(forecastStart)}%` }}
+            title="Зона прогноза"
+          />
+        )}
         <input
           type="range"
           min={range[0]}
@@ -62,6 +76,11 @@ export default function TimeBar({ year, range, censusYears, onChange }: Props) {
               {y}
             </span>
           ))}
+          {forecastStart != null && (
+            <span key="f" className="tick-forecast" style={{ left: `${pct((forecastStart + range[1]) / 2)}%` }}>
+              прогноз →
+            </span>
+          )}
         </div>
       </div>
     </div>

@@ -19,12 +19,16 @@ if (typeof window !== 'undefined') {
   };
 }
 import type { DataFile, Metric, MapLevel, RaionMode } from '@/lib/types';
-import { valueAt, nearestPoint, formatNumber, formatPct, DTYPE_LABEL } from '@/lib/series';
+import type { ForecastFile, ScenarioId } from '@/lib/forecast';
+import { forecastAt, FORECAST_START, SCENARIO_LABEL } from '@/lib/forecast';
+import { valueAt, nearestPoint, formatNumber, formatPct, formatCompact, DTYPE_LABEL } from '@/lib/series';
 import { colorFor, legendStops, cityColor, cityRadius } from '@/lib/scales';
 
 interface Props {
   data: DataFile;
   geo: { adm1: GeoJSON.FeatureCollection; adm2: GeoJSON.FeatureCollection; border1921: GeoJSON.FeatureCollection };
+  forecast: ForecastFile | null;
+  scenario: ScenarioId;
   year: number;
   metric: Metric;
   level: MapLevel;
@@ -46,7 +50,11 @@ const METRIC_TITLE: Record<Metric, string> = {
 };
 
 export default function MapView(props: Props) {
-  const { data, geo, year, metric, level, raionMode, baseYear, showBorder1921, showCities, selected, onSelect } = props;
+  const { data, geo, forecast, scenario, year, metric, level, raionMode, baseYear, showBorder1921, showCities, selected, onSelect } = props;
+  // в прогнозной зоне данные есть только для областей и Минска -
+  // авто-фолбэк уровня с поясняющей плашкой (правило честности WP-F6)
+  const inForecast = forecast != null && year > FORECAST_START;
+  const effLevel: MapLevel = inForecast ? 'oblast' : level;
   const divRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<maplibregl.Map | null>(null);
   const [ready, setReady] = useState(false);
@@ -196,11 +204,13 @@ export default function MapView(props: Props) {
 
     const hitLayers = () => {
       const s = stateRef.current;
-      if (s.level === 'city') return ['cities-circle'];
-      const base = s.level === 'raion' ? ['adm2-fill'] : ['adm1-fill'];
+      const inF = s.forecast != null && s.year > FORECAST_START;
+      const lv = inF ? 'oblast' : s.level;
+      if (lv === 'city') return ['cities-circle'];
+      const base = lv === 'raion' ? ['adm2-fill'] : ['adm1-fill'];
       // при наложении городов круги в приоритете (queryRenderedFeatures
       // возвращает фичи сверху вниз)
-      return s.showCities ? ['cities-circle', ...base] : base;
+      return s.showCities && !inF ? ['cities-circle', ...base] : base;
     };
 
     map.on('mousemove', (e) => {
@@ -229,9 +239,9 @@ export default function MapView(props: Props) {
     const map = mapRef.current;
     if (!map || !ready) return;
 
-    const adm2visible = level === 'raion';
-    const adm1visible = level === 'oblast';
-    const citiesVisible = level === 'city' || showCities;
+    const adm2visible = effLevel === 'raion';
+    const adm1visible = effLevel === 'oblast';
+    const citiesVisible = (effLevel === 'city' || showCities) && !inForecast;
     for (const [layer, vis] of [
       ['adm2-fill', adm2visible], ['adm2-line', adm2visible],
       ['adm1-fill', adm1visible], ['adm1-line', adm1visible],
@@ -247,15 +257,15 @@ export default function MapView(props: Props) {
     for (const t of Object.values(data.territories)) {
       if (t.level === 'raion' || t.level === 'oblast') {
         const src = t.level === 'raion' ? 'adm2' : 'adm1';
-        if (t.level === 'oblast' && level !== 'oblast') continue;
+        if (t.level === 'oblast' && effLevel !== 'oblast') continue;
         const v = territoryMetric(t.id, stateRef.current);
         map.setFeatureState({ source: src, id: t.id }, {
-          color: v == null ? noData : colorFor(metric, level, v, raionMode === 'noCenter'),
+          color: v == null ? noData : colorFor(metric, effLevel, v, raionMode === 'noCenter'),
         });
       } else if (t.level === 'city' && t.lon != null && citiesVisible) {
         const pop = valueAt(t.pop, year)?.value ?? null;
         const v = territoryMetric(t.id, stateRef.current);
-        const overlay = level !== 'city';
+        const overlay = effLevel !== 'city';
         // размер и интенсивность цвета растут и убывают вместе с населением
         map.setFeatureState({ source: 'cities', id: t.id }, {
           r: cityRadius(pop, overlay),
@@ -266,23 +276,34 @@ export default function MapView(props: Props) {
       }
     }
     // Минск-город виден и на уровне районов (полигон в adm2)
-    if (level === 'raion') {
+    if (effLevel === 'raion') {
       const v = territoryMetric('BY-HM', stateRef.current);
       map.setFeatureState({ source: 'adm2', id: 'BY-HM' }, {
-        color: v == null ? noData : colorFor(metric, level, v),
+        color: v == null ? noData : colorFor(metric, effLevel, v),
       });
     }
 
-    map.setFilter('selected-line', ['==', ['get', 'id'], level === 'raion' && selected ? selected : '']);
-    map.setFilter('selected-line-1', ['==', ['get', 'id'], level === 'oblast' && selected ? selected : '']);
+    map.setFilter('selected-line', ['==', ['get', 'id'], effLevel === 'raion' && selected ? selected : '']);
+    map.setFilter('selected-line-1', ['==', ['get', 'id'], effLevel === 'oblast' && selected ? selected : '']);
     map.triggerRepaint();
-  }, [ready, data, year, metric, level, raionMode, baseYear, showBorder1921, showCities, selected, dark, maxCityPop]);
+  }, [ready, data, year, metric, level, effLevel, inForecast, scenario, forecast, raionMode, baseYear, showBorder1921, showCities, selected, dark, maxCityPop]);
+
+  /** Численность с учётом прогноза: до 2026 - факт/оценка, после - прогноз
+   *  выбранного сценария (тип f). */
+  function comboPop(id: string, s: Props, yr: number): number | null {
+    if (s.forecast && yr > FORECAST_START) {
+      return forecastAt(s.forecast, id, s.scenario, yr);
+    }
+    const t = s.data.territories[id];
+    if (!t) return null;
+    const series = t.level === 'raion' && s.raionMode === 'noCenter' ? t.popNoCenter : t.pop;
+    return valueAt(series, yr)?.value ?? null;
+  }
 
   function territoryMetric(id: string, s: Props): number | null {
     const t = s.data.territories[id];
     if (!t) return null;
-    const series = t.level === 'raion' && s.raionMode === 'noCenter' ? t.popNoCenter : t.pop;
-    const now = valueAt(series, s.year)?.value ?? null;
+    const now = comboPop(id, s, s.year);
     if (now == null) return null;
     if (s.metric === 'pop') return now;
     if (s.metric === 'density') {
@@ -299,7 +320,7 @@ export default function MapView(props: Props) {
       }
       return now / area;
     }
-    const base = valueAt(series, s.baseYear)?.value ?? null;
+    const base = comboPop(id, s, s.baseYear);
     if (base == null || base === 0) return null;
     return now / base - 1;
   }
@@ -307,6 +328,30 @@ export default function MapView(props: Props) {
   function renderTooltip(id: string, s: Props): React.ReactNode {
     const t = s.data.territories[id];
     if (!t) return null;
+    // прогнозная зона: значение, интервал и обязательная атрибуция
+    if (s.forecast && s.year > FORECAST_START) {
+      const v = forecastAt(s.forecast, id, s.scenario, s.year);
+      if (v == null) return <div className="tt-name">{t.ru}: прогноза нет</div>;
+      const q10 = forecastAt(s.forecast, id, s.scenario, s.year, 'q10');
+      const q90 = forecastAt(s.forecast, id, s.scenario, s.year, 'q90');
+      const m = territoryMetric(id, s);
+      return (
+        <>
+          <div className="tt-name">{t.ru}</div>
+          <div className="tt-val">
+            <strong>{formatNumber(v)}</strong> чел.
+            {s.metric === 'density' && t.area ? <> · {(v / t.area).toLocaleString('ru-RU', { maximumFractionDigits: 1 })} чел./км²</> : null}
+            {s.metric === 'change' && m != null ? <> · {m > 0 ? '+' : ''}{formatPct(m)} к {s.baseYear}</> : null}
+          </div>
+          {q10 != null && q90 != null && (
+            <div className="tt-src">80% интервал: {formatCompact(q10)} – {formatCompact(q90)}</div>
+          )}
+          <div className="tt-src">
+            прогноз {s.forecast.version}, сценарий «{SCENARIO_LABEL[s.scenario]}»
+          </div>
+        </>
+      );
+    }
     const series = t.level === 'raion' && s.raionMode === 'noCenter' ? t.popNoCenter : t.pop;
     const res = valueAt(series, s.year);
     const near = nearestPoint(series, s.year);
@@ -332,8 +377,8 @@ export default function MapView(props: Props) {
     );
   }
 
-  const noCenterScale = level === 'raion' && raionMode === 'noCenter';
-  const stops = legendStops(metric, level, noCenterScale);
+  const noCenterScale = effLevel === 'raion' && raionMode === 'noCenter';
+  const stops = legendStops(metric, effLevel, noCenterScale);
 
   return (
     <div className="map-wrap">
@@ -359,7 +404,13 @@ export default function MapView(props: Props) {
             </div>
           ))
         )}
-        {showCities && level !== 'city' && <CityLegend dark={dark} maxPop={maxCityPop} />}
+        {showCities && effLevel !== 'city' && !inForecast && <CityLegend dark={dark} maxPop={maxCityPop} />}
+        {inForecast && (
+          <div className="lg-row" style={{ marginTop: 5 }}>
+            <span className="lg-line" style={{ borderTopColor: 'var(--accent)' }} />
+            прогноз {forecast!.version} · «{SCENARIO_LABEL[scenario]}»
+          </div>
+        )}
         {showBorder1921 && (
           <div className="lg-row">
             <span className="lg-line" />
@@ -367,10 +418,16 @@ export default function MapView(props: Props) {
           </div>
         )}
       </div>
-      {level === 'raion' && year < 1970 && (
+      {effLevel === 'raion' && year < 1970 && (
         <div className="map-notice">
           Районный разрез — с 1970 года. Ранняя динамика видна по городам
           {year >= 1959 ? ' и областям' : ''} (уровень «Области» — с 1959 г.).
+        </div>
+      )}
+      {inForecast && level !== 'oblast' && (
+        <div className="map-notice">
+          Прогноз (этап MVP) — только страна, области и Минск: показан уровень
+          областей. Прогноз районов и городов — этап 5 плана.
         </div>
       )}
     </div>

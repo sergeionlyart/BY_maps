@@ -1,6 +1,8 @@
 'use client';
 
 import type { DataFile, Territory, RaionMode } from '@/lib/types';
+import type { ForecastFile, ScenarioId } from '@/lib/forecast';
+import { forecastAt, FORECAST_START, SCENARIO_LABEL } from '@/lib/forecast';
 import { seriesPoints, valueAt, formatNumber, formatCompact, formatPct, DTYPE_LABEL } from '@/lib/series';
 import { raionBreakdown, cityDensity } from '@/lib/metrics';
 import { CAT } from '@/lib/scales';
@@ -8,6 +10,8 @@ import LineChart, { ChartSeries } from './LineChart';
 
 interface Props {
   data: DataFile;
+  forecast?: ForecastFile | null;
+  scenario?: ScenarioId;
   id: string | null;
   year: number;
   baseYear: number;
@@ -31,12 +35,14 @@ const FLAG_LABEL: Record<string, string> = {
   capital: 'столица',
 };
 
-export default function TerritoryCard({ data, id, year, baseYear, raionMode, compare, onCompareAdd, onSelect }: Props) {
+export default function TerritoryCard({ data, forecast, scenario = 'base', id, year, baseYear, raionMode, compare, onCompareAdd, onSelect }: Props) {
   const t: Territory | undefined = id ? data.territories[id] : data.territories['BY'];
   if (!t) return <p className="hint">Выберите территорию на карте.</p>;
 
   const mainSeries = t.level === 'raion' && raionMode === 'noCenter' ? t.popNoCenter : t.pop;
-  const now = valueAt(mainSeries, year);
+  // исторические плитки не выходят за границу факта (прогноз - отдельной плиткой)
+  const histYear = Math.min(year, FORECAST_START);
+  const now = valueAt(mainSeries, histYear);
   const base = valueAt(mainSeries, baseYear);
   const change = now && base && base.value > 0 ? now.value / base.value - 1 : null;
   const abs = now && base ? now.value - base.value : null;
@@ -85,6 +91,21 @@ export default function TerritoryCard({ data, id, year, baseYear, raionMode, com
     });
   }
 
+  // прогноз (веер q10-q90) для страны, областей и Минска
+  const fentry = forecast?.territories[t.id]?.[scenario];
+  if (forecast && fentry) {
+    chart.push({
+      name: `Прогноз (${SCENARIO_LABEL[scenario]})`,
+      color: CAT[3],
+      points: fentry.years.map((y, i) => ({
+        year: y,
+        value: fentry.pop[i],
+        major: false,
+        ...(fentry.q10 && fentry.q90 ? { lo: fentry.q10[i], hi: fentry.q90[i] } : {}),
+      })),
+    });
+  }
+
   const density = now && t.area ? now.value / t.area : null;
   const centerCities = (t.center ?? []).map((cid) => data.territories[cid]).filter(Boolean);
 
@@ -100,9 +121,23 @@ export default function TerritoryCard({ data, id, year, baseYear, raionMode, com
         {t.flags.map((f) => FLAG_LABEL[f] && <span className="badge" key={f}>{FLAG_LABEL[f]}</span>)}
       </div>
 
+      {forecast && year > FORECAST_START && fentry && (
+        <div className="stat-row" style={{ marginTop: 8 }}>
+          <div className="stat-tile forecast-tile">
+            <div className="st-label">Прогноз на {year} · «{SCENARIO_LABEL[scenario]}»</div>
+            <div className="st-value">{formatCompact(forecastAt(forecast, t.id, scenario, year) ?? 0)}</div>
+            <div className="st-delta">
+              {fentry.q10 && fentry.q90
+                ? `80% интервал: ${formatCompact(forecastAt(forecast, t.id, scenario, year, 'q10') ?? 0)} – ${formatCompact(forecastAt(forecast, t.id, scenario, year, 'q90') ?? 0)}`
+                : ''} · прогноз {forecast.version}
+            </div>
+          </div>
+        </div>
+      )}
+
       <div className="stat-row" style={{ marginTop: 8 }}>
         <div className="stat-tile">
-          <div className="st-label">Население, {year}{t.level === 'raion' && raionMode === 'noCenter' ? ', без центра' : ''}</div>
+          <div className="st-label">Население, {Math.min(year, FORECAST_START)}{t.level === 'raion' && raionMode === 'noCenter' ? ', без центра' : ''}</div>
           <div className="st-value">{now ? formatCompact(now.value) : '—'}</div>
           {change != null && abs != null && (
             <div className={`st-delta ${change >= 0 ? 'up' : 'down'}`}>
@@ -190,13 +225,16 @@ export default function TerritoryCard({ data, id, year, baseYear, raionMode, com
       </div>
 
       <div className="chart-block">
-        <div className="chart-title">Динамика населения, 1897–2026</div>
+        <div className="chart-title">
+          Динамика населения, 1897–{forecast && fentry ? '2075 (с прогнозом, полоса — 80% интервал)' : '2026'}
+        </div>
         <LineChart
           series={chart}
           markYear={year}
           yFormat={(v) => formatCompact(v)}
           yTooltip={(v) => formatNumber(v) + ' чел.'}
-          domain={[Math.min(...chart.flatMap((s) => s.points.map((p) => p.year))), 2026]}
+          domain={[Math.min(...chart.flatMap((s) => s.points.map((p) => p.year))),
+                   forecast && fentry ? 2075 : 2026]}
         />
       </div>
 

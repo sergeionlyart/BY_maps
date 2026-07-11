@@ -10,6 +10,11 @@ etl:              ## пересборка данных: web/public/data/
 wpf1:             ## производные WP-F1: age2009/2019, age_current, миграция
 	$(PY) -m etl.census_age && $(PY) -m etl.wpf1
 
+forecast:         ## прогноз v2026.1: прогон + бэктест + чувствительность
+	$(PY) -m etl.forecast.run
+	$(PY) -m etl.forecast.backtest
+	$(PY) -m etl.forecast.sensitivity
+
 test:             ## все проверки данных
 	$(PY) -m pytest etl/tests/ -q
 
