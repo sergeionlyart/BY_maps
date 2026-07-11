@@ -12,11 +12,15 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: pip install shapely pytest
+      - run: pip install shapely pytest pyyaml
       - name: Run ETL build
         run: python -m etl.build
-      - name: ETL tests
+      - name: ETL tests (данные, zipf, методблоки-гейт)
         run: python -m pytest etl/tests/ -q
+      - name: Artifacts reproducible byte-for-byte
+        run: python -m etl.artifacts.build --all --check
+      - name: Artifacts validate (полный прогон run.sh + сверка допусков)
+        run: python -m etl.artifacts.validate --all
 
   web:
     runs-on: ubuntu-latest

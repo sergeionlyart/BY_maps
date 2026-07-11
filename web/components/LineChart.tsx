@@ -5,8 +5,9 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 export interface ChartSeries {
   name: string;
   color: string;
-  /** Точки: год -> значение; переписные годы помечаются major=true (точка). */
-  points: { year: number; value: number; major?: boolean }[];
+  /** Точки: год -> значение; major=true - переписной год (точка);
+   *  lo/hi - границы доверительной полосы (рисуется заливкой ~12%). */
+  points: { year: number; value: number; major?: boolean; lo?: number; hi?: number }[];
 }
 
 interface Props {
@@ -17,6 +18,8 @@ interface Props {
   domain?: [number, number];
   yMax?: number;
   markYear?: number | null;
+  /** Горизонтальная референс-линия (например, «ожидание Ципфа»). */
+  refY?: { value: number; label: string } | null;
 }
 
 const M = { top: 10, right: 14, bottom: 22, left: 46 };
@@ -31,7 +34,7 @@ function niceTicks(max: number, n = 4): number[] {
   return ticks;
 }
 
-export default function LineChart({ series, height = 190, yFormat, yTooltip, domain, yMax, markYear }: Props) {
+export default function LineChart({ series, height = 190, yFormat, yTooltip, domain, yMax, markYear, refY }: Props) {
   const wrapRef = useRef<HTMLDivElement>(null);
   const [hoverYear, setHoverYear] = useState<number | null>(null);
   const [width, setWidth] = useState(388);
@@ -132,11 +135,28 @@ export default function LineChart({ series, height = 190, yFormat, yTooltip, dom
             stroke="var(--baseline)" strokeWidth="1" />
         )}
 
-        {/* линии */}
+        {/* референс-линия */}
+        {refY && refY.value <= maxV && (
+          <g>
+            <line x1={M.left} x2={width - M.right} y1={Y(refY.value)} y2={Y(refY.value)}
+              stroke="var(--muted)" strokeWidth="1" strokeDasharray="5 4" />
+            <text x={width - M.right} y={Y(refY.value) - 4} textAnchor="end" fontSize="10"
+              fill="var(--muted)">{refY.label}</text>
+          </g>
+        )}
+
+        {/* линии (+ доверительные полосы, если заданы lo/hi) */}
         {series.map((s) => {
           const d = s.points.map((p, i) => `${i ? 'L' : 'M'}${X(p.year).toFixed(1)},${Y(p.value).toFixed(1)}`).join('');
+          const banded = s.points.filter((p) => p.lo != null && p.hi != null);
+          const band = banded.length > 1
+            ? banded.map((p, i) => `${i ? 'L' : 'M'}${X(p.year).toFixed(1)},${Y(p.hi!).toFixed(1)}`).join('')
+              + banded.slice().reverse().map((p) => `L${X(p.year).toFixed(1)},${Y(p.lo!).toFixed(1)}`).join('')
+              + 'Z'
+            : null;
           return (
             <g key={s.name}>
+              {band && <path d={band} fill={s.color} opacity="0.12" stroke="none" />}
               <path d={d} fill="none" stroke={s.color} strokeWidth="2"
                 strokeLinejoin="round" strokeLinecap="round" />
               {s.points.filter((p) => p.major).map((p) => (

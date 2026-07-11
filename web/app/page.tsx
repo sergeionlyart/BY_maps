@@ -7,6 +7,7 @@ import TimeBar from '@/components/TimeBar';
 import TerritoryCard from '@/components/TerritoryCard';
 import ComparePanel from '@/components/ComparePanel';
 import UrbanPanel from '@/components/UrbanPanel';
+import MethodDrawer from '@/components/MethodDrawer';
 
 const MapView = dynamic(() => import('@/components/MapView'), { ssr: false });
 
@@ -32,7 +33,12 @@ export default function Page() {
   const [baseYear, setBaseYear] = useState(1989);
   const [showBorder, setShowBorder] = useState(false);
   const [showCities, setShowCities] = useState(true);
-  const [selected, setSelected] = useState<string | null>(null);
+  // диплинк ?sel=<id> читается синхронно при монтировании - до эффекта,
+  // который синхронизирует выбор обратно в URL
+  const [selected, setSelected] = useState<string | null>(() =>
+    typeof window === 'undefined'
+      ? null
+      : new URLSearchParams(window.location.search).get('sel'));
   const [compare, setCompare] = useState<string[]>([]);
   const [tab, setTab] = useState<Tab>('territory');
 
@@ -47,6 +53,15 @@ export default function Page() {
       setGeo({ adm1, adm2, border1921 });
     });
   }, []);
+
+  // выбранная территория - в URL (для диплинков и «назад»)
+  useEffect(() => {
+    if (!data) return;
+    const url = new URL(window.location.href);
+    if (selected && data.territories[selected]) url.searchParams.set('sel', selected);
+    else url.searchParams.delete('sel');
+    window.history.replaceState(null, '', url);
+  }, [selected, data]);
 
   const select = (id: string | null) => {
     setSelected(id);
@@ -63,7 +78,6 @@ export default function Page() {
   return (
     <div className="app">
       <header className="app-header">
-        <h1>Население Беларуси, 1897–2026</h1>
         <p>
           Численность, плотность и концентрация населения за 120 лет: страна,
           области, {`118`} районов и {`220+`} городов. Переписи 1897–2019, оценки до 2026.
@@ -124,6 +138,8 @@ export default function Page() {
           <input type="checkbox" checked={showBorder} onChange={(e) => setShowBorder(e.target.checked)} />
           граница 1921–1939
         </label>
+
+        <MethodDrawer slug="map" />
       </div>
 
       <div className="main">

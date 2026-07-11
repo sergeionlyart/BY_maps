@@ -1,0 +1,106 @@
+[
+  {
+    "metric": "zipf_slope_1897_n30",
+    "value": -1.1324
+  },
+  {
+    "metric": "primacy_1897",
+    "value": 1.38
+  },
+  {
+    "metric": "zipf_slope_1923_n30",
+    "value": -1.0496
+  },
+  {
+    "metric": "primacy_1923",
+    "value": 1.224
+  },
+  {
+    "metric": "zipf_slope_1926_n30",
+    "value": -1.0004
+  },
+  {
+    "metric": "primacy_1926",
+    "value": 1.355
+  },
+  {
+    "metric": "zipf_slope_1939_n30",
+    "value": -1.1204
+  },
+  {
+    "metric": "primacy_1939",
+    "value": 1.428
+  },
+  {
+    "metric": "zipf_slope_1959_n30",
+    "value": -0.9817
+  },
+  {
+    "metric": "primacy_1959",
+    "value": 3.066
+  },
+  {
+    "metric": "zipf_slope_1970_n30",
+    "value": -1.0155
+  },
+  {
+    "metric": "primacy_1970",
+    "value": 3.332
+  },
+  {
+    "metric": "zipf_slope_1979_n30",
+    "value": -0.9984
+  },
+  {
+    "metric": "primacy_1979",
+    "value": 3.297
+  },
+  {
+    "metric": "zipf_slope_1989_n30",
+    "value": -1.0105
+  },
+  {
+    "metric": "primacy_1989",
+    "value": 3.174
+  },
+  {
+    "metric": "zipf_slope_1999_n30",
+    "value": -1.0258
+  },
+  {
+    "metric": "primacy_1999",
+    "value": 3.534
+  },
+  {
+    "metric": "zipf_slope_2009_n30",
+    "value": -0.9963
+  },
+  {
+    "metric": "primacy_2009",
+    "value": 3.806
+  },
+  {
+    "metric": "zipf_slope_2019_n30",
+    "value": -0.9651
+  },
+  {
+    "metric": "zipf_se_2019_n30",
+    "value": 0.2492
+  },
+  {
+    "metric": "primacy_2019",
+    "value": 3.954
+  },
+  {
+    "metric": "zipf_slope_2026_n30",
+    "value": -0.9532
+  },
+  {
+    "metric": "primacy_2026",
+    "value": 3.991
+  },
+  {
+    "metric": "n_cities_2019",
+    "value": 199
+  }
+]

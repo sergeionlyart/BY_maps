@@ -51,6 +51,29 @@ cd web && vercel deploy --prod
 CI (GitHub Actions, `.github/workflows/ci.yml`): pytest → vitest → tsc →
 next build на каждый push.
 
+## Исследования и проверяемые артефакты
+
+Помимо карты, проект публикует исследования (`/research`) — каждое с
+методологическим блоком (8 обязательных полей, шаблон в
+[docs/templates/method-block.md](docs/templates/method-block.md)) и
+**проверяемым пакетом артефактов** по стандарту
+[docs/ARTIFACT_STANDARD.md](docs/ARTIFACT_STANDARD.md): данные + код +
+допущения + инструкции для LLM-агента. Раздел `/artifacts` объясняет, как
+скачать пакет, воспроизвести расчёт одной командой и оспорить допущения.
+
+```bash
+# сборка и валидация пакетов
+.venv/bin/python -m etl.zipf                       # расчёт INF-01 -> zipf.json
+.venv/bin/python -m etl.artifacts.build zipf       # пакет -> web/public/artifacts/
+.venv/bin/python -m etl.artifacts.build --all --check  # байт-воспроизводимость (CI-гейт)
+.venv/bin/python -m etl.artifacts.validate --all   # полный прогон run.sh + сверка допусков
+```
+
+Первый пилот конвейера — INF-01 «Иерархия городов и закон Ципфа»
+(`/research/zipf`, пакет `by-maps-zipf-v1.0.0.zip`). План работ —
+[docs/TASK_SPEC.md](docs/TASK_SPEC.md), дорожная карта прогноза 2026–2075 —
+[docs/ROADMAP_FORECAST.md](docs/ROADMAP_FORECAST.md).
+
 ## Данные и методика
 
 - [docs/SOURCES.md](docs/SOURCES.md) — все источники с URL и лицензиями;

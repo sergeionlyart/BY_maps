@@ -1,0 +1,2 @@
+id,url,description,license,accessed,sha256,how_to_get
+ps_cities,https://pop-stat.mashke.org/belarus-cities.htm,"Города и городские посёлки Беларуси: переписи 1897–2019 и текущие оценки до 2026 (компиляция Tim Bespyatov по официальным публикациям)","использование с указанием источника",2026-07-11,ef11ed6bca2872cca4af61dea4b6e4072865d104e93d141a60a1a52ef4aa55cb,"завендорено в sources/raw/ps_cities.html; повторная загрузка: python3 code/fetch.py"

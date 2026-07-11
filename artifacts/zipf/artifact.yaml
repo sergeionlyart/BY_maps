@@ -1,0 +1,112 @@
+# Декларативное описание проверяемого пакета INF-01 `zipf`
+# (ARTIFACT_STANDARD.md v1.0). Сборка: python -m etl.artifacts.build zipf
+
+id: zipf
+title: "Иерархия городов Беларуси и закон Ципфа, 1897–2026"
+version: "1.0.0"
+released: "2026-07-11"
+landing_url: "https://by-population-maps.vercel.app/research/zipf"
+authors:
+  - "Проект «Население Беларуси, 1897–2026»"
+
+# files: path - путь внутри пакета; from - путь в репозитории (иначе
+# берётся из artifacts/zipf/<path>); role: raw|intermediate|final|code|params|docs
+files:
+  - { path: README.md, role: docs }
+  - { path: CHANGELOG.md, role: docs }
+  - { path: AGENT.md, role: docs }
+  - { path: LIMITATIONS.md, role: docs }
+  - { path: PROVENANCE.md, role: docs }
+  - { path: CITATION.cff, role: docs }
+  - { path: LICENSE.md, role: docs }
+  - { path: sources/registry.csv, role: docs }
+  - { path: sources/raw/ps_cities.html, from: data/raw/ps_cities.html,
+      role: raw, license: "компиляция официальной статистики, pop-stat.mashke.org (Tim Bespyatov); использование с указанием источника" }
+  - { path: code/build.py, role: code }
+  - { path: code/fetch.py, role: code }
+  - { path: code/verify.py, role: code }
+  - { path: code/run.sh, role: code }
+  - { path: code/requirements.lock, role: code }
+  - { path: params/assumptions.yaml, role: params }
+  - { path: checks/tests/test_invariants.py, role: code }
+  - { path: data/final/zipf_ranks.csv, role: final, license: "CC BY 4.0" }
+  - { path: data/final/zipf_slopes.csv, role: final, license: "CC BY 4.0" }
+  - { path: data/final/primacy.csv, role: final, license: "CC BY 4.0" }
+  - { path: data/final/computed_results.json, role: final, license: "CC BY 4.0" }
+
+sources:
+  - id: ps_cities
+    url: "https://pop-stat.mashke.org/belarus-cities.htm"
+    description: "Города и городские посёлки Беларуси: переписи 1897–2019 и оценки до 2026 (компиляция Tim Bespyatov по официальным публикациям)"
+    license: "использование с указанием источника"
+    accessed: "2026-07-11"
+    sha256: "ef11ed6bca2872cca4af61dea4b6e4072865d104e93d141a60a1a52ef4aa55cb"
+    vendored: "sources/raw/ps_cities.html"
+    fetch: "python3 code/fetch.py"
+
+entrypoints:
+  reproduce: "code/run.sh"
+  verify: "python3 checks/tests/test_invariants.py"
+
+environment:
+  python: ">=3.10"
+  lock: "code/requirements.lock"
+  seed: null            # расчёт детерминирован, случайности нет
+
+# Контрольные значения: покрывают ВСЕ ключевые числа лендинга - наклон и
+# примацию каждого из 12 срезов + SE базовой оценки (для ДИ на странице).
+# Допуски строгие (расчёт детерминирован): 0.001 ловит любое изменение
+# данных или метода, оставляя запас на платформенное округление float.
+expected_results:
+  - { metric: zipf_slope_1897_n30, value: -1.1324, tolerance: 0.001,
+      description: "наклон rank-size по топ-30, перепись 1897 (Габэ-Ибрагимов)" }
+  - { metric: zipf_slope_1923_n30, value: -1.0496, tolerance: 0.001,
+      description: "наклон по топ-30, перепись 1923 (Польша/БССР)" }
+  - { metric: zipf_slope_1926_n30, value: -1.0004, tolerance: 0.001,
+      description: "наклон по топ-30, перепись 1926" }
+  - { metric: zipf_slope_1939_n30, value: -1.1204, tolerance: 0.001,
+      description: "наклон по топ-30, перепись 1939" }
+  - { metric: zipf_slope_1959_n30, value: -0.9817, tolerance: 0.001,
+      description: "наклон по топ-30, перепись 1959" }
+  - { metric: zipf_slope_1970_n30, value: -1.0155, tolerance: 0.001,
+      description: "наклон по топ-30, перепись 1970" }
+  - { metric: zipf_slope_1979_n30, value: -0.9984, tolerance: 0.001,
+      description: "наклон по топ-30, перепись 1979" }
+  - { metric: zipf_slope_1989_n30, value: -1.0105, tolerance: 0.001,
+      description: "наклон по топ-30, перепись 1989" }
+  - { metric: zipf_slope_1999_n30, value: -1.0258, tolerance: 0.001,
+      description: "наклон по топ-30, перепись 1999" }
+  - { metric: zipf_slope_2009_n30, value: -0.9963, tolerance: 0.001,
+      description: "наклон по топ-30, перепись 2009" }
+  - { metric: zipf_slope_2019_n30, value: -0.9651, tolerance: 0.001,
+      description: "наклон по топ-30, перепись 2019" }
+  - { metric: zipf_slope_2026_n30, value: -0.9532, tolerance: 0.001,
+      description: "наклон по топ-30, оценка на 01.01.2026" }
+  - { metric: zipf_se_2019_n30, value: 0.2492, tolerance: 0.001,
+      description: "ст. ошибка наклона 2019 (|b|*sqrt(2/30)) - основа 95% ДИ на лендинге" }
+  - { metric: primacy_1897, value: 1.38, tolerance: 0.001,
+      description: "примация: Минск / второй город (Витебск), 1897" }
+  - { metric: primacy_1923, value: 1.224, tolerance: 0.001,
+      description: "примация, 1923" }
+  - { metric: primacy_1926, value: 1.355, tolerance: 0.001,
+      description: "примация, 1926" }
+  - { metric: primacy_1939, value: 1.428, tolerance: 0.001,
+      description: "примация, 1939" }
+  - { metric: primacy_1959, value: 3.066, tolerance: 0.001,
+      description: "примация: Минск / Гомель, 1959 (послевоенный перелом)" }
+  - { metric: primacy_1970, value: 3.332, tolerance: 0.001,
+      description: "примация, 1970" }
+  - { metric: primacy_1979, value: 3.297, tolerance: 0.001,
+      description: "примация, 1979" }
+  - { metric: primacy_1989, value: 3.174, tolerance: 0.001,
+      description: "примация, 1989" }
+  - { metric: primacy_1999, value: 3.534, tolerance: 0.001,
+      description: "примация, 1999" }
+  - { metric: primacy_2009, value: 3.806, tolerance: 0.001,
+      description: "примация, 2009" }
+  - { metric: primacy_2019, value: 3.954, tolerance: 0.001,
+      description: "примация: Минск / Гомель, 2019 (срез лендинга по умолчанию)" }
+  - { metric: primacy_2026, value: 3.991, tolerance: 0.001,
+      description: "примация: Минск / Гомель, 2026 (ципфовское ожидание ~2)" }
+  - { metric: n_cities_2019, value: 199, tolerance: 0,
+      description: "городских НП с данными переписи 2019 в источнике" }
