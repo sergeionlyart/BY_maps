@@ -39,8 +39,9 @@ export const RESEARCH: ResearchEntry[] = [
     title: 'Зарплата × динамика населения',
     question:
       'Следует ли население за деньгами: эластичность десятилетней динамики района по зарплатному дифференциалу к Минску и аномалии (моногорода, агрогородки)?',
-    status: 'planned',
+    status: 'published',
     stage: 6,
+    artifact: { file: 'by-maps-wages-v1.0.0.zip', version: '1.0.0', sizeKb: 136 },
   },
   {
     slug: 'access',

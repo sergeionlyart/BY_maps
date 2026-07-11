@@ -19,6 +19,12 @@ stage4:           ## INF-02 + INF-07: aging.json, chernobyl.json
 	$(PY) -m etl.aging
 	$(PY) -m etl.chernobyl
 
+wpf3:             ## WP-F3: зеркальная статистика, adjustment.csv
+	$(PY) -m etl.mirror
+
+stage6:           ## INF-03: wages.json
+	$(PY) -m etl.wages
+
 test:             ## все проверки данных
 	$(PY) -m pytest etl/tests/ -q
 

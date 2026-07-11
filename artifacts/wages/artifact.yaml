@@ -1,0 +1,82 @@
+# Проверяемый пакет INF-03 «Зарплата x динамика населения».
+# Сборка: python -m etl.artifacts.build wages
+
+id: wages
+title: "Зарплата и динамика населения районов Беларуси, 2010–2025: дифференциалы, классификация 3x3, эластичность"
+version: "1.0.0"
+released: "2026-07-11"
+landing_url: "https://by-population-maps.vercel.app/research/wages"
+authors:
+  - "Проект «Население Беларуси, 1897–2026»"
+
+files:
+  - { path: README.md, role: docs }
+  - { path: CHANGELOG.md, role: docs }
+  - { path: AGENT.md, role: docs }
+  - { path: LIMITATIONS.md, role: docs }
+  - { path: PROVENANCE.md, role: docs }
+  - { path: CITATION.cff, role: docs }
+  - { path: LICENSE.md, role: docs }
+  - { path: sources/registry.csv, from: data/raw/wages/registry.csv, role: docs }
+  # сырьё: ответы API дата-портала Белстата (sha256 в реестре)
+  - { path: data/raw/wages/wage_10218000003_2010-2019.json, from: data/raw/wages/wage_10218000003_2010-2019.json, role: raw, license: "открытые данные Белстата" }
+  - { path: data/raw/wages/wage_10218000003_2020-2026.json, from: data/raw/wages/wage_10218000003_2020-2026.json, role: raw, license: "открытые данные Белстата" }
+  - { path: data/raw/wages/grp_pc_10202100055_2010-2019.json, from: data/raw/wages/grp_pc_10202100055_2010-2019.json, role: raw, license: "открытые данные Белстата" }
+  - { path: data/raw/wages/grp_pc_10202100055_2020-2026.json, from: data/raw/wages/grp_pc_10202100055_2020-2026.json, role: raw, license: "открытые данные Белстата" }
+  # ряды населения районов (база проекта)
+  - { path: web/public/data/data.json, from: web/public/data/data.json, role: intermediate, license: "CC BY 4.0" }
+  # код
+  - { path: etl/__init__.py, from: artifacts/wages/shims/etl_init.py, role: code }
+  - { path: etl/common.py, from: artifacts/wages/shims/common.py, role: code }
+  - { path: etl/registry.py, from: etl/registry.py, role: code }
+  - { path: etl/census_age.py, from: etl/census_age.py, role: code }
+  - { path: etl/wages.py, from: etl/wages.py, role: code }
+  - { path: params/assumptions.yaml, role: params }
+  - { path: code/run.sh, role: code }
+  - { path: code/verify.py, role: code }
+  - { path: code/requirements.lock, role: code }
+  - { path: checks/tests/test_invariants.py, role: code }
+  # итоговые данные - ровно те, что на лендинге
+  - { path: data/final/computed_results.json, role: final, license: "CC BY 4.0" }
+  - { path: web/public/data/wages.json, from: web/public/data/wages.json, role: final, license: "CC BY 4.0" }
+  - { path: data/curated/wages.csv, from: data/curated/wages.csv, role: final, license: "CC BY 4.0" }
+
+sources:
+  - id: dataportal_wage
+    url: "https://dataportal.belstat.gov.by/osids-public-api/indicator/indicatorValuesSearch"
+    description: "Индикатор 10218000003 (зарплата, годовая, по районам), 10202100055 (ВРП на душу); протокол и тела запросов - sources/registry.csv"
+    license: "открытые данные Белстата"
+    accessed: "2026-07-11"
+
+entrypoints:
+  reproduce: "code/run.sh"
+  verify: "python3 checks/tests/test_invariants.py"
+
+environment:
+  python: ">=3.10"
+  lock: "code/requirements.lock"
+  seed: null   # расчёт детерминирован, случайности нет
+
+expected_results:
+  - { metric: beta_main, value: 54.333, tolerance: 0.001,
+      description: "основная регрессия: п.п. динамики за десятилетие на единицу ln(дифференциала); +10% дифференциала = +5,2 п.п." }
+  - { metric: se_main, value: 5.671, tolerance: 0.001,
+      description: "классическая SE основного коэффициента (t = 9,6)" }
+  - { metric: se_hc1_main, value: 11.35, tolerance: 0.001,
+      description: "робастная HC1 SE основного коэффициента (t = 4,8; гетероскедастичность сильная)" }
+  - { metric: r2_main, value: 0.459, tolerance: 0.001,
+      description: "R² основной спецификации (n = 118)" }
+  - { metric: beta_no_suburbs, value: 28.261, tolerance: 0.001,
+      description: "без 4 пригородов Минска: вдвое слабее, но значимо (t = 4,5) - половина силы связи агломерационная" }
+  - { metric: beta_window_2009_2019, value: 57.418, tolerance: 0.001,
+      description: "переписное окно 2009-2019: знак и величина подтверждаются" }
+  - { metric: beta_weighted, value: 33.942, tolerance: 0.001,
+      description: "WLS с весом по размеру райцентра" }
+  - { metric: wage_rel_r-salihorski, value: 1.013, tolerance: 0.0005,
+      description: "Солигорский район: единственный дифференциал > 1 (калий); при этом динамика -6,9% - крупнейший отрицательный остаток" }
+  - { metric: diag_3x3, value: 43, tolerance: 0,
+      description: "районов на главной диагонали классификации (w0p0 + w2p2) из 118" }
+  - { metric: wage_BY_2025, value: 2679.7, tolerance: 0.05,
+      description: "контроль: средняя зарплата по стране 2025 = официальная публикация" }
+  - { metric: outliers_n, value: 8, tolerance: 0,
+      description: "выбросов регрессии (топ |остатка|): пригороды Минска, Солигорск, Островец..." }

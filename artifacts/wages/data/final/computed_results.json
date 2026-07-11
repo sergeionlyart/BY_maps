@@ -1,0 +1,1058 @@
+[
+ {
+  "metric": "beta_main",
+  "value": 54.333
+ },
+ {
+  "metric": "beta_no_control",
+  "value": 49.554
+ },
+ {
+  "metric": "beta_no_suburbs",
+  "value": 28.261
+ },
+ {
+  "metric": "beta_weighted",
+  "value": 33.942
+ },
+ {
+  "metric": "beta_window_2009_2019",
+  "value": 57.418
+ },
+ {
+  "metric": "diag_3x3",
+  "value": 43
+ },
+ {
+  "metric": "n_main",
+  "value": 118
+ },
+ {
+  "metric": "n_no_control",
+  "value": 118
+ },
+ {
+  "metric": "n_no_suburbs",
+  "value": 114
+ },
+ {
+  "metric": "n_weighted",
+  "value": 118
+ },
+ {
+  "metric": "n_window_2009_2019",
+  "value": 118
+ },
+ {
+  "metric": "outliers_n",
+  "value": 8
+ },
+ {
+  "metric": "pop_change_r-akciabrski",
+  "value": -11.72
+ },
+ {
+  "metric": "pop_change_r-arshanski",
+  "value": -12.1
+ },
+ {
+  "metric": "pop_change_r-ashmianski",
+  "value": -7.76
+ },
+ {
+  "metric": "pop_change_r-asipovicki",
+  "value": -12.43
+ },
+ {
+  "metric": "pop_change_r-astraviecki",
+  "value": 19.62
+ },
+ {
+  "metric": "pop_change_r-babrujski",
+  "value": -7.84
+ },
+ {
+  "metric": "pop_change_r-baranavicki",
+  "value": -18.05
+ },
+ {
+  "metric": "pop_change_r-barysauski",
+  "value": -8.73
+ },
+ {
+  "metric": "pop_change_r-bialynicki",
+  "value": -12.16
+ },
+ {
+  "metric": "pop_change_r-biarezinski",
+  "value": -7.76
+ },
+ {
+  "metric": "pop_change_r-biarozauski",
+  "value": -11.23
+ },
+ {
+  "metric": "pop_change_r-bierastavicki",
+  "value": -11.13
+ },
+ {
+  "metric": "pop_change_r-bieshankovicki",
+  "value": -18.39
+ },
+ {
+  "metric": "pop_change_r-brahinski",
+  "value": -8.0
+ },
+ {
+  "metric": "pop_change_r-braslauski",
+  "value": -14.76
+ },
+ {
+  "metric": "pop_change_r-brescki",
+  "value": 13.21
+ },
+ {
+  "metric": "pop_change_r-buda-kashalouski",
+  "value": -8.25
+ },
+ {
+  "metric": "pop_change_r-bychauski",
+  "value": -10.94
+ },
+ {
+  "metric": "pop_change_r-chacherski",
+  "value": -3.58
+ },
+ {
+  "metric": "pop_change_r-chashnicki",
+  "value": -18.86
+ },
+ {
+  "metric": "pop_change_r-chavuski",
+  "value": -13.97
+ },
+ {
+  "metric": "pop_change_r-chervienski",
+  "value": 4.41
+ },
+ {
+  "metric": "pop_change_r-cherykauski",
+  "value": -11.64
+ },
+ {
+  "metric": "pop_change_r-chocimski",
+  "value": -16.87
+ },
+ {
+  "metric": "pop_change_r-chojnicki",
+  "value": -9.23
+ },
+ {
+  "metric": "pop_change_r-dobrushski",
+  "value": -7.66
+ },
+ {
+  "metric": "pop_change_r-dokshycki",
+  "value": -16.63
+ },
+ {
+  "metric": "pop_change_r-drahichynski",
+  "value": -14.27
+ },
+ {
+  "metric": "pop_change_r-drybinski",
+  "value": -12.31
+ },
+ {
+  "metric": "pop_change_r-dubrovienski",
+  "value": -13.14
+ },
+ {
+  "metric": "pop_change_r-dziarzhynski",
+  "value": 11.86
+ },
+ {
+  "metric": "pop_change_r-dziatlauski",
+  "value": -15.17
+ },
+ {
+  "metric": "pop_change_r-hancavicki",
+  "value": -16.19
+ },
+ {
+  "metric": "pop_change_r-haradocki",
+  "value": -15.69
+ },
+ {
+  "metric": "pop_change_r-hluski",
+  "value": -17.74
+ },
+ {
+  "metric": "pop_change_r-hlybocki",
+  "value": -13.73
+ },
+ {
+  "metric": "pop_change_r-homielski",
+  "value": -11.59
+ },
+ {
+  "metric": "pop_change_r-horacki",
+  "value": -18.92
+ },
+ {
+  "metric": "pop_change_r-hrodzienski",
+  "value": -3.27
+ },
+ {
+  "metric": "pop_change_r-iujeuski",
+  "value": -23.58
+ },
+ {
+  "metric": "pop_change_r-ivacevicki",
+  "value": -11.16
+ },
+ {
+  "metric": "pop_change_r-ivanauski",
+  "value": -13.98
+ },
+ {
+  "metric": "pop_change_r-jelski",
+  "value": -13.88
+ },
+ {
+  "metric": "pop_change_r-kalinkavicki",
+  "value": -11.01
+ },
+ {
+  "metric": "pop_change_r-kamianiecki",
+  "value": -15.72
+ },
+ {
+  "metric": "pop_change_r-kapylski",
+  "value": -10.31
+ },
+ {
+  "metric": "pop_change_r-karelicki",
+  "value": -15.97
+ },
+ {
+  "metric": "pop_change_r-karmianski",
+  "value": -7.01
+ },
+ {
+  "metric": "pop_change_r-kasciukovicki",
+  "value": -12.86
+ },
+ {
+  "metric": "pop_change_r-kirauski",
+  "value": -16.72
+ },
+ {
+  "metric": "pop_change_r-klecki",
+  "value": -13.24
+ },
+ {
+  "metric": "pop_change_r-klichauski",
+  "value": -13.45
+ },
+ {
+  "metric": "pop_change_r-klimavicki",
+  "value": -15.81
+ },
+ {
+  "metric": "pop_change_r-kobrynski",
+  "value": -5.6
+ },
+ {
+  "metric": "pop_change_r-krasnapolski",
+  "value": -14.47
+ },
+ {
+  "metric": "pop_change_r-kruhlanski",
+  "value": -14.87
+ },
+ {
+  "metric": "pop_change_r-krupski",
+  "value": -9.5
+ },
+ {
+  "metric": "pop_change_r-krychauski",
+  "value": -16.9
+ },
+ {
+  "metric": "pop_change_r-lachavicki",
+  "value": -19.33
+ },
+ {
+  "metric": "pop_change_r-lahojski",
+  "value": 9.22
+ },
+ {
+  "metric": "pop_change_r-lelchycki",
+  "value": -7.35
+ },
+ {
+  "metric": "pop_change_r-lepielski",
+  "value": -10.66
+ },
+ {
+  "metric": "pop_change_r-lidski",
+  "value": -0.52
+ },
+ {
+  "metric": "pop_change_r-lojeuski",
+  "value": -15.78
+ },
+ {
+  "metric": "pop_change_r-loznienski",
+  "value": -8.98
+ },
+ {
+  "metric": "pop_change_r-lubanski",
+  "value": -13.83
+ },
+ {
+  "metric": "pop_change_r-luniniecki",
+  "value": -11.67
+ },
+ {
+  "metric": "pop_change_r-mahilouski",
+  "value": -2.53
+ },
+ {
+  "metric": "pop_change_r-maladziechanski",
+  "value": -6.71
+ },
+ {
+  "metric": "pop_change_r-malarycki",
+  "value": -9.67
+ },
+ {
+  "metric": "pop_change_r-mastouski",
+  "value": -15.98
+ },
+ {
+  "metric": "pop_change_r-mazyrski",
+  "value": -4.55
+ },
+ {
+  "metric": "pop_change_r-miadzielski",
+  "value": -11.4
+ },
+ {
+  "metric": "pop_change_r-mijorski",
+  "value": -19.51
+ },
+ {
+  "metric": "pop_change_r-minski",
+  "value": 48.7
+ },
+ {
+  "metric": "pop_change_r-mscislauski",
+  "value": -18.95
+ },
+ {
+  "metric": "pop_change_r-naraulanski",
+  "value": -3.16
+ },
+ {
+  "metric": "pop_change_r-navahrudski",
+  "value": -13.04
+ },
+ {
+  "metric": "pop_change_r-niasvizhski",
+  "value": -2.39
+ },
+ {
+  "metric": "pop_change_r-pastauski",
+  "value": -15.99
+ },
+ {
+  "metric": "pop_change_r-pietrykauski",
+  "value": -14.78
+ },
+ {
+  "metric": "pop_change_r-pinski",
+  "value": -14.84
+ },
+ {
+  "metric": "pop_change_r-polacki",
+  "value": -13.59
+ },
+ {
+  "metric": "pop_change_r-pruzhanski",
+  "value": -16.64
+ },
+ {
+  "metric": "pop_change_r-puchavicki",
+  "value": 1.66
+ },
+ {
+  "metric": "pop_change_r-rahachouski",
+  "value": -14.8
+ },
+ {
+  "metric": "pop_change_r-rasonski",
+  "value": -17.83
+ },
+ {
+  "metric": "pop_change_r-rechycki",
+  "value": -6.23
+ },
+ {
+  "metric": "pop_change_r-salihorski",
+  "value": -6.86
+ },
+ {
+  "metric": "pop_change_r-sharkoushchynski",
+  "value": -20.44
+ },
+ {
+  "metric": "pop_change_r-shchuchynski",
+  "value": -26.42
+ },
+ {
+  "metric": "pop_change_r-shklouski",
+  "value": -16.11
+ },
+ {
+  "metric": "pop_change_r-shumilinski",
+  "value": -14.83
+ },
+ {
+  "metric": "pop_change_r-siennienski",
+  "value": -19.78
+ },
+ {
+  "metric": "pop_change_r-slauharadski",
+  "value": -11.08
+ },
+ {
+  "metric": "pop_change_r-slonimski",
+  "value": -8.37
+ },
+ {
+  "metric": "pop_change_r-slucki",
+  "value": -8.48
+ },
+ {
+  "metric": "pop_change_r-smalavicki",
+  "value": 29.16
+ },
+ {
+  "metric": "pop_change_r-smarhonski",
+  "value": -10.05
+ },
+ {
+  "metric": "pop_change_r-staradarozhski",
+  "value": -6.59
+ },
+ {
+  "metric": "pop_change_r-staubcouski",
+  "value": -6.84
+ },
+ {
+  "metric": "pop_change_r-stolinski",
+  "value": -9.32
+ },
+ {
+  "metric": "pop_change_r-svietlahorski",
+  "value": -12.61
+ },
+ {
+  "metric": "pop_change_r-svislacki",
+  "value": -25.43
+ },
+ {
+  "metric": "pop_change_r-talachynski",
+  "value": -17.16
+ },
+ {
+  "metric": "pop_change_r-ushacki",
+  "value": -19.23
+ },
+ {
+  "metric": "pop_change_r-uzdzienski",
+  "value": 2.43
+ },
+ {
+  "metric": "pop_change_r-valozhynski",
+  "value": -2.32
+ },
+ {
+  "metric": "pop_change_r-vaukavyski",
+  "value": -11.66
+ },
+ {
+  "metric": "pop_change_r-viciebski",
+  "value": -25.26
+ },
+ {
+  "metric": "pop_change_r-vierchniadzvinski",
+  "value": -17.43
+ },
+ {
+  "metric": "pop_change_r-vietkauski",
+  "value": -4.77
+ },
+ {
+  "metric": "pop_change_r-vilejski",
+  "value": -6.56
+ },
+ {
+  "metric": "pop_change_r-voranauski",
+  "value": -24.02
+ },
+ {
+  "metric": "pop_change_r-zelvienski",
+  "value": -22.29
+ },
+ {
+  "metric": "pop_change_r-zhabinkauski",
+  "value": -0.44
+ },
+ {
+  "metric": "pop_change_r-zhlobinski",
+  "value": -4.94
+ },
+ {
+  "metric": "pop_change_r-zhytkavicki",
+  "value": -13.39
+ },
+ {
+  "metric": "r2_main",
+  "value": 0.459
+ },
+ {
+  "metric": "r2_no_control",
+  "value": 0.373
+ },
+ {
+  "metric": "r2_no_suburbs",
+  "value": 0.21
+ },
+ {
+  "metric": "r2_weighted",
+  "value": 0.167
+ },
+ {
+  "metric": "r2_window_2009_2019",
+  "value": 0.448
+ },
+ {
+  "metric": "se_hc1_main",
+  "value": 11.35
+ },
+ {
+  "metric": "se_hc1_no_control",
+  "value": 13.597
+ },
+ {
+  "metric": "se_hc1_no_suburbs",
+  "value": 10.822
+ },
+ {
+  "metric": "se_hc1_weighted",
+  "value": 16.934
+ },
+ {
+  "metric": "se_hc1_window_2009_2019",
+  "value": 13.97
+ },
+ {
+  "metric": "se_main",
+  "value": 5.671
+ },
+ {
+  "metric": "se_no_control",
+  "value": 5.96
+ },
+ {
+  "metric": "se_no_suburbs",
+  "value": 6.307
+ },
+ {
+  "metric": "se_weighted",
+  "value": 7.396
+ },
+ {
+  "metric": "se_window_2009_2019",
+  "value": 6.159
+ },
+ {
+  "metric": "wage_BY_2025",
+  "value": 2679.7
+ },
+ {
+  "metric": "wage_rel_r-akciabrski",
+  "value": 0.5023
+ },
+ {
+  "metric": "wage_rel_r-arshanski",
+  "value": 0.5906
+ },
+ {
+  "metric": "wage_rel_r-ashmianski",
+  "value": 0.568
+ },
+ {
+  "metric": "wage_rel_r-asipovicki",
+  "value": 0.6224
+ },
+ {
+  "metric": "wage_rel_r-astraviecki",
+  "value": 0.7607
+ },
+ {
+  "metric": "wage_rel_r-babrujski",
+  "value": 0.5101
+ },
+ {
+  "metric": "wage_rel_r-baranavicki",
+  "value": 0.5914
+ },
+ {
+  "metric": "wage_rel_r-barysauski",
+  "value": 0.6364
+ },
+ {
+  "metric": "wage_rel_r-bialynicki",
+  "value": 0.5815
+ },
+ {
+  "metric": "wage_rel_r-biarezinski",
+  "value": 0.5713
+ },
+ {
+  "metric": "wage_rel_r-biarozauski",
+  "value": 0.6371
+ },
+ {
+  "metric": "wage_rel_r-bierastavicki",
+  "value": 0.6118
+ },
+ {
+  "metric": "wage_rel_r-bieshankovicki",
+  "value": 0.5124
+ },
+ {
+  "metric": "wage_rel_r-brahinski",
+  "value": 0.5284
+ },
+ {
+  "metric": "wage_rel_r-braslauski",
+  "value": 0.5026
+ },
+ {
+  "metric": "wage_rel_r-brescki",
+  "value": 0.6235
+ },
+ {
+  "metric": "wage_rel_r-buda-kashalouski",
+  "value": 0.5417
+ },
+ {
+  "metric": "wage_rel_r-bychauski",
+  "value": 0.5255
+ },
+ {
+  "metric": "wage_rel_r-chacherski",
+  "value": 0.5426
+ },
+ {
+  "metric": "wage_rel_r-chashnicki",
+  "value": 0.6104
+ },
+ {
+  "metric": "wage_rel_r-chavuski",
+  "value": 0.5129
+ },
+ {
+  "metric": "wage_rel_r-chervienski",
+  "value": 0.5893
+ },
+ {
+  "metric": "wage_rel_r-cherykauski",
+  "value": 0.5189
+ },
+ {
+  "metric": "wage_rel_r-chocimski",
+  "value": 0.4936
+ },
+ {
+  "metric": "wage_rel_r-chojnicki",
+  "value": 0.5183
+ },
+ {
+  "metric": "wage_rel_r-dobrushski",
+  "value": 0.5243
+ },
+ {
+  "metric": "wage_rel_r-dokshycki",
+  "value": 0.5386
+ },
+ {
+  "metric": "wage_rel_r-drahichynski",
+  "value": 0.5399
+ },
+ {
+  "metric": "wage_rel_r-drybinski",
+  "value": 0.514
+ },
+ {
+  "metric": "wage_rel_r-dubrovienski",
+  "value": 0.5452
+ },
+ {
+  "metric": "wage_rel_r-dziarzhynski",
+  "value": 0.7713
+ },
+ {
+  "metric": "wage_rel_r-dziatlauski",
+  "value": 0.5505
+ },
+ {
+  "metric": "wage_rel_r-hancavicki",
+  "value": 0.5225
+ },
+ {
+  "metric": "wage_rel_r-haradocki",
+  "value": 0.5097
+ },
+ {
+  "metric": "wage_rel_r-hluski",
+  "value": 0.5124
+ },
+ {
+  "metric": "wage_rel_r-hlybocki",
+  "value": 0.5459
+ },
+ {
+  "metric": "wage_rel_r-homielski",
+  "value": 0.5851
+ },
+ {
+  "metric": "wage_rel_r-horacki",
+  "value": 0.5608
+ },
+ {
+  "metric": "wage_rel_r-hrodzienski",
+  "value": 0.662
+ },
+ {
+  "metric": "wage_rel_r-iujeuski",
+  "value": 0.5061
+ },
+ {
+  "metric": "wage_rel_r-ivacevicki",
+  "value": 0.5772
+ },
+ {
+  "metric": "wage_rel_r-ivanauski",
+  "value": 0.5713
+ },
+ {
+  "metric": "wage_rel_r-jelski",
+  "value": 0.5167
+ },
+ {
+  "metric": "wage_rel_r-kalinkavicki",
+  "value": 0.5767
+ },
+ {
+  "metric": "wage_rel_r-kamianiecki",
+  "value": 0.6226
+ },
+ {
+  "metric": "wage_rel_r-kapylski",
+  "value": 0.5753
+ },
+ {
+  "metric": "wage_rel_r-karelicki",
+  "value": 0.5413
+ },
+ {
+  "metric": "wage_rel_r-karmianski",
+  "value": 0.4818
+ },
+ {
+  "metric": "wage_rel_r-kasciukovicki",
+  "value": 0.5911
+ },
+ {
+  "metric": "wage_rel_r-kirauski",
+  "value": 0.5273
+ },
+ {
+  "metric": "wage_rel_r-klecki",
+  "value": 0.5785
+ },
+ {
+  "metric": "wage_rel_r-klichauski",
+  "value": 0.5274
+ },
+ {
+  "metric": "wage_rel_r-klimavicki",
+  "value": 0.5238
+ },
+ {
+  "metric": "wage_rel_r-kobrynski",
+  "value": 0.6002
+ },
+ {
+  "metric": "wage_rel_r-krasnapolski",
+  "value": 0.5086
+ },
+ {
+  "metric": "wage_rel_r-kruhlanski",
+  "value": 0.5256
+ },
+ {
+  "metric": "wage_rel_r-krupski",
+  "value": 0.5876
+ },
+ {
+  "metric": "wage_rel_r-krychauski",
+  "value": 0.567
+ },
+ {
+  "metric": "wage_rel_r-lachavicki",
+  "value": 0.57
+ },
+ {
+  "metric": "wage_rel_r-lahojski",
+  "value": 0.681
+ },
+ {
+  "metric": "wage_rel_r-lelchycki",
+  "value": 0.5122
+ },
+ {
+  "metric": "wage_rel_r-lepielski",
+  "value": 0.5564
+ },
+ {
+  "metric": "wage_rel_r-lidski",
+  "value": 0.5903
+ },
+ {
+  "metric": "wage_rel_r-lojeuski",
+  "value": 0.506
+ },
+ {
+  "metric": "wage_rel_r-loznienski",
+  "value": 0.5056
+ },
+ {
+  "metric": "wage_rel_r-lubanski",
+  "value": 0.5773
+ },
+ {
+  "metric": "wage_rel_r-luniniecki",
+  "value": 0.595
+ },
+ {
+  "metric": "wage_rel_r-mahilouski",
+  "value": 0.6377
+ },
+ {
+  "metric": "wage_rel_r-maladziechanski",
+  "value": 0.6156
+ },
+ {
+  "metric": "wage_rel_r-malarycki",
+  "value": 0.5368
+ },
+ {
+  "metric": "wage_rel_r-mastouski",
+  "value": 0.5462
+ },
+ {
+  "metric": "wage_rel_r-mazyrski",
+  "value": 0.7123
+ },
+ {
+  "metric": "wage_rel_r-miadzielski",
+  "value": 0.5741
+ },
+ {
+  "metric": "wage_rel_r-mijorski",
+  "value": 0.4991
+ },
+ {
+  "metric": "wage_rel_r-minski",
+  "value": 0.8554
+ },
+ {
+  "metric": "wage_rel_r-mscislauski",
+  "value": 0.483
+ },
+ {
+  "metric": "wage_rel_r-naraulanski",
+  "value": 0.5501
+ },
+ {
+  "metric": "wage_rel_r-navahrudski",
+  "value": 0.5584
+ },
+ {
+  "metric": "wage_rel_r-niasvizhski",
+  "value": 0.6768
+ },
+ {
+  "metric": "wage_rel_r-pastauski",
+  "value": 0.5395
+ },
+ {
+  "metric": "wage_rel_r-pietrykauski",
+  "value": 0.5426
+ },
+ {
+  "metric": "wage_rel_r-pinski",
+  "value": 0.558
+ },
+ {
+  "metric": "wage_rel_r-polacki",
+  "value": 0.6186
+ },
+ {
+  "metric": "wage_rel_r-pruzhanski",
+  "value": 0.603
+ },
+ {
+  "metric": "wage_rel_r-puchavicki",
+  "value": 0.6623
+ },
+ {
+  "metric": "wage_rel_r-rahachouski",
+  "value": 0.5513
+ },
+ {
+  "metric": "wage_rel_r-rasonski",
+  "value": 0.5192
+ },
+ {
+  "metric": "wage_rel_r-rechycki",
+  "value": 0.7753
+ },
+ {
+  "metric": "wage_rel_r-salihorski",
+  "value": 1.013
+ },
+ {
+  "metric": "wage_rel_r-sharkoushchynski",
+  "value": 0.4591
+ },
+ {
+  "metric": "wage_rel_r-shchuchynski",
+  "value": 0.5788
+ },
+ {
+  "metric": "wage_rel_r-shklouski",
+  "value": 0.6119
+ },
+ {
+  "metric": "wage_rel_r-shumilinski",
+  "value": 0.5065
+ },
+ {
+  "metric": "wage_rel_r-siennienski",
+  "value": 0.5054
+ },
+ {
+  "metric": "wage_rel_r-slauharadski",
+  "value": 0.496
+ },
+ {
+  "metric": "wage_rel_r-slonimski",
+  "value": 0.5722
+ },
+ {
+  "metric": "wage_rel_r-slucki",
+  "value": 0.6151
+ },
+ {
+  "metric": "wage_rel_r-smalavicki",
+  "value": 0.7866
+ },
+ {
+  "metric": "wage_rel_r-smarhonski",
+  "value": 0.6224
+ },
+ {
+  "metric": "wage_rel_r-staradarozhski",
+  "value": 0.5882
+ },
+ {
+  "metric": "wage_rel_r-staubcouski",
+  "value": 0.6341
+ },
+ {
+  "metric": "wage_rel_r-stolinski",
+  "value": 0.5131
+ },
+ {
+  "metric": "wage_rel_r-svietlahorski",
+  "value": 0.7013
+ },
+ {
+  "metric": "wage_rel_r-svislacki",
+  "value": 0.5282
+ },
+ {
+  "metric": "wage_rel_r-talachynski",
+  "value": 0.5748
+ },
+ {
+  "metric": "wage_rel_r-ushacki",
+  "value": 0.4878
+ },
+ {
+  "metric": "wage_rel_r-uzdzienski",
+  "value": 0.6046
+ },
+ {
+  "metric": "wage_rel_r-valozhynski",
+  "value": 0.5838
+ },
+ {
+  "metric": "wage_rel_r-vaukavyski",
+  "value": 0.5997
+ },
+ {
+  "metric": "wage_rel_r-viciebski",
+  "value": 0.5905
+ },
+ {
+  "metric": "wage_rel_r-vierchniadzvinski",
+  "value": 0.5855
+ },
+ {
+  "metric": "wage_rel_r-vietkauski",
+  "value": 0.5174
+ },
+ {
+  "metric": "wage_rel_r-vilejski",
+  "value": 0.5699
+ },
+ {
+  "metric": "wage_rel_r-voranauski",
+  "value": 0.5295
+ },
+ {
+  "metric": "wage_rel_r-zelvienski",
+  "value": 0.5386
+ },
+ {
+  "metric": "wage_rel_r-zhabinkauski",
+  "value": 0.6139
+ },
+ {
+  "metric": "wage_rel_r-zhlobinski",
+  "value": 0.6772
+ },
+ {
+  "metric": "wage_rel_r-zhytkavicki",
+  "value": 0.5444
+ }
+]
