@@ -20,7 +20,7 @@ if (typeof window !== 'undefined') {
 }
 import type { DataFile, Metric, MapLevel, RaionMode } from '@/lib/types';
 import { valueAt, nearestPoint, formatNumber, formatPct, DTYPE_LABEL } from '@/lib/series';
-import { colorFor, legendStops } from '@/lib/scales';
+import { colorFor, legendStops, CITY_OVERLAY } from '@/lib/scales';
 
 interface Props {
   data: DataFile;
@@ -31,6 +31,8 @@ interface Props {
   raionMode: RaionMode;
   baseYear: number;
   showBorder1921: boolean;
+  /** Круги городов поверх хороплета (размер - население города). */
+  showCities: boolean;
   selected: string | null;
   onSelect: (id: string | null) => void;
 }
@@ -44,7 +46,7 @@ const METRIC_TITLE: Record<Metric, string> = {
 };
 
 export default function MapView(props: Props) {
-  const { data, geo, year, metric, level, raionMode, baseYear, showBorder1921, selected, onSelect } = props;
+  const { data, geo, year, metric, level, raionMode, baseYear, showBorder1921, showCities, selected, onSelect } = props;
   const divRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<maplibregl.Map | null>(null);
   const [ready, setReady] = useState(false);
@@ -184,8 +186,12 @@ export default function MapView(props: Props) {
     }, 300);
 
     const hitLayers = () => {
-      const lv = stateRef.current.level;
-      return lv === 'city' ? ['cities-circle'] : lv === 'raion' ? ['adm2-fill'] : ['adm1-fill'];
+      const s = stateRef.current;
+      if (s.level === 'city') return ['cities-circle'];
+      const base = s.level === 'raion' ? ['adm2-fill'] : ['adm1-fill'];
+      // при наложении городов круги в приоритете (queryRenderedFeatures
+      // возвращает фичи сверху вниз)
+      return s.showCities ? ['cities-circle', ...base] : base;
     };
 
     map.on('mousemove', (e) => {
@@ -216,13 +222,15 @@ export default function MapView(props: Props) {
 
     const adm2visible = level === 'raion';
     const adm1visible = level === 'oblast';
+    const citiesVisible = level === 'city' || showCities;
     for (const [layer, vis] of [
       ['adm2-fill', adm2visible], ['adm2-line', adm2visible],
       ['adm1-fill', adm1visible], ['adm1-line', adm1visible],
-      ['cities-circle', level === 'city'],
+      ['cities-circle', citiesVisible],
     ] as const) {
       map.setLayoutProperty(layer, 'visibility', vis ? 'visible' : 'none');
     }
+    map.setPaintProperty('cities-circle', 'circle-stroke-color', dark ? '#1a1a19' : '#fcfcfb');
     map.setLayoutProperty('border1921-line', 'visibility', showBorder1921 ? 'visible' : 'none');
 
     // заливка полигонов
@@ -233,17 +241,20 @@ export default function MapView(props: Props) {
         if (t.level === 'oblast' && level !== 'oblast') continue;
         const v = territoryMetric(t.id, stateRef.current);
         map.setFeatureState({ source: src, id: t.id }, {
-          color: v == null ? noData : colorFor(metric, level, v),
+          color: v == null ? noData : colorFor(metric, level, v, raionMode === 'noCenter'),
         });
-      } else if (t.level === 'city' && t.lon != null && level === 'city') {
+      } else if (t.level === 'city' && t.lon != null && citiesVisible) {
         const pop = valueAt(t.pop, year)?.value ?? null;
         const v = territoryMetric(t.id, stateRef.current);
-        const r = pop == null ? 0 : Math.max(2.2, Math.sqrt(pop) / 90);
+        const overlay = level !== 'city';
+        const r = pop == null ? 0 : Math.max(overlay ? 1.8 : 2.2, Math.sqrt(pop) / (overlay ? 110 : 90));
         map.setFeatureState({ source: 'cities', id: t.id }, {
           r,
-          color: metric === 'change'
-            ? (v == null ? '#9a9891' : colorFor('change', 'city', v))
-            : '#2a78d6',
+          color: overlay
+            ? (dark ? CITY_OVERLAY.dark : CITY_OVERLAY.light)
+            : metric === 'change'
+              ? (v == null ? '#9a9891' : colorFor('change', 'city', v))
+              : '#2a78d6',
         });
       }
     }
@@ -258,7 +269,7 @@ export default function MapView(props: Props) {
     map.setFilter('selected-line', ['==', ['get', 'id'], level === 'raion' && selected ? selected : '']);
     map.setFilter('selected-line-1', ['==', ['get', 'id'], level === 'oblast' && selected ? selected : '']);
     map.triggerRepaint();
-  }, [ready, data, year, metric, level, raionMode, baseYear, showBorder1921, selected, dark]);
+  }, [ready, data, year, metric, level, raionMode, baseYear, showBorder1921, showCities, selected, dark]);
 
   function territoryMetric(id: string, s: Props): number | null {
     const t = s.data.territories[id];
@@ -314,7 +325,8 @@ export default function MapView(props: Props) {
     );
   }
 
-  const stops = legendStops(metric, level);
+  const noCenterScale = level === 'raion' && raionMode === 'noCenter';
+  const stops = legendStops(metric, level, noCenterScale);
 
   return (
     <div className="map-wrap">
@@ -328,6 +340,7 @@ export default function MapView(props: Props) {
         <div className="lg-title">
           {METRIC_TITLE[metric]}
           {metric === 'change' ? `, % к ${baseYear} г.` : ''}
+          {noCenterScale ? ' — без городских центров' : ''}
         </div>
         {level === 'city' && metric !== 'change' ? (
           <div>Размер круга — численность населения города</div>
@@ -338,6 +351,12 @@ export default function MapView(props: Props) {
               {s.label}
             </div>
           ))
+        )}
+        {showCities && level !== 'city' && (
+          <div className="lg-row">
+            <span className="lg-circle" />
+            город (размер — население)
+          </div>
         )}
         {showBorder1921 && (
           <div className="lg-row">

@@ -24,11 +24,14 @@ export default function Page() {
   const [data, setData] = useState<DataFile | null>(null);
   const [geo, setGeo] = useState<GeoBundle | null>(null);
   const [year, setYear] = useState(2019);
-  const [metric, setMetric] = useState<Metric>('pop');
+  // стартовый вид - главный сюжет проекта: плотность сельской части районов
+  // (без городских центров) + города точками поверх
+  const [metric, setMetric] = useState<Metric>('density');
   const [level, setLevel] = useState<MapLevel>('raion');
-  const [raionMode, setRaionMode] = useState<RaionMode>('total');
+  const [raionMode, setRaionMode] = useState<RaionMode>('noCenter');
   const [baseYear, setBaseYear] = useState(1989);
   const [showBorder, setShowBorder] = useState(false);
+  const [showCities, setShowCities] = useState(true);
   const [selected, setSelected] = useState<string | null>(null);
   const [compare, setCompare] = useState<string[]>([]);
   const [tab, setTab] = useState<Tab>('territory');
@@ -110,6 +113,13 @@ export default function Page() {
           </div>
         )}
 
+        {level !== 'city' && (
+          <label className="toggle">
+            <input type="checkbox" checked={showCities} onChange={(e) => setShowCities(e.target.checked)} />
+            города точками
+          </label>
+        )}
+
         <label className="toggle">
           <input type="checkbox" checked={showBorder} onChange={(e) => setShowBorder(e.target.checked)} />
           граница 1921–1939
@@ -127,6 +137,7 @@ export default function Page() {
             raionMode={raionMode}
             baseYear={baseYear}
             showBorder1921={showBorder}
+            showCities={showCities}
             selected={selected}
             onSelect={select}
           />

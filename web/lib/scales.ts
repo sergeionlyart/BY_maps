@@ -17,6 +17,9 @@ const DENSITY_BREAKS: Record<MapLevel, number[]> = {
   oblast: [35, 40, 45, 50, 55, 60, 80, 1000],
   city: [],
 };
+/** Сельская плотность (район без городских центров) заметно ниже средней -
+ *  шкала с лучшим разрешением в диапазоне 5-35 чел/км². */
+const DENSITY_BREAKS_NOCENTER = [5, 8, 12, 16, 20, 25, 35, 60];
 const POP_BREAKS: Record<MapLevel, number[]> = {
   raion: [15_000, 25_000, 35_000, 50_000, 75_000, 120_000, 250_000, 500_000],
   oblast: [1_000_000, 1_100_000, 1_200_000, 1_300_000, 1_400_000, 1_500_000, 1_700_000, 2_000_000],
@@ -25,7 +28,7 @@ const POP_BREAKS: Record<MapLevel, number[]> = {
 /** Изменение, % к базовому году. */
 const CHANGE_BREAKS = [-0.5, -0.3, -0.15, -0.05, 0.05, 0.15, 0.3, 0.5];
 
-export function colorFor(metric: Metric, level: MapLevel, value: number | null): string {
+export function colorFor(metric: Metric, level: MapLevel, value: number | null, noCenter = false): string {
   if (value == null) return 'transparent';
   if (metric === 'change') {
     const b = CHANGE_BREAKS;
@@ -39,19 +42,23 @@ export function colorFor(metric: Metric, level: MapLevel, value: number | null):
     if (value <= b[7]) return DIV_POS[2];
     return DIV_POS[3];
   }
-  const breaks = metric === 'density' ? DENSITY_BREAKS[level] : POP_BREAKS[level];
+  const breaks = metric === 'density'
+    ? (noCenter && level === 'raion' ? DENSITY_BREAKS_NOCENTER : DENSITY_BREAKS[level])
+    : POP_BREAKS[level];
   let i = 0;
   while (i < breaks.length && value >= breaks[i]) i++;
   return SEQ[Math.min(i, SEQ.length - 1)];
 }
 
-export function legendStops(metric: Metric, level: MapLevel): { color: string; label: string }[] {
+export function legendStops(metric: Metric, level: MapLevel, noCenter = false): { color: string; label: string }[] {
   if (metric === 'change') {
     const labels = ['< −50', '−50…−30', '−30…−15', '−15…−5', '±5', '+5…15', '+15…30', '+30…50', '> +50'];
     const colors = [DIV_NEG[3], DIV_NEG[2], DIV_NEG[1], DIV_NEG[0], DIV_MID, DIV_POS[0], DIV_POS[1], DIV_POS[2], DIV_POS[3]];
     return colors.map((c, i) => ({ color: c, label: labels[i] }));
   }
-  const breaks = metric === 'density' ? DENSITY_BREAKS[level] : POP_BREAKS[level];
+  const breaks = metric === 'density'
+    ? (noCenter && level === 'raion' ? DENSITY_BREAKS_NOCENTER : DENSITY_BREAKS[level])
+    : POP_BREAKS[level];
   const fmt = (n: number) => metric === 'density' ? String(n) : n >= 1_000_000 ? (n / 1_000_000).toLocaleString('ru-RU') + ' млн' : (n / 1000) + ' тыс.';
   return SEQ.map((c, i) => {
     let label: string;
@@ -65,3 +72,6 @@ export function legendStops(metric: Metric, level: MapLevel): { color: string; l
 /** Категориальная палитра для сравнения территорий (референсная, слоты 1-4). */
 export const CAT = ['#2a78d6', '#1baf7a', '#eda100', '#4a3aa7'];
 export const CAT_DARK = ['#3987e5', '#199e70', '#c98500', '#9085e9'];
+
+/** Города поверх хороплета: тёплый янтарный, контрастный к синей шкале. */
+export const CITY_OVERLAY = { light: '#eda100', dark: '#c98500' };
