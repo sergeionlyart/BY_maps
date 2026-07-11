@@ -83,4 +83,4 @@ base-2050 = 7 529 тыс. (+1,0% к медиане WPP при гейте ±3%); 
 
 ---
 
-*Версия прогноза: v2026.1 · [Скачать проверяемый пакет (ZIP)](/artifacts/by-maps-forecast-v1.0.0.zip) · [Отчёт о валидации](https://github.com/sergeionlyart/BY_maps/blob/master/docs/notes/validation.md) · [Об артефактах](/artifacts)*
+*Версия прогноза: v2026.1 · [Скачать проверяемый пакет (ZIP)](/artifacts/by-maps-forecast-v1.0.1.zip) · [Отчёт о валидации](https://github.com/sergeionlyart/BY_maps/blob/master/docs/notes/validation.md) · [Об артефактах](/artifacts)*

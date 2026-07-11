@@ -22,6 +22,20 @@ export default function ForecastArtifactPage() {
 
       <h2>Версии</h2>
       <div className="card">
+        <div className="card-code">v1.0.1 · 2026-07-11 · git-тег artifact-forecast-v1.0.1 · прогноз v2026.1</div>
+        <p>
+          Исправление входных данных по итогам агентного аудита этапа 4:
+          устранена коллизия territory_id в age2009/age2019.csv (Октябрьский
+          район Минска против Октябрьского района Гомельской области). Все
+          результаты прогноза идентичны v1.0.0 — коллизия на модель не влияла.
+        </p>
+        <div className="card-foot">
+          <a href="/artifacts/by-maps-forecast-v1.0.1.zip" download>
+            ⬇ by-maps-forecast-v1.0.1.zip (822 КБ)
+          </a>
+        </div>
+      </div>
+      <div className="card">
         <div className="card-code">v1.0.0 · 2026-07-11 · git-тег artifact-forecast-v1.0.0 · прогноз v2026.1</div>
         <p>
           Первый релиз (этап MVP). Гейты: калибровка base-2050 = +1,0% к медиане

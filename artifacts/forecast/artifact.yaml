@@ -3,7 +3,7 @@
 
 id: forecast
 title: "Прогноз населения Беларуси 2026–2075, v2026.1 (страна, области, Минск)"
-version: "1.0.0"
+version: "1.0.1"
 released: "2026-07-11"
 landing_url: "https://by-population-maps.vercel.app/?sel=BY"
 authors:

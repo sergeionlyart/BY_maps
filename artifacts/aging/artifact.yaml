@@ -1,0 +1,81 @@
+# Проверяемый пакет INF-02 «Старение районов».
+# Сборка: python -m etl.artifacts.build aging
+
+id: aging
+title: "Старение районов Беларуси: индикаторы 2009/2019 и контрфактная передвижка без миграции"
+version: "1.0.0"
+released: "2026-07-11"
+landing_url: "https://by-population-maps.vercel.app/research/aging"
+authors:
+  - "Проект «Население Беларуси, 1897–2026»"
+
+files:
+  - { path: README.md, role: docs }
+  - { path: CHANGELOG.md, role: docs }
+  - { path: AGENT.md, role: docs }
+  - { path: LIMITATIONS.md, role: docs }
+  - { path: PROVENANCE.md, role: docs }
+  - { path: CITATION.cff, role: docs }
+  - { path: LICENSE.md, role: docs }
+  - { path: sources/registry.csv, from: data/raw/registry_wpf1.csv, role: docs }
+  # входные данные (пути повторяют репозиторий - код работает без правок)
+  - { path: data/curated/age2009.csv, from: data/curated/age2009.csv, role: intermediate, license: "CC BY 4.0" }
+  - { path: data/curated/age2019.csv, from: data/curated/age2019.csv, role: intermediate, license: "CC BY 4.0" }
+  - { path: data/curated/fertility_oblast.csv, from: data/curated/fertility_oblast.csv, role: intermediate, license: "CC BY 4.0" }
+  - { path: data/curated/mortality.csv, from: data/curated/mortality.csv, role: intermediate, license: "CC BY 4.0 (OWID)/HMD" }
+  # код: модуль aging + движок передвижки (подмножество etl.forecast)
+  - { path: etl/__init__.py, from: artifacts/aging/shims/etl_init.py, role: code }
+  - { path: etl/common.py, from: artifacts/aging/shims/common.py, role: code }
+  - { path: etl/aging.py, from: etl/aging.py, role: code }
+  - { path: etl/forecast/__init__.py, from: etl/forecast/__init__.py, role: code }
+  - { path: etl/forecast/data.py, from: etl/forecast/data.py, role: code }
+  - { path: etl/forecast/lifetable.py, from: etl/forecast/lifetable.py, role: code }
+  - { path: etl/forecast/ccmpp.py, from: etl/forecast/ccmpp.py, role: code }
+  - { path: etl/forecast/migration.py, from: etl/forecast/migration.py, role: code }
+  - { path: params/assumptions.yaml, role: params }
+  - { path: code/run.sh, role: code }
+  - { path: code/verify.py, role: code }
+  - { path: code/requirements.lock, role: code }
+  - { path: checks/tests/test_invariants.py, role: code }
+  # итоговые данные - ровно те, что на лендинге
+  - { path: data/final/computed_results.json, role: final, license: "CC BY 4.0" }
+  - { path: web/public/data/aging.json, from: web/public/data/aging.json, role: final, license: "CC BY 4.0" }
+  - { path: data/curated/aging_indicators.csv, from: data/curated/aging_indicators.csv, role: final, license: "CC BY 4.0" }
+
+sources:
+  - id: wpf1_registry
+    url: "см. sources/registry.csv - реестр источников WP-F1 (OLAP-куб F201N переписей 2009/2019, HMD via OWID, Демографический ежегодник 2019) с URL, лицензиями и sha256"
+    description: "Возрастно-половые структуры переписей и входы движка передвижки"
+    license: "по источникам (см. реестр)"
+    accessed: "2026-07-11"
+
+entrypoints:
+  reproduce: "code/run.sh"
+  verify: "python3 checks/tests/test_invariants.py"
+
+environment:
+  python: ">=3.10"
+  lock: "code/requirements.lock"
+  seed: null   # расчёт детерминирован, случайности нет
+
+expected_results:
+  - { metric: negative_natural_raions, value: 117, tolerance: 0,
+      description: "районов (из 118) с естественной убылью в контрфакте нулевой миграции, 2019-2039" }
+  - { metric: crossing_30pct_raions, value: 28, tolerance: 0,
+      description: "районов, пересекающих 30% доли 65+ в горизонте 60 лет" }
+  - { metric: share65_2019_r-svislacki, value: 26.0, tolerance: 0.05,
+      description: "доля 65+, Свислочский район (максимум по стране), %" }
+  - { metric: median2019_r-svislacki, value: 51.9, tolerance: 0.05,
+      description: "медианный возраст, Свислочский район, 2019" }
+  - { metric: yearsTo30_r-svislacki, value: 10, tolerance: 0,
+      description: "лет до порога 30% доли 65+, Свислочский район" }
+  - { metric: median2019_BY-HM, value: 37.8, tolerance: 0.05,
+      description: "медианный возраст Минска, 2019 (самая молодая структура)" }
+  - { metric: naturalCagr_BY-HM, value: -0.56, tolerance: 0.005,
+      description: "естественная динамика Минска при нулевой миграции, %/год: убыль даже у столицы" }
+  - { metric: share65_2019_r-zhlobinski, value: 10.9, tolerance: 0.05,
+      description: "доля 65+, Жлобинский район (минимум среди районов), %" }
+  - { metric: pyramid2019_sum_BY-BR, value: 1348115, tolerance: 17,
+      description: "сумма пирамиды-2019 Брестской области = официальный итог переписи (допуск - поэлементное округление)" }
+  - { metric: median2019_BY-VI, value: 43.1, tolerance: 0.05,
+      description: "медианный возраст Витебской области, 2019" }

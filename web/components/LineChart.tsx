@@ -20,6 +20,8 @@ interface Props {
   markYear?: number | null;
   /** Горизонтальная референс-линия (например, «ожидание Ципфа»). */
   refY?: { value: number; label: string } | null;
+  /** Вертикальные аннотации событий (например, 1986 - авария на ЧАЭС). */
+  refXs?: { value: number; label: string }[];
 }
 
 const M = { top: 10, right: 14, bottom: 22, left: 46 };
@@ -34,7 +36,7 @@ function niceTicks(max: number, n = 4): number[] {
   return ticks;
 }
 
-export default function LineChart({ series, height = 190, yFormat, yTooltip, domain, yMax, markYear, refY }: Props) {
+export default function LineChart({ series, height = 190, yFormat, yTooltip, domain, yMax, markYear, refY, refXs }: Props) {
   const wrapRef = useRef<HTMLDivElement>(null);
   const [hoverYear, setHoverYear] = useState<number | null>(null);
   const [width, setWidth] = useState(388);
@@ -134,6 +136,17 @@ export default function LineChart({ series, height = 190, yFormat, yTooltip, dom
           <line x1={X(markYear)} x2={X(markYear)} y1={M.top} y2={M.top + ih}
             stroke="var(--baseline)" strokeWidth="1" />
         )}
+
+        {/* вертикальные аннотации событий */}
+        {refXs?.filter((r) => r.value >= x0 && r.value <= x1).map((r, i) => (
+          <g key={r.value}>
+            <line x1={X(r.value)} x2={X(r.value)} y1={M.top + 10} y2={M.top + ih}
+              stroke="var(--muted)" strokeWidth="1" strokeDasharray="2 3" />
+            <text x={X(r.value) + 3} y={M.top + 9 + (i % 2) * 11} fontSize="9.5" fill="var(--muted)">
+              {r.label}
+            </text>
+          </g>
+        ))}
 
         {/* референс-линия */}
         {refY && refY.value <= maxV && (

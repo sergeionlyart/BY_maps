@@ -73,13 +73,16 @@ def territory_id(obl_ru: str, raion_ru: str | None) -> str | None:
     и Орша/Полоцк, вошедшие в районы к 2019 г. - их скопом держит район)."""
     if raion_ru is None or raion_ru == "null":
         return OBL_RU2ID.get(obl_ru)
+    if obl_ru == "г. Минск":
+        # внутригородские районы Минска не гармонизируем; проверка ДО поиска
+        # в реестре районов: «Октябрьский р-н» Минска иначе склеивается с
+        # Октябрьским районом Гомельской области
+        return None
     base = _e(raion_ru.replace(" р-н", "").strip())
     if base in RAION_RU2ID:
         return RAION_RU2ID[base]
     if raion_ru in CITY_RU2ID:
         return CITY_RU2ID[raion_ru]
-    if obl_ru == "г. Минск":
-        return None  # внутригородские районы Минска не гармонизируем
     return f"UNMAPPED:{raion_ru}"
 
 

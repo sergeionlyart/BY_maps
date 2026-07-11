@@ -29,8 +29,9 @@ export const RESEARCH: ResearchEntry[] = [
     title: 'Старение районов',
     question:
       'Где и когда возрастная структура делает депопуляцию самоподдерживающейся — естественная убыль даже при нулевой миграции?',
-    status: 'planned',
+    status: 'published',
     stage: 4,
+    artifact: { file: 'by-maps-aging-v1.0.0.zip', version: '1.0.0', sizeKb: 710 },
   },
   {
     slug: 'wages',
@@ -74,8 +75,9 @@ export const RESEARCH: ResearchEntry[] = [
     title: 'Чернобыльский след',
     question:
       'Как отселение изменило траектории юго-восточных районов относительно демографически схожих незагрязнённых?',
-    status: 'planned',
+    status: 'published',
     stage: 4,
+    artifact: { file: 'by-maps-chernobyl-v1.0.0.zip', version: '1.0.0', sizeKb: 613 },
   },
   {
     slug: 'nightlights',

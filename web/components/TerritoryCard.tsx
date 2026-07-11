@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import type { DataFile, Territory, RaionMode } from '@/lib/types';
 import type { ForecastFile, ScenarioId } from '@/lib/forecast';
 import { forecastAt, FORECAST_START, SCENARIO_LABEL } from '@/lib/forecast';
@@ -26,6 +27,16 @@ const LEVEL_LABEL: Record<string, string> = {
   raion: 'район', city: 'город / гп',
 };
 
+/** Районы классов 1-2 исследования INF-07 (для кросс-ссылки с карточки). */
+let cherIdsPromise: Promise<Set<string>> | null = null;
+function loadCherIds(): Promise<Set<string>> {
+  cherIdsPromise ??= fetch('/data/chernobyl.json')
+    .then((r) => r.json())
+    .then((c) => new Set<string>(c.pairs.map((p: { id: string }) => p.id)))
+    .catch(() => new Set<string>());
+  return cherIdsPromise;
+}
+
 const FLAG_LABEL: Record<string, string> = {
   west1921: 'Польша, 1921–1939',
   oblCenter: 'областной центр',
@@ -37,6 +48,18 @@ const FLAG_LABEL: Record<string, string> = {
 
 export default function TerritoryCard({ data, forecast, scenario = 'base', id, year, baseYear, raionMode, compare, onCompareAdd, onSelect }: Props) {
   const t: Territory | undefined = id ? data.territories[id] : data.territories['BY'];
+  const [inChernobyl, setInChernobyl] = useState(false);
+  const tid = t?.id;
+  const tlevel = t?.level;
+  useEffect(() => {
+    let alive = true;
+    if (tlevel === 'raion' && tid) {
+      loadCherIds().then((ids) => alive && setInChernobyl(ids.has(tid)));
+    } else {
+      setInChernobyl(false);
+    }
+    return () => { alive = false; };
+  }, [tid, tlevel]);
   if (!t) return <p className="hint">Выберите территорию на карте.</p>;
 
   const mainSeries = t.level === 'raion' && raionMode === 'noCenter' ? t.popNoCenter : t.pop;
@@ -222,6 +245,16 @@ export default function TerritoryCard({ data, forecast, scenario = 'base', id, y
             центр: {c.ru}
           </button>
         ))}
+        {t.level === 'raion' && (
+          <a className="btn" href={`/research/aging?sel=${t.id}`}>
+            INF-02: старение района
+          </a>
+        )}
+        {inChernobyl && (
+          <a className="btn" href={`/research/chernobyl?sel=${t.id}`}>
+            INF-07: чернобыльский след
+          </a>
+        )}
       </div>
 
       <div className="chart-block">

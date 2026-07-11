@@ -52,6 +52,20 @@ def test_census_age_children_sum_to_oblast(age_census):
             obl_totals[t] = obl_totals.get(t, 0) + v
     for obl in OBLS:
         assert obl_totals[obl] == child_totals[obl], (year, obl)
+    # у Минска нет дочерних территорий в гармонизации: любая строка r-/c-
+    # с oblast=BY-HM - заблудший внутригородской район (коллизия id,
+    # как «Октябрьский р-н» Минска против Октябрьского района Гомельской)
+    assert child_totals.get("BY-HM", 0) == 0, (year, child_totals.get("BY-HM"))
+
+
+def test_census_age_territory_id_unique_oblast(age_census):
+    """Каждый territory_id принадлежит ровно одной области."""
+    year, rows = age_census
+    obls: dict = {}
+    for r in rows:
+        obls.setdefault(r["territory_id"], set()).add(r["oblast"])
+    bad = {t: sorted(o) for t, o in obls.items() if len(o) > 1}
+    assert not bad, (year, bad)
 
 
 def test_census_age_coverage(age_census):

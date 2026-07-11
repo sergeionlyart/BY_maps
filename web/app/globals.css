@@ -119,12 +119,13 @@ a { color: var(--accent); }
   user-select: none;
 }
 
-select.base-year {
+select {
   background: var(--surface-1);
   border: 1px solid var(--border);
   border-radius: 8px;
   padding: 4px 6px;
   font-size: 13px;
+  max-width: 100%;
 }
 
 /* --- layout -------------------------------------------------------------- */
@@ -404,6 +405,22 @@ select.base-year {
 .chart-legend { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 12px; color: var(--ink-2); margin-top: 2px; }
 .chart-legend .cl-item { display: inline-flex; align-items: center; gap: 6px; }
 .chart-legend .cl-key { width: 14px; height: 0; border-top: 2.5px solid; border-radius: 2px; }
+
+.choro-legend { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 11.5px; color: var(--ink-2); margin-top: 6px; }
+.choro-legend .cl-item { display: inline-flex; align-items: center; gap: 5px; }
+.choro-legend .cl-swatch { width: 13px; height: 13px; border-radius: 3px; border: 1px solid var(--border); }
+
+.zone-table-wrap { overflow-x: auto; }
+.zone-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+.zone-table th, .zone-table td { text-align: left; padding: 5px 8px; border-bottom: 1px solid var(--border); white-space: nowrap; }
+.zone-table th { color: var(--muted); font-weight: 600; font-size: 11.5px; }
+.zone-table tr.sel, .zone-table tbody tr:hover { background: var(--surface-2); }
+.zone-table td.neg { color: #d03b3b; }
+.zone-table td.pos { color: #006300; }
+@media (prefers-color-scheme: dark) {
+  .zone-table td.neg { color: #e66767; }
+  .zone-table td.pos { color: #0ca30c; }
+}
 
 .compare-list { display: flex; flex-direction: column; gap: 6px; margin-bottom: 10px; }
 .compare-item {

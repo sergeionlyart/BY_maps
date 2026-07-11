@@ -1,0 +1,126 @@
+[
+ {
+  "metric": "class1_pairs",
+  "value": 3
+ },
+ {
+  "metric": "closed_area_total_ha",
+  "value": 436512.7
+ },
+ {
+  "metric": "districts_in_lists",
+  "value": 49
+ },
+ {
+  "metric": "gap2019_r-brahinski",
+  "value": -19.75
+ },
+ {
+  "metric": "gap2019_r-buda-kashalouski",
+  "value": -21.76
+ },
+ {
+  "metric": "gap2019_r-chacherski",
+  "value": -14.14
+ },
+ {
+  "metric": "gap2019_r-cherykauski",
+  "value": -11.22
+ },
+ {
+  "metric": "gap2019_r-chojnicki",
+  "value": -14.47
+ },
+ {
+  "metric": "gap2019_r-dobrushski",
+  "value": 12.71
+ },
+ {
+  "metric": "gap2019_r-karmianski",
+  "value": -21.19
+ },
+ {
+  "metric": "gap2019_r-kasciukovicki",
+  "value": 3.88
+ },
+ {
+  "metric": "gap2019_r-krasnapolski",
+  "value": -12.08
+ },
+ {
+  "metric": "gap2019_r-naraulanski",
+  "value": -14.05
+ },
+ {
+  "metric": "gap2019_r-slauharadski",
+  "value": -1.93
+ },
+ {
+  "metric": "gap2019_r-vietkauski",
+  "value": -14.61
+ },
+ {
+  "metric": "idx2019_r-brahinski",
+  "value": 27.9
+ },
+ {
+  "metric": "idx2019_r-buda-kashalouski",
+  "value": 54.07
+ },
+ {
+  "metric": "idx2019_r-chacherski",
+  "value": 45.16
+ },
+ {
+  "metric": "idx2019_r-cherykauski",
+  "value": 56.48
+ },
+ {
+  "metric": "idx2019_r-chojnicki",
+  "value": 38.83
+ },
+ {
+  "metric": "idx2019_r-dobrushski",
+  "value": 62.55
+ },
+ {
+  "metric": "idx2019_r-karmianski",
+  "value": 47.53
+ },
+ {
+  "metric": "idx2019_r-kasciukovicki",
+  "value": 58.86
+ },
+ {
+  "metric": "idx2019_r-krasnapolski",
+  "value": 36.28
+ },
+ {
+  "metric": "idx2019_r-naraulanski",
+  "value": 37.0
+ },
+ {
+  "metric": "idx2019_r-slauharadski",
+  "value": 48.99
+ },
+ {
+  "metric": "idx2019_r-vietkauski",
+  "value": 39.82
+ },
+ {
+  "metric": "mean_gap_class1",
+  "value": -16.09
+ },
+ {
+  "metric": "np_total_2016",
+  "value": 2193
+ },
+ {
+  "metric": "np_total_2021",
+  "value": 2022
+ },
+ {
+  "metric": "pairs_total",
+  "value": 12
+ }
+]

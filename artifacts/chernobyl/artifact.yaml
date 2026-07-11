@@ -1,0 +1,88 @@
+# Проверяемый пакет INF-07 «Чернобыльский след».
+# Сборка: python -m etl.artifacts.build chernobyl
+
+id: chernobyl
+title: "Чернобыльский след: реестр зон по официальным НПА и траектории районов против контролей"
+version: "1.0.0"
+released: "2026-07-11"
+landing_url: "https://by-population-maps.vercel.app/research/chernobyl"
+authors:
+  - "Проект «Население Беларуси, 1897–2026»"
+
+files:
+  - { path: README.md, role: docs }
+  - { path: CHANGELOG.md, role: docs }
+  - { path: AGENT.md, role: docs }
+  - { path: LIMITATIONS.md, role: docs }
+  - { path: PROVENANCE.md, role: docs }
+  - { path: CITATION.cff, role: docs }
+  - { path: LICENSE.md, role: docs }
+  - { path: sources/registry.csv, from: data/raw/chernobyl/registry.csv, role: docs }
+  # сырьё: официальные НПА (PDF) и их агрегат; текстовый слой брошюры МЧС
+  - { path: data/raw/chernobyl/pravo_75.pdf, from: data/raw/chernobyl/pravo_75.pdf, role: raw, license: "официальное опубликование" }
+  - { path: data/raw/chernobyl/pravo_2016_9.pdf, from: data/raw/chernobyl/pravo_2016_9.pdf, role: raw, license: "официальное опубликование" }
+  - { path: data/raw/chernobyl/belarus_chernobyl_36.txt, from: data/raw/chernobyl/belarus_chernobyl_36.txt, role: raw, license: "официальная публикация МЧС РБ" }
+  - { path: data/raw/chernobyl/districts_zones.json, from: data/raw/chernobyl/districts_zones.json, role: raw, license: "CC BY 4.0" }
+  # ряды населения районов (производные базы проекта)
+  - { path: web/public/data/data.json, from: web/public/data/data.json, role: intermediate, license: "CC BY 4.0" }
+  # код
+  - { path: etl/__init__.py, from: artifacts/chernobyl/shims/etl_init.py, role: code }
+  - { path: etl/common.py, from: artifacts/chernobyl/shims/common.py, role: code }
+  - { path: etl/chernobyl.py, from: etl/chernobyl.py, role: code }
+  - { path: params/assumptions.yaml, role: params }
+  - { path: code/run.sh, role: code }
+  - { path: code/verify.py, role: code }
+  - { path: code/requirements.lock, role: code }
+  - { path: checks/tests/test_invariants.py, role: code }
+  # итоговые данные - ровно те, что на лендинге
+  - { path: data/final/computed_results.json, role: final, license: "CC BY 4.0" }
+  - { path: web/public/data/chernobyl.json, from: web/public/data/chernobyl.json, role: final, license: "CC BY 4.0" }
+  - { path: data/curated/chernobyl_zones.csv, from: data/curated/chernobyl_zones.csv, role: final, license: "CC BY 4.0" }
+
+sources:
+  - id: pravo_75
+    url: "https://pravo.by/upload/docs/op/C22100075_1612990800.pdf"
+    description: "Пост. СМ РБ от 08.02.2021 № 75 - действующий перечень НП в зонах (2022 НП)"
+    license: "официальное опубликование (5/48775)"
+    accessed: "2026-07-11"
+  - id: pravo_2016_9
+    url: "https://pravo.by/upload/docs/op/C21600009_1452805200.pdf"
+    description: "Пост. СМ РБ от 11.01.2016 № 9 - предыдущая редакция (2193 НП)"
+    license: "официальное опубликование (5/41546)"
+    accessed: "2026-07-11"
+  - id: mchs_36
+    url: "https://chernobyl.mchs.gov.by/upload/iblock/1fb/belarus-i-chernobyl.-36-let..pdf"
+    description: "МЧС «Беларусь и Чернобыль: 36 лет» - табл. 12 (закрытые территории, КПП-режим)"
+    license: "официальная публикация МЧС РБ"
+    accessed: "2026-07-11"
+
+entrypoints:
+  reproduce: "code/run.sh"
+  verify: "python3 checks/tests/test_invariants.py"
+
+environment:
+  python: ">=3.10"
+  lock: "code/requirements.lock"
+  seed: null   # расчёт детерминирован, случайности нет
+
+expected_results:
+  - { metric: pairs_total, value: 12, tolerance: 0,
+      description: "пар район-контроль (3 класса 1 + 9 класса 2)" }
+  - { metric: class1_pairs, value: 3, tolerance: 0,
+      description: "районов зоны эвакуации/отселения (Брагинский, Хойникский, Наровлянский)" }
+  - { metric: np_total_2021, value: 2022, tolerance: 0,
+      description: "сумма НП по зонам из перечня-2021 = официальный итог акта" }
+  - { metric: np_total_2016, value: 2193, tolerance: 0,
+      description: "сумма НП по зонам из перечня-2016 = официальный итог акта" }
+  - { metric: districts_in_lists, value: 49, tolerance: 0,
+      description: "районов, имеющих НП хотя бы в одной редакции перечней" }
+  - { metric: closed_area_total_ha, value: 436512.7, tolerance: 0.1,
+      description: "закрытые отселённые территории 12 районов классов 1-2, га (табл. 12 МЧС)" }
+  - { metric: idx2019_r-chojnicki, value: 38.83, tolerance: 0.01,
+      description: "население Хойникского района 2019 к 1979, % (индекс 1979=100)" }
+  - { metric: idx2019_r-brahinski, value: 27.9, tolerance: 0.01,
+      description: "население Брагинского района 2019 к 1979, %" }
+  - { metric: gap2019_r-chojnicki, value: -14.47, tolerance: 0.02,
+      description: "отставание Хойникского от контроля (Шкловский) к 2019, п.п. индекса" }
+  - { metric: mean_gap_class1, value: -16.09, tolerance: 0.02,
+      description: "среднее отставание районов класса 1 от контролей к 2019, п.п." }
