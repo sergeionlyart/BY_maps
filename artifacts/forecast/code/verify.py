@@ -10,13 +10,24 @@ PKG = Path(__file__).resolve().parent.parent
 
 def computed_metrics() -> dict:
     out = {}
-    with open(PKG / "data" / "curated" / "forecast_v2026_2.csv") as f:
+    with open(PKG / "data" / "curated" / "forecast_v2026_3.csv") as f:
         for r in csv.DictReader(f):
-            out[f"pop_{r['territory_id']}_{r['scenario']}_{r['year']}"] = float(r["pop"])
-            if r["q10"]:
-                out[f"q10_{r['territory_id']}_{r['scenario']}_{r['year']}"] = float(r["q10"])
-            if r["q90"]:
-                out[f"q90_{r['territory_id']}_{r['scenario']}_{r['year']}"] = float(r["q90"])
+            # ряд adjusted (WP-F3) - с префиксом adj
+            stem = (f"pop_adj_{r['territory_id']}" if r["jumpoff"] == "adjusted"
+                    else f"pop_{r['territory_id']}")
+            out[f"{stem}_{r['scenario']}_{r['year']}"] = float(r["pop"])
+            if r["jumpoff"] == "official":
+                if r["q10"]:
+                    out[f"q10_{r['territory_id']}_{r['scenario']}_{r['year']}"] = float(r["q10"])
+                if r["q90"]:
+                    out[f"q90_{r['territory_id']}_{r['scenario']}_{r['year']}"] = float(r["q90"])
+    adj = {}
+    with open(PKG / "data" / "curated" / "adjustment.csv") as f:
+        for r in csv.DictReader(f):
+            if r["territory_id"] == "BY" and r["year"] == "2026":
+                adj = r
+    for k in ("low", "mid", "high"):
+        out[f"adjustment_{k}_2026"] = float(adj[k])
     bt = json.loads((PKG / "docs" / "notes" / "backtest_results.json").read_text())
     out["backtest_national_err_pct"] = bt["national"]["model_err_pct"]
     out["backtest_mape_model"] = bt["mape_model"]

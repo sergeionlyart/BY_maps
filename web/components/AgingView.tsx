@@ -342,7 +342,7 @@ export default function AgingView() {
           </div>
         </div>
         <MethodDrawer slug="aging" />
-        <a className="btn" href="/artifacts/by-maps-aging-v1.0.1.zip" download>
+        <a className="btn" href="/artifacts/by-maps-aging-v1.0.2.zip" download>
           ⬇ Проверяемый пакет (ZIP)
         </a>
       </div>

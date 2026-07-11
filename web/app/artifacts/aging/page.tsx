@@ -21,6 +21,18 @@ export default function AgingArtifactPage() {
 
       <h2>Версии</h2>
       <div className="card">
+        <div className="card-code">v1.0.2 · 2026-07-11 · git-тег artifact-aging-v1.0.2</div>
+        <p>
+          Версионно-независимая метка контрфакта; синхронизация с движком
+          v2026.3. Метрики без изменений.
+        </p>
+        <div className="card-foot">
+          <a href="/artifacts/by-maps-aging-v1.0.2.zip" download>
+            ⬇ by-maps-aging-v1.0.2.zip (710 КБ)
+          </a>
+        </div>
+      </div>
+      <div className="card">
         <div className="card-code">v1.0.1 · 2026-07-11 · git-тег artifact-aging-v1.0.1</div>
         <p>
           Синхронизация с прогнозом v2026.2 (этап 5): обновлён вендоренный

@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from 'react';
 import type { DataFile, Territory, RaionMode } from '@/lib/types';
-import type { ForecastFile, ScenarioId } from '@/lib/forecast';
-import { forecastAt, FORECAST_START, SCENARIO_LABEL } from '@/lib/forecast';
+import type { ForecastFile, ScenarioId, JumpoffId } from '@/lib/forecast';
+import { forecastAt, hasAdjusted, FORECAST_START, SCENARIO_LABEL } from '@/lib/forecast';
 import { seriesPoints, valueAt, formatNumber, formatCompact, formatPct, DTYPE_LABEL } from '@/lib/series';
 import { raionBreakdown, cityDensity } from '@/lib/metrics';
 import { CAT } from '@/lib/scales';
@@ -13,6 +13,7 @@ interface Props {
   data: DataFile;
   forecast?: ForecastFile | null;
   scenario?: ScenarioId;
+  jumpoff?: JumpoffId;
   id: string | null;
   year: number;
   baseYear: number;
@@ -46,7 +47,7 @@ const FLAG_LABEL: Record<string, string> = {
   capital: 'столица',
 };
 
-export default function TerritoryCard({ data, forecast, scenario = 'base', id, year, baseYear, raionMode, compare, onCompareAdd, onSelect }: Props) {
+export default function TerritoryCard({ data, forecast, scenario = 'base', jumpoff = 'official', id, year, baseYear, raionMode, compare, onCompareAdd, onSelect }: Props) {
   const t: Territory | undefined = id ? data.territories[id] : data.territories['BY'];
   const [inChernobyl, setInChernobyl] = useState(false);
   const tid = t?.id;
@@ -115,7 +116,9 @@ export default function TerritoryCard({ data, forecast, scenario = 'base', id, y
   }
 
   // прогноз (веер q10-q90) для страны, областей и Минска
-  const fentry = forecast?.territories[t.id]?.[scenario];
+  const useAdj = jumpoff === 'adjusted' && hasAdjusted(forecast ?? null, t.id);
+  const fentry = (useAdj ? forecast!.adjusted![t.id][scenario] : undefined)
+    ?? forecast?.territories[t.id]?.[scenario];
   if (forecast && fentry) {
     chart.push({
       name: `Прогноз (${SCENARIO_LABEL[scenario]})`,
@@ -148,11 +151,11 @@ export default function TerritoryCard({ data, forecast, scenario = 'base', id, y
         <div className="stat-row" style={{ marginTop: 8 }}>
           <div className="stat-tile forecast-tile">
             <div className="st-label">Прогноз на {year} · «{SCENARIO_LABEL[scenario]}»</div>
-            <div className="st-value">{formatCompact(forecastAt(forecast, t.id, scenario, year) ?? 0)}</div>
+            <div className="st-value">{formatCompact(forecastAt(forecast, t.id, scenario, year, 'pop', jumpoff) ?? 0)}</div>
             <div className="st-delta">
               {fentry.q10 && fentry.q90
-                ? `80% интервал: ${formatCompact(forecastAt(forecast, t.id, scenario, year, 'q10') ?? 0)} – ${formatCompact(forecastAt(forecast, t.id, scenario, year, 'q90') ?? 0)}`
-                : ''} · прогноз {forecast.version}
+                ? `80% интервал: ${formatCompact(forecastAt(forecast, t.id, scenario, year, 'q10', jumpoff) ?? 0)} – ${formatCompact(forecastAt(forecast, t.id, scenario, year, 'q90', jumpoff) ?? 0)}`
+                : ''} · прогноз {forecast.version}{jumpoff === 'adjusted' ? (useAdj ? ' · ряд скорр.' : ' · ряд офиц.') : ''}
             </div>
           </div>
         </div>

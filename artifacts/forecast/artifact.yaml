@@ -1,9 +1,9 @@
-# Проверяемый пакет прогноза населения 2026-2075 (v2026.2, уровни 0-3).
+# Проверяемый пакет прогноза населения 2026-2075 (v2026.3, уровни 0-3 + ряд adjusted).
 # Сборка: python -m etl.artifacts.build forecast
 
 id: forecast
-title: "Прогноз населения Беларуси 2026–2075, v2026.2 (страна, области, Минск, 118 районов, ~200 городов)"
-version: "1.1.0"
+title: "Прогноз населения Беларуси 2026–2075, v2026.3 (уровни 0–3; стартовые ряды official/adjusted)"
+version: "1.2.0"
 released: "2026-07-11"
 landing_url: "https://by-population-maps.vercel.app/?sel=BY"
 authors:
@@ -31,6 +31,20 @@ files:
   - { path: web/public/data/data.json, from: web/public/data/data.json, role: intermediate, license: "CC BY 4.0" }
   - { path: data/curated/city_raion.csv, from: data/curated/city_raion.csv, role: intermediate, license: "CC BY 4.0" }
   - { path: data/curated/chernobyl_zones.csv, from: data/curated/chernobyl_zones.csv, role: intermediate, license: "CC BY 4.0" }
+  # WP-F3: зеркальная статистика эмиграции и поправка adjusted
+  - { path: data/raw/mirror/registry.csv, from: data/raw/mirror/registry.csv, role: docs }
+  - { path: data/raw/mirror/eurostat_migr_resvalid_BY_2019-2024.json, from: data/raw/mirror/eurostat_migr_resvalid_BY_2019-2024.json, role: raw, license: "CC BY 4.0 (Eurostat)" }
+  - { path: data/raw/mirror/eurostat_migr_resfirst_BY_2015-2024.json, from: data/raw/mirror/eurostat_migr_resfirst_BY_2015-2024.json, role: raw, license: "CC BY 4.0 (Eurostat)" }
+  - { path: data/raw/mirror/eurostat_migr_resfirst_BY_2019_duration.json, from: data/raw/mirror/eurostat_migr_resfirst_BY_2019_duration.json, role: raw, license: "CC BY 4.0 (Eurostat)" }
+  - { path: data/raw/mirror/udsc_raport_BY_2026-01-01.txt, from: data/raw/mirror/udsc_raport_BY_2026-01-01.txt, role: raw, license: "официальная статистика UDSC" }
+  - { path: data/raw/mirror/udsc_raport_BY_2026-06-01.txt, from: data/raw/mirror/udsc_raport_BY_2026-06-01.txt, role: raw, license: "официальная статистика UDSC" }
+  - { path: data/raw/mirror/gus_populacja_cudzoziemcow_covid19.txt, from: data/raw/mirror/gus_populacja_cudzoziemcow_covid19.txt, role: raw, license: "официальная статистика GUS" }
+  - { path: data/raw/mirror/newbelarus_diaspora_snapshot_2023.pdf, from: data/raw/mirror/newbelarus_diaspora_snapshot_2023.pdf, role: raw, license: "открытая публикация ЦНИ" }
+  - { path: data/raw/mirror/newbelarus_diaspora_snapshot_2023.txt, from: data/raw/mirror/newbelarus_diaspora_snapshot_2023.txt, role: raw, license: "открытая публикация ЦНИ" }
+  - { path: etl/mirror.py, from: etl/mirror.py, role: code }
+  - { path: data/curated/migration_mirror.csv, from: data/curated/migration_mirror.csv, role: intermediate, license: "CC BY 4.0" }
+  - { path: data/curated/adjustment.csv, from: data/curated/adjustment.csv, role: intermediate, license: "CC BY 4.0" }
+  - { path: docs/notes/adjustment.md, from: docs/notes/adjustment.md, role: docs }
   - { path: data/raw/wpp2024/blr_indicators_medium.csv, from: data/raw/wpp2024/blr_indicators_medium.csv, role: raw, license: "CC BY 3.0 IGO" }
   - { path: data/raw/wpp2024/blr_total_all_variants.csv, from: data/raw/wpp2024/blr_total_all_variants.csv, role: raw, license: "CC BY 3.0 IGO" }
   - { path: data/raw/wcde/blr_pop_total_ssp123.csv, from: data/raw/wcde/blr_pop_total_ssp123.csv, role: raw, license: "CC BY 4.0" }
@@ -57,7 +71,7 @@ files:
   - { path: checks/tests/test_invariants.py, role: code }
   # итоговые данные - ровно те, что на лендинге
   - { path: data/final/computed_results.json, role: final, license: "CC BY 4.0" }
-  - { path: data/curated/forecast_v2026_2.csv, from: data/curated/forecast_v2026_2.csv, role: final, license: "CC BY 4.0" }
+  - { path: data/curated/forecast_v2026_3.csv, from: data/curated/forecast_v2026_3.csv, role: final, license: "CC BY 4.0" }
   - { path: web/public/data/forecast.json, from: web/public/data/forecast.json, role: final, license: "CC BY 4.0" }
   - { path: docs/notes/backtest_results.json, from: docs/notes/backtest_results.json, role: final, license: "CC BY 4.0" }
   - { path: docs/notes/backtest_sub.json, from: docs/notes/backtest_sub.json, role: final, license: "CC BY 4.0" }
@@ -122,3 +136,18 @@ expected_results:
       description: "бэктест городов (доля <=2009 -> 2019): MAPE логистической по 188 городам" }
   - { metric: backtest_cities_mape_naive, value: 10.88, tolerance: 0.02,
       description: "бэктест городов: MAPE замороженной доли (гейт: не хуже)" }
+  # WP-F3: ряд adjusted
+  - { metric: adjustment_mid_2026, value: 269955, tolerance: 1,
+      description: "центральная оценка накопленного незарегистрированного оттока на 01.01.2026 (гейт: интервал накрывает сток ВНЖ ЕС минус довоенный сток = 252 945 и ориентир МВД 350 тыс.)" }
+  - { metric: adjustment_low_2026, value: 178285, tolerance: 1,
+      description: "нижняя граница: документированные «осевшие» (ЕС в карточном определении + Грузия)" }
+  - { metric: adjustment_high_2026, value: 415883, tolerance: 1,
+      description: "верхняя граница: сырой сток ЕС с досчётом + маятниковый резидуал + недоучёт РФ" }
+  - { metric: pop_adj_BY_base_2026, value: 8786125, tolerance: 1,
+      description: "adjusted-старт страны (официальный 9 056 080 минус mid-поправка)" }
+  - { metric: pop_adj_BY_base_2051, value: 7238855, tolerance: 1,
+      description: "страна, базовый, 2051, ряд adjusted (-3,8% к official)" }
+  - { metric: pop_adj_BY_base_2075, value: 5746563, tolerance: 1,
+      description: "страна, базовый, 2075, ряд adjusted" }
+  - { metric: pop_adj_BY_negative_2075, value: 4151882, tolerance: 1,
+      description: "страна, негативный, 2075, ряд adjusted (нижняя траектория проекта)" }

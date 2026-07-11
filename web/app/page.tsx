@@ -3,8 +3,8 @@
 import { useEffect, useMemo, useState } from 'react';
 import dynamic from 'next/dynamic';
 import type { DataFile, Metric, MapLevel, RaionMode } from '@/lib/types';
-import type { ForecastFile, ScenarioId } from '@/lib/forecast';
-import { FORECAST_START } from '@/lib/forecast';
+import type { ForecastFile, ScenarioId, JumpoffId } from '@/lib/forecast';
+import { FORECAST_START, JUMPOFF_LABEL } from '@/lib/forecast';
 import TimeBar from '@/components/TimeBar';
 import TerritoryCard from '@/components/TerritoryCard';
 import ComparePanel from '@/components/ComparePanel';
@@ -28,6 +28,7 @@ export default function Page() {
   const [geo, setGeo] = useState<GeoBundle | null>(null);
   const [forecast, setForecast] = useState<ForecastFile | null>(null);
   const [scenario, setScenario] = useState<ScenarioId>('base');
+  const [jumpoff, setJumpoff] = useState<JumpoffId>('official');
   const [year, setYear] = useState(2019);
   // стартовый вид - главный сюжет проекта: плотность сельской части районов
   // (без городских центров) + города точками поверх
@@ -142,6 +143,20 @@ export default function Page() {
                 </button>
               ))}
             </div>
+            {forecast.adjusted && (
+              <>
+                <span className="control-label" title={forecast.adjustedMeta?.note}>Стартовый ряд</span>
+                <div className="seg">
+                  {(['official', 'adjusted'] as JumpoffId[]).map((j) => (
+                    <button key={j} className={jumpoff === j ? 'on' : ''}
+                      title={j === 'adjusted' ? forecast.adjustedMeta?.note : 'официальные оценки Белстата на 01.01.2026'}
+                      onClick={() => setJumpoff(j)}>
+                      {JUMPOFF_LABEL[j]}
+                    </button>
+                  ))}
+                </div>
+              </>
+            )}
             <MethodDrawer slug="forecast" label="Методика прогноза" />
           </div>
         )}
@@ -168,6 +183,7 @@ export default function Page() {
             geo={geo}
             forecast={forecast}
             scenario={scenario}
+            jumpoff={jumpoff}
             year={year}
             metric={metricSafe}
             level={level}
@@ -200,6 +216,7 @@ export default function Page() {
                 data={data}
                 forecast={forecast}
                 scenario={scenario}
+                jumpoff={jumpoff}
                 id={selected}
                 year={year}
                 baseYear={baseYear}

@@ -1,0 +1,264 @@
+
+Populacja cudzoziemców w Polsce w czasie 
+COVID-19
+left83427 223 tys.
+Spadek liczby cudzoziemców przebywających w Polsce w końcu kwietnia w porównaniu do stanu z końca lutego 2020 r. 
+00 223 tys.
+Spadek liczby cudzoziemców przebywających w Polsce w końcu kwietnia w porównaniu do stanu z końca lutego 2020 r. 
+Szacuje się, że w ciągu dwóch pierwszych miesięcy trwania pandemii COVID-19, tj marca i kwietnia 2020 r. liczba cudzoziemców przebywających w Polsce zmniejszyła się o 223 tys., tj. o 10,1% stanu z końca lutego.
+
+
+
+Wprowadzenie
+Opracowanie przedstawia wstępny szacunek dotyczący zmian w liczbie cudzoziemców przebywających w Polsce przed 1 marca i na koniec kwietnia 2020 r. w świetle danych z rejestrów administracyjnych oraz informacji dotyczących przyjazdów/wyjazdów cudzoziemców do/z Polski pozyskanych ze Straży Granicznej.
+Niniejsze opracowanie należy traktować jako eksperymentalne i nieostateczne. W pracy przyjęto szereg założeń, które wynikały z dostępności oraz jakości wykorzystanych źródeł danych.
+Populacja cudzoziemców w Polsce w świetle COVID-19
+52197001400810Szacuje się, że w końcu 2019 r. przebywało w Polsce ponad 2 106 tys. cudzoziemców, w tym ponad 1 351 tys. obywateli Ukrainy
+00Szacuje się, że w końcu 2019 r. przebywało w Polsce ponad 2 106 tys. cudzoziemców, w tym ponad 1 351 tys. obywateli Ukrainy
+W szacunku wykorzystano dane o wielkości populacji cudzoziemców przebywających w Polsce  według stanu w dniu 31.12.2019 r. ustalone na podstawie informacji o obywatelstwie zawartej w rejestrach administracyjnych. Przy ustaleniu tej  wielkości wykorzystanych zostało 9 rejestrów: PESEL, UdSC, ZUS, KEP, MRPIPS, MNISW, MEN, KRUS i NFZ. Wybór rejestrów nastąpił w oparciu o wiedzę ekspercką dotyczącą ich zawartości informacyjnej oraz parametry jakościowe. Wybrane zostały najbardziej rzetelne źródła danych, charakteryzujące się zgodnością definicyjną jednostek (osoby), zawierające zmienne mające kluczowe znaczenie zarówno ze względu na zawartość informacyjną, jak również ze względu na możliwość zapewnienia wysokiej integralności zasobów.
+Ustalona wstępnie liczba cudzoziemców wynosiła 2 106 101, w tym 1 351 418 osób (64,2%) to obywatele Ukrainy. W populacji cudzoziemców 1 208 545 osób (57,4%) posiadało numer PESEL, a 897 556 (42.6%) takiego numeru nie posiadało. W poniższej tabeli przedstawiono 10 najliczniejszych subpopulacji cudzoziemców.
+Tablica 1. Liczba cudzoziemców na podstawie rejestrów administracyjnych wg stanu w dniu 31 grudnia 2019 r. – 10 najliczniej występujących krajów obywatelstwa
+Kraj obywatelstwa
+Wielkość subpopulacji
+Ogółem
+2 106 101
+Ukraina
+1 351 418
+Białoruś
+105 404
+Niemcy
+77 073
+Mołdawia
+37 338
+Rosja
+37 030
+Indie
+33 107
+Gruzja
+27 917
+Wietnam
+27 386
+Turcja
+25 049
+Chiny
+23 838
+Pozostałe
+360 541
+Następnie, powyższe informacje zostały zaktualizowane przez bieżące dane pochodzące z rejestru ZUS dotyczące liczby ubezpieczonych (osoby fizyczne), którzy w zgłoszeniu do ubezpieczeń emerytalnego i rentowych podali obywatelstwo inne niż polskie. Zgodnie z informacją z tego rejestru stan na koniec 2019 r. oraz lutego, marca i kwietnia 2020 r. przedstawiał się następująco:
+31.12.2019 – 651 506, w tym 479 113 (73,5%) to obywatele Ukrainy,
+29.02.2020 – 670 172, w tym 493 138 (73,6%) to obywatele Ukrainy,
+31.03.2020 – 662 253, w tym 484 753 (73,2%) to obywatele Ukrainy,
+30.04.2020 – 622 314, w tym 449 298 (72,2%) to obywatele Ukrainy.
+Dane ustalone na podstawie 9 rejestrów zaktualizowano dynamiką zmian liczby osób fizycznych zgłoszonych do ubezpieczeń w rejestrze ZUS, które zaistniały  między końcem grudnia 2019 r. a końcem lutego 2020 r. Dynamika ta została wyznaczona dla każdego obywatelstwa oddzielnie (ponad 200 wskaźników dynamiki; szerszy opis został zaprezentowany w  rozdziale Metodyka badania). W wyniku tej procedury został ustalony stan na koniec lutego 2020 r.
+5229697245745W marcu i kwietniu 2020 r. z Polski wyjechało 938 tys. cudzoziemców, a przyjechało prawie 715 tys.
+00W marcu i kwietniu 2020 r. z Polski wyjechało 938 tys. cudzoziemców, a przyjechało prawie 715 tys.
+Szacuje się że na koniec lutego 2020 r. w Polsce przebywało 2 213 594 cudzoziemców, z czego 1 390 978 to obywatele Ukrainy.
+Na podstawie informacji ze Straży Granicznej, w marcu i kwietniu 2020 r. z Polski wyjechało 938 014 cudzoziemców, a przyjechało 714 834, co wskazuje na spadek o ponad 223 tys. osób. Szczegółowe informacje zawarte są w tablicy 2.
+5220172369570W ciągu marca i kwietnia 2020 r. liczba obywateli Ukrainy przebywających w Polsce zmniejszyła się o 160 tys.
+00W ciągu marca i kwietnia 2020 r. liczba obywateli Ukrainy przebywających w Polsce zmniejszyła się o 160 tys.
+Tablica 2. Przyjazdy i wyjazdy cudzoziemców do/z Polski od 1 marca do 30 kwietnia 2020 r. – wybrane kraje obywatelstwa 
+Kraj obywatelstwa
+Przyjazd
+Wyjazd
+Różnica
+Ukraina
+407786
+567828
+-160042
+Białoruś
+162719
+196706
+-33987
+Rosja
+41791
+51308
+-9517
+Wielka Brytania
+38031
+46180
+-8149
+Mołdawia
+2633
+5152
+-2519
+Izrael
+1787
+3327
+-1540
+Irlandia
+5702
+6997
+-1295
+Turcja
+1390
+2527
+-1137
+Serbia
+657
+1745
+-1088
+Stany Zjednoczone
+4228
+5246
+-1018
+Źródło: Dane Straży Granicznej
+Finalnie oznacza to, że populacja cudzoziemców w Polsce na koniec kwietnia 2020 r. w porównaniu z końcem lutego 2020 r. zmniejszyła się o 223 tys. , tj. o 10,1%. Natomiast, populacja obywateli Ukrainy zmniejszyła się o 11,5%. Największy spadek odnotowano wśród obywateli Białorusi (32.2%) oraz Rosji (25.7%).
+Należy jednak mieć na względzie następujące ograniczenia powyższej analizy:
+dane na podstawie rejestrów administracyjnych wykorzystanych w szacunku mówią wyłącznie o liczbie cudzoziemców zarejestrowanych w tych rejestrach. Nie oznacza to, że tylu cudzoziemców rzeczywiście przebywało w Polsce w końcu grudnia 2019 r. lub w końcu lutego 2020 r. Więcej informacji o jakości danych znajduje się w rozdziale Metodyka badania,
+dane ze Straży Granicznej zostały pozyskane w postaci zagregowanej, zatem nie ma możliwości oceny ewentualnych wielokrotnych wjazdów i wyjazdów tych samych osób, nie ma również pewności, że wyjechały te osoby, które znajdowały się w rejestrach wykorzystywanych w szacunku (szerzej w rozdziale Metodyka badania). Dane jednostkowe ze Straży Granicznej były niedostępne w momencie przygotowywania niniejszego szacunku. 
+Sytuacja na rynku pracy cudzoziemców w świetle danych ZUS
+W celu uzupełnienia powyższej informacji dotyczącej wielkości populacji cudzoziemców przedstawiono również jak zmieniła się w czasie wielkość wybranych subpopulacji cudzoziemców znajdujących się w rejestrze ZUS. Dane dotyczyły liczby ubezpieczonych (osoby fizyczne), którzy w zgłoszeniu do ubezpieczeń emerytalnego i rentowych podali obywatelstwo inne niż polskie i zostały przygotowane na koniec lutego-kwietnia 2020 r. Dodatkowo, wykorzystano odniesienie do stanu na koniec 2019 r.
+Poniższe wykresy, w sposób skondensowany przedstawiają dynamikę zmian w populacji zgłoszonych do ubezpieczenia cudzoziemców. Pierwszy wykres przedstawia zmianę liczby cudzoziemców (w tys.) w porównaniu do grudnia 2019. Największy spadek odnotowano dla obywateli Ukrainy i wynosił on blisko 30 tys. osób. W przypadku pozostałych cudzoziemców spadki były nieznaczne i wynosiły kilkaset osób. W przypadku dwóch grup (Gruzja, Filipiny) wystąpił nieznaczny wzrost.
+Wykres 1.  Zmiana liczby cudzoziemców zgłoszonych do ubezpieczenia emertytalnego i rentowych - stan w końcu lutego, marca, kwietnia 2020 r. w porównaniu do grudnia 2019 r.
+
+ Uwaga: Dla poszczególnych obywatelstw zastosowano różną skalę dla osi pionowej. 
+Źródło: Opracowanie własne na podstawie danych ZUS
+Kolejny wykres przedstawia zmianę dynamiki zatrudniania cudzoziemców w ujęciu miesiąc do miesiąca. Największy procentowy spadek zanotowano dla obywateli Mołdawii, Ukrainy, Gruzji oraz Białorusi. W Przypadku pozostałych grup spadki nie były znaczące.
+
+
+
+
+Wykres 2. Dynamika zmian w okresie luty-kwiecień 2020 r. liczby cudzoziemców zgłoszonych do ubezpieczenia emertytalnego i rentowych – miesiąc do miesiąca
+
+Źródło: Opracowanie własne na podstawie danych ZUS
+Zmiany w populacji cudzoziemców w świetle danych Straży Granicznej
+Dane prezentowane w tym rozdziale  dotyczą wyłącznie przejść granicznych na granicy z Federacją Rosyjską, Republiką Białorusi, Ukrainą oraz drogą lotniczą i morską.
+Wykres nr 3  przedstawia skumulowaną różnicę między przyjazdami, a wyjazdami według wybranych krajów obywatelstwa oraz grupy „pozostałe”. 
+Wykres 3. Skumulowana różnica między liczbą przyjazdów i wyjazdów dla wybranych grup cudzoziemców w okresie 1 marca - 30 kwietnia 2020 r.
+
+Źródło: Opracowanie własne na podstawie danych Straży Granicznej
+Można zauważyć, że w przypadku obywateli Ukrainy ruch do około 13 marca nasilał się i większa liczba cudzoziemców przyjeżdżała, niż wyjeżdżała. Natomiast po 13 marca, a w szczególności po 15 marca widać zdecydowany wzrost liczby cudzoziemców wyjeżdzających z Polski. Co ważne, liczba ta jest większa niż spadek w danych ZUS, co może wskazywać, że wyjechały te osoby, które były zatrudnione na umowy cywilno-prawne, nie pracowały, przebywały na podstawie wiz lub pracowały/przebywały bez formalnego pozwolenia na pobyt na terenie Polski. 
+Kolejne wykresy (nr 4, 5 i 6) przedstawiają jak zmieniała się dzienna dynamika przejazdów oraz wyjazdów według krajów obywatelstwa, odcinka przejścia granicznego oraz typu przejścia granicznego. Zgodnie z oczekiwaniami15 marca zaobserwowano znaczny spadek związany z zamknięciem granic.
+Wykres 4. Dzienne zmiany liczby cudzoziemców przekraczających granicę Polski w okresie 1 marca – 30 kwietnia 2020 r. według kraju obywatelstwa 
+
+Źródło: Opracowanie własne na podstawie danych Straży Granicznej
+Wykres 5. Dzienne zmiany liczby cudzoziemców przekraczających granicę według odcinka granicy w okresie 1 marca – 30 kwietnia 2020 r.
+
+Źródło: Opracowanie własne na podstawie danych Straży Granicznej
+
+Wykres 6.  Dzienne zmiany liczby przekraczających granicę według typu odcinka w okresie 1 marca – 30 kwietnia 2020 r.
+
+Źródło: Opracowanie własne na podstawie danych Straży Granicznej
+
+Metodyka badania
+Ograniczenia i przyjęte założenia
+W szacunku wykorzystano dane o wielkości populacji cudzoziemców przebywających w Polsce  według stanu w dniu 31.12.2019 r. ustalone na podstawie 9 rejestrów administracyjnych. Zbiór cudzoziemców był tworzony poprzez dołączanie cudzoziemców z poszczególnych rejestrów. Dla uniknięcia zdublowania osób (zapewnienia ich unikatowości) wykorzystywano numer PESEL lub – w przypadku jego braku - kombinację zmiennych zawierających dane osobowe (imię i nazwisko, płeć, datę lub rok urodzenia).
+Źródłem aktualizującym stan populacji były dane zagregowane przekazane przez Straż Graniczną. Należy zaznaczyć, że w przypadku takich danych nie można stwierdzić czy osoba, która opuszczała Polskę faktycznie znajdowała się w zintegrowanym zbiorze cudzoziemców. Tak samo, nie ma pewności, że osoby, które przyjeżdżały / wyjeżdżały w badanym okresie nie są liczone kilka razy.
+W związku z powyższym, źródła błędów nielosowych, które mogą wpływać na wyniki są następujące:
+błędy redundancji – ewentualne duplikaty w danych ze Straży Granicznej oraz w zintegrowanym rejestrze
+błędy pokrycia rejestrów administracyjnych:
+błąd nadreprezentacji (ang. overcoverage error) – fakt występowania w rejestrze nie oznacza, że dana osoba przebywała w Polsce,
+błąd niedoreprezentacji (ang. undercoverage error) – uwzględniono populację cudzoziemców zarejestrowaną w wykorzystanych do opracowania danych administracyjnych, co oznacza brak informacji o cudzoziemcach, których pobyt jest nieudokumentowany lub występujących w innych rejestrach, 
+błąd ekstrapolacji – przyjęto założenie o podobnej dynamice populacji cudzoziemców ustalonej na podstawie 9 rejestrów, jak w rejestrze ZUS,
+błąd integracji danych – w przypadku kilkuset tys. cudzoziemców łączenie odbyło się na podstawie danych innych niż numer PESEL (wykorzystano alternatywne klucze łączenia).
+Jakość zintegrowanych źródeł danych
+Poniższe tabele przedstawiają podsumowanie jakości danych o cudzoziemcach pochodzących z rejestrów administracyjnych. Należy zwrócić uwagę na bardzo dużą liczbę cudzoziemców występujących wyłącznie w jednym rejestrze. Oznacza, to, że dla blisko 990 tys. cudzoziemców nie znaleziono innej informacji potwierdzającej ich pobyt na terenie Polski. W raporcie zastosowano metodykę śladów życia (ang. signs-of-life), która oznacza, że jakość danego rekordu zależy od liczby wystąpień i zgodności informacji zawartych w integrowanych rejestrach administracyjnych.
+Tablica 3. Liczba cudzoziemców według  występowania w źródłowych rejestrach administracyjnych według stanu na 31.12.2019 r.
+Rejestr źródłowy
+liczba
+PESEL
+263 976
+UdSC
+426 266
+ZUS
+696 434
+KEP
+919 491
+MRPIPS
+767 033
+MNISW
+66 824
+MEN
+18 032
+KRUS
+60 198
+NFZ
+1 230 717
+
+
+Wstpółwystępowanie
+liczba
+Cudzoziemcy występujący w 1 zbiorze:
+988 235
+Cudzoziemcy występujący w 2 zbiorach:
+461 233
+Cudzoziemcy występujący w 3 zbiorach:
+303 767
+Cudzoziemcy występujący w 4 zbiorach:
+222 911
+Cudzoziemcy występujący w 5 zbiorach:
+111 896
+Cudzoziemcy występujący w 6 zbiorach:
+17 921
+Cudzoziemcy występujący w 7 zbiorach:
+138
+Cudzoziemcy występujący w 8 zbiorach:
+0
+Cudzoziemcy występujący w 9 zbiorach:
+0
+
+Sposób aktualizacji populacji cudzoziemców
+Poniższa tabela przedstawia rozkład relacji wielkości populacji cudzoziemców według danych ZUS. Wskaźnik ten przedstawia zmianę procentową dla każdego z 204 obywatelstw między lutym 2020, a grudniem 2019. Wartości większe od zera oznaczają wzrost, wartości mniejsze od zera spadek. W przypadku obywateli Czadu indeks ten wynosi zero, ponieważ w grudniu ZUS raportował 5 obywateli, podczas gdy w lutym 0. W przypadku 34 grup cudzoziemców obserwowano spadek liczby cudzoziemców. Największy spadek odnotowano dla obywateli Korei Południowej (0.658), Zjednoczonych Emiratów Arabskich (0.80) oraz Kuwejtu (0.857). Natomiast największy wzrost dla obywateli Mozambiku (1.64), Kostaryki (1.47) oraz Namibii (1.33). Przy czym należy zauważyć, że te grupy były nieliczne, odpowiednio 105, 208 i 58 na koniec lutego.
+
+
+Tablica 4. Rozkład wskaźnika aktualizującego populację zintegrowanego rejestru administracyjnego 
+minimum
+q1
+mediana
+średnia
+q3
+maksimum
+0
+1
+1
+1.03
+1.03
+1.64
+
+Tak wykorzystany wskaźnik użyto do ekstrapolacji populacji cudzoziemców według stanu na stan w końcu lutego 2020 r. W przypadku wartości dziesiętnych zastosowano zaokrąglanie w górę (ang. ceilling).
+
+
+Opracowanie merytoryczne:
+dr Maciej Beręsewicz – Urząd Statystyczny w Poznaniu 
+Zofia Kostrzewa – Departament Badań Demograficznych GUS 
+Daniel Godlewski –  Departament Systemów Teleinformatycznych, Geostatatyki i Spisów GUS
+Pod kierunkiem Doroty Szałtys – dyrektor Departamentu Badań Demograficznych GUS
+Tel: 22 608 3054
+Rozpowszechnianie:Rzecznik Prasowy Prezesa GUS
+Karolina Banaszek
+Tel: 695 255 011
+
+
+
+Wydział Współpracy z Mediami 
+Tel: 22 608 34 91, 22 608 38 04 
+e-mail: obslugaprasowa@stat.gov.pl
+787402159000
+www.stat.gov.pl
+
+812801841500
+@GUS_STAT
+
+787401524000
+@GlownyUrzadStatystyczny
+19229425682
+Powiązane opracowania
+Cudzoziemcy na krajowym rynku pracy w ujęciu regionalnym
+ https://stat.gov.pl/statystyka-regionalna/statystyka-dla-polityki-spojnosci/statystyka-dla-polityki-spojnosci-2016-2018/badania/rynek-pracy-ubostwo-i-wykluczenie-spoleczne/
+
+Ważniejsze pojęcia dostępne w słowniku
+Pojęcia stosowane w statystyce publicznej
+https://stat.gov.pl/metainformacje/slownik-pojec/pojecia-stosowane-w-statystyce-publicznej/723,pojecie.html
+
+
+00
+Powiązane opracowania
+Cudzoziemcy na krajowym rynku pracy w ujęciu regionalnym
+ https://stat.gov.pl/statystyka-regionalna/statystyka-dla-polityki-spojnosci/statystyka-dla-polityki-spojnosci-2016-2018/badania/rynek-pracy-ubostwo-i-wykluczenie-spoleczne/
+
+Ważniejsze pojęcia dostępne w słowniku
+Pojęcia stosowane w statystyce publicznej
+https://stat.gov.pl/metainformacje/slownik-pojec/pojecia-stosowane-w-statystyce-publicznej/723,pojecie.html
+
+
+

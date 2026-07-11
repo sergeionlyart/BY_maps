@@ -106,7 +106,7 @@ def test_wpf5_backtest_gates():
 def test_forecast_json_fresh():
     """Опубликованный forecast.json соответствует пересчёту."""
     published = json.loads((ROOT / "web/public/data/forecast.json").read_text())
-    assert published["version"] == "v2026.2"
+    assert published["version"] == "v2026.3"
     assert published["horizon"] == [2026, 2075]
     assert set(published["scenarios"]) == {"base", "optimistic", "negative"}
     t = published["territories"]

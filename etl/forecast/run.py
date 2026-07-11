@@ -1,21 +1,22 @@
-"""Прогон прогноза 2026-2075 по трём сценариям (уровни 0-1).
+"""Прогон прогноза 2026-2075 по трём сценариям (уровни 0-3).
 
 Схема:
 - jump-off: официальные структуры на 01.01.2026 (дата-портал Белстата);
+  дополнительно ряд adjusted (WP-F3) - официальный старт минус центральная
+  оценка незарегистрированного оттока 2020-2026 (etl.mirror);
 - для каждой области и Минска - CCMPP шагом 5 лет: областные ASFR-профили
   2018 г., масштабируемые к сценарной национальной траектории СКР с
   сохранением областных дифференциалов; национальная смертность (HMD-2018),
   масштабируемая к сценарным e0(t); миграция - внутренняя матрица-2019 x
   centripetal + международное сценарное сальдо по ключам WP-F3;
-- страна = сумма областей (bottom-up согласование; полный IPF - на этапе 5
-  вместе с районами);
+- страна = сумма областей; районы и города - этап 5 (модуль sub, IPF);
 - квантили q10/q90: относительная ширина 80% предиктивного интервала
   WPP 2024 (Lower/Upper 80 PI к Medium), применённая к базовой траектории;
   для областей - те же относительные коэффициенты (документированное
   упрощение MVP).
 
 Запуск: python -m etl.forecast.run  ->  web/public/data/forecast.json
-                                        data/curated/forecast_v2026_1.csv
+                                        data/curated/forecast_v2026_3.csv
 """
 from __future__ import annotations
 
@@ -35,7 +36,7 @@ from .migration import step_net_migration
 
 SCEN_DIR = Path(__file__).parent / "scenarios"
 OUT_WEB = ROOT / "web" / "public" / "data" / "forecast.json"
-OUT_CSV = ROOT / "data" / "curated" / "forecast_v2026_2.csv"
+OUT_CSV = ROOT / "data" / "curated" / "forecast_v2026_3.csv"
 
 STEP_YEARS = list(range(2026, 2077, STEP))  # 2026..2076
 EXPORT_YEARS = [y for y in STEP_YEARS if y <= 2071] + [2075]
@@ -57,6 +58,39 @@ def _interp(targets: dict, year: int) -> float:
     return pts[-1][1]
 
 
+def jumpoff_adjusted() -> tuple[dict, dict]:
+    """Скорректированный старт 2026 (WP-F3): официальные структуры минус
+    mid-поправка на незарегистрированный отток (data/curated/adjustment.csv),
+    распределённая по возрастному профилю эмигранта и полу (etl.mirror).
+
+    Возвращает (структуры, {'note': ...})."""
+    import csv as _csv
+
+    from ..mirror import AGE_PROFILE, MALE_SHARE
+
+    adj = {}
+    for r in _csv.DictReader(open(ROOT / "data/curated/adjustment.csv")):
+        if r["year"] == "2026" and r["territory_id"] in TERRITORIES:
+            adj[r["territory_id"]] = {k: float(r[k]) for k in ("low", "mid", "high")}
+    out = {}
+    for t, pop in jumpoff_2026().items():
+        cut = adj.get(t, {}).get("mid", 0.0)
+        new = {s: dict(v) for s, v in pop.items()}
+        for g, share in AGE_PROFILE.items():
+            take = cut * share
+            for s, sex_share in (("m", MALE_SHARE), ("f", 1 - MALE_SHARE)):
+                new[s][g] = max(new[s][g] - take * sex_share, 0.0)
+        out[t] = new
+    total_cut = sum(v["mid"] for v in adj.values())
+    lo = sum(v["low"] for v in adj.values())
+    hi = sum(v["high"] for v in adj.values())
+    note = (f"официальный ряд минус центральная оценка незарегистрированного "
+            f"оттока 2020–2026 ({total_cut / 1000:.0f} тыс.; интервал "
+            f"{lo / 1000:.0f}–{hi / 1000:.0f} тыс., зеркальная статистика "
+            f"ЕС/Польши/Литвы/Грузии — WP-F3)")
+    return out, {"note": note}
+
+
 def load_scenarios() -> dict[str, dict]:
     out = {}
     for p in sorted(SCEN_DIR.glob("*.yaml")):
@@ -73,13 +107,17 @@ def load_scenarios() -> dict[str, dict]:
     return out
 
 
-def run_scenario(scen: dict, keep_structures: bool = False) -> dict | tuple[dict, dict]:
+def run_scenario(scen: dict, keep_structures: bool = False,
+                 jumpoff: dict | None = None) -> dict | tuple[dict, dict]:
     """Прогон сценария. Возвращает {terr: {year: pop_total}} (+ 'BY');
     при keep_structures - дополнительно {terr: {year: {sex: {age: pop}}}}
-    (для IPF-согласования районов и городов, этап 5)."""
+    (для IPF-согласования районов и городов, этап 5).
+    jumpoff - альтернативные стартовые структуры (WP-F3: ряд adjusted);
+    по умолчанию - официальные оценки на 01.01.2026."""
     mx0 = mortality_mx(2018)
     prof = asfr_profile(2018)
-    pops = {t: {s: dict(v) for s, v in jumpoff_2026()[t].items()} for t in TERRITORIES}
+    start = jumpoff if jumpoff is not None else jumpoff_2026()
+    pops = {t: {s: dict(v) for s, v in start[t].items()} for t in TERRITORIES}
 
     series: dict[str, dict[int, float]] = {t: {} for t in TERRITORIES + ["BY"]}
     structures: dict[str, dict[int, dict]] = {t: {} for t in TERRITORIES}
@@ -132,29 +170,36 @@ def _pi_at(ratios: dict[int, float], year: int) -> float:
     return ratios[lo] + t * (ratios[hi] - ratios[lo])
 
 
-def export(all_series: dict[str, dict], sub_series: dict[str, dict]) -> None:
+def _series_entry(pts: dict, sid: str, ratios: dict) -> dict:
+    years = EXPORT_YEARS
+
+    def val(y: float) -> float:
+        if y in pts:
+            return pts[y]
+        y0 = max(x for x in pts if x <= y)
+        y1 = min(x for x in pts if x >= y)
+        k = (y - y0) / (y1 - y0)
+        return pts[y0] + k * (pts[y1] - pts[y0])
+
+    entry = {"years": years, "pop": [round(val(y)) for y in years]}
+    if sid == "base":
+        entry["q10"] = [round(val(y) * _pi_at(ratios["lo"], y)) for y in years]
+        entry["q90"] = [round(val(y) * _pi_at(ratios["hi"], y)) for y in years]
+    return entry
+
+
+def export(all_series: dict[str, dict], sub_series: dict[str, dict],
+           adj_series: dict[str, dict] | None = None,
+           adj_meta: dict | None = None) -> None:
     """all_series: уровни 0-1 ({sid: {terr: {year: pop}}});
-    sub_series: уровни 2-3 после IPF ({sid: {terr: {year: pop}}})."""
+    sub_series: уровни 2-3 после IPF ({sid: {terr: {year: pop}}});
+    adj_series: уровни 0-1 со скорректированного старта (WP-F3)."""
     ratios = pi_ratios()
     terrs = {}
     for t in TERRITORIES + ["BY"]:
         terrs[t] = {}
         for sid, series in all_series.items():
-            pts = series[t]
-            years = EXPORT_YEARS
-            def val(y: float) -> float:
-                if y in pts:
-                    return pts[y]
-                y0 = max(x for x in pts if x <= y)
-                y1 = min(x for x in pts if x >= y)
-                k = (y - y0) / (y1 - y0)
-                return pts[y0] + k * (pts[y1] - pts[y0])
-            pop = [round(val(y)) for y in years]
-            entry = {"years": years, "pop": pop}
-            if sid == "base":
-                entry["q10"] = [round(val(y) * _pi_at(ratios["lo"], y)) for y in years]
-                entry["q90"] = [round(val(y) * _pi_at(ratios["hi"], y)) for y in years]
-            terrs[t][sid] = entry
+            terrs[t][sid] = _series_entry(series[t], sid, ratios)
 
     # уровни 2-3: районы и города (сценарность - через IPF к области;
     # квантили не публикуются - неопределённость коммуницируется сценариями)
@@ -168,6 +213,14 @@ def export(all_series: dict[str, dict], sub_series: dict[str, dict]) -> None:
     terrs["c-minsk"] = {sid: {"years": e["years"], "pop": e["pop"]}
                         for sid, e in terrs["BY-HM"].items()}
 
+    # ряд adjusted (WP-F3): только уровни 0-1 - поправка территориально
+    # обоснована лишь до уровня областей
+    adjusted = {}
+    if adj_series:
+        for t in TERRITORIES + ["BY"]:
+            adjusted[t] = {sid: _series_entry(series[t], sid, ratios)
+                           for sid, series in adj_series.items()}
+
     scen_meta = {sid: {"name": s["name"], "description": s["description"].strip()}
                  for sid, s in load_scenarios().items()}
     OUT_WEB.write_text(json.dumps({
@@ -175,20 +228,27 @@ def export(all_series: dict[str, dict], sub_series: dict[str, dict]) -> None:
         "horizon": [2026, 2075],
         "scenarios": ["base", "optimistic", "negative"],
         "scenarioMeta": scen_meta,
-        "jumpoff": ["official"],
+        "jumpoff": ["official", "adjusted"] if adjusted else ["official"],
+        **({"adjustedMeta": adj_meta} if adj_meta else {}),
         "dtype": "f",
         "territories": terrs,
+        **({"adjusted": adjusted} if adjusted else {}),
     }, ensure_ascii=False))
 
     with open(OUT_CSV, "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f, lineterminator="\n")
-        w.writerow(["territory_id", "scenario", "year", "pop", "q10", "q90"])
-        for t, scens in sorted(terrs.items()):
-            for sid, e in sorted(scens.items()):
-                for i, y in enumerate(e["years"]):
-                    w.writerow([t, sid, y, e["pop"][i],
-                                e.get("q10", [""] * len(e["years"]))[i],
-                                e.get("q90", [""] * len(e["years"]))[i]])
+        w.writerow(["territory_id", "scenario", "jumpoff", "year", "pop", "q10", "q90"])
+
+        def dump(block: dict, jo: str) -> None:
+            for t, scens_ in sorted(block.items()):
+                for sid, e in sorted(scens_.items()):
+                    for i, y in enumerate(e["years"]):
+                        w.writerow([t, sid, jo, y, e["pop"][i],
+                                    e.get("q10", [""] * len(e["years"]))[i],
+                                    e.get("q90", [""] * len(e["years"]))[i]])
+        dump(terrs, "official")
+        if adjusted:
+            dump(adjusted, "adjusted")
     print(f"OK: forecast.json + {OUT_CSV.name}")
 
 
@@ -215,15 +275,22 @@ def main() -> None:
         cities = sub.cities_forecast(export_units, set(children), EXPORT_YEARS)
         sub_series[sid] = {**export_units, **cities}
 
-    export(all_series, sub_series)
+    # ряд adjusted (WP-F3): те же сценарии со скорректированного старта
+    adj_jump, adj_meta = jumpoff_adjusted()
+    adj_series = {sid: run_scenario(s, jumpoff=adj_jump) for sid, s in scens.items()}
+
+    export(all_series, sub_series, adj_series, adj_meta)
     wpp = wpp_total_variants()
     for sid, series in sorted(all_series.items()):
         p50 = series["BY"][2051] / 1000
         p75 = series["BY"][2076] / 1000
-        print(f"  {sid:12s}: 2050≈{p50:.0f} тыс. (WPP medium {wpp['Medium'][2050]:.0f}, "
-              f"low {wpp['Low'][2050]:.0f}, high {wpp['High'][2050]:.0f}); 2075≈{p75:.0f} тыс.")
+        print(f"  {sid:12s}: узел 2051≈{p50:.0f} тыс. (WPP medium-2050 {wpp['Medium'][2050]:.0f}, "
+              f"low {wpp['Low'][2050]:.0f}, high {wpp['High'][2050]:.0f}); узел 2076≈{p75:.0f} тыс.")
     n_sub = len(sub_series["base"])
     print(f"  уровни 2-3: {n_sub} территорий (районы, города) по 3 сценариям")
+    print(f"  adjusted (WP-F3): старт {adj_series['base']['BY'][2026] / 1000:.0f} тыс. "
+          f"(официальный {all_series['base']['BY'][2026] / 1000:.0f}); "
+          f"base-2050 {adj_series['base']['BY'][2051] / 1000:.0f} тыс.")
 
 
 if __name__ == "__main__":

@@ -56,6 +56,29 @@ def test_scenario_ordering_and_country_sum():
             assert res["optimistic"]["BY"][y] > res["base"]["BY"][y] > res["negative"]["BY"][y]
 
 
+def test_adjusted_series():
+    """WP-F3: adjusted < official на старте ровно на mid-поправку;
+    сценарии упорядочены; уровни 2-3 в adjusted не публикуются."""
+    import csv
+    import json
+    fc = json.loads((PKG / "web/public/data/forecast.json").read_text())
+    assert fc["jumpoff"] == ["official", "adjusted"]
+    adj_csv = {r["territory_id"]: float(r["mid"])
+               for r in csv.DictReader(open(PKG / "data/curated/adjustment.csv"))
+               if r["year"] == "2026"}
+    d = fc["territories"]["BY"]["base"]["pop"][0] - \
+        fc["adjusted"]["BY"]["base"]["pop"][0]
+    assert abs(d - adj_csv["BY"]) < 100, (d, adj_csv["BY"])
+    for t in TERRITORIES + ["BY"]:
+        o = fc["adjusted"][t]["optimistic"]["pop"][-1]
+        b = fc["adjusted"][t]["base"]["pop"][-1]
+        n = fc["adjusted"][t]["negative"]["pop"][-1]
+        assert o >= b >= n, t
+        assert fc["adjusted"][t]["base"]["pop"][0] < \
+            fc["territories"][t]["base"]["pop"][0], t
+    assert "r-minski" not in fc["adjusted"]
+
+
 def test_sub_levels_reconciled():
     """Уровни 2-3 (после прогона run.py): сумма районов = область на каждый
     год и сценарий; город не больше района; старт = официальные оценки."""
@@ -63,7 +86,7 @@ def test_sub_levels_reconciled():
     import json
     fc = json.loads((PKG / "web/public/data/forecast.json").read_text())
     terrs = fc["territories"]
-    assert fc["version"] == "v2026.2"
+    assert fc["version"] == "v2026.3"
     obl_of = {r["territory_id"]: r["oblast"]
               for r in csv.DictReader(open(PKG / "data/curated/age2019.csv"))}
     years = terrs["BY-BR"]["base"]["years"]

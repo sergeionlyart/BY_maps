@@ -19,8 +19,8 @@ if (typeof window !== 'undefined') {
   };
 }
 import type { DataFile, Metric, MapLevel, RaionMode } from '@/lib/types';
-import type { ForecastFile, ScenarioId } from '@/lib/forecast';
-import { forecastAt, FORECAST_START, SCENARIO_LABEL } from '@/lib/forecast';
+import type { ForecastFile, ScenarioId, JumpoffId } from '@/lib/forecast';
+import { forecastAt, hasAdjusted, FORECAST_START, SCENARIO_LABEL, JUMPOFF_LABEL } from '@/lib/forecast';
 import { valueAt, nearestPoint, formatNumber, formatPct, formatCompact, DTYPE_LABEL } from '@/lib/series';
 import { colorFor, legendStops, cityColor, cityRadius } from '@/lib/scales';
 
@@ -29,6 +29,7 @@ interface Props {
   geo: { adm1: GeoJSON.FeatureCollection; adm2: GeoJSON.FeatureCollection; border1921: GeoJSON.FeatureCollection };
   forecast: ForecastFile | null;
   scenario: ScenarioId;
+  jumpoff?: JumpoffId;
   year: number;
   metric: Metric;
   level: MapLevel;
@@ -50,7 +51,7 @@ const METRIC_TITLE: Record<Metric, string> = {
 };
 
 export default function MapView(props: Props) {
-  const { data, geo, forecast, scenario, year, metric, level, raionMode, baseYear, showBorder1921, showCities, selected, onSelect } = props;
+  const { data, geo, forecast, scenario, jumpoff = 'official', year, metric, level, raionMode, baseYear, showBorder1921, showCities, selected, onSelect } = props;
   // с этапа 5 прогноз есть на всех уровнях (районы - CCR, города - доли);
   // фолбэк уровня больше не нужен
   const inForecast = forecast != null && year > FORECAST_START;
@@ -294,13 +295,13 @@ export default function MapView(props: Props) {
   function comboPop(id: string, s: Props, yr: number): number | null {
     const t = s.data.territories[id];
     if (s.forecast && yr > FORECAST_START) {
-      const v = forecastAt(s.forecast, id, s.scenario, yr);
+      const v = forecastAt(s.forecast, id, s.scenario, yr, 'pop', s.jumpoff);
       if (v == null) return null;
       // «без центра» в прогнозе: район минус прогнозы его городских центров
       if (t?.level === 'raion' && s.raionMode === 'noCenter') {
         let centers = 0;
         for (const cid of t.center ?? []) {
-          const cv = forecastAt(s.forecast, cid, s.scenario, yr);
+          const cv = forecastAt(s.forecast, cid, s.scenario, yr, 'pop', s.jumpoff);
           if (cv == null) return null;
           centers += cv;
         }
@@ -343,10 +344,10 @@ export default function MapView(props: Props) {
     if (!t) return null;
     // прогнозная зона: значение, интервал и обязательная атрибуция
     if (s.forecast && s.year > FORECAST_START) {
-      const v = forecastAt(s.forecast, id, s.scenario, s.year);
+      const v = forecastAt(s.forecast, id, s.scenario, s.year, 'pop', s.jumpoff);
       if (v == null) return <div className="tt-name">{t.ru}: прогноза нет</div>;
-      const q10 = forecastAt(s.forecast, id, s.scenario, s.year, 'q10');
-      const q90 = forecastAt(s.forecast, id, s.scenario, s.year, 'q90');
+      const q10 = forecastAt(s.forecast, id, s.scenario, s.year, 'q10', s.jumpoff);
+      const q90 = forecastAt(s.forecast, id, s.scenario, s.year, 'q90', s.jumpoff);
       const m = territoryMetric(id, s);
       return (
         <>
@@ -361,6 +362,7 @@ export default function MapView(props: Props) {
           )}
           <div className="tt-src">
             прогноз {s.forecast.version}, сценарий «{SCENARIO_LABEL[s.scenario]}»
+            {s.jumpoff === 'adjusted' ? (hasAdjusted(s.forecast, id) ? ', ряд скорректированный' : ', ряд официальный (поправка — до уровня областей)') : ''}
           </div>
         </>
       );
@@ -421,7 +423,7 @@ export default function MapView(props: Props) {
         {inForecast && (
           <div className="lg-row" style={{ marginTop: 5 }}>
             <span className="lg-line" style={{ borderTopColor: 'var(--accent)' }} />
-            прогноз {forecast!.version} · «{SCENARIO_LABEL[scenario]}»
+            прогноз {forecast!.version} · «{SCENARIO_LABEL[scenario]}»{jumpoff === 'adjusted' ? ' · ряд скорр.' : ''}
           </div>
         )}
         {showBorder1921 && (
@@ -435,6 +437,13 @@ export default function MapView(props: Props) {
         <div className="map-notice">
           Районный разрез — с 1970 года. Ранняя динамика видна по городам
           {year >= 1959 ? ' и областям' : ''} (уровень «Области» — с 1959 г.).
+        </div>
+      )}
+      {inForecast && jumpoff === 'adjusted' && level !== 'oblast' && (
+        <div className="map-notice">
+          Скорректированный ряд построен для страны, областей и Минска:
+          районы и города показаны по официальному ряду (поправка
+          территориально обоснована только до уровня областей).
         </div>
       )}
       {inForecast && level === 'raion' && (

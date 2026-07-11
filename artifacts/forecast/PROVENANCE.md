@@ -27,7 +27,7 @@
    chernobyl_zones.csv (классы 1-2) ──────> (sub.py) + доли городов
                    │                              │
                    ▼                              ▼
-     docs/notes/backtest_sub.json       data/curated/forecast_v2026_2.csv
+     docs/notes/backtest_sub.json       data/curated/forecast_v2026_3.csv
      (районы 2019->2026, города         web/public/data/forecast.json -> лендинг
       <=2009 -> 2019)                   (уровни 0-3, 3 сценария)
 ```
@@ -45,3 +45,26 @@ geoBoundaries ADM2; manual: 4 гп без координат по справоч
 перечни НП, пост. СМ РБ № 75/2021 и № 9/2016; см. пакет
 by-maps-chernobyl). `data.json` - база проекта (pop-stat.mashke.org по
 официальным переписям и оценкам; гармонизация - ручной реестр проекта).
+
+## WP-F3: ряд adjusted
+
+```
+Eurostat migr_resvalid/resfirst   UDSC (Польша)   ЦНИ-2023 (опрос диаспоры)
+  стоки/потоки разрешений ЕС      карты побыту     доли направлений/возраст/пол
+        │                              │                  │
+        └────────────┬─────────────────┴──────────┬───────┘
+                     ▼                            ▼
+        etl/mirror.py: интервал оттока    профили поправки (возраст/пол/
+        low/mid/high (гейт приёмки)       территории/время)
+                     │                            │
+                     ▼                            ▼
+        data/curated/migration_mirror.csv, adjustment.csv
+                     │
+                     ▼
+        run.py::jumpoff_adjusted -> прогон 3 сценариев -> блок adjusted
+        forecast.json / forecast_v2026_3.csv (jumpoff=adjusted, уровни 0-1)
+```
+
+Сырьё завендорено в `data/raw/mirror/` (sha256 - registry.csv); документы
+за бот-защитой (migracija.lrv.lt, pap.pl) взяты через цитирующие СМИ -
+помечены в реестре.

@@ -33,7 +33,7 @@ OBLS = ["BY-BR", "BY-VI", "BY-HO", "BY-HR", "BY-MI", "BY-MA"]
 
 
 def test_version_and_coverage(fc):
-    assert fc["version"] == "v2026.2"
+    assert fc["version"] == "v2026.3"
     terrs = fc["territories"]
     raions = [t for t in terrs if t.startswith("r-")]
     cities = [t for t in terrs if t.startswith("c-")]
