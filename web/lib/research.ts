@@ -49,8 +49,9 @@ export const RESEARCH: ResearchEntry[] = [
     title: 'Транспортная доступность и «тень Минска»',
     question:
       'Пригород (<45 мин) растёт, кольцо 1,5–2,5 ч убывает быстрее всего? Как закрытие границ с ЕС изменило положение западных районов?',
-    status: 'planned',
+    status: 'published',
     stage: 6,
+    artifact: { file: 'by-maps-access-v1.0.0.zip', version: '1.0.0', sizeKb: 13949 },
   },
   {
     slug: 'migration',

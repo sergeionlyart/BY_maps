@@ -1,0 +1,16 @@
+name_ru,name_neighbor,neighbor_country,lat,lon,status_2019,status_2026_07,closed_date,closed_by,reopened_date,traffic_2026,source_url,accessed
+Брест (Варшавский мост),Terespol,PL,52.07,23.64,open,open,,,,"легковые и автобусы; врем. закрыт Польшей 12.09.2025-25.09.2025 (Запад-2025)",https://granica.gov.pl/index_wait.php?v=pl,2026-07-11
+Козловичи,Kukuryki (Koroszczyn),PL,52.11,23.56,open,open,,,,"только грузовые; врем. закрыт Польшей 12.09.2025-25.09.2025",https://granica.gov.pl/index_wait.php?v=pl,2026-07-11
+Брузги,Kuźnica Białostocka,PL,53.52,23.66,open,open,2021-11-09,Польша,2025-11-17,"только легковые (без автобусов)",https://www.gov.pl/web/mswia/od-poniedzialku-otwieramy-dwa-przejscia-graniczne-z-bialorusia,2026-07-11
+Берестовица,Bobrowniki,PL,53.12,23.89,open,open,2023-02-10,Польша,2025-11-17,"легковые + автобусы + грузовые с рег. ЕС/ЕАСТ/Швейцария",https://www.gov.pl/web/mswia/od-poniedzialku-otwieramy-dwa-przejscia-graniczne-z-bialorusia,2026-07-11
+Домачево,Sławatycze,PL,51.76,23.60,open,closed,2020-03-15,Польша,,"движение приостановлено (COVID-повод, не возобновлено)",https://granica.gov.pl/index_wait.php?v=pl,2026-07-11
+Песчатка,Połowce,PL,52.47,23.36,open,closed,2020-03-15,Польша,,"движение приостановлено (COVID-повод, не возобновлено)",https://granica.gov.pl/index_wait.php?v=pl,2026-07-11
+Переров,Białowieża,PL,52.67,23.86,open (пеший/вело сезонный),closed,2020-03-15,Польша,,"пеше-велосипедный переход; закрыт",https://www.archiwum.gddkia.gov.pl/pl/aprint/36978/Zmiany-na-przejsciach-granicznych,2026-07-11
+Каменный Лог,Medininkai,LT,54.54,25.71,open,open,,,,"легковые/автобусы/грузовые; врем. закрыт Литвой 26.10.2025-20.11.2025",https://www.ltsiena.lt/,2026-07-11
+Бенякони,Šalčininkai,LT,54.28,25.38,open,open,,,,"легковые/автобусы/грузовые; врем. закрыт Литвой 26.10.2025-20.11.2025",https://www.ltsiena.lt/,2026-07-11
+Котловка,Lavoriškės,LT,54.72,25.75,open,closed,2024-03-01,Литва,,"закрыт (решение правительства ЛР 21.02.2024)",https://vrm.lrv.lt/en/news/the-operation-of-the-lavoriskes-and-raigardas-border-crossing-points-will-be-terminated-from-1-march/,2026-07-11
+Привалка,Raigardas,LT,53.94,23.98,open,closed,2024-03-01,Литва,,"закрыт (решение правительства ЛР 21.02.2024)",https://vrm.lrv.lt/en/news/the-operation-of-the-lavoriskes-and-raigardas-border-crossing-points-will-be-terminated-from-1-march/,2026-07-11
+Лоша,Šumskas,LT,54.59,25.76,open (упрощённый),closed,2023-08-18,Литва,,закрыт,https://www.osw.waw.pl/en/publikacje/analyses/2025-10-30/lithuania-closes-its-border-belarus-a-month,2026-07-11
+Видзы,Tverečius,LT,55.32,26.64,open,closed,2023-08-18,Литва,,закрыт,https://www.osw.waw.pl/en/publikacje/analyses/2025-10-30/lithuania-closes-its-border-belarus-a-month,2026-07-11
+Григоровщина,Pāternieki,LV,55.82,27.63,open,open,,,,"работает; обязат. эл. очередь ERRS с 15.10.2025; запрет нерегулярных автобусных перевозок 01.11.2025-31.10.2026",https://lvrobeza.lv/en/zinas/,2026-07-11
+Урбаны,Silene,LV,55.72,26.88,open,closed,2023-09-19,Латвия,,"закрыт (реш. Кабмина ЛР, с 20:00 19.09.2023)",https://eng.lsm.lv/article/society/defense/19.09.2023-latvias-silene-border-point-closed-due-to-migration-pressure.a524506/,2026-07-11

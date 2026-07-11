@@ -89,6 +89,23 @@ INF-07 — реестр в [`data/raw/chernobyl/registry.csv`](../data/raw/chern
 прилагательными без «район»; «Не распределено по районам Минской области»
 с 2024. Продукты: `data/curated/wages.csv`, `web/public/data/wages.json`.
 
+## Этап 6: INF-04 «Транспортная доступность»
+
+Реестры — [`data/raw/osm/registry.csv`](../data/raw/osm/registry.csv) и
+[`data/raw/border/registry.csv`](../data/raw/border/registry.csv).
+Дорожная сеть — Geofabrik `belarus-latest.osm.pbf` от 2026-07-10
+(md5 сверен с официальным `.md5`; сам PBF 0,33 ГБ не вендорится);
+извлечённый граф motorway…tertiary — `data/raw/osm/graph_edges.csv.gz`
+(833 438 рёбер, sha256 в реестре; извлечение — `etl/osm_graph.py`,
+pyosmium). Погранпереходы с ЕС — разведка по granica.gov.pl, MSWiA,
+VSAT, ГПК РБ, Minsk Dialogue (снапшоты в `data/raw/border/`): 15
+переходов, легковые статусы 2019 (13) / надир 03.2024–11.2025 (4) /
+11.07.2026 (6). Ловушки: публикации visahq.com о «закрытии января-2026» —
+фейк, противоречат живому granica.gov.pl; Козловичи — только грузовой;
+Переров — пешеходный; Лоша в 2019 — упрощённый статус. Продукты:
+`data/curated/border_crossings.csv`, `data/curated/travel_times.csv`,
+`web/public/data/access.json`.
+
 ## Проверочные константы (в тестах)
 
 Официальные доли городского населения по переписям — 1999: 69,3%, 2009: 74,5%,

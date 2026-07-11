@@ -1,0 +1,111 @@
+# Проверяемый пакет INF-04 «Транспортная доступность и "тень Минска"».
+# Сборка: python -m etl.artifacts.build access
+
+id: access
+title: "Транспортная доступность районов Беларуси: травел-тайм по графу OSM, пояса, «тень Минска» и закрытая граница с ЕС"
+version: "1.0.0"
+released: "2026-07-11"
+landing_url: "https://by-population-maps.vercel.app/research/access"
+authors:
+  - "Проект «Население Беларуси, 1897–2026»"
+
+files:
+  - { path: README.md, role: docs }
+  - { path: CHANGELOG.md, role: docs }
+  - { path: AGENT.md, role: docs }
+  - { path: LIMITATIONS.md, role: docs }
+  - { path: PROVENANCE.md, role: docs }
+  - { path: CITATION.cff, role: docs }
+  - { path: LICENSE.md, role: docs }
+  - { path: sources/registry.csv, from: data/raw/osm/registry.csv, role: docs }
+  - { path: sources/registry_border.csv, from: data/raw/border/registry.csv, role: docs }
+  - { path: sources/border_README.md, from: data/raw/border/README.md, role: docs }
+  # сырьё: дорожный граф из OSM (версия PBF и md5 - в registry.csv)
+  - { path: data/raw/osm/graph_edges.csv.gz, from: data/raw/osm/graph_edges.csv.gz, role: raw, license: "ODbL 1.0 (OpenStreetMap contributors)" }
+  # сырьё: разведка погранпереходов + нормализованный реестр
+  - { path: data/raw/border/border_crossings_by_eu.csv, from: data/raw/border/border_crossings_by_eu.csv, role: raw, license: "CC BY 4.0 (компиляция проекта)" }
+  - { path: data/curated/border_crossings.csv, from: data/curated/border_crossings.csv, role: intermediate, license: "CC BY 4.0" }
+  # сырьё зарплатного контроля (INF-03)
+  - { path: data/raw/wages/wage_10218000003_2010-2019.json, from: data/raw/wages/wage_10218000003_2010-2019.json, role: raw, license: "открытые данные Белстата" }
+  - { path: data/raw/wages/wage_10218000003_2020-2026.json, from: data/raw/wages/wage_10218000003_2020-2026.json, role: raw, license: "открытые данные Белстата" }
+  # ряды населения и координаты центров (база проекта)
+  - { path: web/public/data/data.json, from: web/public/data/data.json, role: intermediate, license: "CC BY 4.0" }
+  # код
+  - { path: etl/__init__.py, from: artifacts/access/shims/etl_init.py, role: code }
+  - { path: etl/common.py, from: artifacts/access/shims/common.py, role: code }
+  - { path: etl/registry.py, from: etl/registry.py, role: code }
+  - { path: etl/census_age.py, from: etl/census_age.py, role: code }
+  - { path: etl/wages.py, from: etl/wages.py, role: code }
+  - { path: etl/access.py, from: etl/access.py, role: code }
+  - { path: etl/osm_graph.py, from: etl/osm_graph.py, role: code }
+  - { path: params/assumptions.yaml, role: params }
+  - { path: code/run.sh, role: code }
+  - { path: code/verify.py, role: code }
+  - { path: code/requirements.lock, role: code }
+  - { path: checks/tests/test_invariants.py, role: code }
+  # итоговые данные - ровно те, что на лендинге
+  - { path: data/final/computed_results.json, role: final, license: "CC BY 4.0" }
+  - { path: web/public/data/access.json, from: web/public/data/access.json, role: final, license: "CC BY 4.0" }
+  - { path: data/curated/travel_times.csv, from: data/curated/travel_times.csv, role: final, license: "CC BY 4.0" }
+
+sources:
+  - id: geofabrik_pbf
+    url: "https://download.geofabrik.de/europe/belarus-latest.osm.pbf"
+    description: "OSM-выгрузка Беларуси от 2026-07-10; md5 8c2f87148173f06fd144146079b99e54 (сверен с официальным .md5); PBF не вендорится (0,33 ГБ) - извлечённый граф в пакете, шаг извлечения - etl/osm_graph.py (pyosmium)"
+    license: "ODbL 1.0 (OpenStreetMap contributors)"
+    accessed: "2026-07-11"
+  - id: border_recon
+    url: "granica.gov.pl; gov.pl/web/mswia; vsat.lrv.lt; gpk.gov.by; minskdialogue.by"
+    description: "Статусы 15 погранпереходов Беларусь-ЕС для легковых: 2019 (13), надир 03.2024-11.2025 (4), 11.07.2026 (6); снапшоты страниц - в репозитории проекта (data/raw/border/), sha256 - sources/registry_border.csv"
+    license: "официальные публикации; компиляция CC BY 4.0"
+    accessed: "2026-07-11"
+  - id: dataportal_wage
+    url: "https://dataportal.belstat.gov.by/osids-public-api/indicator/indicatorValuesSearch"
+    description: "Индикатор 10218000003 (зарплата по районам) - контроль регрессии, тот же вендоринг, что в пакете INF-03"
+    license: "открытые данные Белстата"
+    accessed: "2026-07-11"
+
+entrypoints:
+  reproduce: "code/run.sh"
+  verify: "python3 checks/tests/test_invariants.py"
+
+environment:
+  python: ">=3.10"
+  lock: "code/requirements.lock"
+  seed: null   # Дейкстра и OLS детерминированы, случайности нет
+
+expected_results:
+  - { metric: minsk_brest_min, value: 211.8, tolerance: 0.05,
+      description: "травел-тайм Минск - Брест по графу (консервативные скорости, без пробок)" }
+  - { metric: n_belt_suburb, value: 26, tolerance: 0,
+      description: "районов в поясе <45 мин эффективной доступности (до Минска или облцентра)" }
+  - { metric: n_belt_ring, value: 34, tolerance: 0,
+      description: "районов в кольце 1,5-2,5 ч" }
+  - { metric: median_suburb_eff, value: -7.96, tolerance: 0.005,
+      description: "медианная динамика 2015-2025 пригородного пояса, % (квартели - statistics.quantiles inclusive)" }
+  - { metric: median_ring_eff, value: -14.23, tolerance: 0.005,
+      description: "медианная динамика кольца 1,5-2,5 ч - худшая из всех поясов" }
+  - { metric: median_far_eff, value: -12.53, tolerance: 0.005,
+      description: "медианная динамика дальней периферии >2,5 ч: ЛУЧШЕ кольца - профиль немонотонный («тень»)" }
+  - { metric: median_suburb_minsk, value: 11.86, tolerance: 0.005,
+      description: "медианная динамика пояса <45 мин до самого Минска: рост" }
+  - { metric: beta_suburb, value: 2.963, tolerance: 0.001,
+      description: "регрессия с контролями INF-03: пояс <45 мин к базе >2,5 ч, п.п. (HC1 SE 2.59 - незначим)" }
+  - { metric: beta_ring, value: -3.231, tolerance: 0.001,
+      description: "кольцо 1,5-2,5 ч к базе, п.п. (|t|=1.6 при HC1 - незначим; сырой градиент сильнее модели)" }
+  - { metric: se_hc1_ring, value: 2.048, tolerance: 0.001,
+      description: "робастная HC1 SE коэффициента кольца (гетероскедастичность сильная, как в INF-03)" }
+  - { metric: beta_suburb_nowage, value: 9.462, tolerance: 0.001,
+      description: "пригород без зарплатного контроля: +9,5 п.п. (HC1 t=2,6) - премия капитализирована в зарплатах" }
+  - { metric: r2_main, value: 0.516, tolerance: 0.001,
+      description: "R² основной спецификации (n = 118)" }
+  - { metric: crossings_2019, value: 13, tolerance: 0,
+      description: "легковых переходов в ЕС в 2019" }
+  - { metric: crossings_nadir, value: 4, tolerance: 0,
+      description: "легковых переходов в надир 03.2024-11.2025 (Брест, Каменный Лог, Бенякони, Григоровщина)" }
+  - { metric: crossings_2026, value: 6, tolerance: 0,
+      description: "легковых переходов 11.07.2026 (после реоткрытия Кузницы и Бобровников 17.11.2025)" }
+  - { metric: eu_delta_nadir_hrodna, value: 160.9, tolerance: 0.05,
+      description: "Гродненский район: потеря доступности ЕС в надир, минут (16 мин -> 2 ч 57 мин)" }
+  - { metric: eu_delta_nadir_brest, value: 0.0, tolerance: 0,
+      description: "Брестский район: ноль в модельном надире (вне модели - закрытие Тересполя 12-25.09.2025 на учения «Запад-2025»)" }

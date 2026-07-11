@@ -1,0 +1,578 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	
+
+	<title>GoSwift | Lietuvos Respublikos valstybės sienos kirtimo eilių valdymo sistema</title>
+
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="shortcut icon" href="favicon.ico" />
+
+	
+
+
+
+
+        <script type="text/javascript" src="/yphis/struts/js/base/jquery-2.2.4.min.js"></script>
+        <script type="text/javascript" src="/yphis/struts/js/base/jquery-ui.min.js?s2j=4.0.2"></script>
+            <script type="text/javascript"
+                    src="/yphis/struts/i18n/datepicker-lt.min.js?s2j=4.0.2"></script>
+<script type="text/javascript" src="/yphis/struts/js/plugins/jquery.form.min.js?s2j=4.0.2"></script>
+<script type="text/javascript" src="/yphis/struts/js/plugins/jquery.subscribe.min.js?s2j=4.0.2"></script>
+
+<script type="text/javascript" src="/yphis/struts/js/struts2/jquery.struts2.min.js?s2j=4.0.2"></script>
+
+<script type="text/javascript">
+    $(function () {
+        jQuery.struts2_jquery.version = "4.0.2";
+        jQuery.struts2_jquery.loadAtOnce = true;
+        jQuery.scriptPath = "/yphis/struts/";
+        jQuery.struts2_jquery.local = "lt";
+        jQuery.struts2_jquery.gridLocal = "lt";
+        jQuery.struts2_jquery.timeLocal = "lt";
+        jQuery.struts2_jquery.datatablesLocal = "lt";
+        jQuery.ajaxSettings.traditional = true;
+
+        jQuery.ajaxSetup({
+            cache: false
+        });
+
+        jQuery.struts2_jquery.require("js/struts2/jquery.ui.struts2.min.js?s2j=4.0.2");
+
+    });
+</script>
+
+    <link id="jquery_theme_link" rel="stylesheet"
+          href="/yphis/struts/themes/smoothness/jquery-ui.css?s2j=4.0.2" type="text/css"/>
+
+
+	<link rel="stylesheet" href="/yphis/theme/2016/css/normalize.min.css">
+	<link rel="stylesheet" href="/yphis/theme/2016/css/ionicons.min.css">
+	<link rel="stylesheet" href="/yphis/theme/2016/css/main.css">
+	<link rel="stylesheet" href="/yphis/theme/2016/tooltipster/css/tooltipster.css">
+	<link rel="stylesheet" href="/yphis/theme/2016/tooltipster/css/themes/tooltipster-light.css">
+	<link rel="stylesheet" href="/yphis/theme/2016/fancybox/source/jquery.fancybox.css">
+
+	<!--[if lt IE 9]>
+	<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"/>"></script>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<!--[if (gte IE 6)&(lte IE 8)]>
+	<script type="text/javascript" src="/yphis/theme/2016/js/selectivizr-min.js"></script>
+	<![endif]-->
+
+	<!--GoogleAnalytics--><script type="text/javascript"> var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-41242132-1']);_gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);  })(); </script>
+</head>
+<body class="equalize color_orange index">
+<!--[if lt IE 9]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+
+
+
+
+
+
+<header>
+	<div class="header_container clearfix upperHeaderHalfContainer">
+		<div class="logoSectionContainer">
+			<div>
+				<a href="/yphis/index.action"><img class="logo" alt="EVIS" src="/yphis/theme/2016/img/logo_evis.png"/></a>
+			</div>
+			<div class="smallLogos">
+				<img class="lrsmLogo" alt="lrsmLogo" src="/yphis/theme/2016/img/logo1.png"/>
+				<a href="http://www.pkpd.lt" target="_blank">
+					<img class="pkpdLogo" alt="pkpdLogo" src="/yphis/theme/2016/img/logo2.png"/>
+				</a>
+			</div>
+		</div>
+
+		<div class="menuLanguageWelcomeSectionContainer">
+			<div class="user">&nbsp;
+				
+			</div>
+			<div class="menuLanguageSectionContainer">
+				<a class="nav_trigger_mobile" href="#"><i class="ion ion-navicon"></i></a>
+				<div class="language have-dropdown-menu">
+					<span href="#" class="dropdown-menu-toggler">
+						LT
+						<span class="dropdown_toggler_icon down"></span>
+					</span>
+					<div class="dropdown-menu">
+						<ul>
+							
+								
+								
+									
+								
+								<li><a href="/yphis/index.action?request_locale=lt">LT</a></li>
+							
+								
+								
+									
+								
+								<li><a href="/yphis/index.action?request_locale=en">EN</a></li>
+							
+								
+								
+									
+								
+								<li><a href="/yphis/index.action?request_locale=ru">RU</a></li>
+							
+						</ul>
+					</div>
+				</div>
+
+				<nav class="menu">
+					<ul>
+						<li>
+							<a href="#" class="find"><i class="ion ion-search"></i>
+								<span>Rasti mano rezervavimą</span></a>
+						</li>
+						<li>
+							<a href="/yphis/cart.action"><i class="ion ion-ios-cart-outline"></i>
+									<span>Pirkinių krepšelis</span></a>
+						</li>
+						
+						
+							<li>
+								<a href="/yphis/signup.action"><i class="ion ion-android-contact"></i><span>Vartotojo registracija</span></a>
+							</li>
+							<li>
+								<a href="#" class="login">
+									<i class="ion ion-locked"></i><span>Prisijungti</span>
+								</a>
+							</li>
+						
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+	<div class="bottom_header clearfix">
+		<a class="nav_trigger" href="#"><i class="ion ion-navicon"></i></a>
+		<div style="flex: 1">
+			
+
+
+
+<ul class="main-menu">
+	<li class="index">
+		<a id="index" href="/yphis/index.action">Pradžia</a>
+	</li>
+
+	<li class="bordersAndWaitingAreas">
+		<a href="/yphis/bordersAndWaitingAreas.action">Pasienio kontrolės punktai</a>
+	</li>
+
+	
+	
+		<li class="preReserve">
+			<a href="/yphis/anonymousPreReserve.action">Rezervuoti</a>
+		</li>
+	
+	
+	<li class="borderQueueInfo">
+		<a href="/yphis/borderQueueInfo.action">Informacija apie eiles pasienyje</a>
+	</li>
+
+	
+		
+			<li class="findMyReservation">
+				<a href="/yphis/findMyReservation.action">Redaguoti rezervavimą</a>
+			</li>
+		
+	
+
+	
+
+	
+
+	<li class="info">
+		<a href="/yphis/info.action">Informacija</a>
+	</li>
+
+	<li class="addIssue">
+		<a href="/yphis/addIssue.action">Praneškite mums</a>
+	</li>
+
+</ul>
+
+		</div>
+		<div class="phone_number_placeholder">
+			&nbsp;
+		</div>
+		<div class="bottom_header_right">
+			24/7 pagalbos tarnybos:
+            <span>+37052102269</span>
+            <br/>
+			el. paštas:
+            <span>support@ltsiena.lt</span>
+            <i class="ion ion-ios-telephone"></i>
+		</div>
+	</div>
+	<div class="mobile_links">
+		<ul>
+			<li class="find_block"><a href="#" class="find"><i
+					class="ion ion-search"></i><span>Rasti mano rezervavimą</span></a>
+			</li>
+			<li class="cart_block">
+				<a href="/yphis/cart.action"><i class="ion ion-ios-cart-outline"></i>
+						<span>Pirkinių krepšelis</span></a>
+			</li>
+			
+			
+				<li class="login_block"><a href="#" class="login"><i
+						class="ion ion-locked"></i><span>Prisijungti</span></a> &nbsp;
+					<a href="/yphis/signup.action"><i class="ion ion-android-contact"></i><span>Vartotojo registracija</span></a>
+				</li>
+			
+			<li class="help_block"><i class="ion ion-ios-telephone"></i>
+				24/7 pagalbos tarnybos:
+            	<span>+37052102269</span>
+            	<br/>
+				el. paštas:
+           		<span>support@ltsiena.lt</span>
+			</li>
+		</ul>
+	</div>
+</header>
+
+<div class="search">
+	<p>Rasti mano rezervavimą</p>
+	<form id="findReservationByQueueNumber" name="findReservationByQueueNumber" action="/yphis/findReservationByQueueNumber.action" method="post" class="search_form">
+		<input type="text" name="reservationQueueNumber" placeholder="Rezervacijos ID">
+		<button class="submit" type="submit">button.search</button>
+	</form>
+
+
+
+	<a href="#" class="search_close">Uždaryti</a>
+</div>
+<div class="loginbox">
+	<form id="signin" action="login" class="loginbox_form clearfix" method="post">
+		<div class="login_text">
+			<p>Prisijungti</p>
+		</div>
+		<div class="logins">
+			<div class="normal_login">
+				<input type="text" name="username" value="" id="username"
+
+/>
+				<input type="password" name="password" id="password"/>
+				<input type="submit" value="Prisijungti" class="submit"/>
+
+			</div>
+			<a href="/yphis/resetPassword.action" class="reset_link">Pakeisti slaptažodį</a>
+		</div>
+	</form>
+	<a href="#" class="login_close">Uždaryti</a>
+</div>
+<div class="nav_overlay">
+	<a href="#" class="overlay_close">Uždaryti</a>
+	<ul class="lang">
+		
+			
+			
+				
+			
+			<li class="active">
+				<a href="/yphis/index.action?request_locale=lt">
+					lt
+				</a>
+			</li>
+		
+			
+			
+				
+			
+			<li class="">
+				<a href="/yphis/index.action?request_locale=ru">
+					ru
+				</a>
+			</li>
+		
+			
+			
+				
+			
+			<li class="">
+				<a href="/yphis/index.action?request_locale=en">
+					en
+				</a>
+			</li>
+		
+	</ul>
+	<ul class="mobile_menu">
+		
+
+
+
+<ul class="main-menu">
+	<li class="index">
+		<a id="index" href="/yphis/index.action">Pradžia</a>
+	</li>
+
+	<li class="bordersAndWaitingAreas">
+		<a href="/yphis/bordersAndWaitingAreas.action">Pasienio kontrolės punktai</a>
+	</li>
+
+	
+	
+		<li class="preReserve">
+			<a href="/yphis/anonymousPreReserve.action">Rezervuoti</a>
+		</li>
+	
+	
+	<li class="borderQueueInfo">
+		<a href="/yphis/borderQueueInfo.action">Informacija apie eiles pasienyje</a>
+	</li>
+
+	
+		
+			<li class="findMyReservation">
+				<a href="/yphis/findMyReservation.action">Redaguoti rezervavimą</a>
+			</li>
+		
+	
+
+	
+
+	
+
+	<li class="info">
+		<a href="/yphis/info.action">Informacija</a>
+	</li>
+
+	<li class="addIssue">
+		<a href="/yphis/addIssue.action">Praneškite mums</a>
+	</li>
+
+</ul>
+
+	</ul>
+</div>
+
+
+
+
+
+
+
+
+<div class="intro equalize_boxes clearfix">
+    <div class="intro_wide equalize_this" style="background-image:url(theme/2016/img/index_bg/karsten-wurth-inf1783-205496-unsplash1.jpg)">
+        <div class="intro_inner">
+            <div class="homepage_message">
+                
+                        
+                
+                
+            </div>
+            <div class="clearfix">
+                
+                <a id="prereservButton" href="/yphis/preReserveSelectVehicle.action" class="btn"><i class="ion ion-android-calendar"></i>
+                    Rezervuoti</a>
+                
+                <a id="borderButton" href="/yphis/borderQueueInfo.action" class="btn"><i class="ion ion-android-time"></i>
+                    Informacija apie eiles pasienyje</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <div class="we-use-cookies">
+        <i class="ion ion-ios-information-outline"></i>
+        <span>
+             Šioje interneto svetainėje naudojami   slapukai. Slapukai užtikrina svetainės pagrindinių funkcijų funkcionavimą. Norėdami tęsti, Jūs turite sutikti kad būtų naudojami būtini slapukai. Išsamią informaciją apie privatumo politiką ir šioje interneto svetainėje naudojamus slapukus rasite <a href="/yphis/policy.action">čia</a>.
+        </span>
+
+        <div>
+            <a href="/yphis/acceptPolicy.action" class="btn">Aš sutinku</a>
+        </div>
+    </div>
+
+
+<div class="text_contentblock">
+    <div class="container_full">
+        <div class="row equalize_boxes">
+            <div class="cols_20 equalize_this">
+                <h2>Latest news</h2>
+            </div>
+            <div class="cols_80 equalize_this">
+                <div class="news-block">
+                    
+                        
+                    
+                    <h3>Sveiki atvykę į EVIS &ndash; Transporto priemonių, laukiančių kirsti Lietuvos Respublikos valstybės sieną, eilių valdymo informacinę sistemą</h3>
+
+
+                    <div class="separator-div">&nbsp;</div>
+                    <br />
+                    <div style="text-align: justify;">
+                        
+                            
+                        
+                        <p><strong>VYRIAUSYBĖ NUSPRENDĖ ATIDARYTI &Scaron;ALČININKŲ IR MEDININKŲ PASIENIO PUNKTUS SU BALTARUSIJA</strong></p>
+
+<p><a href="https://lrv.lt/lt/naujienos/vyriausybe-nusprende-atidaryti-salcininku-ir-medininku-pasienio-punktus-su-baltarusija-pUeW/" target="_blank">Vyriausybės posėdyje pritarta Vidaus reikalų ministerijos teikimui atidaryti &Scaron;alčininkų ir Medininkų pasienio punktus, besiribojančius su Baltarusija, ir pripažinti &scaron;ių metų spalio 29 d. Vyriausybės nutarimą netekusiu galios.</a></p>
+
+<p>&nbsp;</p>
+
+<p><strong>ES PRADĖS VEIKTI ATVYKIMO IR I&Scaron;VYKIMO REGISTRACIJOS SISTEMA, SKIRTA TREČIŲJŲ &Scaron;ALIŲ PILIEČIAMS</strong></p>
+
+<p><a href="https://vsat.lrv.lt/lt/naujienos/es-prades-veikti-atvykimo-ir-isvykimo-registracijos-sistema-skirta-treciuju-saliu-pilieciams-foto-WHW/" target="_blank">Daugiau informacijos skaitykite čia</a></p>
+
+<p>&nbsp;</p>
+
+<p><strong>ĮVEDAMA I&Scaron;ANKSTINĖ VISŲ PER ES I&Scaron;ORINĘ SIENĄ I&Scaron; LIETUVOS I&Scaron;VYKSTANČIŲ KROVININIŲ TRANSPORTO PRIEMONIŲ REGISTRACIJA</strong></p>
+
+<p><a href="https://sumin.lrv.lt/lt/naujienos/ivedama-isankstine-visu-per-es-isorine-siena-is-lietuvos-isvykstanciu-krovininiu-transporto-priemoniu-registracija/">Siekiant sureguliuoti kelyje susikuriančias vilkikų eiles prie pasienio kontrolės punktų ir užtikrinti vie&scaron;ąją tvarką Lietuvos pasienyje, nuo gruodžio 1 d. įvedama i&scaron;ankstinė visų krovininių transporto priemonių, i&scaron;vykstančių i&scaron; Lietuvos per Europos Sąjungos (ES) i&scaron;orės sieną, registracija į elektroninę eilę. Tokiam Susisiekimo ministerijos parengtam nutarimo projektui &scaron;į trečiadienį pritarė Vyriausybė.</a></p>
+
+<p>&nbsp;</p>
+
+<p><strong>NUO </strong><strong>KOVO 1</strong><strong> DIENOS NUTRAUKIAMAS VYKIMAS PER DU&nbsp;PASIENIO</strong><strong> KONTROLĖS</strong><strong> PUNKTUS&nbsp;SU BALTARUSIJA</strong></p>
+
+<p>Informuojame, kad nuo 2024 m. kovo 1 d. nutraukiamas vykimas per du pasienio kontrolės punktus&nbsp;(PKP) Lietuvos pasienyje su Baltarusijos Respublika: Lavori&scaron;kių ir Raigardo PKP. Tokiam Lietuvos Respublikos Vidaus reikalų ministerijos siūlymui 2024-02-21 posėdyje pritarė Lietuvos Respublikos Vyriausybė. Su Lietuvos Respublikos Vyriausybės nutarimu galima susipažinti <a href="https://www.e-tar.lt/portal/lt/legalAct/b1f05d90d17611eead77e967e3995264">čia</a></p>
+
+<p>&nbsp;</p>
+
+<div><strong>MOKESTIS UŽ PALAUKIMO AIK&Scaron;TELES</strong></div>
+
+<div>&nbsp;</div>
+
+<div>Palaukimo aik&scaron;telėse, esančiose prie&scaron;ais Raigardo, Kybartų, Medininkų ir &Scaron;alčininkų pasienio kontrolės punktus, vienos valandos parkavimas nemokamas. Už ilgesnį nei vienos valandos parkavimą palaukimo aik&scaron;telės valdytojui ar nuomotojui mokamas jo nustatytas mokestis. Mokestį privalo mokėti ir i&scaron; anksto registruotų transporto priemonių vairuotojai, jeigu per 1 val. nubuvo i&scaron;kviesti valstybės sienos kirtimui.</div>
+
+<div>&nbsp;</div>
+
+<div><strong>BESIREGISTRUOJANČIŲ&nbsp;KIRSTI LIETUVOS RESPUBLIKOS VALSTYBĖS SIENĄ DĖMESIUI</strong></div>
+
+<div>&nbsp;</div>
+
+<div>Pasitaiko atvejų, kai registruojantis&nbsp;kirsti valstybės sieną, pateikiami netikslūs arba neteisingi duomenys &ndash; nurodomas netikslus transporto priemonės valstybinis numeris, neteisinga vairuotojo pavardė arba neteisingas ar neegzistuojantis telefono numeris.</div>
+
+<div>Atvykusios į palaukimo zoną ar palaukimo aik&scaron;telę transporto priemonės nebus įleidžiamos į pasienio kontrolės punktą be eilės, jeigu bus nustatyta, kad transporto priemonės valstybinis numeris (visos raidės, skaičiai ir simboliai), nurodytas rezervacijos metu, neatitinka faktinio transporto priemonės numerio. Numerio gale nereikia ra&scaron;yti RUS.</div>
+
+<div>&nbsp;</div>
+
+<div>&nbsp;</div>
+
+<div><strong>KERTANČIŲJŲ LIETUVOS RESPUBLIKOS VALSTYBĖS SIENĄ DĖMESIUI</strong></div>
+
+<div>&nbsp;</div>
+
+<div>Lietuvos Respublikos valstybės sienos kirtimas yra nemokamas (i&scaron;skyrus mokestį už&nbsp;eilės rezervaciją&nbsp;ir už naudojimąsi palaukimo aik&scaron;telių paslaugomis). Jeigu patekimą į pasienio kontrolės punktą kas nors siūlo organizuoti už atlygį, maloniai pra&scaron;ome prane&scaron;ti Pasienio kontrolės punktų direkcijai prie Susisiekimo ministerijos tel. (8 5) 243 1110. Konfidencialumas garantuojamas.</div>
+
+<div><strong>Pastaba:</strong></div>
+
+<div>Valstybės sienos kirtimo procesas yra įtakojamas daugybės faktorių, todėl konkretus kvietimo vykti į pasienio kontrolės punktą laikas gali būti vėlesnis, nei laiko intervalas, nurodytas rezervuojant.</div>
+
+<div>Dėl nenumatytų priežasčių sutrikus Lietuvos Respublikos ar kaimyninės &scaron;alies pasienio kontrolės punkto darbui, i&scaron; anksto internetu valstybės sienos kirtimui registruotos transporto priemonės gali būti nukreipiamos į bendrą eilę, kurioje turėtų laukti iki pasienio kontrolės punkto(ų) veikos atnaujinimo.</div>
+
+<div>&nbsp;</div>
+
+                    </div>
+                    <br />
+                    <a href="/yphis/newsArchive.action"><strong>NEWS ARCHIVE >>></strong></a>
+                </div>  
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<div class="text_contentblock bg_grey">
+	<div class="container_full">
+		<div class="row">
+			<div class="cols_20">
+				<ul class="list_down">
+					<li><a href="/yphis/faq.action">DUK</a></li>
+					<li><a href="/yphis/terms.action">Naudojimo sąlygos</a></li>
+					<li><a href="/yphis/legal.action">Teisiniai pagrindai</a></li>
+					<li><a href="/yphis/policy.action">Privatumo politika</a></li>
+					
+					
+					
+					
+				</ul>
+			</div>
+			<div class="cols_80">
+				
+				<div class="row">
+					<div class="cols_50">
+                    	
+                        	
+                		
+                		<h3>Pagrindinė kontaktinė informacija</h3>
+
+<p>Pasienio kontrolės punktų direkcija prie Susisekimo ministerijos<br />
+<span style="font-size:11px">Gedimino pr. 26, 01104 Vilnius<br />
+Tel.: </span><span style="background-color:rgb(255, 255, 255); color:rgb(51, 51, 51); font-family:sans-serif,arial,verdana,trebuchet ms; font-size:11px">Tel.: (370&nbsp;633) 46579</span><br />
+<span style="font-size:11px">El. pa&scaron;tas: pkpd@pkpd.lt</span></p>
+
+					</div>
+					<div class="cols_50">
+                    	
+                        	
+                		
+                		<h3>&nbsp;</h3>
+
+<p>&nbsp;</p>
+
+                		
+                		
+                       		
+                		
+                		
+					</div>	
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer class="footer_container">
+	<div class="container_full clearfix">
+		<div class="row">
+			<div class="cols_50">
+				<div class="footer_left">
+					<a><img src="theme/2016/img/logo_footer.png" alt="footer logo"></a>
+				</div>
+			</div>
+			<div class="cols_50">
+				<div class="footer_social">
+					<a href="https://www.linkedin.com/company/goswift" target="_blank">
+						<img src="theme/2016/img/icon_in.png">
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+
+
+<script type="text/javascript" src="/yphis/theme/2016/js/jquery.matchHeight-min.js"></script>
+<script type="text/javascript" src="/yphis/theme/2016/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+<script type="text/javascript" src="/yphis/theme/2016/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+<script type="text/javascript" src="/yphis/theme/2016/tooltipster/js/jquery.tooltipster.min.js"></script>
+<script type="text/javascript" src="/yphis/theme/2016/js/main.js"></script>
+<script type="text/javascript" src="/yphis/js/estIDCode.js"></script>
+</body>
+</html>

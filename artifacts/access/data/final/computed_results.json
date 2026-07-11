@@ -1,0 +1,74 @@
+[
+ {
+  "metric": "beta_ring",
+  "value": -3.231
+ },
+ {
+  "metric": "beta_suburb",
+  "value": 2.963
+ },
+ {
+  "metric": "beta_suburb_nowage",
+  "value": 9.462
+ },
+ {
+  "metric": "beta_wage_control",
+  "value": 50.617
+ },
+ {
+  "metric": "crossings_2019",
+  "value": 13
+ },
+ {
+  "metric": "crossings_2026",
+  "value": 6
+ },
+ {
+  "metric": "crossings_nadir",
+  "value": 4
+ },
+ {
+  "metric": "eu_delta_nadir_brest",
+  "value": 0.0
+ },
+ {
+  "metric": "eu_delta_nadir_hrodna",
+  "value": 160.9
+ },
+ {
+  "metric": "median_far_eff",
+  "value": -12.53
+ },
+ {
+  "metric": "median_ring_eff",
+  "value": -14.23
+ },
+ {
+  "metric": "median_suburb_eff",
+  "value": -7.96
+ },
+ {
+  "metric": "median_suburb_minsk",
+  "value": 11.86
+ },
+ {
+  "metric": "minsk_brest_min",
+  "value": 211.8
+ },
+ {
+  "metric": "n_belt_ring",
+  "value": 34
+ },
+ {
+  "metric": "n_belt_suburb",
+  "value": 26
+ },
+ {
+  "metric": "r2_main",
+  "value": 0.516
+ },
+ {
+  "metric": "se_hc1_ring",
+  "value": 2.048
+ }
+]
