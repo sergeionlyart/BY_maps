@@ -29,12 +29,13 @@ SOURCES: dict[str, str] = {
 }
 
 WIKIDATA_QUERY = """
-SELECT ?item ?ru ?be ?coord ?adminLabel WHERE {
+SELECT ?item ?ru ?be ?coord ?adminLabel ?areaM2 WHERE {
   VALUES ?cls { wd:Q79324274 wd:Q79323854 wd:Q1549591 wd:Q91733160 wd:Q91733790 wd:Q7930989 wd:Q3957 }
   ?item wdt:P17 wd:Q184 ; wdt:P31 ?cls ; wdt:P625 ?coord .
   OPTIONAL { ?item rdfs:label ?ru . FILTER(LANG(?ru)='ru') }
   OPTIONAL { ?item rdfs:label ?be . FILTER(LANG(?be)='be') }
   OPTIONAL { ?item wdt:P131 ?admin . ?admin rdfs:label ?adminLabel . FILTER(LANG(?adminLabel)='ru') }
+  OPTIONAL { ?item p:P2046/psn:P2046/wikibase:quantityAmount ?areaM2 . }
 }
 """
 

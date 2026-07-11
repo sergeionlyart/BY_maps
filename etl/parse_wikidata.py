@@ -16,13 +16,19 @@ def load_settlements(path: Path) -> list[dict]:
     for r in data["results"]["bindings"]:
         qid = r["item"]["value"].rsplit("/", 1)[-1]
         it = items.setdefault(qid, {"qid": qid, "ru": None, "be": None,
-                                    "lon": None, "lat": None, "admin": set()})
+                                    "lon": None, "lat": None, "admin": set(),
+                                    "area_km2": None})
         if "ru" in r:
             it["ru"] = r["ru"]["value"]
         if "be" in r:
             it["be"] = r["be"]["value"]
         if "adminLabel" in r:
             it["admin"].add(r["adminLabel"]["value"])
+        if "areaM2" in r and it["area_km2"] is None:
+            try:
+                it["area_km2"] = round(float(r["areaM2"]["value"]) / 1_000_000, 1)
+            except ValueError:
+                pass
         m = re.match(r"Point\(([-\d.]+) ([-\d.]+)\)", r["coord"]["value"])
         if m:
             it["lon"], it["lat"] = float(m.group(1)), float(m.group(2))

@@ -2,6 +2,7 @@
 
 import type { DataFile, Territory, RaionMode } from '@/lib/types';
 import { seriesPoints, valueAt, formatNumber, formatCompact, formatPct, DTYPE_LABEL } from '@/lib/series';
+import { raionBreakdown, cityDensity } from '@/lib/metrics';
 import { CAT } from '@/lib/scales';
 import LineChart, { ChartSeries } from './LineChart';
 
@@ -40,15 +41,38 @@ export default function TerritoryCard({ data, id, year, baseYear, raionMode, com
   const change = now && base && base.value > 0 ? now.value / base.value - 1 : null;
   const abs = now && base ? now.value - base.value : null;
 
+  const breakdown = t.level === 'raion' ? raionBreakdown(data, t, year) : null;
+
   const chart: ChartSeries[] = [];
   chart.push({
     name: t.level === 'raion' ? 'Весь район' : 'Население',
     color: CAT[0],
     points: seriesPoints(t.pop).map((p) => ({ year: p.year, value: p.value, major: p.dtype === 'c' })),
   });
+  if (t.level === 'raion' && breakdown && breakdown.centers.length) {
+    const centerSeries = breakdown.centers
+      .map((c) => data.territories[c.id])
+      .filter((c) => c && Object.keys(c.pop).length > 1);
+    if (centerSeries.length) {
+      // суммарная серия центров: по годам, где есть данные у всех
+      const years = Object.keys(centerSeries[0].pop)
+        .filter((y) => centerSeries.every((c) => y in c.pop));
+      chart.push({
+        name: breakdown.centers.length > 1 ? 'Городские центры' : `${breakdown.centers[0].ru} (центр)`,
+        color: CAT[1],
+        points: years
+          .map((y) => ({
+            year: +y,
+            value: centerSeries.reduce((s, c) => s + c.pop[y][0], 0),
+            major: centerSeries[0].pop[y][1] === 'c',
+          }))
+          .sort((a, b) => a.year - b.year),
+      });
+    }
+  }
   if (t.level === 'raion' && t.popNoCenter && Object.keys(t.popNoCenter).length) {
     chart.push({
-      name: 'Без городского центра',
+      name: 'Без городских центров',
       color: CAT[2],
       points: seriesPoints(t.popNoCenter).map((p) => ({ year: p.year, value: p.value, major: p.dtype === 'c' })),
     });
@@ -86,11 +110,29 @@ export default function TerritoryCard({ data, id, year, baseYear, raionMode, com
             </div>
           )}
         </div>
-        {density != null && (
+        {breakdown && breakdown.centersPop != null && breakdown.centersShare != null && (
+          <div className="stat-tile">
+            <div className="st-label">
+              {breakdown.centers.length > 1
+                ? `В центрах (${breakdown.centers.map((c) => c.ru).join(', ')})`
+                : `В центре (${breakdown.centers[0].ru})`}
+            </div>
+            <div className="st-value">{formatCompact(breakdown.centersPop)}</div>
+            <div className="st-delta">{formatPct(breakdown.centersShare)} населения района</div>
+          </div>
+        )}
+        {t.level !== 'raion' && t.level !== 'city' && density != null && (
           <div className="stat-tile">
             <div className="st-label">Плотность</div>
             <div className="st-value">{density.toLocaleString('ru-RU', { maximumFractionDigits: 1 })}</div>
             <div className="st-delta">чел./км²</div>
+          </div>
+        )}
+        {t.level === 'city' && cityDensity(t, year) != null && (
+          <div className="stat-tile">
+            <div className="st-label">Плотность города</div>
+            <div className="st-value">{cityDensity(t, year)!.toLocaleString('ru-RU', { maximumFractionDigits: 0 })}</div>
+            <div className="st-delta">чел./км² ({t.area} км², Wikidata)</div>
           </div>
         )}
         {t.urban && valueAt(t.urban, year) && t.id !== 'BY-HM' && now && (
@@ -100,6 +142,32 @@ export default function TerritoryCard({ data, id, year, baseYear, raionMode, com
           </div>
         )}
       </div>
+
+      {breakdown && (
+        <div className="stat-row">
+          <div className="stat-tile">
+            <div className="st-label">Плотность: весь район</div>
+            <div className="st-value">
+              {breakdown.densityWhole != null ? breakdown.densityWhole.toLocaleString('ru-RU', { maximumFractionDigits: 1 }) : '—'}
+            </div>
+            <div className="st-delta">чел./км²</div>
+          </div>
+          {breakdown.densityCenters != null && (
+            <div className="stat-tile">
+              <div className="st-label">В городских центрах</div>
+              <div className="st-value">{breakdown.densityCenters.toLocaleString('ru-RU', { maximumFractionDigits: 0 })}</div>
+              <div className="st-delta">чел./км² (площадь — Wikidata)</div>
+            </div>
+          )}
+          {breakdown.densityNoCenter != null && (
+            <div className="stat-tile">
+              <div className="st-label">Без городских центров</div>
+              <div className="st-value">{breakdown.densityNoCenter.toLocaleString('ru-RU', { maximumFractionDigits: 1 })}</div>
+              <div className="st-delta">чел./км² — сельская часть и малые НП</div>
+            </div>
+          )}
+        </div>
+      )}
 
       <div className="card-actions">
         <button

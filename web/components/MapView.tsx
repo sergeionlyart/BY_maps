@@ -267,7 +267,20 @@ export default function MapView(props: Props) {
     const now = valueAt(series, s.year)?.value ?? null;
     if (now == null) return null;
     if (s.metric === 'pop') return now;
-    if (s.metric === 'density') return t.area ? now / t.area : null;
+    if (s.metric === 'density') {
+      if (!t.area) return null;
+      let area = t.area;
+      // «без центра»: вычитаем известные площади городских центров, чтобы
+      // плотность отражала сельскую часть, а не среднее с городом
+      if (t.level === 'raion' && s.raionMode === 'noCenter') {
+        for (const cid of t.center ?? []) {
+          const a = s.data.territories[cid]?.area;
+          if (a) area -= a;
+        }
+        area = Math.max(area, 1);
+      }
+      return now / area;
+    }
     const base = valueAt(series, s.baseYear)?.value ?? null;
     if (base == null || base === 0) return null;
     return now / base - 1;

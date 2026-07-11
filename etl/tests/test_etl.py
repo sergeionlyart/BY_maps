@@ -147,6 +147,18 @@ def test_data_types_valid(built):
                 assert v >= 0
 
 
+def test_city_areas_from_wikidata(built):
+    """Площади городов (Wikidata P2046, нормализованные) - для декомпозиции
+    плотности район/центр. Есть не у всех, но у крупных - обязательно."""
+    t = built["territories"]
+    assert t["c-minsk"]["area"] and 300 < t["c-minsk"]["area"] < 500
+    assert t["c-hrodna"]["area"] and 100 < t["c-hrodna"]["area"] < 200
+    with_area = [x for x in t.values() if x["level"] == "city" and x.get("area")]
+    assert len(with_area) >= 60
+    for x in with_area:
+        assert 0.5 < x["area"] < 500, (x["id"], x["area"])
+
+
 def test_raion_centers_have_coords(built):
     t = built["territories"]
     for x in t.values():

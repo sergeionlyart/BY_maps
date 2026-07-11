@@ -72,6 +72,10 @@ def build() -> dict:
             "ru": (wd or {}).get("ru") or be, "be": be,
             "parent": info["oblast"],
             "lon": lon, "lat": lat_,
+            # площадь города (Wikidata P2046); значения вне правдоподобного
+            # диапазона (ошибочно записана площадь района и т.п.) отбрасываем
+            "area": next((a for a in [(wd or {}).get("area_km2")]
+                          if a and 0.5 < a < 500), None),
             "flags": sorted(
                 (["oblCenter"] if be in OBLAST_CENTERS else [])
                 + (["top7"] if be in TOP7_CITIES else [])
