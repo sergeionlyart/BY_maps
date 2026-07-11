@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 
@@ -20,7 +20,7 @@ if (typeof window !== 'undefined') {
 }
 import type { DataFile, Metric, MapLevel, RaionMode } from '@/lib/types';
 import { valueAt, nearestPoint, formatNumber, formatPct, DTYPE_LABEL } from '@/lib/series';
-import { colorFor, legendStops, cityColor, cityRadius, CITY_RAMP } from '@/lib/scales';
+import { colorFor, legendStops, cityColor, cityRadius } from '@/lib/scales';
 
 interface Props {
   data: DataFile;
@@ -62,6 +62,15 @@ export default function MapView(props: Props) {
     mq.addEventListener('change', fn);
     return () => mq.removeEventListener('change', fn);
   }, []);
+
+  // исторический максимум населения города за весь период (пик Минска) -
+  // якорь относительной красной шкалы маркеров
+  const maxCityPop = useMemo(
+    () => Math.max(...Object.values(data.territories)
+      .filter((t) => t.level === 'city')
+      .flatMap((t) => Object.values(t.pop).map(([v]) => v))),
+    [data],
+  );
 
   // --- инициализация карты (один раз) ------------------------------------
   useEffect(() => {
@@ -247,12 +256,12 @@ export default function MapView(props: Props) {
         const pop = valueAt(t.pop, year)?.value ?? null;
         const v = territoryMetric(t.id, stateRef.current);
         const overlay = level !== 'city';
-        // размер и насыщенность растут и убывают вместе с населением
+        // размер и интенсивность цвета растут и убывают вместе с населением
         map.setFeatureState({ source: 'cities', id: t.id }, {
           r: cityRadius(pop, overlay),
           color: !overlay && metric === 'change'
             ? (v == null ? '#9a9891' : colorFor('change', 'city', v))
-            : cityColor(pop, dark),
+            : cityColor(pop, maxCityPop, dark),
         });
       }
     }
@@ -267,7 +276,7 @@ export default function MapView(props: Props) {
     map.setFilter('selected-line', ['==', ['get', 'id'], level === 'raion' && selected ? selected : '']);
     map.setFilter('selected-line-1', ['==', ['get', 'id'], level === 'oblast' && selected ? selected : '']);
     map.triggerRepaint();
-  }, [ready, data, year, metric, level, raionMode, baseYear, showBorder1921, showCities, selected, dark]);
+  }, [ready, data, year, metric, level, raionMode, baseYear, showBorder1921, showCities, selected, dark, maxCityPop]);
 
   function territoryMetric(id: string, s: Props): number | null {
     const t = s.data.territories[id];
@@ -341,7 +350,7 @@ export default function MapView(props: Props) {
           {noCenterScale ? ' — без городских центров' : ''}
         </div>
         {level === 'city' && metric !== 'change' ? (
-          <CityLegend dark={dark} />
+          <CityLegend dark={dark} maxPop={maxCityPop} />
         ) : (
           stops.map((s) => (
             <div className="lg-row" key={s.label}>
@@ -350,7 +359,7 @@ export default function MapView(props: Props) {
             </div>
           ))
         )}
-        {showCities && level !== 'city' && <CityLegend dark={dark} />}
+        {showCities && level !== 'city' && <CityLegend dark={dark} maxPop={maxCityPop} />}
         {showBorder1921 && (
           <div className="lg-row">
             <span className="lg-line" />
@@ -368,24 +377,26 @@ export default function MapView(props: Props) {
   );
 }
 
-/** Мини-легенда городов: размер и насыщенность растут с населением. */
-function CityLegend({ dark }: { dark: boolean }) {
+/** Мини-легенда городов: размер и интенсивность красного растут с населением;
+ *  ярко-красный - исторический максимум (пик Минска). */
+function CityLegend({ dark, maxPop }: { dark: boolean; maxPop: number }) {
   const samples = [
     { pop: 10_000, label: '10 тыс.' },
     { pop: 100_000, label: '100 тыс.' },
-    { pop: 1_000_000, label: '1 млн' },
+    { pop: 500_000, label: '500 тыс.' },
+    { pop: maxPop, label: 'пик (Минск)' },
   ];
   return (
     <div className="lg-row lg-cities">
       <span style={{ marginRight: 2 }}>город:</span>
       {samples.map((s) => (
-        <span className="lg-city-sample" key={s.pop}>
+        <span className="lg-city-sample" key={s.label}>
           <span
             className="lg-circle"
             style={{
               width: cityRadius(s.pop, true) * 2,
               height: cityRadius(s.pop, true) * 2,
-              background: cityColor(s.pop, dark),
+              background: cityColor(s.pop, maxPop, dark),
             }}
           />
           {s.label}

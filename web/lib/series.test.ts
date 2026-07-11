@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { valueAt, seriesPoints, nearestPoint, formatCompact } from './series';
 import {
   colorFor, legendStops, cityColor, cityRadius,
-  SEQ, DIV_NEG, DIV_POS, DIV_MID, CITY_RAMP, CITY_POP_BREAKS,
+  SEQ, DIV_NEG, DIV_POS, DIV_MID,
 } from './scales';
 import type { Series } from './types';
 
@@ -78,16 +78,24 @@ describe('маркеры городов', () => {
     const d = cityRadius(20_000, true) - cityRadius(10_000, true);
     expect(d).toBeGreaterThan(0.5);
   });
-  it('насыщенность ступенчато растёт с населением', () => {
-    const ramp = CITY_RAMP.light;
-    expect(cityColor(1_000, false)).toBe(ramp[0]);
-    expect(cityColor(CITY_POP_BREAKS[0], false)).toBe(ramp[1]);
-    expect(cityColor(2_000_000, false)).toBe(ramp[6]);
-    // рост через порог меняет цвет, убыль возвращает обратно
-    expect(cityColor(99_000, false)).not.toBe(cityColor(101_000, false));
+  it('красная шкала относительна: пик = ярко-красный, монотонно краснеет', () => {
+    const MAX = 2_018_281; // пик Минска
+    const rgb = (s: string) => s.match(/\d+/g)!.map(Number);
+    // на пике - ярко-красный (канал R доминирует, G/B малы)
+    const peak = rgb(cityColor(MAX, MAX, false));
+    expect(peak[0]).toBeGreaterThan(200);
+    expect(peak[1]).toBeLessThan(40);
+    // интенсивность (краснота = R - G) монотонно растёт с населением
+    const pops = [5_000, 20_000, 100_000, 500_000, 2_000_000];
+    const redness = pops.map((p) => { const [r, g] = rgb(cityColor(p, MAX, false)); return r - g; });
+    for (let i = 1; i < redness.length; i++) expect(redness[i]).toBeGreaterThan(redness[i - 1]);
+    // убыль возвращает цвет назад (та же функция - симметрично)
+    expect(cityColor(80_000, MAX, false)).not.toBe(cityColor(120_000, MAX, false));
+    expect(cityColor(0, MAX, false)).toBe('transparent');
   });
-  it('тёмная тема использует собственную шкалу', () => {
-    expect(cityColor(2_000_000, true)).toBe(CITY_RAMP.dark[6]);
+  it('тёмная тема использует собственные опорные цвета', () => {
+    const MAX = 2_018_281;
+    expect(cityColor(MAX, MAX, true)).not.toBe(cityColor(MAX, MAX, false));
   });
 });
 

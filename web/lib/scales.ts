@@ -73,23 +73,30 @@ export function legendStops(metric: Metric, level: MapLevel, noCenter = false): 
 export const CAT = ['#2a78d6', '#1baf7a', '#eda100', '#4a3aa7'];
 export const CAT_DARK = ['#3987e5', '#199e70', '#c98500', '#9085e9'];
 
-/** Города: размер и насыщенность растут с населением (и падают при убыли).
- *  Пороги фиксированы во времени, чтобы динамика была сопоставимой;
- *  нижние ступени частые - для наглядности ранних периодов (1897-1959). */
-export const CITY_POP_BREAKS = [5_000, 15_000, 40_000, 100_000, 250_000, 600_000];
-
-/** Янтарная шкала интенсивности: на светлой подложке - от бледного к тёмному,
- *  на тёмной - от приглушённого к яркому (интенсивность = заметность). */
-export const CITY_RAMP = {
-  light: ['#f4dfa8', '#eecb79', '#e6b54d', '#d99a25', '#c07f0d', '#9e6605', '#7d4f03'],
-  dark: ['#94793a', '#a98a2c', '#bf9c1e', '#d4ad12', '#e8bd18', '#f6cf49', '#ffe081'],
+/** Города: размер и интенсивность цвета растут с населением (и падают при
+ *  убыли). Цвет - относительная красная шкала, нормированная на исторический
+ *  максимум по всем городам за весь период (пик Минска, ~2,02 млн): город на
+ *  пике максимума - ярко-красный, остальные - пропорционально бледнее.
+ *
+ *  Пропорция сжимается степенью 0.35: населения городов различаются в сотни
+ *  раз, и при линейной шкале все города, кроме Минска, оставались бы почти
+ *  белыми. Монотонность сохраняется: больше населения - всегда краснее. */
+const CITY_STOPS: Record<'light' | 'dark', [number, [number, number, number]][]> = {
+  light: [[0, [246, 224, 205]], [0.45, [240, 138, 92]], [0.75, [230, 72, 41]], [1, [217, 14, 7]]],
+  dark: [[0, [122, 92, 74]], [0.45, [204, 106, 60]], [0.75, [240, 78, 40]], [1, [255, 42, 24]]],
 };
 
-export function cityColor(pop: number | null, dark: boolean): string {
-  if (pop == null) return 'transparent';
-  let i = 0;
-  while (i < CITY_POP_BREAKS.length && pop >= CITY_POP_BREAKS[i]) i++;
-  return CITY_RAMP[dark ? 'dark' : 'light'][i];
+export function cityColor(pop: number | null, maxPop: number, dark: boolean): string {
+  if (pop == null || pop <= 0 || maxPop <= 0) return 'transparent';
+  const t = Math.pow(Math.min(pop / maxPop, 1), 0.35);
+  const stops = CITY_STOPS[dark ? 'dark' : 'light'];
+  let i = 1;
+  while (i < stops.length - 1 && t > stops[i][0]) i++;
+  const [t0, c0] = stops[i - 1];
+  const [t1, c1] = stops[i];
+  const k = (t - t0) / (t1 - t0 || 1);
+  const rgb = c0.map((v, j) => Math.round(v + (c1[j] - v) * Math.max(0, Math.min(1, k))));
+  return `rgb(${rgb[0]},${rgb[1]},${rgb[2]})`;
 }
 
 /** Радиус круга города, px. Сжатая степенная шкала r ∝ pop^0.4: населения
