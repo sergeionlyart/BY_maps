@@ -7,6 +7,9 @@ PY := .venv/bin/python
 etl:              ## пересборка данных: web/public/data/
 	$(PY) -m etl.build && $(PY) -m etl.zipf
 
+wpf1:             ## производные WP-F1: age2009/2019, age_current, миграция
+	$(PY) -m etl.census_age && $(PY) -m etl.wpf1
+
 test:             ## все проверки данных
 	$(PY) -m pytest etl/tests/ -q
 
