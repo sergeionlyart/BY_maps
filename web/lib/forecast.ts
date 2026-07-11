@@ -1,4 +1,4 @@
-/** Прогноз v2026.1 (WP-F6): загрузка forecast.json и доступ к траекториям. */
+/** Прогноз населения (WP-F6, этапы 3 и 5): загрузка forecast.json и доступ к траекториям. */
 
 export type ScenarioId = 'base' | 'optimistic' | 'negative';
 

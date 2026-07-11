@@ -215,7 +215,7 @@ export default function Page() {
                 onRemove={(id) => setCompare((c) => c.filter((x) => x !== id))}
               />
             ) : (
-              <UrbanPanel data={data} year={year} />
+              <UrbanPanel data={data} year={year} forecast={forecast} scenario={scenario} />
             )}
           </div>
         </aside>

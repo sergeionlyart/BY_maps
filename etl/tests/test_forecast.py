@@ -106,13 +106,14 @@ def test_wpf5_backtest_gates():
 def test_forecast_json_fresh():
     """Опубликованный forecast.json соответствует пересчёту."""
     published = json.loads((ROOT / "web/public/data/forecast.json").read_text())
-    assert published["version"] == "v2026.1"
+    assert published["version"] == "v2026.2"
     assert published["horizon"] == [2026, 2075]
     assert set(published["scenarios"]) == {"base", "optimistic", "negative"}
     t = published["territories"]
-    assert set(t) == set(TERRITORIES + ["BY"])
-    for terr in t.values():
-        base = terr["base"]
+    # уровни 0-1 присутствуют; уровни 2-3 (районы/города) - этап 5
+    assert set(TERRITORIES + ["BY"]) <= set(t)
+    for terr in TERRITORIES + ["BY"]:
+        base = t[terr]["base"]
         assert base["years"][0] == 2026 and base["years"][-1] == 2075
         assert len(base["pop"]) == len(base["years"])
         assert "q10" in base and "q90" in base

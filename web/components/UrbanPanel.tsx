@@ -1,6 +1,8 @@
 'use client';
 
 import type { DataFile } from '@/lib/types';
+import type { ForecastFile, ScenarioId } from '@/lib/forecast';
+import { SCENARIO_LABEL } from '@/lib/forecast';
 import { formatPct, valueAt } from '@/lib/series';
 import { CAT } from '@/lib/scales';
 import LineChart, { ChartSeries } from './LineChart';
@@ -8,10 +10,15 @@ import LineChart, { ChartSeries } from './LineChart';
 interface Props {
   data: DataFile;
   year: number;
+  forecast?: ForecastFile | null;
+  scenario?: ScenarioId;
 }
 
+const TOP7 = ['c-minsk', 'c-homiel', 'c-mahilou', 'c-viciebsk', 'c-hrodna', 'c-brest', 'c-babrujsk'];
+const OBL_CENTERS = ['c-minsk', 'c-homiel', 'c-mahilou', 'c-viciebsk', 'c-hrodna', 'c-brest'];
+
 /** Панель урбанизации и концентрации населения (по стране). */
-export default function UrbanPanel({ data, year }: Props) {
+export default function UrbanPanel({ data, year, forecast, scenario = 'base' }: Props) {
   const byPop = data.territories['BY'].pop;
   // знаменатель: население страны в современных границах; для годов без
   // прямой оценки (1923, 1926, 1939) - линейная интерполяция
@@ -19,19 +26,38 @@ export default function UrbanPanel({ data, year }: Props) {
     .map((r) => ({ ...r, pop: r.pop ?? valueAt(byPop, r.year)?.value ?? null }))
     .filter((r) => r.pop);
 
-  const mk = (key: 'urban' | 'minsk' | 'oblCenters' | 'top7', name: string, color: string): ChartSeries => ({
+  // прогнозный слой (этап 5): городское население = сумма прогнозов городов
+  // (покрытие полное: города проекта = городское население официального ряда)
+  const fterrs = forecast?.territories;
+  const fyears = fterrs?.['BY']?.[scenario]?.years ?? [];
+  const fshare = (ids: 'all' | string[]) => {
+    if (!fterrs) return [];
+    const cityIds = ids === 'all'
+      ? Object.keys(fterrs).filter((t) => t.startsWith('c-'))
+      : ids;
+    return fyears.map((y, i) => {
+      const num = cityIds.reduce((s, t) => s + (fterrs[t]?.[scenario]?.pop[i] ?? 0), 0);
+      return { year: y, value: (num / fterrs['BY'][scenario].pop[i]) * 100, major: false };
+    }).filter((p) => p.year > 2026);
+  };
+
+  const mk = (key: 'urban' | 'minsk' | 'oblCenters' | 'top7', name: string, color: string,
+              fids: 'all' | string[]): ChartSeries => ({
     name,
     color,
-    points: rows
-      .filter((r) => r[key] != null)
-      .map((r) => ({ year: r.year, value: (r[key]! / r.pop!) * 100, major: true })),
+    points: [
+      ...rows
+        .filter((r) => r[key] != null)
+        .map((r) => ({ year: r.year, value: (r[key]! / r.pop!) * 100, major: true })),
+      ...fshare(fids),
+    ],
   });
 
   const series: ChartSeries[] = [
-    mk('urban', 'Городское население', CAT[1]),
-    mk('top7', '7 крупнейших городов', CAT[2]),
-    mk('oblCenters', 'Минск + обл. центры', CAT[3]),
-    mk('minsk', 'Минск', CAT[0]),
+    mk('urban', 'Городское население', CAT[1], 'all'),
+    mk('top7', '7 крупнейших городов', CAT[2], TOP7),
+    mk('oblCenters', 'Минск + обл. центры', CAT[3], OBL_CENTERS),
+    mk('minsk', 'Минск', CAT[0], ['c-minsk']),
   ];
 
   const last = rows[rows.length - 1];
@@ -64,7 +90,10 @@ export default function UrbanPanel({ data, year }: Props) {
       </div>
 
       <div className="chart-block">
-        <div className="chart-title">Доля в населении страны, % (по переписным годам)</div>
+        <div className="chart-title">
+          Доля в населении страны, % (по переписным годам
+          {forecast ? `; за 2026 — прогноз ${forecast.version}, сценарий «${SCENARIO_LABEL[scenario]}»` : ''})
+        </div>
         <LineChart
           series={series}
           height={240}
@@ -72,7 +101,8 @@ export default function UrbanPanel({ data, year }: Props) {
           yFormat={(v) => v + '%'}
           yTooltip={(v) => v.toLocaleString('ru-RU', { maximumFractionDigits: 1 }) + '%'}
           yMax={85}
-          domain={[1897, 2026]}
+          domain={[1897, forecast ? 2075 : 2026]}
+          refXs={forecast ? [{ value: 2026, label: 'прогноз →' }] : undefined}
         />
       </div>
 
@@ -82,6 +112,8 @@ export default function UrbanPanel({ data, year }: Props) {
         1940). Городское население до 1959 года — сумма городских НП из таблицы
         переписей; топ-7: Минск, Гомель, Могилёв, Витебск, Гродно, Брест,
         Бобруйск (современный состав, фиксированный во времени).
+        {forecast ? ' Прогнозная часть — сумма городских прогнозов этапа 5' +
+          ' (199 городов; гп с рядами, оборванными до 2019 г., не прогнозируются).' : ''}
       </p>
       <p className="src-note">
         <a href="/research/zipf">→ Исследование INF-01: иерархия городов и закон

@@ -70,7 +70,7 @@ export default function TerritoryCard({ data, forecast, scenario = 'base', id, y
   const change = now && base && base.value > 0 ? now.value / base.value - 1 : null;
   const abs = now && base ? now.value - base.value : null;
 
-  const breakdown = t.level === 'raion' ? raionBreakdown(data, t, year) : null;
+  const breakdown = t.level === 'raion' ? raionBreakdown(data, t, histYear) : null;
 
   const chart: ChartSeries[] = [];
   chart.push({
@@ -259,7 +259,9 @@ export default function TerritoryCard({ data, forecast, scenario = 'base', id, y
 
       <div className="chart-block">
         <div className="chart-title">
-          Динамика населения, 1897–{forecast && fentry ? '2075 (с прогнозом, полоса — 80% интервал)' : '2026'}
+          Динамика населения, 1897–{forecast && fentry
+            ? `2075 (с прогнозом${fentry.q10 ? ', полоса — 80% интервал' : ''})`
+            : '2026'}
         </div>
         <LineChart
           series={chart}

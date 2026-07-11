@@ -12,7 +12,7 @@ export default function AgingPage() {
   return (
     <div className="page page-wide">
       <div className="page-breadcrumb">
-        <Link href="/research">Исследования</Link> · INF-02 · v1.0.0
+        <Link href="/research">Исследования</Link> · INF-02 · v1.0.1
       </div>
       <h1>Старение районов: где депопуляция самоподдерживается</h1>
       <p className="page-lead">

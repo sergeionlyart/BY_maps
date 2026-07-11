@@ -35,7 +35,7 @@ from .migration import step_net_migration
 
 SCEN_DIR = Path(__file__).parent / "scenarios"
 OUT_WEB = ROOT / "web" / "public" / "data" / "forecast.json"
-OUT_CSV = ROOT / "data" / "curated" / "forecast_v2026_1.csv"
+OUT_CSV = ROOT / "data" / "curated" / "forecast_v2026_2.csv"
 
 STEP_YEARS = list(range(2026, 2077, STEP))  # 2026..2076
 EXPORT_YEARS = [y for y in STEP_YEARS if y <= 2071] + [2075]
@@ -73,15 +73,19 @@ def load_scenarios() -> dict[str, dict]:
     return out
 
 
-def run_scenario(scen: dict) -> dict:
-    """Прогон сценария. Возвращает {terr: {year: pop_total}} (+ 'BY')."""
+def run_scenario(scen: dict, keep_structures: bool = False) -> dict | tuple[dict, dict]:
+    """Прогон сценария. Возвращает {terr: {year: pop_total}} (+ 'BY');
+    при keep_structures - дополнительно {terr: {year: {sex: {age: pop}}}}
+    (для IPF-согласования районов и городов, этап 5)."""
     mx0 = mortality_mx(2018)
     prof = asfr_profile(2018)
     pops = {t: {s: dict(v) for s, v in jumpoff_2026()[t].items()} for t in TERRITORIES}
 
     series: dict[str, dict[int, float]] = {t: {} for t in TERRITORIES + ["BY"]}
+    structures: dict[str, dict[int, dict]] = {t: {} for t in TERRITORIES}
     for t in TERRITORIES:
         series[t][2026] = total(pops[t])
+        structures[t][2026] = {s: dict(v) for s, v in pops[t].items()}
     series["BY"][2026] = sum(series[t][2026] for t in TERRITORIES)
 
     for y0 in STEP_YEARS[:-1]:
@@ -99,8 +103,9 @@ def run_scenario(scen: dict) -> dict:
             net = step_net_migration(t, y0, scen)
             pops[t], _ = project_step(pops[t], surv, asfr, net)
             series[t][y0 + STEP] = total(pops[t])
+            structures[t][y0 + STEP] = {s: dict(v) for s, v in pops[t].items()}
         series["BY"][y0 + STEP] = sum(series[t][y0 + STEP] for t in TERRITORIES)
-    return series
+    return (series, structures) if keep_structures else series
 
 
 def pi_ratios() -> dict[str, dict[int, float]]:
@@ -127,7 +132,9 @@ def _pi_at(ratios: dict[int, float], year: int) -> float:
     return ratios[lo] + t * (ratios[hi] - ratios[lo])
 
 
-def export(all_series: dict[str, dict]) -> None:
+def export(all_series: dict[str, dict], sub_series: dict[str, dict]) -> None:
+    """all_series: уровни 0-1 ({sid: {terr: {year: pop}}});
+    sub_series: уровни 2-3 после IPF ({sid: {terr: {year: pop}}})."""
     ratios = pi_ratios()
     terrs = {}
     for t in TERRITORIES + ["BY"]:
@@ -148,6 +155,18 @@ def export(all_series: dict[str, dict]) -> None:
                 entry["q10"] = [round(val(y) * _pi_at(ratios["lo"], y)) for y in years]
                 entry["q90"] = [round(val(y) * _pi_at(ratios["hi"], y)) for y in years]
             terrs[t][sid] = entry
+
+    # уровни 2-3: районы и города (сценарность - через IPF к области;
+    # квантили не публикуются - неопределённость коммуницируется сценариями)
+    for sid, series in sub_series.items():
+        for t, pts in series.items():
+            terrs.setdefault(t, {})[sid] = {
+                "years": EXPORT_YEARS,
+                "pop": [round(pts[y]) for y in EXPORT_YEARS],
+            }
+    # точка Минска на карте городов - зеркало BY-HM
+    terrs["c-minsk"] = {sid: {"years": e["years"], "pop": e["pop"]}
+                        for sid, e in terrs["BY-HM"].items()}
 
     scen_meta = {sid: {"name": s["name"], "description": s["description"].strip()}
                  for sid, s in load_scenarios().items()}
@@ -174,15 +193,37 @@ def export(all_series: dict[str, dict]) -> None:
 
 
 def main() -> None:
+    from . import sub
+
     scens = load_scenarios()
-    all_series = {sid: run_scenario(s) for sid, s in scens.items()}
-    export(all_series)
+    all_series, all_structs = {}, {}
+    for sid, s in scens.items():
+        all_series[sid], all_structs[sid] = run_scenario(s, keep_structures=True)
+
+    # уровни 2-3: одна CCR/CCMPP-проекция, сценарность - через IPF к области
+    children = sub.project_children()
+    official = sub.official_totals_2026()
+    sub_series: dict[str, dict] = {}
+    for sid in scens:
+        totals = sub.reconcile(children, all_structs[sid], EXPORT_YEARS,
+                               calibrate_2026=official)
+        # экспортный периметр района-хоста = район (перепись) + его город
+        export_units = {t: dict(v) for t, v in totals.items()}
+        for host, city in sub.HOSTED.items():
+            for y in EXPORT_YEARS:
+                export_units[host][y] = totals[host][y] + totals[city][y]
+        cities = sub.cities_forecast(export_units, set(children), EXPORT_YEARS)
+        sub_series[sid] = {**export_units, **cities}
+
+    export(all_series, sub_series)
     wpp = wpp_total_variants()
     for sid, series in sorted(all_series.items()):
         p50 = series["BY"][2051] / 1000
         p75 = series["BY"][2076] / 1000
         print(f"  {sid:12s}: 2050≈{p50:.0f} тыс. (WPP medium {wpp['Medium'][2050]:.0f}, "
               f"low {wpp['Low'][2050]:.0f}, high {wpp['High'][2050]:.0f}); 2075≈{p75:.0f} тыс.")
+    n_sub = len(sub_series["base"])
+    print(f"  уровни 2-3: {n_sub} территорий (районы, города) по 3 сценариям")
 
 
 if __name__ == "__main__":

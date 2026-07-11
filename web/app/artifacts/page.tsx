@@ -64,13 +64,14 @@ export default function ArtifactsPage() {
       <h2>Доступные пакеты</h2>
       <div className="cards">
         <div className="card">
-          <div className="card-code">Прогноз · v2026.1 · пакет v1.0.1</div>
-          <div className="card-title">Прогноз населения 2026–2075 (страна, области, Минск)</div>
-          <p>CCMPP, 3 сценария, 80% интервал; бэктест 2009→2019 с гейтами;
-            данные + код + сценарии с обоснованиями.</p>
+          <div className="card-code">Прогноз · v2026.2 · пакет v1.1.0</div>
+          <div className="card-title">Прогноз населения 2026–2075 (страна, области, Минск, 118 районов, ~200 городов)</div>
+          <p>CCMPP + Гамильтон–Перри + доли городов, 3 сценария, 80% интервал
+            (уровни 0–1); три бэктеста с гейтами; данные + код + сценарии
+            с обоснованиями.</p>
           <div className="card-foot">
-            <a href="/artifacts/by-maps-forecast-v1.0.1.zip" download>
-              ⬇ by-maps-forecast-v1.0.1.zip (822 КБ)
+            <a href="/artifacts/by-maps-forecast-v1.1.0.zip" download>
+              ⬇ by-maps-forecast-v1.1.0.zip (1072 КБ)
             </a>
             {' · '}
             <Link href="/artifacts/forecast">версии и состав</Link>

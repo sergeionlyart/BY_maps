@@ -56,6 +56,32 @@ def test_scenario_ordering_and_country_sum():
             assert res["optimistic"]["BY"][y] > res["base"]["BY"][y] > res["negative"]["BY"][y]
 
 
+def test_sub_levels_reconciled():
+    """Уровни 2-3 (после прогона run.py): сумма районов = область на каждый
+    год и сценарий; город не больше района; старт = официальные оценки."""
+    import csv
+    import json
+    fc = json.loads((PKG / "web/public/data/forecast.json").read_text())
+    terrs = fc["territories"]
+    assert fc["version"] == "v2026.2"
+    obl_of = {r["territory_id"]: r["oblast"]
+              for r in csv.DictReader(open(PKG / "data/curated/age2019.csv"))}
+    years = terrs["BY-BR"]["base"]["years"]
+    for o in [t for t in TERRITORIES if t != "BY-HM"]:
+        rs = [t for t in terrs if t.startswith("r-") and obl_of.get(t) == o]
+        assert len(rs) >= 16, o
+        for sid in ("base", "optimistic", "negative"):
+            for i in range(len(years)):
+                s = sum(terrs[t][sid]["pop"][i] for t in rs)
+                assert abs(s - terrs[o][sid]["pop"][i]) <= 5, (o, sid, years[i])
+    cmap = {r["city_id"]: r["raion_id"]
+            for r in csv.DictReader(open(PKG / "data/curated/city_raion.csv"))}
+    for c, r in cmap.items():
+        if c in terrs and r in terrs:
+            assert all(cv <= rv for cv, rv in
+                       zip(terrs[c]["base"]["pop"], terrs[r]["base"]["pop"])), c
+
+
 if __name__ == "__main__":
     fns = [v for k, v in sorted(globals().items()) if k.startswith("test_")]
     for fn in fns:

@@ -3,7 +3,7 @@
 
 id: aging
 title: "Старение районов Беларуси: индикаторы 2009/2019 и контрфактная передвижка без миграции"
-version: "1.0.0"
+version: "1.0.1"
 released: "2026-07-11"
 landing_url: "https://by-population-maps.vercel.app/research/aging"
 authors:

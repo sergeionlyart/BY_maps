@@ -1,0 +1,2548 @@
+{
+ "raions_2026": {
+  "n": 128,
+  "mape_model": 2.12,
+  "mape_naive": 2.76,
+  "median_ape_model": 1.65,
+  "gate_beats_naive": true,
+  "rows": [
+   {
+    "territory_id": "c-babrujsk",
+    "fact_2026": 204103,
+    "model_2026": 201965,
+    "naive_2026": 208054,
+    "ape_model": 1.05,
+    "ape_naive": 1.94
+   },
+   {
+    "territory_id": "c-baranavichy",
+    "fact_2026": 170039,
+    "model_2026": 172929,
+    "naive_2026": 177109,
+    "ape_model": 1.7,
+    "ape_naive": 4.16
+   },
+   {
+    "territory_id": "c-brest",
+    "fact_2026": 347138,
+    "model_2026": 350770,
+    "naive_2026": 353854,
+    "ape_model": 1.05,
+    "ape_naive": 1.93
+   },
+   {
+    "territory_id": "c-homiel",
+    "fact_2026": 499853,
+    "model_2026": 506063,
+    "naive_2026": 509620,
+    "ape_model": 1.24,
+    "ape_naive": 1.95
+   },
+   {
+    "territory_id": "c-hrodna",
+    "fact_2026": 364902,
+    "model_2026": 364039,
+    "naive_2026": 368741,
+    "ape_model": 0.24,
+    "ape_naive": 1.05
+   },
+   {
+    "territory_id": "c-mahilou",
+    "fact_2026": 352891,
+    "model_2026": 349076,
+    "naive_2026": 351976,
+    "ape_model": 1.08,
+    "ape_naive": 0.26
+   },
+   {
+    "territory_id": "c-navapolack",
+    "fact_2026": 94666,
+    "model_2026": 92080,
+    "naive_2026": 94556,
+    "ape_model": 2.73,
+    "ape_naive": 0.12
+   },
+   {
+    "territory_id": "c-pinsk",
+    "fact_2026": 123283,
+    "model_2026": 120572,
+    "naive_2026": 121359,
+    "ape_model": 2.2,
+    "ape_naive": 1.56
+   },
+   {
+    "territory_id": "c-viciebsk",
+    "fact_2026": 357899,
+    "model_2026": 362630,
+    "naive_2026": 368481,
+    "ape_model": 1.32,
+    "ape_naive": 2.96
+   },
+   {
+    "territory_id": "c-zhodzina",
+    "fact_2026": 62983,
+    "model_2026": 63016,
+    "naive_2026": 64771,
+    "ape_model": 0.05,
+    "ape_naive": 2.84
+   },
+   {
+    "territory_id": "r-akciabrski",
+    "fact_2026": 12377,
+    "model_2026": 12887,
+    "naive_2026": 12604,
+    "ape_model": 4.12,
+    "ape_naive": 1.84
+   },
+   {
+    "territory_id": "r-arshanski",
+    "fact_2026": 137772,
+    "model_2026": 134453,
+    "naive_2026": 136131,
+    "ape_model": 2.41,
+    "ape_naive": 1.19
+   },
+   {
+    "territory_id": "r-ashmianski",
+    "fact_2026": 28351,
+    "model_2026": 28965,
+    "naive_2026": 29288,
+    "ape_model": 2.16,
+    "ape_naive": 3.3
+   },
+   {
+    "territory_id": "r-asipovicki",
+    "fact_2026": 42273,
+    "model_2026": 41404,
+    "naive_2026": 41146,
+    "ape_model": 2.05,
+    "ape_naive": 2.66
+   },
+   {
+    "territory_id": "r-astraviecki",
+    "fact_2026": 28462,
+    "model_2026": 27676,
+    "naive_2026": 29509,
+    "ape_model": 2.76,
+    "ape_naive": 3.68
+   },
+   {
+    "territory_id": "r-babrujski",
+    "fact_2026": 15941,
+    "model_2026": 16558,
+    "naive_2026": 16800,
+    "ape_model": 3.87,
+    "ape_naive": 5.39
+   },
+   {
+    "territory_id": "r-baranavicki",
+    "fact_2026": 26029,
+    "model_2026": 24785,
+    "naive_2026": 21059,
+    "ape_model": 4.78,
+    "ape_naive": 19.09
+   },
+   {
+    "territory_id": "r-barysauski",
+    "fact_2026": 165511,
+    "model_2026": 159757,
+    "naive_2026": 161807,
+    "ape_model": 3.48,
+    "ape_naive": 2.24
+   },
+   {
+    "territory_id": "r-bialynicki",
+    "fact_2026": 16784,
+    "model_2026": 17066,
+    "naive_2026": 16878,
+    "ape_model": 1.68,
+    "ape_naive": 0.56
+   },
+   {
+    "territory_id": "r-biarezinski",
+    "fact_2026": 20828,
+    "model_2026": 21383,
+    "naive_2026": 21083,
+    "ape_model": 2.67,
+    "ape_naive": 1.22
+   },
+   {
+    "territory_id": "r-biarozauski",
+    "fact_2026": 56182,
+    "model_2026": 55253,
+    "naive_2026": 55535,
+    "ape_model": 1.65,
+    "ape_naive": 1.15
+   },
+   {
+    "territory_id": "r-bierastavicki",
+    "fact_2026": 13955,
+    "model_2026": 14114,
+    "naive_2026": 13758,
+    "ape_model": 1.14,
+    "ape_naive": 1.41
+   },
+   {
+    "territory_id": "r-bieshankovicki",
+    "fact_2026": 12842,
+    "model_2026": 12776,
+    "naive_2026": 11815,
+    "ape_model": 0.51,
+    "ape_naive": 8.0
+   },
+   {
+    "territory_id": "r-brahinski",
+    "fact_2026": 11187,
+    "model_2026": 11538,
+    "naive_2026": 11002,
+    "ape_model": 3.14,
+    "ape_naive": 1.65
+   },
+   {
+    "territory_id": "r-braslauski",
+    "fact_2026": 22349,
+    "model_2026": 21896,
+    "naive_2026": 21360,
+    "ape_model": 2.02,
+    "ape_naive": 4.43
+   },
+   {
+    "territory_id": "r-brescki",
+    "fact_2026": 45874,
+    "model_2026": 46703,
+    "naive_2026": 49085,
+    "ape_model": 1.81,
+    "ape_naive": 7.0
+   },
+   {
+    "territory_id": "r-buda-kashalouski",
+    "fact_2026": 27887,
+    "model_2026": 28498,
+    "naive_2026": 27545,
+    "ape_model": 2.19,
+    "ape_naive": 1.23
+   },
+   {
+    "territory_id": "r-bychauski",
+    "fact_2026": 26972,
+    "model_2026": 27366,
+    "naive_2026": 26983,
+    "ape_model": 1.46,
+    "ape_naive": 0.04
+   },
+   {
+    "territory_id": "r-chacherski",
+    "fact_2026": 13965,
+    "model_2026": 13843,
+    "naive_2026": 13685,
+    "ape_model": 0.88,
+    "ape_naive": 2.0
+   },
+   {
+    "territory_id": "r-chashnicki",
+    "fact_2026": 25316,
+    "model_2026": 25470,
+    "naive_2026": 24589,
+    "ape_model": 0.61,
+    "ape_naive": 2.87
+   },
+   {
+    "territory_id": "r-chavuski",
+    "fact_2026": 15940,
+    "model_2026": 16193,
+    "naive_2026": 15906,
+    "ape_model": 1.59,
+    "ape_naive": 0.21
+   },
+   {
+    "territory_id": "r-chervienski",
+    "fact_2026": 33325,
+    "model_2026": 31814,
+    "naive_2026": 32297,
+    "ape_model": 4.53,
+    "ape_naive": 3.09
+   },
+   {
+    "territory_id": "r-cherykauski",
+    "fact_2026": 11873,
+    "model_2026": 12281,
+    "naive_2026": 12184,
+    "ape_model": 3.43,
+    "ape_naive": 2.62
+   },
+   {
+    "territory_id": "r-chocimski",
+    "fact_2026": 9226,
+    "model_2026": 9391,
+    "naive_2026": 8791,
+    "ape_model": 1.79,
+    "ape_naive": 4.71
+   },
+   {
+    "territory_id": "r-chojnicki",
+    "fact_2026": 17704,
+    "model_2026": 17843,
+    "naive_2026": 17196,
+    "ape_model": 0.78,
+    "ape_naive": 2.87
+   },
+   {
+    "territory_id": "r-dobrushski",
+    "fact_2026": 33727,
+    "model_2026": 33343,
+    "naive_2026": 33055,
+    "ape_model": 1.14,
+    "ape_naive": 1.99
+   },
+   {
+    "territory_id": "r-dokshycki",
+    "fact_2026": 19630,
+    "model_2026": 19941,
+    "naive_2026": 19252,
+    "ape_model": 1.58,
+    "ape_naive": 1.92
+   },
+   {
+    "territory_id": "r-drahichynski",
+    "fact_2026": 32343,
+    "model_2026": 32565,
+    "naive_2026": 31535,
+    "ape_model": 0.69,
+    "ape_naive": 2.5
+   },
+   {
+    "territory_id": "r-drybinski",
+    "fact_2026": 8922,
+    "model_2026": 9471,
+    "naive_2026": 9129,
+    "ape_model": 6.15,
+    "ape_naive": 2.32
+   },
+   {
+    "territory_id": "r-dubrovienski",
+    "fact_2026": 12770,
+    "model_2026": 12944,
+    "naive_2026": 12598,
+    "ape_model": 1.36,
+    "ape_naive": 1.34
+   },
+   {
+    "territory_id": "r-dziarzhynski",
+    "fact_2026": 71137,
+    "model_2026": 70377,
+    "naive_2026": 72743,
+    "ape_model": 1.07,
+    "ape_naive": 2.26
+   },
+   {
+    "territory_id": "r-dziatlauski",
+    "fact_2026": 21481,
+    "model_2026": 22179,
+    "naive_2026": 21567,
+    "ape_model": 3.25,
+    "ape_naive": 0.4
+   },
+   {
+    "territory_id": "r-hancavicki",
+    "fact_2026": 23441,
+    "model_2026": 23498,
+    "naive_2026": 22666,
+    "ape_model": 0.24,
+    "ape_naive": 3.31
+   },
+   {
+    "territory_id": "r-haradocki",
+    "fact_2026": 19609,
+    "model_2026": 19501,
+    "naive_2026": 18785,
+    "ape_model": 0.55,
+    "ape_naive": 4.2
+   },
+   {
+    "territory_id": "r-hluski",
+    "fact_2026": 11527,
+    "model_2026": 11790,
+    "naive_2026": 11173,
+    "ape_model": 2.29,
+    "ape_naive": 3.08
+   },
+   {
+    "territory_id": "r-hlybocki",
+    "fact_2026": 32383,
+    "model_2026": 31306,
+    "naive_2026": 30917,
+    "ape_model": 3.33,
+    "ape_naive": 4.53
+   },
+   {
+    "territory_id": "r-homielski",
+    "fact_2026": 68075,
+    "model_2026": 67665,
+    "naive_2026": 69147,
+    "ape_model": 0.6,
+    "ape_naive": 1.57
+   },
+   {
+    "territory_id": "r-horacki",
+    "fact_2026": 36539,
+    "model_2026": 36444,
+    "naive_2026": 35009,
+    "ape_model": 0.26,
+    "ape_naive": 4.19
+   },
+   {
+    "territory_id": "r-hrodzienski",
+    "fact_2026": 47834,
+    "model_2026": 45891,
+    "naive_2026": 46279,
+    "ape_model": 4.06,
+    "ape_naive": 3.25
+   },
+   {
+    "territory_id": "r-iujeuski",
+    "fact_2026": 18381,
+    "model_2026": 18847,
+    "naive_2026": 16952,
+    "ape_model": 2.54,
+    "ape_naive": 7.78
+   },
+   {
+    "territory_id": "r-ivacevicki",
+    "fact_2026": 48662,
+    "model_2026": 48429,
+    "naive_2026": 48218,
+    "ape_model": 0.48,
+    "ape_naive": 0.91
+   },
+   {
+    "territory_id": "r-ivanauski",
+    "fact_2026": 33772,
+    "model_2026": 34377,
+    "naive_2026": 33633,
+    "ape_model": 1.79,
+    "ape_naive": 0.41
+   },
+   {
+    "territory_id": "r-jelski",
+    "fact_2026": 13350,
+    "model_2026": 13844,
+    "naive_2026": 13234,
+    "ape_model": 3.7,
+    "ape_naive": 0.87
+   },
+   {
+    "territory_id": "r-kalinkavicki",
+    "fact_2026": 53257,
+    "model_2026": 52806,
+    "naive_2026": 52143,
+    "ape_model": 0.85,
+    "ape_naive": 2.09
+   },
+   {
+    "territory_id": "r-kamianiecki",
+    "fact_2026": 30162,
+    "model_2026": 30301,
+    "naive_2026": 29078,
+    "ape_model": 0.46,
+    "ape_naive": 3.59
+   },
+   {
+    "territory_id": "r-kapylski",
+    "fact_2026": 25565,
+    "model_2026": 25893,
+    "naive_2026": 25112,
+    "ape_model": 1.28,
+    "ape_naive": 1.77
+   },
+   {
+    "territory_id": "r-karelicki",
+    "fact_2026": 17288,
+    "model_2026": 17349,
+    "naive_2026": 16664,
+    "ape_model": 0.35,
+    "ape_naive": 3.61
+   },
+   {
+    "territory_id": "r-karmianski",
+    "fact_2026": 12663,
+    "model_2026": 13218,
+    "naive_2026": 12896,
+    "ape_model": 4.39,
+    "ape_naive": 1.84
+   },
+   {
+    "territory_id": "r-kasciukovicki",
+    "fact_2026": 20523,
+    "model_2026": 20909,
+    "naive_2026": 20440,
+    "ape_model": 1.88,
+    "ape_naive": 0.4
+   },
+   {
+    "territory_id": "r-kirauski",
+    "fact_2026": 16151,
+    "model_2026": 16502,
+    "naive_2026": 15744,
+    "ape_model": 2.17,
+    "ape_naive": 2.52
+   },
+   {
+    "territory_id": "r-klecki",
+    "fact_2026": 24751,
+    "model_2026": 24475,
+    "naive_2026": 23401,
+    "ape_model": 1.11,
+    "ape_naive": 5.45
+   },
+   {
+    "territory_id": "r-klichauski",
+    "fact_2026": 13034,
+    "model_2026": 13110,
+    "naive_2026": 12690,
+    "ape_model": 0.59,
+    "ape_naive": 2.64
+   },
+   {
+    "territory_id": "r-klimavicki",
+    "fact_2026": 21131,
+    "model_2026": 21341,
+    "naive_2026": 20519,
+    "ape_model": 0.99,
+    "ape_naive": 2.9
+   },
+   {
+    "territory_id": "r-kobrynski",
+    "fact_2026": 80557,
+    "model_2026": 79611,
+    "naive_2026": 80724,
+    "ape_model": 1.17,
+    "ape_naive": 0.21
+   },
+   {
+    "territory_id": "r-krasnapolski",
+    "fact_2026": 8232,
+    "model_2026": 8650,
+    "naive_2026": 8311,
+    "ape_model": 5.07,
+    "ape_naive": 0.96
+   },
+   {
+    "territory_id": "r-kruhlanski",
+    "fact_2026": 11955,
+    "model_2026": 12411,
+    "naive_2026": 12159,
+    "ape_model": 3.81,
+    "ape_naive": 1.71
+   },
+   {
+    "territory_id": "r-krupski",
+    "fact_2026": 20857,
+    "model_2026": 21088,
+    "naive_2026": 20373,
+    "ape_model": 1.11,
+    "ape_naive": 2.32
+   },
+   {
+    "territory_id": "r-krychauski",
+    "fact_2026": 26879,
+    "model_2026": 26576,
+    "naive_2026": 25850,
+    "ape_model": 1.13,
+    "ape_naive": 3.83
+   },
+   {
+    "territory_id": "r-lachavicki",
+    "fact_2026": 21059,
+    "model_2026": 20946,
+    "naive_2026": 19145,
+    "ape_model": 0.54,
+    "ape_naive": 9.09
+   },
+   {
+    "territory_id": "r-lahojski",
+    "fact_2026": 38315,
+    "model_2026": 38179,
+    "naive_2026": 39209,
+    "ape_model": 0.36,
+    "ape_naive": 2.33
+   },
+   {
+    "territory_id": "r-lelchycki",
+    "fact_2026": 22701,
+    "model_2026": 23050,
+    "naive_2026": 22659,
+    "ape_model": 1.54,
+    "ape_naive": 0.19
+   },
+   {
+    "territory_id": "r-lepielski",
+    "fact_2026": 29427,
+    "model_2026": 29373,
+    "naive_2026": 29489,
+    "ape_model": 0.18,
+    "ape_naive": 0.21
+   },
+   {
+    "territory_id": "r-lidski",
+    "fact_2026": 130194,
+    "model_2026": 129434,
+    "naive_2026": 132893,
+    "ape_model": 0.58,
+    "ape_naive": 2.07
+   },
+   {
+    "territory_id": "r-lojeuski",
+    "fact_2026": 10321,
+    "model_2026": 10575,
+    "naive_2026": 9971,
+    "ape_model": 2.46,
+    "ape_naive": 3.39
+   },
+   {
+    "territory_id": "r-loznienski",
+    "fact_2026": 14218,
+    "model_2026": 14699,
+    "naive_2026": 15029,
+    "ape_model": 3.38,
+    "ape_naive": 5.71
+   },
+   {
+    "territory_id": "r-lubanski",
+    "fact_2026": 27739,
+    "model_2026": 27032,
+    "naive_2026": 25785,
+    "ape_model": 2.55,
+    "ape_naive": 7.04
+   },
+   {
+    "territory_id": "r-luniniecki",
+    "fact_2026": 59463,
+    "model_2026": 59412,
+    "naive_2026": 59572,
+    "ape_model": 0.09,
+    "ape_naive": 0.18
+   },
+   {
+    "territory_id": "r-mahilouski",
+    "fact_2026": 38759,
+    "model_2026": 40468,
+    "naive_2026": 41420,
+    "ape_model": 4.41,
+    "ape_naive": 6.87
+   },
+   {
+    "territory_id": "r-maladziechanski",
+    "fact_2026": 126372,
+    "model_2026": 122057,
+    "naive_2026": 124528,
+    "ape_model": 3.41,
+    "ape_naive": 1.46
+   },
+   {
+    "territory_id": "r-malarycki",
+    "fact_2026": 22006,
+    "model_2026": 22265,
+    "naive_2026": 22113,
+    "ape_model": 1.18,
+    "ape_naive": 0.49
+   },
+   {
+    "territory_id": "r-mastouski",
+    "fact_2026": 24187,
+    "model_2026": 23957,
+    "naive_2026": 22849,
+    "ape_model": 0.95,
+    "ape_naive": 5.53
+   },
+   {
+    "territory_id": "r-mazyrski",
+    "fact_2026": 125375,
+    "model_2026": 122004,
+    "naive_2026": 123817,
+    "ape_model": 2.69,
+    "ape_naive": 1.24
+   },
+   {
+    "territory_id": "r-miadzielski",
+    "fact_2026": 23472,
+    "model_2026": 23625,
+    "naive_2026": 23030,
+    "ape_model": 0.65,
+    "ape_naive": 1.88
+   },
+   {
+    "territory_id": "r-mijorski",
+    "fact_2026": 16640,
+    "model_2026": 16644,
+    "naive_2026": 15516,
+    "ape_model": 0.03,
+    "ape_naive": 6.75
+   },
+   {
+    "territory_id": "r-minski",
+    "fact_2026": 286544,
+    "model_2026": 314259,
+    "naive_2026": 302469,
+    "ape_model": 9.67,
+    "ape_naive": 5.56
+   },
+   {
+    "territory_id": "r-mscislauski",
+    "fact_2026": 17429,
+    "model_2026": 17699,
+    "naive_2026": 16611,
+    "ape_model": 1.55,
+    "ape_naive": 4.69
+   },
+   {
+    "territory_id": "r-naraulanski",
+    "fact_2026": 10237,
+    "model_2026": 10075,
+    "naive_2026": 9991,
+    "ape_model": 1.58,
+    "ape_naive": 2.4
+   },
+   {
+    "territory_id": "r-navahrudski",
+    "fact_2026": 39455,
+    "model_2026": 38900,
+    "naive_2026": 38613,
+    "ape_model": 1.41,
+    "ape_naive": 2.14
+   },
+   {
+    "territory_id": "r-niasvizhski",
+    "fact_2026": 38176,
+    "model_2026": 36976,
+    "naive_2026": 37042,
+    "ape_model": 3.14,
+    "ape_naive": 2.97
+   },
+   {
+    "territory_id": "r-pastauski",
+    "fact_2026": 30360,
+    "model_2026": 31114,
+    "naive_2026": 30856,
+    "ape_model": 2.48,
+    "ape_naive": 1.64
+   },
+   {
+    "territory_id": "r-pietrykauski",
+    "fact_2026": 24199,
+    "model_2026": 24240,
+    "naive_2026": 22713,
+    "ape_model": 0.17,
+    "ape_naive": 6.14
+   },
+   {
+    "territory_id": "r-pinski",
+    "fact_2026": 39592,
+    "model_2026": 39072,
+    "naive_2026": 37843,
+    "ape_model": 1.31,
+    "ape_naive": 4.42
+   },
+   {
+    "territory_id": "r-polacki",
+    "fact_2026": 98497,
+    "model_2026": 97492,
+    "naive_2026": 98200,
+    "ape_model": 1.02,
+    "ape_naive": 0.3
+   },
+   {
+    "territory_id": "r-pruzhanski",
+    "fact_2026": 39913,
+    "model_2026": 39876,
+    "naive_2026": 38720,
+    "ape_model": 0.09,
+    "ape_naive": 2.99
+   },
+   {
+    "territory_id": "r-puchavicki",
+    "fact_2026": 66628,
+    "model_2026": 65326,
+    "naive_2026": 66354,
+    "ape_model": 1.95,
+    "ape_naive": 0.41
+   },
+   {
+    "territory_id": "r-rahachouski",
+    "fact_2026": 48999,
+    "model_2026": 48459,
+    "naive_2026": 48169,
+    "ape_model": 1.1,
+    "ape_naive": 1.69
+   },
+   {
+    "territory_id": "r-rasonski",
+    "fact_2026": 7888,
+    "model_2026": 8264,
+    "naive_2026": 7700,
+    "ape_model": 4.76,
+    "ape_naive": 2.38
+   },
+   {
+    "territory_id": "r-rechycki",
+    "fact_2026": 92809,
+    "model_2026": 91628,
+    "naive_2026": 92179,
+    "ape_model": 1.27,
+    "ape_naive": 0.68
+   },
+   {
+    "territory_id": "r-salihorski",
+    "fact_2026": 124494,
+    "model_2026": 121401,
+    "naive_2026": 123951,
+    "ape_model": 2.48,
+    "ape_naive": 0.44
+   },
+   {
+    "territory_id": "r-sharkoushchynski",
+    "fact_2026": 12274,
+    "model_2026": 12774,
+    "naive_2026": 11933,
+    "ape_model": 4.07,
+    "ape_naive": 2.78
+   },
+   {
+    "territory_id": "r-shchuchynski",
+    "fact_2026": 29879,
+    "model_2026": 29911,
+    "naive_2026": 26988,
+    "ape_model": 0.11,
+    "ape_naive": 9.68
+   },
+   {
+    "territory_id": "r-shklouski",
+    "fact_2026": 23334,
+    "model_2026": 23467,
+    "naive_2026": 22553,
+    "ape_model": 0.57,
+    "ape_naive": 3.35
+   },
+   {
+    "territory_id": "r-shumilinski",
+    "fact_2026": 15374,
+    "model_2026": 15951,
+    "naive_2026": 15515,
+    "ape_model": 3.75,
+    "ape_naive": 0.92
+   },
+   {
+    "territory_id": "r-siennienski",
+    "fact_2026": 17677,
+    "model_2026": 18270,
+    "naive_2026": 17285,
+    "ape_model": 3.35,
+    "ape_naive": 2.22
+   },
+   {
+    "territory_id": "r-slauharadski",
+    "fact_2026": 11635,
+    "model_2026": 11914,
+    "naive_2026": 11726,
+    "ape_model": 2.4,
+    "ape_naive": 0.78
+   },
+   {
+    "territory_id": "r-slonimski",
+    "fact_2026": 59101,
+    "model_2026": 59796,
+    "naive_2026": 60453,
+    "ape_model": 1.18,
+    "ape_naive": 2.29
+   },
+   {
+    "territory_id": "r-slucki",
+    "fact_2026": 83789,
+    "model_2026": 81589,
+    "naive_2026": 82240,
+    "ape_model": 2.63,
+    "ape_naive": 1.85
+   },
+   {
+    "territory_id": "r-smalavicki",
+    "fact_2026": 57466,
+    "model_2026": 52671,
+    "naive_2026": 54977,
+    "ape_model": 8.34,
+    "ape_naive": 4.33
+   },
+   {
+    "territory_id": "r-smarhonski",
+    "fact_2026": 47106,
+    "model_2026": 46683,
+    "naive_2026": 47032,
+    "ape_model": 0.9,
+    "ape_naive": 0.16
+   },
+   {
+    "territory_id": "r-staradarozhski",
+    "fact_2026": 18564,
+    "model_2026": 19136,
+    "naive_2026": 18987,
+    "ape_model": 3.08,
+    "ape_naive": 2.28
+   },
+   {
+    "territory_id": "r-staubcouski",
+    "fact_2026": 36904,
+    "model_2026": 35565,
+    "naive_2026": 35357,
+    "ape_model": 3.63,
+    "ape_naive": 4.19
+   },
+   {
+    "territory_id": "r-stolinski",
+    "fact_2026": 66836,
+    "model_2026": 65748,
+    "naive_2026": 65160,
+    "ape_model": 1.63,
+    "ape_naive": 2.51
+   },
+   {
+    "territory_id": "r-svietlahorski",
+    "fact_2026": 73739,
+    "model_2026": 72330,
+    "naive_2026": 72621,
+    "ape_model": 1.91,
+    "ape_naive": 1.52
+   },
+   {
+    "territory_id": "r-svislacki",
+    "fact_2026": 11790,
+    "model_2026": 12624,
+    "naive_2026": 11439,
+    "ape_model": 7.07,
+    "ape_naive": 2.98
+   },
+   {
+    "territory_id": "r-talachynski",
+    "fact_2026": 20741,
+    "model_2026": 21448,
+    "naive_2026": 20762,
+    "ape_model": 3.41,
+    "ape_naive": 0.1
+   },
+   {
+    "territory_id": "r-ushacki",
+    "fact_2026": 10979,
+    "model_2026": 11152,
+    "naive_2026": 10375,
+    "ape_model": 1.58,
+    "ape_naive": 5.5
+   },
+   {
+    "territory_id": "r-uzdzienski",
+    "fact_2026": 23507,
+    "model_2026": 22769,
+    "naive_2026": 23202,
+    "ape_model": 3.14,
+    "ape_naive": 1.3
+   },
+   {
+    "territory_id": "r-valozhynski",
+    "fact_2026": 33045,
+    "model_2026": 31748,
+    "naive_2026": 31464,
+    "ape_model": 3.92,
+    "ape_naive": 4.78
+   },
+   {
+    "territory_id": "r-vaukavyski",
+    "fact_2026": 61967,
+    "model_2026": 61970,
+    "naive_2026": 61995,
+    "ape_model": 0.0,
+    "ape_naive": 0.05
+   },
+   {
+    "territory_id": "r-viciebski",
+    "fact_2026": 33501,
+    "model_2026": 32370,
+    "naive_2026": 32122,
+    "ape_model": 3.38,
+    "ape_naive": 4.12
+   },
+   {
+    "territory_id": "r-vierchniadzvinski",
+    "fact_2026": 17875,
+    "model_2026": 18139,
+    "naive_2026": 17420,
+    "ape_model": 1.48,
+    "ape_naive": 2.54
+   },
+   {
+    "territory_id": "r-vietkauski",
+    "fact_2026": 16682,
+    "model_2026": 16347,
+    "naive_2026": 16385,
+    "ape_model": 2.01,
+    "ape_naive": 1.78
+   },
+   {
+    "territory_id": "r-vilejski",
+    "fact_2026": 44806,
+    "model_2026": 44601,
+    "naive_2026": 44556,
+    "ape_model": 0.46,
+    "ape_naive": 0.56
+   },
+   {
+    "territory_id": "r-voranauski",
+    "fact_2026": 19813,
+    "model_2026": 21436,
+    "naive_2026": 19917,
+    "ape_model": 8.19,
+    "ape_naive": 0.53
+   },
+   {
+    "territory_id": "r-zelvienski",
+    "fact_2026": 12072,
+    "model_2026": 12446,
+    "naive_2026": 11280,
+    "ape_model": 3.1,
+    "ape_naive": 6.56
+   },
+   {
+    "territory_id": "r-zhabinkauski",
+    "fact_2026": 24277,
+    "model_2026": 23515,
+    "naive_2026": 24221,
+    "ape_model": 3.14,
+    "ape_naive": 0.23
+   },
+   {
+    "territory_id": "r-zhlobinski",
+    "fact_2026": 96085,
+    "model_2026": 95333,
+    "naive_2026": 96001,
+    "ape_model": 0.78,
+    "ape_naive": 0.09
+   },
+   {
+    "territory_id": "r-zhytkavicki",
+    "fact_2026": 31474,
+    "model_2026": 31079,
+    "naive_2026": 30034,
+    "ape_model": 1.25,
+    "ape_naive": 4.57
+   }
+  ]
+ },
+ "cities_2019": {
+  "n": 188,
+  "mape_model": 6.7,
+  "mape_naive": 10.88,
+  "median_ape_model": 4.42,
+  "gate_not_worse_than_naive": true,
+  "rows": [
+   {
+    "city_id": "c-akciabrski",
+    "fact_2019": 7342,
+    "model_2019": 7604,
+    "naive_2019": 6541,
+    "ape_model": 3.57,
+    "ape_naive": 10.91
+   },
+   {
+    "city_id": "c-antopal",
+    "fact_2019": 1565,
+    "model_2019": 1452,
+    "naive_2019": 1435,
+    "ape_model": 7.2,
+    "ape_naive": 8.32
+   },
+   {
+    "city_id": "c-arechausk",
+    "fact_2019": 2434,
+    "model_2019": 2388,
+    "naive_2019": 2493,
+    "ape_model": 1.9,
+    "ape_naive": 2.41
+   },
+   {
+    "city_id": "c-ashmiany",
+    "fact_2019": 16694,
+    "model_2019": 15956,
+    "naive_2019": 14124,
+    "ape_model": 4.42,
+    "ape_naive": 15.39
+   },
+   {
+    "city_id": "c-asipovichy",
+    "fact_2019": 30049,
+    "model_2019": 31700,
+    "naive_2019": 28582,
+    "ape_model": 5.49,
+    "ape_naive": 4.88
+   },
+   {
+    "city_id": "c-astraviec",
+    "fact_2019": 12837,
+    "model_2019": 11397,
+    "naive_2019": 9452,
+    "ape_model": 11.22,
+    "ape_naive": 26.37
+   },
+   {
+    "city_id": "c-astryna",
+    "fact_2019": 1706,
+    "model_2019": 1748,
+    "naive_2019": 1549,
+    "ape_model": 2.44,
+    "ape_naive": 9.2
+   },
+   {
+    "city_id": "c-asvieja",
+    "fact_2019": 1041,
+    "model_2019": 1040,
+    "naive_2019": 1100,
+    "ape_model": 0.14,
+    "ape_naive": 5.69
+   },
+   {
+    "city_id": "c-azarychy",
+    "fact_2019": 1169,
+    "model_2019": 1217,
+    "naive_2019": 1211,
+    "ape_model": 4.13,
+    "ape_naive": 3.56
+   },
+   {
+    "city_id": "c-bahusheusk",
+    "fact_2019": 2602,
+    "model_2019": 2590,
+    "naive_2019": 2511,
+    "ape_model": 0.47,
+    "ape_naive": 3.51
+   },
+   {
+    "city_id": "c-balbasava",
+    "fact_2019": 3557,
+    "model_2019": 3142,
+    "naive_2019": 3308,
+    "ape_model": 11.67,
+    "ape_naive": 7.01
+   },
+   {
+    "city_id": "c-balshavik",
+    "fact_2019": 2570,
+    "model_2019": 2543,
+    "naive_2019": 2603,
+    "ape_model": 1.07,
+    "ape_naive": 1.28
+   },
+   {
+    "city_id": "c-baran",
+    "fact_2019": 10721,
+    "model_2019": 10999,
+    "naive_2019": 10551,
+    "ape_model": 2.59,
+    "ape_naive": 1.59
+   },
+   {
+    "city_id": "c-baravucha",
+    "fact_2019": 5406,
+    "model_2019": 5687,
+    "naive_2019": 5174,
+    "ape_model": 5.19,
+    "ape_naive": 4.28
+   },
+   {
+    "city_id": "c-barysau",
+    "fact_2019": 141061,
+    "model_2019": 145005,
+    "naive_2019": 137840,
+    "ape_model": 2.8,
+    "ape_naive": 2.28
+   },
+   {
+    "city_id": "c-biahoml",
+    "fact_2019": 2548,
+    "model_2019": 2623,
+    "naive_2019": 2291,
+    "ape_model": 2.95,
+    "ape_naive": 10.09
+   },
+   {
+    "city_id": "c-bialynichy",
+    "fact_2019": 10093,
+    "model_2019": 10733,
+    "naive_2019": 9313,
+    "ape_model": 6.34,
+    "ape_naive": 7.73
+   },
+   {
+    "city_id": "c-biaroza",
+    "fact_2019": 28586,
+    "model_2019": 31168,
+    "naive_2019": 26630,
+    "ape_model": 9.03,
+    "ape_naive": 6.84
+   },
+   {
+    "city_id": "c-biarozauka",
+    "fact_2019": 10326,
+    "model_2019": 11923,
+    "naive_2019": 10851,
+    "ape_model": 15.46,
+    "ape_naive": 5.09
+   },
+   {
+    "city_id": "c-bielaaziorsk",
+    "fact_2019": 11266,
+    "model_2019": 13141,
+    "naive_2019": 11356,
+    "ape_model": 16.64,
+    "ape_naive": 0.8
+   },
+   {
+    "city_id": "c-bierazino",
+    "fact_2019": 11392,
+    "model_2019": 12842,
+    "naive_2019": 11112,
+    "ape_model": 12.73,
+    "ape_naive": 2.46
+   },
+   {
+    "city_id": "c-bieshankovichy",
+    "fact_2019": 6977,
+    "model_2019": 6878,
+    "naive_2019": 5803,
+    "ape_model": 1.41,
+    "ape_naive": 16.83
+   },
+   {
+    "city_id": "c-bobr",
+    "fact_2019": 928,
+    "model_2019": 968,
+    "naive_2019": 983,
+    "ape_model": 4.27,
+    "ape_naive": 5.94
+   },
+   {
+    "city_id": "c-brahin",
+    "fact_2019": 4307,
+    "model_2019": 4237,
+    "naive_2019": 3477,
+    "ape_model": 1.63,
+    "ape_naive": 19.27
+   },
+   {
+    "city_id": "c-braslau",
+    "fact_2019": 9400,
+    "model_2019": 9630,
+    "naive_2019": 8050,
+    "ape_model": 2.45,
+    "ape_naive": 14.37
+   },
+   {
+    "city_id": "c-buda-kashalova",
+    "fact_2019": 8860,
+    "model_2019": 9617,
+    "naive_2019": 7909,
+    "ape_model": 8.54,
+    "ape_naive": 10.73
+   },
+   {
+    "city_id": "c-bychau",
+    "fact_2019": 17128,
+    "model_2019": 16606,
+    "naive_2019": 14788,
+    "ape_model": 3.05,
+    "ape_naive": 13.66
+   },
+   {
+    "city_id": "c-chachersk",
+    "fact_2019": 8689,
+    "model_2019": 8571,
+    "naive_2019": 7474,
+    "ape_model": 1.36,
+    "ape_naive": 13.99
+   },
+   {
+    "city_id": "c-chalapienichy",
+    "fact_2019": 1436,
+    "model_2019": 1345,
+    "naive_2019": 1315,
+    "ape_model": 6.33,
+    "ape_naive": 8.45
+   },
+   {
+    "city_id": "c-chashniki",
+    "fact_2019": 8217,
+    "model_2019": 8714,
+    "naive_2019": 7619,
+    "ape_model": 6.05,
+    "ape_naive": 7.28
+   },
+   {
+    "city_id": "c-chavusy",
+    "fact_2019": 10360,
+    "model_2019": 10517,
+    "naive_2019": 9163,
+    "ape_model": 1.52,
+    "ape_naive": 11.55
+   },
+   {
+    "city_id": "c-chervien",
+    "fact_2019": 10680,
+    "model_2019": 10929,
+    "naive_2019": 10157,
+    "ape_model": 2.33,
+    "ape_naive": 4.9
+   },
+   {
+    "city_id": "c-cherykau",
+    "fact_2019": 7984,
+    "model_2019": 8321,
+    "naive_2019": 7350,
+    "ape_model": 4.22,
+    "ape_naive": 7.94
+   },
+   {
+    "city_id": "c-chocimsk",
+    "fact_2019": 6302,
+    "model_2019": 6527,
+    "naive_2019": 5753,
+    "ape_model": 3.57,
+    "ape_naive": 8.71
+   },
+   {
+    "city_id": "c-chojniki",
+    "fact_2019": 13353,
+    "model_2019": 13449,
+    "naive_2019": 12116,
+    "ape_model": 0.72,
+    "ape_naive": 9.26
+   },
+   {
+    "city_id": "c-cielachany",
+    "fact_2019": 3796,
+    "model_2019": 4046,
+    "naive_2019": 3748,
+    "ape_model": 6.59,
+    "ape_naive": 1.28
+   },
+   {
+    "city_id": "c-cierachouka",
+    "fact_2019": 3161,
+    "model_2019": 1772,
+    "naive_2019": 1645,
+    "ape_model": 43.94,
+    "ape_naive": 47.97
+   },
+   {
+    "city_id": "c-damachava",
+    "fact_2019": 1244,
+    "model_2019": 1160,
+    "naive_2019": 1437,
+    "ape_model": 6.79,
+    "ape_naive": 15.52
+   },
+   {
+    "city_id": "c-davyd-haradok",
+    "fact_2019": 5943,
+    "model_2019": 5846,
+    "naive_2019": 5878,
+    "ape_model": 1.63,
+    "ape_naive": 1.1
+   },
+   {
+    "city_id": "c-dobrush",
+    "fact_2019": 18311,
+    "model_2019": 18337,
+    "naive_2019": 16555,
+    "ape_model": 0.14,
+    "ape_naive": 9.59
+   },
+   {
+    "city_id": "c-dokshycy",
+    "fact_2019": 6868,
+    "model_2019": 6895,
+    "naive_2019": 5550,
+    "ape_model": 0.4,
+    "ape_naive": 19.2
+   },
+   {
+    "city_id": "c-drahichyn",
+    "fact_2019": 14846,
+    "model_2019": 15112,
+    "naive_2019": 12540,
+    "ape_model": 1.79,
+    "ape_naive": 15.53
+   },
+   {
+    "city_id": "c-drybin",
+    "fact_2019": 3088,
+    "model_2019": 3478,
+    "naive_2019": 2819,
+    "ape_model": 12.63,
+    "ape_naive": 8.71
+   },
+   {
+    "city_id": "c-dubrouna",
+    "fact_2019": 7115,
+    "model_2019": 7931,
+    "naive_2019": 6850,
+    "ape_model": 11.47,
+    "ape_naive": 3.73
+   },
+   {
+    "city_id": "c-dziarzhynsk",
+    "fact_2019": 29170,
+    "model_2019": 31485,
+    "naive_2019": 28553,
+    "ape_model": 7.94,
+    "ape_naive": 2.12
+   },
+   {
+    "city_id": "c-dziatlava",
+    "fact_2019": 8170,
+    "model_2019": 8219,
+    "naive_2019": 6652,
+    "ape_model": 0.6,
+    "ape_naive": 18.58
+   },
+   {
+    "city_id": "c-dzisna",
+    "fact_2019": 1539,
+    "model_2019": 1738,
+    "naive_2019": 1638,
+    "ape_model": 12.93,
+    "ape_naive": 6.46
+   },
+   {
+    "city_id": "c-fanipal",
+    "fact_2019": 17099,
+    "model_2019": 16767,
+    "naive_2019": 14431,
+    "ape_model": 1.94,
+    "ape_naive": 15.61
+   },
+   {
+    "city_id": "c-hancavichy",
+    "fact_2019": 13759,
+    "model_2019": 13730,
+    "naive_2019": 11758,
+    "ape_model": 0.21,
+    "ape_naive": 14.54
+   },
+   {
+    "city_id": "c-haradok",
+    "fact_2019": 11766,
+    "model_2019": 12299,
+    "naive_2019": 10738,
+    "ape_model": 4.53,
+    "ape_naive": 8.74
+   },
+   {
+    "city_id": "c-haradzieja",
+    "fact_2019": 3797,
+    "model_2019": 4049,
+    "naive_2019": 3909,
+    "ape_model": 6.63,
+    "ape_naive": 2.94
+   },
+   {
+    "city_id": "c-haradzishcha",
+    "fact_2019": 1885,
+    "model_2019": 2069,
+    "naive_2019": 2164,
+    "ape_model": 9.74,
+    "ape_naive": 14.8
+   },
+   {
+    "city_id": "c-hlusk",
+    "fact_2019": 7246,
+    "model_2019": 7040,
+    "naive_2019": 6036,
+    "ape_model": 2.84,
+    "ape_naive": 16.7
+   },
+   {
+    "city_id": "c-hlybokaje",
+    "fact_2019": 17680,
+    "model_2019": 18016,
+    "naive_2019": 15522,
+    "ape_model": 1.9,
+    "ape_naive": 12.2
+   },
+   {
+    "city_id": "c-horki",
+    "fact_2019": 30371,
+    "model_2019": 30234,
+    "naive_2019": 27771,
+    "ape_model": 0.45,
+    "ape_naive": 8.56
+   },
+   {
+    "city_id": "c-iuje",
+    "fact_2019": 7437,
+    "model_2019": 7666,
+    "naive_2019": 6241,
+    "ape_model": 3.08,
+    "ape_naive": 16.08
+   },
+   {
+    "city_id": "c-ivacevichy",
+    "fact_2019": 22494,
+    "model_2019": 24394,
+    "naive_2019": 20495,
+    "ape_model": 8.45,
+    "ape_naive": 8.89
+   },
+   {
+    "city_id": "c-ivanava",
+    "fact_2019": 16637,
+    "model_2019": 16785,
+    "naive_2019": 14040,
+    "ape_model": 0.89,
+    "ape_naive": 15.61
+   },
+   {
+    "city_id": "c-ivianiec",
+    "fact_2019": 3963,
+    "model_2019": 4865,
+    "naive_2019": 3983,
+    "ape_model": 22.76,
+    "ape_naive": 0.5
+   },
+   {
+    "city_id": "c-janavichy",
+    "fact_2019": 700,
+    "model_2019": 809,
+    "naive_2019": 940,
+    "ape_model": 15.64,
+    "ape_naive": 34.33
+   },
+   {
+    "city_id": "c-jelizava",
+    "fact_2019": 2144,
+    "model_2019": 2353,
+    "naive_2019": 2347,
+    "ape_model": 9.76,
+    "ape_naive": 9.46
+   },
+   {
+    "city_id": "c-jelsk",
+    "fact_2019": 9160,
+    "model_2019": 9480,
+    "naive_2019": 8362,
+    "ape_model": 3.49,
+    "ape_naive": 8.71
+   },
+   {
+    "city_id": "c-jeziaryshcha",
+    "fact_2019": 1165,
+    "model_2019": 1278,
+    "naive_2019": 1304,
+    "ape_model": 9.67,
+    "ape_naive": 11.94
+   },
+   {
+    "city_id": "c-juracishki",
+    "fact_2019": 1387,
+    "model_2019": 1231,
+    "naive_2019": 1146,
+    "ape_model": 11.26,
+    "ape_naive": 17.37
+   },
+   {
+    "city_id": "c-kalinkavichy",
+    "fact_2019": 37674,
+    "model_2019": 38509,
+    "naive_2019": 34676,
+    "ape_model": 2.22,
+    "ape_naive": 7.96
+   },
+   {
+    "city_id": "c-kamaryn",
+    "fact_2019": 2101,
+    "model_2019": 2318,
+    "naive_2019": 1804,
+    "ape_model": 10.31,
+    "ape_naive": 14.15
+   },
+   {
+    "city_id": "c-kamianiec",
+    "fact_2019": 8336,
+    "model_2019": 8545,
+    "naive_2019": 7228,
+    "ape_model": 2.51,
+    "ape_naive": 13.3
+   },
+   {
+    "city_id": "c-kapatkievichy",
+    "fact_2019": 2942,
+    "model_2019": 3378,
+    "naive_2019": 2786,
+    "ape_model": 14.83,
+    "ape_naive": 5.31
+   },
+   {
+    "city_id": "c-kapyl",
+    "fact_2019": 10425,
+    "model_2019": 10644,
+    "naive_2019": 8721,
+    "ape_model": 2.1,
+    "ape_naive": 16.35
+   },
+   {
+    "city_id": "c-karelichy",
+    "fact_2019": 6036,
+    "model_2019": 6949,
+    "naive_2019": 5660,
+    "ape_model": 15.13,
+    "ape_naive": 6.23
+   },
+   {
+    "city_id": "c-karma",
+    "fact_2019": 7876,
+    "model_2019": 7879,
+    "naive_2019": 6821,
+    "ape_model": 0.03,
+    "ape_naive": 13.4
+   },
+   {
+    "city_id": "c-kasciukovichy",
+    "fact_2019": 15617,
+    "model_2019": 15534,
+    "naive_2019": 13946,
+    "ape_model": 0.53,
+    "ape_naive": 10.7
+   },
+   {
+    "city_id": "c-kazloushchyna",
+    "fact_2019": 1489,
+    "model_2019": 1881,
+    "naive_2019": 1565,
+    "ape_model": 26.32,
+    "ape_naive": 5.07
+   },
+   {
+    "city_id": "c-kirausk",
+    "fact_2019": 8233,
+    "model_2019": 8634,
+    "naive_2019": 7273,
+    "ape_model": 4.87,
+    "ape_naive": 11.66
+   },
+   {
+    "city_id": "c-kleck",
+    "fact_2019": 11363,
+    "model_2019": 11094,
+    "naive_2019": 9176,
+    "ape_model": 2.37,
+    "ape_naive": 19.24
+   },
+   {
+    "city_id": "c-klichau",
+    "fact_2019": 7188,
+    "model_2019": 7481,
+    "naive_2019": 6388,
+    "ape_model": 4.08,
+    "ape_naive": 11.14
+   },
+   {
+    "city_id": "c-klimavichy",
+    "fact_2019": 15527,
+    "model_2019": 15848,
+    "naive_2019": 14326,
+    "ape_model": 2.07,
+    "ape_naive": 7.74
+   },
+   {
+    "city_id": "c-kobryn",
+    "fact_2019": 52520,
+    "model_2019": 53939,
+    "naive_2019": 49101,
+    "ape_model": 2.7,
+    "ape_naive": 6.51
+   },
+   {
+    "city_id": "c-kochanava",
+    "fact_2019": 3896,
+    "model_2019": 4674,
+    "naive_2019": 3646,
+    "ape_model": 19.98,
+    "ape_naive": 6.41
+   },
+   {
+    "city_id": "c-kopys",
+    "fact_2019": 683,
+    "model_2019": 697,
+    "naive_2019": 823,
+    "ape_model": 2.12,
+    "ape_naive": 20.54
+   },
+   {
+    "city_id": "c-kosava",
+    "fact_2019": 1958,
+    "model_2019": 1848,
+    "naive_2019": 1811,
+    "ape_model": 5.61,
+    "ape_naive": 7.49
+   },
+   {
+    "city_id": "c-krasnaja-slabada",
+    "fact_2019": 4156,
+    "model_2019": 4006,
+    "naive_2019": 4157,
+    "ape_model": 3.62,
+    "ape_naive": 0.03
+   },
+   {
+    "city_id": "c-krasnapolle",
+    "fact_2019": 5858,
+    "model_2019": 5923,
+    "naive_2019": 5229,
+    "ape_model": 1.11,
+    "ape_naive": 10.74
+   },
+   {
+    "city_id": "c-krasnasielski",
+    "fact_2019": 6227,
+    "model_2019": 7216,
+    "naive_2019": 6232,
+    "ape_model": 15.88,
+    "ape_naive": 0.08
+   },
+   {
+    "city_id": "c-kruhlaje",
+    "fact_2019": 7579,
+    "model_2019": 7580,
+    "naive_2019": 6554,
+    "ape_model": 0.02,
+    "ape_naive": 13.52
+   },
+   {
+    "city_id": "c-krupki",
+    "fact_2019": 8444,
+    "model_2019": 9240,
+    "naive_2019": 7628,
+    "ape_model": 9.42,
+    "ape_naive": 9.66
+   },
+   {
+    "city_id": "c-krychau",
+    "fact_2019": 24494,
+    "model_2019": 24010,
+    "naive_2019": 23102,
+    "ape_model": 1.97,
+    "ape_naive": 5.68
+   },
+   {
+    "city_id": "c-kryvichy",
+    "fact_2019": 1133,
+    "model_2019": 1129,
+    "naive_2019": 1149,
+    "ape_model": 0.35,
+    "ape_naive": 1.43
+   },
+   {
+    "city_id": "c-lachavichy",
+    "fact_2019": 10701,
+    "model_2019": 10371,
+    "naive_2019": 8653,
+    "ape_model": 3.08,
+    "ape_naive": 19.14
+   },
+   {
+    "city_id": "c-lahishyn",
+    "fact_2019": 2038,
+    "model_2019": 2067,
+    "naive_2019": 2214,
+    "ape_model": 1.43,
+    "ape_naive": 8.64
+   },
+   {
+    "city_id": "c-lahojsk",
+    "fact_2019": 15121,
+    "model_2019": 14076,
+    "naive_2019": 11514,
+    "ape_model": 6.91,
+    "ape_naive": 23.85
+   },
+   {
+    "city_id": "c-lelchycy",
+    "fact_2019": 12129,
+    "model_2019": 11433,
+    "naive_2019": 9603,
+    "ape_model": 5.74,
+    "ape_naive": 20.82
+   },
+   {
+    "city_id": "c-lepiel",
+    "fact_2019": 17517,
+    "model_2019": 17019,
+    "naive_2019": 15659,
+    "ape_model": 2.84,
+    "ape_naive": 10.61
+   },
+   {
+    "city_id": "c-lida",
+    "fact_2019": 102748,
+    "model_2019": 104515,
+    "naive_2019": 97775,
+    "ape_model": 1.72,
+    "ape_naive": 4.84
+   },
+   {
+    "city_id": "c-lojeu",
+    "fact_2019": 6350,
+    "model_2019": 6730,
+    "naive_2019": 5839,
+    "ape_model": 5.98,
+    "ape_naive": 8.04
+   },
+   {
+    "city_id": "c-lozna",
+    "fact_2019": 6745,
+    "model_2019": 6964,
+    "naive_2019": 6200,
+    "ape_model": 3.24,
+    "ape_naive": 8.07
+   },
+   {
+    "city_id": "c-luban",
+    "fact_2019": 11693,
+    "model_2019": 11686,
+    "naive_2019": 9619,
+    "ape_model": 0.06,
+    "ape_naive": 17.74
+   },
+   {
+    "city_id": "c-lubcha",
+    "fact_2019": 1068,
+    "model_2019": 1044,
+    "naive_2019": 1022,
+    "ape_model": 2.2,
+    "ape_naive": 4.33
+   },
+   {
+    "city_id": "c-luniniec",
+    "fact_2019": 23654,
+    "model_2019": 23726,
+    "naive_2019": 21201,
+    "ape_model": 0.3,
+    "ape_naive": 10.37
+   },
+   {
+    "city_id": "c-lyntupy",
+    "fact_2019": 1314,
+    "model_2019": 1475,
+    "naive_2019": 1408,
+    "ape_model": 12.22,
+    "ape_naive": 7.16
+   },
+   {
+    "city_id": "c-machulishchy",
+    "fact_2019": 9716,
+    "model_2019": 10778,
+    "naive_2019": 11551,
+    "ape_model": 10.93,
+    "ape_naive": 18.88
+   },
+   {
+    "city_id": "c-maladziechna",
+    "fact_2019": 91754,
+    "model_2019": 97030,
+    "naive_2019": 90468,
+    "ape_model": 5.75,
+    "ape_naive": 1.4
+   },
+   {
+    "city_id": "c-malaryta",
+    "fact_2019": 12746,
+    "model_2019": 12363,
+    "naive_2019": 10861,
+    "ape_model": 3.0,
+    "ape_naive": 14.79
+   },
+   {
+    "city_id": "c-marjina-horka",
+    "fact_2019": 20742,
+    "model_2019": 24930,
+    "naive_2019": 21306,
+    "ape_model": 20.19,
+    "ape_naive": 2.72
+   },
+   {
+    "city_id": "c-masty",
+    "fact_2019": 15222,
+    "model_2019": 15491,
+    "naive_2019": 13542,
+    "ape_model": 1.77,
+    "ape_naive": 11.04
+   },
+   {
+    "city_id": "c-mazyr",
+    "fact_2019": 105527,
+    "model_2019": 112490,
+    "naive_2019": 107958,
+    "ape_model": 6.6,
+    "ape_naive": 2.3
+   },
+   {
+    "city_id": "c-miadziel",
+    "fact_2019": 7155,
+    "model_2019": 7793,
+    "naive_2019": 6255,
+    "ape_model": 8.91,
+    "ape_naive": 12.58
+   },
+   {
+    "city_id": "c-mijory",
+    "fact_2019": 7803,
+    "model_2019": 7766,
+    "naive_2019": 6464,
+    "ape_model": 0.47,
+    "ape_naive": 17.16
+   },
+   {
+    "city_id": "c-mikashevichy",
+    "fact_2019": 12916,
+    "model_2019": 14854,
+    "naive_2019": 11689,
+    "ape_model": 15.01,
+    "ape_naive": 9.5
+   },
+   {
+    "city_id": "c-mir",
+    "fact_2019": 2042,
+    "model_2019": 2189,
+    "naive_2019": 1908,
+    "ape_model": 7.22,
+    "ape_naive": 6.58
+   },
+   {
+    "city_id": "c-mscislau",
+    "fact_2019": 10225,
+    "model_2019": 9872,
+    "naive_2019": 8757,
+    "ape_model": 3.45,
+    "ape_naive": 14.35
+   },
+   {
+    "city_id": "c-narach",
+    "fact_2019": 4072,
+    "model_2019": 3386,
+    "naive_2019": 2595,
+    "ape_model": 16.86,
+    "ape_naive": 36.27
+   },
+   {
+    "city_id": "c-naroula",
+    "fact_2019": 8247,
+    "model_2019": 8257,
+    "naive_2019": 7644,
+    "ape_model": 0.13,
+    "ape_naive": 7.32
+   },
+   {
+    "city_id": "c-navahrudak",
+    "fact_2019": 28513,
+    "model_2019": 28927,
+    "naive_2019": 25908,
+    "ape_model": 1.45,
+    "ape_naive": 9.14
+   },
+   {
+    "city_id": "c-navajelnia",
+    "fact_2019": 2795,
+    "model_2019": 2863,
+    "naive_2019": 2576,
+    "ape_model": 2.43,
+    "ape_naive": 7.84
+   },
+   {
+    "city_id": "c-niasvizh",
+    "fact_2019": 15566,
+    "model_2019": 15231,
+    "naive_2019": 13381,
+    "ape_model": 2.15,
+    "ape_naive": 14.04
+   },
+   {
+    "city_id": "c-novalukoml",
+    "fact_2019": 12635,
+    "model_2019": 13679,
+    "naive_2019": 11544,
+    "ape_model": 8.26,
+    "ape_naive": 8.63
+   },
+   {
+    "city_id": "c-obal",
+    "fact_2019": 2336,
+    "model_2019": 2451,
+    "naive_2019": 2300,
+    "ape_model": 4.91,
+    "ape_naive": 1.55
+   },
+   {
+    "city_id": "c-orsha",
+    "fact_2019": 107930,
+    "model_2019": 110164,
+    "naive_2019": 106058,
+    "ape_model": 2.07,
+    "ape_naive": 1.73
+   },
+   {
+    "city_id": "c-padsville",
+    "fact_2019": 1817,
+    "model_2019": 2167,
+    "naive_2019": 1949,
+    "ape_model": 19.25,
+    "ape_naive": 7.25
+   },
+   {
+    "city_id": "c-parychy",
+    "fact_2019": 1923,
+    "model_2019": 1730,
+    "naive_2019": 1895,
+    "ape_model": 10.04,
+    "ape_naive": 1.46
+   },
+   {
+    "city_id": "c-pastavy",
+    "fact_2019": 19255,
+    "model_2019": 19613,
+    "naive_2019": 17341,
+    "ape_model": 1.86,
+    "ape_naive": 9.94
+   },
+   {
+    "city_id": "c-pietrykau",
+    "fact_2019": 10025,
+    "model_2019": 10077,
+    "naive_2019": 8639,
+    "ape_model": 0.52,
+    "ape_naive": 13.82
+   },
+   {
+    "city_id": "c-pleshchanicy",
+    "fact_2019": 5953,
+    "model_2019": 7195,
+    "naive_2019": 6497,
+    "ape_model": 20.86,
+    "ape_naive": 9.14
+   },
+   {
+    "city_id": "c-polack",
+    "fact_2019": 81219,
+    "model_2019": 77276,
+    "naive_2019": 78101,
+    "ape_model": 4.85,
+    "ape_naive": 3.84
+   },
+   {
+    "city_id": "c-porazava",
+    "fact_2019": 820,
+    "model_2019": 870,
+    "naive_2019": 853,
+    "ape_model": 6.06,
+    "ape_naive": 4.08
+   },
+   {
+    "city_id": "c-praudzinski",
+    "fact_2019": 2182,
+    "model_2019": 2463,
+    "naive_2019": 2392,
+    "ape_model": 12.86,
+    "ape_naive": 9.64
+   },
+   {
+    "city_id": "c-pruzhany",
+    "fact_2019": 18949,
+    "model_2019": 18491,
+    "naive_2019": 16222,
+    "ape_model": 2.42,
+    "ape_naive": 14.39
+   },
+   {
+    "city_id": "c-radashkovichy",
+    "fact_2019": 6371,
+    "model_2019": 5949,
+    "naive_2019": 5295,
+    "ape_model": 6.62,
+    "ape_naive": 16.89
+   },
+   {
+    "city_id": "c-radun",
+    "fact_2019": 2302,
+    "model_2019": 2509,
+    "naive_2019": 2148,
+    "ape_model": 8.99,
+    "ape_naive": 6.69
+   },
+   {
+    "city_id": "c-rahachou",
+    "fact_2019": 33044,
+    "model_2019": 33892,
+    "naive_2019": 29966,
+    "ape_model": 2.57,
+    "ape_naive": 9.31
+   },
+   {
+    "city_id": "c-rasony",
+    "fact_2019": 4903,
+    "model_2019": 5069,
+    "naive_2019": 4372,
+    "ape_model": 3.38,
+    "ape_naive": 10.83
+   },
+   {
+    "city_id": "c-rechyca",
+    "fact_2019": 66378,
+    "model_2019": 64769,
+    "naive_2019": 61050,
+    "ape_model": 2.42,
+    "ape_naive": 8.03
+   },
+   {
+    "city_id": "c-ros",
+    "fact_2019": 4600,
+    "model_2019": 5498,
+    "naive_2019": 4880,
+    "ape_model": 19.52,
+    "ape_naive": 6.08
+   },
+   {
+    "city_id": "c-rudziensk",
+    "fact_2019": 2723,
+    "model_2019": 2602,
+    "naive_2019": 2788,
+    "ape_model": 4.46,
+    "ape_naive": 2.38
+   },
+   {
+    "city_id": "c-ruzhany",
+    "fact_2019": 2981,
+    "model_2019": 2727,
+    "naive_2019": 2687,
+    "ape_model": 8.53,
+    "ape_naive": 9.85
+   },
+   {
+    "city_id": "c-salihorsk",
+    "fact_2019": 101564,
+    "model_2019": 105618,
+    "naive_2019": 98812,
+    "ape_model": 3.99,
+    "ape_naive": 2.71
+   },
+   {
+    "city_id": "c-sapockin",
+    "fact_2019": 997,
+    "model_2019": 1049,
+    "naive_2019": 1309,
+    "ape_model": 5.19,
+    "ape_naive": 31.25
+   },
+   {
+    "city_id": "c-sasnovy-bor",
+    "fact_2019": 1994,
+    "model_2019": 2112,
+    "naive_2019": 2177,
+    "ape_model": 5.92,
+    "ape_naive": 9.18
+   },
+   {
+    "city_id": "c-sharashova",
+    "fact_2019": 1675,
+    "model_2019": 1606,
+    "naive_2019": 1610,
+    "ape_model": 4.15,
+    "ape_naive": 3.87
+   },
+   {
+    "city_id": "c-sharkoushchyna",
+    "fact_2019": 6451,
+    "model_2019": 6557,
+    "naive_2019": 5490,
+    "ape_model": 1.64,
+    "ape_naive": 14.89
+   },
+   {
+    "city_id": "c-shchuchyn",
+    "fact_2019": 15910,
+    "model_2019": 13726,
+    "naive_2019": 11289,
+    "ape_model": 13.73,
+    "ape_naive": 29.04
+   },
+   {
+    "city_id": "c-shklou",
+    "fact_2019": 15415,
+    "model_2019": 15841,
+    "naive_2019": 13926,
+    "ape_model": 2.76,
+    "ape_naive": 9.66
+   },
+   {
+    "city_id": "c-shumilina",
+    "fact_2019": 7439,
+    "model_2019": 7253,
+    "naive_2019": 6424,
+    "ape_model": 2.5,
+    "ape_naive": 13.64
+   },
+   {
+    "city_id": "c-sianno",
+    "fact_2019": 7476,
+    "model_2019": 7828,
+    "naive_2019": 6417,
+    "ape_model": 4.71,
+    "ape_naive": 14.17
+   },
+   {
+    "city_id": "c-skidziel",
+    "fact_2019": 10422,
+    "model_2019": 10790,
+    "naive_2019": 11554,
+    "ape_model": 3.53,
+    "ape_naive": 10.86
+   },
+   {
+    "city_id": "c-slauharad",
+    "fact_2019": 7864,
+    "model_2019": 7993,
+    "naive_2019": 7034,
+    "ape_model": 1.65,
+    "ape_naive": 10.56
+   },
+   {
+    "city_id": "c-slonim",
+    "fact_2019": 50068,
+    "model_2019": 50073,
+    "naive_2019": 46540,
+    "ape_model": 0.01,
+    "ape_naive": 7.05
+   },
+   {
+    "city_id": "c-sluck",
+    "fact_2019": 61708,
+    "model_2019": 63117,
+    "naive_2019": 57642,
+    "ape_model": 2.28,
+    "ape_naive": 6.59
+   },
+   {
+    "city_id": "c-smalavichy",
+    "fact_2019": 19165,
+    "model_2019": 16858,
+    "naive_2019": 16727,
+    "ape_model": 12.04,
+    "ape_naive": 12.72
+   },
+   {
+    "city_id": "c-smarhon",
+    "fact_2019": 36237,
+    "model_2019": 36713,
+    "naive_2019": 33441,
+    "ape_model": 1.31,
+    "ape_naive": 7.72
+   },
+   {
+    "city_id": "c-smilavichy",
+    "fact_2019": 5763,
+    "model_2019": 5253,
+    "naive_2019": 4657,
+    "ape_model": 8.85,
+    "ape_naive": 19.19
+   },
+   {
+    "city_id": "c-starobin",
+    "fact_2019": 6331,
+    "model_2019": 5491,
+    "naive_2019": 5378,
+    "ape_model": 13.26,
+    "ape_naive": 15.05
+   },
+   {
+    "city_id": "c-staryja-darohi",
+    "fact_2019": 11252,
+    "model_2019": 11890,
+    "naive_2019": 10358,
+    "ape_model": 5.67,
+    "ape_naive": 7.94
+   },
+   {
+    "city_id": "c-stolin",
+    "fact_2019": 12958,
+    "model_2019": 13440,
+    "naive_2019": 11144,
+    "ape_model": 3.72,
+    "ape_naive": 14.0
+   },
+   {
+    "city_id": "c-stoubcy",
+    "fact_2019": 17233,
+    "model_2019": 16994,
+    "naive_2019": 14201,
+    "ape_model": 1.39,
+    "ape_naive": 17.6
+   },
+   {
+    "city_id": "c-streshyn",
+    "fact_2019": 964,
+    "model_2019": 1030,
+    "naive_2019": 1218,
+    "ape_model": 6.8,
+    "ape_naive": 26.39
+   },
+   {
+    "city_id": "c-surazh",
+    "fact_2019": 731,
+    "model_2019": 803,
+    "naive_2019": 1052,
+    "ape_model": 9.86,
+    "ape_naive": 43.86
+   },
+   {
+    "city_id": "c-svietlahorsk",
+    "fact_2019": 65739,
+    "model_2019": 66226,
+    "naive_2019": 62888,
+    "ape_model": 0.74,
+    "ape_naive": 4.34
+   },
+   {
+    "city_id": "c-svir",
+    "fact_2019": 1022,
+    "model_2019": 942,
+    "naive_2019": 934,
+    "ape_model": 7.81,
+    "ape_naive": 8.6
+   },
+   {
+    "city_id": "c-svislach",
+    "fact_2019": 3772,
+    "model_2019": 3243,
+    "naive_2019": 2990,
+    "ape_model": 14.03,
+    "ape_naive": 20.73
+   },
+   {
+    "city_id": "c-talachyn",
+    "fact_2019": 9977,
+    "model_2019": 10066,
+    "naive_2019": 8558,
+    "ape_model": 0.89,
+    "ape_naive": 14.23
+   },
+   {
+    "city_id": "c-tatarka",
+    "fact_2019": 513,
+    "model_2019": 608,
+    "naive_2019": 677,
+    "ape_model": 18.56,
+    "ape_naive": 32.0
+   },
+   {
+    "city_id": "c-turau",
+    "fact_2019": 2791,
+    "model_2019": 2562,
+    "naive_2019": 2540,
+    "ape_model": 8.19,
+    "ape_naive": 9.0
+   },
+   {
+    "city_id": "c-urechcha",
+    "fact_2019": 2571,
+    "model_2019": 2859,
+    "naive_2019": 2707,
+    "ape_model": 11.19,
+    "ape_naive": 5.3
+   },
+   {
+    "city_id": "c-ushachy",
+    "fact_2019": 5773,
+    "model_2019": 5293,
+    "naive_2019": 4395,
+    "ape_model": 8.32,
+    "ape_naive": 23.88
+   },
+   {
+    "city_id": "c-uvaravichy",
+    "fact_2019": 2262,
+    "model_2019": 2307,
+    "naive_2019": 2248,
+    "ape_model": 2.0,
+    "ape_naive": 0.6
+   },
+   {
+    "city_id": "c-uzda",
+    "fact_2019": 10691,
+    "model_2019": 11535,
+    "naive_2019": 9769,
+    "ape_model": 7.89,
+    "ape_naive": 8.63
+   },
+   {
+    "city_id": "c-valozhyn",
+    "fact_2019": 10069,
+    "model_2019": 11962,
+    "naive_2019": 9733,
+    "ape_model": 18.8,
+    "ape_naive": 3.33
+   },
+   {
+    "city_id": "c-varapajeva",
+    "fact_2019": 2413,
+    "model_2019": 2578,
+    "naive_2019": 2500,
+    "ape_model": 6.83,
+    "ape_naive": 3.61
+   },
+   {
+    "city_id": "c-vasilevichy",
+    "fact_2019": 3513,
+    "model_2019": 3350,
+    "naive_2019": 3700,
+    "ape_model": 4.65,
+    "ape_naive": 5.32
+   },
+   {
+    "city_id": "c-vaukavysk",
+    "fact_2019": 42980,
+    "model_2019": 43892,
+    "naive_2019": 39978,
+    "ape_model": 2.12,
+    "ape_naive": 6.99
+   },
+   {
+    "city_id": "c-vialikaja-bierastavica",
+    "fact_2019": 5661,
+    "model_2019": 6043,
+    "naive_2019": 4974,
+    "ape_model": 6.74,
+    "ape_naive": 12.14
+   },
+   {
+    "city_id": "c-vidzy",
+    "fact_2019": 1506,
+    "model_2019": 1502,
+    "naive_2019": 1491,
+    "ape_model": 0.23,
+    "ape_naive": 0.98
+   },
+   {
+    "city_id": "c-vierchniadzvinsk",
+    "fact_2019": 7040,
+    "model_2019": 7133,
+    "naive_2019": 6112,
+    "ape_model": 1.32,
+    "ape_naive": 13.19
+   },
+   {
+    "city_id": "c-vietka",
+    "fact_2019": 8359,
+    "model_2019": 8755,
+    "naive_2019": 7445,
+    "ape_model": 4.74,
+    "ape_naive": 10.94
+   },
+   {
+    "city_id": "c-vietryna",
+    "fact_2019": 1908,
+    "model_2019": 2308,
+    "naive_2019": 2578,
+    "ape_model": 20.96,
+    "ape_naive": 35.13
+   },
+   {
+    "city_id": "c-vilejka",
+    "fact_2019": 27296,
+    "model_2019": 28627,
+    "naive_2019": 25033,
+    "ape_model": 4.88,
+    "ape_naive": 8.29
+   },
+   {
+    "city_id": "c-voranava",
+    "fact_2019": 6300,
+    "model_2019": 6280,
+    "naive_2019": 5088,
+    "ape_model": 0.32,
+    "ape_naive": 19.24
+   },
+   {
+    "city_id": "c-vysokaje",
+    "fact_2019": 4827,
+    "model_2019": 5231,
+    "naive_2019": 4600,
+    "ape_model": 8.38,
+    "ape_naive": 4.71
+   },
+   {
+    "city_id": "c-zarechcha",
+    "fact_2019": 2117,
+    "model_2019": 3090,
+    "naive_2019": 2308,
+    "ape_model": 45.96,
+    "ape_naive": 9.02
+   },
+   {
+    "city_id": "c-zaslauje",
+    "fact_2019": 17685,
+    "model_2019": 27223,
+    "naive_2019": 22234,
+    "ape_model": 53.93,
+    "ape_naive": 25.72
+   },
+   {
+    "city_id": "c-zelva",
+    "fact_2019": 6614,
+    "model_2019": 6731,
+    "naive_2019": 5661,
+    "ape_model": 1.77,
+    "ape_naive": 14.4
+   },
+   {
+    "city_id": "c-zhabinka",
+    "fact_2019": 13928,
+    "model_2019": 14551,
+    "naive_2019": 12952,
+    "ape_model": 4.47,
+    "ape_naive": 7.01
+   },
+   {
+    "city_id": "c-zhaludok",
+    "fact_2019": 1095,
+    "model_2019": 1018,
+    "naive_2019": 968,
+    "ape_model": 7.06,
+    "ape_naive": 11.58
+   },
+   {
+    "city_id": "c-zhlobin",
+    "fact_2019": 77636,
+    "model_2019": 78837,
+    "naive_2019": 73186,
+    "ape_model": 1.55,
+    "ape_naive": 5.73
+   },
+   {
+    "city_id": "c-zhytkavichy",
+    "fact_2019": 15980,
+    "model_2019": 16163,
+    "naive_2019": 13604,
+    "ape_model": 1.15,
+    "ape_naive": 14.87
+   },
+   {
+    "city_id": "c-zialony-bor",
+    "fact_2019": 1181,
+    "model_2019": 918,
+    "naive_2019": 1068,
+    "ape_model": 22.23,
+    "ape_naive": 9.56
+   }
+  ]
+ }
+}

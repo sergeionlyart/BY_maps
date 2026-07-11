@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "Цитируйте конкретную версию пакета"
 title: "Старение районов Беларуси: индикаторы 2009/2019 и контрфактная передвижка (проверяемый пакет)"
 type: dataset
-version: 1.0.0
+version: 1.0.1
 date-released: "2026-07-11"
 authors:
   - name: "Проект «Население Беларуси, 1897–2026»"
@@ -10,6 +10,6 @@ url: "https://by-population-maps.vercel.app/research/aging"
 repository-code: "https://github.com/sergeionlyart/BY_maps"
 identifiers:
   - type: other
-    value: "artifact-aging-v1.0.0"
+    value: "artifact-aging-v1.0.1"
     description: "git-тег релиза пакета"
 license: CC-BY-4.0

@@ -51,10 +51,10 @@ const METRIC_TITLE: Record<Metric, string> = {
 
 export default function MapView(props: Props) {
   const { data, geo, forecast, scenario, year, metric, level, raionMode, baseYear, showBorder1921, showCities, selected, onSelect } = props;
-  // в прогнозной зоне данные есть только для областей и Минска -
-  // авто-фолбэк уровня с поясняющей плашкой (правило честности WP-F6)
+  // с этапа 5 прогноз есть на всех уровнях (районы - CCR, города - доли);
+  // фолбэк уровня больше не нужен
   const inForecast = forecast != null && year > FORECAST_START;
-  const effLevel: MapLevel = inForecast ? 'oblast' : level;
+  const effLevel: MapLevel = level;
   const divRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<maplibregl.Map | null>(null);
   const [ready, setReady] = useState(false);
@@ -204,13 +204,12 @@ export default function MapView(props: Props) {
 
     const hitLayers = () => {
       const s = stateRef.current;
-      const inF = s.forecast != null && s.year > FORECAST_START;
-      const lv = inF ? 'oblast' : s.level;
+      const lv = s.level;
       if (lv === 'city') return ['cities-circle'];
       const base = lv === 'raion' ? ['adm2-fill'] : ['adm1-fill'];
       // при наложении городов круги в приоритете (queryRenderedFeatures
       // возвращает фичи сверху вниз)
-      return s.showCities && !inF ? ['cities-circle', ...base] : base;
+      return s.showCities ? ['cities-circle', ...base] : base;
     };
 
     map.on('mousemove', (e) => {
@@ -241,7 +240,7 @@ export default function MapView(props: Props) {
 
     const adm2visible = effLevel === 'raion';
     const adm1visible = effLevel === 'oblast';
-    const citiesVisible = (effLevel === 'city' || showCities) && !inForecast;
+    const citiesVisible = effLevel === 'city' || showCities;
     for (const [layer, vis] of [
       ['adm2-fill', adm2visible], ['adm2-line', adm2visible],
       ['adm1-fill', adm1visible], ['adm1-line', adm1visible],
@@ -263,7 +262,9 @@ export default function MapView(props: Props) {
           color: v == null ? noData : colorFor(metric, effLevel, v, raionMode === 'noCenter'),
         });
       } else if (t.level === 'city' && t.lon != null && citiesVisible) {
-        const pop = valueAt(t.pop, year)?.value ?? null;
+        // в прогнозной зоне размер/цвет города ведёт прогноз выбранного
+        // сценария; города без прогноза (оборванные ряды) исчезают честно
+        const pop = comboPop(t.id, stateRef.current, year);
         const v = territoryMetric(t.id, stateRef.current);
         const overlay = effLevel !== 'city';
         // размер и интенсивность цвета растут и убывают вместе с населением
@@ -291,10 +292,22 @@ export default function MapView(props: Props) {
   /** Численность с учётом прогноза: до 2026 - факт/оценка, после - прогноз
    *  выбранного сценария (тип f). */
   function comboPop(id: string, s: Props, yr: number): number | null {
-    if (s.forecast && yr > FORECAST_START) {
-      return forecastAt(s.forecast, id, s.scenario, yr);
-    }
     const t = s.data.territories[id];
+    if (s.forecast && yr > FORECAST_START) {
+      const v = forecastAt(s.forecast, id, s.scenario, yr);
+      if (v == null) return null;
+      // «без центра» в прогнозе: район минус прогнозы его городских центров
+      if (t?.level === 'raion' && s.raionMode === 'noCenter') {
+        let centers = 0;
+        for (const cid of t.center ?? []) {
+          const cv = forecastAt(s.forecast, cid, s.scenario, yr);
+          if (cv == null) return null;
+          centers += cv;
+        }
+        return Math.max(v - centers, 0);
+      }
+      return v;
+    }
     if (!t) return null;
     const series = t.level === 'raion' && s.raionMode === 'noCenter' ? t.popNoCenter : t.pop;
     return valueAt(series, yr)?.value ?? null;
@@ -404,7 +417,7 @@ export default function MapView(props: Props) {
             </div>
           ))
         )}
-        {showCities && effLevel !== 'city' && !inForecast && <CityLegend dark={dark} maxPop={maxCityPop} />}
+        {showCities && effLevel !== 'city' && <CityLegend dark={dark} maxPop={maxCityPop} />}
         {inForecast && (
           <div className="lg-row" style={{ marginTop: 5 }}>
             <span className="lg-line" style={{ borderTopColor: 'var(--accent)' }} />
@@ -424,10 +437,17 @@ export default function MapView(props: Props) {
           {year >= 1959 ? ' и областям' : ''} (уровень «Области» — с 1959 г.).
         </div>
       )}
-      {inForecast && level !== 'oblast' && (
+      {inForecast && level === 'raion' && (
         <div className="map-notice">
-          Прогноз (этап MVP) — только страна, области и Минск: показан уровень
-          областей. Прогноз районов и городов — этап 5 плана.
+          Прогноз районов — Гамильтон–Перри (CCR 2009–2019), согласован с
+          областным CCMPP; без доверительных интервалов — смотрите сценарии.
+        </div>
+      )}
+      {inForecast && level === 'city' && (
+        <div className="map-notice">
+          Прогноз городов — доля в районе (логистический тренд); Минск,
+          облцентры и города областного подчинения — когортные модели. Города с рядами,
+          оборванными до 2019 г., в прогнозе не показываются.
         </div>
       )}
     </div>

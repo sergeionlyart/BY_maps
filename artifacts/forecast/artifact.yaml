@@ -1,9 +1,9 @@
-# Проверяемый пакет прогноза населения 2026-2075 (v2026.1, этап MVP).
+# Проверяемый пакет прогноза населения 2026-2075 (v2026.2, уровни 0-3).
 # Сборка: python -m etl.artifacts.build forecast
 
 id: forecast
-title: "Прогноз населения Беларуси 2026–2075, v2026.1 (страна, области, Минск)"
-version: "1.0.1"
+title: "Прогноз населения Беларуси 2026–2075, v2026.2 (страна, области, Минск, 118 районов, ~200 городов)"
+version: "1.1.0"
 released: "2026-07-11"
 landing_url: "https://by-population-maps.vercel.app/?sel=BY"
 authors:
@@ -26,6 +26,11 @@ files:
   - { path: data/curated/mortality.csv, from: data/curated/mortality.csv, role: intermediate, license: "CC BY 4.0 (OWID)/HMD" }
   - { path: data/curated/migration_internal.csv, from: data/curated/migration_internal.csv, role: intermediate, license: "CC BY 4.0" }
   - { path: data/curated/oblast_totals.csv, from: data/curated/oblast_totals.csv, role: intermediate, license: "CC BY 4.0" }
+  # уровни 2-3 (этап 5): ряды районов/городов, привязка город-район,
+  # реестр чернобыльских классов (floor CCR)
+  - { path: web/public/data/data.json, from: web/public/data/data.json, role: intermediate, license: "CC BY 4.0" }
+  - { path: data/curated/city_raion.csv, from: data/curated/city_raion.csv, role: intermediate, license: "CC BY 4.0" }
+  - { path: data/curated/chernobyl_zones.csv, from: data/curated/chernobyl_zones.csv, role: intermediate, license: "CC BY 4.0" }
   - { path: data/raw/wpp2024/blr_indicators_medium.csv, from: data/raw/wpp2024/blr_indicators_medium.csv, role: raw, license: "CC BY 3.0 IGO" }
   - { path: data/raw/wpp2024/blr_total_all_variants.csv, from: data/raw/wpp2024/blr_total_all_variants.csv, role: raw, license: "CC BY 3.0 IGO" }
   - { path: data/raw/wcde/blr_pop_total_ssp123.csv, from: data/raw/wcde/blr_pop_total_ssp123.csv, role: raw, license: "CC BY 4.0" }
@@ -38,7 +43,9 @@ files:
   - { path: etl/forecast/ccmpp.py, from: etl/forecast/ccmpp.py, role: code }
   - { path: etl/forecast/migration.py, from: etl/forecast/migration.py, role: code }
   - { path: etl/forecast/run.py, from: etl/forecast/run.py, role: code }
+  - { path: etl/forecast/sub.py, from: etl/forecast/sub.py, role: code }
   - { path: etl/forecast/backtest.py, from: etl/forecast/backtest.py, role: code }
+  - { path: etl/forecast/backtest_sub.py, from: etl/forecast/backtest_sub.py, role: code }
   - { path: etl/forecast/sensitivity.py, from: etl/forecast/sensitivity.py, role: code }
   - { path: etl/forecast/scenarios/base.yaml, from: etl/forecast/scenarios/base.yaml, role: params }
   - { path: etl/forecast/scenarios/optimistic.yaml, from: etl/forecast/scenarios/optimistic.yaml, role: params }
@@ -50,10 +57,12 @@ files:
   - { path: checks/tests/test_invariants.py, role: code }
   # итоговые данные - ровно те, что на лендинге
   - { path: data/final/computed_results.json, role: final, license: "CC BY 4.0" }
-  - { path: data/curated/forecast_v2026_1.csv, from: data/curated/forecast_v2026_1.csv, role: final, license: "CC BY 4.0" }
+  - { path: data/curated/forecast_v2026_2.csv, from: data/curated/forecast_v2026_2.csv, role: final, license: "CC BY 4.0" }
   - { path: web/public/data/forecast.json, from: web/public/data/forecast.json, role: final, license: "CC BY 4.0" }
   - { path: docs/notes/backtest_results.json, from: docs/notes/backtest_results.json, role: final, license: "CC BY 4.0" }
+  - { path: docs/notes/backtest_sub.json, from: docs/notes/backtest_sub.json, role: final, license: "CC BY 4.0" }
   - { path: docs/notes/sensitivity.json, from: docs/notes/sensitivity.json, role: final, license: "CC BY 4.0" }
+  - { path: docs/notes/crosscheck.json, from: docs/notes/crosscheck.json, role: final, license: "CC BY 4.0" }
   - { path: docs/notes/validation.md, from: docs/notes/validation.md, role: docs }
 
 sources:
@@ -96,3 +105,20 @@ expected_results:
       description: "бэктест: MAPE модели по 7 территориям" }
   - { metric: backtest_mape_naive, value: 4.13, tolerance: 0.02,
       description: "бэктест: MAPE наивной экстраполяции (гейт: модель лучше)" }
+  # уровни 2-3 (этап 5)
+  - { metric: pop_r-minski_base_2075, value: 655286, tolerance: 1,
+      description: "Минский район, базовый, 2075: продолжение субурбанизации (CCR + IPF)" }
+  - { metric: pop_r-chojnicki_base_2075, value: 7673, tolerance: 1,
+      description: "Хойникский район, базовый, 2075 (чернобыльский floor CCR активен)" }
+  - { metric: pop_c-homiel_base_2075, value: 317414, tolerance: 1,
+      description: "Гомель, базовый, 2075 (собственный CCMPP облцентра)" }
+  - { metric: pop_c-orsha_base_2075, value: 42661, tolerance: 1,
+      description: "Орша, базовый, 2075 (доля в районе, логистический тренд)" }
+  - { metric: backtest_sub_mape_model, value: 2.12, tolerance: 0.02,
+      description: "бэктест районов 2019->2026: MAPE CCR по 128 территориям" }
+  - { metric: backtest_sub_mape_naive, value: 2.76, tolerance: 0.02,
+      description: "бэктест районов: MAPE наивной (гейт: CCR лучше)" }
+  - { metric: backtest_cities_mape_model, value: 6.7, tolerance: 0.02,
+      description: "бэктест городов (доля <=2009 -> 2019): MAPE логистической по 188 городам" }
+  - { metric: backtest_cities_mape_naive, value: 10.88, tolerance: 0.02,
+      description: "бэктест городов: MAPE замороженной доли (гейт: не хуже)" }

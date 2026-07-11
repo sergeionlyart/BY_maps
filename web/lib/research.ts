@@ -31,7 +31,7 @@ export const RESEARCH: ResearchEntry[] = [
       'Где и когда возрастная структура делает депопуляцию самоподдерживающейся — естественная убыль даже при нулевой миграции?',
     status: 'published',
     stage: 4,
-    artifact: { file: 'by-maps-aging-v1.0.0.zip', version: '1.0.0', sizeKb: 710 },
+    artifact: { file: 'by-maps-aging-v1.0.1.zip', version: '1.0.1', sizeKb: 710 },
   },
   {
     slug: 'wages',

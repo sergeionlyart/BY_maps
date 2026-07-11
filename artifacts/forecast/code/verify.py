@@ -10,7 +10,7 @@ PKG = Path(__file__).resolve().parent.parent
 
 def computed_metrics() -> dict:
     out = {}
-    with open(PKG / "data" / "curated" / "forecast_v2026_1.csv") as f:
+    with open(PKG / "data" / "curated" / "forecast_v2026_2.csv") as f:
         for r in csv.DictReader(f):
             out[f"pop_{r['territory_id']}_{r['scenario']}_{r['year']}"] = float(r["pop"])
             if r["q10"]:
@@ -21,6 +21,11 @@ def computed_metrics() -> dict:
     out["backtest_national_err_pct"] = bt["national"]["model_err_pct"]
     out["backtest_mape_model"] = bt["mape_model"]
     out["backtest_mape_naive"] = bt["mape_naive"]
+    bts = json.loads((PKG / "docs" / "notes" / "backtest_sub.json").read_text())
+    out["backtest_sub_mape_model"] = bts["raions_2026"]["mape_model"]
+    out["backtest_sub_mape_naive"] = bts["raions_2026"]["mape_naive"]
+    out["backtest_cities_mape_model"] = bts["cities_2019"]["mape_model"]
+    out["backtest_cities_mape_naive"] = bts["cities_2019"]["mape_naive"]
     return out
 
 
