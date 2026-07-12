@@ -1,57 +1,57 @@
 {
  "national": {
   "actual": 9413446,
-  "model": 9374533,
+  "model": 9374359,
   "naive": 9037682,
-  "model_err_pct": -0.41,
+  "model_err_pct": -0.42,
   "naive_err_pct": -3.99
  },
  "oblasts": {
   "BY-BR": {
    "actual": 1348115,
-   "model": 1323828,
+   "model": 1323803,
    "naive": 1322001,
    "model_ape": 1.8,
    "naive_ape": 1.94
   },
   "BY-VI": {
    "actual": 1135731,
-   "model": 1157733,
+   "model": 1157710,
    "naive": 1100031,
    "model_ape": 1.94,
    "naive_ape": 3.14
   },
   "BY-HO": {
    "actual": 1388512,
-   "model": 1374273,
+   "model": 1374247,
    "naive": 1343402,
    "model_ape": 1.03,
    "naive_ape": 3.25
   },
   "BY-HR": {
    "actual": 1026816,
-   "model": 1014152,
+   "model": 1014133,
    "naive": 970319,
-   "model_ape": 1.23,
+   "model_ape": 1.24,
    "naive_ape": 5.5
   },
   "BY-MI": {
    "actual": 1471240,
-   "model": 1392267,
+   "model": 1392240,
    "naive": 1298309,
    "model_ape": 5.37,
    "naive_ape": 11.75
   },
   "BY-MA": {
    "actual": 1024751,
-   "model": 1065341,
+   "model": 1065321,
    "naive": 995964,
    "model_ape": 3.96,
    "naive_ape": 2.81
   },
   "BY-HM": {
    "actual": 2018281,
-   "model": 2046938,
+   "model": 2046907,
    "naive": 2007655,
    "model_ape": 1.42,
    "naive_ape": 0.53

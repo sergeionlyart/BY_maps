@@ -21,6 +21,21 @@ export default function AgingArtifactPage() {
 
       <h2>Версии</h2>
       <div className="card">
+        <div className="card-code">v1.0.3 · 2026-07-12 · git-тег artifact-aging-v1.0.3</div>
+        <p>
+          Исправлен баг бисекции ОПЖ в общем модуле lifetable (найден агентным
+          аудитом вероятностного слоя прогноза): при раннем выходе цикла
+          возвращалось непроверенное k. На контрфакт влияние минимально
+          (изменился один незаданный в контроле показатель — naturalCagr
+          Кормянского района −0,24 → −0,25); все заявленные метрики без изменений.
+        </p>
+        <div className="card-foot">
+          <a href="/artifacts/by-maps-aging-v1.0.3.zip" download>
+            ⬇ by-maps-aging-v1.0.3.zip (711 КБ)
+          </a>
+        </div>
+      </div>
+      <div className="card">
         <div className="card-code">v1.0.2 · 2026-07-11 · git-тег artifact-aging-v1.0.2</div>
         <p>
           Версионно-независимая метка контрфакта; синхронизация с движком

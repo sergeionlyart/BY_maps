@@ -106,7 +106,7 @@ def test_wpf5_backtest_gates():
 def test_forecast_json_fresh():
     """Опубликованный forecast.json соответствует пересчёту."""
     published = json.loads((ROOT / "web/public/data/forecast.json").read_text())
-    assert published["version"] == "v2026.3"
+    assert published["version"] == "v2026.4"
     assert published["horizon"] == [2026, 2075]
     assert set(published["scenarios"]) == {"base", "optimistic", "negative"}
     t = published["territories"]
@@ -116,11 +116,30 @@ def test_forecast_json_fresh():
         base = t[terr]["base"]
         assert base["years"][0] == 2026 and base["years"][-1] == 2075
         assert len(base["pop"]) == len(base["years"])
-        assert "q10" in base and "q90" in base
-        for lo, mid, hi in zip(base["q10"], base["pop"], base["q90"]):
-            assert lo <= mid <= hi
+        # веер вероятностного слоя: монотонность q05<=q10<=q25<=pop<=q75<=q90<=q95
+        assert {"q05", "q10", "q25", "q75", "q90", "q95"} <= set(base)
+        for i in range(len(base["years"])):
+            row = [base["q05"][i], base["q10"][i], base["q25"][i], base["pop"][i],
+                   base["q75"][i], base["q90"][i], base["q95"][i]]
+            assert row == sorted(row), (terr, base["years"][i], row)
     # стартовая точка = официальная оценка
     assert t["BY"]["base"]["pop"][0] == 9_056_080
+
+
+def test_probabilistic_wpp_calibration():
+    """Вероятностный слой: 80% интервал страны совпадает с 80% PI WPP-2024
+    на 2050 и 2075 в допуске 1,5 п.п. (замена пропорционального переноса)."""
+    published = json.loads((ROOT / "web/public/data/forecast.json").read_text())
+    p = published["probabilistic"]
+    assert p["calibration"]["seed"]
+    for y in ("2051", "2075"):
+        sim, wpp = p["wppValidation"][y]["sim80"], p["wppValidation"][y]["wpp80"]
+        assert abs(sim - wpp) <= 0.015, (y, sim, wpp)
+    # вероятностные утверждения в [0,1]; убыль к 2050 практически достоверна
+    st = p["stats"]
+    for k in ("pBelow7M_2051", "pBelow6M_2075", "pDecline2051", "pGrowthAny"):
+        assert 0.0 <= st[k] <= 1.0
+    assert st["pDecline2051"] >= 0.99
 
 
 def test_deterministic(scens):

@@ -86,7 +86,7 @@ def test_sub_levels_reconciled():
     import json
     fc = json.loads((PKG / "web/public/data/forecast.json").read_text())
     terrs = fc["territories"]
-    assert fc["version"] == "v2026.3"
+    assert fc["version"] == "v2026.4"
     obl_of = {r["territory_id"]: r["oblast"]
               for r in csv.DictReader(open(PKG / "data/curated/age2019.csv"))}
     years = terrs["BY-BR"]["base"]["years"]
@@ -103,6 +103,22 @@ def test_sub_levels_reconciled():
         if c in terrs and r in terrs:
             assert all(cv <= rv for cv, rv in
                        zip(terrs[c]["base"]["pop"], terrs[r]["base"]["pop"])), c
+
+
+def test_probabilistic_fan():
+    """Вероятностный слой: веер base монотонен и брекетит медиану;
+    80% интервал страны совпадает с 80% PI WPP-2024 (калибровка ≤1,5 п.п.)."""
+    import json
+    fc = json.loads((PKG / "web/public/data/forecast.json").read_text())
+    for t in TERRITORIES + ["BY"]:
+        e = fc["territories"][t]["base"]
+        for i in range(len(e["years"])):
+            row = [e["q05"][i], e["q10"][i], e["q25"][i], e["pop"][i],
+                   e["q75"][i], e["q90"][i], e["q95"][i]]
+            assert row == sorted(row), (t, e["years"][i])
+    val = fc["probabilistic"]["wppValidation"]
+    for y in ("2051", "2075"):
+        assert abs(val[y]["sim80"] - val[y]["wpp80"]) <= 0.015, (y, val[y])
 
 
 if __name__ == "__main__":

@@ -38,8 +38,15 @@ def e0(mx: list[float]) -> float:
 
 
 def scale_to_e0(mx: list[float], target: float) -> list[float]:
-    """mx * k, k бисекцией до |e0(mx*k) - target| < 0.001."""
+    """mx * k, k бисекцией до |e0(mx*k) - target| < 0.001.
+
+    Возвращается k, при котором e0 фактически попал в допуск (или последняя
+    середина за 60 итераций). Важно НЕ пересчитывать k=(lo+hi)/2 после цикла:
+    при раннем выходе это дало бы непроверенную середину суженного интервала,
+    далёкую от сошедшегося k (баг: ошибка e0 до ~8 лет для отдельных таргетов).
+    """
     lo, hi = 0.05, 5.0
+    k = (lo + hi) / 2
     for _ in range(60):
         k = (lo + hi) / 2
         cur = e0([m * k for m in mx])
@@ -49,7 +56,6 @@ def scale_to_e0(mx: list[float], target: float) -> list[float]:
             hi = k
         if abs(cur - target) < 1e-3:
             break
-    k = (lo + hi) / 2
     return [m * k for m in mx]
 
 

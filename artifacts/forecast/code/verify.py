@@ -10,7 +10,7 @@ PKG = Path(__file__).resolve().parent.parent
 
 def computed_metrics() -> dict:
     out = {}
-    with open(PKG / "data" / "curated" / "forecast_v2026_3.csv") as f:
+    with open(PKG / "data" / "curated" / "forecast_v2026_4.csv") as f:
         for r in csv.DictReader(f):
             # ряд adjusted (WP-F3) - с префиксом adj
             stem = (f"pop_adj_{r['territory_id']}" if r["jumpoff"] == "adjusted"
@@ -37,6 +37,13 @@ def computed_metrics() -> dict:
     out["backtest_sub_mape_naive"] = bts["raions_2026"]["mape_naive"]
     out["backtest_cities_mape_model"] = bts["cities_2019"]["mape_model"]
     out["backtest_cities_mape_naive"] = bts["cities_2019"]["mape_naive"]
+    # вероятностный слой: калибровка по WPP и вероятностные утверждения
+    fc = json.loads((PKG / "web" / "public" / "data" / "forecast.json").read_text())
+    prob = fc["probabilistic"]
+    out["prob_sim80_2051"] = prob["wppValidation"]["2051"]["sim80"]
+    out["prob_sim80_2075"] = prob["wppValidation"]["2075"]["sim80"]
+    out["prob_pDecline_2051"] = prob["stats"]["pDecline2051"]
+    out["prob_pBelow6M_2075"] = prob["stats"]["pBelow6M_2075"]
     return out
 
 

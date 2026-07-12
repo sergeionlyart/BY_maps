@@ -64,14 +64,15 @@ export default function ArtifactsPage() {
       <h2>Доступные пакеты</h2>
       <div className="cards">
         <div className="card">
-          <div className="card-code">Прогноз · v2026.3 · пакет v1.2.0</div>
-          <div className="card-title">Прогноз населения 2026–2075 (уровни 0–3; стартовые ряды official/adjusted)</div>
-          <p>CCMPP + Гамильтон–Перри + доли городов, 3 сценария, 80% интервал
+          <div className="card-code">Прогноз · v2026.4 · пакет v1.3.0</div>
+          <div className="card-title">Прогноз населения 2026–2075 (уровни 0–3; ряды official/adjusted; вероятностный веер)</div>
+          <p>CCMPP + Гамильтон–Перри + доли городов, 3 сценария; вероятностный
+            веер — сеяный Монте-Карло СКР/ОПЖ, калиброванный по 80% PI WPP
             (уровни 0–1); ряд adjusted — поправка на незарегистрированную
             эмиграцию 2020–2026 (WP-F3); три бэктеста с гейтами.</p>
           <div className="card-foot">
-            <a href="/artifacts/by-maps-forecast-v1.2.0.zip" download>
-              ⬇ by-maps-forecast-v1.2.0.zip (2038 КБ)
+            <a href="/artifacts/by-maps-forecast-v1.3.0.zip" download>
+              ⬇ by-maps-forecast-v1.3.0.zip (2046 КБ)
             </a>
             {' · '}
             <Link href="/artifacts/forecast">версии и состав</Link>

@@ -33,7 +33,7 @@ OBLS = ["BY-BR", "BY-VI", "BY-HO", "BY-HR", "BY-MI", "BY-MA"]
 
 
 def test_version_and_coverage(fc):
-    assert fc["version"] == "v2026.3"
+    assert fc["version"] == "v2026.4"
     terrs = fc["territories"]
     raions = [t for t in terrs if t.startswith("r-")]
     cities = [t for t in terrs if t.startswith("c-")]
@@ -45,15 +45,16 @@ def test_version_and_coverage(fc):
 
 
 def test_level01_unchanged(fc):
-    """Контрольные значения уровней 0-1 = значения пакета v1.0.1 (этап 3)."""
+    """Медианы уровней 0-1 (детерминированный CCMPP) = значения этапа 3;
+    веер q90 - вероятностный слой v2026.4 (Монте-Карло, сид фиксирован)."""
     e = fc["territories"]["BY"]["base"]
     by = dict(zip(e["years"], e["pop"]))
-    assert by[2051] == 7528557
-    assert by[2075] == 5969883
+    assert by[2051] == 7529192
+    assert by[2075] == 5970126
     q = dict(zip(e["years"], e["q90"]))
-    assert q[2075] == 6985592
+    assert q[2075] == 7037757   # веер из симуляции (сид 20260712)
     neg = dict(zip(*[fc["territories"]["BY"]["negative"][k] for k in ("years", "pop")]))
-    assert neg[2075] == 4334254
+    assert neg[2075] == 4334636
 
 
 def test_raions_sum_to_oblast(fc, obl_of):

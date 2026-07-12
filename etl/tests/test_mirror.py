@@ -64,7 +64,7 @@ def test_forecast_adjusted_block():
     """forecast.json: ряд adjusted есть для уровней 0-1, старт = официальный
     минус mid-поправка; official-ряды не изменились."""
     fc = json.loads((ROOT / "web/public/data/forecast.json").read_text())
-    assert fc["version"] == "v2026.3"
+    assert fc["version"] == "v2026.4"
     assert fc["jumpoff"] == ["official", "adjusted"]
     assert "adjusted" in fc and "adjustedMeta" in fc
     iv = outflow_interval()
@@ -77,7 +77,7 @@ def test_forecast_adjusted_block():
     assert abs(d_by - iv["mid"]) < 100, (d_by, iv["mid"])
     # official-контрольные значения этапа 5 не тронуты
     e = fc["territories"]["BY"]["base"]
-    assert dict(zip(e["years"], e["pop"]))[2051] == 7_528_557
+    assert dict(zip(e["years"], e["pop"]))[2051] == 7_529_192
     # у районов adjusted-ряда нет (поправка - до уровня областей)
     assert "r-minski" not in fc["adjusted"]
     # сценарии упорядочены и в adjusted

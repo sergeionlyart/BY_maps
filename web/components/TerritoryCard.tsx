@@ -155,8 +155,34 @@ export default function TerritoryCard({ data, forecast, scenario = 'base', jumpo
             <div className="st-delta">
               {fentry.q10 && fentry.q90
                 ? `80% интервал: ${formatCompact(forecastAt(forecast, t.id, scenario, year, 'q10', jumpoff) ?? 0)} – ${formatCompact(forecastAt(forecast, t.id, scenario, year, 'q90', jumpoff) ?? 0)}`
+                : ''}
+              {fentry.q05 && fentry.q95
+                ? ` · 90%: ${formatCompact(forecastAt(forecast, t.id, scenario, year, 'q05', jumpoff) ?? 0)} – ${formatCompact(forecastAt(forecast, t.id, scenario, year, 'q95', jumpoff) ?? 0)}`
                 : ''} · прогноз {forecast.version}{jumpoff === 'adjusted' ? (useAdj ? ' · ряд скорр.' : ' · ряд офиц.') : ''}
             </div>
+          </div>
+        </div>
+      )}
+
+      {forecast?.probabilistic && t.id === 'BY' && scenario === 'base' && (
+        <div className="prob-panel">
+          <div className="prob-head">
+            Вероятностный слой · {forecast.probabilistic.stats.n} симуляций траекторий СКР/ОПЖ,
+            калибр. по 80% PI WPP-2024
+          </div>
+          <div className="prob-rows">
+            <span>Убыль населения к 2050 —{' '}
+              <b>{formatPct(forecast.probabilistic.stats.pDecline2051, 0)}</b></span>
+            <span>Ниже 7 млн к 2050 —{' '}
+              <b>{formatPct(forecast.probabilistic.stats.pBelow7M_2051, 0)}</b></span>
+            <span>Ниже 6 млн к 2075 —{' '}
+              <b>{formatPct(forecast.probabilistic.stats.pBelow6M_2075, 0)}</b></span>
+          </div>
+          <div className="prob-note">
+            Доли из {forecast.probabilistic.stats.n} реализаций при фиксированной
+            миграции (внутримодельные частоты, не безусловные вероятности); ширина
+            80%-полосы страны калибрована по WPP. Веер — эмпирические квантили
+            того же CCMPP, а не перенос интервала WPP.
           </div>
         </div>
       )}

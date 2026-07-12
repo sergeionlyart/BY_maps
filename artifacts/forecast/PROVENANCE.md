@@ -16,7 +16,8 @@
                    │                              ▼
                    │                    CCMPP по областям x 3 сценария (ccmpp.py, run.py)
                    │                    + миграция (migration.py)
-                   │                    + квантили из WPP 80% PI (blr_total_all_variants.csv)
+                   │                    + веер: Монте-Карло СКР/ОПЖ 600x -> квантили
+                   │                      (probabilistic.py; калибр. по WPP 80% PI)
                    ▼                              ▼
      docs/notes/backtest_results.json      областные структуры по годам
      docs/notes/sensitivity.json                  │
@@ -27,7 +28,7 @@
    chernobyl_zones.csv (классы 1-2) ──────> (sub.py) + доли городов
                    │                              │
                    ▼                              ▼
-     docs/notes/backtest_sub.json       data/curated/forecast_v2026_3.csv
+     docs/notes/backtest_sub.json       data/curated/forecast_v2026_4.csv
      (районы 2019->2026, города         web/public/data/forecast.json -> лендинг
       <=2009 -> 2019)                   (уровни 0-3, 3 сценария)
 ```
@@ -62,7 +63,7 @@ Eurostat migr_resvalid/resfirst   UDSC (Польша)   ЦНИ-2023 (опрос 
                      │
                      ▼
         run.py::jumpoff_adjusted -> прогон 3 сценариев -> блок adjusted
-        forecast.json / forecast_v2026_3.csv (jumpoff=adjusted, уровни 0-1)
+        forecast.json / forecast_v2026_4.csv (jumpoff=adjusted, уровни 0-1)
 ```
 
 Сырьё завендорено в `data/raw/mirror/` (sha256 - registry.csv); документы

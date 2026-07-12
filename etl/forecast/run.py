@@ -10,13 +10,15 @@
   масштабируемая к сценарным e0(t); миграция - внутренняя матрица-2019 x
   centripetal + международное сценарное сальдо по ключам WP-F3;
 - страна = сумма областей; районы и города - этап 5 (модуль sub, IPF);
-- квантили q10/q90: относительная ширина 80% предиктивного интервала
-  WPP 2024 (Lower/Upper 80 PI к Medium), применённая к базовой траектории;
-  для областей - те же относительные коэффициенты (документированное
-  упрощение MVP).
+- веер квантилей (q05..q95) базового сценария - вероятностный слой
+  (модуль probabilistic): Монте-Карло персистентных отклонений траекторий
+  СКР и ОПЖ от медианы WPP, прогнанных через тот же CCMPP, с эмпирическими
+  квантилями по ансамблю. Калибровано так, что 80% интервал страны совпадает
+  с 80% PI WPP-2024 на 2050 и 2075. Веер распространяется на области
+  корректно (симуляция каждой), не пропорциональным переносом.
 
 Запуск: python -m etl.forecast.run  ->  web/public/data/forecast.json
-                                        data/curated/forecast_v2026_3.csv
+                                        data/curated/forecast_v2026_4.csv
 """
 from __future__ import annotations
 
@@ -36,7 +38,7 @@ from .migration import step_net_migration
 
 SCEN_DIR = Path(__file__).parent / "scenarios"
 OUT_WEB = ROOT / "web" / "public" / "data" / "forecast.json"
-OUT_CSV = ROOT / "data" / "curated" / "forecast_v2026_3.csv"
+OUT_CSV = ROOT / "data" / "curated" / "forecast_v2026_4.csv"
 
 STEP_YEARS = list(range(2026, 2077, STEP))  # 2026..2076
 EXPORT_YEARS = [y for y in STEP_YEARS if y <= 2071] + [2075]
@@ -146,31 +148,15 @@ def run_scenario(scen: dict, keep_structures: bool = False,
     return (series, structures) if keep_structures else series
 
 
-def pi_ratios() -> dict[str, dict[int, float]]:
-    """Относительная ширина 80% PI WPP к медиане по годам."""
-    v = wpp_total_variants()
-    med, lo, hi = v["Medium"], v["Lower 80 PI"], v["Upper 80 PI"]
-    years = sorted(set(med) & set(lo) & set(hi))
-    return {
-        "lo": {y: lo[y] / med[y] for y in years},
-        "hi": {y: hi[y] / med[y] for y in years},
-    }
+# квантили q05..q95 базового сценария - вероятностный слой (etl.forecast.
+# probabilistic): Монте-Карло траекторий СКР/ОПЖ через тот же CCMPP,
+# эмпирические квантили ансамбля. FAN_QUANTILES публикуются в forecast.json.
+FAN_QUANTILES = ("q05", "q10", "q25", "q75", "q90", "q95")
 
 
-def _pi_at(ratios: dict[int, float], year: int) -> float:
-    ys = sorted(ratios)
-    y = min(max(year, ys[0]), ys[-1])
-    if y in ratios:
-        return ratios[y]
-    lo = max(x for x in ys if x <= y)
-    hi = min(x for x in ys if x >= y)
-    if lo == hi:
-        return ratios[lo]
-    t = (y - lo) / (hi - lo)
-    return ratios[lo] + t * (ratios[hi] - ratios[lo])
-
-
-def _series_entry(pts: dict, sid: str, ratios: dict) -> dict:
+def _series_entry(pts: dict, sid: str, fan_t: dict | None) -> dict:
+    """fan_t - симулированный веер территории {'q10':[...],...} по EXPORT_YEARS
+    (только для base; None для прочих сценариев)."""
     years = EXPORT_YEARS
 
     def val(y: float) -> float:
@@ -182,24 +168,29 @@ def _series_entry(pts: dict, sid: str, ratios: dict) -> dict:
         return pts[y0] + k * (pts[y1] - pts[y0])
 
     entry = {"years": years, "pop": [round(val(y)) for y in years]}
-    if sid == "base":
-        entry["q10"] = [round(val(y) * _pi_at(ratios["lo"], y)) for y in years]
-        entry["q90"] = [round(val(y) * _pi_at(ratios["hi"], y)) for y in years]
+    if sid == "base" and fan_t:
+        for q in FAN_QUANTILES:
+            entry[q] = list(fan_t[q])
     return entry
 
 
 def export(all_series: dict[str, dict], sub_series: dict[str, dict],
            adj_series: dict[str, dict] | None = None,
-           adj_meta: dict | None = None) -> None:
+           adj_meta: dict | None = None,
+           adj_jump: dict | None = None) -> None:
     """all_series: уровни 0-1 ({sid: {terr: {year: pop}}});
     sub_series: уровни 2-3 после IPF ({sid: {terr: {year: pop}}});
-    adj_series: уровни 0-1 со скорректированного старта (WP-F3)."""
-    ratios = pi_ratios()
+    adj_series: уровни 0-1 со скорректированного старта (WP-F3);
+    adj_jump: стартовые структуры adjusted (для симуляции веера adjusted)."""
+    from . import probabilistic as prob
+
+    prob_build = prob.build()                   # официальный старт: веер + статистика
+    fan = prob_build["fan"]
     terrs = {}
     for t in TERRITORIES + ["BY"]:
         terrs[t] = {}
         for sid, series in all_series.items():
-            terrs[t][sid] = _series_entry(series[t], sid, ratios)
+            terrs[t][sid] = _series_entry(series[t], sid, fan.get(t))
 
     # уровни 2-3: районы и города (сценарность - через IPF к области;
     # квантили не публикуются - неопределённость коммуницируется сценариями)
@@ -214,11 +205,13 @@ def export(all_series: dict[str, dict], sub_series: dict[str, dict],
                         for sid, e in terrs["BY-HM"].items()}
 
     # ряд adjusted (WP-F3): только уровни 0-1 - поправка территориально
-    # обоснована лишь до уровня областей
+    # обоснована лишь до уровня областей; веер - отдельная симуляция с
+    # adjusted-старта (тот же сид, персистентные шоки СКР/ОПЖ)
     adjusted = {}
     if adj_series:
+        afan = prob.quantile_fan(prob.ensemble(jumpoff=adj_jump)) if adj_jump else {}
         for t in TERRITORIES + ["BY"]:
-            adjusted[t] = {sid: _series_entry(series[t], sid, ratios)
+            adjusted[t] = {sid: _series_entry(series[t], sid, afan.get(t))
                            for sid, series in adj_series.items()}
 
     scen_meta = {sid: {"name": s["name"], "description": s["description"].strip()}
@@ -231,6 +224,12 @@ def export(all_series: dict[str, dict], sub_series: dict[str, dict],
         "jumpoff": ["official", "adjusted"] if adjusted else ["official"],
         **({"adjustedMeta": adj_meta} if adj_meta else {}),
         "dtype": "f",
+        "probabilistic": {
+            "calibration": prob_build["calibration"],
+            "stats": prob_build["stats"],
+            "wppValidation": prob_build["wppValidation"],
+            "fanQuantiles": list(FAN_QUANTILES),
+        },
         "territories": terrs,
         **({"adjusted": adjusted} if adjusted else {}),
     }, ensure_ascii=False))
@@ -279,7 +278,7 @@ def main() -> None:
     adj_jump, adj_meta = jumpoff_adjusted()
     adj_series = {sid: run_scenario(s, jumpoff=adj_jump) for sid, s in scens.items()}
 
-    export(all_series, sub_series, adj_series, adj_meta)
+    export(all_series, sub_series, adj_series, adj_meta, adj_jump)
     wpp = wpp_total_variants()
     for sid, series in sorted(all_series.items()):
         p50 = series["BY"][2051] / 1000
