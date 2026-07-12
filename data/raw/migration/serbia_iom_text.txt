@@ -1,0 +1,1451 @@
+
+@@PAGE 1@@
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Statistics under development  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Funded by 
+the European Union In Belgrade, 2025. 
+Republic of Serbia 
+Republic Statistical Office 
+ 
+@@PAGE 2@@
+ 
+@@PAGE 3@@
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+NOTICE 
+The Statistical Office of the Republic of Serbia is, for the first time,  
+releasing data on immigration flows of foreign nationals into  
+the Republic of Serbia. 
+. 
+ 
+In cooperation with the Ministry of the Interior, the Statistical Office of 
+the Republic of Serbia is undertaking the development of a survey on 
+international migration, grounded in the integration of data from 
+available administrative sources. This methodology encompasses the 
+analysis of indirect indicators that reflect the actual presence or absence 
+of individuals within the country—such as data on residence, 
+employment, health, and social insurance. By employing this approach, 
+the monitoring of migration flows is rendered more comprehensive and 
+precise, enabling the production of quantitative indicators concerning 
+their demographic composition. 
+ 
+As a first step toward establishing comprehensive international 
+migration statistics, the Statistical Office of the Republic of Serbia is 
+publishing data on the immigration of foreign nationals—presented as a 
+distinct segment within the broader framework of immigration statistics. 
+ 
+ 
+ 
+This publication was financed by the European Union. The views expressed herein are solely those of the 
+implementing partners and do not necessarily reflect the position of the European Union 
+ 
+@@PAGE 4@@
+ 
+DEFINITIONS 
+ 
+Migration Flow 
+Migration flows represent the number of migrants arriving in or departing 
+from a country over a defined period, usually one calendar year. These 
+flows include two key components: immigration and emigration. 
+Immigration Flow 
+As defined by Regulation 862/2007 of the European Parliament and Council, 
+dated July 11, 2007, immigration refers to the act of an individual 
+establishing their usual place of residence in a country for a period of at 
+least 12 months, having previously resided in another Member State or a 
+third country. 
+ 
+According to the Law on Migration Management ("Official Gazette of the RS", 
+No. 107/2012), immigration refers to external migration into the Republic of 
+Serbia that lasts, or is expected to last, for more than 12 months. 
+The immigration contingent of foreign nationals in the Republic of Serbia consists of: 
+ 
+1. Individuals granted the right to temporary residence for at least one 
+year. 
+2. Individuals granted the right to temporary residence for less than 
+one year, but who, after several extensions, have had a continuous stay 
+of at least one year. 
+3. Individuals who have been granted permanent residence.  
+Foreign Nationals Stock  
+The stock of foreign nationals includes those who have been granted 
+residence in the Republic of Serbia (for one year or more) or those who 
+have permanent residence. 
+Foreign Nationals (Foreigners)  
+Under the Law on Foreigners ("Official Gazette of the RS", No. 24 of March 
+26, 2018, No. 31 of April 29, 2019, No. 62 of July 27, 2023), a foreign national 
+refers to any individual who is not a citizen of the Republic of Serbia. 
+Stay of Foreign Nationals 
+In accordance with the Law on Foreigners ("Official Gazette of the RS", No. 24 of March 
+26, 2018, No. 31 of April 29, 2019, No. 62 of July 27, 2023), temporary stay represents a 
+residence permit allowing a foreign national to reside in the Republic of Serbia. It may 
+be issued as a Temporary Stay Permit or a Unified Permit for Temporary Stay and Work, 
+depending on the legally prescribed grounds under which the foreign national may 
+acquire the right to temporary stay. Temporary stay may be granted for a period of up 
+to three years or a shorter duration, based on the period the foreign national intends to 
+spend in the Republic of Serbia. The temporary stay may be extended by submitting a 
+new application.
+ 
+2 stat.gov.rs 
+@@PAGE 5@@
+Permanent Residence is the authorization for a foreign national to reside long-term in 
+the Republic of Serbia. A foreign national who intends to settle permanently in the 
+Republic of Serbia must submit an application for permanent residence. This 
+application may be filed by a foreign national who has held temporary residence in the 
+Republic of Serbia for at least three continuous years. 
+Note: The Republic Statistical Office has not had data for the Autonomous Province of Kosovo and 
+Metohija since 1999, so these are not included in the total data for the Republic of Serbia. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+3 
+@@PAGE 6@@
+IMPORTANCE OF INTERNATIONAL MIGRATION STATISTICS 
+ 
+International migration statistics are crucial for  
+several reasons: 
+✓ Demographic analysis: International migration has a significant 
+impact on the demographic structure of a country, influencing factors 
+such as age distribution, the size of the labor force, and general 
+demographic trends. This data is vital for the planning and 
+development of effective population policies. 
+✓ Planning of public services: Information on international migration 
+is essential for planning and adjusting public services, such as 
+healthcare, education, social welfare, and infrastructure. Migration 
+influences the population size and demands in particular regions. 
+✓ Economic Impact: Migration plays a key role in shaping the 
+economy by affecting the labor supply and driving economic activities. 
+Migration statistics help us better understand the vital contributions of 
+migrants to the workforce and their influence on the labor market. 
+✓ Social integration and security: Migration data is essential for 
+monitoring the integration of migrants into society, assessing their 
+needs, and addressing challenges related to social inclusion. 
+✓ Migration management policies: Reliable international migration 
+statistics are essential for shaping effective migration management 
+strategies – from regulating immigration and supporting the diaspora 
+to managing emigration flows. This is vital for the country's long-term 
+socio-economic development. 
+To track population migration – a key demographic process – it is 
+crucial to have dependable and high-quality statistical data. This will 
+offer a true reflection of migration trends and serve as a reliable basis 
+for defining and applying effective strategies, measures, and 
+recommendations for all sectors of society. 
+Official statistical data on external migration will provide an improved 
+basis for developing the national migration profile, which is published 
+annually by the Commissariat for Refugees and Migration, in line with 
+the Law on Migration Management. 
+The data collected on population migration will also be used to establish 
+and maintain the Population Statistical Register, which is essential for 
+conducting survey research. Following European Union 
+recommendations and established international practices, this register 
+will, in the future, serve as the basis for conducting the Population, 
+Households, and Dwellings Census.
+ 
+4 stat.gov.rs 
+@@PAGE 7@@
+ESTABLISHING RESEARCH  
+In response to the significant demand from institutions and users for relevant data 
+on immigration/emigration flows – at both the national and international levels – 
+the Republic Statistical Office has increased its efforts to establish research on 
+international migration. 
+Establishing research on international migration, due to its complexity, requires a 
+comprehensive understanding of data collection, processing, and analysis 
+principles, as well as a high level of cooperation between all relevant institutions. 
+International migration statistics are collected based on a methodology that follows 
+the UN Recommendations for the Statistics of International Migration and 
+Regulation (EC) No. 862/2007 of the European Parliament and Council of July 11, 
+2007, on Community statistics related to migration and international protection. 
+Statistical monitoring of the immigration of foreign nationals to the Republic of 
+Serbia is carried out based on data from the Ministry of Internal Affairs' records on 
+granted temporary residence (and/or work) or permanent settlement of foreign 
+nationals. 
+The brochure highlights the annual immigration flows of foreign nationals to the 
+Republic of Serbia, showcasing statistical data on the number and demographic 
+profile of individuals who have changed their usual country of residence (for a 
+period lasting, or expected to last, at least 12 months). 
+Successfully establishing research on the immigration of foreign nationals will fulfill 
+the key role of official statistics, offering an accurate depiction of migration trends. 
+This will serve as a reliable foundation for analysis and decision-making at all levels 
+of society, from government and institutions to businesses and interested citizens. 
+International Migrations  
+ 
+5 
+Immigration 
+of 
+citizens of 
+the Republic 
+of Serbia 
+Immigration 
+of foreign 
+nationals EMIGRATION 
+IMMIGRATION 
+Emigration 
+of 
+citizens of 
+the Republic 
+of Serbia 
+Emigration 
+of 
+foreign 
+nationals  
+@@PAGE 8@@
+ 
+ 
+ Legal Grounds for Establishing Immigration Research 
+ 
+✓ Law on Official Statistics (“Official Gazette of the RS”, No. 104/09) 
+✓ Law on Personal Data Protection (“Official Gazette of the RS”, Nos. 97/08, 
+104/09 – other law, 68/12 – Constitutional Court decision, and 107/12) 
+✓ Law on Migration Management (“Official Gazette of the RS”, No. 107/12) 
+✓ Law on Foreigners (“Official Gazette of the RS”, Nos. 24/18, 31/19, 62/23) 
+✓ Law on Permanent and Temporary Residence of Citizens (“Official Gazette of the 
+RS”, No. 87/11) 
+✓ EU Regulation 862/2007 – Community Statistics on Migration and International 
+Protection 
+✓ Official Statistics Program for the Period 2021–2025 (“Official Gazette of the 
+RS”, No. 24/21) 
+✓ Regulation on the Adoption of the Official Statistics Plan for 2025 (“Official 
+Gazette of the RS”, No. 3/25) 
+✓ Agreement between the Ministry of the Interior and the Statistical Office of the 
+Republic of Serbia governing the rights and responsibilities of the contracting 
+parties in accordance with applicable legislation on data collection, transmission, 
+use, and protection. 
+✓ Agreement concerning the transfer of data on citizens of the Republic of Serbia 
+and foreign nationals, concluded between the Ministry of the Interior and the 
+Statistical Office of the Republic of Serbia on January 12, 2023. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+6 
+@@PAGE 9@@
+IMMIGRATION FLOWS OF FOREIGN NATIONALS 
+FROM A STATISTICAL PERSPECTIVE 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+@@PAGE 10@@
+ 
+ 
+Immigration flows of foreign nationals in the Republic of Serbia by Gender and Year 
+of arrival, in the period from 2012 to 2023 
+ 
+45000 
+40000 
+35000 
+30000 
+25000 
+20000 
+15000 
+10000 
+5000 
+0 
+2012  2013  2014  2015  2016  2017  2018  2019  2020  2021  2022  2023 
+Total Мale Female 
+ 
+ 2012 2013 2014 2015 2016 2017 2018 2019 2020 2021 2022 2023 
+ 
+Total 4279 4710 5082 4371 4103 4928 5441 8346 9312 15615 34618 41273 
+Male 2390 2661 2827 2394 2183 2910 3188 5924 6759 12428 23066 26972 
+Female 1889 2049 2255 1977 1920 2018 2253 2422 2553 3187 11552 14301 
+ 
+IMMIGRATION FLOWS OF FOREIGN NATIONALS IN THE 
+REPUBLIC OF SERBIA, 2012-2023 
+stat.gov.rs 
+ 
+8 
+ 
+✓ The number of foreign nationals who immigrated in 2023 is approximately 9.5 
+times greater than in 2012 
+✓ Approximately two-thirds of the foreign nationals who immigrated between 2012 
+and 2023 are male, while one-third are female. 
+ 
+@@PAGE 11@@
+Immigration Flows of Foreign Nationals in the Republic of Serbia by Region and Year of arrival, 
+2012–2023 
+ 
+ 
+45000 
+40000 
+35000 
+30000 
+25000 
+20000 
+15000 
+10000 
+5000 
+0 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Republic of 
+Serbia 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Belgrade 
+region 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Vojvodina 
+region 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Šumadija region 
+and Western 
+Serbia 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Southern and Eastern  
+Serbia region
+  
+ 
+ 
+ 
+ 
+ 
+ 
+✓ In terms of regional distribution, the Vojvodina region exhibited the highest 
+growth rate in the number of foreign nationals immigrating in 2023 compared to 
+2012, with an increase of approximately 13.5 times. The Belgrade region follows 
+with a growth of around 10 times. 
+✓ The smallest increase in immigration was recorded in the Southern and Eastern 
+Serbia region and the Šumadija and Western Serbia region, with a growth factor 
+of approximately 6 times. 
+ 
+@@PAGE 12@@
+ 
+Immigration Flows of Foreign Nationals in the Republic of Serbia by Region and 
+Gender, in 2023  
+ 
+45000 
+40000 
+35000 
+30000 
+25000 
+20000 
+15000 
+10000 
+5000 
+0 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Republic of 
+Serbia 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Belgrade 
+region 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Vojvodina 
+region 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Šumadija and 
+Western Serbia 
+region 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Southern and 
+Eastern Serbia 
+region
+  
+              Total Male Female 
+ 
+ Total Male Female 
+ 
+Republic of Serbia 41273 26972 14301 
+Belgrade region 19819 11962 7857 
+Vojvodina region 12952 8306 4646 
+Šumadija and Western Serbia region 4187 3193 994 
+Southern and Eastern Serbia region 4315 3511 804 
+ 
+ 
+IMMIGRATION FLOWS OF FOREIGN NATIONALS IN THE 
+REPUBLIC OF SERBIA IN 2023  
+stat.gov.rs 
+ 
+10 
+✓ In 2023, approximately 66% of foreign nationals who immigrated to the Republic 
+of Serbia were male, while 34% were female. 
+ 
+✓ In terms of gender, the Belgrade region saw the highest proportion of male 
+immigrants, with 44%, while the Šumadija and Western Serbia region recorded 
+the lowest, with 12%. 
+ 
+✓ The highest proportion of female foreign nationals immigrated to the Belgrade 
+region, accounting for approximately 55%, while the lowest proportion 
+immigrated to the Southern and Eastern Serbia region, at around 6%. 
+ 
+@@PAGE 13@@
+Immigration Flows of Foreign Nationals in the Republic of Serbia by Average Age 
+and Gender, 2023  
+ 
+ 
+ 
+Republic of Serbia 
+ 
+Belgrade region 
+ 
+Vojvodina region 
+ 
+Šumadija and 
+Western Serbia region 
+Southern and Eastern 
+Serbia region 
+0 10 20 30 40 
+ 
+Total Male Female 
+ 
+11 
+ 
+✓ The average age of foreign nationals who immigrated is lower than the national 
+average (32.6) only in the Belgrade region, where it is 30.2. 
+✓ The highest average age, nearly 38 years, is observed among foreign nationals 
+who immigrated to the Southern and Eastern Serbia region. 
+ 
+ Total Male Female 
+ Republic of Serbia 32,6 33,5 30,9 
+Belgrade Region 30,2 30,8 29,4 
+Vojvodina region 33,3 34,2 31,7 
+Šumadija and Western Serbia region 36,5 36,8 35,6 
+Southern and Eastern Serbia region 37,6 38,1 35,5 
+ 
+@@PAGE 14@@
+Immigration flows of foreign nationals in the Republic of Serbia, according to 
+regions and basic age groups, in 2023 
+ 
+45000 
+40000 
+35000 
+30000 
+25000 
+20000 
+15000 
+10000 
+5000 
+0 
+Total 0-14 15-64 65 and more 
+Republic of Serbia Belgrade Region 
+Vojvodina region Šumadija and Western Serbia Region 
+Southern and Eastern Serbia region 
+ 
+ Total 0‐14 15‐64 65 and 
+more 
+ 
+Republic of Serbia 41273 4390 36303 580 
+Belgrade Region 19819 2308 17365 146 
+Vojvodina region 12952 1728 10980 244 
+Šumadija and Western Serbia Region 4187 239 3834 114 
+Southern and Eastern Serbia region 4315 115 4124 76 
+ 
+stat.gov.rs 
+ 
+12 
+✓ Persons under 15 years of age 
+The share of children among the total number of foreign nationals who 
+immigrated to the Republic of Serbia is 10.6%, meaning that one in every ten 
+immigrants in 2023 was under the age of 15. The highest number of them 
+immigrated to the Belgrade region, accounting for 52.6% of the total. 
+✓ Persons of working age (15–64 years) 
+As much as 88% of foreign nationals who immigrated fall within the working-
+age population, with nearly half of them immigrating to the Belgrade region, 
+accounting for 47.8% of the total. 
+✓ Persons aged 65 and over 
+The share of the elderly population in the total immigration of foreign 
+nationals is only 1.4%, with the highest proportion residing in the Vojvodina 
+region, accounting for 42.1% of the total. 
+ 
+ 
+@@PAGE 15@@
+Immigration Flows of Foreign Nationals in the Republic of Serbia by Nationality 
+(top four) and Regions, in 2023
+ 
+ 
+45000 
+40000 
+35000 
+30000 
+25000 
+20000 
+15000 
+10000 
+5000 
+0 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Total Belgrade 
+region 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Vojvodina 
+region 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Šumadija and 
+Western Serbia 
+Region 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Southern and 
+Eastern Serbia 
+region  
+ 
+Total Russian Federation People’s Republic of China Turkey India Other 
+ 
+13 
+ 
+ 
+✓ Nationals of the Russian Federation, the People's Republic of China, Turkey, 
+and India account for 83.5% of the foreign nationals who immigrated to the 
+Republic of Serbia in 2023. 
+ 
+ 
+ 
+ 
+ 
+ 
+... 
+ 
+ 
+Total 
+Russian 
+Federation 
+People’s 
+Republic of 
+China 
+Turkey India Other 
+ Total 41273 22937 6361 3123 2036 6816 
+Belgrade region 19819 14073 548 1214 758 3226 
+Vojvodina region 12952 7481 2496 630 536 1809 
+Šumadija and Western Serbia region 4187 909 614 1060 602 1002 
+Southern and Eastern Serbia region 4315 474 2703 219 140 779 
+ 
+@@PAGE 16@@
+     Immigration Flows of Foreign Nationals in the Republic of Serbia by Municipalities, 2023 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+stat.gov.rs 
+ 
+14 
+Name of 
+numbered 
+municipalities: 
+1.Vračar  
+2.Zvezadara 
+3.Novi Beograd 
+4.Rakovica 
+5.Savski venac 
+6.Stari grad 
+7.Sremski Karlovci 
+8.Medijana  
+ 
+City of Belgrade 
+and more  
+1500-
+2499 
+500-1499 
+100-499 
+25-99 
+Less than 
+25 
+No data 
+available 
+Less than 25 
+1500-2499 
+500-1499 
+100-499 
+25-99 
+Less than 25 
+No data 
+available 
+No data available 
+Map base: Republic Geodetic Authority 
+Prepared by the Statistical Office of the Republic 
+@@PAGE 17@@
+                        Municipalities with the Highest Immigration Flows of Foreign Nationals, 2023 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+✓ Around 73% (30,151) of foreign nationals who immigrated to the 
+Republic of Serbia in 2023 live in 13 municipalities, nine of which 
+are located in the City of Belgrade (18,490). 
+✓ By municipality, the highest number of foreign nationals who immigrated 
+to Serbia in 2023 reside in Novi Sad, with approximately 6,900 individuals. 
+ 
+15 
+1. Novi Sad – 6888 
+2. Novi Beograd – 3113 
+3. Zvezdara – 2287 
+4. Savski venac – 2195 
+5. Bor – 2193 
+6. Stari grad – 2129 
+7. Vračar – 2109 
+8. Voždovac -1941 
+9. Palilula – 1840 
+10. Zemun – 1712 
+11. Zrenjanin – 1522 
+12. Čukarica – 1164 
+13. Subotica - 1058 
+ 
+@@PAGE 18@@
+PROFILES OF THE MOST REPRESENTED FOREIGN NATIONALS 
+(TOP THREE) WHO IMMIGRATED TO THE REPUBLIC OF SERBIA 
+Immigration Flows of Russian Nationals in the Republic of Serbia by Gender,   
+2012–2023 
+ 
+ 
+ 
+ 
+25000 
+20000 
+15000 
+10000 
+5000 
+0 
+ 
+Number of Russian nationals 
+who immigrated in 2023 is 
+nearly 47 times higher 
+compared to 2012. 
+ 
+ 
+2012  2013  2014  2015  2016  2017  2018  2019  2020  2021  2022  2023 
+Total Male Female 
+ 
+ 2012 2013 2014 2015 2016 2017 2018 2019 2020 2021 2022 2023 
+ 
+Total 491 611 708 621 543 554 722 1830 929 976 19041 22937 
+Male 184 245 276 237 223 214 301 1280 391 378 10755 12487 
+Female 307 366 432 384 320 340 421 550 538 598 8286 10450 
+Immigration Flows of Russian Nationals in the 
+Republic of Serbia by Municipality of Residence 
+(Top Ten), 2023 
+ 
+Republic of Serbia 22937 100,0 
+1. Novi Sad 5365 23,4 
+2. Novi Beograd 2392 10,4 
+3. Vračar 1861 8,1 
+ 
+ 
+✓ The average age of Russian 
+nationals in 2023 is 30 years; 
+when observed by gender, the 
+share of males is 54.4%, while 
+females account for 45.6%. 
+✓  Approximately 83% of Russian 
+nationals who immigrated in 
+2023 reside in 10 municipalities, 
+nine of which are located in the 
+City of Belgrade (13,575). 
+ 
+ 
+ 
+ 
+ 
+9. Zemun 946 4,1 
+10. Čukarica 679 3,0 
+✓ By municipality, the highest 
+number of Russian 
+nationals who immigrated 
+in 2023 reside in Novi Sad. 
+ 
+ 
+16 stat.gov.rs 
+ Total % 
+ 
+6. Savski venac 1644 7,2  
+7. Voždovac 1295 5,6  
+8. Palilula 1209 5,3  
+ 
+4. Zvezdara 1781 7,8 
+5. Stari grad 1768 7,7 
+ 
+@@PAGE 19@@
+ 
+      Immigration Flows of Chinese Nationals in the Republic of Serbia by Gender, 2012–2023 
+ 
+ 
+ 
+ 
+ 
+ 
+8000 
+6000 
+4000 
+The number of Chinese 
+nationals who immigrated in 
+2023 is approximately 8 times 
+higher than compared to 2012. 
+2000 
+0  
+2012  2013  2014  2015  2016  2017  2018  2019  2020  2021  2022  2023 
+Total Male Female 
+ 
+ 2012 2013 2014 2015 2016 2017 2018 2019 2020 2021 2022 2023 
+ 
+Total 835 619 662 488 456 830 842 1578 3454 6511 5219 6361 
+Male 541 424 478 352 274 626 637 1295 3197 6070 4762 5564 
+Female 294 195 184 136 182 204 205 283 257 441 457 797 
+ 
+ Immigration Flows of Chinese Nationals in the 
+Republic of Serbia by Municipality of Residence 
+(Top Five), 2023 
+ 
+ 
+ 
+✓ The average age of Chinese 
+nationals who immigrated in 2023 
+is 39 years; when observed by 
+gender, the share of males is 
+87.5%, while females account for 
+12.5%. 
+ 
+✓ In Bor and Zrenjanin – the 
+two municipalities with the 
+highest number of 
+immigrants holding Chinese 
+citizenship in 2023 – 52% of 
+them immigrated to these 
+areas. 
+ 
+✓ In 2023, one in every three 
+Chinese nationals immigrated to 
+the municipality of Bor. 
+ 
+17 
+ Total % 
+ Republic of Serbia 6361 100,0 
+1. Bor 2091 32,9 
+2. Zrenjanin 1211 19,0 
+3. Novi Sad 547 8,6 
+4. Požarevac 298 4,7 
+5. Subotica 182 2,9 
+ 
+
+@@PAGE 20@@
+ 
+ 
+ 
+ Immigration flows of Turkish nationals in the Republic of Serbia by 
+gender, from 2012 to 2023. 
+ 
+ 
+ 
+ 
+ 
+ 
+4000 
+3000 
+2000 
+1000 
+ In 2023, the number of Turkish 
+nationals immigrating to Serbia 
+was approximately 33 times 
+greater than in 2012. 
+0  
+2012  2013  2014  2015  2016  2017  2018  2019  2020  2021  2022  2023 
+Total Male Female 
+ 
+ 2012 2013 2014 2015 2016 2017 2018 2019 2020 2021 2022 2023 
+ 
+Total 94 107 81 84 201 247 274 651 1113 2769 3020 3123 
+Male 79 93 67 65 118 175 223 615 1064 2689 2925 2956 
+Female 15 14 14 19 83 72 51 36 49 80 95 167 
+ 
+Immigration flows of Turkish nationals in the 
+Republic of Serbia by municipality of residence 
+(top five) in 2023. 
+ 
+✓ In 2023, the average age 
+of Turkish nationals 
+immigrating to Serbia was 
+36 years. Among them, 
+men represented 94.7%, 
+while women accounted 
+for 5.3%. 
+✓ In 2023, nearly 23% of the 
+total number of Turkish 
+nationals immigrated to two 
+municipalities – Zemun and 
+Sremska Mitrovica. 
+ 
+18 
+ stat.gov.rs 
+ Total % 
+ Republic of Serbia 3123 100,0 
+1. Zemun 356 11,4 
+2. Sremska Mitrovica 346 11,1 
+3. Palilula 230 7,4 
+4. Čajetina 228 7,3 
+5. Kruševac 196 6,3 
+ 
+
+@@PAGE 21@@
+ADDITIONAL OVERVIEW OF STATISTICAL DATA ON 
+FOREIGN NATIONALS 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+@@PAGE 22@@
+Live births in the Republic of Serbia in 2023, categorized by the nationality of 
+the mother and father (foreign nationals) 
+ 
+ 
+ 
+ 
+ 
+stat.gov.rs 
+ 
+ 
+ 
+ 
+ 
+Nationality of the 
+mother (residing in the 
+Republic of Serbia for 
+one year or longer) 
+Father’s nationality 
+Total 
+Belarus 
+Federation of Bosnia and 
+Herzegovina 
+PR China 
+Germany 
+Romania 
+Russian Federation 
+Turkey 
+UK of Great Britan and Northern 
+Ireland 
+Other non-European countries 
+Libya 
+Other 
+Total 234 3 3 44 4 3 123 4 3 15 9 23 
+North Macedonia 4 ‐ ‐ ‐ 1 ‐ ‐ 1 ‐ ‐ ‐ 2 
+Federation of Bosnia and 
+Herzegovina 
+3 ‐ 3 ‐ ‐ ‐ ‐ ‐ ‐ ‐ ‐ ‐ 
+PR China 45 ‐ ‐ 44 1 ‐ ‐ ‐ ‐ ‐ ‐ ‐ 
+Romania 3 ‐ ‐ ‐ ‐ 3 ‐ ‐ ‐ ‐ ‐ ‐ 
+Russian Federation 119 1 ‐ ‐ ‐ ‐ 117 ‐ ‐ ‐ ‐ 1 
+United States of 
+America 4 ‐ ‐ ‐ ‐ ‐ ‐ ‐ 1 
+ 
+‐ 3 
+Ukraine 7 ‐ ‐ ‐ ‐ ‐ 4 1 1  ‐ 1 
+Other non-European 
+countries 17 ‐ ‐ ‐ ‐ ‐ ‐ ‐ ‐ 15 ‐ 2 
+Libya 9 ‐ ‐ ‐ ‐ ‐ ‐ ‐ ‐ ‐ 9 ‐ 
+Other 23 2 ‐ ‐ 2 ‐ 2 2 1 ‐ ‐ 14 
+ 
+ 
+20 
+@@PAGE 23@@
+Immigration flows of foreign nationals in the Republic of Serbia and the European Union 
+ 
+Population structure by main age groups
+ 
+100 
+90 
+80
+ 
+ 
+22,3 
+ 
+ 
+21,1 
+1,4 
+4,5 
+70 
+60 
+50 
+63,3 
+40
+ 
+ 
+63,9 
+ 
+88,0 
+ 
+77,6 
+30 
+20 
+10 14,4 
+0 
+Serbian residents 
+(2023) 
+ 
+ 
+15,0 
+ 
+EU residents 
+(2022) 
+ 
+ 
+ 
+10,6 
+ Immigration of 
+foreign nationals in RS 
+(2023) 
+ 
+ 
+17,9 
+ 
+EU immigration 
+ (2022) 
+0–14 15–64 65 and more years 
+Source: Statistical Office of the Republic, Eurostat (The most recent available data for the EU is from 
+2022). 
+https://ec.europa.eu/eurostat/databrowser/view/demo_pjangroup/default/table?lang=en&cate- 
+gory=demo.demo_pop 
+https://ec.europa.eu/eurostat/databrowser/view/migr_imm1ctz custom_15527932/default/ 
+table?lang=en 
+ 
+ 
+ 
+ 
+  
+The estimated immigration flow of foreign nationals to the Republic of 
+Serbia in 2024 is 32,3531. 
+ 
+ 
+1 Based on the processed data as of March 10, 2025.
+ 
+21 
+ 
+✓  Immigration to the Republic of Serbia includes a higher proportion of 
+the working-age population (15–64) and a lower share of individuals 
+under 15 or over 65, compared to the trends seen in EU countries. 
+@@PAGE 24@@
+Stock of foreign nationals with approved residence (for one year or more) 
+or permanent settlement in the Republic of Serbia, presented by age as 
+of December 31, 2024.1 
+ 
+ 
+Total stock of foreign nationals granted residence in the Republic of Serbia (for 
+one year or longer) or holding permanent settlement status, by nationality, as of 
+December 31, 2024. 
+ 
+Total 101413 100% 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+1 Based on the processed data as of March 10, 2025.
+ 
+22 
+Russian Federation 53140 52,4 
+People’s Republic of China 12286 12,1 
+India 4574 4,5 
+Тurkey 4029 4,0 
+North Macedonia 1952 1,9 
+Ukraine 1472 1,5 
+Montenegro 1382 1,4 
+Germany 1254 1,2 
+Belarus 1159 1,1 
+Croatia 1146 1,1 
+Shri Lanka 1092 1,1 
+Other 17927 17,7 
+ 
+✓ According to preliminary results, the total stock of foreign nationals 
+granted residence in the Republic of Serbia (for one year or longer) or 
+holding permanent settlement status as of December 31, 2024, amounts 
+to 101,413. 
+✓ In terms of gender distribution, men make up 59.1%, while women 
+represent 40.9%. 
+✓ Approximately 60% of foreign nationals are within the age group of 25 
+to 45 years. 
+✓ Half of the foreign nationals are Russian citizens (52.4%), and one in ten 
+is a Chinese citizen (12.1%). 
+ 
+@@PAGE 25@@
+ 
+Total stock of foreign nationals granted residence in the Republic of Serbia (for one 
+year or longer) or holding permanent residence, by age as of December 31, 2024. 
+ 
+85 
+and more 
+80-84 
+ 
+75-79 
+ 
+70-74 
+ 
+65-69 
+ 
+60-64 
+ 
+55-59 
+ 
+50-54 
+ 
+45-49 
+ 
+40-44 
+ 
+35-39 
+ 
+30-34 
+ 
+25-29 
+ 
+20-24 
+ 
+15-19 
+ 
+10-14 
+ 
+5-9 
+ 
+0-4 
+247 
+ 
+304 
+ 
+615 
+ 
+1 013 
+ 
+1 392 
+ 
+1 959 
+ 
+3 298 
+ 
+5 473 
+ 
+7 880 
+ 
+11 798 
+ 
+17 063 
+ 
+17 316 
+ 
+14 173 
+ 
+6 122 
+ 
+2 823 
+ 
+3 574 
+ 
+4 080 
+ 
+2 283 
+ 
+23 
+@@PAGE 26@@
+ 
+ 
+ 
+ 
+ 
+ 
+Upcoming initiatives of the Statistical Office of the Republic 
+focused on developing research and ensuring the availability 
+of data on international migration. 
+✓ Development of a comprehensive methodology for immigration 
+statistics — encompassing both foreign nationals and citizens of the 
+Republic — through the integration of data from existing 
+administrative registers and records, with a focus on analyzing 
+“signs of life” within those datasets. 
+✓ Intensifying efforts to develop a methodology for researching 
+emigration from the Republic of Serbia.
+@@PAGE 27@@
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+stat.gov.rs 
+ 
+ 
+ 
+ 
+ 
+ 

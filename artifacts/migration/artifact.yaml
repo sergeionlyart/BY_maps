@@ -1,0 +1,164 @@
+# Проверяемый пакет INF-05 «Внутренняя и внешняя миграция».
+# Сборка: python -m etl.artifacts.build migration
+
+id: migration
+title: "Миграция в Беларуси: лестница село-райцентр-облцентр-Минск (1959-2026), сальдо районов и внешняя волна 2020+ в интервалах"
+version: "1.0.0"
+released: "2026-07-12"
+landing_url: "https://by-population-maps.vercel.app/research/migration"
+authors:
+  - "Проект «Население Беларуси, 1897-2026»"
+
+files:
+  - { path: README.md, role: docs }
+  - { path: CHANGELOG.md, role: docs }
+  - { path: AGENT.md, role: docs }
+  - { path: LIMITATIONS.md, role: docs }
+  - { path: PROVENANCE.md, role: docs }
+  - { path: CITATION.cff, role: docs }
+  - { path: LICENSE.md, role: docs }
+  - { path: sources/registry.csv, from: data/raw/migration/registry.csv, role: docs }
+  - { path: sources/registry_mirror.csv, from: data/raw/mirror/registry.csv, role: docs }
+  - { path: data/raw/migration/SOURCES.md, from: data/raw/migration/SOURCES.md, role: raw, license: "CC BY 4.0" }
+  - { path: data/raw/migration/belstat_arrivals_oblast_1990-1999.json, from: data/raw/migration/belstat_arrivals_oblast_1990-1999.json, role: raw, license: "открытые данные Белстата" }
+  - { path: data/raw/migration/belstat_arrivals_oblast_2000-2009.json, from: data/raw/migration/belstat_arrivals_oblast_2000-2009.json, role: raw, license: "открытые данные Белстата" }
+  - { path: data/raw/migration/belstat_arrivals_oblast_2010-2019.json, from: data/raw/migration/belstat_arrivals_oblast_2010-2019.json, role: raw, license: "открытые данные Белстата" }
+  - { path: data/raw/migration/belstat_arrivals_oblast_2024-2025.json, from: data/raw/migration/belstat_arrivals_oblast_2024-2025.json, role: raw, license: "открытые данные Белстата" }
+  - { path: data/raw/migration/belstat_arrivals_raion_1990-1999.json, from: data/raw/migration/belstat_arrivals_raion_1990-1999.json, role: raw, license: "открытые данные Белстата" }
+  - { path: data/raw/migration/belstat_arrivals_raion_2000-2009.json, from: data/raw/migration/belstat_arrivals_raion_2000-2009.json, role: raw, license: "открытые данные Белстата" }
+  - { path: data/raw/migration/belstat_arrivals_raion_2010-2019.json, from: data/raw/migration/belstat_arrivals_raion_2010-2019.json, role: raw, license: "открытые данные Белстата" }
+  - { path: data/raw/migration/belstat_arrivals_raion_2024-2025.json, from: data/raw/migration/belstat_arrivals_raion_2024-2025.json, role: raw, license: "открытые данные Белстата" }
+  - { path: data/raw/migration/belstat_cfg_10101300001.json, from: data/raw/migration/belstat_cfg_10101300001.json, role: raw, license: "открытые данные Белстата" }
+  - { path: data/raw/migration/belstat_cfg_10101300002.json, from: data/raw/migration/belstat_cfg_10101300002.json, role: raw, license: "открытые данные Белстата" }
+  - { path: data/raw/migration/belstat_cfg_10101300003.json, from: data/raw/migration/belstat_cfg_10101300003.json, role: raw, license: "открытые данные Белстата" }
+  - { path: data/raw/migration/belstat_departures_oblast_1990-1999.json, from: data/raw/migration/belstat_departures_oblast_1990-1999.json, role: raw, license: "открытые данные Белстата" }
+  - { path: data/raw/migration/belstat_departures_oblast_2000-2009.json, from: data/raw/migration/belstat_departures_oblast_2000-2009.json, role: raw, license: "открытые данные Белстата" }
+  - { path: data/raw/migration/belstat_departures_oblast_2010-2019.json, from: data/raw/migration/belstat_departures_oblast_2010-2019.json, role: raw, license: "открытые данные Белстата" }
+  - { path: data/raw/migration/belstat_departures_oblast_2024-2025.json, from: data/raw/migration/belstat_departures_oblast_2024-2025.json, role: raw, license: "открытые данные Белстата" }
+  - { path: data/raw/migration/belstat_departures_raion_1990-1999.json, from: data/raw/migration/belstat_departures_raion_1990-1999.json, role: raw, license: "открытые данные Белстата" }
+  - { path: data/raw/migration/belstat_departures_raion_2000-2009.json, from: data/raw/migration/belstat_departures_raion_2000-2009.json, role: raw, license: "открытые данные Белстата" }
+  - { path: data/raw/migration/belstat_departures_raion_2010-2019.json, from: data/raw/migration/belstat_departures_raion_2010-2019.json, role: raw, license: "открытые данные Белстата" }
+  - { path: data/raw/migration/belstat_departures_raion_2024-2025.json, from: data/raw/migration/belstat_departures_raion_2024-2025.json, role: raw, license: "открытые данные Белстата" }
+  - { path: data/raw/migration/belstat_indicator_catalog_full.json, from: data/raw/migration/belstat_indicator_catalog_full.json, role: raw, license: "открытые данные Белстата" }
+  - { path: data/raw/migration/belstat_migration_dims.json, from: data/raw/migration/belstat_migration_dims.json, role: raw, license: "открытые данные Белстата" }
+  - { path: data/raw/migration/belstat_net_city_1994-1999.json, from: data/raw/migration/belstat_net_city_1994-1999.json, role: raw, license: "открытые данные Белстата" }
+  - { path: data/raw/migration/belstat_net_city_2000-2009.json, from: data/raw/migration/belstat_net_city_2000-2009.json, role: raw, license: "открытые данные Белстата" }
+  - { path: data/raw/migration/belstat_net_city_2010-2019.json, from: data/raw/migration/belstat_net_city_2010-2019.json, role: raw, license: "открытые данные Белстата" }
+  - { path: data/raw/migration/belstat_net_city_2024-2025.json, from: data/raw/migration/belstat_net_city_2024-2025.json, role: raw, license: "открытые данные Белстата" }
+  - { path: data/raw/migration/belstat_net_oblast_1990-1999.json, from: data/raw/migration/belstat_net_oblast_1990-1999.json, role: raw, license: "открытые данные Белстата" }
+  - { path: data/raw/migration/belstat_net_oblast_2000-2009.json, from: data/raw/migration/belstat_net_oblast_2000-2009.json, role: raw, license: "открытые данные Белстата" }
+  - { path: data/raw/migration/belstat_net_oblast_2010-2019.json, from: data/raw/migration/belstat_net_oblast_2010-2019.json, role: raw, license: "открытые данные Белстата" }
+  - { path: data/raw/migration/belstat_net_oblast_2024-2025.json, from: data/raw/migration/belstat_net_oblast_2024-2025.json, role: raw, license: "открытые данные Белстата" }
+  - { path: data/raw/migration/belstat_net_raion_1990-1999.json, from: data/raw/migration/belstat_net_raion_1990-1999.json, role: raw, license: "открытые данные Белстата" }
+  - { path: data/raw/migration/belstat_net_raion_2000-2009.json, from: data/raw/migration/belstat_net_raion_2000-2009.json, role: raw, license: "открытые данные Белстата" }
+  - { path: data/raw/migration/belstat_net_raion_2010-2019.json, from: data/raw/migration/belstat_net_raion_2010-2019.json, role: raw, license: "открытые данные Белстата" }
+  - { path: data/raw/migration/belstat_net_raion_2024-2025.json, from: data/raw/migration/belstat_net_raion_2024-2025.json, role: raw, license: "открытые данные Белстата" }
+  - { path: data/raw/migration/belstat_request_log.json, from: data/raw/migration/belstat_request_log.json, role: raw, license: "открытые данные Белстата" }
+  - { path: data/raw/migration/eurostat_migr_resfirst_BY.json, from: data/raw/migration/eurostat_migr_resfirst_BY.json, role: raw, license: "Eurostat" }
+  - { path: data/raw/migration/eurostat_migr_resvalid_BY.json, from: data/raw/migration/eurostat_migr_resvalid_BY.json, role: raw, license: "Eurostat" }
+  - { path: data/raw/migration/eurostat_request_urls.txt, from: data/raw/migration/eurostat_request_urls.txt, role: raw, license: "Eurostat" }
+  - { path: data/raw/migration/fetch_belstat_migration.py, from: data/raw/migration/fetch_belstat_migration.py, role: raw, license: "CC BY 4.0" }
+  - { path: data/raw/migration/pap_korshunov_webfetch_extract.md, from: data/raw/migration/pap_korshunov_webfetch_extract.md, role: raw, license: "снапшот в исследовательских целях" }
+  - { path: data/raw/migration/serbia_iom_immigration_2025_wayback.pdf, from: data/raw/migration/serbia_iom_immigration_2025_wayback.pdf, role: raw, license: "снапшот в исследовательских целях" }
+  - { path: data/raw/migration/serbia_iom_text.txt, from: data/raw/migration/serbia_iom_text.txt, role: raw, license: "снапшот в исследовательских целях" }
+  - { path: data/raw/migration/snap_belsat_lithuania_48k.html, from: data/raw/migration/snap_belsat_lithuania_48k.html, role: raw, license: "снапшот в исследовательских целях" }
+  - { path: data/raw/migration/snap_demoscope_1071_barom02.html, from: data/raw/migration/snap_demoscope_1071_barom02.html, role: raw, license: "снапшот в исследовательских целях" }
+  - { path: data/raw/migration/snap_dhs_yearbook2024_table3.html, from: data/raw/migration/snap_dhs_yearbook2024_table3.html, role: raw, license: "снапшот в исследовательских целях" }
+  - { path: data/raw/migration/snap_dron_korshunov_mirror.html, from: data/raw/migration/snap_dron_korshunov_mirror.html, role: raw, license: "снапшот в исследовательских целях" }
+  - { path: data/raw/migration/snap_nashaniva_eurostat_386k.html, from: data/raw/migration/snap_nashaniva_eurostat_386k.html, role: raw, license: "снапшот в исследовательских целях" }
+  - { path: data/raw/migration/snap_nashaniva_georgia_census_4473.html, from: data/raw/migration/snap_nashaniva_georgia_census_4473.html, role: raw, license: "снапшот в исследовательских целях" }
+  - { path: data/raw/migration/snap_pap_korshunov_500-600k.html, from: data/raw/migration/snap_pap_korshunov_500-600k.html, role: raw, license: "снапшот в исследовательских целях" }
+  - { path: data/raw/migration/snap_racyja_poland_137k.html, from: data/raw/migration/snap_racyja_poland_137k.html, role: raw, license: "снапшот в исследовательских целях" }
+  - { path: data/raw/migration/snap_udf_georgia_vnzh_3738_wayback.html, from: data/raw/migration/snap_udf_georgia_vnzh_3738_wayback.html, role: raw, license: "снапшот в исследовательских целях" }
+  - { path: data/raw/migration/snap_zerkalo_350k_minsk.html, from: data/raw/migration/snap_zerkalo_350k_minsk.html, role: raw, license: "снапшот в исследовательских целях" }
+  - { path: data/raw/migration/snap_zerkalo_beroc_100-500k.html, from: data/raw/migration/snap_zerkalo_beroc_100-500k.html, role: raw, license: "снапшот в исследовательских целях" }
+  # зеркальная статистика WP-F3 (входы outflow_interval)
+  - { path: data/raw/mirror/eurostat_migr_resfirst_BY_2015-2024.json, from: data/raw/mirror/eurostat_migr_resfirst_BY_2015-2024.json, role: raw, license: "Eurostat" }
+  - { path: data/raw/mirror/eurostat_migr_resfirst_BY_2019_duration.json, from: data/raw/mirror/eurostat_migr_resfirst_BY_2019_duration.json, role: raw, license: "Eurostat" }
+  - { path: data/raw/mirror/eurostat_migr_resvalid_BY_2019-2024.json, from: data/raw/mirror/eurostat_migr_resvalid_BY_2019-2024.json, role: raw, license: "Eurostat" }
+  # межобластная матрица переписи-2019 (куб F602, WP-F1) и ряды населения
+  - { path: data/curated/migration_internal.csv, from: data/curated/migration_internal.csv, role: intermediate, license: "CC BY 4.0" }
+  - { path: web/public/data/data.json, from: web/public/data/data.json, role: intermediate, license: "CC BY 4.0" }
+  # код
+  - { path: etl/__init__.py, from: artifacts/migration/shims/etl_init.py, role: code }
+  - { path: etl/common.py, from: artifacts/migration/shims/common.py, role: code }
+  - { path: etl/registry.py, from: etl/registry.py, role: code }
+  - { path: etl/census_age.py, from: etl/census_age.py, role: code }
+  - { path: etl/wages.py, from: etl/wages.py, role: code }
+  - { path: etl/mirror.py, from: etl/mirror.py, role: code }
+  - { path: etl/migration.py, from: etl/migration.py, role: code }
+  - { path: params/assumptions.yaml, role: params }
+  - { path: code/run.sh, role: code }
+  - { path: code/verify.py, role: code }
+  - { path: code/requirements.lock, role: code }
+  - { path: checks/tests/test_invariants.py, role: code }
+  # итоговые данные
+  - { path: data/final/computed_results.json, role: final, license: "CC BY 4.0" }
+  - { path: web/public/data/migration.json, from: web/public/data/migration.json, role: final, license: "CC BY 4.0" }
+
+sources:
+  - id: dataportal_migration
+    url: "https://dataportal.belstat.gov.by/osids-public-api/indicator/indicatorValuesSearch"
+    description: "Индикаторы 10101300001/2/3: прибывшие/выбывшие/сальдо, 128 территорий, 1990-2019 + 2024-2025 (2020-2023 не публиковались); тела запросов - belstat_request_log.json"
+    license: "открытые данные Белстата"
+    accessed: "2026-07-12"
+  - id: eurostat_permits
+    url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/migr_resvalid"
+    description: "ВНЖ граждан BY: сток (migr_resvalid) и первичные (migr_resfirst), citizen=BY, duration=TOTAL, reason=TOTAL, unit=PER, 31 geo, 2015-2025"
+    license: "Eurostat, свободное переиспользование с указанием источника"
+    accessed: "2026-07-12"
+  - id: point_estimates
+    url: "см. sources/registry.csv (zerkalo.io, pap.pl, nashaniva.com, en.belsat.eu, DHS, Демоскоп, IOM)"
+    description: "Точечные оценки волны 2020+ и не-ЕС направления; каждый снапшот завендорен с sha256"
+    license: "цитирование в исследовательских целях"
+    accessed: "2026-07-12"
+  - id: census_f602
+    url: "https://census.belstat.gov.by (OLAP, куб F602)"
+    description: "Межобластная матрица накопленной миграции переписи-2019 (WP-F1 проекта)"
+    license: "открытые данные Белстата"
+    accessed: "2026-07-11"
+
+entrypoints:
+  reproduce: "code/run.sh"
+  verify: "python3 checks/tests/test_invariants.py"
+
+environment:
+  python: ">=3.10"
+  lock: "code/requirements.lock"
+  seed: null   # расчёт детерминирован
+
+expected_results:
+  - { metric: raion_series, value: 128, tolerance: 0,
+      description: "территорий с рядами сальдо (118 районов + 10 городов обл. подчинения)" }
+  - { metric: raion_sum_2019, value: 4613, tolerance: 0,
+      description: "сумма сальдо 128 территорий за 2019 (без Минска: у столицы нет районного уровня)" }
+  - { metric: intl_official_2019, value: 13870, tolerance: 0,
+      description: "официальное международное сальдо РБ 2019 - положительное (контраст с зеркалом)" }
+  - { metric: eu_stock_2019, value: 133889, tolerance: 0,
+      description: "действующие ВНЖ граждан BY в ЕС-27 на 31.12.2019 (Eurostat)" }
+  - { metric: eu_stock_2024, value: 386834, tolerance: 0,
+      description: "то же на 31.12.2024: рост в 2,9 раза - жёсткий пол внешней волны" }
+  - { metric: eu_first_2022, value: 311516, tolerance: 0,
+      description: "пик первичных ВНЖ ЕС-27 (2022)" }
+  - { metric: pl_stock_latest, value: 251362, tolerance: 0,
+      description: "Польша: сток ВНЖ 2024 - крупнейшее направление" }
+  - { metric: matrix_total, value: 1459418, tolerance: 0,
+      description: "межобластных переходов в накопленной матрице F602 переписи-2019" }
+  - { metric: top_flow, value: 310081, tolerance: 0,
+      description: "крупнейший поток: Минская область -> Минск" }
+  - { metric: net_minsk, value: 528899, tolerance: 0,
+      description: "накопленное нетто Минска - единственный магнит; остальные 6 регионов в минусе" }
+  - { metric: interval_low, value: 178285, tolerance: 0,
+      description: "нижняя граница неучтённого оттока 2020-2026 (WP-F3, импорт)" }
+  - { metric: interval_mid, value: 269955, tolerance: 0,
+      description: "центральная оценка WP-F3" }
+  - { metric: interval_high, value: 415883, tolerance: 0,
+      description: "верхняя граница WP-F3" }
+  - { metric: rural_1959, value: 5524451, tolerance: 0,
+      description: "село в 1959: 5,52 млн" }
+  - { metric: rural_2026, value: 1911181, tolerance: 0,
+      description: "село в 2026: 1,91 млн (-65% за 67 лет) - основание лестницы" }
+  - { metric: minsk_2026, value: 1995091, tolerance: 0,
+      description: "Минск в 2026 (х3,9 к 1959) - вершина внутренней лестницы" }
+  - { metric: rate_minski_1519, value: 35.11, tolerance: 0.005,
+      description: "Минский район: +35 промилле в год (2015-2019) - максимум страны" }

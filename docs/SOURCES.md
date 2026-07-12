@@ -106,6 +106,20 @@ VSAT, ГПК РБ, Minsk Dialogue (снапшоты в `data/raw/border/`): 15
 `data/curated/border_crossings.csv`, `data/curated/travel_times.csv`,
 `web/public/data/access.json`.
 
+## Этап 7: INF-05 «Миграция»
+
+Реестр — [`data/raw/migration/registry.csv`](../data/raw/migration/registry.csv)
+(53 файла, дата обращения 2026-07-12). Дата-портал: индикаторы
+10101300001/2/3 (прибывшие/выбывшие/сальдо; 128 территорий depth-2 +
+194 города depth-3; **2020–2023 не публиковались**, районы с 1994;
+поиск по каталогу — indicatorSearch отдаёт все 935 индикаторов).
+Eurostat migr_resvalid/resfirst: **unit=PER** (не NR!), reason=TOTAL
+обязателен; 31 geo, 2015–2025. Точечные оценки волны со снапшотами
+(BEROC 100–500 тыс., ЦНИ 500–600 тыс., «350 тыс.» из Минска, DHS,
+Демоскоп, IOM Сербия); pap.pl за Incapsula — через зеркало; NB: цифра
+137,7 тыс. по Польше — в belsat, а не в racyja. Продукт:
+`web/public/data/migration.json`.
+
 ## Проверочные константы (в тестах)
 
 Официальные доли городского населения по переписям — 1999: 69,3%, 2009: 74,5%,

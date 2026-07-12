@@ -263,6 +263,11 @@ export default function TerritoryCard({ data, forecast, scenario = 'base', jumpo
             INF-04: доступность района
           </a>
         )}
+        {t.level === 'raion' && (
+          <a className="btn" href={`/research/migration?sel=${t.id}`}>
+            INF-05: миграция района
+          </a>
+        )}
         {inChernobyl && (
           <a className="btn" href={`/research/chernobyl?sel=${t.id}`}>
             INF-07: чернобыльский след

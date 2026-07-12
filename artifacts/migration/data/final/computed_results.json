@@ -1,0 +1,70 @@
+[
+ {
+  "metric": "eu_first_2022",
+  "value": 311516
+ },
+ {
+  "metric": "eu_stock_2019",
+  "value": 133889
+ },
+ {
+  "metric": "eu_stock_2024",
+  "value": 386834
+ },
+ {
+  "metric": "interval_high",
+  "value": 415883
+ },
+ {
+  "metric": "interval_low",
+  "value": 178285
+ },
+ {
+  "metric": "interval_mid",
+  "value": 269955
+ },
+ {
+  "metric": "intl_official_2019",
+  "value": 13870
+ },
+ {
+  "metric": "matrix_total",
+  "value": 1459418
+ },
+ {
+  "metric": "minsk_2026",
+  "value": 1995091
+ },
+ {
+  "metric": "net_minsk",
+  "value": 528899
+ },
+ {
+  "metric": "pl_stock_latest",
+  "value": 251362
+ },
+ {
+  "metric": "raion_series",
+  "value": 128
+ },
+ {
+  "metric": "raion_sum_2019",
+  "value": 4613
+ },
+ {
+  "metric": "rate_minski_1519",
+  "value": 35.11
+ },
+ {
+  "metric": "rural_1959",
+  "value": 5524451
+ },
+ {
+  "metric": "rural_2026",
+  "value": 1911181
+ },
+ {
+  "metric": "top_flow",
+  "value": 310081
+ }
+]

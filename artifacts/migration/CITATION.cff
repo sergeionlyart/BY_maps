@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "Цитируйте конкретную версию пакета"
+title: "Миграция в Беларуси: лестница расселения 1959–2026, сальдо районов и внешняя волна 2020+ в интервалах (проверяемый пакет)"
+type: dataset
+version: 1.0.0
+date-released: "2026-07-12"
+authors:
+  - name: "Проект «Население Беларуси, 1897–2026»"
+url: "https://by-population-maps.vercel.app/research/migration"
+repository-code: "https://github.com/sergeionlyart/BY_maps"
+identifiers:
+  - type: other
+    value: "artifact-migration-v1.0.0"
+    description: "git-тег релиза пакета"
+license: CC-BY-4.0

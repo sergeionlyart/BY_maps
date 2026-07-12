@@ -59,8 +59,9 @@ export const RESEARCH: ResearchEntry[] = [
     title: 'Внутренняя и внешняя миграция',
     question:
       'Как устроена «лестница» село → райцентр → облцентр → Минск → зарубеж; каковы масштабы и география волны 2020+?',
-    status: 'planned',
+    status: 'published',
     stage: 7,
+    artifact: { file: 'by-maps-migration-v1.0.0.zip', version: '1.0.0', sizeKb: 2401 },
   },
   {
     slug: 'monotowns',
