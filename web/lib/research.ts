@@ -88,8 +88,9 @@ export const RESEARCH: ResearchEntry[] = [
     title: 'Ночные огни против официальной статистики',
     question:
       'Где динамика ночной светимости (VIIRS) расходится с официальной динамикой населения — кандидаты на недоучтённый отток?',
-    status: 'planned',
+    status: 'published',
     stage: 7,
+    artifact: { file: 'by-maps-nightlights-v1.0.0.zip', version: '1.0.0', sizeKb: 476 },
   },
   {
     slug: 'shocks',

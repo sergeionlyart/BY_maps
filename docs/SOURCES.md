@@ -120,6 +120,24 @@ Eurostat migr_resvalid/resfirst: **unit=PER** (не NR!), reason=TOTAL
 137,7 тыс. по Польше — в belsat, а не в racyja. Продукт:
 `web/public/data/migration.json`.
 
+## Этап 7: INF-08 «Ночные огни»
+
+Реестр — [`data/raw/nightlights/registry.csv`](../data/raw/nightlights/registry.csv).
+Источник — годовые композиты VIIRS **average_masked** (EOG VNL 2.1/2.2,
+Colorado School of Mines / Payne Institute) в 100-м обработке WorldPop
+для Беларуси (вариант `fvf` — без газовых факелов/вулканов),
+`data.worldpop.org/GIS/Covariates/Global_2015_2030/BLR/VIIRS/v1/fvf/`,
+2015–2023 (2024–2025 ещё не изданы). Растры ~30 МБ/год не вендорятся
+(URL+sha256 в реестре); вендорится зональная сумма
+`data/raw/nightlights/zonal_light.csv` (извлечение — `etl/nightlights_extract.py`,
+rasterio). ЛОВУШКА: смоделированный «NPP-VIIRS-like» (Harvard Dataverse
+doi:10.7910/DVN/YGIVCD) исходно взяли за анонимную доступность, но его
+годовые слои по Беларуси НЕФИЗИЧНО нестабильны (страновая сумма 294→143→89
+за 2022–2024, районы гасли в ноль) — отвергнут; канонический EOG VNL
+закрыт токеном, поэтому взята открытая обработка WorldPop. Доли-в-стране
+гасят версионный скачок VNL 2.1→2.2 (2022). Продукт:
+`web/public/data/nightlights.json`.
+
 ## Проверочные константы (в тестах)
 
 Официальные доли городского населения по переписям — 1999: 69,3%, 2009: 74,5%,

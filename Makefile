@@ -26,8 +26,9 @@ stage6:           ## INF-03 + INF-04: wages.json, access.json
 	$(PY) -m etl.wages
 	$(PY) -m etl.access
 
-stage7:           ## INF-05: migration.json
+stage7:           ## INF-05 + INF-08: migration.json, nightlights.json
 	$(PY) -m etl.migration
+	$(PY) -m etl.nightlights
 
 test:             ## все проверки данных
 	$(PY) -m pytest etl/tests/ -q

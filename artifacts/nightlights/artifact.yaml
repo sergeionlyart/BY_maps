@@ -1,0 +1,82 @@
+# Проверяемый пакет INF-08 «Ночные огни против официальной статистики».
+# Сборка: python -m etl.artifacts.build nightlights
+
+id: nightlights
+title: "Ночные огни против официальной статистики: зональная светимость районов Беларуси и индекс расхождения свет/население, 2015-2023"
+version: "1.0.0"
+released: "2026-07-12"
+landing_url: "https://by-population-maps.vercel.app/research/nightlights"
+authors:
+  - "Проект «Население Беларуси, 1897-2026»"
+
+files:
+  - { path: README.md, role: docs }
+  - { path: CHANGELOG.md, role: docs }
+  - { path: AGENT.md, role: docs }
+  - { path: LIMITATIONS.md, role: docs }
+  - { path: PROVENANCE.md, role: docs }
+  - { path: CITATION.cff, role: docs }
+  - { path: LICENSE.md, role: docs }
+  - { path: sources/registry.csv, from: data/raw/nightlights/registry.csv, role: docs }
+  # сырьё: зональная светимость (извлечена из композитов VIIRS)
+  - { path: data/raw/nightlights/zonal_light.csv, from: data/raw/nightlights/zonal_light.csv, role: raw, license: "CC BY 4.0 (WorldPop/EOG VNL, производная)" }
+  # ряды населения и геометрия зон
+  - { path: web/public/data/data.json, from: web/public/data/data.json, role: intermediate, license: "CC BY 4.0" }
+  - { path: web/public/data/geo/adm2.geojson, from: web/public/data/geo/adm2.geojson, role: intermediate, license: "ODbL/CC BY (geoBoundaries/OSM)" }
+  - { path: web/public/data/geo/adm1.geojson, from: web/public/data/geo/adm1.geojson, role: intermediate, license: "ODbL/CC BY (geoBoundaries/OSM)" }
+  # код
+  - { path: etl/__init__.py, from: artifacts/nightlights/shims/etl_init.py, role: code }
+  - { path: etl/common.py, from: artifacts/nightlights/shims/common.py, role: code }
+  - { path: etl/nightlights.py, from: etl/nightlights.py, role: code }
+  - { path: etl/nightlights_extract.py, from: etl/nightlights_extract.py, role: code }
+  - { path: params/assumptions.yaml, role: params }
+  - { path: code/run.sh, role: code }
+  - { path: code/verify.py, role: code }
+  - { path: code/requirements.lock, role: code }
+  - { path: checks/tests/test_invariants.py, role: code }
+  # итоговые данные
+  - { path: data/final/computed_results.json, role: final, license: "CC BY 4.0" }
+  - { path: web/public/data/nightlights.json, from: web/public/data/nightlights.json, role: final, license: "CC BY 4.0" }
+
+sources:
+  - id: eog_vnl
+    url: "https://eogdata.mines.edu/products/vnl/"
+    description: "EOG VNL 2.1/2.2 average_masked (Colorado School of Mines / Payne Institute) - подлинный годовой композит VIIRS DNB; сам EOG за токеном, используется открытая обработка WorldPop"
+    license: "EOG VNL, свободное использование с цитированием"
+    accessed: "2026-07-12"
+  - id: worldpop_viirs
+    url: "https://data.worldpop.org/GIS/Covariates/Global_2015_2030/BLR/VIIRS/v1/fvf/"
+    description: "WorldPop: VNL average_masked, вариант fvf, 100 м, обрезано по Беларуси, 2015-2023; URL и sha256 каждого года - sources/registry.csv (растры ~30 МБ/год не вендорятся)"
+    license: "CC BY 4.0 (WorldPop)"
+    accessed: "2026-07-12"
+
+entrypoints:
+  reproduce: "code/run.sh"
+  verify: "python3 checks/tests/test_invariants.py"
+
+environment:
+  python: ">=3.10"
+  lock: "code/requirements.lock"
+  seed: null   # расчёт детерминирован
+
+expected_results:
+  - { metric: n_zones, value: 119, tolerance: 0,
+      description: "зон: 118 районов + Минск (adm1; в adm2 он «дыра» Минского района)" }
+  - { metric: n_with_div, value: 119, tolerance: 0,
+      description: "зон с посчитанным индексом (полный трендовый ряд, без нулевых лет)" }
+  - { metric: div_minsk, value: 0.0313, tolerance: 0.001,
+      description: "Минск: индекс ≈ 0 - свет столицы держится вровень с населением" }
+  - { metric: div_zhodzina, value: -0.5802, tolerance: 0.001,
+      description: "Смолевичский район (Жодино, БелАЗ; r-smalavicki): доля света ×0,55 при доле населения ×0,99 - крупнейшее надёжное расхождение (индустриальный)" }
+  - { metric: lr_zhodzina, value: 0.5547, tolerance: 0.001,
+      description: "отношение доли света Смолевичского района к тренду" }
+  - { metric: div_barysau, value: -0.2631, tolerance: 0.001,
+      description: "Борисовский район: доля света ×0,78 при доле населения ×1,01" }
+  - { metric: div_homiel, value: -0.2157, tolerance: 0.001,
+      description: "Гомельский район: доля света ×0,80 при доле населения ×1,00" }
+  - { metric: div_orsha, value: -0.2011, tolerance: 0.001,
+      description: "Оршанский район: доля света ×0,83" }
+  - { metric: nat_light_2015, value: 6039471.4, tolerance: 1.0,
+      description: "национальная сумма светимости 2015 (порог > 1 нВт), нВт·пиксели" }
+  - { metric: nat_light_2023, value: 9227688.0, tolerance: 1.0,
+      description: "то же 2023: рост уровня - в основном версия VNL 2.2, поэтому используются ДОЛИ, а не абсолют" }

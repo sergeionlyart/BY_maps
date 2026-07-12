@@ -1,0 +1,42 @@
+[
+ {
+  "metric": "div_barysau",
+  "value": -0.2631
+ },
+ {
+  "metric": "div_homiel",
+  "value": -0.2157
+ },
+ {
+  "metric": "div_minsk",
+  "value": 0.0313
+ },
+ {
+  "metric": "div_orsha",
+  "value": -0.2011
+ },
+ {
+  "metric": "div_zhodzina",
+  "value": -0.5802
+ },
+ {
+  "metric": "lr_zhodzina",
+  "value": 0.5547
+ },
+ {
+  "metric": "n_with_div",
+  "value": 119
+ },
+ {
+  "metric": "n_zones",
+  "value": 119
+ },
+ {
+  "metric": "nat_light_2015",
+  "value": 6039471.4
+ },
+ {
+  "metric": "nat_light_2023",
+  "value": 9227688.0
+ }
+]
