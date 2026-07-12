@@ -1,8 +1,11 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import MonotownsView from '@/components/MonotownsView';
+import AuthorCard from '@/components/AuthorCard';
+import { authors } from '@/lib/seo';
 
 export const metadata: Metadata = {
+  authors,
   title: 'Моногорода и градообразующие предприятия — Население Беларуси',
   description:
     'Реестр 49 белорусских моногородов (город↔предприятие) с санкционной экспозицией, типология по отраслям и matched-comparison траекторий с обычными городами того же размера.',
@@ -30,6 +33,7 @@ export default function MonotownsPage() {
         показывает, кто наиболее уязвим при остановке своего предприятия.
       </p>
       <MonotownsView />
+      <AuthorCard variant="compact" lang="ru" />
     </div>
   );
 }

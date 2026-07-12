@@ -8,10 +8,19 @@
   --grid: #e1e0d9;
   --baseline: #c3c2b7;
   --border: rgba(11, 11, 11, 0.1);
-  --accent: #2a78d6;
+  --accent: #2266bd;          /* синий: данные/инструмент (AA 5.4:1 текст на --page) */
   --map-bg: #eef0ee;
   --map-outline: #b9b8b0;
   --hist-border: #7a4a20;
+  /* релиз 1.2 — смысловые акценты (значения выверены контраст-чекером AA) */
+  --accent-2: #9a5220;        /* медный: человек/автор */
+  --pos: #1c7a40;             /* рост / оптимистический сценарий */
+  --neg: #b23c30;             /* убыль / негативный сценарий */
+  --viz-urban: #0f8a72;       /* бирюзовая линия городского населения (≠ --pos) */
+  --chip-data: #2064bb;
+  --chip-calc: #0c7173;
+  --chip-model: #6a4cbf;
+  --chip-interp: #8a5a12;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -29,6 +38,15 @@
     --map-bg: #161717;
     --map-outline: #3a3a37;
     --hist-border: #c98a4b;
+    /* релиз 1.2 — светлые варианты на тёмном фоне (AA проверено) */
+    --accent-2: #d78f57;
+    --pos: #4dbd6e;
+    --neg: #e07a68;
+    --viz-urban: #34c9a0;
+    --chip-data: #5b9fe8;
+    --chip-calc: #3fb3b5;
+    --chip-model: #a48ae0;
+    --chip-interp: #d9a04a;
   }
 }
 
@@ -351,12 +369,8 @@ select {
 .stat-tile .st-label { font-size: 11px; color: var(--muted); }
 .stat-tile .st-value { font-size: 17px; font-weight: 650; margin-top: 2px; }
 .stat-tile .st-delta { font-size: 11.5px; margin-top: 2px; }
-.st-delta.up { color: #006300; }
-.st-delta.down { color: #d03b3b; }
-@media (prefers-color-scheme: dark) {
-  .st-delta.up { color: #0ca30c; }
-  .st-delta.down { color: #e66767; }
-}
+.st-delta.up { color: var(--pos); }
+.st-delta.down { color: var(--neg); }
 
 .prob-panel {
   margin-top: 8px;
@@ -437,12 +451,8 @@ select {
 .zone-table th, .zone-table td { text-align: left; padding: 5px 8px; border-bottom: 1px solid var(--border); white-space: nowrap; }
 .zone-table th { color: var(--muted); font-weight: 600; font-size: 11.5px; }
 .zone-table tr.sel, .zone-table tbody tr:hover { background: var(--surface-2); }
-.zone-table td.neg { color: #d03b3b; }
-.zone-table td.pos { color: #006300; }
-@media (prefers-color-scheme: dark) {
-  .zone-table td.neg { color: #e66767; }
-  .zone-table td.pos { color: #0ca30c; }
-}
+.zone-table td.neg { color: var(--neg); }
+.zone-table td.pos { color: var(--pos); }
 
 .compare-list { display: flex; flex-direction: column; gap: 6px; margin-bottom: 10px; }
 .compare-item {
@@ -552,14 +562,16 @@ select {
   padding: 13px 15px;
   text-decoration: none;
   color: var(--ink);
+  transition: box-shadow 120ms ease, border-color 120ms ease;
 }
-a.card:hover { border-color: var(--accent); }
+.card:hover { border-color: var(--accent); box-shadow: 0 6px 18px rgba(11, 11, 11, 0.10); }
 .card.planned { opacity: 0.72; }
 .card-code { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
 .card-title { font-weight: 650; font-size: 15px; margin: 4px 0 4px; }
 .card p { margin: 4px 0; font-size: 13px; color: var(--ink-2); line-height: 1.45; }
 .card-foot { margin-top: 8px; font-size: 12.5px; color: var(--accent); }
 .card-foot a { color: var(--accent); }
+.card-ver { color: var(--muted); }  /* A-5: версия пакета — нейтральная, не конкурирует со ссылкой */
 
 .grid-2 {
   display: grid;
@@ -720,13 +732,15 @@ a.card:hover { border-color: var(--accent); }
 }
 
 /* плашки-«чипы»: [Данные] / [Расчёт] / [Модель] / [Интерпретация] */
+/* релиз 1.2 (A-4): плашки-чипы — цветной текст+точка+рамка, фон 10%-тон */
 .chip {
+  --chip-c: var(--accent);
   margin: 14px 0;
   padding: 11px 14px 11px 15px;
   border-radius: 10px;
   border: 1px solid var(--border);
-  border-left: 3px solid var(--accent);
-  background: var(--surface-1);
+  border-left: 3px solid var(--chip-c);
+  background: color-mix(in srgb, var(--chip-c) 10%, var(--surface-1));
   font-size: 15px;
   line-height: 1.6;
 }
@@ -737,19 +751,21 @@ a.card:hover { border-color: var(--accent); }
   text-transform: uppercase;
   letter-spacing: 0.04em;
   margin-right: 8px;
-  padding: 1px 7px;
-  border-radius: 6px;
-  color: #fff;
-  vertical-align: 1.5px;
+  color: var(--chip-c);
 }
-.chip-data   { border-left-color: #2a78d6; }
-.chip-data   .chip-tag { background: #2a78d6; }
-.chip-calc   { border-left-color: #1a9b7c; }
-.chip-calc   .chip-tag { background: #1a9b7c; }
-.chip-model  { border-left-color: #7a5cc7; }
-.chip-model  .chip-tag { background: #7a5cc7; }
-.chip-interp { border-left-color: #c98a2b; }
-.chip-interp .chip-tag { background: #c98a2b; }
+.chip-tag::before {
+  content: '';
+  display: inline-block;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  margin-right: 6px;
+  vertical-align: 1px;
+}
+.chip-data   { --chip-c: var(--chip-data); }
+.chip-calc   { --chip-c: var(--chip-calc); }
+.chip-model  { --chip-c: var(--chip-model); }
+.chip-interp { --chip-c: var(--chip-interp); }
 .content blockquote {
   margin: 14px 0; padding: 4px 14px; border-left: 3px solid var(--border);
   color: var(--ink-2);
@@ -1022,4 +1038,158 @@ body.map-mode { overflow: hidden; }
 @media (min-width: 981px) {
   .land-title { font-size: 38px; }
   .land-lead { font-size: 18px; }
+}
+
+/* ============================================================================
+   Релиз 1.2 — цветовые акценты (A-2) + личный бренд (B-1..B-5)
+   ========================================================================== */
+
+/* --- B-4: строка автора в подвале --- */
+.footer-author { font-size: 13px; margin-bottom: 8px; }
+.footer-author a { color: var(--ink-2); }
+/* имя автора — единственное медное в футере (специфичнее правила выше) */
+.footer-author a.footer-author-name { color: var(--accent-2); font-weight: 600; text-decoration: none; }
+.footer-author a.footer-author-name:hover { text-decoration: underline; }
+
+/* --- аватар (фото или инициалы на медном) --- */
+.avatar {
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  flex: none;
+  border: 1px solid var(--border);
+}
+.avatar-initials {
+  background: var(--accent-2);
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border: none;
+}
+
+/* --- AuthorCard (B-1/B-5): медная кромка слева --- */
+.author-card {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent-2);
+  border-radius: 12px;
+  background: var(--surface-1);
+  padding: 16px 18px;
+  margin: 24px 0;
+}
+.author-card .ac-body { flex: 1; min-width: 0; }
+.author-card .ac-name { font-weight: 700; font-size: 17px; }
+.author-card .ac-role { color: var(--muted); font-size: 13px; margin-top: 1px; }
+.author-card .ac-cta { margin: 10px 0 12px; font-size: 15px; line-height: 1.55; color: var(--ink-2); }
+.author-card .ac-line { margin: 0 0 10px; font-size: 14px; line-height: 1.5; color: var(--ink-2); }
+.author-card .ac-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.author-card .ac-btn { min-height: 40px; display: inline-flex; align-items: center; }
+/* CTA автора/человека — медные, не синие */
+.author-card .btn.primary { background: var(--accent-2); border-color: transparent; color: #fff; }
+.author-callout .ac-callout-title { font-weight: 700; font-size: 15px; color: var(--accent-2); }
+.author-callout .ac-callout-text { margin: 6px 0 12px; font-size: 15px; line-height: 1.55; color: var(--ink-2); }
+
+/* A-3: активная кнопка сценария красится цветом сценария (класс, не инлайн —
+   чтобы текст был темой-зависимым для AA в тёмной теме) */
+.seg button.scn.on { border-color: transparent; color: #fff; }
+.seg button.scn-optimistic.on { background: var(--pos); }
+.seg button.scn-base.on { background: var(--accent); }
+.seg button.scn-negative.on { background: var(--neg); }
+
+/* --- A-2: хиро-лендинг — киккер + контур страны фоном --- */
+.land-hero { position: relative; overflow: hidden; }
+.land-hero > * { position: relative; z-index: 1; }
+.land-hero-outline {
+  position: absolute;
+  z-index: 0;
+  right: -4%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: min(52%, 420px);
+  height: auto;
+  color: var(--ink);
+  opacity: 0.05;
+  pointer-events: none;
+}
+.land-kicker {
+  color: var(--accent-2);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0 0 8px;
+}
+
+/* --- A-2: сюжетные карточки — цветная кромка + цвет ключевой цифры --- */
+.land-sujet { position: relative; }
+.land-sujet::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  border-radius: 12px 12px 0 0;
+  background: var(--sj-bar, var(--border));
+}
+.land-sujet.sj-neg    { --sj-bar: var(--neg);    --sj-num: var(--neg); }
+.land-sujet.sj-accent { --sj-bar: var(--accent); --sj-num: var(--accent); }
+.land-sujet.sj-multi  { --sj-bar: linear-gradient(90deg, var(--pos), var(--accent), var(--neg)); }
+.land-sujet-num { color: var(--sj-num, var(--ink)); }
+
+/* --- A-2: код INF-0x исследования — синий --- */
+.ccode { color: var(--accent); font-weight: 600; }
+
+/* --- A-2: единственная залитая секция «Проверь сам» --- */
+.land-verify {
+  background: color-mix(in srgb, var(--accent) 6%, var(--page));
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 22px 22px 26px;
+}
+
+/* --- B-3: страница /author — хиро-карточка + услуги --- */
+.author-page { max-width: 960px; }
+.author-hero {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent-2);
+  border-radius: 14px;
+  background: var(--surface-1);
+  padding: 20px 22px;
+  margin: 8px 0 26px;
+}
+.author-hero .ah-body { flex: 1; min-width: 0; }
+.author-hero .ah-name { font-size: 28px; font-weight: 700; margin: 0; line-height: 1.15; }
+.author-hero .ah-role { color: var(--muted); font-size: 15px; margin-top: 3px; }
+.ah-chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0; }
+.ah-chip {
+  font-size: 12.5px;
+  border: 1px solid color-mix(in srgb, var(--accent-2) 45%, var(--border));
+  border-radius: 20px;
+  padding: 4px 11px;
+  color: var(--ink-2);
+}
+.author-contacts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+.author-contacts .btn { min-height: 44px; display: inline-flex; align-items: center; }
+.author-contacts .btn.primary { background: var(--accent-2); border-color: transparent; color: #fff; }
+
+.author-services { margin: 30px 0; }
+.author-services > h2 { font-size: 21px; margin: 0 0 14px; }
+.service-card { display: flex; flex-direction: column; }
+.service-card .sc-cta { margin-top: 10px; color: var(--accent-2); font-weight: 600; font-size: 13px; }
+a.service-card:hover .sc-cta { text-decoration: underline; }
+.author-bio { margin-top: 10px; }
+.land-about-note { color: var(--muted); font-size: 14px; margin: 4px 0 14px; }
+
+/* тёмная тема: тёмный текст на светлых заливках (медь/зелёный/терракота) — AA.
+   В конце файла, чтобы перекрыть все базовые .btn.primary / .*.on color:#fff. */
+@media (prefers-color-scheme: dark) {
+  .avatar-initials,
+  .author-card .btn.primary,
+  .author-contacts .btn.primary { color: #1a1a19; }
+  .seg button.scn-optimistic.on,
+  .seg button.scn-negative.on { color: #0d0d0d; }
 }

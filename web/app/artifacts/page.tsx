@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { RESEARCH } from '@/lib/research';
 import { loadContent } from '@/lib/content';
 import Markdown from '@/components/Markdown';
+import AuthorCard from '@/components/AuthorCard';
 
 const intro = loadContent('ru', 'data-artifacts');
 
@@ -185,6 +186,8 @@ python3 -m venv .venv && .venv/bin/pip install -r requirements.txt  # shapely py
         неизменяемы: любое изменение данных, кода или параметров — новая
         версия и запись в changelog на странице пакета.
       </p>
+
+      <AuthorCard variant="callout" lang="ru" />
     </div>
   );
 }

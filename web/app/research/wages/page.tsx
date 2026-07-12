@@ -1,8 +1,11 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import WagesView from '@/components/WagesView';
+import AuthorCard from '@/components/AuthorCard';
+import { authors } from '@/lib/seo';
 
 export const metadata: Metadata = {
+  authors,
   title: 'Зарплата × динамика населения — Население Беларуси',
   description:
     'Следует ли население за деньгами: биваритная карта зарплатного дифференциала к Минску и десятилетней динамики 118 районов, регрессионная эластичность и аномалии.',
@@ -25,6 +28,7 @@ export default function WagesPage() {
         Островецкий взлетел на стройке АЭС.
       </p>
       <WagesView />
+      <AuthorCard variant="compact" lang="ru" />
     </div>
   );
 }

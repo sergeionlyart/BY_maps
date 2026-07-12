@@ -1,9 +1,12 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import AgingView from '@/components/AgingView';
+import AuthorCard from '@/components/AuthorCard';
+import { authors } from '@/lib/seo';
 import { RESEARCH } from '@/lib/research';
 
 export const metadata: Metadata = {
+  authors,
   title: 'Старение районов — Население Беларуси',
   description:
     'Возрастная структура 118 районов по переписям 2009/2019: медианный возраст, доля 65+, демографическая нагрузка и контрфактная передвижка «при нулевой миграции».',
@@ -28,6 +31,7 @@ export default function AgingPage() {
         почти треть населения.
       </p>
       <AgingView />
+      <AuthorCard variant="compact" lang="ru" />
     </div>
   );
 }

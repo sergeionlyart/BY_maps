@@ -1,8 +1,11 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import ShocksView from '@/components/ShocksView';
+import AuthorCard from '@/components/AuthorCard';
+import { authors } from '@/lib/seo';
 
 export const metadata: Metadata = {
+  authors,
   title: 'Демографические шоки XX века — Население Беларуси',
   description:
     'Таймлайн шоков 1897–2026 с проверяемыми вехами (беженство 1915, граница 1921, репрессии, Вторая мировая, Холокост, «неперспективные деревни», распад СССР) и оцифровка переписи-1897 по родному языку.',
@@ -27,6 +30,7 @@ export default function ShocksPage() {
         оцифровали перепись-1897, чтобы показать, что и когда было утрачено.
       </p>
       <ShocksView />
+      <AuthorCard variant="compact" lang="ru" />
     </div>
   );
 }

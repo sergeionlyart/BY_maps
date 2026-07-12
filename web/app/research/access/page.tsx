@@ -1,8 +1,11 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import AccessView from '@/components/AccessView';
+import AuthorCard from '@/components/AuthorCard';
+import { authors } from '@/lib/seo';
 
 export const metadata: Metadata = {
+  authors,
   title: 'Транспортная доступность и «тень Минска» — Население Беларуси',
   description:
     'Пояса травел-тайма до Минска и облцентров по дорожному графу OSM: кольцо 1,5–2,5 ч убывает быстрее и пригорода, и дальней периферии; что закрытие переходов с ЕС изменило для западных районов.',
@@ -28,6 +31,7 @@ export default function AccessPage() {
         «Запад-2025».
       </p>
       <AccessView />
+      <AuthorCard variant="compact" lang="ru" />
     </div>
   );
 }

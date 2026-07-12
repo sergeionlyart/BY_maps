@@ -4,10 +4,12 @@ import { slugify } from '@/lib/slug';
 
 /** Статическая контентная страница: оглавление (по желанию) + markdown.
  *  Серверный компонент — весь текст попадает в статический HTML. */
-export default function ContentDoc({ body, toc = false, lang = 'ru' }: {
+export default function ContentDoc({ body, toc = false, lang = 'ru', footer }: {
   body: string;
   toc?: boolean;
   lang?: 'ru' | 'be';
+  /** Доп. блок после статьи в той же читаемой колонке (напр. AuthorCard). */
+  footer?: React.ReactNode;
 }) {
   const h2 = toc ? headings(body) : [];
   return (
@@ -25,6 +27,7 @@ export default function ContentDoc({ body, toc = false, lang = 'ru' }: {
       <article className="content">
         <Markdown text={body} />
       </article>
+      {footer}
     </div>
   );
 }

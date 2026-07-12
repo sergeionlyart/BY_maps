@@ -1,8 +1,11 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import NightlightsView from '@/components/NightlightsView';
+import AuthorCard from '@/components/AuthorCard';
+import { authors } from '@/lib/seo';
 
 export const metadata: Metadata = {
+  authors,
   title: 'Ночные огни против официальной статистики — Население Беларуси',
   description:
     'Годовые композиты ночной светимости VIIRS (EOG average_masked) 2015–2023 по районам: индекс расхождения доли света и доли населения как независимый прокси и маркер недоучёта.',
@@ -33,6 +36,7 @@ export default function NightlightsPage() {
         оценка численности.
       </p>
       <NightlightsView />
+      <AuthorCard variant="compact" lang="ru" />
     </div>
   );
 }

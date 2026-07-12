@@ -168,7 +168,11 @@ export default function MapPage() {
           <span className="control-label">Сценарий прогноза</span>
           <div className="seg">
             {forecast.scenarios.map((s) => (
-              <button key={s} className={scenario === s ? 'on' : ''} onClick={() => setScenario(s)}>
+              <button
+                key={s}
+                className={`scn scn-${s}${scenario === s ? ' on' : ''}`}
+                onClick={() => setScenario(s)}
+              >
                 {forecast.scenarioMeta[s].name}
               </button>
             ))}

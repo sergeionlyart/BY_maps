@@ -5,6 +5,8 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 export interface ChartSeries {
   name: string;
   color: string;
+  /** Штрих линии (strokeDasharray) — семантика сценариев для дальтоников. */
+  dash?: string;
   /** Точки: год -> значение; major=true - переписной год (точка);
    *  lo/hi - границы доверительной полосы (рисуется заливкой ~12%). */
   points: { year: number; value: number; major?: boolean; lo?: number; hi?: number }[];
@@ -171,7 +173,7 @@ export default function LineChart({ series, height = 190, yFormat, yTooltip, dom
             <g key={s.name}>
               {band && <path d={band} fill={s.color} opacity="0.12" stroke="none" />}
               <path d={d} fill="none" stroke={s.color} strokeWidth="2"
-                strokeLinejoin="round" strokeLinecap="round" />
+                strokeDasharray={s.dash} strokeLinejoin="round" strokeLinecap="round" />
               {s.points.filter((p) => p.major).map((p) => (
                 <circle key={p.year} cx={X(p.year)} cy={Y(p.value)} r="3.2"
                   fill={s.color} stroke="var(--surface-1)" strokeWidth="2" />
@@ -204,7 +206,7 @@ export default function LineChart({ series, height = 190, yFormat, yTooltip, dom
           <div className="ct-year">{hoverYear}</div>
           {hover.map(({ s, v }) => (
             <div className="ct-row" key={s.name}>
-              <span className="ct-key" style={{ borderTopColor: s.color }} />
+              <span className="ct-key" style={{ borderTopColor: s.color, borderTopStyle: s.dash ? 'dashed' : 'solid' }} />
               <span className="ct-val">{fmtT(v)}</span>
               {series.length > 1 && <span className="ct-name">{s.name}</span>}
             </div>
@@ -216,7 +218,7 @@ export default function LineChart({ series, height = 190, yFormat, yTooltip, dom
         <div className="chart-legend">
           {series.map((s) => (
             <span className="cl-item" key={s.name}>
-              <span className="cl-key" style={{ borderTopColor: s.color }} />
+              <span className="cl-key" style={{ borderTopColor: s.color, borderTopStyle: s.dash ? 'dashed' : 'solid' }} />
               {s.name}
             </span>
           ))}

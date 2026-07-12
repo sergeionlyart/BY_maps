@@ -1,8 +1,11 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import MLChallengerView from '@/components/MLChallengerView';
+import AuthorCard from '@/components/AuthorCard';
+import { authors } from '@/lib/seo';
 
 export const metadata: Metadata = {
+  authors,
   title: 'ML-челленджер: ищет ли машина ошибку в модели CCR — Население Беларуси',
   description:
     'Градиентный бустинг на экзогенных признаках ≤2019 против остатка структурной модели CCR относительно официальной оценки-2026: перестановочно-гейтированная диагностика, а не прогноз. Сигнал есть (OOF R²=0.33, p=0.005) и тянет его миграция.',
@@ -30,6 +33,7 @@ export default function MLChallengerPage() {
         не конкурирующий прогноз; гонка MAPE внизу намеренно понижена в ранге.
       </p>
       <MLChallengerView />
+      <AuthorCard variant="compact" lang="ru" />
     </div>
   );
 }

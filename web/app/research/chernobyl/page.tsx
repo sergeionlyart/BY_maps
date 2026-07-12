@@ -1,8 +1,11 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import ChernobylView from '@/components/ChernobylView';
+import AuthorCard from '@/components/AuthorCard';
+import { authors } from '@/lib/seo';
 
 export const metadata: Metadata = {
+  authors,
   title: 'Чернобыльский след — Население Беларуси',
   description:
     'Как эвакуация и отселение изменили траектории юго-восточных районов: официальный реестр зон (НПА с реквизитами) и сравнение с демографически схожими контрольными районами.',
@@ -26,6 +29,7 @@ export default function ChernobylPage() {
         мера чернобыльского следа.
       </p>
       <ChernobylView />
+      <AuthorCard variant="compact" lang="ru" />
     </div>
   );
 }

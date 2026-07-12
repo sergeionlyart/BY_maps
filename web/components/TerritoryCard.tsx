@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import type { DataFile, Territory, RaionMode } from '@/lib/types';
 import type { ForecastFile, ScenarioId, JumpoffId } from '@/lib/forecast';
-import { forecastAt, hasAdjusted, FORECAST_START, SCENARIO_LABEL } from '@/lib/forecast';
+import { forecastAt, hasAdjusted, FORECAST_START, SCENARIO_LABEL, SCENARIO_STYLE } from '@/lib/forecast';
 import { seriesPoints, valueAt, formatNumber, formatCompact, formatPct, DTYPE_LABEL } from '@/lib/series';
 import { raionBreakdown, cityDensity } from '@/lib/metrics';
 import { CAT } from '@/lib/scales';
@@ -110,7 +110,7 @@ export default function TerritoryCard({ data, forecast, scenario = 'base', jumpo
   if ((t.level === 'oblast' || t.level === 'country') && t.urban && Object.keys(t.urban).length > 1 && t.id !== 'BY-HM') {
     chart.push({
       name: 'Городское население',
-      color: CAT[1],
+      color: 'var(--viz-urban)',
       points: seriesPoints(t.urban).map((p) => ({ year: p.year, value: p.value, major: p.dtype === 'c' })),
     });
   }
@@ -122,7 +122,8 @@ export default function TerritoryCard({ data, forecast, scenario = 'base', jumpo
   if (forecast && fentry) {
     chart.push({
       name: `Прогноз (${SCENARIO_LABEL[scenario]})`,
-      color: CAT[3],
+      color: SCENARIO_STYLE[scenario].color,
+      dash: SCENARIO_STYLE[scenario].dash,
       points: fentry.years.map((y, i) => ({
         year: y,
         value: fentry.pop[i],

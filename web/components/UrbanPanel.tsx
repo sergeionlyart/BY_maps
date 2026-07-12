@@ -54,7 +54,7 @@ export default function UrbanPanel({ data, year, forecast, scenario = 'base' }: 
   });
 
   const series: ChartSeries[] = [
-    mk('urban', 'Городское население', CAT[1], 'all'),
+    mk('urban', 'Городское население', 'var(--viz-urban)', 'all'),
     mk('top7', '7 крупнейших городов', CAT[2], TOP7),
     mk('oblCenters', 'Минск + обл. центры', CAT[3], OBL_CENTERS),
     mk('minsk', 'Минск', CAT[0], ['c-minsk']),

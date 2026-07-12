@@ -3,6 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import Markdown from '@/components/Markdown';
 import MethodologyTabs from '@/components/MethodologyTabs';
+import AuthorCard from '@/components/AuthorCard';
 import { loadContent } from '@/lib/content';
 
 const overview = loadContent('ru', 'methodology');
@@ -26,6 +27,7 @@ export default function MethodologyPage() {
         <Markdown text={overview.body} />
       </article>
       <MethodologyTabs method={method} sources={sources} />
+      <AuthorCard variant="callout" lang="ru" />
     </div>
   );
 }

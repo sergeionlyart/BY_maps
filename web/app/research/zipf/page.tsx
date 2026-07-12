@@ -1,8 +1,11 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import ZipfView from '@/components/ZipfView';
+import AuthorCard from '@/components/AuthorCard';
+import { authors } from '@/lib/seo';
 
 export const metadata: Metadata = {
+  authors,
   title: 'Иерархия городов и закон Ципфа — Население Беларуси',
   description:
     'Rank-size распределение городов Беларуси 1897–2026: наклон Ципфа держится у −1, но примация Минска выросла с 1,4× до 4× при ожидании 2×.',
@@ -24,6 +27,7 @@ export default function ZipfPage() {
         ципфовском ожидании 2. От сети местечек — к макроцефалии.
       </p>
       <ZipfView />
+      <AuthorCard variant="compact" lang="ru" />
     </div>
   );
 }

@@ -3,6 +3,8 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { RESEARCH } from '@/lib/research';
+import BelarusOutline from '@/components/BelarusOutline';
+import AuthorCard from '@/components/AuthorCard';
 
 // U-01: домашний маршрут «/» — нарративный лендинг (без интерактивной карты).
 // Карта переехала на «/map». Старые диплинки «/?sel=<id>» перенаправляем туда.
@@ -28,6 +30,8 @@ export default function LandingPage() {
     <div className="page land">
       {/* ── Герой ─────────────────────────────────────────────── */}
       <section className="land-hero">
+        <BelarusOutline className="land-hero-outline" strokeWidth={5} />
+        <p className="land-kicker">Открытое исследование · 1897–2075</p>
         <h1 className="land-title">
           Население Беларуси за 129 лет — на проверяемых данных
         </h1>
@@ -47,7 +51,7 @@ export default function LandingPage() {
         <h2>Что показывают данные</h2>
         <div className="land-sujet-grid">
           {/* 1. Пик 1989 → убыль */}
-          <div className="land-sujet">
+          <div className="land-sujet sj-neg">
             <div className="land-sujet-chart">
               <svg
                 viewBox="0 0 240 64"
@@ -76,7 +80,7 @@ export default function LandingPage() {
           </div>
 
           {/* 2. Село −65% */}
-          <div className="land-sujet">
+          <div className="land-sujet sj-neg">
             <div className="land-sujet-chart">
               <svg
                 viewBox="0 0 240 64"
@@ -105,7 +109,7 @@ export default function LandingPage() {
           </div>
 
           {/* 3. Минск ×4 */}
-          <div className="land-sujet">
+          <div className="land-sujet sj-accent">
             <div className="land-sujet-chart">
               <svg
                 viewBox="0 0 240 64"
@@ -131,23 +135,24 @@ export default function LandingPage() {
           </div>
 
           {/* 4. Три сценария до 2075 */}
-          <div className="land-sujet">
+          <div className="land-sujet sj-multi">
             <div className="land-sujet-chart">
               <svg
                 viewBox="0 0 240 64"
                 aria-hidden="true"
                 style={{ width: '100%', height: 'auto', display: 'block' }}
               >
-                {/* оптимистический */}
+                {/* оптимистический = зелёный, длинный штрих */}
                 <polyline points="10,20 236,24" fill="none"
-                  stroke="var(--muted)" strokeWidth="2" strokeLinecap="round" />
-                {/* базовый */}
+                  stroke="var(--pos)" strokeWidth="2" strokeLinecap="round"
+                  strokeDasharray="7 4" />
+                {/* базовый = синий, сплошной */}
                 <polyline points="10,20 236,40" fill="none"
                   stroke="var(--accent)" strokeWidth="2" strokeLinecap="round" />
-                {/* негативный */}
+                {/* негативный = терракотовый, пунктир */}
                 <polyline points="10,20 236,58" fill="none"
-                  stroke="var(--muted)" strokeWidth="2" strokeLinecap="round"
-                  strokeDasharray="4 4" />
+                  stroke="var(--neg)" strokeWidth="2" strokeLinecap="round"
+                  strokeDasharray="2 3" />
                 <circle cx="10" cy="20" r="3" fill="var(--accent)" />
               </svg>
             </div>
@@ -175,17 +180,17 @@ export default function LandingPage() {
           {RESEARCH.map((r) =>
             r.status === 'published' ? (
               <Link key={r.slug} href={`/research/${r.slug}`} className="card">
-                <div className="card-code">{r.code} · опубликовано</div>
+                <div className="card-code"><span className="ccode">{r.code}</span> · опубликовано</div>
                 <div className="card-title">{r.title}</div>
                 <p>{r.question}</p>
                 <div className="card-foot">
-                  {r.artifact ? `пакет v${r.artifact.version} · ` : ''}открыть →
+                  {r.artifact ? <><span className="card-ver">пакет v{r.artifact.version}</span> · </> : null}открыть →
                 </div>
               </Link>
             ) : (
               <div key={r.slug} className="card planned">
                 <div className="card-code">
-                  {r.code} · этап {r.stage} плана{' '}
+                  <span className="ccode">{r.code}</span> · этап {r.stage} плана{' '}
                   <span className="badge">готовится</span>
                 </div>
                 <div className="card-title">{r.title}</div>
@@ -214,16 +219,20 @@ export default function LandingPage() {
 
       {/* ── О проекте / авторе ────────────────────────────────── */}
       <section className="land-about">
-        <h2>О проекте</h2>
+        <h2>Кто это сделал и зачем</h2>
         <p className="page-lead">
           BY Maps — самостоятельное открытое исследование демографии Беларуси на
           проверяемых данных, с явно выписанными предпосылками и ограничениями.
           Проект не заменяет профессиональную демографию: его прогнозы — условные
           сценарии, а корреляции — не причинность.
         </p>
+        <AuthorCard variant="full" lang="ru" />
+        <p className="land-about-note">
+          BY Maps — витрина метода: так же можно разобрать ваши данные и процессы.
+        </p>
         <div className="land-cta">
+          <a href="https://www.linkedin.com/in/sergei-audzeichyk" target="_blank" rel="noreferrer" className="btn">LinkedIn</a>
           <Link href="/about" className="btn">О проекте</Link>
-          <Link href="/author" className="btn">Об авторе</Link>
           <Link href="/methodology" className="btn">Методология</Link>
         </div>
       </section>

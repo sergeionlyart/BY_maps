@@ -1,11 +1,5 @@
 <!-- title: Об авторе — BY Maps | description: Сергей Авдейчик — кандидат технических наук, AI/ML-инженер, разработчик AI-продуктов. Автор проекта BY Maps. -->
 
-# Об авторе
-
-## Сергей Авдейчик
-
-**Кандидат технических наук | AI/ML Engineer | AI Product Developer**
-
 Инженер-исследователь и разработчик AI-продуктов, специализирующийся на прикладных системах на базе больших языковых моделей, агентных решениях и автоматизации профессиональных рабочих процессов.
 
 Работает на стыке машинного обучения, программной инженерии, права и исследования социальных последствий искусственного интеллекта. Разрабатывает AI-копилоты, LegalTech- и EduTech-решения, RAG-системы, мультимодальные приложения и инструменты интеллектуальной автоматизации.
@@ -20,14 +14,6 @@
 - Edge AI и локальный запуск моделей;
 - Python-разработка и AI-native продукты;
 - обработка больших массивов юридической и исследовательской информации.
-
-### Контакты
-
-- Email: [chatwebmarket@gmail.com](mailto:chatwebmarket@gmail.com)
-- LinkedIn: [linkedin.com/in/sergei-audzeichyk](https://www.linkedin.com/in/sergei-audzeichyk)
-- Facebook: [facebook.com/share/1C5Ev1hwPw](https://www.facebook.com/share/1C5Ev1hwPw/?mibextid=wwXIfr)
-- Medium: [medium.com/@onlyartpl](https://medium.com/@onlyartpl)
-- GitHub: [github.com/sergeionlyart](https://github.com/sergeionlyart)
 
 ---
 

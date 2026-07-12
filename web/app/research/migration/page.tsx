@@ -1,8 +1,11 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import MigrationView from '@/components/MigrationView';
+import AuthorCard from '@/components/AuthorCard';
+import { authors } from '@/lib/seo';
 
 export const metadata: Metadata = {
+  authors,
   title: 'Внутренняя и внешняя миграция — Население Беларуси',
   description:
     'Миграционная лестница село → райцентр → облцентр → Минск за 1959–2026, сальдо районов, межобластные потоки переписи-2019 и внешняя волна 2020+ в интервальных оценках зеркальной статистики.',
@@ -27,6 +30,7 @@ export default function MigrationPage() {
         публиковал вовсе.
       </p>
       <MigrationView />
+      <AuthorCard variant="compact" lang="ru" />
     </div>
   );
 }

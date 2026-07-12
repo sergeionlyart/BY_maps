@@ -93,6 +93,16 @@ export const SCENARIO_LABEL: Record<ScenarioId, string> = {
   negative: 'негативный',
 };
 
+/** Единая семантика сценариев (релиз 1.2, A-3): цвет + штрих (для дальтоников).
+ *  оптимистический = зелёный сплошной штрих, базовый = синий сплошной,
+ *  негативный = терракотовый пунктир. Применяется везде: лендинг, /map,
+ *  карточка территории, страницы прогноза. */
+export const SCENARIO_STYLE: Record<ScenarioId, { color: string; dash?: string }> = {
+  optimistic: { color: 'var(--pos)', dash: '7 4' },
+  base: { color: 'var(--accent)' },
+  negative: { color: 'var(--neg)', dash: '2 3' },
+};
+
 export const JUMPOFF_LABEL: Record<JumpoffId, string> = {
   official: 'официальный',
   adjusted: 'скорректированный',

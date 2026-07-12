@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import ContentDoc from '@/components/ContentDoc';
+import AuthorCard from '@/components/AuthorCard';
 import { loadContent } from '@/lib/content';
 
 const c = loadContent('be', 'methodology');
@@ -10,5 +11,5 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <ContentDoc body={c.body} toc={false} lang="be" />;
+  return <ContentDoc body={c.body} toc={false} lang="be" footer={<AuthorCard variant="callout" lang="be" />} />;
 }
