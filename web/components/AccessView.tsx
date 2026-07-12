@@ -395,7 +395,7 @@ export default function AccessView() {
       {rec && sel && (
         <div className="stat-row">
           <div className="stat-tile">
-            <div className="st-label">{names[sel] ?? sel} · <a href={`/?sel=${sel}`}>на карту</a></div>
+            <div className="st-label">{names[sel] ?? sel} · <a href={`/map?sel=${sel}`}>на карту</a></div>
             <div className="st-value">{fmtMin(rec.eff)}</div>
             <div className="st-delta">
               до {rec.minMinsk <= rec.minObl ? 'Минска' : (OBL_CENTER_NAME[rec.oblId] ?? rec.oblId)} — пояс «{rec.beltEff}»; до Минска {fmtMin(rec.minMinsk)}

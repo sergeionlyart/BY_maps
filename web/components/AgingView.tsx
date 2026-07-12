@@ -375,7 +375,7 @@ export default function AgingView() {
           <div className="chart-title">
             Пирамида: {names[selId] ?? selId}
             {' · '}
-            <a href={`/?sel=${selId}`}>показать на карте</a>
+            <a href={`/map?sel=${selId}`}>показать на карте</a>
           </div>
           <div className="controls" style={{ margin: '2px 0 6px' }}>
             <select value={selId} onChange={(e) => select(e.target.value)} aria-label="территория">

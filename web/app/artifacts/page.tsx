@@ -61,7 +61,7 @@ export default function ArtifactsPage() {
             {' · '}
             <Link href="/artifacts/forecast">версии и состав</Link>
             {' · '}
-            <Link href="/">живая версия (слайдер за 2026)</Link>
+            <Link href="/map">живая версия (слайдер за 2026)</Link>
           </div>
         </div>
         {published.map((r) => (

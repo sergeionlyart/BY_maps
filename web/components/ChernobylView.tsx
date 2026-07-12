@@ -120,7 +120,7 @@ export default function ChernobylView() {
         <div className="chart-title">
           Население, индекс: перепись {cher.baseYear} = 100 · {pair.ru} против контроля
           {' · '}
-          <a href={`/?sel=${pair.id}`}>показать на карте</a>
+          <a href={`/map?sel=${pair.id}`}>показать на карте</a>
         </div>
         <div className="controls" style={{ margin: '2px 0 6px' }}>
           <select value={pair.id} onChange={(e) => select(e.target.value)} aria-label="пара район-контроль">

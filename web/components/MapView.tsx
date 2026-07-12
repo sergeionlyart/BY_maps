@@ -23,6 +23,7 @@ import type { ForecastFile, ScenarioId, JumpoffId } from '@/lib/forecast';
 import { forecastAt, hasAdjusted, FORECAST_START, SCENARIO_LABEL, JUMPOFF_LABEL } from '@/lib/forecast';
 import { valueAt, nearestPoint, formatNumber, formatPct, formatCompact, DTYPE_LABEL } from '@/lib/series';
 import { colorFor, legendStops, cityColor, cityRadius } from '@/lib/scales';
+import { useMedia } from '@/lib/useMedia';
 
 interface Props {
   data: DataFile;
@@ -44,6 +45,26 @@ interface Props {
 
 const BOUNDS: [[number, number], [number, number]] = [[23.0, 51.15], [32.9, 56.25]];
 
+/** Отступ fitBounds зависит от ширины вьюпорта (U-09): на телефоне поля
+ *  меньше, снизу — запас под чип-легенду. */
+function fitPad(w: number) {
+  const narrow = w < 640;
+  const p = narrow ? 14 : 26;
+  return { top: p, right: p, bottom: narrow ? p + 30 : p, left: p };
+}
+
+/** Позиция тап-тултипа с зажимом в границы контейнера (U-08). */
+function tooltipPos(tt: { x: number; y: number }, el: HTMLElement | null) {
+  const w = el?.clientWidth ?? 400;
+  const h = el?.clientHeight ?? 400;
+  const TW = 220, TH = 96;
+  let left = tt.x + 12;
+  let top = tt.y + 12;
+  if (left + TW > w) left = Math.max(8, tt.x - TW - 12);
+  if (top + TH > h) top = Math.max(8, tt.y - TH - 12);
+  return { left, top };
+}
+
 const METRIC_TITLE: Record<Metric, string> = {
   pop: 'Численность населения',
   density: 'Плотность, чел./км²',
@@ -63,6 +84,10 @@ export default function MapView(props: Props) {
   const [tooltip, setTooltip] = useState<{ x: number; y: number; html: React.ReactNode } | null>(null);
   const stateRef = useRef(props);
   stateRef.current = props;
+
+  // легенда: на десктопе всегда развёрнута, на мобильном — чип-переключатель (U-07)
+  const narrow = useMedia('(max-width: 980px)');
+  const [legendOpen, setLegendOpen] = useState(false);
 
   useEffect(() => {
     const mq = window.matchMedia('(prefers-color-scheme: dark)');
@@ -96,6 +121,8 @@ export default function MapView(props: Props) {
       maxZoom: 10,
     });
     map.touchZoomRotate.disableRotation();
+    // На /map страница не прокручивается (режим приложения), поэтому одиночный
+    // палец панорамирует карту — cooperativeGestures здесь не нужен (U-03).
     map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-right');
 
     map.on('load', () => {
@@ -190,9 +217,10 @@ export default function MapView(props: Props) {
     let fitted = false;
     const ro = new ResizeObserver(() => {
       map.resize();
-      if (!fitted && (divRef.current?.clientWidth ?? 0) > 450) {
+      const w = divRef.current?.clientWidth ?? 0;
+      if (!fitted && w > 240) {
         fitted = true;
-        map.fitBounds(BOUNDS, { padding: 18, duration: 0 });
+        map.fitBounds(BOUNDS, { padding: fitPad(w), duration: 0 });
       }
     });
     ro.observe(divRef.current);
@@ -221,9 +249,19 @@ export default function MapView(props: Props) {
       setTooltip({ x: e.point.x, y: e.point.y, html: renderTooltip(id, stateRef.current) });
     });
     map.on('mouseout', () => setTooltip(null));
+    // Тап показывает мини-тултип (название + значение + тип данных) и выбирает
+    // объект — на тач-экране это единственный способ увидеть пометки
+    // достоверности (U-08). Пустой тап снимает выбор и тултип.
     map.on('click', (e) => {
       const feats = map.queryRenderedFeatures(e.point, { layers: hitLayers().filter((l) => map.getLayer(l)) });
-      stateRef.current.onSelect(feats.length ? (feats[0].properties?.id as string) : null);
+      if (feats.length) {
+        const id = feats[0].properties?.id as string;
+        setTooltip({ x: e.point.x, y: e.point.y, html: renderTooltip(id, stateRef.current) });
+        stateRef.current.onSelect(id);
+      } else {
+        setTooltip(null);
+        stateRef.current.onSelect(null);
+      }
     });
 
     mapRef.current = map;
@@ -398,12 +436,30 @@ export default function MapView(props: Props) {
   return (
     <div className="map-wrap">
       <div ref={divRef} className="map-canvas" />
+      <button
+        className="map-reset"
+        onClick={() => {
+          const w = divRef.current?.clientWidth ?? 0;
+          mapRef.current?.fitBounds(BOUNDS, { padding: fitPad(w), duration: 400 });
+        }}
+        title="Вся страна"
+        aria-label="показать всю страну"
+      >⌖ Вся страна</button>
       {tooltip && (
-        <div className="map-tooltip" style={{ left: tooltip.x + 12, top: tooltip.y + 12 }}>
+        <div className="map-tooltip" style={tooltipPos(tooltip, divRef.current)}>
           {tooltip.html}
         </div>
       )}
+      {narrow && !legendOpen && (
+        <button className="map-legend-toggle" onClick={() => setLegendOpen(true)} aria-expanded={false}>
+          Легенда
+        </button>
+      )}
+      {(!narrow || legendOpen) && (
       <div className="map-legend">
+        {narrow && (
+          <button className="map-legend-close" onClick={() => setLegendOpen(false)} aria-label="свернуть легенду">×</button>
+        )}
         <div className="lg-title">
           {METRIC_TITLE[metric]}
           {metric === 'change' ? `, % к ${baseYear} г.` : ''}
@@ -433,6 +489,7 @@ export default function MapView(props: Props) {
           </div>
         )}
       </div>
+      )}
       {effLevel === 'raion' && year < 1970 && (
         <div className="map-notice">
           Районный разрез — с 1970 года. Ранняя динамика видна по городам

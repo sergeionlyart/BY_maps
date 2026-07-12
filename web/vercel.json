@@ -4,6 +4,14 @@
   "outputDirectory": "out",
   "framework": null,
   "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/",
+      "has": [{ "type": "query", "key": "sel" }],
+      "destination": "/map",
+      "permanent": false
+    }
+  ],
   "headers": [
     {
       "source": "/data/(.*)",

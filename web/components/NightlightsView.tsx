@@ -336,7 +336,7 @@ export default function NightlightsView() {
       {rec && sel && (
         <div className="chart-block">
           <div className="chart-title">
-            {names[sel] ?? sel} · <a href={`/?sel=${sel}`}>на карту</a> — доля района в стране: свет против населения ({night.years[0]} = 100)
+            {names[sel] ?? sel} · <a href={`/map?sel=${sel}`}>на карту</a> — доля района в стране: свет против населения ({night.years[0]} = 100)
           </div>
           <LightPopSpark row={rec} night={night} />
           {rec.div != null && (

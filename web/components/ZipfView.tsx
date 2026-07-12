@@ -252,7 +252,7 @@ export default function ZipfView() {
         </div>
         <RankSizeScatter
           zipf={zipf} year={year} names={names}
-          onCity={(id) => { window.location.href = `/?sel=${id}`; }}
+          onCity={(id) => { window.location.href = `/map?sel=${id}`; }}
         />
       </div>
 

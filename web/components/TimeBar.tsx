@@ -34,6 +34,8 @@ export default function TimeBar({ year, range, censusYears, forecastStart, onCha
   }, [playing, onChange, range]);
 
   const pct = (y: number) => ((y - range[0]) / (range[1] - range[0])) * 100;
+  // на узких экранах показываем только эти опорные годы, остальные прячем CSS-ом (U-04)
+  const MAJOR = new Set([1897, 1959, 1989, 2019]);
 
   return (
     <div className="timebar">
@@ -72,7 +74,12 @@ export default function TimeBar({ year, range, censusYears, forecastStart, onCha
         />
         <div className="slider-ticks">
           {censusYears.map((y) => (
-            <span key={y} style={{ left: `${pct(y)}%` }} onClick={() => onChange(y)}>
+            <span
+              key={y}
+              className={MAJOR.has(y) ? 'tick-major' : 'tick-minor'}
+              style={{ left: `${pct(y)}%` }}
+              onClick={() => onChange(y)}
+            >
               {y}
             </span>
           ))}

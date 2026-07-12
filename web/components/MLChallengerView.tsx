@@ -340,7 +340,7 @@ export default function MLChallengerView() {
       {rec && sel && (
         <div className="chart-block">
           <div className="chart-title">
-            {nm(sel)} · <a href={`/?sel=${sel}`}>на карту</a>{rec.host ? ' · район с городом обл. подчинения' : ''}
+            {nm(sel)} · <a href={`/map?sel=${sel}`}>на карту</a>{rec.host ? ' · район с городом обл. подчинения' : ''}
           </div>
           <div className="stat-row">
             <div className="stat-tile">

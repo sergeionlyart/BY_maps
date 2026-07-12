@@ -327,7 +327,7 @@ export default function WagesView() {
       {rec && sel && (
         <div className="stat-row">
           <div className="stat-tile">
-            <div className="st-label">{names[sel] ?? sel} · <a href={`/?sel=${sel}`}>на карту</a></div>
+            <div className="st-label">{names[sel] ?? sel} · <a href={`/map?sel=${sel}`}>на карту</a></div>
             <div className="st-value">{(rec.wageRel * 100).toFixed(0)}%</div>
             <div className="st-delta">минской зарплаты (среднее {wages.wageYears[0]}–{wages.wageYears[1]}){rec.wage2025 ? ` · ${Math.round(rec.wage2025)} BYN в 2025` : ''}</div>
           </div>

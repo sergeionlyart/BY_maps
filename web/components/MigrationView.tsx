@@ -453,7 +453,7 @@ export default function MigrationView() {
       {rec && sel && (
         <div className="stat-row">
           <div className="stat-tile">
-            <div className="st-label">{names[sel] ?? sel} · <a href={`/?sel=${sel}`}>на карту</a></div>
+            <div className="st-label">{names[sel] ?? sel} · <a href={`/map?sel=${sel}`}>на карту</a></div>
             <div className="st-value">
               {rec.rate1519 != null ? `${rec.rate1519 > 0 ? '+' : ''}${rec.rate1519} ‰` : '—'}
             </div>

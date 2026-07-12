@@ -1,9 +1,10 @@
 :root {
   --surface-1: #fcfcfb;
+  --surface-2: #edece6;
   --page: #f9f9f7;
   --ink: #0b0b0b;
   --ink-2: #52514e;
-  --muted: #898781;
+  --muted: #726f68;
   --grid: #e1e0d9;
   --baseline: #c3c2b7;
   --border: rgba(11, 11, 11, 0.1);
@@ -16,10 +17,11 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --surface-1: #1a1a19;
+    --surface-2: #2b2b27;
     --page: #0d0d0d;
     --ink: #ffffff;
-    --ink-2: #c3c2b7;
-    --muted: #898781;
+    --ink-2: #d6d5ca;
+    --muted: #a8a69c;
     --grid: #2c2c2a;
     --baseline: #383835;
     --border: rgba(255, 255, 255, 0.1);
@@ -123,8 +125,9 @@ select {
   background: var(--surface-1);
   border: 1px solid var(--border);
   border-radius: 8px;
-  padding: 4px 6px;
-  font-size: 13px;
+  padding: 5px 8px;
+  /* 16px предотвращает авто-зум iOS при фокусе (U-13) */
+  font-size: 16px;
   max-width: 100%;
 }
 
@@ -462,27 +465,42 @@ select {
 
 /* --- навигация ------------------------------------------------------------ */
 .site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 40;
   display: flex;
   align-items: center;
   gap: 4px;
   max-width: 1500px;
   margin: 0 auto;
-  padding: 10px 16px 0;
-  flex-wrap: wrap;
+  padding: 8px 16px;
+  min-height: var(--nav-h);
+  background: var(--page);
 }
 .site-brand {
   font-weight: 700;
   font-size: 15px;
   margin-right: 14px;
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.site-brand-short { display: none; }
+.nav-burger { display: none; }
+.site-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
 }
 .site-nav a {
   text-decoration: none;
   color: var(--ink-2);
-  font-size: 13.5px;
-  padding: 4px 10px;
+  font-size: 14px;
+  padding: 5px 10px;
   border-radius: 8px;
 }
-.site-nav a.on {
+.site-links > a.on {
   background: var(--surface-1);
   border: 1px solid var(--border);
   color: var(--ink);
@@ -498,7 +516,7 @@ select {
 .page-wide { max-width: 1100px; }
 .page h1 { font-size: 24px; margin: 6px 0 8px; }
 .page h2 { font-size: 18px; margin: 26px 0 8px; }
-.page-lead { color: var(--ink-2); font-size: 15px; line-height: 1.55; }
+.page-lead { color: var(--ink-2); font-size: 16px; line-height: 1.6; }
 .page-breadcrumb { font-size: 12.5px; color: var(--muted); }
 .page-breadcrumb a { color: var(--ink-2); }
 .page pre {
@@ -643,19 +661,32 @@ a.card:hover { border-color: var(--accent); }
 .lang-sep { color: var(--border); }
 
 /* --- контентные страницы (article/about/goals/methodology/author) --------- */
-.content-page { max-width: 780px; }
+/* колонка чтения ~68–72ch: ширина через max-width на самой .content (U-11/U-14) */
+.content-page { max-width: 700px; }
 .content {
-  font-size: 16px;
-  line-height: 1.7;
+  font-size: 17px;
+  line-height: 1.65;
   color: var(--ink);
+  max-width: 42em; /* ≈ 66–70 знаков в строке */
 }
-.content h1 { font-size: 30px; line-height: 1.2; margin: 8px 0 14px; letter-spacing: -0.01em; }
+.content h1 { font-size: 28px; line-height: 1.2; margin: 8px 0 16px; letter-spacing: -0.01em; }
 .content h2 {
-  font-size: 21px; margin: 34px 0 10px; scroll-margin-top: 16px;
+  font-size: 21px; margin: 36px 0 10px; scroll-margin-top: 16px;
   padding-top: 6px; border-top: 1px solid var(--border);
 }
-.content h3 { font-size: 17px; margin: 22px 0 8px; }
-.content p { margin: 12px 0; }
+.content h3 { font-size: 18px; margin: 24px 0 8px; }
+.content p { margin: 0.95em 0; }
+/* тело статьи рендерится в .md — приводим его кегль к читаемому (U-11/U-14),
+   не трогая мелкие .md-блоки методики/исследований вне .content */
+.content .md { font-size: 17px; line-height: 1.65; }
+.content .md p { margin: 0.95em 0; }
+.content .md h1 { font-size: 28px; line-height: 1.2; margin: 8px 0 16px; }
+.content .md h2 {
+  font-size: 22px; margin: 36px 0 10px;
+  padding-top: 6px; border-top: 1px solid var(--border);
+}
+.content .md h3 { font-size: 18px; margin: 24px 0 8px; }
+.content .md li { margin: 6px 0; }
 .content ul, .content ol { margin: 12px 0; padding-left: 22px; }
 .content li { margin: 5px 0; }
 .content a { color: var(--accent); text-decoration: none; }
@@ -743,3 +774,252 @@ a.card:hover { border-color: var(--accent); }
 
 .app-teaser { color: var(--ink-2); font-size: 13px; margin-top: 4px; }
 .app-teaser a { color: var(--accent); text-decoration: none; }
+
+/* ============================================================================
+   Релиз 1.1 — мобильный UX: лендинг, режим приложения /map, шторки, бургер
+   ========================================================================== */
+:root { --nav-h: 48px; }
+
+/* режим приложения: страница /map не прокручивается */
+body.map-mode { overflow: hidden; }
+
+/* --- /map: полноэкранная раскладка (U-02) --------------------------------- */
+.mapapp {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - var(--nav-h));
+  height: calc(100dvh - var(--nav-h));
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 8px 16px calc(8px + env(safe-area-inset-bottom));
+  gap: 8px;
+  overflow: hidden;
+}
+.mapapp-bar { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; flex: none; }
+.mapapp-secondary { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; }
+.mapapp-main { position: relative; flex: 1; min-height: 0; display: flex; gap: 12px; }
+.mapapp-main .map-wrap { flex: 1; height: auto; min-height: 0; max-height: none; }
+.mapapp .side { width: 400px; flex: none; min-height: 0; }
+.mapapp .timebar { flex: none; }
+
+/* мобильная обвязка скрыта на десктопе */
+.sheet-open-btn,
+.mapapp-chips,
+.sheet-head,
+.sheet-handle,
+.sheet-backdrop { display: none; }
+
+/* кнопка «Вся страна» (U-09) */
+.map-reset {
+  position: absolute; left: 10px; top: 10px; z-index: 4;
+  display: inline-flex; align-items: center; gap: 4px;
+  background: var(--surface-1); border: 1px solid var(--border);
+  border-radius: 8px; padding: 6px 10px; font-size: 12.5px;
+  color: var(--ink-2); box-shadow: 0 1px 6px rgba(0,0,0,.1);
+}
+.map-reset:hover { border-color: var(--accent); color: var(--ink); }
+
+/* легенда-чип (U-07) */
+.map-legend-toggle {
+  position: absolute; left: 10px; bottom: 10px; z-index: 4;
+  background: var(--surface-1); border: 1px solid var(--border);
+  border-radius: 20px; padding: 8px 14px; font-size: 13px; color: var(--ink);
+  box-shadow: 0 1px 6px rgba(0,0,0,.14);
+}
+.map-legend-close {
+  position: absolute; top: 2px; right: 4px;
+  width: 30px; height: 30px; font-size: 18px; line-height: 1; color: var(--muted);
+}
+
+/* десктоп: высота кнопок сегментов (U-15) */
+.seg button { min-height: 32px; }
+
+/* адаптив 981–1280: узкая боковая колонка (U-16) */
+@media (min-width: 981px) and (max-width: 1280px) {
+  .mapapp .side { width: 340px; }
+}
+
+/* десктопная типографика чтения (U-14) */
+@media (min-width: 981px) {
+  .content, .content .md { font-size: 18px; line-height: 1.7; }
+  .content h1, .content .md h1 { font-size: 32px; }
+}
+
+/* оглавление статьи — в левый вынос при ≥1280px (U-14) */
+@media (min-width: 1280px) {
+  .content-toc {
+    float: left; width: 220px;
+    margin: 6px 34px 16px calc(-220px - 40px);
+    position: sticky; top: 16px;
+  }
+}
+
+/* ============================ мобильный (≤980px) ========================== */
+@media (max-width: 980px) {
+  :root { --nav-h: 56px; }
+
+  /* --- навигация: одна строка + бургер (U-10) --- */
+  .site-brand-full { display: none; }
+  .site-brand-short { display: inline; }
+  .site-nav { gap: 8px; padding: 6px 12px; justify-content: space-between; }
+  .nav-burger {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 44px; height: 44px; font-size: 20px; color: var(--ink);
+    border: 1px solid var(--border); border-radius: 8px; background: var(--surface-1);
+    order: 3;
+  }
+  .site-links {
+    display: none; position: absolute; top: 100%; left: 0; right: 0;
+    flex-direction: column; align-items: stretch; gap: 2px;
+    background: var(--surface-1);
+    border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    box-shadow: 0 12px 28px rgba(0,0,0,.2);
+    padding: 8px 12px calc(12px + env(safe-area-inset-bottom));
+    z-index: 60;
+  }
+  .site-nav.nav-open .site-links { display: flex; }
+  .site-links > a { min-height: 44px; display: flex; align-items: center; font-size: 15px; }
+  .lang-switch {
+    margin: 6px 0 0; padding-top: 8px;
+    border-top: 1px solid var(--border); font-size: 15px;
+  }
+  .lang-switch a { padding: 8px 10px; }
+  .nav-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,.3); z-index: 55; }
+
+  /* --- /map: компактная полоса + чипы (U-05) --- */
+  /* нижний отступ отдаём таймбару (он владеет safe-area), чтобы бар прижался к низу */
+  .mapapp { padding: 6px 10px 0; gap: 6px; }
+  .mapapp-bar { flex-wrap: wrap; gap: 8px; }
+  .mapapp-primary .control-label { display: none; }
+  .mapapp-primary .seg button { padding: 6px 9px; }
+  .sheet-open-btn { display: inline-flex; align-items: center; min-height: 44px; white-space: nowrap; border-radius: 8px; }
+  .mapapp-chips {
+    display: flex; gap: 5px; flex-basis: 100%; overflow-x: auto;
+    -webkit-overflow-scrolling: touch; scrollbar-width: none;
+  }
+  .mapapp-chips::-webkit-scrollbar { display: none; }
+  .mapapp-chip {
+    white-space: nowrap; font-size: 12px; align-self: center;
+    background: var(--surface-1); border: 1px solid var(--border);
+    border-radius: 20px; padding: 4px 10px; color: var(--ink-2);
+  }
+
+  /* .mapapp-main остаётся flex: карта (flex:1) заполняет ширину, а .side —
+     фиксированная шторка вне потока, поэтому строку не занимает */
+
+  /* нижняя шторка настроек (U-05) */
+  .mapapp-secondary {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 70;
+    flex-direction: column; align-items: stretch; gap: 14px;
+    background: var(--surface-1); border-radius: 16px 16px 0 0;
+    padding: 8px 18px calc(22px + env(safe-area-inset-bottom));
+    box-shadow: 0 -8px 30px rgba(0,0,0,.28);
+    transform: translateY(105%); transition: transform .25s ease;
+    max-height: 82vh; overflow-y: auto;
+  }
+  /* активная шторка настроек — выше карточки территории (обе fixed) */
+  .mapapp-secondary.open { transform: translateY(0); z-index: 72; }
+  .mapapp-secondary .control-group { flex-wrap: wrap; }
+  .mapapp-secondary .seg { flex-wrap: wrap; }
+  .mapapp-secondary .seg button { flex: 1 0 auto; min-height: 44px; }
+  .mapapp-secondary .toggle { min-height: 44px; }
+  .sheet-head {
+    display: flex; align-items: center; justify-content: space-between;
+    position: sticky; top: 0; z-index: 1;
+    background: var(--surface-1); margin: 0 0 2px; padding: 2px 0 8px;
+  }
+  .sheet-title { font-weight: 650; font-size: 16px; }
+  .sheet-close { width: 44px; height: 44px; font-size: 26px; line-height: 1; color: var(--muted); }
+  .sheet-backdrop { display: block; position: fixed; inset: 0; background: rgba(0,0,0,.35); z-index: 65; }
+
+  /* карточка территории → нижняя шторка (U-06) */
+  .mapapp .side {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 70;
+    width: auto; height: 80vh; max-height: 88dvh;
+    border-radius: 16px 16px 0 0;
+    transform: translateY(105%); transition: transform .25s ease;
+    box-shadow: 0 -8px 30px rgba(0,0,0,.28);
+  }
+  .mapapp .side.sheet-open { transform: translateY(0); }
+  .sheet-handle {
+    display: block; width: 42px; height: 4px; border-radius: 2px;
+    background: var(--baseline); margin: 8px auto 4px; flex: none; cursor: pointer;
+  }
+  .side-tabs button { min-height: 44px; }
+
+  /* тач-цели контролов (U-13) */
+  .seg button { min-height: 44px; }
+  .toggle { min-height: 44px; }
+  .toggle input[type='checkbox'] { width: 20px; height: 20px; }
+  .btn { min-height: 44px; display: inline-flex; align-items: center; }
+  select { min-height: 44px; }
+
+  /* легенда не перекрывает карту: площадь ≤25% (U-07) */
+  .map-legend {
+    left: 10px; bottom: 10px; max-width: 62%; max-height: 40%;
+    overflow-y: auto; padding-right: 30px; font-size: 11px;
+  }
+
+  /* --- таймбар: компактный (≤64px), тач-thumb, safe-area (U-04) --- */
+  .timebar {
+    gap: 8px; padding: 3px 10px calc(3px + env(safe-area-inset-bottom));
+    border-radius: 12px 12px 0 0;
+  }
+  .timebar .year-display { font-size: 20px; min-width: 52px; }
+  .year-display .forecast-flag { white-space: nowrap; }
+  .play-btn { width: 44px; height: 44px; }
+  .slider-zone { padding-top: 0; }
+  .slider-ticks { height: 12px; }
+
+  .forecast-zone { display: none; }
+  .slider-zone input[type='range'] {
+    -webkit-appearance: none; appearance: none;
+    display: block; height: 44px; background: transparent;
+  }
+  .slider-zone input[type='range']::-webkit-slider-runnable-track {
+    height: 6px; border-radius: 3px; background: var(--baseline);
+  }
+  .slider-zone input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none; appearance: none;
+    width: 26px; height: 26px; border-radius: 50%;
+    background: var(--accent); border: 3px solid var(--surface-1);
+    margin-top: -10px; box-shadow: 0 1px 4px rgba(0,0,0,.3);
+  }
+  .slider-zone input[type='range']::-moz-range-track {
+    height: 6px; border-radius: 3px; background: var(--baseline);
+  }
+  .slider-zone input[type='range']::-moz-range-thumb {
+    width: 26px; height: 26px; border-radius: 50%;
+    background: var(--accent); border: 3px solid var(--surface-1);
+  }
+  /* деления слайдера: только опорные годы (U-04) */
+  .slider-ticks .tick-minor { display: none; }
+  .slider-ticks .tick-forecast { white-space: nowrap; font-size: 10px; }
+}
+
+/* --- лендинг (U-01) ------------------------------------------------------- */
+.land { max-width: 1000px; }
+.land-hero { padding: 12px 0 8px; }
+.land-title {
+  font-size: 30px; line-height: 1.15; margin: 4px 0 12px;
+  letter-spacing: -0.01em; max-width: 16em;
+}
+.land-lead { font-size: 17px; line-height: 1.6; color: var(--ink-2); max-width: 40em; margin: 0 0 18px; }
+.land-cta { display: flex; flex-wrap: wrap; gap: 10px; }
+.land-cta .btn { min-height: 42px; display: inline-flex; align-items: center; padding: 8px 16px; font-size: 15px; }
+.land-sujets { margin-top: 34px; }
+.land-sujets h2, .land-research h2, .land-verify h2, .land-about h2 { font-size: 20px; margin: 0 0 14px; }
+.land-sujet-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
+.land-sujet {
+  border: 1px solid var(--border); border-radius: 12px; background: var(--surface-1);
+  padding: 14px 16px; display: flex; flex-direction: column; gap: 10px;
+}
+.land-sujet-chart { background: var(--page); border-radius: 8px; padding: 10px 8px; }
+.land-sujet-num { font-size: 22px; font-weight: 700; letter-spacing: -0.01em; }
+.land-sujet-cap { font-size: 13.5px; line-height: 1.5; color: var(--ink-2); margin: 4px 0 0; }
+.land-sujet-more { font-size: 13px; color: var(--accent); text-decoration: none; margin-top: auto; }
+.land-research, .land-verify, .land-about { margin-top: 40px; }
+@media (min-width: 981px) {
+  .land-title { font-size: 38px; }
+  .land-lead { font-size: 18px; }
+}

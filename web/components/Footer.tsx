@@ -5,6 +5,8 @@ import { usePathname } from 'next/navigation';
 
 export default function Footer() {
   const path = usePathname();
+  // на карте (режим приложения, /map) подвал не показываем — страница не прокручивается
+  if (path === '/map') return null;
   const be = path.startsWith('/be');
   const p = (ru: string, be: string) => (be ? be : ru);
   return (

@@ -247,7 +247,7 @@ export default function MonotownsView() {
                   </div>
                 </div>
                 <div className="stat-tile">
-                  <div className="st-label">Риск: {rec.risk} · <a href={`/?sel=${rec.id}`}>на карту</a></div>
+                  <div className="st-label">Риск: {rec.risk} · <a href={`/map?sel=${rec.id}`}>на карту</a></div>
                   <div className="st-value" style={{ fontSize: 15 }}>
                     {rec.gap != null ? `${rec.gap > 0 ? '+' : ''}${rec.gap} п.п. к типовым` : 'нет пары по размеру'}
                   </div>
