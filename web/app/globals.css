@@ -629,3 +629,117 @@ a.card:hover { border-color: var(--accent); }
   border-radius: 50%;
   padding: 0 8px;
 }
+
+/* --- переключатель языка (в шапке) --------------------------------------- */
+.lang-switch {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 13px;
+}
+.lang-switch a { padding: 4px 7px; color: var(--muted); border-radius: 6px; text-decoration: none; }
+.lang-switch a.on { color: var(--ink); font-weight: 700; }
+.lang-sep { color: var(--border); }
+
+/* --- контентные страницы (article/about/goals/methodology/author) --------- */
+.content-page { max-width: 780px; }
+.content {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ink);
+}
+.content h1 { font-size: 30px; line-height: 1.2; margin: 8px 0 14px; letter-spacing: -0.01em; }
+.content h2 {
+  font-size: 21px; margin: 34px 0 10px; scroll-margin-top: 16px;
+  padding-top: 6px; border-top: 1px solid var(--border);
+}
+.content h3 { font-size: 17px; margin: 22px 0 8px; }
+.content p { margin: 12px 0; }
+.content ul, .content ol { margin: 12px 0; padding-left: 22px; }
+.content li { margin: 5px 0; }
+.content a { color: var(--accent); text-decoration: none; }
+.content a:hover { text-decoration: underline; }
+.content strong { font-weight: 650; }
+.content hr { border: none; border-top: 1px solid var(--border); margin: 26px 0; }
+.content em { color: var(--ink-2); }
+.content .md-table-wrap { overflow-x: auto; margin: 14px 0; }
+.content table { border-collapse: collapse; font-size: 14px; width: 100%; }
+.content th, .content td { border: 1px solid var(--border); padding: 6px 10px; text-align: left; }
+.content th { background: var(--surface-1); font-weight: 600; }
+
+/* оглавление статьи */
+.content-toc {
+  float: right;
+  width: 220px;
+  margin: 0 0 16px 22px;
+  padding: 12px 14px;
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  font-size: 13px;
+}
+.content-toc-title { font-weight: 650; margin-bottom: 6px; color: var(--ink-2); }
+.content-toc ul { list-style: none; margin: 0; padding: 0; }
+.content-toc li { margin: 4px 0; }
+.content-toc a { color: var(--ink-2); text-decoration: none; }
+.content-toc a:hover { color: var(--accent); }
+@media (max-width: 720px) {
+  .content-toc { float: none; width: auto; margin: 0 0 16px; }
+}
+
+/* плашки-«чипы»: [Данные] / [Расчёт] / [Модель] / [Интерпретация] */
+.chip {
+  margin: 14px 0;
+  padding: 11px 14px 11px 15px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  background: var(--surface-1);
+  font-size: 15px;
+  line-height: 1.6;
+}
+.chip-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-right: 8px;
+  padding: 1px 7px;
+  border-radius: 6px;
+  color: #fff;
+  vertical-align: 1.5px;
+}
+.chip-data   { border-left-color: #2a78d6; }
+.chip-data   .chip-tag { background: #2a78d6; }
+.chip-calc   { border-left-color: #1a9b7c; }
+.chip-calc   .chip-tag { background: #1a9b7c; }
+.chip-model  { border-left-color: #7a5cc7; }
+.chip-model  .chip-tag { background: #7a5cc7; }
+.chip-interp { border-left-color: #c98a2b; }
+.chip-interp .chip-tag { background: #c98a2b; }
+.content blockquote {
+  margin: 14px 0; padding: 4px 14px; border-left: 3px solid var(--border);
+  color: var(--ink-2);
+}
+
+.method-tabs { max-width: 780px; margin-top: 20px; }
+
+/* --- подвал --------------------------------------------------------------- */
+.site-footer {
+  max-width: 1500px;
+  margin: 40px auto 0;
+  padding: 18px 16px 28px;
+  border-top: 1px solid var(--border);
+  font-size: 13px;
+  color: var(--muted);
+}
+.footer-links { display: flex; flex-wrap: wrap; gap: 6px 16px; margin-bottom: 8px; }
+.footer-links a { color: var(--ink-2); text-decoration: none; }
+.footer-links a:hover { color: var(--accent); }
+.footer-note { line-height: 1.55; max-width: 780px; }
+.footer-note a { color: var(--ink-2); }
+
+.app-teaser { color: var(--ink-2); font-size: 13px; margin-top: 4px; }
+.app-teaser a { color: var(--accent); text-decoration: none; }

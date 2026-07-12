@@ -9,6 +9,8 @@ export interface ResearchEntry {
   status: 'published' | 'planned';
   /** этап приоритетного плана (TASK_SPEC §6) */
   stage: number;
+  /** slug пакета артефактов, если отличается от route-slug (напр. ml → mlchallenger) */
+  artifactSlug?: string;
   artifact?: { file: string; version: string; sizeKb: number };
 }
 
@@ -31,7 +33,7 @@ export const RESEARCH: ResearchEntry[] = [
       'Где и когда возрастная структура делает депопуляцию самоподдерживающейся — естественная убыль даже при нулевой миграции?',
     status: 'published',
     stage: 4,
-    artifact: { file: 'by-maps-aging-v1.0.3.zip', version: '1.0.3', sizeKb: 711 },
+    artifact: { file: 'by-maps-aging-v1.0.3.zip', version: '1.0.3', sizeKb: 712 },
   },
   {
     slug: 'wages',
@@ -51,7 +53,7 @@ export const RESEARCH: ResearchEntry[] = [
       'Пригород (<45 мин) растёт, кольцо 1,5–2,5 ч убывает быстрее всего? Как закрытие границ с ЕС изменило положение западных районов?',
     status: 'published',
     stage: 6,
-    artifact: { file: 'by-maps-access-v1.0.0.zip', version: '1.0.0', sizeKb: 13949 },
+    artifact: { file: 'by-maps-access-v1.0.0.zip', version: '1.0.0', sizeKb: 13950 },
   },
   {
     slug: 'migration',
@@ -61,7 +63,7 @@ export const RESEARCH: ResearchEntry[] = [
       'Как устроена «лестница» село → райцентр → облцентр → Минск → зарубеж; каковы масштабы и география волны 2020+?',
     status: 'published',
     stage: 7,
-    artifact: { file: 'by-maps-migration-v1.0.0.zip', version: '1.0.0', sizeKb: 2401 },
+    artifact: { file: 'by-maps-migration-v1.0.0.zip', version: '1.0.0', sizeKb: 2402 },
   },
   {
     slug: 'monotowns',
@@ -71,7 +73,7 @@ export const RESEARCH: ResearchEntry[] = [
       'Насколько траектория моногорода определяется состоянием градообразующего предприятия; кто в зоне риска при негативном сценарии?',
     status: 'published',
     stage: 8,
-    artifact: { file: 'by-maps-monotowns-v1.0.0.zip', version: '1.0.0', sizeKb: 146 },
+    artifact: { file: 'by-maps-monotowns-v1.0.0.zip', version: '1.0.0', sizeKb: 145 },
   },
   {
     slug: 'chernobyl',
@@ -81,7 +83,7 @@ export const RESEARCH: ResearchEntry[] = [
       'Как отселение изменило траектории юго-восточных районов относительно демографически схожих незагрязнённых?',
     status: 'published',
     stage: 4,
-    artifact: { file: 'by-maps-chernobyl-v1.0.0.zip', version: '1.0.0', sizeKb: 613 },
+    artifact: { file: 'by-maps-chernobyl-v1.0.0.zip', version: '1.0.0', sizeKb: 614 },
   },
   {
     slug: 'nightlights',
@@ -91,7 +93,7 @@ export const RESEARCH: ResearchEntry[] = [
       'Где динамика ночной светимости (VIIRS) расходится с официальной динамикой населения — кандидаты на недоучтённый отток?',
     status: 'published',
     stage: 7,
-    artifact: { file: 'by-maps-nightlights-v1.0.0.zip', version: '1.0.0', sizeKb: 476 },
+    artifact: { file: 'by-maps-nightlights-v1.0.0.zip', version: '1.0.0', sizeKb: 477 },
   },
   {
     slug: 'shocks',
@@ -101,7 +103,7 @@ export const RESEARCH: ResearchEntry[] = [
       'Вклад Первой мировой, границы 1921–1939, репрессий, Второй мировой, Холокоста и «неперспективных деревень» в сегодняшнюю карту?',
     status: 'published',
     stage: 8,
-    artifact: { file: 'by-maps-shocks-v1.0.0.zip', version: '1.0.0', sizeKb: 113 },
+    artifact: { file: 'by-maps-shocks-v1.0.0.zip', version: '1.0.0', sizeKb: 114 },
   },
   {
     slug: 'ml',
@@ -111,6 +113,7 @@ export const RESEARCH: ResearchEntry[] = [
       'Где когортная модель районов (CCR/Гамильтон-Перри) систематически ошибается и по какому сигналу, которого она не видит? Градиентный бустинг на её ошибке 2019→2026 — как диагностика, не как конкурирующий прогноз.',
     status: 'published',
     stage: 8,
-    artifact: { file: 'by-maps-mlchallenger-v1.0.0.zip', version: '1.0.0', sizeKb: 870 },
+    artifactSlug: 'mlchallenger',
+    artifact: { file: 'by-maps-mlchallenger-v1.0.0.zip', version: '1.0.0', sizeKb: 872 },
   },
 ];

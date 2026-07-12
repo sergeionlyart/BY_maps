@@ -1,11 +1,18 @@
 'use client';
 
 import { useMemo } from 'react';
+import { slugify } from '@/lib/slug';
 
-/** Минимальный безопасный рендерер Markdown для методблоков и методики:
- *  заголовки, абзацы, списки, таблицы, жирный/курсив/код, ссылки, hr.
- *  Собирает React-элементы (не innerHTML) - содержимое экранировано по
- *  построению. */
+/** Минимальный безопасный рендерер Markdown для методблоков, методики и
+ *  контентных страниц: заголовки (с якорями), абзацы, списки, таблицы,
+ *  жирный/курсив/код, ссылки, hr, цитаты-плашки [Данные]/[Расчёт]/[Модель]/
+ *  [Интерпретация]. Собирает React-элементы (не innerHTML) - содержимое
+ *  экранировано по построению. */
+
+const CHIP: Record<string, string> = {
+  'Данные': 'data', 'Расчёт': 'calc', 'Модель': 'model',
+  'Интерпретация': 'interp', 'Гипотеза': 'interp',
+};
 
 function inline(text: string, key = 0): React.ReactNode[] {
   const out: React.ReactNode[] = [];
@@ -56,11 +63,43 @@ export default function Markdown({ text }: { text: string }) {
       const h = line.match(/^(#{1,4})\s+(.*)/);
       if (h) {
         const Tag = (['h1', 'h2', 'h3', 'h4'] as const)[h[1].length - 1];
-        out.push(<Tag key={k++}>{inline(h[2], k)}</Tag>);
+        const id = h[1].length >= 2 ? slugify(h[2]) : undefined;
+        out.push(<Tag key={k++} id={id}>{inline(h[2], k)}</Tag>);
         i++;
         continue;
       }
       if (/^(-{3,}|\*{3,})\s*$/.test(line)) { out.push(<hr key={k++} />); i++; continue; }
+      // цитата: собираем блок '>' -> абзацы; абзацы с префиксом **[Метка]**
+      // рендерятся плашками-«чипами», прочие — обычной цитатой
+      if (/^>\s?/.test(line)) {
+        const raw: string[] = [];
+        while (i < lines.length && /^>\s?/.test(lines[i])) {
+          raw.push(lines[i].replace(/^>\s?/, ''));
+          i++;
+        }
+        // разбить на абзацы по пустым строкам
+        const paras: string[] = [];
+        let cur = '';
+        for (const l of raw) {
+          if (!l.trim()) { if (cur) { paras.push(cur); cur = ''; } }
+          else cur += (cur ? ' ' : '') + l.trim();
+        }
+        if (cur) paras.push(cur);
+        for (const p of paras) {
+          const cm = p.match(/^\*\*\[([^\]]+)\]\*\*\s*(.*)$/);
+          if (cm && CHIP[cm[1]]) {
+            out.push(
+              <div className={`chip chip-${CHIP[cm[1]]}`} key={k++}>
+                <span className="chip-tag">{cm[1]}</span>
+                <span>{inline(cm[2], k)}</span>
+              </div>,
+            );
+          } else {
+            out.push(<blockquote key={k++}>{inline(p, k)}</blockquote>);
+          }
+        }
+        continue;
+      }
       if (/^[-*]\s+/.test(line)) {
         const items: string[] = [];
         while (i < lines.length && (/^[-*]\s+/.test(lines[i]) || /^\s{2,}\S/.test(lines[i]))) {

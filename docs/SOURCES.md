@@ -141,7 +141,7 @@ doi:10.7910/DVN/YGIVCD) исходно взяли за анонимную дос
 ## Этап 8: INF-06 «Моногорода»
 
 Реестр — [`data/raw/monotowns/registry.json`](../data/raw/monotowns/registry.json)
-(49 пар город↔предприятие, построчные источники) и плоский
+(46 пар город↔предприятие, построчные источники) и плоский
 [`data/curated/monotowns.csv`](../data/curated/monotowns.csv). Ручная
 курация по открытым источникам: сайты предприятий, отраслевая пресса,
 годовые отчёты, санкционные списки EU (consilium.europa.eu timeline,

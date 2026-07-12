@@ -42,7 +42,7 @@ export default function ForecastArtifactPage() {
         </p>
         <div className="card-foot">
           <a href="/artifacts/by-maps-forecast-v1.3.0.zip" download>
-            ⬇ by-maps-forecast-v1.3.0.zip (2046 КБ)
+            ⬇ by-maps-forecast-v1.3.0.zip (2051 КБ)
           </a>
         </div>
       </div>

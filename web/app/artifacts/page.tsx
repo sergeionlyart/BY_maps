@@ -1,11 +1,15 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { RESEARCH } from '@/lib/research';
+import { loadContent } from '@/lib/content';
+import Markdown from '@/components/Markdown';
+
+const intro = loadContent('ru', 'data-artifacts');
 
 export const metadata: Metadata = {
-  title: 'Проверяемые артефакты — Население Беларуси',
-  description:
-    'Каждое исследование проекта распространяется как проверяемый пакет: данные + код + допущения + инструкции для LLM-агента.',
+  title: intro.title || 'Данные и артефакты — BY Maps',
+  description: intro.description,
+  alternates: { languages: { ru: '/artifacts', be: '/be/data-artifacts' } },
 };
 
 const PROMPTS = [
@@ -31,37 +35,17 @@ export default function ArtifactsPage() {
   const published = RESEARCH.filter((r) => r.status === 'published' && r.artifact);
   return (
     <div className="page">
-      <h1>Проверяемые артефакты</h1>
-      <p className="page-lead">
-        Мы передаём не картинку, а пакет: <strong>данные + код + параметры +
-        проверки + инструкции</strong>. Его можно скачать, воспроизвести каждое
-        число с лендинга и оспорить допущения — вручную или силами вашего
-        LLM-агента.
-      </p>
+      <article className="content">
+        <Markdown text={intro.body} />
+      </article>
 
-      <h2>Что это</h2>
-      <p>
-        Пакет — это ZIP по <a href="https://github.com/sergeionlyart/BY_maps/blob/master/docs/ARTIFACT_STANDARD.md"
-        target="_blank" rel="noreferrer">стандарту v1.0</a>: завендоренные сырые
-        источники с контрольными суммами (<code>sources/</code>), весь код
-        расчёта с одной точкой входа (<code>code/run.sh</code>), допущения с
-        обоснованиями (<code>params/assumptions.yaml</code>), итоговые данные —
-        ровно те, что на лендинге (<code>data/final/</code>), контрольные
-        значения с допусками и инварианты (<code>checks/</code>), известные
-        ограничения (<code>LIMITATIONS.md</code>) и инструкции для агента
-        (<code>AGENT.md</code>). Машиночитаемое описание всего содержимого —{' '}
-        <code>manifest.json</code>.
+      <h2>Каталог пакетов</h2>
+      <p className="page-lead" style={{ fontSize: 14 }}>
+        Машиночитаемый каталог со всеми версиями и контрольными суммами —{' '}
+        <a href="/artifacts/catalog.json">catalog.json</a>; внешние суммы для быстрой
+        проверки целостности — <a href="/artifacts/checksums.txt">checksums.txt</a>{' '}
+        (<code>sha256sum -c checksums.txt</code>).
       </p>
-
-      <h2>Зачем</h2>
-      <p>
-        Принцип проекта: ни один значимый вывод не должен требовать доверия к
-        нам. Каждое число прослеживается до источника, воспроизводится одной
-        командой и сопровождается списком слабых мест. Опубликованная версия
-        неизменяема; новые данные — новая версия.
-      </p>
-
-      <h2>Доступные пакеты</h2>
       <div className="cards">
         <div className="card">
           <div className="card-code">Прогноз · v2026.4 · пакет v1.3.0</div>
@@ -72,7 +56,7 @@ export default function ArtifactsPage() {
             эмиграцию 2020–2026 (WP-F3); три бэктеста с гейтами.</p>
           <div className="card-foot">
             <a href="/artifacts/by-maps-forecast-v1.3.0.zip" download>
-              ⬇ by-maps-forecast-v1.3.0.zip (2046 КБ)
+              ⬇ by-maps-forecast-v1.3.0.zip (2051 КБ)
             </a>
             {' · '}
             <Link href="/artifacts/forecast">версии и состав</Link>
@@ -97,16 +81,39 @@ export default function ArtifactsPage() {
         ))}
       </div>
 
-      <h2>Как скачать и проверить</h2>
-      <ol>
-        <li>Скачайте ZIP и распакуйте.</li>
-        <li><strong>Вручную:</strong> прочитайте README.md → выполните{' '}
-          <code>bash code/run.sh</code> (для пакета zipf нужен только
-          Python ≥ 3.10, зависимостей нет, ~10 секунд) → скрипт пересчитает
-          всё от сырого источника и сам сверит результат с заявленным.</li>
-        <li><strong>Агентом:</strong> передайте ZIP вашему LLM-агенту вместе с
-          файлом AGENT.md (он внутри пакета) или одним из промптов ниже.</li>
-      </ol>
+      <h2 id="reproduction">Процедура воспроизведения</h2>
+      <p>
+        Проверено в чистом окружении (Ubuntu 22, Python 3.10, Node 20). Сценарий
+        A не требует репозитория вообще — достаточно скачанного пакета.
+      </p>
+      <h3>A. Проверить одно исследование без репозитория (15–30 минут)</h3>
+      <pre><code>{`sha256sum by-maps-zipf-v1.0.0.zip     # 1. целостность (сверить с catalog.json)
+unzip by-maps-zipf-v1.0.0.zip -d zipf && cd zipf
+cat README.md LIMITATIONS.md          # 2. что утверждается и чего НЕ утверждается
+sha256sum -c checks/checksums.sha256  # 3. целостность каждого файла пакета
+bash code/run.sh                      # 4. полный расчёт от сырых данных до финальных
+                                      #    со сверкой expected_results в допусках`}</code></pre>
+      <p>
+        Успех: <code>run.sh</code> завершается кодом 0 и сообщает о совпадении с
+        эталоном. Файлы в <code>data/final/</code> в точности совпадают с
+        опубликованными на сайте. <strong>Вариант для агента:</strong> передайте
+        архив своей LLM-системе с инструкцией «выполни задания из AGENT.md»
+        (готовые промпты — ниже).
+      </p>
+      <h3>B. Полное воспроизведение из репозитория</h3>
+      <pre><code>{`git clone https://github.com/sergeionlyart/BY_maps && cd BY_maps
+python3 -m venv .venv && .venv/bin/pip install -r requirements.txt  # shapely pytest pyyaml
+.venv/bin/python -m etl.build                     # сборка web/public/data
+.venv/bin/python -m pytest etl/tests/ -q          # 155 инвариантов данных
+.venv/bin/python -m etl.artifacts.build --all --check   # байт-воспроизводимость (CI-гейт)
+.venv/bin/python -m etl.artifacts.validate --all  # прогон run.sh каждого + сверка допусков`}</code></pre>
+      <p>
+        Контрольные значения прогноза (official-ряд): базовый сценарий 2050 —
+        7&nbsp;529 тыс., 2075 — 5&nbsp;970 тыс.; калибровка base-2050 к медиане UN
+        WPP 2024 — +1,0% (гейт ±3%); бэктест 2009→2019 — −0,4% (гейт ±2%);
+        80% интервал вероятностного веера на 2050 — [7&nbsp;042; 8&nbsp;046] тыс.
+        Монте-Карло использует фиксированный seed (20260712) — квантили детерминированы.
+      </p>
 
       <h2>Что поручить агенту</h2>
       <div className="prompts">
@@ -169,25 +176,6 @@ export default function ArtifactsPage() {
           </p>
         </div>
       </div>
-
-      <h2>Как повторить расчёты</h2>
-      <p>
-        Требования указаны в <code>manifest.json → environment</code> и{' '}
-        <code>code/requirements.lock</code>. Единственная точка входа —{' '}
-        <code>code/run.sh</code>: он воспроизводит весь конвейер и завершится
-        ненулевым кодом при любом расхождении с заявленными результатами.
-        Ожидаемое время — секунды (для пакетов с растровыми данными — будет
-        указано отдельно).
-      </p>
-
-      <h2>Как искать расхождения</h2>
-      <p>
-        Допущения с обоснованиями — <code>params/assumptions.yaml</code>;
-        известные ограничения и где выводы неприменимы — <code>LIMITATIONS.md</code>;
-        допуски на каждое контрольное число — <code>checks/expected_results.json</code>.
-        AGENT.md перечисляет самые сильные допущения и готовые способы их
-        варьировать (например, <code>--top-n</code> в пакете zipf).
-      </p>
 
       <h2>Как цитировать</h2>
       <p>

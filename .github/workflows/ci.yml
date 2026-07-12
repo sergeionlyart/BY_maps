@@ -12,7 +12,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: pip install shapely pytest pyyaml
+      - run: pip install -r requirements.txt   # shapely pytest pyyaml (единый список)
       - name: Run ETL build
         run: python -m etl.build
       - name: ETL tests (данные, zipf, методблоки-гейт)

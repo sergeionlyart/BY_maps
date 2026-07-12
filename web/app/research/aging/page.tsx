@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import AgingView from '@/components/AgingView';
+import { RESEARCH } from '@/lib/research';
 
 export const metadata: Metadata = {
   title: 'Старение районов — Население Беларуси',
@@ -8,11 +9,13 @@ export const metadata: Metadata = {
     'Возрастная структура 118 районов по переписям 2009/2019: медианный возраст, доля 65+, демографическая нагрузка и контрфактная передвижка «при нулевой миграции».',
 };
 
+const VERSION = RESEARCH.find((r) => r.slug === 'aging')!.artifact!.version;
+
 export default function AgingPage() {
   return (
     <div className="page page-wide">
       <div className="page-breadcrumb">
-        <Link href="/research">Исследования</Link> · INF-02 · v1.0.2
+        <Link href="/research">Исследования</Link> · INF-02 · v{VERSION}
       </div>
       <h1>Старение районов: где депопуляция самоподдерживается</h1>
       <p className="page-lead">

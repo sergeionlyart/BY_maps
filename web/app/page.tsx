@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
 import type { DataFile, Metric, MapLevel, RaionMode } from '@/lib/types';
 import type { ForecastFile, ScenarioId, JumpoffId } from '@/lib/forecast';
 import { FORECAST_START, JUMPOFF_LABEL } from '@/lib/forecast';
@@ -87,6 +88,12 @@ export default function Page() {
         <p>
           Численность, плотность и концентрация населения за 120 лет: страна,
           области, {`118`} районов и {`220+`} городов. Переписи 1897–2019, оценки до 2026.
+        </p>
+        <p className="app-teaser">
+          Открытое исследование демографии Беларуси на проверяемых данных: 10 тем,
+          прогноз до 2075 и скачиваемые пакеты для перепроверки. Начните с{' '}
+          <Link href="/article">обзорной статьи</Link> или узнайте больше{' '}
+          <Link href="/about">о проекте</Link>.
         </p>
       </header>
 

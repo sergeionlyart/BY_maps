@@ -41,7 +41,7 @@ export default function MLChallengerArtifactPage() {
         </p>
         <div className="card-foot">
           <a href="/artifacts/by-maps-mlchallenger-v1.0.0.zip" download>
-            ⬇ by-maps-mlchallenger-v1.0.0.zip (870 КБ)
+            ⬇ by-maps-mlchallenger-v1.0.0.zip (872 КБ)
           </a>
         </div>
       </div>
