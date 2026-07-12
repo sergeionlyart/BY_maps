@@ -139,7 +139,7 @@ export default function LineChart({ series, height = 190, yFormat, yTooltip, dom
 
         {/* вертикальные аннотации событий */}
         {refXs?.filter((r) => r.value >= x0 && r.value <= x1).map((r, i) => (
-          <g key={r.value}>
+          <g key={`${r.value}-${i}`}>
             <line x1={X(r.value)} x2={X(r.value)} y1={M.top + 10} y2={M.top + ih}
               stroke="var(--muted)" strokeWidth="1" strokeDasharray="2 3" />
             <text x={X(r.value) + 3} y={M.top + 9 + (i % 2) * 11} fontSize="9.5" fill="var(--muted)">

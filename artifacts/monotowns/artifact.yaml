@@ -1,0 +1,76 @@
+# Проверяемый пакет INF-06 «Моногорода и градообразующие предприятия».
+# Сборка: python -m etl.artifacts.build monotowns
+
+id: monotowns
+title: "Моногорода Беларуси: реестр 49 пар город-предприятие, типология, санкционная экспозиция и matched-comparison траекторий"
+version: "1.0.0"
+released: "2026-07-12"
+landing_url: "https://by-population-maps.vercel.app/research/monotowns"
+authors:
+  - "Проект «Население Беларуси, 1897-2026»"
+
+files:
+  - { path: README.md, role: docs }
+  - { path: CHANGELOG.md, role: docs }
+  - { path: AGENT.md, role: docs }
+  - { path: LIMITATIONS.md, role: docs }
+  - { path: PROVENANCE.md, role: docs }
+  - { path: CITATION.cff, role: docs }
+  - { path: LICENSE.md, role: docs }
+  - { path: sources/registry.csv, from: data/raw/monotowns/registry_sources.csv, role: docs }
+  # реестр моногородов (ручная курация, построчные источники)
+  - { path: data/raw/monotowns/registry.json, from: data/raw/monotowns/registry.json, role: raw, license: "CC BY 4.0 (компиляция проекта)" }
+  - { path: data/curated/monotowns.csv, from: data/curated/monotowns.csv, role: intermediate, license: "CC BY 4.0" }
+  # ряды городов
+  - { path: web/public/data/data.json, from: web/public/data/data.json, role: intermediate, license: "CC BY 4.0" }
+  # код
+  - { path: etl/__init__.py, from: artifacts/monotowns/shims/etl_init.py, role: code }
+  - { path: etl/common.py, from: artifacts/monotowns/shims/common.py, role: code }
+  - { path: etl/monotowns.py, from: etl/monotowns.py, role: code }
+  - { path: params/assumptions.yaml, role: params }
+  - { path: code/run.sh, role: code }
+  - { path: code/verify.py, role: code }
+  - { path: code/requirements.lock, role: code }
+  - { path: checks/tests/test_invariants.py, role: code }
+  # итоги
+  - { path: data/final/computed_results.json, role: final, license: "CC BY 4.0" }
+  - { path: web/public/data/monotowns.json, from: web/public/data/monotowns.json, role: final, license: "CC BY 4.0" }
+
+sources:
+  - id: monotowns_registry
+    url: "см. data/curated/monotowns.csv (столбец sources): сайты предприятий, отраслевая пресса, санкционные списки EU/US/UK/Canada"
+    description: "Ручная курация 49 пар город-предприятие: отрасль, занятость (оценка), санкционная экспозиция с датами, построчные URL"
+    license: "компиляция CC BY 4.0; первичные источники - по своим лицензиям"
+    accessed: "2026-07-12"
+  - id: city_series
+    url: "https://pop-stat.mashke.org"
+    description: "Ряды населения городов 1959-2026 (база проекта) - для matched comparison"
+    license: "по официальным переписям и оценкам Белстата"
+    accessed: "2026-07-11"
+
+entrypoints:
+  reproduce: "code/run.sh"
+  verify: "python3 checks/tests/test_invariants.py"
+
+environment:
+  python: ">=3.10"
+  lock: "code/requirements.lock"
+  seed: null
+
+expected_results:
+  - { metric: n_towns, value: 46, tolerance: 0,
+      description: "моногородов в реестре (пар город-предприятие; 3 облцентра исключены - не моногорода)" }
+  - { metric: n_industries, value: 16, tolerance: 0,
+      description: "отраслей в типологии" }
+  - { metric: n_sanctioned, value: 16, tolerance: 0,
+      description: "городов с адресными санкциями против предприятия (EU/US/UK/Canada/Ukraine/Switzerland/Japan/Poland)" }
+  - { metric: n_high_risk, value: 10, tolerance: 0,
+      description: "городов высокого риска (сильная зависимость + санкции; полоса риска - проспективная)" }
+  - { metric: n_unmatched, value: 15, tolerance: 0,
+      description: "крупнейших моногородов без сопоставимых по размеру «типовых» соседей (gap=None): они и ЕСТЬ крупные города без облцентров - matched-comparison для них невозможен" }
+  - { metric: high_dep_gap, value: -7.1, tolerance: 0.05,
+      description: "медианный разрыв к типовым городам того же размера у моногородов ВЫСОКОЙ зависимости (сопоставимо 19): население отстаёт на ~7 п.п. (АССОЦИАЦИЯ, не причинность)" }
+  - { metric: medium_dep_gap, value: 3.4, tolerance: 0.05,
+      description: "то же для СРЕДНЕЙ зависимости (сопоставимо 10): +3,4 п.п. - градиент по силе зависимости" }
+  - { metric: all_index, value: 95.3, tolerance: 0.05,
+      description: "медианный индекс населения всех моногородов 1989->2026 (=95,3, ниже 100)" }

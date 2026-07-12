@@ -1,0 +1,459 @@
+{
+ "towns": [
+  {
+   "city_id": "c-pinsk",
+   "city_ru": "Пинск",
+   "jewish_count_1897": 21065,
+   "jewish_share_1897": 74.2,
+   "pop_1939": 29500,
+   "pop_1959": 41548,
+   "ghetto_note": "Гетто создано 1 мая 1942. Ликвидировано 29 октября – 1 ноября 1942: расстреляно около 10 000 евреев — по оценкам исследователей, одна из крупнейших единовременных акций расстрела на тот момент после Бабьего Яра.",
+   "sources": [
+    {
+     "url": "https://www.yadvashem.org/articles/academic/the-jews-of-pinsk-through-the-prism-of-new-documentation.html",
+     "claim": "Евреи составляли 74,2% населения Пинска по переписи 1897; гетто ликвидировано 29 окт – 1 ноя 1942, ~10 000 расстреляны."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Pi%C5%84sk_Ghetto",
+     "claim": "Пинское гетто основано 1 мая 1942; при ликвидации в конце окт – нач ноя 1942 убито около 10 000 евреев."
+    },
+    {
+     "url": "https://encyclopedia.yivo.org/article/476",
+     "claim": "YIVO: Пинск — один из крупнейших еврейских центров Полесья; ~21 000 евреев на рубеже XIX–XX вв."
+    }
+   ]
+  },
+  {
+   "city_id": "c-babrujsk",
+   "city_ru": "Бобруйск",
+   "jewish_count_1897": 20759,
+   "jewish_share_1897": 60,
+   "pop_1939": 84078,
+   "pop_1959": 97530,
+   "ghetto_note": "Оккупация 28 июня 1941; гетто с августа 1941. Массовые расстрелы в сентябре–ноябре 1941 (в акции 5–7 ноября — 5 281 человек по отчёту айнзацгруппы), последняя акция 30 декабря 1941. Погибло около 14 000 евреев и более.",
+   "sources": [
+    {
+     "url": "https://encyclopedia.yivo.org/article.aspx/Bobruisk",
+     "claim": "YIVO: в 1897 в Бобруйске 20 759 евреев (60%); в ходе оккупации погибло около 14 000."
+    },
+    {
+     "url": "https://www.ushmm.org/online/hsv/source_view.php?SourceId=30516",
+     "claim": "USHMM: список узников бобруйского гетто (22 июля 1941)."
+    },
+    {
+     "url": "https://sztetl.org.pl/en/towns/b/1697-babruysk/99-history/137090-history-of-community",
+     "claim": "Virtual Shtetl: хронология гетто и массовых расстрелов в Бобруйске 1941."
+    }
+   ]
+  },
+  {
+   "city_id": "c-sluck",
+   "city_ru": "Слуцк",
+   "jewish_count_1897": 10264,
+   "jewish_share_1897": 77,
+   "pop_1939": 21947,
+   "pop_1959": 22740,
+   "ghetto_note": "«Слуцкое дело» — массовое убийство 27–28 октября 1941 (по немецким данным ~3 400, по советским — до 8 000 жертв). С конца 1941 два гетто; «городское» гетто ликвидировано 8 февраля 1943.",
+   "sources": [
+    {
+     "url": "https://jewishvirtuallibrary.org/slutsk",
+     "claim": "В 1897 еврейская община Слуцка — 10 264 человека, около 77% населения."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Slutsk_massacre",
+     "claim": "Массовое убийство под Слуцком 27–28 октября 1941; оценки числа жертв 3 400 (нем.) – 8 000 (сов.)."
+    },
+    {
+     "url": "https://collections.yadvashem.org/en/untold-stories/community/14621542-Slutsk",
+     "claim": "Yad Vashem: два гетто (полевое и городское); городское ликвидировано 8 февраля 1943."
+    }
+   ]
+  },
+  {
+   "city_id": "c-mazyr",
+   "city_ru": "Мозырь",
+   "jewish_count_1897": 5631,
+   "jewish_share_1897": 70,
+   "pop_1939": 17477,
+   "pop_1959": 26426,
+   "ghetto_note": "Оккупация 22 августа 1941; гетто на улице Ромашов Ров. Убийства с сентября 1941 до зимы 1942 (расстрелы у еврейского кладбища, утопления в Припяти); по разным оценкам до ~4 500 жертв.",
+   "sources": [
+    {
+     "url": "https://www.encyclopedia.com/religion/encyclopedias-almanacs-transcripts-and-maps/mozyr",
+     "claim": "Encyclopaedia Judaica: в 1897 в Мозыре 5 631 еврей (70% населения)."
+    },
+    {
+     "url": "https://collections.yadvashem.org/en/untold-stories/community/14621716-Mozyr",
+     "claim": "Yad Vashem: гетто с августа 1941; до ~4 500 евреев убиты в 1941–1942."
+    },
+    {
+     "url": "https://collections.yadvashem.org/en/untold-stories/killing-site/14626468-Pripyat-River-near-Mozyr",
+     "claim": "Yad Vashem: расстрелы и утопления евреев Мозыря в Припяти."
+    }
+   ]
+  },
+  {
+   "city_id": "c-rahachou",
+   "city_ru": "Рогачёв",
+   "jewish_count_1897": 5047,
+   "jewish_share_1897": 55,
+   "pop_1939": 15168,
+   "pop_1959": 10156,
+   "ghetto_note": "Оккупация в августе 1941; гетто просуществовало около четырёх месяцев. Основные расстрелы — начало ноября 1941; погибло примерно 3 000–3 500 евреев.",
+   "sources": [
+    {
+     "url": "https://www.encyclopedia.com/religion/encyclopedias-almanacs-transcripts-and-maps/rogachev",
+     "claim": "Encyclopaedia Judaica: в 1897 в Рогачёве 5 047 евреев (55% населения)."
+    },
+    {
+     "url": "https://www.ushmm.org/online/hsv/source_view.php?SourceId=30024",
+     "claim": "USHMM: список евреев — жертв Холокоста из Рогачёва (Гомельская обл.)."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/The_Holocaust_in_Belarus",
+     "claim": "Гетто в Рогачёве ликвидировано в основном в первые дни ноября 1941, около 3 000 убитых."
+    }
+   ]
+  },
+  {
+   "city_id": "c-rechyca",
+   "city_ru": "Речица",
+   "jewish_count_1897": 5334,
+   "jewish_share_1897": 57,
+   "pop_1939": 29796,
+   "pop_1959": 30602,
+   "ghetto_note": "Оккупация 23 августа 1941; гетто с ноября 1941. Убийства с сентября по конец декабря 1941 (крупная акция 25 ноября); погибло около 3 000 евреев.",
+   "sources": [
+    {
+     "url": "https://collections.yadvashem.org/en/untold-stories/community/14622092-Rechitsa",
+     "claim": "Yad Vashem: евреи Речицы уничтожены с начала сентября по конец декабря 1941."
+    },
+    {
+     "url": "https://www.encyclopedia.com/religion/encyclopedias-almanacs-transcripts-and-maps/rechitsa",
+     "claim": "Encyclopaedia Judaica: в 1897 еврейское население Речицы — 5 334 (57%); в ноябре 1941 ~3 000 в гетто, затем убиты."
+    }
+   ]
+  },
+  {
+   "city_id": "c-barysau",
+   "city_ru": "Борисов",
+   "jewish_count_1897": 7722,
+   "jewish_share_1897": 51.3,
+   "pop_1939": 49108,
+   "pop_1959": 59280,
+   "ghetto_note": "Гетто создано в конце июля 1941. Основная акция 7–9 октября 1941 у аэродрома в направлении Зембина — расстреляно около 7 000 человек; остатки гетто ликвидированы в августе 1942.",
+   "sources": [
+    {
+     "url": "https://kehilalinks.jewishgen.org/Borisov/history/index.html",
+     "claim": "В 1897 в Борисове 7 722 еврея из 15 063 жителей (свыше 50%)."
+    },
+    {
+     "url": "https://www.jewishgen.org/yizkor/belarus/bel160.html",
+     "claim": "7–9 октября 1941 ликвидация гетто: около 7 000 евреев расстреляны близ аэродрома у Зембина."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/The_Holocaust_in_Belarus",
+     "claim": "Массовое уничтожение евреев Борисова в октябре 1941; окончательная ликвидация — 1942."
+    }
+   ]
+  },
+  {
+   "city_id": "c-slonim",
+   "city_ru": "Слоним",
+   "jewish_count_1897": 11435,
+   "jewish_share_1897": 78,
+   "pop_1939": 26700,
+   "pop_1959": 17509,
+   "ghetto_note": "Массовый расстрел 14 ноября 1941 (около 8 000 человек) и заключительная акция 29 июня 1942. В гетто сгоняли евреев из окрестных местечек (до ~10 000); община уничтожена почти полностью.",
+   "sources": [
+    {
+     "url": "https://www.encyclopedia.com/religion/encyclopedias-almanacs-transcripts-and-maps/slonim",
+     "claim": "Encyclopaedia Judaica: в 1897 в Слониме 11 435 евреев (78% населения)."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/S%C5%82onim_Ghetto",
+     "claim": "Расстрел ~8 000 евреев 14 ноября 1941; окончательное уничтожение гетто 29 июня 1942."
+    },
+    {
+     "url": "https://jewishcurrents.org/june-29-the-slonim-massacres",
+     "claim": "Хроника массовых убийств евреев Слонима, кульминация — 29 июня 1942."
+    }
+   ]
+  },
+  {
+   "city_id": "c-navahrudak",
+   "city_ru": "Новогрудок",
+   "jewish_count_1897": 5015,
+   "jewish_share_1897": 63.6,
+   "pop_1939": 13800,
+   "pop_1959": 12624,
+   "ghetto_note": "Гетто с декабря 1941; расстрелы в 1941–1943. 26 сентября 1943 — побег через 250-метровый туннель (~230 человек, часть ушла к партизанам Бельского). Всего в новогрудском гетто погибло около 10 000 (с учётом согнанных из района), выжило ~350.",
+   "sources": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Navahrudak_Ghetto",
+     "claim": "В 1897 в Новогрудке 5 015 евреев (63,6%); в гетто погибло ~10 000, спаслось ~350, побег через туннель 26 сентября 1943."
+    },
+    {
+     "url": "https://www.yadvashem.org/untoldstories/database/index.asp?cid=502",
+     "claim": "Yad Vashem: этапы уничтожения еврейской общины Новогрудка 1941–1943."
+    }
+   ]
+  },
+  {
+   "city_id": "c-lida",
+   "city_ru": "Лида",
+   "jewish_count_1897": 5294,
+   "jewish_share_1897": 68,
+   "pop_1939": 33400,
+   "pop_1959": 28541,
+   "ghetto_note": "Гетто с декабря 1941. Акция 8 мая 1942 у деревни Стонявичи — около 5 670 убитых; окончательная ликвидация гетто — сентябрь 1943.",
+   "sources": [
+    {
+     "url": "https://www.encyclopedia.com/religion/encyclopedias-almanacs-transcripts-and-maps/lida",
+     "claim": "Encyclopaedia Judaica: в 1897 в Лиде 5 294 еврея (68%); 8 мая 1942 близ Стонявичей убито 5 670."
+    },
+    {
+     "url": "https://www.museumoffamilyhistory.com/ce/ghetto/lida.htm",
+     "claim": "Гетто в Лиде: акция мая 1942 и окончательная ликвидация 1943."
+    }
+   ]
+  },
+  {
+   "city_id": "c-kobryn",
+   "city_ru": "Кобрин",
+   "jewish_count_1897": 6738,
+   "jewish_share_1897": 64.8,
+   "pop_1939": 15300,
+   "pop_1959": 13686,
+   "ghetto_note": "Гетто (две части) с 1941. Акция 27 июля 1942 (~3 000 вывезены в Бронную Гору); окончательная ликвидация 14 октября 1942 (~4 000–4 500 расстреляны). Всего убито не менее 6 900 евреев.",
+   "sources": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Kobryn_Ghetto",
+     "claim": "В 1897 в Кобрине 6 738 евреев (64,8%); ликвидация гетто 14 октября 1942, всего убито не менее 6 900."
+    },
+    {
+     "url": "https://www.encyclopedia.com/religion/encyclopedias-almanacs-transcripts-and-maps/kobrin",
+     "claim": "Encyclopaedia Judaica: акция 27 июля 1942 (Бронная Гора) и уничтожение гетто «А» в октябре 1942."
+    }
+   ]
+  },
+  {
+   "city_id": "c-pruzhany",
+   "city_ru": "Пружаны",
+   "jewish_count_1897": 5080,
+   "jewish_share_1897": 66.6,
+   "pop_1959": 7116,
+   "ghetto_note": "Гетто с 10 августа 1941, разрослось за счёт депортированных до ~18 000 человек. Ликвидировано 28 января – 2 февраля 1943: около 10 000 евреев депортированы в Освенцим-Биркенау; выжило около 20 человек.",
+   "sources": [
+    {
+     "url": "https://collections.yadvashem.org/en/untold-stories/community/14622503-Pruzana",
+     "claim": "Yad Vashem: в 1897 в Пружанах 5 080 евреев (~67%); гетто с 10 августа 1941."
+    },
+    {
+     "url": "https://www.encyclopedia.com/religion/encyclopedias-almanacs-transcripts-and-maps/pruzhany",
+     "claim": "Депортация ~10 000 евреев пружанского гетто в Освенцим 28 января – 2 февраля 1943."
+    }
+   ]
+  },
+  {
+   "city_id": "c-niasvizh",
+   "city_ru": "Несвиж",
+   "jewish_count_1897": 4678,
+   "jewish_share_1897": 55.4,
+   "pop_1959": 6710,
+   "ghetto_note": "Около 4 000 евреев убиты 30 октября 1941. Восстание в гетто 21 июля 1942 — одно из первых в оккупированной Европе; гетто сожжено, большинство узников погибло, часть ушла к партизанам.",
+   "sources": [
+    {
+     "url": "https://www.yadvashem.org/communities/nieswiez/ghetto.html",
+     "claim": "Yad Vashem: в 1897 в Несвиже 4 678 евреев (55,4%); восстание в гетто 21 июля 1942."
+    },
+    {
+     "url": "https://jewishcurrents.org/july-21-uprising-in-the-nieswiez-nesvitch-ghetto",
+     "claim": "Убийство ~4 000 евреев 30 октября 1941 и вооружённое восстание 21 июля 1942."
+    }
+   ]
+  },
+  {
+   "city_id": "c-vaukavysk",
+   "city_ru": "Волковыск",
+   "jewish_count_1897": 5445,
+   "jewish_share_1897": 64,
+   "pop_1939": 16700,
+   "pop_1959": 18283,
+   "ghetto_note": "Гетто с августа–сентября 1941. С конца ноября 1942 евреев (до ~20 000 с учётом района) собрали в пересыльный лагерь; в ноябре–декабре 1942 депортировали в Треблинку и Освенцим (около 18 000 человек).",
+   "sources": [
+    {
+     "url": "https://www.encyclopedia.com/religion/encyclopedias-almanacs-transcripts-and-maps/volkovysk",
+     "claim": "Encyclopaedia Judaica: в 1897 в Волковыске 5 445 евреев (64%)."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Vawkavysk_Ghetto",
+     "claim": "Депортация ~18 000 евреев из Волковыска в Треблинку и Освенцим в конце 1942."
+    }
+   ]
+  },
+  {
+   "city_id": "c-ashmiany",
+   "city_ru": "Ошмяны",
+   "jewish_count_1897": 3808,
+   "jewish_share_1897": 53,
+   "pop_1959": 6900,
+   "ghetto_note": "Гетто с октября 1941; акции 1941–1942 (в том числе селекция 19 октября 1942 с участием виленской еврейской полиции — около 406 убитых). Гетто ликвидировано 28 апреля 1943, остаток переведён в Виленское гетто, на работы и в Понары.",
+   "sources": [
+    {
+     "url": "https://www.encyclopedia.com/religion/encyclopedias-almanacs-transcripts-and-maps/oshmyany",
+     "claim": "Encyclopaedia Judaica: в 1897 в Ошмянах 3 808 евреев (~53%); гетто с октября 1941, ликвидировано 28 апреля 1943."
+    },
+    {
+     "url": "https://www.nli.org.il/en/books/NNL_ALEPH003568705/NLI",
+     "claim": "Списки узников гетто Ошмян, Свири и Свенцян 1942 (изд. по архивным данным)."
+    }
+   ]
+  },
+  {
+   "city_id": "c-orsha",
+   "city_ru": "Орша",
+   "jewish_count_1897": 7383,
+   "jewish_share_1897": 56,
+   "pop_1939": 37578,
+   "pop_1959": 64537,
+   "ghetto_note": "Оккупация 13 июля 1941; гетто с сентября 1941 (около 6 000 человек). Ликвидировано в ноябре 1941 — узники убиты.",
+   "sources": [
+    {
+     "url": "https://sztetl.org.pl/en/towns/o/1803-orsha/99-history/182207-history-of-community",
+     "claim": "Virtual Shtetl: в 1897 в Орше 7 383 еврея (56%); гетто ~6 000, ликвидировано в ноябре 1941."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/The_Holocaust_in_Belarus",
+     "claim": "Уничтожение еврейского населения Орши осенью 1941."
+    }
+   ]
+  },
+  {
+   "city_id": "c-mahilou",
+   "city_ru": "Могилёв",
+   "jewish_count_1897": 21539,
+   "jewish_share_1897": 50,
+   "pop_1939": 99428,
+   "pop_1959": 121712,
+   "ghetto_note": "Гетто создано 13 августа 1941. Акции в октябре 1941 у Полыковичей и на еврейском кладбище (2–3 октября — около 2 270 человек; позднее ещё несколько тысяч, в том числе с применением газовых машин).",
+   "sources": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Mogilev_Ghetto",
+     "claim": "В 1897 в Могилёве 21 539 евреев (~50%); гетто с 13 августа 1941, массовые расстрелы в октябре 1941."
+    },
+    {
+     "url": "https://www.yadvashem.org/education/educational-materials/lesson-plans/mogilev/during-holocaust.html",
+     "claim": "Yad Vashem: судьба евреев Могилёва; расстрелы у Полыковичей."
+    }
+   ]
+  },
+  {
+   "city_id": "c-homiel",
+   "city_ru": "Гомель",
+   "jewish_count_1897": 20385,
+   "jewish_share_1897": 56.4,
+   "pop_1939": 139120,
+   "pop_1959": 168270,
+   "ghetto_note": "Оккупация 19 августа 1941; создано четыре гетто. Ликвидация в ноябре 1941 (расстрелы в нескольких местах и убийства в газовых машинах). Погибло не менее 10 000 евреев.",
+   "sources": [
+    {
+     "url": "https://jewishvirtuallibrary.org/gomel",
+     "claim": "В 1897 в Гомеле 20 385 евреев (56,4%); четыре гетто, ликвидация в ноябре 1941."
+    },
+    {
+     "url": "https://sztetl.org.pl/en/towns/g/1485-gomel/99-history/137359-history-of-community",
+     "claim": "Virtual Shtetl: не менее 10 000 евреев Гомеля погибли в 1941."
+    }
+   ]
+  },
+  {
+   "city_id": "c-stoubcy",
+   "city_ru": "Столбцы",
+   "jewish_count_1897": 2409,
+   "jewish_share_1897": 64,
+   "pop_1959": 5664,
+   "ghetto_note": "Гетто с конца 1941; крупные акции 23 сентября – 1 октября 1942 (~1 975 человек) и 31 января 1943 (окончательная). Всего в 1941–1943 убито около 3 500 евреев.",
+   "sources": [
+    {
+     "url": "https://www.encyclopedia.com/religion/encyclopedias-almanacs-transcripts-and-maps/stolbtsy",
+     "claim": "Encyclopaedia Judaica: в 1897 в Столбцах 2 409 евреев (64%); всего убито ~3 500."
+    },
+    {
+     "url": "https://collections.yadvashem.org/en/untold-stories/community/14622444-Stolpce",
+     "claim": "Yad Vashem: акции сентября–октября 1942 и окончательная ликвидация 31 января 1943."
+    }
+   ]
+  },
+  {
+   "city_id": "c-davyd-haradok",
+   "city_ru": "Давид-Городок",
+   "jewish_count_1897": 3087,
+   "jewish_share_1897": 40,
+   "pop_1959": 9227,
+   "ghetto_note": "10 августа 1941 расстреляно около 3 000 еврейских мужчин (3-й эскадрон 2-го кавполка СС). Оставшихся заключили в гетто; окончательная ликвидация 10 сентября 1942 (около 1 263 человек, в основном женщины и дети).",
+   "sources": [
+    {
+     "url": "https://www.encyclopedia.com/religion/encyclopedias-almanacs-transcripts-and-maps/david-gorodok",
+     "claim": "Encyclopaedia Judaica: в 1897 в Давид-Городке 3 087 евреев (40%)."
+    },
+    {
+     "url": "https://www.tandfonline.com/doi/full/10.1080/17504902.2024.2392314",
+     "claim": "Расстрел ~3 000 мужчин 10 августа 1941 и ликвидация ~1 263 узников гетто 10 сентября 1942."
+    }
+   ]
+  },
+  {
+   "city_id": "c-hlybokaje",
+   "city_ru": "Глубокое",
+   "jewish_count_1897": 3917,
+   "jewish_share_1897": 70,
+   "pop_1959": 7359,
+   "ghetto_note": "Гетто с 1941. 19 июня 1942 в лесу Борок убито около 2 500 «нетрудоспособных». Окончательная ликвидация около 20 августа 1943 сопровождалась вооружённым сопротивлением; гетто сожжено, погибло около 5 000 человек.",
+   "sources": [
+    {
+     "url": "https://www.encyclopedia.com/religion/encyclopedias-almanacs-transcripts-and-maps/glubokoye",
+     "claim": "Encyclopaedia Judaica: в 1897 в Глубоком 3 917 евреев (70%); акция 19 июня 1942 (~2 500) и ликвидация в августе 1943 (~5 000)."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/The_Holocaust_in_Belarus",
+     "claim": "Вооружённое сопротивление при ликвидации гетто в Глубоком в августе 1943."
+    }
+   ]
+  },
+  {
+   "city_id": "c-mir",
+   "city_ru": "Мир",
+   "jewish_count_1897": 3319,
+   "jewish_share_1897": 62,
+   "pop_1959": 2732,
+   "ghetto_note": "В мае 1942 евреев переселили в Мирский замок. В ночь на 10 августа 1942 — побег (свыше 200 человек, при содействии О. Руфайзена); 13 августа 1942 расстреляны оставшиеся около 560. Из не менее чем 3 000 узников погибло около 2 900.",
+   "sources": [
+    {
+     "url": "https://encyclopedia.ushmm.org/content/en/article/mir",
+     "claim": "USHMM: гетто в Мирском замке, побег 10 августа и расстрел оставшихся 13 августа 1942."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Mir_Ghetto",
+     "claim": "В 1897 в Мире ~3 319 евреев (62%); из ≥3 000 узников уничтожено ~2 900."
+    }
+   ]
+  },
+  {
+   "city_id": "c-iuje",
+   "city_ru": "Ивье",
+   "pop_1959": 4930,
+   "ghetto_note": "В межвоенный период Ивье — местечко с еврейским большинством (около 2 500–3 000 евреев). 2 августа 1941 расстреляно ~220 мужчин; гетто с февраля 1942; 12 мая 1942 у деревни Стонявичи расстреляно около 2 500 человек. Достоверная доля евреев по переписи 1897 спорна: Encyclopaedia Judaica приводит по городу как малой административной единице лишь 573 человека (15,7%).",
+   "sources": [
+    {
+     "url": "https://www.encyclopedia.com/religion/encyclopedias-almanacs-transcripts-and-maps/ivye",
+     "claim": "Encyclopaedia Judaica: перепись 1897 — 573 еврея (15,7%) в городе Ивье; массовый расстрел 12 мая 1942."
+    },
+    {
+     "url": "https://www.jewishgen.org/yizkor/belarus/bel178.html",
+     "claim": "Ликвидация гетто в Ивье 12 мая 1942 у Стонявичей, около 2 500 расстрелянных."
+    }
+   ]
+  }
+ ]
+}

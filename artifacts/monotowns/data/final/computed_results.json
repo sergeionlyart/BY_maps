@@ -1,0 +1,34 @@
+[
+ {
+  "metric": "all_index",
+  "value": 95.3
+ },
+ {
+  "metric": "high_dep_gap",
+  "value": -7.1
+ },
+ {
+  "metric": "medium_dep_gap",
+  "value": 3.4
+ },
+ {
+  "metric": "n_high_risk",
+  "value": 10
+ },
+ {
+  "metric": "n_industries",
+  "value": 16
+ },
+ {
+  "metric": "n_sanctioned",
+  "value": 16
+ },
+ {
+  "metric": "n_towns",
+  "value": 46
+ },
+ {
+  "metric": "n_unmatched",
+  "value": 15
+ }
+]

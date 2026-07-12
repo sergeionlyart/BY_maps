@@ -1,0 +1,34 @@
+[
+ {
+  "metric": "n_census",
+  "value": 38
+ },
+ {
+  "metric": "n_events",
+  "value": 9
+ },
+ {
+  "metric": "n_holocaust",
+  "value": 23
+ },
+ {
+  "metric": "pinsk_share_1897",
+  "value": 73.9
+ },
+ {
+  "metric": "pop_1940",
+  "value": 9046000
+ },
+ {
+  "metric": "pop_1950",
+  "value": 7709000
+ },
+ {
+  "metric": "top_share_1897",
+  "value": 75.9
+ },
+ {
+  "metric": "wwii_loss",
+  "value": 1337000
+ }
+]

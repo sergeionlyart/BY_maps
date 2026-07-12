@@ -1,0 +1,317 @@
+{
+ "cities": [
+  {
+   "city_id": "c-minsk",
+   "city_ru": "Минск",
+   "total_1897": 90912,
+   "russian": 27323,
+   "polish": 13760,
+   "jewish": 47561,
+   "basis": "вероисповедание",
+   "source_url": "https://k-da.dev/russia-1897/ru/locality/MIN/Minsky/Minsk"
+  },
+  {
+   "city_id": "c-homiel",
+   "city_ru": "Гомель",
+   "total_1897": 36775,
+   "russian": 12390,
+   "polish": 2012,
+   "jewish": 20385,
+   "basis": "вероисповедание",
+   "source_url": "https://k-da.dev/russia-1897/ru/locality/MOG/Gomelsky/Gomel"
+  },
+  {
+   "city_id": "c-viciebsk",
+   "city_ru": "Витебск",
+   "total_1897": 65871,
+   "russian": 23883,
+   "polish": 4640,
+   "jewish": 34431,
+   "basis": "вероисповедание",
+   "source_url": "https://k-da.dev/russia-1897/ru/locality/VIT/Vitebsky/Vitebsk"
+  },
+  {
+   "city_id": "c-mahilou",
+   "city_ru": "Могилёв",
+   "total_1897": 43119,
+   "russian": 18922,
+   "polish": 2279,
+   "jewish": 21539,
+   "basis": "вероисповедание",
+   "source_url": "https://k-da.dev/russia-1897/ru/locality/MOG/Mogilevsky/Mogilev"
+  },
+  {
+   "city_id": "c-hrodna",
+   "city_ru": "Гродно",
+   "total_1897": 46919,
+   "russian": 14086,
+   "polish": 8695,
+   "jewish": 22684,
+   "basis": "вероисповедание",
+   "source_url": "https://k-da.dev/russia-1897/ru/locality/GRD/Grodnensky/Grodno"
+  },
+  {
+   "city_id": "c-brest",
+   "city_ru": "Брест",
+   "total_1897": 46568,
+   "russian": 12141,
+   "polish": 3494,
+   "jewish": 30257,
+   "basis": "вероисповедание",
+   "source_url": "https://k-da.dev/russia-1897/ru/locality/GRD/Brestsky/BrestLitovsk"
+  },
+  {
+   "city_id": "c-babrujsk",
+   "city_ru": "Бобруйск",
+   "total_1897": 34336,
+   "russian": 11172,
+   "polish": 1485,
+   "jewish": 20759,
+   "basis": "вероисповедание",
+   "source_url": "https://k-da.dev/russia-1897/ru/locality/MIN/Bobruysky/Bobruysk"
+  },
+  {
+   "city_id": "c-pinsk",
+   "city_ru": "Пинск",
+   "total_1897": 28368,
+   "russian": 4992,
+   "polish": 2130,
+   "jewish": 21065,
+   "basis": "вероисповедание",
+   "source_url": "https://k-da.dev/russia-1897/ru/locality/MIN/Pinsky/Pinsk"
+  },
+  {
+   "city_id": "c-barysau",
+   "city_ru": "Борисов",
+   "total_1897": 15063,
+   "russian": 5481,
+   "polish": 1404,
+   "jewish": 7722,
+   "basis": "вероисповедание",
+   "source_url": "https://k-da.dev/russia-1897/ru/locality/MIN/Borisovsky/Borisov"
+  },
+  {
+   "city_id": "c-orsha",
+   "city_ru": "Орша",
+   "total_1897": 13061,
+   "russian": 4941,
+   "polish": 548,
+   "jewish": 7383,
+   "basis": "вероисповедание",
+   "source_url": "https://k-da.dev/russia-1897/ru/locality/MOG/Orshansky/Orsha"
+  },
+  {
+   "city_id": "c-mazyr",
+   "city_ru": "Мозырь",
+   "total_1897": 8076,
+   "russian": 2020,
+   "polish": 382,
+   "jewish": 5631,
+   "basis": "вероисповедание",
+   "source_url": "https://k-da.dev/russia-1897/ru/locality/MIN/Mozyrsky/Mozyr"
+  },
+  {
+   "city_id": "c-sluck",
+   "city_ru": "Слуцк",
+   "total_1897": 14349,
+   "russian": 3288,
+   "polish": 699,
+   "jewish": 10264,
+   "basis": "вероисповедание",
+   "source_url": "https://k-da.dev/russia-1897/ru/locality/MIN/Slutsky/Slutsk"
+  },
+  {
+   "city_id": "c-polack",
+   "city_ru": "Полоцк",
+   "total_1897": 20294,
+   "russian": 5590,
+   "polish": 1627,
+   "jewish": 12481,
+   "basis": "вероисповедание",
+   "source_url": "https://k-da.dev/russia-1897/ru/locality/VIT/Polotsky/Polotsk"
+  },
+  {
+   "city_id": "c-rechyca",
+   "city_ru": "Речица",
+   "total_1897": 9280,
+   "russian": 3662,
+   "polish": 217,
+   "jewish": 5334,
+   "basis": "вероисповедание",
+   "source_url": "https://k-da.dev/russia-1897/ru/locality/MIN/Rechitsky/Rechitsa"
+  },
+  {
+   "city_id": "c-kobryn",
+   "city_ru": "Кобрин",
+   "total_1897": 10408,
+   "russian": 2971,
+   "polish": 598,
+   "jewish": 6738,
+   "basis": "вероисповедание",
+   "source_url": "https://k-da.dev/russia-1897/ru/locality/GRD/Kobrinsky/Kobrin"
+  },
+  {
+   "city_id": "c-slonim",
+   "city_ru": "Слоним",
+   "total_1897": 15863,
+   "russian": 2609,
+   "polish": 1317,
+   "jewish": 11515,
+   "basis": "вероисповедание",
+   "source_url": "https://k-da.dev/russia-1897/ru/locality/GRD/Slonimsky/Slonim"
+  },
+  {
+   "city_id": "c-navahrudak",
+   "city_ru": "Новогрудок",
+   "total_1897": 7887,
+   "russian": 1573,
+   "polish": 790,
+   "jewish": 5015,
+   "basis": "вероисповедание",
+   "source_url": "https://k-da.dev/russia-1897/ru/locality/MIN/Novogrudsky/Novogrudok"
+  },
+  {
+   "city_id": "c-rahachou",
+   "city_ru": "Рогачёв",
+   "total_1897": 9038,
+   "russian": 3274,
+   "polish": 528,
+   "jewish": 5046,
+   "basis": "вероисповедание",
+   "source_url": "https://k-da.dev/russia-1897/ru/locality/MOG/Rogachevsky/Rogachev"
+  },
+  {
+   "city_id": "c-lida",
+   "city_ru": "Лида",
+   "total_1897": 9323,
+   "russian": 1694,
+   "polish": 2153,
+   "jewish": 5294,
+   "basis": "вероисповедание",
+   "source_url": "https://k-da.dev/russia-1897/ru/locality/VIL/Lidsky/Lida"
+  },
+  {
+   "city_id": "c-pruzhany",
+   "city_ru": "Пружаны",
+   "total_1897": 7633,
+   "russian": 2024,
+   "polish": 485,
+   "jewish": 5080,
+   "basis": "вероисповедание",
+   "source_url": "https://k-da.dev/russia-1897/ru/locality/GRD/Pruzhansky/Pruzhany"
+  },
+  {
+   "city_id": "c-niasvizh",
+   "city_ru": "Несвиж",
+   "total_1897": 8459,
+   "russian": 2393,
+   "polish": 1189,
+   "jewish": 4687,
+   "basis": "вероисповедание",
+   "source_url": "https://k-da.dev/russia-1897/ru/locality/MIN/Slutsky/Nesvizh"
+  },
+  {
+   "city_id": "c-vaukavysk",
+   "city_ru": "Волковыск",
+   "total_1897": 10323,
+   "russian": 2716,
+   "polish": 1943,
+   "jewish": 5528,
+   "basis": "вероисповедание",
+   "source_url": "https://k-da.dev/russia-1897/ru/locality/GRD/Volkovyssky/Volkovyssk"
+  },
+  {
+   "city_id": "c-ashmiany",
+   "city_ru": "Ошмяны",
+   "total_1897": 7214,
+   "russian": 825,
+   "polish": 2442,
+   "jewish": 3803,
+   "basis": "вероисповедание",
+   "source_url": "https://k-da.dev/russia-1897/ru/locality/VIL/Oshmyansky/Oshmyany"
+  },
+  {
+   "city_id": "c-vilejka",
+   "city_ru": "Вилейка",
+   "total_1897": 3560,
+   "russian": 1964,
+   "polish": 250,
+   "jewish": 1328,
+   "basis": "вероисповедание",
+   "source_url": "https://k-da.dev/russia-1897/ru/locality/VIL/Vileysky/Vileika"
+  },
+  {
+   "city_id": "c-horki",
+   "city_ru": "Горки",
+   "total_1897": 6735,
+   "russian": 3516,
+   "polish": 103,
+   "jewish": 3029,
+   "basis": "вероисповедание",
+   "source_url": "https://k-da.dev/russia-1897/ru/locality/MOG/Goretsky/Gorki"
+  },
+  {
+   "city_id": "c-mscislau",
+   "city_ru": "Мстиславль",
+   "total_1897": 8514,
+   "russian": 3269,
+   "polish": 155,
+   "jewish": 5076,
+   "basis": "вероисповедание",
+   "source_url": "https://k-da.dev/russia-1897/ru/locality/MOG/Mstislavsky/Mstislavl"
+  },
+  {
+   "city_id": "c-dzisna",
+   "city_ru": "Дисна",
+   "total_1897": 6756,
+   "russian": 1205,
+   "polish": 882,
+   "jewish": 4617,
+   "basis": "вероисповедание",
+   "source_url": "https://k-da.dev/russia-1897/ru/locality/VIL/Disnensky/Disna"
+  },
+  {
+   "city_id": "c-lepiel",
+   "city_ru": "Лепель",
+   "total_1897": 6284,
+   "russian": 2315,
+   "polish": 563,
+   "jewish": 3379,
+   "basis": "вероисповедание",
+   "source_url": "https://k-da.dev/russia-1897/ru/locality/VIT/Lepelsky/Lepel"
+  }
+ ],
+ "source_urls": [
+  "https://k-da.dev/russia-1897/ru",
+  "https://k-da.dev/russia-1897/ru/locality/MIN/Minsky/Minsk",
+  "https://k-da.dev/russia-1897/ru/locality/MOG/Gomelsky/Gomel",
+  "https://k-da.dev/russia-1897/ru/locality/VIT/Vitebsky/Vitebsk",
+  "https://k-da.dev/russia-1897/ru/locality/MOG/Mogilevsky/Mogilev",
+  "https://k-da.dev/russia-1897/ru/locality/GRD/Grodnensky/Grodno",
+  "https://k-da.dev/russia-1897/ru/locality/GRD/Brestsky/BrestLitovsk",
+  "https://k-da.dev/russia-1897/ru/locality/MIN/Bobruysky/Bobruysk",
+  "https://k-da.dev/russia-1897/ru/locality/MIN/Pinsky/Pinsk",
+  "https://k-da.dev/russia-1897/ru/locality/MIN/Borisovsky/Borisov",
+  "https://k-da.dev/russia-1897/ru/locality/MOG/Orshansky/Orsha",
+  "https://k-da.dev/russia-1897/ru/locality/MIN/Mozyrsky/Mozyr",
+  "https://k-da.dev/russia-1897/ru/locality/MIN/Slutsky/Slutsk",
+  "https://k-da.dev/russia-1897/ru/locality/VIT/Polotsky/Polotsk",
+  "https://k-da.dev/russia-1897/ru/locality/MIN/Rechitsky/Rechitsa",
+  "https://k-da.dev/russia-1897/ru/locality/GRD/Kobrinsky/Kobrin",
+  "https://k-da.dev/russia-1897/ru/locality/GRD/Slonimsky/Slonim",
+  "https://k-da.dev/russia-1897/ru/locality/MIN/Novogrudsky/Novogrudok",
+  "https://k-da.dev/russia-1897/ru/locality/MOG/Rogachevsky/Rogachev",
+  "https://k-da.dev/russia-1897/ru/locality/VIL/Lidsky/Lida",
+  "https://k-da.dev/russia-1897/ru/locality/GRD/Pruzhansky/Pruzhany",
+  "https://k-da.dev/russia-1897/ru/locality/MIN/Slutsky/Nesvizh",
+  "https://k-da.dev/russia-1897/ru/locality/GRD/Volkovyssky/Volkovyssk",
+  "https://k-da.dev/russia-1897/ru/locality/VIL/Oshmyansky/Oshmyany",
+  "https://k-da.dev/russia-1897/ru/locality/VIL/Vileysky/Vileika",
+  "https://k-da.dev/russia-1897/ru/locality/MOG/Goretsky/Gorki",
+  "https://k-da.dev/russia-1897/ru/locality/MOG/Mstislavsky/Mstislavl",
+  "https://k-da.dev/russia-1897/ru/locality/VIL/Disnensky/Disna",
+  "https://k-da.dev/russia-1897/ru/locality/VIT/Lepelsky/Lepel",
+  "https://www.demoscope.ru/weekly/ssp/rus_rel_97.php",
+  "https://archive.org/stream/perepis_1897/vyp.%20x%20(RAW)_djvu.txt"
+ ]
+}

@@ -1,0 +1,5 @@
+id,title,url,license,accessed,sha256,notes
+census_lang,Перепись-1897 по родному языку по городам (Демоскоп),http://www.demoscope.ru/weekly/ssp/,"Демоскоп, цитирование",2026-07-12,ea02bc0b99ebeb7cfa25bdd13d0f02cca3763ed7e9d885a58b1918d9e6719f06,census_lang.json
+census_relig,Перепись-1897 по вероисповеданию (кросс-проверка доли евреев),http://www.demoscope.ru/weekly/ssp/,"Демоскоп, цитирование",2026-07-12,c011835120b554c04007b85a927a8c921c7240be8fe5db2eeeafff11f2df5383,census_relig.json
+events,Событийная хронология шоков XX века (аннотации с источниками),-,CC BY 4.0 (компиляция проекта),2026-07-12,80f0762b41adb3ff62a5e7cb17aaa0b00a150330ba6ce8f7b17545267b52bbbe,events.json
+holocaust,Холокост: доля евреев городов 1897 + население 1939/1959 (Yad Vashem/USHMM/энц. гетто),https://www.yadvashem.org/,цитирование,2026-07-12,bb62fa6f237866853573f429986dba929470a68e29c4447f8b0c9358761e6b24,holocaust.json

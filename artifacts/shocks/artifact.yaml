@@ -1,0 +1,83 @@
+# Проверяемый пакет INF-09 «Демографические шоки XX века».
+# Сборка: python -m etl.artifacts.build shocks
+
+id: shocks
+title: "Демографические шоки XX века в Беларуси: таймлайн с источниками, перепись-1897 по языку и исчезновение местечка"
+version: "1.0.0"
+released: "2026-07-12"
+landing_url: "https://by-population-maps.vercel.app/research/shocks"
+authors:
+  - "Проект «Население Беларуси, 1897-2026»"
+
+files:
+  - { path: README.md, role: docs }
+  - { path: CHANGELOG.md, role: docs }
+  - { path: AGENT.md, role: docs }
+  - { path: LIMITATIONS.md, role: docs }
+  - { path: PROVENANCE.md, role: docs }
+  - { path: CITATION.cff, role: docs }
+  - { path: LICENSE.md, role: docs }
+  - { path: sources/registry.csv, from: data/raw/shocks/registry.csv, role: docs }
+  # сырьё: перепись-1897, события, Холокост (с источниками)
+  - { path: data/raw/shocks/census_lang.json, from: data/raw/shocks/census_lang.json, role: raw, license: "Демоскоп, цитирование" }
+  - { path: data/raw/shocks/census_relig.json, from: data/raw/shocks/census_relig.json, role: raw, license: "Демоскоп, цитирование" }
+  - { path: data/raw/shocks/events.json, from: data/raw/shocks/events.json, role: raw, license: "CC BY 4.0 (компиляция проекта)" }
+  - { path: data/raw/shocks/holocaust.json, from: data/raw/shocks/holocaust.json, role: raw, license: "цитирование (Yad Vashem/USHMM/энц. гетто)" }
+  # ряды населения
+  - { path: web/public/data/data.json, from: web/public/data/data.json, role: intermediate, license: "CC BY 4.0" }
+  # код
+  - { path: etl/__init__.py, from: artifacts/shocks/shims/etl_init.py, role: code }
+  - { path: etl/common.py, from: artifacts/shocks/shims/common.py, role: code }
+  - { path: etl/shocks.py, from: etl/shocks.py, role: code }
+  - { path: params/assumptions.yaml, role: params }
+  - { path: code/run.sh, role: code }
+  - { path: code/verify.py, role: code }
+  - { path: code/requirements.lock, role: code }
+  - { path: checks/tests/test_invariants.py, role: code }
+  # итоги
+  - { path: data/final/computed_results.json, role: final, license: "CC BY 4.0" }
+  - { path: web/public/data/shocks.json, from: web/public/data/shocks.json, role: final, license: "CC BY 4.0" }
+
+sources:
+  - id: demoscope_1897
+    url: "http://www.demoscope.ru/weekly/ssp/"
+    description: "Перепись Российской империи 1897 по родному языку и вероисповеданию по городам губерний Беларуси"
+    license: "Демоскоп, цитирование"
+    accessed: "2026-07-12"
+  - id: shock_events
+    url: "см. data/raw/shocks/events.json (поле sources): каждое событие с проверяемым URL"
+    description: "Событийная хронология XX века: беженство 1915, граница 1921, репрессии, ВМВ, Холокост, «неперспективные деревни», распад СССР"
+    license: "компиляция CC BY 4.0; первичные источники - по своим лицензиям"
+    accessed: "2026-07-12"
+  - id: holocaust_sources
+    url: "Yad Vashem, USHMM, энциклопедии гетто (URL в holocaust.json)"
+    description: "Доля евреев городов 1897 + судьба еврейского населения 1941-1943"
+    license: "цитирование в исследовательских целях"
+    accessed: "2026-07-12"
+
+entrypoints:
+  reproduce: "code/run.sh"
+  verify: "python3 checks/tests/test_invariants.py"
+
+environment:
+  python: ">=3.10"
+  lock: "code/requirements.lock"
+  seed: null
+
+expected_results:
+  - { metric: n_events, value: 9, tolerance: 0,
+      description: "событий-вех на таймлайне (каждое с ≥1 источником)" }
+  - { metric: n_census, value: 38, tolerance: 0,
+      description: "городов переписи-1897 по родному языку" }
+  - { metric: n_holocaust, value: 23, tolerance: 0,
+      description: "городов «до/после» Холокоста (доля-1897 + население 1939/1959)" }
+  - { metric: pop_1940, value: 9046000, tolerance: 0,
+      description: "население Беларуси 1940 (довоенный максимум)" }
+  - { metric: pop_1950, value: 7709000, tolerance: 0,
+      description: "население 1950 - после ВМВ" }
+  - { metric: wwii_loss, value: 1337000, tolerance: 0,
+      description: "обрыв ВМВ 1940->1950: -1,34 млн (довоенного уровня достигли лишь в начале 1970-х)" }
+  - { metric: top_share_1897, value: 75.9, tolerance: 0.05,
+      description: "максимальная доля евреев (идиш) в городе-1897 - Докшицы; местечко как тип" }
+  - { metric: pinsk_share_1897, value: 73.9, tolerance: 0.05,
+      description: "Пинск: 74% евреев в 1897 - крупнейшее местечко" }

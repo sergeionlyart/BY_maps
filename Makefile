@@ -30,6 +30,10 @@ stage7:           ## INF-05 + INF-08: migration.json, nightlights.json
 	$(PY) -m etl.migration
 	$(PY) -m etl.nightlights
 
+stage8:           ## INF-06 + INF-09: monotowns.json, shocks.json
+	$(PY) -m etl.monotowns
+	$(PY) -m etl.shocks
+
 test:             ## все проверки данных
 	$(PY) -m pytest etl/tests/ -q
 

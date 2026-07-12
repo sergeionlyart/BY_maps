@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "Цитируйте конкретную версию пакета"
+title: "Моногорода Беларуси: реестр город-предприятие, типология, санкционная экспозиция и matched-comparison (проверяемый пакет)"
+type: dataset
+version: 1.0.0
+date-released: "2026-07-12"
+authors:
+  - name: "Проект «Население Беларуси, 1897–2026»"
+url: "https://by-population-maps.vercel.app/research/monotowns"
+repository-code: "https://github.com/sergeionlyart/BY_maps"
+identifiers:
+  - type: other
+    value: "artifact-monotowns-v1.0.0"
+    description: "git-тег релиза пакета"
+license: CC-BY-4.0

@@ -69,8 +69,9 @@ export const RESEARCH: ResearchEntry[] = [
     title: 'Моногорода и градообразующие предприятия',
     question:
       'Насколько траектория моногорода определяется состоянием градообразующего предприятия; кто в зоне риска при негативном сценарии?',
-    status: 'planned',
+    status: 'published',
     stage: 8,
+    artifact: { file: 'by-maps-monotowns-v1.0.0.zip', version: '1.0.0', sizeKb: 146 },
   },
   {
     slug: 'chernobyl',
@@ -98,7 +99,8 @@ export const RESEARCH: ResearchEntry[] = [
     title: 'Демографические шоки XX века',
     question:
       'Вклад Первой мировой, границы 1921–1939, репрессий, Второй мировой, Холокоста и «неперспективных деревень» в сегодняшнюю карту?',
-    status: 'planned',
+    status: 'published',
     stage: 8,
+    artifact: { file: 'by-maps-shocks-v1.0.0.zip', version: '1.0.0', sizeKb: 113 },
   },
 ];

@@ -1,0 +1,2 @@
+id,title,url,license,accessed,sha256,notes
+monotowns_registry,Реестр моногородов: 46 пар город-предприятие (ручная курация по открытым источникам),data/raw/monotowns/registry.json,CC BY 4.0 (компиляция проекта),2026-07-12,ad14829eece77441cf341c9f781421bc28305d4b130f01ceb3cf4cea2187e02e,построчные источники (URL) в registry.json и data/curated/monotowns.csv; санкции нормализованы (EU/US/UK/Canada/Ukraine/Switzerland/Japan/Poland) с датами; облцентры исключены - не моногорода
