@@ -103,4 +103,14 @@ export const RESEARCH: ResearchEntry[] = [
     stage: 8,
     artifact: { file: 'by-maps-shocks-v1.0.0.zip', version: '1.0.0', sizeKb: 113 },
   },
+  {
+    slug: 'ml',
+    code: 'ML',
+    title: 'ML-challenger: слепые пятна структурной модели',
+    question:
+      'Где когортная модель районов (CCR/Гамильтон-Перри) систематически ошибается и по какому сигналу, которого она не видит? Градиентный бустинг на её ошибке 2019→2026 — как диагностика, не как конкурирующий прогноз.',
+    status: 'published',
+    stage: 8,
+    artifact: { file: 'by-maps-mlchallenger-v1.0.0.zip', version: '1.0.0', sizeKb: 870 },
+  },
 ];

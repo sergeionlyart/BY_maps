@@ -1,0 +1,102 @@
+# Проверяемый пакет ML-challenger (этап 8, ROADMAP §2): диагностика
+# систематических ошибок структурной модели районов (CCR/Гамильтона-Перри)
+# градиентным бустингом. Сборка: python -m etl.artifacts.build mlchallenger
+
+id: mlchallenger
+title: "ML-challenger: где структурная модель районов систематически ошибается (градиентный бустинг на CCR-остатке, окно 2019-2026)"
+version: "1.0.0"
+released: "2026-07-12"
+landing_url: "https://by-population-maps.vercel.app/research/ml"
+authors:
+  - "Проект «Население Беларуси, 1897-2026»"
+
+files:
+  - { path: README.md, role: docs }
+  - { path: CHANGELOG.md, role: docs }
+  - { path: AGENT.md, role: docs }
+  - { path: LIMITATIONS.md, role: docs }
+  - { path: PROVENANCE.md, role: docs }
+  - { path: CITATION.cff, role: docs }
+  - { path: LICENSE.md, role: docs }
+  - { path: sources/registry.csv, from: data/raw/mlchallenger/registry.csv, role: docs }
+  # входы-признаки (производные INF-03/04/05/08 + перепись WP-F1) и входы движка CCR
+  - { path: data/curated/age2009.csv, from: data/curated/age2009.csv, role: intermediate, license: "CC BY 4.0" }
+  - { path: data/curated/age2019.csv, from: data/curated/age2019.csv, role: intermediate, license: "CC BY 4.0" }
+  - { path: data/curated/age_current.csv, from: data/curated/age_current.csv, role: intermediate, license: "CC BY 4.0" }
+  - { path: data/curated/chernobyl_zones.csv, from: data/curated/chernobyl_zones.csv, role: intermediate, license: "CC BY 4.0" }
+  - { path: data/curated/mortality.csv, from: data/curated/mortality.csv, role: intermediate, license: "CC BY 4.0 (OWID)/HMD" }
+  - { path: data/curated/wages.csv, from: data/curated/wages.csv, role: intermediate, license: "CC BY 4.0" }
+  - { path: web/public/data/data.json, from: web/public/data/data.json, role: intermediate, license: "CC BY 4.0" }
+  - { path: web/public/data/access.json, from: web/public/data/access.json, role: intermediate, license: "CC BY 4.0" }
+  - { path: web/public/data/migration.json, from: web/public/data/migration.json, role: intermediate, license: "CC BY 4.0" }
+  - { path: web/public/data/nightlights.json, from: web/public/data/nightlights.json, role: intermediate, license: "CC BY 4.0" }
+  # код: challenger + движок CCR (как в репозитории) + мини-шимы путей
+  - { path: etl/__init__.py, from: artifacts/mlchallenger/shims/etl_init.py, role: code }
+  - { path: etl/common.py, from: artifacts/mlchallenger/shims/common.py, role: code }
+  - { path: etl/challenger.py, from: etl/challenger.py, role: code }
+  - { path: etl/forecast/__init__.py, from: etl/forecast/__init__.py, role: code }
+  - { path: etl/forecast/data.py, from: etl/forecast/data.py, role: code }
+  - { path: etl/forecast/lifetable.py, from: etl/forecast/lifetable.py, role: code }
+  - { path: etl/forecast/ccmpp.py, from: etl/forecast/ccmpp.py, role: code }
+  - { path: etl/forecast/migration.py, from: etl/forecast/migration.py, role: code }
+  - { path: etl/forecast/sub.py, from: etl/forecast/sub.py, role: code }
+  - { path: etl/forecast/backtest_sub.py, from: etl/forecast/backtest_sub.py, role: code }
+  - { path: params/assumptions.yaml, role: params }
+  - { path: code/run.sh, role: code }
+  - { path: code/verify.py, role: code }
+  - { path: code/requirements.lock, role: code }
+  - { path: checks/tests/test_invariants.py, role: code }
+  # итоговые данные
+  - { path: data/final/computed_results.json, role: final, license: "CC BY 4.0" }
+  - { path: web/public/data/mlchallenger.json, from: web/public/data/mlchallenger.json, role: final, license: "CC BY 4.0" }
+
+sources:
+  - id: challenger_features
+    url: "см. sources/registry.csv — провенанс признаков (INF-03 зарплаты, INF-04 доступность, INF-05 миграция, INF-08 огни, WP-F1 перепись) и мишени (CCR-остаток из by-maps-forecast)"
+    description: "Все признаки — производные ранее опубликованных проверяемых пакетов; мишень — OOS-ошибка CCR (этап 5)"
+    license: "по источникам (см. реестр)"
+    accessed: "2026-07-12"
+
+entrypoints:
+  reproduce: "code/run.sh"
+  verify: "python3 checks/tests/test_invariants.py"
+
+environment:
+  python: ">=3.10"
+  lock: "code/requirements.lock"
+  seed: 20260712   # сеяный бустинг (random.Random): LOO-CV, перестановочный нуль, повторная CV — байт-воспроизводимо
+
+# Допуски: прогон детерминирован (SEED); допуски покрывают лишь округление.
+expected_results:
+  - { metric: n_districts, value: 118, tolerance: 0,
+      description: "районов в панели (все r-*, перепись-периметр A)" }
+  - { metric: signalDetected, value: 1, tolerance: 0,
+      description: "перестановочный нуль отверг H0: CCR оставляет ковариат-детектируемую систематическую ошибку" }
+  - { metric: oofR2_full, value: 0.3305, tolerance: 0.001,
+      description: "OOF R2 полной модели против чистого CCR (нуль-предсказание) — 33% дисперсии CCR-остатка объяснимо вне выборки" }
+  - { metric: oofR2_ctrlOnly, value: 0.2013, tolerance: 0.001,
+      description: "только структурные контроли (возрастные доли, ln pop, чернобыль, host)" }
+  - { metric: incrementalExo, value: 0.1292, tolerance: 0.001,
+      description: "инкремент экзогенных признаков (зарплаты/доступность/огни/миграция) над структурой — это и есть «слепое пятно» CCR" }
+  - { metric: best_m, value: 42, tolerance: 0,
+      description: "число деревьев, выбранное ранней остановкой по OOF (умеренное — не переобучение)" }
+  - { metric: repeatedCV_median, value: 0.3178, tolerance: 0.003,
+      description: "медиана OOF R2 по 30 повторным CV (сид субвыборки) — сигнал устойчив, не удача фолда" }
+  - { metric: perm_p, value: 0.005, tolerance: 0.001,
+      description: "p-значение перестановочного нуля (200 тасовок мишени): реальный R2 вне нуль-полосы" }
+  - { metric: perm_realR2, value: 0.3305, tolerance: 0.001,
+      description: "реальный OOF R2, сверяемый с нуль-распределением" }
+  - { metric: mape_ccr, value: 2.19, tolerance: 0.02,
+      description: "MAPE распределения CCR по районам (понижено под диагностику)" }
+  - { metric: mape_ccr_plus_ml, value: 1.671, tolerance: 0.02,
+      description: "MAPE CCR + OOF-коррекция ML (ре-нормировка к тем же областным итогам) — улучшение ~0,5 п.п." }
+  - { metric: mape_naive, value: 2.838, tolerance: 0.02,
+      description: "MAPE наивной линейной экстраполяции 2009-2019 (та же нормировка)" }
+  - { metric: gold_oofR2, value: 0.0219, tolerance: 0.003,
+      description: "вторичное окно 2009->2019 (перепись-золото), ТОЛЬКО структурные признаки: OOF R2 против «средней убыли» ~0 — структура сама по себе едва предсказывает" }
+  - { metric: imp_mig_rate1519, value: 0.000098, tolerance: 0.00003,
+      description: "перестановочная важность миграционного сальдо 2015-2019 — доминирующий экзогенный драйвер (единственный явно вне нуль-полосы)" }
+  - { metric: resid_smalavicki, value: 0.0871, tolerance: 0.001,
+      description: "Смолевичский район: CCR НЕДООЦЕНИЛ (высокая пригородная миграция под Минском/Жодино)" }
+  - { metric: resid_minski, value: -0.0923, tolerance: 0.001,
+      description: "Минский район: CCR ПЕРЕОЦЕНИЛ (экстраполировал бум 2009-2019, рост замедлился) — трудный выброс" }

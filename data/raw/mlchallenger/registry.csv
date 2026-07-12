@@ -1,0 +1,7 @@
+feature_or_source,origin,upstream_package,license,notes
+CCR_residual_target,"этап 5: etl/forecast/sub.py + backtest_sub.py (Гамильтон-Перри, OOS 2019->2026, нормировка к фактическим областным итогам)",by-maps-forecast,CC BY 4.0,"мишень e_i=ln(факт_2026/CCR_2026); факт_2026 = оценка Белстата 01.01.2026"
+wage_rel19; wage_gr1519,"INF-03: data/curated/wages.csv (дата-портал Белстата, зарплата районов 2010-2025)",by-maps-wages,CC BY 4.0,"уровень 2019 и рост 2015->2019; интенсивные (лог-отношения) => периметр-устойчивы"
+access_eff; access_eu2019,"INF-04: web/public/data/access.json (OSM-граф, Дейкстра; eff и eu2019)",by-maps-access,"ODbL (OSM)/CC BY","доступность как квазистатическая география; eu2026/euNadir НЕ используются (утечка)"
+nl_pc19; nl_trend1519,"INF-08: web/public/data/nightlights.json (WorldPop/EOG VNL average_masked 2015-2019)",by-maps-nightlights,CC BY 4.0 (WorldPop),"душевая яркость и тренд доли 2015-2019; 2020-2023 и div/lightRatio НЕ используются"
+mig_rate1519,"INF-05: web/public/data/migration.json raions (сальдо внутренней миграции 2015-2019 на 1000)",by-maps-migration,CC BY 4.0,"главный экзогенный драйвер; CCR структурно не видит миграционную динамику"
+share014_19; share65_19; lnpop19; cher_class,"WP-F1: data/curated/age2019.csv (перепись-2019, район x пол x возраст) + chernobyl_zones.csv",by-maps-forecast,CC BY 4.0,"структурные КОНТРОЛИ (это входы самого CCR); host_flag — из sub.HOSTED"

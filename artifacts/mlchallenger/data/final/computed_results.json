@@ -1,0 +1,66 @@
+[
+ {
+  "metric": "best_m",
+  "value": 42
+ },
+ {
+  "metric": "gold_oofR2",
+  "value": 0.0219
+ },
+ {
+  "metric": "imp_mig_rate1519",
+  "value": 9.8e-05
+ },
+ {
+  "metric": "incrementalExo",
+  "value": 0.1292
+ },
+ {
+  "metric": "mape_ccr",
+  "value": 2.19
+ },
+ {
+  "metric": "mape_ccr_plus_ml",
+  "value": 1.671
+ },
+ {
+  "metric": "mape_naive",
+  "value": 2.838
+ },
+ {
+  "metric": "n_districts",
+  "value": 118
+ },
+ {
+  "metric": "oofR2_ctrlOnly",
+  "value": 0.2013
+ },
+ {
+  "metric": "oofR2_full",
+  "value": 0.3305
+ },
+ {
+  "metric": "perm_p",
+  "value": 0.005
+ },
+ {
+  "metric": "perm_realR2",
+  "value": 0.3305
+ },
+ {
+  "metric": "repeatedCV_median",
+  "value": 0.3178
+ },
+ {
+  "metric": "resid_minski",
+  "value": -0.0923
+ },
+ {
+  "metric": "resid_smalavicki",
+  "value": 0.0871
+ },
+ {
+  "metric": "signalDetected",
+  "value": 1
+ }
+]
