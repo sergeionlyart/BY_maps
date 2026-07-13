@@ -16,17 +16,21 @@ export default function LandingBody() {
     !!new URLSearchParams(window.location.search).get('sel'));
 
   // ПЕРВЫЙ эффект — гвард редиректа старых диплинков на /map
+  // (на белорусской версии — на /be/map, сохраняя язык)
   useEffect(() => {
     if (
       typeof window !== 'undefined' &&
       new URLSearchParams(window.location.search).get('sel')
     ) {
-      window.location.replace('/map' + window.location.search);
+      const mapPath = window.location.pathname.startsWith('/be') ? '/be/map' : '/map';
+      window.location.replace(mapPath + window.location.search);
     }
   }, []);
 
   const t = useT();
   const lang = useLang();
+  // Внутренние ссылки должны вести на версию текущего языка.
+  const p = (path: string) => (lang === 'be' ? '/be' + path : path);
 
   if (redirecting) return null;
 
@@ -43,8 +47,8 @@ export default function LandingBody() {
           {t('Переписи 1897–2019 и оценки до 2026 года, десять исследований и прогноз до 2075-го. Каждое число сопровождается пакетом данных, кода и допущений, который можно скачать, воспроизвести и оспорить — без доверия к автору.')}
         </p>
         <div className="land-cta">
-          <Link href="/map" className="btn primary">{t('Открыть карту →')}</Link>
-          <Link href="/article" className="btn">{t('Читать статью')}</Link>
+          <Link href={p('/map')} className="btn primary">{t('Открыть карту →')}</Link>
+          <Link href={p('/article')} className="btn">{t('Читать статью')}</Link>
         </div>
       </section>
 
@@ -76,7 +80,7 @@ export default function LandingBody() {
               <p className="land-sujet-cap">
                 {t('Пик пройден в переписи 1989 года — 10,20 млн; к началу 2026-го — 9,06 млн (−11% за 37 лет).')}
               </p>
-              <Link href="/map" className="land-sujet-more">{t('подробнее →')}</Link>
+              <Link href={p('/map')} className="land-sujet-more">{t('подробнее →')}</Link>
             </div>
           </div>
 
@@ -104,7 +108,7 @@ export default function LandingBody() {
               <p className="land-sujet-cap">
                 {t('Сельское население: 5,52 млн (1959) → 1,91 млн (2026) — сокращение почти втрое.')}
               </p>
-              <Link href="/research/aging" className="land-sujet-more">{t('подробнее →')}</Link>
+              <Link href={p('/research/aging')} className="land-sujet-more">{t('подробнее →')}</Link>
             </div>
           </div>
 
@@ -129,7 +133,7 @@ export default function LandingBody() {
               <p className="land-sujet-cap">
                 {t('Столица выросла вчетверо за советский период — 516 тыс. (1959) → ~2,0 млн; сегодня Минск вчетверо больше второго города.')}
               </p>
-              <Link href="/research/zipf" className="land-sujet-more">{t('подробнее →')}</Link>
+              <Link href={p('/research/zipf')} className="land-sujet-more">{t('подробнее →')}</Link>
             </div>
           </div>
 
@@ -160,7 +164,7 @@ export default function LandingBody() {
               <p className="land-sujet-cap">
                 {t('Прогноз до 2075 года расходится веером: 7,11 млн (оптимистический), 5,97 млн (базовый), 4,33 млн (негативный).')}
               </p>
-              <Link href="/map" className="land-sujet-more">{t('подробнее →')}</Link>
+              <Link href={p('/map')} className="land-sujet-more">{t('подробнее →')}</Link>
             </div>
           </div>
         </div>
@@ -171,12 +175,12 @@ export default function LandingBody() {
         <h2>{t('Исследования')}</h2>
         <p className="page-lead">
           {t('Десять тем — от иерархии городов до чернобыльского следа. Каждая публикуется с методологическим блоком и')}{' '}
-          <Link href="/artifacts">{t('проверяемым пакетом артефактов')}</Link>.
+          <Link href={p('/artifacts')}>{t('проверяемым пакетом артефактов')}</Link>.
         </p>
         <div className="cards">
           {RESEARCH.map((r) =>
             r.status === 'published' ? (
-              <Link key={r.slug} href={`/research/${r.slug}`} className="card">
+              <Link key={r.slug} href={p(`/research/${r.slug}`)} className="card">
                 <div className="card-code"><span className="ccode">{r.code}</span> · {t('опубликовано')}</div>
                 <div className="card-title">{r.title}</div>
                 <p>{r.question}</p>
@@ -205,7 +209,7 @@ export default function LandingBody() {
           {t('К каждому исследованию и к прогнозу приложен zip-пакет по единому стандарту: сырые и очищенные данные, код с фиксированными зависимостями, все допущения в явном виде и манифест с контрольными суммами sha256. Пересборка в чистом окружении совпадает с опубликованной байт-в-байт.')}
         </p>
         <div className="land-cta">
-          <Link href="/artifacts" className="btn primary">
+          <Link href={p('/artifacts')} className="btn primary">
             {t('Скачать пакеты и проверить')}
           </Link>
         </div>
@@ -224,8 +228,8 @@ export default function LandingBody() {
         <div className="land-cta">
           <a href="https://www.linkedin.com/in/sergei-audzeichyk" target="_blank" rel="noreferrer" className="btn">LinkedIn</a>
           <a href="https://www.facebook.com/share/1C5Ev1hwPw/?mibextid=wwXIfr" target="_blank" rel="noreferrer" className="btn">Facebook</a>
-          <Link href="/about" className="btn">{t('О проекте')}</Link>
-          <Link href="/methodology" className="btn">{t('Методология')}</Link>
+          <Link href={p('/about')} className="btn">{t('О проекте')}</Link>
+          <Link href={p('/methodology')} className="btn">{t('Методология')}</Link>
         </div>
       </section>
     </div>
