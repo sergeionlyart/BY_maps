@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
 import MigrationView from '@/components/MigrationView';
 import ResearchShell from '@/components/ResearchShell';
-import { authors } from '@/lib/seo';
+import { authors, altFor } from '@/lib/seo';
 
 export const metadata: Metadata = {
+  alternates: altFor('/research/migration'),
   authors,
   title: 'Внутренняя и внешняя миграция — Население Беларуси',
   description:

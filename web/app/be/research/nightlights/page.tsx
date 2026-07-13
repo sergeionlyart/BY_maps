@@ -1,14 +1,14 @@
 import type { Metadata } from 'next';
 import NightlightsView from '@/components/NightlightsView';
 import ResearchShell from '@/components/ResearchShell';
-import { authors } from '@/lib/seo';
+import { authors, altFor } from '@/lib/seo';
 
 export const metadata: Metadata = {
   authors,
   title: 'Начныя агні супраць афіцыйнай статыстыкі — Насельніцтва Беларусі',
   description:
     'Гадавыя кампазіты начной свяцільнасці VIIRS (EOG average_masked) 2015–2023 па раёнах: індэкс разыходжання долі святла і долі насельніцтва як незалежны проксі і маркер недаўліку.',
-  alternates: { languages: { ru: '/research/nightlights', be: '/be/research/nightlights' } },
+  alternates: altFor('/be/research/nightlights'),
 };
 
 export default function NightlightsPage() {

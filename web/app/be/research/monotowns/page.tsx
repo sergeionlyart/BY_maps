@@ -1,14 +1,14 @@
 import type { Metadata } from 'next';
 import MonotownsView from '@/components/MonotownsView';
 import ResearchShell from '@/components/ResearchShell';
-import { authors } from '@/lib/seo';
+import { authors, altFor } from '@/lib/seo';
 
 export const metadata: Metadata = {
   authors,
   title: 'Монагарады і горадаўтваральныя прадпрыемствы — Насельніцтва Беларусі',
   description:
     'Рэестр 49 беларускіх монагарадоў (горад↔прадпрыемства) з санкцыйнай экспазіцыяй, тыпалогія па галінах і matched-comparison траекторый са звычайнымі гарадамі таго ж памеру.',
-  alternates: { languages: { ru: '/research/monotowns', be: '/be/research/monotowns' } },
+  alternates: altFor('/be/research/monotowns'),
 };
 
 export default function MonotownsPage() {

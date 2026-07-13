@@ -1,14 +1,14 @@
 import type { Metadata } from 'next';
 import ZipfView from '@/components/ZipfView';
 import ResearchShell from '@/components/ResearchShell';
-import { authors } from '@/lib/seo';
+import { authors, altFor } from '@/lib/seo';
 
 export const metadata: Metadata = {
   authors,
   title: 'Іерархія гарадоў і закон Цыпфа — Насельніцтва Беларусі',
   description:
     'Rank-size размеркаванне гарадоў Беларусі 1897–2026: нахіл Цыпфа трымаецца каля −1, але прымацыя Мінска вырасла з 1,4× да 4× пры чаканні 2×.',
-  alternates: { languages: { ru: '/research/zipf', be: '/be/research/zipf' } },
+  alternates: altFor('/be/research/zipf'),
 };
 
 export default function ZipfPage() {

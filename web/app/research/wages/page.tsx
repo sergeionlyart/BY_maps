@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
 import WagesView from '@/components/WagesView';
 import ResearchShell from '@/components/ResearchShell';
-import { authors } from '@/lib/seo';
+import { authors, altFor } from '@/lib/seo';
 
 export const metadata: Metadata = {
+  alternates: altFor('/research/wages'),
   authors,
   title: 'Зарплата × динамика населения — Население Беларуси',
   description:

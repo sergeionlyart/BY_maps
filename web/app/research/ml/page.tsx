@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
 import MLChallengerView from '@/components/MLChallengerView';
 import ResearchShell from '@/components/ResearchShell';
-import { authors } from '@/lib/seo';
+import { authors, altFor } from '@/lib/seo';
 
 export const metadata: Metadata = {
+  alternates: altFor('/research/ml'),
   authors,
   title: 'ML-челленджер: ищет ли машина ошибку в модели CCR — Население Беларуси',
   description:

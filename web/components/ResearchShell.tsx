@@ -1,7 +1,10 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import AuthorCard from '@/components/AuthorCard';
+import JsonLd from '@/components/JsonLd';
+import { articleJsonLd } from '@/lib/seo';
 import { useT, useLang } from '@/lib/i18n';
 
 /** Клиентская оболочка страницы исследования: хлебные крошки + заголовок +
@@ -23,8 +26,18 @@ export default function ResearchShell({
 }) {
   const t = useT();
   const lang = useLang();
+  const pathname = usePathname();
   return (
     <div className="page page-wide">
+      <JsonLd
+        data={articleJsonLd({
+          title: t(title),
+          description: t(lead),
+          path: pathname,
+          lang,
+          scholarly: true,
+        })}
+      />
       <div className="page-breadcrumb">
         <Link href={lang === 'be' ? '/be/research' : '/research'}>{t('Исследования')}</Link>
         {' · '}

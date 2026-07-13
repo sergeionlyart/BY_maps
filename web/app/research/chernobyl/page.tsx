@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
 import ChernobylView from '@/components/ChernobylView';
 import ResearchShell from '@/components/ResearchShell';
-import { authors } from '@/lib/seo';
+import { authors, altFor } from '@/lib/seo';
 
 export const metadata: Metadata = {
+  alternates: altFor('/research/chernobyl'),
   authors,
   title: 'Чернобыльский след — Население Беларуси',
   description:

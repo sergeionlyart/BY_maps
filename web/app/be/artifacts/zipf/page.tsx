@@ -1,12 +1,19 @@
 import type { Metadata } from 'next';
 import ZipfArtifactBody from '@/components/artifacts/ZipfArtifactBody';
+import JsonLd from '@/components/JsonLd';
+import { altFor } from '@/lib/seo';
+import { artifactMeta, artifactDataset } from '@/lib/artifactsSeo';
 
 export const metadata: Metadata = {
-  title: 'Пакет zipf — версіі і склад',
-  description: 'Версіі правяральнага пакета даследавання «Іерархія гарадоў і закон Цыпфа».',
-  alternates: { languages: { ru: '/artifacts/zipf', be: '/be/artifacts/zipf' } },
+  ...artifactMeta('zipf', 'be'),
+  alternates: altFor('/be/artifacts/zipf'),
 };
 
 export default function Page() {
-  return <ZipfArtifactBody />;
+  return (
+    <>
+      <JsonLd data={artifactDataset('zipf', 'be', '/be/artifacts/zipf')} />
+      <ZipfArtifactBody />
+    </>
+  );
 }

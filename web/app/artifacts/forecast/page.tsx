@@ -1,12 +1,19 @@
 import type { Metadata } from 'next';
 import ForecastArtifactBody from '@/components/artifacts/ForecastArtifactBody';
+import JsonLd from '@/components/JsonLd';
+import { altFor } from '@/lib/seo';
+import { artifactMeta, artifactDataset } from '@/lib/artifactsSeo';
 
 export const metadata: Metadata = {
-  title: 'Пакет forecast — версии и состав',
-  description: 'Проверяемый пакет прогноза населения Беларуси 2026–2075 (v2026.4, уровни 0–3, ряды official/adjusted, вероятностный веер).',
-  alternates: { languages: { ru: '/artifacts/forecast', be: '/be/artifacts/forecast' } },
+  ...artifactMeta('forecast', 'ru'),
+  alternates: altFor('/artifacts/forecast'),
 };
 
-export default function ForecastArtifactPage() {
-  return <ForecastArtifactBody />;
+export default function Page() {
+  return (
+    <>
+      <JsonLd data={artifactDataset('forecast', 'ru', '/artifacts/forecast')} />
+      <ForecastArtifactBody />
+    </>
+  );
 }

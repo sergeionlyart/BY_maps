@@ -2,14 +2,14 @@ import type { Metadata } from 'next';
 import Markdown from '@/components/Markdown';
 import AuthorLanding from '@/components/AuthorLanding';
 import { loadContent } from '@/lib/content';
-import { authors, ogImage, ogBase, personJsonLd } from '@/lib/seo';
+import { authors, ogImage, ogBase, personJsonLd, altFor } from '@/lib/seo';
 
 const c = loadContent('ru', 'author');
 export const metadata: Metadata = {
   title: 'Сергей Авдейчик — AI/ML-инженер, к.т.н. · автор BY Maps',
   description: c.description,
   authors,
-  alternates: { languages: { ru: '/author', be: '/be/author' } },
+  alternates: altFor('/author'),
   openGraph: { ...ogBase, locale: 'ru_RU', title: 'Сергей Авдейчик — AI/ML Engineer', description: c.description, images: [ogImage] },
 };
 

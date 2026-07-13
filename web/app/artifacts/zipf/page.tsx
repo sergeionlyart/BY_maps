@@ -1,12 +1,19 @@
 import type { Metadata } from 'next';
 import ZipfArtifactBody from '@/components/artifacts/ZipfArtifactBody';
+import JsonLd from '@/components/JsonLd';
+import { altFor } from '@/lib/seo';
+import { artifactMeta, artifactDataset } from '@/lib/artifactsSeo';
 
 export const metadata: Metadata = {
-  title: 'Пакет zipf — версии и состав',
-  description: 'Версии проверяемого пакета исследования «Иерархия городов и закон Ципфа».',
-  alternates: { languages: { ru: '/artifacts/zipf', be: '/be/artifacts/zipf' } },
+  ...artifactMeta('zipf', 'ru'),
+  alternates: altFor('/artifacts/zipf'),
 };
 
-export default function ZipfArtifactPage() {
-  return <ZipfArtifactBody />;
+export default function Page() {
+  return (
+    <>
+      <JsonLd data={artifactDataset('zipf', 'ru', '/artifacts/zipf')} />
+      <ZipfArtifactBody />
+    </>
+  );
 }

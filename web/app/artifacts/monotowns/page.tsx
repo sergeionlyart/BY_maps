@@ -1,12 +1,19 @@
 import type { Metadata } from 'next';
 import MonotownsArtifactBody from '@/components/artifacts/MonotownsArtifactBody';
+import JsonLd from '@/components/JsonLd';
+import { altFor } from '@/lib/seo';
+import { artifactMeta, artifactDataset } from '@/lib/artifactsSeo';
 
 export const metadata: Metadata = {
-  title: 'Пакет monotowns — версии и состав',
-  description: 'Проверяемый пакет исследования «Моногорода и градообразующие предприятия» (INF-06).',
-  alternates: { languages: { ru: '/artifacts/monotowns', be: '/be/artifacts/monotowns' } },
+  ...artifactMeta('monotowns', 'ru'),
+  alternates: altFor('/artifacts/monotowns'),
 };
 
-export default function MonotownsArtifactPage() {
-  return <MonotownsArtifactBody />;
+export default function Page() {
+  return (
+    <>
+      <JsonLd data={artifactDataset('monotowns', 'ru', '/artifacts/monotowns')} />
+      <MonotownsArtifactBody />
+    </>
+  );
 }

@@ -1,12 +1,19 @@
 import type { Metadata } from 'next';
 import MigrationArtifactBody from '@/components/artifacts/MigrationArtifactBody';
+import JsonLd from '@/components/JsonLd';
+import { altFor } from '@/lib/seo';
+import { artifactMeta, artifactDataset } from '@/lib/artifactsSeo';
 
 export const metadata: Metadata = {
-  title: 'Пакет migration — версіі і склад',
-  description: 'Правяральны пакет даследавання «Унутраная і знешняя міграцыя» (INF-05).',
-  alternates: { languages: { ru: '/artifacts/migration', be: '/be/artifacts/migration' } },
+  ...artifactMeta('migration', 'be'),
+  alternates: altFor('/be/artifacts/migration'),
 };
 
 export default function Page() {
-  return <MigrationArtifactBody />;
+  return (
+    <>
+      <JsonLd data={artifactDataset('migration', 'be', '/be/artifacts/migration')} />
+      <MigrationArtifactBody />
+    </>
+  );
 }

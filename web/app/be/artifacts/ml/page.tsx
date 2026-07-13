@@ -1,12 +1,19 @@
 import type { Metadata } from 'next';
 import MLChallengerArtifactBody from '@/components/artifacts/MLChallengerArtifactBody';
+import JsonLd from '@/components/JsonLd';
+import { altFor } from '@/lib/seo';
+import { artifactMeta, artifactDataset } from '@/lib/artifactsSeo';
 
 export const metadata: Metadata = {
-  title: 'Пакет mlchallenger — версіі і склад',
-  description: 'Правяральны пакет ML-challenger: дыягностыка сістэматычных памылак структурнай мадэлі раёнаў (градыентны бустынг на CCR-астатку, 2019–2026).',
-  alternates: { languages: { ru: '/artifacts/ml', be: '/be/artifacts/ml' } },
+  ...artifactMeta('ml', 'be'),
+  alternates: altFor('/be/artifacts/ml'),
 };
 
 export default function Page() {
-  return <MLChallengerArtifactBody />;
+  return (
+    <>
+      <JsonLd data={artifactDataset('ml', 'be', '/be/artifacts/ml')} />
+      <MLChallengerArtifactBody />
+    </>
+  );
 }

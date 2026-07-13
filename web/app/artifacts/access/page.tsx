@@ -1,12 +1,19 @@
 import type { Metadata } from 'next';
 import AccessArtifactBody from '@/components/artifacts/AccessArtifactBody';
+import JsonLd from '@/components/JsonLd';
+import { altFor } from '@/lib/seo';
+import { artifactMeta, artifactDataset } from '@/lib/artifactsSeo';
 
 export const metadata: Metadata = {
-  title: 'Пакет access — версии и состав',
-  description: 'Проверяемый пакет исследования «Транспортная доступность и „тень Минска"» (INF-04).',
-  alternates: { languages: { ru: '/artifacts/access', be: '/be/artifacts/access' } },
+  ...artifactMeta('access', 'ru'),
+  alternates: altFor('/artifacts/access'),
 };
 
-export default function AccessArtifactPage() {
-  return <AccessArtifactBody />;
+export default function Page() {
+  return (
+    <>
+      <JsonLd data={artifactDataset('access', 'ru', '/artifacts/access')} />
+      <AccessArtifactBody />
+    </>
+  );
 }

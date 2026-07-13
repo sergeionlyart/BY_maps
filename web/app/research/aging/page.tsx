@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
 import AgingView from '@/components/AgingView';
 import ResearchShell from '@/components/ResearchShell';
-import { authors } from '@/lib/seo';
+import { authors, altFor } from '@/lib/seo';
 
 export const metadata: Metadata = {
+  alternates: altFor('/research/aging'),
   authors,
   title: 'Старение районов — Население Беларуси',
   description:

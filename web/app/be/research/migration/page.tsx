@@ -1,14 +1,14 @@
 import type { Metadata } from 'next';
 import MigrationView from '@/components/MigrationView';
 import ResearchShell from '@/components/ResearchShell';
-import { authors } from '@/lib/seo';
+import { authors, altFor } from '@/lib/seo';
 
 export const metadata: Metadata = {
   authors,
   title: 'Унутраная і знешняя міграцыя — Насельніцтва Беларусі',
   description:
     'Міграцыйная лесвіца вёска → райцэнтр → аблцэнтр → Мінск за 1959–2026, сальда раёнаў, міжабласныя патокі перапісу-2019 і знешняя хваля 2020+ у інтэрвальных ацэнках люстранай статыстыкі.',
-  alternates: { languages: { ru: '/research/migration', be: '/be/research/migration' } },
+  alternates: altFor('/be/research/migration'),
 };
 
 export default function MigrationPage() {

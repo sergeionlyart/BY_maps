@@ -1,14 +1,14 @@
 import type { Metadata } from 'next';
 import ShocksView from '@/components/ShocksView';
 import ResearchShell from '@/components/ResearchShell';
-import { authors } from '@/lib/seo';
+import { authors, altFor } from '@/lib/seo';
 
 export const metadata: Metadata = {
   authors,
   title: 'Дэмаграфічныя шокі XX стагоддзя — Насельніцтва Беларусі',
   description:
     'Таймлайн шокаў 1897–2026 з правяральнымі вехамі (бежанства 1915, мяжа 1921, рэпрэсіі, Другая сусветная, Халакост, «неперспектыўныя вёскі», распад СССР) і аблічбоўка перапісу-1897 па роднай мове.',
-  alternates: { languages: { ru: '/research/shocks', be: '/be/research/shocks' } },
+  alternates: altFor('/be/research/shocks'),
 };
 
 export default function ShocksPage() {

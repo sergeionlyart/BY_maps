@@ -1,14 +1,14 @@
 import type { Metadata } from 'next';
 import ChernobylView from '@/components/ChernobylView';
 import ResearchShell from '@/components/ResearchShell';
-import { authors } from '@/lib/seo';
+import { authors, altFor } from '@/lib/seo';
 
 export const metadata: Metadata = {
   authors,
   title: 'Чарнобыльскі след — Насельніцтва Беларусі',
   description:
     'Як эвакуацыя і адсяленне змянілі траекторыі паўднёва-ўсходніх раёнаў: афіцыйны рэестр зон (НПА з рэквізітамі) і параўнанне з дэмаграфічна падобнымі кантрольнымі раёнамі.',
-  alternates: { languages: { ru: '/research/chernobyl', be: '/be/research/chernobyl' } },
+  alternates: altFor('/be/research/chernobyl'),
 };
 
 export default function ChernobylPage() {

@@ -1194,3 +1194,17 @@ a.service-card:hover .sc-cta { text-decoration: underline; }
   .seg button.scn-optimistic.on,
   .seg button.scn-negative.on { color: #0d0d0d; }
 }
+
+/* SEO/a11y: содержимое только для скринридеров и поисковых роботов
+   (для app-mode страниц вроде /map, где заголовок не показывается визуально). */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

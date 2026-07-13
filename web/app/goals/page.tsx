@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { altFor } from '@/lib/seo';
 import ContentDoc from '@/components/ContentDoc';
 import { loadContent } from '@/lib/content';
 
@@ -6,7 +7,7 @@ const c = loadContent('ru', 'goals');
 export const metadata: Metadata = {
   title: c.title,
   description: c.description,
-  alternates: { languages: { ru: '/goals', be: '/be/goals' } },
+  alternates: altFor('/goals'),
 };
 
 export default function Page() {

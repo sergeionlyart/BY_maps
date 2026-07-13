@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { altFor } from '@/lib/seo';
 import fs from 'fs';
 import path from 'path';
 import Markdown from '@/components/Markdown';
@@ -17,7 +18,7 @@ const sources = readPublic('content/sources.md');
 export const metadata: Metadata = {
   title: overview.title || 'Методология — BY Maps',
   description: overview.description,
-  alternates: { languages: { ru: '/methodology', be: '/be/methodology' } },
+  alternates: altFor('/methodology'),
 };
 
 export default function MethodologyPage() {

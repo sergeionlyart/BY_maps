@@ -1,14 +1,14 @@
 import type { Metadata } from 'next';
 import WagesView from '@/components/WagesView';
 import ResearchShell from '@/components/ResearchShell';
-import { authors } from '@/lib/seo';
+import { authors, altFor } from '@/lib/seo';
 
 export const metadata: Metadata = {
   authors,
   title: 'Зарплата × дынаміка насельніцтва — Насельніцтва Беларусі',
   description:
     'Ці ідзе насельніцтва за грашыма: біварыятная карта зарплатнага дыферэнцыялу да Мінска і дзесяцігадовай дынамікі 118 раёнаў, рэгрэсійная эластычнасць і анамаліі.',
-  alternates: { languages: { ru: '/research/wages', be: '/be/research/wages' } },
+  alternates: altFor('/be/research/wages'),
 };
 
 export default function WagesPage() {

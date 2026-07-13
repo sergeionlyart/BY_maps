@@ -1,12 +1,19 @@
 import type { Metadata } from 'next';
 import NightlightsArtifactBody from '@/components/artifacts/NightlightsArtifactBody';
+import JsonLd from '@/components/JsonLd';
+import { altFor } from '@/lib/seo';
+import { artifactMeta, artifactDataset } from '@/lib/artifactsSeo';
 
 export const metadata: Metadata = {
-  title: 'Пакет nightlights — версии и состав',
-  description: 'Проверяемый пакет исследования «Ночные огни против официальной статистики» (INF-08).',
-  alternates: { languages: { ru: '/artifacts/nightlights', be: '/be/artifacts/nightlights' } },
+  ...artifactMeta('nightlights', 'ru'),
+  alternates: altFor('/artifacts/nightlights'),
 };
 
-export default function NightlightsArtifactPage() {
-  return <NightlightsArtifactBody />;
+export default function Page() {
+  return (
+    <>
+      <JsonLd data={artifactDataset('nightlights', 'ru', '/artifacts/nightlights')} />
+      <NightlightsArtifactBody />
+    </>
+  );
 }

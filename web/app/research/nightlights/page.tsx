@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
 import NightlightsView from '@/components/NightlightsView';
 import ResearchShell from '@/components/ResearchShell';
-import { authors } from '@/lib/seo';
+import { authors, altFor } from '@/lib/seo';
 
 export const metadata: Metadata = {
+  alternates: altFor('/research/nightlights'),
   authors,
   title: 'Ночные огни против официальной статистики — Население Беларуси',
   description:

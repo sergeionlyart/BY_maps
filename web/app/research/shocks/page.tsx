@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
 import ShocksView from '@/components/ShocksView';
 import ResearchShell from '@/components/ResearchShell';
-import { authors } from '@/lib/seo';
+import { authors, altFor } from '@/lib/seo';
 
 export const metadata: Metadata = {
+  alternates: altFor('/research/shocks'),
   authors,
   title: 'Демографические шоки XX века — Население Беларуси',
   description:

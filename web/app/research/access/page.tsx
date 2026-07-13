@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
 import AccessView from '@/components/AccessView';
 import ResearchShell from '@/components/ResearchShell';
-import { authors } from '@/lib/seo';
+import { authors, altFor } from '@/lib/seo';
 
 export const metadata: Metadata = {
+  alternates: altFor('/research/access'),
   authors,
   title: 'Транспортная доступность и «тень Минска» — Население Беларуси',
   description:

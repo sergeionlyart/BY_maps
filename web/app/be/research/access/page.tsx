@@ -1,14 +1,14 @@
 import type { Metadata } from 'next';
 import AccessView from '@/components/AccessView';
 import ResearchShell from '@/components/ResearchShell';
-import { authors } from '@/lib/seo';
+import { authors, altFor } from '@/lib/seo';
 
 export const metadata: Metadata = {
   authors,
   title: 'Транспартная даступнасць і «цень Мінска» — Насельніцтва Беларусі',
   description:
     'Пасы травел-тайму да Мінска і аблцэнтраў па дарожным графе OSM: кальцо 1,5–2,5 гадз убывае хутчэй і за прыгарад, і за дальнюю перыферыю; што закрыццё пераходаў з ЕС змяніла для заходніх раёнаў.',
-  alternates: { languages: { ru: '/research/access', be: '/be/research/access' } },
+  alternates: altFor('/be/research/access'),
 };
 
 export default function AccessPage() {

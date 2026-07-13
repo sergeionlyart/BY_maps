@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
 import ZipfView from '@/components/ZipfView';
 import ResearchShell from '@/components/ResearchShell';
-import { authors } from '@/lib/seo';
+import { authors, altFor } from '@/lib/seo';
 
 export const metadata: Metadata = {
+  alternates: altFor('/research/zipf'),
   authors,
   title: 'Иерархия городов и закон Ципфа — Население Беларуси',
   description:

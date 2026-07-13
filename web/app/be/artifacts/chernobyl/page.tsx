@@ -1,12 +1,19 @@
 import type { Metadata } from 'next';
 import ChernobylArtifactBody from '@/components/artifacts/ChernobylArtifactBody';
+import JsonLd from '@/components/JsonLd';
+import { altFor } from '@/lib/seo';
+import { artifactMeta, artifactDataset } from '@/lib/artifactsSeo';
 
 export const metadata: Metadata = {
-  title: 'Пакет chernobyl — версіі і склад',
-  description: 'Правяральны пакет даследавання «Чарнобыльскі след» (INF-07).',
-  alternates: { languages: { ru: '/artifacts/chernobyl', be: '/be/artifacts/chernobyl' } },
+  ...artifactMeta('chernobyl', 'be'),
+  alternates: altFor('/be/artifacts/chernobyl'),
 };
 
 export default function Page() {
-  return <ChernobylArtifactBody />;
+  return (
+    <>
+      <JsonLd data={artifactDataset('chernobyl', 'be', '/be/artifacts/chernobyl')} />
+      <ChernobylArtifactBody />
+    </>
+  );
 }

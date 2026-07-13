@@ -1,14 +1,14 @@
 import type { Metadata } from 'next';
 import AgingView from '@/components/AgingView';
 import ResearchShell from '@/components/ResearchShell';
-import { authors } from '@/lib/seo';
+import { authors, altFor } from '@/lib/seo';
 
 export const metadata: Metadata = {
   authors,
   title: 'Старэнне раёнаў — Насельніцтва Беларусі',
   description:
     'Узроставая структура 118 раёнаў па перапісах 2009/2019: медыянны ўзрост, доля 65+, дэмаграфічная нагрузка і контрфактная перасунка «пры нулявой міграцыі».',
-  alternates: { languages: { ru: '/research/aging', be: '/be/research/aging' } },
+  alternates: altFor('/be/research/aging'),
 };
 
 export default function AgingPage() {

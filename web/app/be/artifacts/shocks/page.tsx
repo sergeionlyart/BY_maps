@@ -1,12 +1,19 @@
 import type { Metadata } from 'next';
 import ShocksArtifactBody from '@/components/artifacts/ShocksArtifactBody';
+import JsonLd from '@/components/JsonLd';
+import { altFor } from '@/lib/seo';
+import { artifactMeta, artifactDataset } from '@/lib/artifactsSeo';
 
 export const metadata: Metadata = {
-  title: 'Пакет shocks — версіі і склад',
-  description: 'Правяральны пакет даследавання «Дэмаграфічныя шокі XX стагоддзя» (INF-09).',
-  alternates: { languages: { ru: '/artifacts/shocks', be: '/be/artifacts/shocks' } },
+  ...artifactMeta('shocks', 'be'),
+  alternates: altFor('/be/artifacts/shocks'),
 };
 
 export default function Page() {
-  return <ShocksArtifactBody />;
+  return (
+    <>
+      <JsonLd data={artifactDataset('shocks', 'be', '/be/artifacts/shocks')} />
+      <ShocksArtifactBody />
+    </>
+  );
 }

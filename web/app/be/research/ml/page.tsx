@@ -1,14 +1,14 @@
 import type { Metadata } from 'next';
 import MLChallengerView from '@/components/MLChallengerView';
 import ResearchShell from '@/components/ResearchShell';
-import { authors } from '@/lib/seo';
+import { authors, altFor } from '@/lib/seo';
 
 export const metadata: Metadata = {
   authors,
   title: 'ML-чэленджар: ці шукае машына памылку ў мадэлі CCR — Насельніцтва Беларусі',
   description:
     'Градыентны бустынг на экзагенных прыкметах ≤2019 супраць астатку структурнай мадэлі CCR адносна афіцыйнай ацэнкі-2026: перастановачна-гейтаваная дыягностыка, а не прагноз. Сігнал ёсць (OOF R²=0.33, p=0.005) і цягне яго міграцыя.',
-  alternates: { languages: { ru: '/research/ml', be: '/be/research/ml' } },
+  alternates: altFor('/be/research/ml'),
 };
 
 export default function MLChallengerPage() {

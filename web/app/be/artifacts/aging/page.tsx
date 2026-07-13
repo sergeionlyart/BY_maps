@@ -1,12 +1,19 @@
 import type { Metadata } from 'next';
 import AgingArtifactBody from '@/components/artifacts/AgingArtifactBody';
+import JsonLd from '@/components/JsonLd';
+import { altFor } from '@/lib/seo';
+import { artifactMeta, artifactDataset } from '@/lib/artifactsSeo';
 
 export const metadata: Metadata = {
-  title: 'Пакет aging — версіі і склад',
-  description: 'Правяральны пакет даследавання «Старэнне раёнаў» (INF-02).',
-  alternates: { languages: { ru: '/artifacts/aging', be: '/be/artifacts/aging' } },
+  ...artifactMeta('aging', 'be'),
+  alternates: altFor('/be/artifacts/aging'),
 };
 
 export default function Page() {
-  return <AgingArtifactBody />;
+  return (
+    <>
+      <JsonLd data={artifactDataset('aging', 'be', '/be/artifacts/aging')} />
+      <AgingArtifactBody />
+    </>
+  );
 }

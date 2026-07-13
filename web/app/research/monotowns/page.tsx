@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
 import MonotownsView from '@/components/MonotownsView';
 import ResearchShell from '@/components/ResearchShell';
-import { authors } from '@/lib/seo';
+import { authors, altFor } from '@/lib/seo';
 
 export const metadata: Metadata = {
+  alternates: altFor('/research/monotowns'),
   authors,
   title: 'Моногорода и градообразующие предприятия — Население Беларуси',
   description:
