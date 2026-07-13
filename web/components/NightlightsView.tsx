@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { DataFile } from '@/lib/types';
 import MethodDrawer from './MethodDrawer';
+import { useT } from '@/lib/i18n';
 
 interface Row {
   id: string;
@@ -64,6 +65,7 @@ function DivChoro({ geo, rowById, names, selected, onSelect }: {
   selected: string | null;
   onSelect: (id: string) => void;
 }) {
+  const t = useT();
   const [wrapRef, width] = useWidth(640);
   const [hover, setHover] = useState<{ id: string; x: number; y: number } | null>(null);
 
@@ -99,17 +101,17 @@ function DivChoro({ geo, rowById, names, selected, onSelect }: {
   }, [geo, width]);
 
   const legend = [
-    { c: '#8c2d04', t: 'свет ≪ население' },
-    { c: '#fd8d3c', t: 'свет < населения' },
-    { c: '#f0f0f0', t: 'совпадают' },
-    { c: '#5ac8c8', t: 'свет > населения' },
-    { c: '#0f6e6e', t: 'свет ≫ население' },
+    { c: '#8c2d04', t: t('свет ≪ население') },
+    { c: '#fd8d3c', t: t('свет < населения') },
+    { c: '#f0f0f0', t: t('совпадают') },
+    { c: '#5ac8c8', t: t('свет > населения') },
+    { c: '#0f6e6e', t: t('свет ≫ население') },
   ];
   const hrec = hover ? rowById[hover.id] : null;
 
   return (
     <div className="chart-svg-wrap" ref={wrapRef}>
-      <svg width={width} height={height} role="img" aria-label="индекс расхождения свет-население">
+      <svg width={width} height={height} role="img" aria-label={t('индекс расхождения свет-население')}>
         {paths.map((p) => (
           <path key={p.id} d={p.d}
             fill={divColor(rowById[p.id]?.div)}
@@ -138,8 +140,8 @@ function DivChoro({ geo, rowById, names, selected, onSelect }: {
           <div className="ct-row"><span className="ct-val">{names[hover.id] ?? hover.id}</span></div>
           <div className="ct-year">
             {hrec.div != null
-              ? `доля света ×${hrec.lightRatio!.toFixed(2)}, доля населения ×${hrec.popRatio!.toFixed(2)}; расхождение ${hrec.div > 0 ? '+' : ''}${(hrec.div * 100).toFixed(0)}%`
-              : 'недостаточно данных'}
+              ? `${t('доля света')} ×${hrec.lightRatio!.toFixed(2)}, ${t('доля населения')} ×${hrec.popRatio!.toFixed(2)}; ${t('расхождение')} ${hrec.div > 0 ? '+' : ''}${(hrec.div * 100).toFixed(0)}%`
+              : t('недостаточно данных')}
           </div>
         </div>
       )}
@@ -150,6 +152,7 @@ function DivChoro({ geo, rowById, names, selected, onSelect }: {
 /** Спарклайны ДОЛЕЙ района в стране (свет и население), к первому году = 100.
  *  Доли, а не абсолют: уровень света искажён версией продукта, доля — нет. */
 function LightPopSpark({ row, night }: { row: Row; night: NightData }) {
+  const t = useT();
   const [wrapRef, width] = useWidth(520);
   const height = 200;
   const M = { top: 12, right: 96, bottom: 24, left: 34 };
@@ -174,7 +177,7 @@ function LightPopSpark({ row, night }: { row: Row; night: NightData }) {
 
   return (
     <div className="chart-svg-wrap" ref={wrapRef}>
-      <svg width={width} height={height} role="img" aria-label="свет и население, индекс">
+      <svg width={width} height={height} role="img" aria-label={t('свет и население, индекс')}>
         {[50, 75, 100, 125].filter((v) => v >= y0 && v <= y1).map((v) => (
           <g key={v}>
             <line x1={M.left} x2={width - M.right} y1={Y(v)} y2={Y(v)}
@@ -191,8 +194,8 @@ function LightPopSpark({ row, night }: { row: Row; night: NightData }) {
           points={years.map((y, i) => `${X(y)},${Y(lightIdx[i])}`).join(' ')} />
         <polyline fill="none" stroke="#5698b9" strokeWidth="2"
           points={popYears.map((y) => `${X(y)},${Y(popI(y))}`).join(' ')} />
-        <text x={width - M.right + 6} y={Y(lightIdx[lightIdx.length - 1]) + 3} fontSize="10" fill="#e6a817">доля света</text>
-        <text x={width - M.right + 6} y={Y(popI(popYears[popYears.length - 1])) + 3} fontSize="10" fill="#5698b9">доля населения</text>
+        <text x={width - M.right + 6} y={Y(lightIdx[lightIdx.length - 1]) + 3} fontSize="10" fill="#e6a817">{t('доля света')}</text>
+        <text x={width - M.right + 6} y={Y(popI(popYears[popYears.length - 1])) + 3} fontSize="10" fill="#5698b9">{t('доля населения')}</text>
         {years.map((y) => (
           y % 2 === 1 &&
           <text key={y} x={X(y)} y={height - 8} textAnchor="middle" fontSize="8.5" fill="var(--muted)">{`'${String(y).slice(2)}`}</text>
@@ -228,7 +231,9 @@ export default function NightlightsView() {
     });
   }, []);
 
-  if (!night || !geo) return <p className="hint">Загрузка данных…</p>;
+  const t = useT();
+
+  if (!night || !geo) return <p className="hint">{t('Загрузка данных…')}</p>;
 
   const select = (id: string) => {
     setSel(id);
@@ -263,34 +268,31 @@ export default function NightlightsView() {
       <div className="controls" style={{ marginBottom: 6 }}>
         <MethodDrawer slug="nightlights" />
         <a className="btn" href="/artifacts/by-maps-nightlights-v1.0.0.zip" download>
-          ⬇ Проверяемый пакет (ZIP)
+          ⬇ {t('Проверяемый пакет (ZIP)')}
         </a>
       </div>
 
       <div className="stat-row">
         <div className="stat-tile">
-          <div className="st-label">Свет отстаёт от людей</div>
+          <div className="st-label">{t('Свет отстаёт от людей')}</div>
           <div className="st-value">{top ? (names[top.id] ?? top.id).replace(' район', '') : '—'}</div>
           <div className="st-delta">
-            {top ? `доля света ×${top.lightRatio!.toFixed(2)} при доле населения ×${top.popRatio!.toFixed(2)} — ` : ''}
-            крупнейший по светимости район, чья доля в светимости страны упала
-            относительно доли в населении сильнее всего (Жодино/БелАЗ); за ним — индустриальные центры
+            {top ? `${t('доля света')} ×${top.lightRatio!.toFixed(2)} ${t('при доле населения')} ×${top.popRatio!.toFixed(2)} — ` : ''}
+            {t('крупнейший по светимости район, чья доля в светимости страны упала относительно доли в населении сильнее всего (Жодино/БелАЗ); за ним — индустриальные центры')}
           </div>
         </div>
         <div className="stat-tile">
-          <div className="st-label">Окно тренда → сравнения</div>
+          <div className="st-label">{t('Окно тренда → сравнения')}</div>
           <div className="st-value">{night.trendYears[0]}–{night.trendYears[1]} → {night.shockYears.join('–')}</div>
           <div className="st-delta">
-            индекс = доля района в светимости страны против его доли в населении;
-            нормировка на страну гасит версионные скачки продукта VNL
+            {t('индекс = доля района в светимости страны против его доли в населении; нормировка на страну гасит версионные скачки продукта VNL')}
           </div>
         </div>
         <div className="stat-tile">
-          <div className="st-label">Свет ≠ население</div>
-          <div className="st-value">маркер, не оценка</div>
+          <div className="st-label">{t('Свет ≠ население')}</div>
+          <div className="st-value">{t('маркер, не оценка')}</div>
           <div className="st-delta">
-            расхождение может значить недоучёт оттока — или закрытие
-            производства, светодиоды, экономию энергии; вход для проверки
+            {t('расхождение может значить недоучёт оттока — или закрытие производства, светодиоды, экономию энергии; вход для проверки')}
           </div>
         </div>
       </div>
@@ -298,16 +300,16 @@ export default function NightlightsView() {
       <div className="grid-2">
         <div className="chart-block">
           <div className="chart-title">
-            Индекс расхождения «свет против населения» по районам, {night.shockYears.join('–')} к тренду {night.trendYears[0]}–{night.trendYears[1]}
+            {t('Индекс расхождения «свет против населения» по районам,')} {night.shockYears.join('–')} {t('к тренду')} {night.trendYears[0]}–{night.trendYears[1]}
           </div>
           <DivChoro geo={geo} rowById={rowById} names={names} selected={sel} onSelect={select} />
         </div>
         <div className="chart-block">
-          <div className="chart-title">Индустриальные районы: доля света отстаёт от доли населения</div>
+          <div className="chart-title">{t('Индустриальные районы: доля света отстаёт от доли населения')}</div>
           <div className="zone-table-wrap">
             <table className="zone-table">
               <thead>
-                <tr><th>Район</th><th>свет к тренду</th><th>население к тренду</th><th>расхождение</th></tr>
+                <tr><th>{t('Район')}</th><th>{t('свет к тренду')}</th><th>{t('население к тренду')}</th><th>{t('расхождение')}</th></tr>
               </thead>
               <tbody>
                 {negLeaders.map((r) => (
@@ -323,12 +325,7 @@ export default function NightlightsView() {
             </table>
           </div>
           <p className="hint" style={{ marginTop: 8 }}>
-            Отрицательное расхождение = доля района в светимости страны
-            растёт медленнее его доли в населении (свет отстаёт от
-            официальных людей). Это <strong>маркер для разбора</strong>, не
-            «истинное население»: причиной может быть недоучтённый отток —
-            или закрытие производства, переход на светодиоды,
-            энергосбережение. Список — вход для дальнейшей проверки, не вывод.
+            {t('Отрицательное расхождение = доля района в светимости страны растёт медленнее его доли в населении (свет отстаёт от официальных людей). Это')} <strong>{t('маркер для разбора')}</strong>{t(', не «истинное население»: причиной может быть недоучтённый отток — или закрытие производства, переход на светодиоды, энергосбережение. Список — вход для дальнейшей проверки, не вывод.')}
           </p>
         </div>
       </div>
@@ -336,33 +333,22 @@ export default function NightlightsView() {
       {rec && sel && (
         <div className="chart-block">
           <div className="chart-title">
-            {names[sel] ?? sel} · <a href={`/map?sel=${sel}`}>на карту</a> — доля района в стране: свет против населения ({night.years[0]} = 100)
+            {names[sel] ?? sel} · <a href={`/map?sel=${sel}`}>{t('на карту')}</a> {t('— доля района в стране: свет против населения')} ({night.years[0]} = 100)
           </div>
           <LightPopSpark row={rec} night={night} />
           {rec.div != null && (
             <p className="hint">
-              Доля света к докризисному тренду ×{rec.lightRatio!.toFixed(2)}, доля населения ×{rec.popRatio!.toFixed(2)};
-              расхождение {rec.div > 0 ? '+' : ''}{(rec.div * 100).toFixed(0)}%.
-              {rec.div < -0.05 ? ' Доля света отстаёт от доли населения — кандидат на недоучёт оттока или деиндустриализацию.'
-                : rec.div > 0.05 ? ' Доля света держится лучше доли населения — вероятно рост промышленной/инфраструктурной активности.'
-                : ' Доля света и доля населения движутся согласованно.'}
+              {t('Доля света к докризисному тренду')} ×{rec.lightRatio!.toFixed(2)}, {t('доля населения')} ×{rec.popRatio!.toFixed(2)}; {t('расхождение')} {rec.div > 0 ? '+' : ''}{(rec.div * 100).toFixed(0)}%.
+              {rec.div < -0.05 ? t(' Доля света отстаёт от доли населения — кандидат на недоучёт оттока или деиндустриализацию.')
+                : rec.div > 0.05 ? t(' Доля света держится лучше доли населения — вероятно рост промышленной/инфраструктурной активности.')
+                : t(' Доля света и доля населения движутся согласованно.')}
             </p>
           )}
         </div>
       )}
 
       <p className="src-note">
-        Источник — годовые композиты VIIRS «average_masked» (EOG VNL
-        2.1/2.2, Colorado School of Mines) в 100-м обработке WorldPop для
-        Беларуси, 2015–2023: подлинный, а не смоделированный ряд, пригодный
-        для трендов, но не для абсолютных уровней. Индекс — доля района в
-        светимости страны против его доли в населении (нормировка на страну
-        гасит версионные скачки продукта); Минск выделен отдельной зоной
-        (в adm2 он — «дыра» Минского района). Малые сельские районы с
-        крохотной светимостью шумны — таблица показывает крупные надёжные;
-        свет ≠ население: индекс — маркер расхождения, а не оценка
-        численности. Полный перечень причин ложных расхождений — в
-        методблоке и LIMITATIONS.md пакета.
+        {t('Источник — годовые композиты VIIRS «average_masked» (EOG VNL 2.1/2.2, Colorado School of Mines) в 100-м обработке WorldPop для Беларуси, 2015–2023: подлинный, а не смоделированный ряд, пригодный для трендов, но не для абсолютных уровней. Индекс — доля района в светимости страны против его доли в населении (нормировка на страну гасит версионные скачки продукта); Минск выделен отдельной зоной (в adm2 он — «дыра» Минского района). Малые сельские районы с крохотной светимостью шумны — таблица показывает крупные надёжные; свет ≠ население: индекс — маркер расхождения, а не оценка численности. Полный перечень причин ложных расхождений — в методблоке и LIMITATIONS.md пакета.')}
       </p>
     </div>
   );

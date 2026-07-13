@@ -5,6 +5,7 @@ import type { ForecastFile, ScenarioId } from '@/lib/forecast';
 import { SCENARIO_LABEL } from '@/lib/forecast';
 import { formatPct, valueAt } from '@/lib/series';
 import { CAT } from '@/lib/scales';
+import { useT } from '@/lib/i18n';
 import LineChart, { ChartSeries } from './LineChart';
 
 interface Props {
@@ -19,6 +20,7 @@ const OBL_CENTERS = ['c-minsk', 'c-homiel', 'c-mahilou', 'c-viciebsk', 'c-hrodna
 
 /** Панель урбанизации и концентрации населения (по стране). */
 export default function UrbanPanel({ data, year, forecast, scenario = 'base' }: Props) {
+  const t = useT();
   const byPop = data.territories['BY'].pop;
   // знаменатель: население страны в современных границах; для годов без
   // прямой оценки (1923, 1926, 1939) - линейная интерполяция
@@ -54,10 +56,10 @@ export default function UrbanPanel({ data, year, forecast, scenario = 'base' }: 
   });
 
   const series: ChartSeries[] = [
-    mk('urban', 'Городское население', 'var(--viz-urban)', 'all'),
-    mk('top7', '7 крупнейших городов', CAT[2], TOP7),
-    mk('oblCenters', 'Минск + обл. центры', CAT[3], OBL_CENTERS),
-    mk('minsk', 'Минск', CAT[0], ['c-minsk']),
+    mk('urban', t('Городское население'), 'var(--viz-urban)', 'all'),
+    mk('top7', t('7 крупнейших городов'), CAT[2], TOP7),
+    mk('oblCenters', t('Минск + обл. центры'), CAT[3], OBL_CENTERS),
+    mk('minsk', t('Минск'), CAT[0], ['c-minsk']),
   ];
 
   const last = rows[rows.length - 1];
@@ -67,32 +69,32 @@ export default function UrbanPanel({ data, year, forecast, scenario = 'base' }: 
     <div>
       <div className="stat-row">
         <div className="stat-tile">
-          <div className="st-label">Доля городского населения, {nearest.year}</div>
+          <div className="st-label">{t('Доля городского населения')}, {nearest.year}</div>
           <div className="st-value">{nearest.urban && nearest.pop ? formatPct(nearest.urban / nearest.pop) : '—'}</div>
           <div className="st-delta">
-            {rows[0].urban && rows[0].pop ? `в ${rows[0].year} — ${formatPct(rows[0].urban / rows[0].pop)}` : ''}
+            {rows[0].urban && rows[0].pop ? `${t('в')} ${rows[0].year} — ${formatPct(rows[0].urban / rows[0].pop)}` : ''}
           </div>
         </div>
         <div className="stat-tile">
-          <div className="st-label">Живёт в Минске, {nearest.year}</div>
+          <div className="st-label">{t('Живёт в Минске')}, {nearest.year}</div>
           <div className="st-value">{nearest.minsk && nearest.pop ? formatPct(nearest.minsk / nearest.pop) : '—'}</div>
           <div className="st-delta">
-            {rows[0].minsk && rows[0].pop ? `в ${rows[0].year} — ${formatPct(rows[0].minsk / rows[0].pop)}` : ''}
+            {rows[0].minsk && rows[0].pop ? `${t('в')} ${rows[0].year} — ${formatPct(rows[0].minsk / rows[0].pop)}` : ''}
           </div>
         </div>
         <div className="stat-tile">
-          <div className="st-label">В 7 крупнейших городах, {nearest.year}</div>
+          <div className="st-label">{t('В 7 крупнейших городах')}, {nearest.year}</div>
           <div className="st-value">{nearest.top7 && nearest.pop ? formatPct(nearest.top7 / nearest.pop) : '—'}</div>
           <div className="st-delta">
-            {rows[0].top7 && rows[0].pop ? `в ${rows[0].year} — ${formatPct(rows[0].top7 / rows[0].pop)}` : ''}
+            {rows[0].top7 && rows[0].pop ? `${t('в')} ${rows[0].year} — ${formatPct(rows[0].top7 / rows[0].pop)}` : ''}
           </div>
         </div>
       </div>
 
       <div className="chart-block">
         <div className="chart-title">
-          Доля в населении страны, % (по переписным годам
-          {forecast ? `; за 2026 — прогноз ${forecast.version}, сценарий «${SCENARIO_LABEL[scenario]}»` : ''})
+          {t('Доля в населении страны, % (по переписным годам')}
+          {forecast ? `${t('; за 2026 — прогноз')} ${forecast.version}${t(', сценарий «')}${t(SCENARIO_LABEL[scenario])}»` : ''})
         </div>
         <LineChart
           series={series}
@@ -102,23 +104,16 @@ export default function UrbanPanel({ data, year, forecast, scenario = 'base' }: 
           yTooltip={(v) => v.toLocaleString('ru-RU', { maximumFractionDigits: 1 }) + '%'}
           yMax={85}
           domain={[1897, forecast ? 2075 : 2026]}
-          refXs={forecast ? [{ value: 2026, label: 'прогноз →' }] : undefined}
+          refXs={forecast ? [{ value: 2026, label: t('прогноз →') }] : undefined}
         />
       </div>
 
       <p className="src-note">
-        Доли считаются к населению страны в современных границах; для 1923–1939
-        годов знаменатель интерполирован между ретроспективными оценками (1913,
-        1940). Городское население до 1959 года — сумма городских НП из таблицы
-        переписей; топ-7: Минск, Гомель, Могилёв, Витебск, Гродно, Брест,
-        Бобруйск (современный состав, фиксированный во времени).
-        {forecast ? ' Прогнозная часть — сумма городских прогнозов этапа 5' +
-          ' (199 городов; гп с рядами, оборванными до 2019 г., не прогнозируются).' : ''}
+        {t('Доли считаются к населению страны в современных границах; для 1923–1939 годов знаменатель интерполирован между ретроспективными оценками (1913, 1940). Городское население до 1959 года — сумма городских НП из таблицы переписей; топ-7: Минск, Гомель, Могилёв, Витебск, Гродно, Брест, Бобруйск (современный состав, фиксированный во времени).')}
+        {forecast ? t(' Прогнозная часть — сумма городских прогнозов этапа 5 (199 городов; гп с рядами, оборванными до 2019 г., не прогнозируются).') : ''}
       </p>
       <p className="src-note">
-        <a href="/research/zipf">→ Исследование INF-01: иерархия городов и закон
-        Ципфа, 1897–2026</a> — почему Минск в 4 раза больше Гомеля при
-        «ципфовском» ожидании 2×.
+        <a href="/research/zipf">{t('→ Исследование INF-01: иерархия городов и закон Ципфа, 1897–2026')}</a> {t('— почему Минск в 4 раза больше Гомеля при «ципфовском» ожидании 2×.')}
       </p>
     </div>
   );

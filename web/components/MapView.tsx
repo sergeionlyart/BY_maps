@@ -24,6 +24,7 @@ import { forecastAt, hasAdjusted, FORECAST_START, SCENARIO_LABEL, JUMPOFF_LABEL 
 import { valueAt, nearestPoint, formatNumber, formatPct, formatCompact, DTYPE_LABEL } from '@/lib/series';
 import { colorFor, legendStops, cityColor, cityRadius } from '@/lib/scales';
 import { useMedia } from '@/lib/useMedia';
+import { useT } from '@/lib/i18n';
 
 interface Props {
   data: DataFile;
@@ -88,6 +89,8 @@ export default function MapView(props: Props) {
   // легенда: на десктопе всегда развёрнута, на мобильном — чип-переключатель (U-07)
   const narrow = useMedia('(max-width: 980px)');
   const [legendOpen, setLegendOpen] = useState(false);
+  // перевод строк: t = territory во вложенных функциях, поэтому берём tr
+  const tr = useT();
 
   useEffect(() => {
     const mq = window.matchMedia('(prefers-color-scheme: dark)');
@@ -383,7 +386,7 @@ export default function MapView(props: Props) {
     // прогнозная зона: значение, интервал и обязательная атрибуция
     if (s.forecast && s.year > FORECAST_START) {
       const v = forecastAt(s.forecast, id, s.scenario, s.year, 'pop', s.jumpoff);
-      if (v == null) return <div className="tt-name">{t.ru}: прогноза нет</div>;
+      if (v == null) return <div className="tt-name">{t.ru}: {tr('прогноза нет')}</div>;
       const q10 = forecastAt(s.forecast, id, s.scenario, s.year, 'q10', s.jumpoff);
       const q90 = forecastAt(s.forecast, id, s.scenario, s.year, 'q90', s.jumpoff);
       const m = territoryMetric(id, s);
@@ -391,16 +394,16 @@ export default function MapView(props: Props) {
         <>
           <div className="tt-name">{t.ru}</div>
           <div className="tt-val">
-            <strong>{formatNumber(v)}</strong> чел.
-            {s.metric === 'density' && t.area ? <> · {(v / t.area).toLocaleString('ru-RU', { maximumFractionDigits: 1 })} чел./км²</> : null}
-            {s.metric === 'change' && m != null ? <> · {m > 0 ? '+' : ''}{formatPct(m)} к {s.baseYear}</> : null}
+            <strong>{formatNumber(v)}</strong> {tr('чел.')}
+            {s.metric === 'density' && t.area ? <> · {(v / t.area).toLocaleString('ru-RU', { maximumFractionDigits: 1 })} {tr('чел./км²')}</> : null}
+            {s.metric === 'change' && m != null ? <> · {m > 0 ? '+' : ''}{formatPct(m)} {tr('к')} {s.baseYear}</> : null}
           </div>
           {q10 != null && q90 != null && (
-            <div className="tt-src">80% интервал: {formatCompact(q10)} – {formatCompact(q90)}</div>
+            <div className="tt-src">{tr('80% интервал:')} {formatCompact(q10)} – {formatCompact(q90)}</div>
           )}
           <div className="tt-src">
-            прогноз {s.forecast.version}, сценарий «{SCENARIO_LABEL[s.scenario]}»
-            {s.jumpoff === 'adjusted' ? (hasAdjusted(s.forecast, id) ? ', ряд скорректированный' : ', ряд официальный (поправка — до уровня областей)') : ''}
+            {tr('прогноз')} {s.forecast.version}, {tr('сценарий')} «{tr(SCENARIO_LABEL[s.scenario])}»
+            {s.jumpoff === 'adjusted' ? (hasAdjusted(s.forecast, id) ? tr(', ряд скорректированный') : tr(', ряд официальный (поправка — до уровня областей)')) : ''}
           </div>
         </>
       );
@@ -414,16 +417,16 @@ export default function MapView(props: Props) {
         <div className="tt-name">{t.ru}</div>
         {res ? (
           <div className="tt-val">
-            <strong>{formatNumber(res.value)}</strong> чел.
-            {s.metric === 'density' && t.area ? <> · {(res.value / t.area).toLocaleString('ru-RU', { maximumFractionDigits: 1 })} чел./км²</> : null}
-            {s.metric === 'change' && m != null ? <> · {m > 0 ? '+' : ''}{formatPct(m)} к {s.baseYear}</> : null}
+            <strong>{formatNumber(res.value)}</strong> {tr('чел.')}
+            {s.metric === 'density' && t.area ? <> · {(res.value / t.area).toLocaleString('ru-RU', { maximumFractionDigits: 1 })} {tr('чел./км²')}</> : null}
+            {s.metric === 'change' && m != null ? <> · {m > 0 ? '+' : ''}{formatPct(m)} {tr('к')} {s.baseYear}</> : null}
           </div>
         ) : (
-          <div className="tt-val">нет данных на {s.year} год</div>
+          <div className="tt-val">{tr('нет данных на')} {s.year} {tr('год')}</div>
         )}
         {res && near && (
           <div className="tt-src">
-            {res.interpolated ? `интерполяция (ближайшая точка: ${near.year}, ${DTYPE_LABEL[near.dtype]})` : DTYPE_LABEL[near.dtype]}
+            {res.interpolated ? `${tr('интерполяция (ближайшая точка:')} ${near.year}, ${tr(DTYPE_LABEL[near.dtype])})` : tr(DTYPE_LABEL[near.dtype])}
           </div>
         )}
       </>
@@ -442,9 +445,9 @@ export default function MapView(props: Props) {
           const w = divRef.current?.clientWidth ?? 0;
           mapRef.current?.fitBounds(BOUNDS, { padding: fitPad(w), duration: 400 });
         }}
-        title="Вся страна"
-        aria-label="показать всю страну"
-      >⌖ Вся страна</button>
+        title={tr('Вся страна')}
+        aria-label={tr('показать всю страну')}
+      >⌖ {tr('Вся страна')}</button>
       {tooltip && (
         <div className="map-tooltip" style={tooltipPos(tooltip, divRef.current)}>
           {tooltip.html}
@@ -452,18 +455,18 @@ export default function MapView(props: Props) {
       )}
       {narrow && !legendOpen && (
         <button className="map-legend-toggle" onClick={() => setLegendOpen(true)} aria-expanded={false}>
-          Легенда
+          {tr('Легенда')}
         </button>
       )}
       {(!narrow || legendOpen) && (
       <div className="map-legend">
         {narrow && (
-          <button className="map-legend-close" onClick={() => setLegendOpen(false)} aria-label="свернуть легенду">×</button>
+          <button className="map-legend-close" onClick={() => setLegendOpen(false)} aria-label={tr('свернуть легенду')}>×</button>
         )}
         <div className="lg-title">
-          {METRIC_TITLE[metric]}
-          {metric === 'change' ? `, % к ${baseYear} г.` : ''}
-          {noCenterScale ? ' — без городских центров' : ''}
+          {tr(METRIC_TITLE[metric])}
+          {metric === 'change' ? `${tr(', % к')} ${baseYear} ${tr('г.')}` : ''}
+          {noCenterScale ? tr(' — без городских центров') : ''}
         </div>
         {level === 'city' && metric !== 'change' ? (
           <CityLegend dark={dark} maxPop={maxCityPop} />
@@ -479,41 +482,36 @@ export default function MapView(props: Props) {
         {inForecast && (
           <div className="lg-row" style={{ marginTop: 5 }}>
             <span className="lg-line" style={{ borderTopColor: 'var(--accent)' }} />
-            прогноз {forecast!.version} · «{SCENARIO_LABEL[scenario]}»{jumpoff === 'adjusted' ? ' · ряд скорр.' : ''}
+            {tr('прогноз')} {forecast!.version} · «{tr(SCENARIO_LABEL[scenario])}»{jumpoff === 'adjusted' ? tr(' · ряд скорр.') : ''}
           </div>
         )}
         {showBorder1921 && (
           <div className="lg-row">
             <span className="lg-line" />
-            граница Польша/СССР, 1921–1939
+            {tr('граница Польша/СССР, 1921–1939')}
           </div>
         )}
       </div>
       )}
       {effLevel === 'raion' && year < 1970 && (
         <div className="map-notice">
-          Районный разрез — с 1970 года. Ранняя динамика видна по городам
-          {year >= 1959 ? ' и областям' : ''} (уровень «Области» — с 1959 г.).
+          {tr('Районный разрез — с 1970 года. Ранняя динамика видна по городам')}
+          {year >= 1959 ? tr(' и областям') : ''} {tr('(уровень «Области» — с 1959 г.).')}
         </div>
       )}
       {inForecast && jumpoff === 'adjusted' && level !== 'oblast' && (
         <div className="map-notice">
-          Скорректированный ряд построен для страны, областей и Минска:
-          районы и города показаны по официальному ряду (поправка
-          территориально обоснована только до уровня областей).
+          {tr('Скорректированный ряд построен для страны, областей и Минска: районы и города показаны по официальному ряду (поправка территориально обоснована только до уровня областей).')}
         </div>
       )}
       {inForecast && level === 'raion' && (
         <div className="map-notice">
-          Прогноз районов — Гамильтон–Перри (CCR 2009–2019), согласован с
-          областным CCMPP; без доверительных интервалов — смотрите сценарии.
+          {tr('Прогноз районов — Гамильтон–Перри (CCR 2009–2019), согласован с областным CCMPP; без доверительных интервалов — смотрите сценарии.')}
         </div>
       )}
       {inForecast && level === 'city' && (
         <div className="map-notice">
-          Прогноз городов — доля в районе (логистический тренд); Минск,
-          облцентры и города областного подчинения — когортные модели. Города с рядами,
-          оборванными до 2019 г., в прогнозе не показываются.
+          {tr('Прогноз городов — доля в районе (логистический тренд); Минск, облцентры и города областного подчинения — когортные модели. Города с рядами, оборванными до 2019 г., в прогнозе не показываются.')}
         </div>
       )}
     </div>
@@ -523,6 +521,7 @@ export default function MapView(props: Props) {
 /** Мини-легенда городов: размер и интенсивность красного растут с населением;
  *  ярко-красный - исторический максимум (пик Минска). */
 function CityLegend({ dark, maxPop }: { dark: boolean; maxPop: number }) {
+  const tr = useT();
   const samples = [
     { pop: 10_000, label: '10 тыс.' },
     { pop: 100_000, label: '100 тыс.' },
@@ -531,7 +530,7 @@ function CityLegend({ dark, maxPop }: { dark: boolean; maxPop: number }) {
   ];
   return (
     <div className="lg-row lg-cities">
-      <span style={{ marginRight: 2 }}>город:</span>
+      <span style={{ marginRight: 2 }}>{tr('город:')}</span>
       {samples.map((s) => (
         <span className="lg-city-sample" key={s.label}>
           <span
@@ -542,7 +541,7 @@ function CityLegend({ dark, maxPop }: { dark: boolean; maxPop: number }) {
               background: cityColor(s.pop, maxPop, dark),
             }}
           />
-          {s.label}
+          {tr(s.label)}
         </span>
       ))}
     </div>

@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { DataFile } from '@/lib/types';
+import { useT } from '@/lib/i18n';
 import MethodDrawer from './MethodDrawer';
 
 interface WageRec {
@@ -50,6 +51,7 @@ function BivarChoro({ geo, wages, names, selected, onSelect }: {
   selected: string | null;
   onSelect: (id: string) => void;
 }) {
+  const t = useT();
   const wrapRef = useRef<HTMLDivElement>(null);
   const [width, setWidth] = useState(640);
   const [hover, setHover] = useState<{ id: string; x: number; y: number } | null>(null);
@@ -97,7 +99,7 @@ function BivarChoro({ geo, wages, names, selected, onSelect }: {
 
   return (
     <div className="chart-svg-wrap" ref={wrapRef}>
-      <svg width={width} height={height} role="img" aria-label="зарплата и динамика по районам">
+      <svg width={width} height={height} role="img" aria-label={t('зарплата и динамика по районам')}>
         {paths.map((p) => (
           <path key={p.id} d={p.d}
             fill={clsColor(wages.territories[p.id]?.cls)}
@@ -121,18 +123,18 @@ function BivarChoro({ geo, wages, names, selected, onSelect }: {
           {BIVAR.map((row, p) => row.map((c, w) => (
             <rect key={`${w}${p}`} x={w * 22} y={(2 - p) * 22} width="21" height="21" fill={c} />
           )))}
-          <text x="33" y="82" textAnchor="middle" fontSize="9.5" fill="var(--ink-2)">зарплата →</text>
+          <text x="33" y="82" textAnchor="middle" fontSize="9.5" fill="var(--ink-2)">{t('зарплата →')}</text>
           <text x="-8" y="33" textAnchor="middle" fontSize="9.5" fill="var(--ink-2)"
-            transform="rotate(-90 -8 33)">рост →</text>
+            transform="rotate(-90 -8 33)">{t('рост →')}</text>
         </g>
       </svg>
       {hover && hrec && (
         <div className="chart-tooltip" style={{ left: Math.min(hover.x + 14, width - 210), top: hover.y - 8 }}>
           <div className="ct-row"><span className="ct-val">{names[hover.id] ?? hover.id}</span></div>
           <div className="ct-year">
-            зарплата {(hrec.wageRel * 100).toFixed(0)}% минской
+            {t('зарплата')} {(hrec.wageRel * 100).toFixed(0)}{t('% минской')}
             {hrec.wage2025 ? ` (${Math.round(hrec.wage2025)} BYN, 2025)` : ''}
-            {' · '}{hrec.popChange > 0 ? '+' : ''}{hrec.popChange.toFixed(1)}% за 2015–2025
+            {' · '}{hrec.popChange > 0 ? '+' : ''}{hrec.popChange.toFixed(1)}{t('% за 2015–2025')}
           </div>
         </div>
       )}
@@ -147,6 +149,7 @@ function WageScatter({ wages, names, selected, onSelect }: {
   selected: string | null;
   onSelect: (id: string) => void;
 }) {
+  const t = useT();
   const wrapRef = useRef<HTMLDivElement>(null);
   const [width, setWidth] = useState(560);
   const [hover, setHover] = useState<string | null>(null);
@@ -196,7 +199,7 @@ function WageScatter({ wages, names, selected, onSelect }: {
           <text key={v} x={M.left - 6} y={Y(v) + 3} textAnchor="end" fontSize="10" fill="var(--muted)">{v}</text>
         ))}
         <text x={M.left + iw / 2} y={height - 4} textAnchor="middle" fontSize="10.5" fill="var(--ink-2)">
-          средняя зарплата района, % минской ({wages.wageYears[0]}–{wages.wageYears[1]})
+          {t('средняя зарплата района, % минской')} ({wages.wageYears[0]}–{wages.wageYears[1]})
         </text>
 
         {ids.map((t) => {
@@ -234,9 +237,9 @@ function WageScatter({ wages, names, selected, onSelect }: {
           style={{ left: Math.min(X(wages.territories[hover].wageRel * 100) + 12, width - 200), top: Y(wages.territories[hover].popChange) - 12 }}>
           <div className="ct-row"><span className="ct-val">{names[hover] ?? hover}</span></div>
           <div className="ct-year">
-            {(wages.territories[hover].wageRel * 100).toFixed(0)}% минской ·{' '}
+            {(wages.territories[hover].wageRel * 100).toFixed(0)}{t('% минской')} ·{' '}
             {wages.territories[hover].popChange > 0 ? '+' : ''}{wages.territories[hover].popChange.toFixed(1)}%
-            {' · остаток '}{wages.territories[hover].resid > 0 ? '+' : ''}{wages.territories[hover].resid.toFixed(1)} п.п.
+            {' · '}{t('остаток')}{' '}{wages.territories[hover].resid > 0 ? '+' : ''}{wages.territories[hover].resid.toFixed(1)} {t('п.п.')}
           </div>
         </div>
       )}
@@ -245,6 +248,7 @@ function WageScatter({ wages, names, selected, onSelect }: {
 }
 
 export default function WagesView() {
+  const t = useT();
   const [wages, setWages] = useState<WagesData | null>(null);
   const [geo, setGeo] = useState<GeoFeature[] | null>(null);
   const [names, setNames] = useState<Record<string, string>>({});
@@ -264,7 +268,7 @@ export default function WagesView() {
     });
   }, []);
 
-  if (!wages || !geo) return <p className="hint">Загрузка данных…</p>;
+  if (!wages || !geo) return <p className="hint">{t('Загрузка данных…')}</p>;
 
   const select = (id: string) => {
     setSel(id);
@@ -285,40 +289,40 @@ export default function WagesView() {
       <div className="controls" style={{ marginBottom: 6 }}>
         <MethodDrawer slug="wages" />
         <a className="btn" href="/artifacts/by-maps-wages-v1.0.0.zip" download>
-          ⬇ Проверяемый пакет (ZIP)
+          ⬇ {t('Проверяемый пакет (ZIP)')}
         </a>
       </div>
 
       <div className="stat-row">
         <div className="stat-tile">
-          <div className="st-label">Эластичность динамики по зарплате</div>
-          <div className="st-value">+{pct10(m.beta[1]).toFixed(1)} п.п.</div>
+          <div className="st-label">{t('Эластичность динамики по зарплате')}</div>
+          <div className="st-value">+{pct10(m.beta[1]).toFixed(1)} {t('п.п.')}</div>
           <div className="st-delta">
-            за десятилетие на +10% дифференциала (по спецификациям {Math.min(...betas).toFixed(1)}–{Math.max(...betas).toFixed(1)}); R² {m.r2.toFixed(2)}
+            {t('за десятилетие на +10% дифференциала (по спецификациям')} {Math.min(...betas).toFixed(1)}–{Math.max(...betas).toFixed(1)}); R² {m.r2.toFixed(2)}
           </div>
         </div>
         <div className="stat-tile">
-          <div className="st-label">Углы диагонали 3×3</div>
-          <div className="st-value">{diag} из 118</div>
-          <div className="st-delta">районов: «бедные убывают» + «богатые растут»</div>
+          <div className="st-label">{t('Углы диагонали 3×3')}</div>
+          <div className="st-value">{diag} {t('из')} 118</div>
+          <div className="st-delta">{t('районов: «бедные убывают» + «богатые растут»')}</div>
         </div>
         <div className="stat-tile">
-          <div className="st-label">Зарплата Минска, 2025</div>
+          <div className="st-label">{t('Зарплата Минска, 2025')}</div>
           <div className="st-value">{Math.round(wages.minskWage['2025']).toLocaleString('ru-RU')} BYN</div>
-          <div className="st-delta">медианный район получает ~57% минской; максимум — Солигорский (101%)</div>
+          <div className="st-delta">{t('медианный район получает ~57% минской; максимум — Солигорский (101%)')}</div>
         </div>
       </div>
 
       <div className="grid-2">
         <div className="chart-block">
           <div className="chart-title">
-            Биваритная карта: зарплатный дифференциал × динамика населения 2015–2025
+            {t('Биваритная карта: зарплатный дифференциал × динамика населения 2015–2025')}
           </div>
           <BivarChoro geo={geo} wages={wages} names={names} selected={sel} onSelect={select} />
         </div>
         <div className="chart-block">
           <div className="chart-title">
-            Каждая точка — район; пунктир — терцили; выбросы регрессии подписаны
+            {t('Каждая точка — район; пунктир — терцили; выбросы регрессии подписаны')}
           </div>
           <WageScatter wages={wages} names={names} selected={sel} onSelect={select} />
         </div>
@@ -327,25 +331,20 @@ export default function WagesView() {
       {rec && sel && (
         <div className="stat-row">
           <div className="stat-tile">
-            <div className="st-label">{names[sel] ?? sel} · <a href={`/map?sel=${sel}`}>на карту</a></div>
+            <div className="st-label">{names[sel] ?? sel} · <a href={`/map?sel=${sel}`}>{t('на карту')}</a></div>
             <div className="st-value">{(rec.wageRel * 100).toFixed(0)}%</div>
-            <div className="st-delta">минской зарплаты (среднее {wages.wageYears[0]}–{wages.wageYears[1]}){rec.wage2025 ? ` · ${Math.round(rec.wage2025)} BYN в 2025` : ''}</div>
+            <div className="st-delta">{t('минской зарплаты (среднее')} {wages.wageYears[0]}–{wages.wageYears[1]}){rec.wage2025 ? ` · ${Math.round(rec.wage2025)} BYN ${t('в')} 2025` : ''}</div>
           </div>
           <div className="stat-tile">
-            <div className="st-label">Динамика населения {wages.window[0]}–{wages.window[1]}</div>
+            <div className="st-label">{t('Динамика населения')} {wages.window[0]}–{wages.window[1]}</div>
             <div className={`st-value`}>{rec.popChange > 0 ? '+' : ''}{rec.popChange.toFixed(1)}%</div>
-            <div className="st-delta">остаток от регрессии: {rec.resid > 0 ? '+' : ''}{rec.resid.toFixed(1)} п.п. {Math.abs(rec.resid) > 8 ? '— аномалия' : ''}</div>
+            <div className="st-delta">{t('остаток от регрессии:')} {rec.resid > 0 ? '+' : ''}{rec.resid.toFixed(1)} {t('п.п.')} {Math.abs(rec.resid) > 8 ? t('— аномалия') : ''}</div>
           </div>
         </div>
       )}
 
       <p className="src-note">
-        Зарплата — номинальная начисленная по месту работы (дата-портал
-        Белстата), поэтому маятниковые работники пригородов учтены по месту
-        занятости; дифференциал к Минску самонормируется и не требует
-        дефлятора. Связь — корреляционная, не причинная: высокая зарплата и
-        рост населения могут иметь общую причину. Полные ограничения — в
-        методблоке и LIMITATIONS.md пакета.
+        {t('Зарплата — номинальная начисленная по месту работы (дата-портал Белстата), поэтому маятниковые работники пригородов учтены по месту занятости; дифференциал к Минску самонормируется и не требует дефлятора. Связь — корреляционная, не причинная: высокая зарплата и рост населения могут иметь общую причину. Полные ограничения — в методблоке и LIMITATIONS.md пакета.')}
       </p>
     </div>
   );

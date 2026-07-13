@@ -1,9 +1,7 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import AgingView from '@/components/AgingView';
-import AuthorCard from '@/components/AuthorCard';
+import ResearchShell from '@/components/ResearchShell';
 import { authors } from '@/lib/seo';
-import { RESEARCH } from '@/lib/research';
 
 export const metadata: Metadata = {
   authors,
@@ -12,26 +10,15 @@ export const metadata: Metadata = {
     'Возрастная структура 118 районов по переписям 2009/2019: медианный возраст, доля 65+, демографическая нагрузка и контрфактная передвижка «при нулевой миграции».',
 };
 
-const VERSION = RESEARCH.find((r) => r.slug === 'aging')!.artifact!.version;
-
 export default function AgingPage() {
   return (
-    <div className="page page-wide">
-      <div className="page-breadcrumb">
-        <Link href="/research">Исследования</Link> · INF-02 · v{VERSION}
-      </div>
-      <h1>Старение районов: где депопуляция самоподдерживается</h1>
-      <p className="page-lead">
-        Десятилетия оттока молодёжи изменили саму возрастную структуру
-        периферийных районов — настолько, что убыль продолжится, даже если
-        миграция полностью остановится: некому рожать и всё больше поколений
-        входит в старшие возраста. Когортная передвижка без миграции
-        показывает: естественная убыль ждёт 117 из 118 районов, а 28 районов
-        в ближайшие 60 лет пересекут порог, за которым 65-летних и старше —
-        почти треть населения.
-      </p>
+    <ResearchShell
+      code="INF-02"
+      version="v1.0.3"
+      title="Старение районов: где депопуляция самоподдерживается"
+      lead="Десятилетия оттока молодёжи изменили саму возрастную структуру периферийных районов — настолько, что убыль продолжится, даже если миграция полностью остановится: некому рожать и всё больше поколений входит в старшие возраста. Когортная передвижка без миграции показывает: естественная убыль ждёт 117 из 118 районов, а 28 районов в ближайшие 60 лет пересекут порог, за которым 65-летних и старше — почти треть населения."
+    >
       <AgingView />
-      <AuthorCard variant="compact" lang="ru" />
-    </div>
+    </ResearchShell>
   );
 }

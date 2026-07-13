@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import WagesView from '@/components/WagesView';
-import AuthorCard from '@/components/AuthorCard';
+import ResearchShell from '@/components/ResearchShell';
 import { authors } from '@/lib/seo';
 
 export const metadata: Metadata = {
@@ -13,22 +12,13 @@ export const metadata: Metadata = {
 
 export default function WagesPage() {
   return (
-    <div className="page page-wide">
-      <div className="page-breadcrumb">
-        <Link href="/research">Исследования</Link> · INF-03 · v1.0.0
-      </div>
-      <h1>Зарплата × динамика: следует ли население за деньгами</h1>
-      <p className="page-lead">
-        Медианный район платит чуть больше половины минской зарплаты — и
-        именно туда, где платят больше, население и стекается: связь
-        зарплатного дифференциала с десятилетней динамикой района
-        положительна и значима во всех спецификациях. Но половину силы
-        связи создают пригороды Минска, а самые интересные истории — в
-        исключениях: Солигорский район в среднем за десятилетие платил больше Минска (калий), а
-        Островецкий взлетел на стройке АЭС.
-      </p>
+    <ResearchShell
+      code="INF-03"
+      version="v1.0.0"
+      title="Зарплата × динамика: следует ли население за деньгами"
+      lead="Медианный район платит чуть больше половины минской зарплаты — и именно туда, где платят больше, население и стекается: связь зарплатного дифференциала с десятилетней динамикой района положительна и значима во всех спецификациях. Но половину силы связи создают пригороды Минска, а самые интересные истории — в исключениях: Солигорский район в среднем за десятилетие платил больше Минска (калий), а Островецкий взлетел на стройке АЭС."
+    >
       <WagesView />
-      <AuthorCard variant="compact" lang="ru" />
-    </div>
+    </ResearchShell>
   );
 }

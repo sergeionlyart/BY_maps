@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { DataFile } from '@/lib/types';
+import { useT } from '@/lib/i18n';
 import MethodDrawer from './MethodDrawer';
 
 interface AccessRec {
@@ -166,6 +167,7 @@ function Choro({ geo, fill, tooltip, selected, onSelect, label, legend }: {
 /** Профиль динамики по поясам: медиана + межквартильный размах. */
 function BeltProfile({ access }: { access: AccessData }) {
   const [wrapRef, width] = useWidth(560);
+  const T = useT();
   const height = 340;
   const M = { top: 16, right: 14, bottom: 40, left: 44 };
   const iw = width - M.left - M.right;
@@ -184,7 +186,7 @@ function BeltProfile({ access }: { access: AccessData }) {
 
   return (
     <div className="chart-svg-wrap" ref={wrapRef}>
-      <svg width={width} height={height} role="img" aria-label="профиль динамики по поясам">
+      <svg width={width} height={height} role="img" aria-label={T('профиль динамики по поясам')}>
         <line x1={M.left} x2={width - M.right} y1={Y(0)} y2={Y(0)} stroke="var(--baseline)" />
         {[-15, -10, -5, 0, 5, 10].filter((v) => v >= y0 && v <= y1).map((v) => (
           <g key={v}>
@@ -196,7 +198,7 @@ function BeltProfile({ access }: { access: AccessData }) {
           <text key={b} x={X(i)} y={height - 20} textAnchor="middle" fontSize="10.5" fill="var(--ink-2)">{b}</text>
         ))}
         <text x={M.left + iw / 2} y={height - 5} textAnchor="middle" fontSize="10" fill="var(--muted)">
-          время в пути от райцентра · медиана и межквартильный размах, % за {access.window[0]}–{access.window[1]}
+          {T('время в пути от райцентра · медиана и межквартильный размах, % за')} {access.window[0]}–{access.window[1]}
         </text>
         {series.map((s) => {
           const pts = access.belts
@@ -223,7 +225,7 @@ function BeltProfile({ access }: { access: AccessData }) {
           {series.map((s, i) => (
             <g key={s.name} transform={`translate(0, ${i * 16})`}>
               <circle cx="5" cy="5" r="4.5" fill={s.color} />
-              <text x="15" y="8.5" fontSize="10" fill="var(--ink-2)">{s.name}</text>
+              <text x="15" y="8.5" fontSize="10" fill="var(--ink-2)">{T(s.name)}</text>
             </g>
           ))}
         </g>
@@ -252,7 +254,9 @@ export default function AccessView() {
     });
   }, []);
 
-  if (!access || !geo) return <p className="hint">Загрузка данных…</p>;
+  const T = useT();
+
+  if (!access || !geo) return <p className="hint">{T('Загрузка данных…')}</p>;
 
   const select = (id: string) => {
     setSel(id);
@@ -264,8 +268,8 @@ export default function AccessView() {
   const t = access.territories;
   const fmtMin = (m: number) => {
     const total = Math.round(m);
-    return total >= 90 ? `${Math.floor(total / 60)} ч ${total % 60} мин`
-      : `${total} мин`;
+    return total >= 90 ? `${Math.floor(total / 60)} ${T('ч')} ${total % 60} ${T('мин')}`
+      : `${total} ${T('мин')}`;
   };
 
   const profEff = Object.fromEntries(access.profileEff.map((p) => [p.belt, p]));
@@ -280,32 +284,32 @@ export default function AccessView() {
       <div className="controls" style={{ marginBottom: 6 }}>
         <MethodDrawer slug="access" />
         <a className="btn" href="/artifacts/by-maps-access-v1.0.0.zip" download>
-          ⬇ Проверяемый пакет (ZIP)
+          ⬇ {T('Проверяемый пакет (ZIP)')}
         </a>
       </div>
 
       <div className="stat-row">
         <div className="stat-tile">
-          <div className="st-label">Пригород против кольца</div>
+          <div className="st-label">{T('Пригород против кольца')}</div>
           <div className="st-value">
             {profEff['<45 мин'].median > 0 ? '+' : ''}{profEff['<45 мин'].median.toFixed(1)} vs {profEff['1,5-2,5 ч'].median.toFixed(1)}%
           </div>
           <div className="st-delta">
-            медианная динамика {access.window[0]}–{access.window[1]}: до 45 мин от центра — против кольца 1,5–2,5 ч
+            {T('медианная динамика')} {access.window[0]}–{access.window[1]}: {T('до 45 мин от центра — против кольца 1,5–2,5 ч')}
           </div>
         </div>
         <div className="stat-tile">
-          <div className="st-label">«Тень»: кольцо хуже дальней периферии</div>
-          <div className="st-value">{ringGap > 0 ? '+' : ''}{ringGap.toFixed(1)} п.п.</div>
+          <div className="st-label">{T('«Тень»: кольцо хуже дальней периферии')}</div>
+          <div className="st-value">{ringGap > 0 ? '+' : ''}{ringGap.toFixed(1)} {T('п.п.')}</div>
           <div className="st-delta">
-            дальше 2,5 ч убыль слабее, чем в кольце ({profEff['>2,5 ч'].median.toFixed(1)} против {profEff['1,5-2,5 ч'].median.toFixed(1)}%) — профиль немонотонный
+            {T('дальше 2,5 ч убыль слабее, чем в кольце')} ({profEff['>2,5 ч'].median.toFixed(1)} {T('против')} {profEff['1,5-2,5 ч'].median.toFixed(1)}%) — {T('профиль немонотонный')}
           </div>
         </div>
         <div className="stat-tile">
-          <div className="st-label">Легковые переходы в ЕС</div>
+          <div className="st-label">{T('Легковые переходы в ЕС')}</div>
           <div className="st-value">13 → 4 → 6</div>
           <div className="st-delta">
-            2019 → надир 2024–2025 → июль 2026; в надир {nadirHit} районов потеряли больше часа пути до ЕС
+            2019 → {T('надир')} 2024–2025 → {T('июль')} 2026; {T('в надир')} {nadirHit} {T('районов потеряли больше часа пути до ЕС')}
           </div>
         </div>
       </div>
@@ -313,25 +317,25 @@ export default function AccessView() {
       <div className="grid-2">
         <div className="chart-block">
           <div className="chart-title">
-            Пояса эффективной доступности: время в пути до Минска или ближайшего облцентра
+            {T('Пояса эффективной доступности: время в пути до Минска или ближайшего облцентра')}
           </div>
           <Choro geo={geo} selected={sel} onSelect={select}
-            label="пояса доступности по районам"
+            label={T('пояса доступности по районам')}
             fill={(id) => BELT_COLOR[t[id]?.beltEff] ?? 'var(--surface-2)'}
             legend={access.belts.map((b) => ({
               color: BELT_COLOR[b],
-              text: `${b} · медиана ${profEff[b].median > 0 ? '+' : ''}${profEff[b].median.toFixed(1)}%`,
+              text: `${b} · ${T('медиана')} ${profEff[b].median > 0 ? '+' : ''}${profEff[b].median.toFixed(1)}%`,
             }))}
             tooltip={(id) => {
               const r = t[id];
               if (!r) return names[id] ?? id;
-              return `${names[id] ?? id}: до Минска ${fmtMin(r.minMinsk)}, до облцентра ${fmtMin(r.minObl)} · ${r.popChange > 0 ? '+' : ''}${r.popChange.toFixed(1)}%`;
+              return `${names[id] ?? id}: ${T('до Минска')} ${fmtMin(r.minMinsk)}, ${T('до облцентра')} ${fmtMin(r.minObl)} · ${r.popChange > 0 ? '+' : ''}${r.popChange.toFixed(1)}%`;
             }}
           />
         </div>
         <div className="chart-block">
           <div className="chart-title">
-            Профиль динамики по поясам: минимум потерь у центра, дно в кольце, подъём на периферии
+            {T('Профиль динамики по поясам: минимум потерь у центра, дно в кольце, подъём на периферии')}
           </div>
           <BeltProfile access={access} />
         </div>
@@ -340,31 +344,31 @@ export default function AccessView() {
       <div className="grid-2">
         <div className="chart-block">
           <div className="chart-title">
-            Надир 2024–2025: насколько дальше стал ЕС после закрытия переходов
+            {T('Надир')} 2024–2025: {T('насколько дальше стал ЕС после закрытия переходов')}
           </div>
           <Choro geo={geo} selected={sel} onSelect={select}
-            label="потеря доступности ЕС в надир"
+            label={T('потеря доступности ЕС в надир')}
             fill={(id) => nadirColor(t[id]?.euDeltaNadir ?? 0)}
             legend={[
-              { color: '#e8e8e8', text: 'без изменений (ближайший переход не закрывался)' },
-              { color: '#fdd0a2', text: 'до +30 мин' },
-              { color: '#fd8d3c', text: '+30–60 мин' },
-              { color: '#e6550d', text: '+1–2 ч' },
-              { color: '#a63603', text: 'более +2 ч (гродненский пояс)' },
+              { color: '#e8e8e8', text: T('без изменений (ближайший переход не закрывался)') },
+              { color: '#fdd0a2', text: T('до +30 мин') },
+              { color: '#fd8d3c', text: T('+30–60 мин') },
+              { color: '#e6550d', text: T('+1–2 ч') },
+              { color: '#a63603', text: T('более +2 ч (гродненский пояс)') },
             ]}
             tooltip={(id) => {
               const r = t[id];
               if (!r) return names[id] ?? id;
-              return `${names[id] ?? id}: до ЕС ${fmtMin(r.eu2019)} (2019) → ${fmtMin(r.euNadir)} (надир) → ${fmtMin(r.eu2026)} (2026)`;
+              return `${names[id] ?? id}: ${T('до ЕС')} ${fmtMin(r.eu2019)} (2019) → ${fmtMin(r.euNadir)} (${T('надир')}) → ${fmtMin(r.eu2026)} (2026)`;
             }}
           />
         </div>
         <div className="chart-block">
-          <div className="chart-title">Что остаётся от поясов после контроля зарплаты</div>
+          <div className="chart-title">{T('Что остаётся от поясов после контроля зарплаты')}</div>
           <div className="zone-table-wrap">
             <table className="zone-table">
               <thead>
-                <tr><th>Пояс (к базе «{access.baseBelt}»)</th><th>сырой профиль</th><th>с контролями, п.п.</th><th>HC1 SE</th></tr>
+                <tr><th>{T('Пояс (к базе')} «{access.baseBelt}»)</th><th>{T('сырой профиль')}</th><th>{T('с контролями, п.п.')}</th><th>HC1 SE</th></tr>
               </thead>
               <tbody>
                 {access.beltNames.map((b, i) => (
@@ -381,13 +385,10 @@ export default function AccessView() {
             </table>
           </div>
           <p className="hint" style={{ marginTop: 8 }}>
-            Контроли: ln зарплатного дифференциала (INF-03) и ln населения
-            райцентра; R² {reg.r2.toFixed(2)}, n = {reg.n}. Сырой градиент
-            выражен, но после контроля зарплаты пояса статистически слабы
-            (|t| &lt; 2): доступность капитализируется в зарплатах и размере
-            центра, а не действует отдельно от них. Кольцо 1,5–2,5 ч —
-            {' '}{reg.beta[iRing].toFixed(2)} п.п. — остаётся самым глубоким
-            и в модели.
+            {T('Контроли: ln зарплатного дифференциала (INF-03) и ln населения райцентра; R²')}
+            {' '}{reg.r2.toFixed(2)}, n = {reg.n}.{' '}
+            {T('Сырой градиент выражен, но после контроля зарплаты пояса статистически слабы (|t| < 2): доступность капитализируется в зарплатах и размере центра, а не действует отдельно от них. Кольцо 1,5–2,5 ч —')}
+            {' '}{reg.beta[iRing].toFixed(2)} {T('п.п. — остаётся самым глубоким и в модели.')}
           </p>
         </div>
       </div>
@@ -395,40 +396,32 @@ export default function AccessView() {
       {rec && sel && (
         <div className="stat-row">
           <div className="stat-tile">
-            <div className="st-label">{names[sel] ?? sel} · <a href={`/map?sel=${sel}`}>на карту</a></div>
+            <div className="st-label">{names[sel] ?? sel} · <a href={`/map?sel=${sel}`}>{T('на карту')}</a></div>
             <div className="st-value">{fmtMin(rec.eff)}</div>
             <div className="st-delta">
-              до {rec.minMinsk <= rec.minObl ? 'Минска' : (OBL_CENTER_NAME[rec.oblId] ?? rec.oblId)} — пояс «{rec.beltEff}»; до Минска {fmtMin(rec.minMinsk)}
+              {T('до')} {rec.minMinsk <= rec.minObl ? T('Минска') : T(OBL_CENTER_NAME[rec.oblId] ?? rec.oblId)} — {T('пояс')} «{rec.beltEff}»; {T('до Минска')} {fmtMin(rec.minMinsk)}
             </div>
           </div>
           <div className="stat-tile">
-            <div className="st-label">Доступность ЕС</div>
+            <div className="st-label">{T('Доступность ЕС')}</div>
             <div className="st-value">{fmtMin(rec.eu2019)} → {fmtMin(rec.euNadir)}</div>
             <div className="st-delta">
-              2019 → надир 2024–2025; июль 2026: {fmtMin(rec.eu2026)}
-              {rec.euDeltaNadir > 0 ? ` (в надир +${Math.round(rec.euDeltaNadir)} мин)` : ' (в модельном надире без потерь)'}
+              2019 → {T('надир')} 2024–2025; {T('июль')} 2026: {fmtMin(rec.eu2026)}
+              {rec.euDeltaNadir > 0 ? ` (${T('в надир')} +${Math.round(rec.euDeltaNadir)} ${T('мин')})` : ` (${T('в модельном надире без потерь')})`}
             </div>
           </div>
           <div className="stat-tile">
-            <div className="st-label">Динамика {access.window[0]}–{access.window[1]}</div>
+            <div className="st-label">{T('Динамика')} {access.window[0]}–{access.window[1]}</div>
             <div className="st-value">{rec.popChange > 0 ? '+' : ''}{rec.popChange.toFixed(1)}%</div>
             <div className="st-delta">
-              медиана пояса «{rec.beltEff}»: {profEff[rec.beltEff].median > 0 ? '+' : ''}{profEff[rec.beltEff].median.toFixed(1)}% · зарплата {(rec.wageRel * 100).toFixed(0)}% минской
+              {T('медиана пояса')} «{rec.beltEff}»: {profEff[rec.beltEff].median > 0 ? '+' : ''}{profEff[rec.beltEff].median.toFixed(1)}% · {T('зарплата')} {(rec.wageRel * 100).toFixed(0)}% {T('минской')}
             </div>
           </div>
         </div>
       )}
 
       <p className="src-note">
-        Время в пути — Дейкстра по дорожному графу OSM (классы
-        motorway–tertiary, консервативные скорости 45–105 км/ч, без пробок
-        и очередей на границе) от узла у райцентра; для районов с городом
-        областного подчинения — от этого города. Доступность ЕС — время до
-        ближайшего перехода, открытого для легковых автомобилей в
-        соответствующий период; очереди (в 2026 — часы и сутки) не
-        моделируются, поэтому фактическое ухудшение сильнее расчётного.
-        Профиль корреляционный: пояс не назначен случайно. Полные
-        ограничения — в методблоке и LIMITATIONS.md пакета.
+        {T('Время в пути — Дейкстра по дорожному графу OSM (классы motorway–tertiary, консервативные скорости 45–105 км/ч, без пробок и очередей на границе) от узла у райцентра; для районов с городом областного подчинения — от этого города. Доступность ЕС — время до ближайшего перехода, открытого для легковых автомобилей в соответствующий период; очереди (в 2026 — часы и сутки) не моделируются, поэтому фактическое ухудшение сильнее расчётного. Профиль корреляционный: пояс не назначен случайно. Полные ограничения — в методблоке и LIMITATIONS.md пакета.')}
       </p>
     </div>
   );

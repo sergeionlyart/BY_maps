@@ -6,6 +6,7 @@ import type { DataFile, Metric, MapLevel, RaionMode } from '@/lib/types';
 import type { ForecastFile, ScenarioId, JumpoffId } from '@/lib/forecast';
 import { FORECAST_START, JUMPOFF_LABEL } from '@/lib/forecast';
 import { useMedia } from '@/lib/useMedia';
+import { useT } from '@/lib/i18n';
 import TimeBar from '@/components/TimeBar';
 import TerritoryCard from '@/components/TerritoryCard';
 import ComparePanel from '@/components/ComparePanel';
@@ -59,6 +60,8 @@ export default function MapPage() {
   const [cardOpen, setCardOpen] = useState(false);
   const touchY = useRef<number | null>(null);
 
+  const t = useT();
+
   // режим приложения: страница /map не прокручивается
   useEffect(() => {
     document.body.classList.add('map-mode');
@@ -110,13 +113,13 @@ export default function MapPage() {
 
   // чипы активных нестандартных настроек над картой (мобильный) — U-05
   const chips: string[] = [];
-  if (metricSafe !== 'density') chips.push(METRIC_LABEL[metricSafe]);
-  if (level === 'raion' && raionMode === 'total') chips.push('весь район');
-  if (metricSafe === 'change') chips.push(`база ${baseYear}`);
-  if (inForecast && forecast && scenario !== 'base') chips.push(forecast.scenarioMeta[scenario].name);
-  if (inForecast && jumpoff === 'adjusted') chips.push('ряд скорр.');
-  if (level !== 'city' && !showCities) chips.push('без городов');
-  if (showBorder) chips.push('граница 1921');
+  if (metricSafe !== 'density') chips.push(t(METRIC_LABEL[metricSafe]));
+  if (level === 'raion' && raionMode === 'total') chips.push(t('весь район'));
+  if (metricSafe === 'change') chips.push(`${t('база')} ${baseYear}`);
+  if (inForecast && forecast && scenario !== 'base') chips.push(t(forecast.scenarioMeta[scenario].name));
+  if (inForecast && jumpoff === 'adjusted') chips.push(t('ряд скорр.'));
+  if (level !== 'city' && !showCities) chips.push(t('без городов'));
+  if (showBorder) chips.push(t('граница 1921'));
 
   // свайп вниз по «ручке» шторки закрывает карточку
   const onHandleTouchStart = (e: React.TouchEvent) => { touchY.current = e.touches[0].clientY; };
@@ -130,33 +133,33 @@ export default function MapPage() {
   const secondaryControls = (
     <>
       <div className="control-group">
-        <span className="control-label">Показатель</span>
+        <span className="control-label">{t('Показатель')}</span>
         <div className="seg">
-          <button className={metricSafe === 'pop' ? 'on' : ''} onClick={() => setMetric('pop')}>Численность</button>
+          <button className={metricSafe === 'pop' ? 'on' : ''} onClick={() => setMetric('pop')}>{t('Численность')}</button>
           <button
             className={metricSafe === 'density' ? 'on' : ''}
             onClick={() => setMetric('density')}
             disabled={level === 'city'}
           >
-            Плотность
+            {t('Плотность')}
           </button>
-          <button className={metricSafe === 'change' ? 'on' : ''} onClick={() => setMetric('change')}>Изменение</button>
+          <button className={metricSafe === 'change' ? 'on' : ''} onClick={() => setMetric('change')}>{t('Изменение')}</button>
         </div>
       </div>
 
       {level === 'raion' && (
         <div className="control-group">
-          <span className="control-label">Район</span>
+          <span className="control-label">{t('Район')}</span>
           <div className="seg">
-            <button className={raionMode === 'total' ? 'on' : ''} onClick={() => setRaionMode('total')}>Весь район</button>
-            <button className={raionMode === 'noCenter' ? 'on' : ''} onClick={() => setRaionMode('noCenter')}>Без центра</button>
+            <button className={raionMode === 'total' ? 'on' : ''} onClick={() => setRaionMode('total')}>{t('Весь район')}</button>
+            <button className={raionMode === 'noCenter' ? 'on' : ''} onClick={() => setRaionMode('noCenter')}>{t('Без центра')}</button>
           </div>
         </div>
       )}
 
       {metricSafe === 'change' && (
         <div className="control-group">
-          <span className="control-label">База</span>
+          <span className="control-label">{t('База')}</span>
           <select className="base-year" value={baseYear} onChange={(e) => setBaseYear(+e.target.value)}>
             {BASE_YEARS.map((y) => <option key={y} value={y}>{y}</option>)}
           </select>
@@ -165,7 +168,7 @@ export default function MapPage() {
 
       {forecast && year > FORECAST_START && (
         <div className="control-group forecast-scenarios">
-          <span className="control-label">Сценарий прогноза</span>
+          <span className="control-label">{t('Сценарий прогноза')}</span>
           <div className="seg">
             {forecast.scenarios.map((s) => (
               <button
@@ -173,38 +176,38 @@ export default function MapPage() {
                 className={`scn scn-${s}${scenario === s ? ' on' : ''}`}
                 onClick={() => setScenario(s)}
               >
-                {forecast.scenarioMeta[s].name}
+                {t(forecast.scenarioMeta[s].name)}
               </button>
             ))}
           </div>
           {forecast.adjusted && (
             <>
-              <span className="control-label" title={forecast.adjustedMeta?.note}>Стартовый ряд</span>
+              <span className="control-label" title={forecast.adjustedMeta?.note}>{t('Стартовый ряд')}</span>
               <div className="seg">
                 {(['official', 'adjusted'] as JumpoffId[]).map((j) => (
                   <button key={j} className={jumpoff === j ? 'on' : ''}
-                    title={j === 'adjusted' ? forecast.adjustedMeta?.note : 'официальные оценки Белстата на 01.01.2026'}
+                    title={j === 'adjusted' ? forecast.adjustedMeta?.note : t('официальные оценки Белстата на 01.01.2026')}
                     onClick={() => setJumpoff(j)}>
-                    {JUMPOFF_LABEL[j]}
+                    {t(JUMPOFF_LABEL[j])}
                   </button>
                 ))}
               </div>
             </>
           )}
-          <MethodDrawer slug="forecast" label="Методика прогноза" />
+          <MethodDrawer slug="forecast" label={t('Методика прогноза')} />
         </div>
       )}
 
       {level !== 'city' && (
         <label className="toggle">
           <input type="checkbox" checked={showCities} onChange={(e) => setShowCities(e.target.checked)} />
-          города точками
+          {t('города точками')}
         </label>
       )}
 
       <label className="toggle">
         <input type="checkbox" checked={showBorder} onChange={(e) => setShowBorder(e.target.checked)} />
-        граница 1921–1939
+        {t('граница 1921–1939')}
       </label>
 
       <MethodDrawer slug="map" />
@@ -215,16 +218,16 @@ export default function MapPage() {
     <div className="mapapp">
       <div className="mapapp-bar">
         <div className="control-group mapapp-primary">
-          <span className="control-label">Уровень</span>
+          <span className="control-label">{t('Уровень')}</span>
           <div className="seg">
-            <button className={level === 'oblast' ? 'on' : ''} onClick={() => setLevel('oblast')}>Области</button>
-            <button className={level === 'raion' ? 'on' : ''} onClick={() => setLevel('raion')}>Районы</button>
-            <button className={level === 'city' ? 'on' : ''} onClick={() => setLevel('city')}>Города</button>
+            <button className={level === 'oblast' ? 'on' : ''} onClick={() => setLevel('oblast')}>{t('Области')}</button>
+            <button className={level === 'raion' ? 'on' : ''} onClick={() => setLevel('raion')}>{t('Районы')}</button>
+            <button className={level === 'city' ? 'on' : ''} onClick={() => setLevel('city')}>{t('Города')}</button>
           </div>
         </div>
 
         <button className="btn sheet-open-btn" onClick={openSettings} aria-expanded={settingsOpen}>
-          Слои и показатель{chips.length ? ` · ${chips.length}` : ''}
+          {t('Слои и показатель')}{chips.length ? ` · ${chips.length}` : ''}
         </button>
 
         {chips.length > 0 && (
@@ -235,8 +238,8 @@ export default function MapPage() {
 
         <div className={`mapapp-secondary ${settingsOpen ? 'open' : ''}`}>
           <div className="sheet-head">
-            <span className="sheet-title">Слои и показатель</span>
-            <button className="sheet-close" onClick={() => setSettingsOpen(false)} aria-label="закрыть">×</button>
+            <span className="sheet-title">{t('Слои и показатель')}</span>
+            <button className="sheet-close" onClick={() => setSettingsOpen(false)} aria-label={t('закрыть')}>×</button>
           </div>
           {secondaryControls}
         </div>
@@ -262,7 +265,7 @@ export default function MapPage() {
           />
         ) : (
           <div className="map-wrap" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <span className="hint">Загрузка данных…</span>
+            <span className="hint">{t('Загрузка данных…')}</span>
           </div>
         )}
 
@@ -273,18 +276,18 @@ export default function MapPage() {
             onTouchStart={onHandleTouchStart}
             onTouchMove={onHandleTouchMove}
             role="button"
-            aria-label="свернуть карточку"
+            aria-label={t('свернуть карточку')}
           />
           <div className="side-tabs" role="tablist">
-            <button className={tab === 'territory' ? 'on' : ''} onClick={() => setTab('territory')}>Территория</button>
+            <button className={tab === 'territory' ? 'on' : ''} onClick={() => setTab('territory')}>{t('Территория')}</button>
             <button className={tab === 'compare' ? 'on' : ''} onClick={() => setTab('compare')}>
-              Сравнение{compare.length ? ` (${compare.length})` : ''}
+              {t('Сравнение')}{compare.length ? ` (${compare.length})` : ''}
             </button>
-            <button className={tab === 'urban' ? 'on' : ''} onClick={() => setTab('urban')}>Урбанизация</button>
+            <button className={tab === 'urban' ? 'on' : ''} onClick={() => setTab('urban')}>{t('Урбанизация')}</button>
           </div>
           <div className="side-body">
             {!loaded ? (
-              <p className="hint">Загрузка…</p>
+              <p className="hint">{t('Загрузка…')}</p>
             ) : tab === 'territory' ? (
               <TerritoryCard
                 data={data}

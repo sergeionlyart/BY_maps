@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import type { DataFile } from '@/lib/types';
 import LineChart, { ChartSeries } from './LineChart';
 import MethodDrawer from './MethodDrawer';
+import { useT } from '@/lib/i18n';
 
 interface Sanction { jurisdiction: string; date: string; note?: string }
 interface Town {
@@ -55,6 +56,7 @@ function RiskMap({ geo, towns, selected, onSelect, names }: {
 }) {
   const [wrapRef, width] = useWidth(640);
   const [hover, setHover] = useState<{ t: Town; x: number; y: number } | null>(null);
+  const t = useT();
 
   const { outline, project, height } = useMemo(() => {
     let minLon = 180, maxLon = -180, minLat = 90, maxLat = -90;
@@ -85,7 +87,7 @@ function RiskMap({ geo, towns, selected, onSelect, names }: {
 
   return (
     <div className="chart-svg-wrap" ref={wrapRef}>
-      <svg width={width} height={height} role="img" aria-label="карта моногородов по риску">
+      <svg width={width} height={height} role="img" aria-label={t('карта моногородов по риску')}>
         {outline.map((d, i) => (
           <path key={i} d={d} fill="var(--surface-2)" stroke="var(--surface-1)" strokeWidth="0.5" />
         ))}
@@ -102,7 +104,7 @@ function RiskMap({ geo, towns, selected, onSelect, names }: {
           {RISK_ORDER.map((b, i) => (
             <g key={b} transform={`translate(0, ${i * 16})`}>
               <circle cx="6" cy="6" r="5.5" fill={RISK_COLOR[b]} />
-              <text x="17" y="10" fontSize="10" fill="var(--ink-2)">риск: {b}</text>
+              <text x="17" y="10" fontSize="10" fill="var(--ink-2)">{t('риск')}: {t(b)}</text>
             </g>
           ))}
         </g>
@@ -111,7 +113,7 @@ function RiskMap({ geo, towns, selected, onSelect, names }: {
         <div className="chart-tooltip" style={{ left: Math.min(hover.x + 12, width - 240), top: hover.y - 8 }}>
           <div className="ct-row"><span className="ct-val">{hover.t.ru}</span></div>
           <div className="ct-year">{hover.t.enterprise} · {hover.t.industry}</div>
-          <div className="ct-year">риск {hover.t.risk}{hover.t.nSanctions ? ` · санкции: ${hover.t.nSanctions}` : ''}</div>
+          <div className="ct-year">{t('риск')} {t(hover.t.risk)}{hover.t.nSanctions ? ` · ${t('санкции')}: ${hover.t.nSanctions}` : ''}</div>
         </div>
       )}
     </div>
@@ -139,7 +141,9 @@ export default function MonotownsView() {
     });
   }, []);
 
-  if (!mono || !geo) return <p className="hint">Загрузка данных…</p>;
+  const t = useT();
+
+  if (!mono || !geo) return <p className="hint">{t('Загрузка данных…')}</p>;
 
   const select = (id: string) => {
     setSel(id);
@@ -165,12 +169,12 @@ export default function MonotownsView() {
     ];
     const ctrlPts = mono.idxGrid.filter((y) => rec.ctrlIndex[String(y)] != null)
       .map((y) => ({ year: y, value: rec.ctrlIndex[String(y)], major: true }));
-    if (ctrlPts.length) series.push({ name: 'типовой город того же размера', color: 'var(--muted)', points: ctrlPts });
+    if (ctrlPts.length) series.push({ name: t('типовой город того же размера'), color: 'var(--muted)', points: ctrlPts });
     const fy = parseInt(rec.founded);
-    if (fy >= 1959 && fy <= 2026) milestones.push({ value: fy, label: 'завод' });
+    if (fy >= 1959 && fy <= 2026) milestones.push({ value: fy, label: t('завод') });
     for (const s of rec.sanctions) {
       const y = parseInt((s.date || '').slice(0, 4));
-      if (y >= 1989) milestones.push({ value: y, label: `санкции ${s.jurisdiction}` });
+      if (y >= 1989) milestones.push({ value: y, label: `${t('санкции')} ${s.jurisdiction}` });
     }
     // dedup milestone years
     const seen = new Set<number>();
@@ -182,35 +186,32 @@ export default function MonotownsView() {
       <div className="controls" style={{ marginBottom: 6 }}>
         <MethodDrawer slug="monotowns" />
         <a className="btn" href="/artifacts/by-maps-monotowns-v1.0.0.zip" download>
-          ⬇ Проверяемый пакет (ZIP)
+          ⬇ {t('Проверяемый пакет (ZIP)')}
         </a>
       </div>
 
       <div className="stat-row">
         <div className="stat-tile">
-          <div className="st-label">Моногородов в реестре</div>
+          <div className="st-label">{t('Моногородов в реестре')}</div>
           <div className="st-value">{mono.towns.length}</div>
           <div className="st-delta">
-            пар «город — градообразующее предприятие», {Object.keys(mono.typology).length} отраслей;
-            каждая с источником и санкционной экспозицией
+            {t('пар «город — градообразующее предприятие»,')} {Object.keys(mono.typology).length} {t('отраслей; каждая с источником и санкционной экспозицией')}
           </div>
         </div>
         <div className="stat-tile">
-          <div className="st-label">В зоне высокого риска</div>
+          <div className="st-label">{t('В зоне высокого риска')}</div>
           <div className="st-value">{highRisk.length}</div>
           <div className="st-delta">
-            сильная зависимость от одного (санкционного) завода: {highRisk.slice(0, 5).map((t) => t.ru).join(', ')}… — уязвимость при негативном сценарии
+            {t('сильная зависимость от одного (санкционного) завода:')} {highRisk.slice(0, 5).map((x) => x.ru).join(', ')}{t('… — уязвимость при негативном сценарии')}
           </div>
         </div>
         <div className="stat-tile">
-          <div className="st-label">Чем выше зависимость, тем хуже</div>
+          <div className="st-label">{t('Чем выше зависимость, тем хуже')}</div>
           <div className="st-value">
-            {agg.byDep.high.medianGap} vs +{agg.byDep.medium.medianGap} п.п.
+            {agg.byDep.high.medianGap} vs +{agg.byDep.medium.medianGap} {t('п.п.')}
           </div>
           <div className="st-delta">
-            среди сопоставимых по размеру: у моногородов высокой зависимости
-            население к 2026 отстаёт от типовых, у средней — держится; это
-            ассоциация, не доказанная причинность
+            {t('среди сопоставимых по размеру: у моногородов высокой зависимости население к 2026 отстаёт от типовых, у средней — держится; это ассоциация, не доказанная причинность')}
           </div>
         </div>
       </div>
@@ -218,10 +219,10 @@ export default function MonotownsView() {
       <div className="grid-2">
         <div className="chart-block">
           <div className="chart-title">
-            Карта моногородов: цвет — полоса риска, размер — население{' '}
+            {t('Карта моногородов: цвет — полоса риска, размер — население')}{' '}
             <select value={industry} onChange={(e) => setIndustry(e.target.value)}
               style={{ marginLeft: 8, fontSize: 12, padding: '2px 6px', background: 'var(--surface-2)', color: 'var(--ink)', border: '1px solid var(--border)', borderRadius: 4 }}>
-              <option value="все">все отрасли</option>
+              <option value="все">{t('все отрасли')}</option>
               {Object.keys(mono.typology).map((k) => <option key={k} value={k}>{k}</option>)}
             </select>
           </div>
@@ -229,57 +230,46 @@ export default function MonotownsView() {
         </div>
         <div className="chart-block">
           <div className="chart-title">
-            {rec ? `${rec.ru}: население к 1989 = 100${rec.gap != null ? ' (город против типовых того же размера)' : ' — крупный, сопоставимых по размеру нет'}`
-              : 'Выберите город на карте — траектория против типовых'}
+            {rec ? `${rec.ru}${t(': население к 1989 = 100')}${rec.gap != null ? t(' (город против типовых того же размера)') : t(' — крупный, сопоставимых по размеру нет')}`
+              : t('Выберите город на карте — траектория против типовых')}
           </div>
           {rec && rec.index ? (
             <>
               <LineChart series={series} height={230} domain={[mono.baselineYear, 2026]}
                 markYear={null} refXs={milestones} refY={{ value: 100, label: '1989' }}
-                yFormat={(v) => String(Math.round(v))} yTooltip={(v) => `${v.toFixed(0)} к 1989`} />
+                yFormat={(v) => String(Math.round(v))} yTooltip={(v) => `${v.toFixed(0)} ${t('к 1989')}`} />
               <div className="stat-row" style={{ marginTop: 8 }}>
                 <div className="stat-tile">
                   <div className="st-label">{rec.enterprise}</div>
                   <div className="st-value" style={{ fontSize: 15 }}>{rec.industry}</div>
                   <div className="st-delta">
-                    осн. {rec.founded || '—'}; занятость {rec.employment || '—'}
-                    {rec.employmentYear ? ` (${rec.employmentYear})` : ''}; зависимость города — {rec.dep === 'high' ? 'высокая' : rec.dep === 'medium' ? 'средняя' : 'низкая'}
+                    {t('осн.')} {rec.founded || '—'}; {t('занятость')} {rec.employment || '—'}
+                    {rec.employmentYear ? ` (${rec.employmentYear})` : ''}; {t('зависимость города —')} {rec.dep === 'high' ? t('высокая') : rec.dep === 'medium' ? t('средняя') : t('низкая')}
                   </div>
                 </div>
                 <div className="stat-tile">
-                  <div className="st-label">Риск: {rec.risk} · <a href={`/map?sel=${rec.id}`}>на карту</a></div>
+                  <div className="st-label">{t('Риск:')} {t(rec.risk)} · <a href={`/map?sel=${rec.id}`}>{t('на карту')}</a></div>
                   <div className="st-value" style={{ fontSize: 15 }}>
-                    {rec.gap != null ? `${rec.gap > 0 ? '+' : ''}${rec.gap} п.п. к типовым` : 'нет пары по размеру'}
+                    {rec.gap != null ? `${rec.gap > 0 ? '+' : ''}${rec.gap} ${t('п.п. к типовым')}` : t('нет пары по размеру')}
                   </div>
                   <div className="st-delta">
                     {rec.nSanctions
-                      ? `санкции: ${rec.sanctions.map((s) => `${s.jurisdiction} ${(s.date || '').slice(0, 4)}`).join(', ')}`
-                      : 'адресных санкций против предприятия не зафиксировано'}
+                      ? `${t('санкции:')} ${rec.sanctions.map((s) => `${s.jurisdiction} ${(s.date || '').slice(0, 4)}`).join(', ')}`
+                      : t('адресных санкций против предприятия не зафиксировано')}
                   </div>
                 </div>
               </div>
             </>
           ) : (
             <p className="hint" style={{ padding: '20px 4px' }}>
-              Клик по точке города покажет, как его население менялось
-              относительно «типовых» городов того же размера, с вехами
-              предприятия (основание, санкции).
+              {t('Клик по точке города покажет, как его население менялось относительно «типовых» городов того же размера, с вехами предприятия (основание, санкции).')}
             </p>
           )}
         </div>
       </div>
 
       <p className="src-note">
-        Реестр — ручная курация по открытым источникам (сайты предприятий,
-        отраслевая пресса, санкционные списки EU/US/UK/Canada); занятость
-        оценочная, санкционная экспозиция актуальна на дату сбора
-        (2026-07-12) и быстро меняется. «Типовой город» — медиана до восьми
-        ближайших по населению-1989 городов в пределах фактора 2, не
-        моногородов и не облцентров; у 15 крупнейших моногородов
-        сопоставимых по размеру «обычных» городов в Беларуси нет (они и
-        есть крупные города без облцентров) — для них показана только
-        собственная траектория. Связь населения с заводом — ассоциация, не
-        доказанная причинность. Построчные источники — в методблоке и пакете.
+        {t('Реестр — ручная курация по открытым источникам (сайты предприятий, отраслевая пресса, санкционные списки EU/US/UK/Canada); занятость оценочная, санкционная экспозиция актуальна на дату сбора (2026-07-12) и быстро меняется. «Типовой город» — медиана до восьми ближайших по населению-1989 городов в пределах фактора 2, не моногородов и не облцентров; у 15 крупнейших моногородов сопоставимых по размеру «обычных» городов в Беларуси нет (они и есть крупные города без облцентров) — для них показана только собственная траектория. Связь населения с заводом — ассоциация, не доказанная причинность. Построчные источники — в методблоке и пакете.')}
       </p>
     </div>
   );

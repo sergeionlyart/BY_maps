@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { useT } from '@/lib/i18n';
 
 interface Props {
   year: number;
@@ -12,6 +13,7 @@ interface Props {
 }
 
 export default function TimeBar({ year, range, censusYears, forecastStart, onChange }: Props) {
+  const t = useT();
   const [playing, setPlaying] = useState(false);
   const raf = useRef<number>(0);
   const yearRef = useRef(year);
@@ -45,14 +47,14 @@ export default function TimeBar({ year, range, censusYears, forecastStart, onCha
           if (!playing && year >= range[1]) onChange(range[0]);
           setPlaying(!playing);
         }}
-        aria-label={playing ? 'пауза' : 'воспроизвести'}
+        aria-label={playing ? t('пауза') : t('воспроизвести')}
       >
         {playing ? '❚❚' : '▶'}
       </button>
       <div className="year-display">
         {year}
         {forecastStart != null && year > forecastStart && (
-          <span className="forecast-flag">прогноз</span>
+          <span className="forecast-flag">{t('прогноз')}</span>
         )}
       </div>
       <div className="slider-zone">
@@ -60,7 +62,7 @@ export default function TimeBar({ year, range, censusYears, forecastStart, onCha
           <div
             className="forecast-zone"
             style={{ left: `${pct(forecastStart)}%`, width: `${100 - pct(forecastStart)}%` }}
-            title="Зона прогноза"
+            title={t('Зона прогноза')}
           />
         )}
         <input
@@ -70,7 +72,7 @@ export default function TimeBar({ year, range, censusYears, forecastStart, onCha
           step={1}
           value={year}
           onChange={(e) => onChange(+e.target.value)}
-          aria-label="год"
+          aria-label={t('год')}
         />
         <div className="slider-ticks">
           {censusYears.map((y) => (
@@ -85,7 +87,7 @@ export default function TimeBar({ year, range, censusYears, forecastStart, onCha
           ))}
           {forecastStart != null && (
             <span key="f" className="tick-forecast" style={{ left: `${pct((forecastStart + range[1]) / 2)}%` }}>
-              прогноз →
+              {t('прогноз →')}
             </span>
           )}
         </div>

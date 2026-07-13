@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import type { DataFile } from '@/lib/types';
 import { formatNumber } from '@/lib/series';
 import { CAT } from '@/lib/scales';
+import { useT } from '@/lib/i18n';
 import MethodDrawer from './MethodDrawer';
 
 interface AgingRec {
@@ -87,6 +88,7 @@ function AgingChoro({ geo, aging, names, mode, selected, onSelect }: {
   selected: string;
   onSelect: (id: string) => void;
 }) {
+  const t = useT();
   const wrapRef = useRef<HTMLDivElement>(null);
   const [width, setWidth] = useState(640);
   const [hover, setHover] = useState<{ id: string; x: number; y: number } | null>(null);
@@ -136,7 +138,7 @@ function AgingChoro({ geo, aging, names, mode, selected, onSelect }: {
 
   return (
     <div className="chart-svg-wrap" ref={wrapRef}>
-      <svg width={width} height={height} role="img" aria-label={m.label}>
+      <svg width={width} height={height} role="img" aria-label={t(m.label)}>
         {paths.map((p) => (
           <path
             key={p.id}
@@ -168,7 +170,7 @@ function AgingChoro({ geo, aging, names, mode, selected, onSelect }: {
         {m.nullLabel && (
           <span className="cl-item">
             <span className="cl-swatch" style={{ background: NO_CROSS }} />
-            {m.nullLabel}
+            {t(m.nullLabel)}
           </span>
         )}
       </div>
@@ -176,8 +178,8 @@ function AgingChoro({ geo, aging, names, mode, selected, onSelect }: {
         <div className="chart-tooltip" style={{ left: Math.min(hover.x + 14, width - 190), top: hover.y - 8 }}>
           <div className="ct-row"><span className="ct-val">{names[hover.id] ?? hover.id}</span></div>
           <div className="ct-year">
-            65+: {hoverRec.share65_2019}% · медиана {hoverRec.median2019}
-            {hoverRec.yearsTo30 != null ? ` · порог через ${hoverRec.yearsTo30} лет` : ''}
+            65+: {hoverRec.share65_2019}% · {t('медиана')} {hoverRec.median2019}
+            {hoverRec.yearsTo30 != null ? ` · ${t('порог через')} ${hoverRec.yearsTo30} ${t('лет')}` : ''}
           </div>
         </div>
       )}
@@ -187,6 +189,7 @@ function AgingChoro({ geo, aging, names, mode, selected, onSelect }: {
 
 /** Возрастно-половая пирамида: 2019 - заливка, 2009 - пунктирный контур. */
 function Pyramid({ rec, groups }: { rec: AgingRec; groups: string[] }) {
+  const t = useT();
   const wrapRef = useRef<HTMLDivElement>(null);
   const [width, setWidth] = useState(560);
   const [hoverRow, setHoverRow] = useState<number | null>(null);
@@ -230,9 +233,9 @@ function Pyramid({ rec, groups }: { rec: AgingRec; groups: string[] }) {
 
   return (
     <div className="chart-svg-wrap" ref={wrapRef}>
-      <svg width={width} height={height} role="img" aria-label="возрастно-половая пирамида">
-        <text x={cxL - 4} y={12} textAnchor="end" fontSize="10.5" fill={CAT[0]}>мужчины</text>
-        <text x={cxR + 4} y={12} fontSize="10.5" fill={CAT[3]}>женщины</text>
+      <svg width={width} height={height} role="img" aria-label={t('возрастно-половая пирамида')}>
+        <text x={cxL - 4} y={12} textAnchor="end" fontSize="10.5" fill={CAT[0]}>{t('мужчины')}</text>
+        <text x={cxR + 4} y={12} fontSize="10.5" fill={CAT[3]}>{t('женщины')}</text>
         {groups.map((g, i) => (
           <g key={g} opacity={hoverRow == null || hoverRow === i ? 1 : 0.55}>
             <rect
@@ -263,7 +266,7 @@ function Pyramid({ rec, groups }: { rec: AgingRec; groups: string[] }) {
       </svg>
       {hoverRow != null && (
         <div className="chart-tooltip" style={{ left: width / 2 - 90, top: rowY_export(hoverRow, groups.length, rowH, M.top) - 10 }}>
-          <div className="ct-row"><span className="ct-val">{groups[hoverRow]} лет</span></div>
+          <div className="ct-row"><span className="ct-val">{groups[hoverRow]} {t('лет')}</span></div>
           <div className="ct-year">
             2019: м {formatNumber(rec.pyramid2019.m[hoverRow])} · ж {formatNumber(rec.pyramid2019.f[hoverRow])}
             {rec.pyramid2009 && <><br />2009: м {formatNumber(rec.pyramid2009.m[hoverRow])} · ж {formatNumber(rec.pyramid2009.f[hoverRow])}</>}
@@ -271,7 +274,7 @@ function Pyramid({ rec, groups }: { rec: AgingRec; groups: string[] }) {
         </div>
       )}
       <p className="hint" style={{ margin: '4px 0 0' }}>
-        Заливка — перепись 2019; пунктирный контур — 2009. Максимум шкалы: {fmtK(maxVal)} на группу.
+        {t('Заливка — перепись 2019; пунктирный контур — 2009. Максимум шкалы:')} {fmtK(maxVal)} {t('на группу')}.
       </p>
     </div>
   );
@@ -282,6 +285,7 @@ function rowY_export(i: number, n: number, rowH: number, top: number) {
 }
 
 export default function AgingView() {
+  const t = useT();
   const [aging, setAging] = useState<AgingData | null>(null);
   const [geo, setGeo] = useState<GeoFeature[] | null>(null);
   const [names, setNames] = useState<Record<string, string>>({});
@@ -312,7 +316,7 @@ export default function AgingView() {
     return { total: rs.length, negative, crossing: crossing.length, soon, oldest };
   }, [aging]);
 
-  if (!aging || !geo || !stats) return <p className="hint">Загрузка данных…</p>;
+  if (!aging || !geo || !stats) return <p className="hint">{t('Загрузка данных…')}</p>;
 
   const rec = aging.territories[sel] ?? aging.territories['r-svislacki'];
   const selId = aging.territories[sel] ? sel : 'r-svislacki';
@@ -332,58 +336,58 @@ export default function AgingView() {
     <div>
       <div className="controls" style={{ marginBottom: 6 }}>
         <div className="control-group">
-          <span className="control-label">Показатель</span>
+          <span className="control-label">{t('Показатель')}</span>
           <div className="seg">
             {(Object.keys(MODES) as Mode[]).map((k) => (
               <button key={k} className={k === mode ? 'on' : ''} onClick={() => setMode(k)}>
-                {MODES[k].label}
+                {t(MODES[k].label)}
               </button>
             ))}
           </div>
         </div>
         <MethodDrawer slug="aging" />
         <a className="btn" href="/artifacts/by-maps-aging-v1.0.2.zip" download>
-          ⬇ Проверяемый пакет (ZIP)
+          {t('⬇ Проверяемый пакет (ZIP)')}
         </a>
       </div>
 
       <div className="stat-row">
         <div className="stat-tile">
-          <div className="st-label">Естественная убыль при нулевой миграции</div>
-          <div className="st-value">{stats.negative} из {stats.total}</div>
-          <div className="st-delta">районов; сценарий: {aging.counterfactual}</div>
+          <div className="st-label">{t('Естественная убыль при нулевой миграции')}</div>
+          <div className="st-value">{stats.negative} {t('из')} {stats.total}</div>
+          <div className="st-delta">{t('районов; сценарий:')} {aging.counterfactual}</div>
         </div>
         <div className="stat-tile">
-          <div className="st-label">Пересекут {aging.threshold}% доли 65+ за 60 лет</div>
+          <div className="st-label">{t('Пересекут')} {aging.threshold}{t('% доли 65+ за 60 лет')}</div>
           <div className="st-value">{stats.crossing}</div>
-          <div className="st-delta">районов, из них {stats.soon} — в ближайшие 20 лет</div>
+          <div className="st-delta">{t('районов, из них')} {stats.soon} — {t('в ближайшие 20 лет')}</div>
         </div>
         <div className="stat-tile">
-          <div className="st-label">Самый «старый» район, 2019</div>
+          <div className="st-label">{t('Самый «старый» район, 2019')}</div>
           <div className="st-value">{names[stats.oldest[0]] ?? stats.oldest[0]}</div>
-          <div className="st-delta">{stats.oldest[1].share65_2019}% жителей — 65 лет и старше</div>
+          <div className="st-delta">{stats.oldest[1].share65_2019}{t('% жителей — 65 лет и старше')}</div>
         </div>
       </div>
 
       <div className="grid-2">
         <div className="chart-block">
-          <div className="chart-title">{MODES[mode].label} по районам (клик — выбрать район)</div>
+          <div className="chart-title">{t(MODES[mode].label)} {t('по районам (клик — выбрать район)')}</div>
           <AgingChoro geo={geo} aging={aging} names={names} mode={mode} selected={selId} onSelect={select} />
         </div>
 
         <div className="chart-block">
           <div className="chart-title">
-            Пирамида: {names[selId] ?? selId}
+            {t('Пирамида:')} {names[selId] ?? selId}
             {' · '}
-            <a href={`/map?sel=${selId}`}>показать на карте</a>
+            <a href={`/map?sel=${selId}`}>{t('показать на карте')}</a>
           </div>
           <div className="controls" style={{ margin: '2px 0 6px' }}>
-            <select value={selId} onChange={(e) => select(e.target.value)} aria-label="территория">
-              <optgroup label="Районы">
-                {raionIds.map((t) => <option key={t} value={t}>{names[t] ?? t}</option>)}
+            <select value={selId} onChange={(e) => select(e.target.value)} aria-label={t('территория')}>
+              <optgroup label={t('Районы')}>
+                {raionIds.map((id) => <option key={id} value={id}>{names[id] ?? id}</option>)}
               </optgroup>
-              <optgroup label="Области и города">
-                {otherIds.map((t) => <option key={t} value={t}>{names[t] ?? t}</option>)}
+              <optgroup label={t('Области и города')}>
+                {otherIds.map((id) => <option key={id} value={id}>{names[id] ?? id}</option>)}
               </optgroup>
             </select>
           </div>
@@ -393,48 +397,43 @@ export default function AgingView() {
 
       <div className="stat-row">
         <div className="stat-tile">
-          <div className="st-label">Медианный возраст</div>
+          <div className="st-label">{t('Медианный возраст')}</div>
           <div className="st-value">{rec.median2019}</div>
           {rec.median2009 != null && (
             <div className={`st-delta ${rec.median2019 > rec.median2009 ? 'down' : 'up'}`}>
-              {rec.median2009} в 2009 → {(rec.median2019 - rec.median2009) >= 0 ? '+' : ''}{(rec.median2019 - rec.median2009).toFixed(1)} за десятилетие
+              {rec.median2009} {t('в 2009')} → {(rec.median2019 - rec.median2009) >= 0 ? '+' : ''}{(rec.median2019 - rec.median2009).toFixed(1)} {t('за десятилетие')}
             </div>
           )}
         </div>
         <div className="stat-tile">
-          <div className="st-label">Доля 65+</div>
+          <div className="st-label">{t('Доля 65+')}</div>
           <div className="st-value">{rec.share65_2019}%</div>
           {rec.share65_2009 != null && (
-            <div className="st-delta">{rec.share65_2009}% в 2009</div>
+            <div className="st-delta">{rec.share65_2009}{t('% в 2009')}</div>
           )}
         </div>
         <div className="stat-tile">
-          <div className="st-label">Демографическая нагрузка</div>
+          <div className="st-label">{t('Демографическая нагрузка')}</div>
           <div className="st-value">{rec.depRatio2019}</div>
-          <div className="st-delta">детей и пожилых на 100 чел. 15–64, 2019</div>
+          <div className="st-delta">{t('детей и пожилых на 100 чел. 15–64, 2019')}</div>
         </div>
         <div className="stat-tile">
-          <div className="st-label">Порог {aging.threshold}% доли 65+</div>
-          <div className="st-value">{rec.yearsTo30 != null ? (rec.yearsTo30 === 0 ? 'уже' : `через ${rec.yearsTo30} лет`) : '—'}</div>
+          <div className="st-label">{t('Порог')} {aging.threshold}{t('% доли 65+')}</div>
+          <div className="st-value">{rec.yearsTo30 != null ? (rec.yearsTo30 === 0 ? t('уже') : `${t('через')} ${rec.yearsTo30} ${t('лет')}`) : '—'}</div>
           <div className="st-delta">
-            {rec.yearsTo30 != null ? `≈ ${2019 + rec.yearsTo30} г. · ` : 'не пересекает за 60 лет · '}
-            сценарий: {aging.counterfactual}
+            {rec.yearsTo30 != null ? `≈ ${2019 + rec.yearsTo30} г. · ` : t('не пересекает за 60 лет') + ' · '}
+            {t('сценарий:')} {aging.counterfactual}
           </div>
         </div>
         <div className="stat-tile">
-          <div className="st-label">Естественная динамика</div>
+          <div className="st-label">{t('Естественная динамика')}</div>
           <div className="st-value">{rec.naturalCagr != null ? `${rec.naturalCagr > 0 ? '+' : ''}${rec.naturalCagr}%` : '—'}</div>
-          <div className="st-delta">в год, 2019–2039, при нулевой миграции</div>
+          <div className="st-delta">{t('в год, 2019–2039, при нулевой миграции')}</div>
         </div>
       </div>
 
       <p className="src-note">
-        Индикаторы — по переписям 2009 и 2019 гг. (возрастно-половые структуры
-        районов, OLAP-куб Белстата). «Лет до порога» и «естественная динамика» —
-        контрфактная когортная передвижка без миграции со смертностью и
-        рождаемостью базового сценария прогноза v2026.2: показывает, где убыль
-        самоподдерживается возрастной структурой. Полные ограничения — в
-        методблоке и LIMITATIONS.md пакета.
+        {t('Индикаторы — по переписям 2009 и 2019 гг. (возрастно-половые структуры районов, OLAP-куб Белстата). «Лет до порога» и «естественная динамика» — контрфактная когортная передвижка без миграции со смертностью и рождаемостью базового сценария прогноза v2026.2: показывает, где убыль самоподдерживается возрастной структурой. Полные ограничения — в методблоке и LIMITATIONS.md пакета.')}
       </p>
     </div>
   );

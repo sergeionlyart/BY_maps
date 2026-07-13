@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import SiteNav from '@/components/SiteNav';
 import Footer from '@/components/Footer';
+import { LangProvider } from '@/lib/i18n';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -27,9 +28,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ru">
       <body>
-        <SiteNav />
-        {children}
-        <Footer />
+        <LangProvider>
+          <SiteNav />
+          {children}
+          <Footer />
+        </LangProvider>
       </body>
     </html>
   );

@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import type { DataFile } from '@/lib/types';
 import { formatNumber } from '@/lib/series';
 import { CAT } from '@/lib/scales';
+import { useT } from '@/lib/i18n';
 import LineChart, { ChartSeries } from './LineChart';
 import MethodDrawer from './MethodDrawer';
 
@@ -29,6 +30,7 @@ function RankSizeScatter({ zipf, year, names, onCity }: {
   names: Record<string, string>;
   onCity: (id: string) => void;
 }) {
+  const t = useT();
   const wrapRef = useRef<HTMLDivElement>(null);
   const [width, setWidth] = useState(560);
   const [hover, setHover] = useState<{ id: string; pop: number; rank: number } | null>(null);
@@ -67,7 +69,7 @@ function RankSizeScatter({ zipf, year, names, onCity }: {
   const yTicks = [5_000, 10_000, 20_000, 50_000, 100_000, 200_000, 500_000, 1_000_000, 2_000_000]
     .filter((p) => ly(p) >= y0 && ly(p) <= y1);
   const fmtPop = (p: number) =>
-    p >= 1_000_000 ? `${p / 1_000_000} млн` : `${p / 1000} тыс.`;
+    p >= 1_000_000 ? `${p / 1_000_000} ${t('млн')}` : `${p / 1000} ${t('тыс.')}`;
 
   return (
     <div className="chart-svg-wrap" ref={wrapRef}>
@@ -87,7 +89,7 @@ function RankSizeScatter({ zipf, year, names, onCity }: {
           </g>
         ))}
         <text x={M.left + iw / 2} y={height - 4} textAnchor="middle" fontSize="10.5" fill="var(--ink-2)">
-          ранг города (логарифмическая шкала)
+          {t('ранг города (логарифмическая шкала)')}
         </text>
 
         {/* линия фита по топ-N */}
@@ -129,7 +131,7 @@ function RankSizeScatter({ zipf, year, names, onCity }: {
           <div className="ct-row">
             <span className="ct-val">{names[hover.id] ?? hover.id}</span>
           </div>
-          <div className="ct-year">ранг {hover.rank} · {formatNumber(hover.pop)} чел. · клик — на карту</div>
+          <div className="ct-year">{t('ранг')} {hover.rank} · {formatNumber(hover.pop)} {t('чел.')} · {t('клик — на карту')}</div>
         </div>
       )}
     </div>
@@ -137,6 +139,7 @@ function RankSizeScatter({ zipf, year, names, onCity }: {
 }
 
 export default function ZipfView() {
+  const t = useT();
   const [zipf, setZipf] = useState<ZipfData | null>(null);
   const [names, setNames] = useState<Record<string, string>>({});
   const [year, setYear] = useState(2019);
@@ -167,7 +170,7 @@ export default function ZipfView() {
   const slopeSeries: ChartSeries[] = useMemo(() => {
     if (!zipf) return [];
     return zipf.sensitivityN.map((n, i) => ({
-      name: `топ-${n}${n === zipf.baselineN ? ' (базовый)' : ''}`,
+      name: `${t('топ-')}${n}${n === zipf.baselineN ? ` ${t('(базовый)')}` : ''}`,
       color: CAT[i],
       points: zipf.years
         .filter((y) => zipf.perYear[String(y)].slopes[String(n)])
@@ -186,13 +189,13 @@ export default function ZipfView() {
   const primacySeries: ChartSeries[] = useMemo(() => {
     if (!zipf) return [];
     return [{
-      name: 'Минск / второй город',
+      name: t('Минск / второй город'),
       color: CAT[3],
       points: zipf.years.map((y) => ({ year: y, value: zipf.perYear[String(y)].primacy, major: true })),
     }];
   }, [zipf]);
 
-  if (!zipf) return <p className="hint">Загрузка данных…</p>;
+  if (!zipf) return <p className="hint">{t('Загрузка данных…')}</p>;
 
   const d = zipf.perYear[String(year)];
   const fit = d.slopes[String(zipf.baselineN)];
@@ -207,11 +210,11 @@ export default function ZipfView() {
               if (!playing && year >= zipf.years[zipf.years.length - 1]) setYear(zipf.years[0]);
               setPlaying(!playing);
             }}
-            aria-label={playing ? 'пауза' : 'воспроизвести по срезам'}
+            aria-label={playing ? t('пауза') : t('воспроизвести по срезам')}
           >
             {playing ? '❚❚' : '▶'}
           </button>
-          <span className="control-label">Срез</span>
+          <span className="control-label">{t('Срез')}</span>
           <div className="seg seg-wrap">
             {zipf.years.map((y) => (
               <button key={y} className={y === year ? 'on' : ''}
@@ -223,32 +226,31 @@ export default function ZipfView() {
         </div>
         <MethodDrawer slug="zipf" />
         <a className="btn" href="/artifacts/by-maps-zipf-v1.0.0.zip" download>
-          ⬇ Проверяемый пакет (ZIP, 68 КБ)
+          ⬇ {t('Проверяемый пакет (ZIP, 68 КБ)')}
         </a>
       </div>
 
       <div className="stat-row">
         <div className="stat-tile">
-          <div className="st-label">Наклон rank-size, {year} (топ-{zipf.baselineN})</div>
+          <div className="st-label">{t('Наклон rank-size,')} {year} ({t('топ-')}{zipf.baselineN})</div>
           <div className="st-value">{fit.b.toFixed(2)}</div>
-          <div className="st-delta">±{(1.96 * fit.se).toFixed(2)} (95% ДИ) · закон Ципфа = −1</div>
+          <div className="st-delta">±{(1.96 * fit.se).toFixed(2)} {t('(95% ДИ) · закон Ципфа = −1')}</div>
         </div>
         <div className="stat-tile">
-          <div className="st-label">Примация: Минск / второй город, {year}</div>
+          <div className="st-label">{t('Примация: Минск / второй город,')} {year}</div>
           <div className="st-value">{d.primacy.toFixed(2)}×</div>
-          <div className="st-delta">ожидание по Ципфу ≈ 2</div>
+          <div className="st-delta">{t('ожидание по Ципфу ≈ 2')}</div>
         </div>
         <div className="stat-tile">
-          <div className="st-label">Городов с данными, {year}</div>
+          <div className="st-label">{t('Городов с данными,')} {year}</div>
           <div className="st-value">{d.n}</div>
-          <div className="st-delta">{d.dtype === 'c' ? 'перепись' : 'оценка Белстата'}</div>
+          <div className="st-delta">{d.dtype === 'c' ? t('перепись') : t('оценка Белстата')}</div>
         </div>
       </div>
 
       <div className="chart-block">
         <div className="chart-title">
-          Ранг × размер, {year} (лог-лог); пунктир — фит Габэ–Ибрагимова по топ-{zipf.baselineN};
-          серые точки — города за пределами топ-{zipf.baselineN}
+          {t('Ранг × размер,')} {year} {t('(лог-лог); пунктир — фит Габэ–Ибрагимова по топ-')}{zipf.baselineN}{t('; серые точки — города за пределами топ-')}{zipf.baselineN}
         </div>
         <RankSizeScatter
           zipf={zipf} year={year} names={names}
@@ -258,27 +260,27 @@ export default function ZipfView() {
 
       <div className="grid-2">
         <div className="chart-block">
-          <div className="chart-title">Показатель Ципфа α = −наклон (1 — точный закон; полоса — 95% ДИ базовой оценки)</div>
+          <div className="chart-title">{t('Показатель Ципфа α = −наклон (1 — точный закон; полоса — 95% ДИ базовой оценки)')}</div>
           <LineChart
             series={slopeSeries}
             height={220}
             domain={[1897, 2026]}
             yMax={1.6}
             markYear={year}
-            refY={{ value: 1, label: 'закон Ципфа' }}
+            refY={{ value: 1, label: t('закон Ципфа') }}
             yFormat={(v) => v.toFixed(1)}
             yTooltip={(v) => v.toFixed(3)}
           />
         </div>
         <div className="chart-block">
-          <div className="chart-title">Примация: во сколько раз Минск больше второго города</div>
+          <div className="chart-title">{t('Примация: во сколько раз Минск больше второго города')}</div>
           <LineChart
             series={primacySeries}
             height={220}
             domain={[1897, 2026]}
             yMax={4.6}
             markYear={year}
-            refY={{ value: 2, label: 'ожидание Ципфа' }}
+            refY={{ value: 2, label: t('ожидание Ципфа') }}
             yFormat={(v) => v.toFixed(0)}
             yTooltip={(v) => v.toFixed(2) + '×'}
           />
@@ -286,10 +288,7 @@ export default function ZipfView() {
       </div>
 
       <p className="src-note">
-        До 1959 года источник покрывает не все городские НП (1897 — 43 города):
-        наклон описывает верхушку иерархии. Точки — переписи; срез 2026 —
-        текущая оценка. Полные ограничения — в методблоке и LIMITATIONS.md
-        пакета.
+        {t('До 1959 года источник покрывает не все городские НП (1897 — 43 города): наклон описывает верхушку иерархии. Точки — переписи; срез 2026 — текущая оценка. Полные ограничения — в методблоке и LIMITATIONS.md пакета.')}
       </p>
     </div>
   );

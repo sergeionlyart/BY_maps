@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import LineChart, { ChartSeries } from './LineChart';
 import MethodDrawer from './MethodDrawer';
+import { useT } from '@/lib/i18n';
 
 interface Source { url: string; claim: string }
 interface EventRec {
@@ -52,6 +53,7 @@ function jewColor(s: number): string {
 
 /** Карта местечек: точки-города, цвет — доля евреев-1897, размер — население. */
 function ShtetlMap({ geo, cities }: { geo: GeoFeature[]; cities: CensusCity[] }) {
+  const t = useT();
   const [wrapRef, width] = useWidth(640);
   const [hover, setHover] = useState<{ c: CensusCity; x: number; y: number } | null>(null);
   const pts = cities.filter((c) => c.lat && c.lon);
@@ -85,7 +87,7 @@ function ShtetlMap({ geo, cities }: { geo: GeoFeature[]; cities: CensusCity[] })
 
   return (
     <div className="chart-svg-wrap" ref={wrapRef}>
-      <svg width={width} height={height} role="img" aria-label="доля евреев по городам 1897">
+      <svg width={width} height={height} role="img" aria-label={t('доля евреев по городам 1897')}>
         {outline.map((d, i) => <path key={i} d={d} fill="var(--surface-2)" stroke="var(--surface-1)" strokeWidth="0.5" />)}
         {pts.map((c) => (
           <circle key={c.ru} cx={project.X(c.lon!)} cy={project.Y(c.lat!)} r={r(c)}
@@ -98,7 +100,7 @@ function ShtetlMap({ geo, cities }: { geo: GeoFeature[]; cities: CensusCity[] })
           {legend.map((l, i) => (
             <g key={i} transform={`translate(0, ${i * 15})`}>
               <rect width="12" height="12" fill={l.c} stroke="var(--grid)" strokeWidth="0.5" />
-              <text x="17" y="10" fontSize="9.5" fill="var(--ink-2)">евреи {l.t}</text>
+              <text x="17" y="10" fontSize="9.5" fill="var(--ink-2)">{t('евреи')} {l.t}</text>
             </g>
           ))}
         </g>
@@ -107,7 +109,7 @@ function ShtetlMap({ geo, cities }: { geo: GeoFeature[]; cities: CensusCity[] })
         <div className="chart-tooltip" style={{ left: Math.min(hover.x + 12, width - 220), top: hover.y - 8 }}>
           <div className="ct-row"><span className="ct-val">{hover.c.ru}, 1897</span></div>
           <div className="ct-year">
-            {hover.c.total.toLocaleString('ru-RU')} жит.; евреи (идиш) {hover.c.jewish.toLocaleString('ru-RU')} — {hover.c.jewishShare.toFixed(0)}%
+            {hover.c.total.toLocaleString('ru-RU')} {t('жит.; евреи (идиш)')} {hover.c.jewish.toLocaleString('ru-RU')} — {hover.c.jewishShare.toFixed(0)}%
           </div>
         </div>
       )}
@@ -119,17 +121,18 @@ export default function ShocksView() {
   const [sh, setSh] = useState<ShocksData | null>(null);
   const [geo, setGeo] = useState<GeoFeature[] | null>(null);
   const [selEvent, setSelEvent] = useState<number | null>(null);
+  const t = useT();
 
   useEffect(() => {
     fetch('/data/shocks.json').then((r) => r.json()).then(setSh);
     fetch('/data/geo/adm1.geojson').then((r) => r.json()).then((g) => setGeo(g.features));
   }, []);
 
-  if (!sh || !geo) return <p className="hint">Загрузка данных…</p>;
+  if (!sh || !geo) return <p className="hint">{t('Загрузка данных…')}</p>;
 
   const s = sh.series;
   const series: ChartSeries[] = [{
-    name: 'население Беларуси', color: 'var(--accent, #5698b9)',
+    name: t('население Беларуси'), color: 'var(--accent, #5698b9)',
     points: sh.seriesYears.filter((y) => s[String(y)]).map((y) => ({ year: y, value: s[String(y)], major: true })),
   }];
   // маркеры по уникальным годам (несколько событий 1941 не должны
@@ -146,45 +149,42 @@ export default function ShocksView() {
       <div className="controls" style={{ marginBottom: 6 }}>
         <MethodDrawer slug="shocks" />
         <a className="btn" href="/artifacts/by-maps-shocks-v1.0.0.zip" download>
-          ⬇ Проверяемый пакет (ZIP)
+          ⬇ {t('Проверяемый пакет (ZIP)')}
         </a>
       </div>
 
       <div className="stat-row">
         <div className="stat-tile">
-          <div className="st-label">Потери Второй мировой</div>
-          <div className="st-value">−{(wwiiLoss / 1e6).toFixed(2)} млн</div>
+          <div className="st-label">{t('Потери Второй мировой')}</div>
+          <div className="st-value">−{(wwiiLoss / 1e6).toFixed(2)} {t('млн')}</div>
           <div className="st-delta">
-            9,05 млн (1940) → 7,71 млн (1950); довоенной численности страна
-            достигла лишь в начале 1970-х
+            {t('9,05 млн (1940) → 7,71 млн (1950); довоенной численности страна достигла лишь в начале 1970-х')}
           </div>
         </div>
         <div className="stat-tile">
-          <div className="st-label">Местечко до Холокоста</div>
+          <div className="st-label">{t('Местечко до Холокоста')}</div>
           <div className="st-value">{topShtetl.jewishShare.toFixed(0)}%</div>
           <div className="st-delta">
-            доля евреев в {topShtetl.ru} по переписи-1897; в десятках городов
-            евреи составляли 55–76% — это и было «местечко»
+            {t('доля евреев в')} {topShtetl.ru} {t('по переписи-1897; в десятках городов евреи составляли 55–76% — это и было «местечко»')}
           </div>
         </div>
         <div className="stat-tile">
-          <div className="st-label">Событий-вех на таймлайне</div>
+          <div className="st-label">{t('Событий-вех на таймлайне')}</div>
           <div className="st-value">{sh.events.length}</div>
           <div className="st-delta">
-            от беженства 1915 до распада СССР; каждое — с проверяемым
-            источником (нажмите веху ниже)
+            {t('от беженства 1915 до распада СССР; каждое — с проверяемым источником (нажмите веху ниже)')}
           </div>
         </div>
       </div>
 
-      <h2>Таймлайн шоков: как население переживало XX век</h2>
+      <h2>{t('Таймлайн шоков: как население переживало XX век')}</h2>
       <div className="chart-block">
         <div className="chart-title">
-          Население Беларуси, 1897–2026, с вехами демографических шоков (кликните веху)
+          {t('Население Беларуси, 1897–2026, с вехами демографических шоков (кликните веху)')}
         </div>
         <LineChart series={series} height={250} refXs={evMarks}
           yFormat={(v) => `${(v / 1e6).toFixed(1)}М`}
-          yTooltip={(v) => `${v.toLocaleString('ru-RU')} чел.`} />
+          yTooltip={(v) => `${v.toLocaleString('ru-RU')} ${t('чел.')}`} />
         <div className="event-chips" style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginTop: 8 }}>
           {sh.events.map((e, i) => (
             <button key={i} className={`btn sm ${selEvent === i ? 'primary' : ''}`}
@@ -199,12 +199,12 @@ export default function ShocksView() {
               {ev.year}{ev.year_end ? `–${ev.year_end}` : ''} · {ev.title}
             </div>
             <p style={{ margin: '6px 0' }}>{ev.description}</p>
-            {ev.magnitude && <p className="hint">Масштаб: {ev.magnitude}</p>}
+            {ev.magnitude && <p className="hint">{t('Масштаб:')} {ev.magnitude}</p>}
             <div className="card-foot">
               {ev.sources.map((src, j) => (
                 <a key={j} href={src.url} target="_blank" rel="noopener noreferrer"
                   style={{ marginRight: 10, fontSize: 12 }}>
-                  источник {j + 1} ↗
+                  {t('источник')} {j + 1} ↗
                 </a>
               ))}
             </div>
@@ -212,20 +212,20 @@ export default function ShocksView() {
         )}
       </div>
 
-      <h2>Местечко: география 1897 года и его исчезновение</h2>
+      <h2>{t('Местечко: география 1897 года и его исчезновение')}</h2>
       <div className="grid-2">
         <div className="chart-block">
           <div className="chart-title">
-            Доля евреев по городам, перепись-1897 (родной язык — идиш)
+            {t('Доля евреев по городам, перепись-1897 (родной язык — идиш)')}
           </div>
           <ShtetlMap geo={geo} cities={sh.census1897} />
         </div>
         <div className="chart-block">
-          <div className="chart-title">Местечки до и после: 1897 → послевоенная перепись</div>
+          <div className="chart-title">{t('Местечки до и после: 1897 → послевоенная перепись')}</div>
           <div className="zone-table-wrap">
             <table className="zone-table">
               <thead>
-                <tr><th>Город</th><th>евреи 1897</th><th>1939</th><th>1959</th></tr>
+                <tr><th>{t('Город')}</th><th>{t('евреи 1897')}</th><th>1939</th><th>1959</th></tr>
               </thead>
               <tbody>
                 {holoTop.map((t) => (
@@ -240,25 +240,14 @@ export default function ShocksView() {
             </table>
           </div>
           <p className="hint" style={{ marginTop: 8 }}>
-            Часть городов к 1959 году восстановила общую численность — но
-            <strong> иным, нееврейским</strong> населением, часть (Рогачёв,
-            Слоним) не восстановилась вовсе: еврейское большинство местечек
-            было уничтожено в 1941–1943 гг. Число в столбце «евреи 1897» —
-            доля по переписи-1897 (идиш/всё; для городов вне переписи —
-            оценка источника), мера утраченного типа поселения, а не оценка
-            жертв конкретного города. Источники — в пакете.
+            {t('Часть городов к 1959 году восстановила общую численность — но')}
+            <strong> {t('иным, нееврейским')}</strong> {t('населением, часть (Рогачёв, Слоним) не восстановилась вовсе: еврейское большинство местечек было уничтожено в 1941–1943 гг. Число в столбце «евреи 1897» — доля по переписи-1897 (идиш/всё; для городов вне переписи — оценка источника), мера утраченного типа поселения, а не оценка жертв конкретного города. Источники — в пакете.')}
           </p>
         </div>
       </div>
 
       <p className="src-note">
-        Национальный ряд — база проекта (переписи и оценки; разрыв
-        1939–1959 — межпереписной, промежуточные оценки неточны). Перепись-
-        1897 — таблицы Демоскопа по родному языку (язык ≠ этничность:
-        идиш — близкое, но не тождественное приближение еврейского
-        населения). Событийные аннотации — с проверяемыми источниками;
-        чувствительные темы поданы фактологически. Полные оговорки — в
-        методблоке и LIMITATIONS.md пакета.
+        {t('Национальный ряд — база проекта (переписи и оценки; разрыв 1939–1959 — межпереписной, промежуточные оценки неточны). Перепись-1897 — таблицы Демоскопа по родному языку (язык ≠ этничность: идиш — близкое, но не тождественное приближение еврейского населения). Событийные аннотации — с проверяемыми источниками; чувствительные темы поданы фактологически. Полные оговорки — в методблоке и LIMITATIONS.md пакета.')}
       </p>
     </div>
   );

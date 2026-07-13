@@ -5,8 +5,8 @@ import { usePathname } from 'next/navigation';
 
 export default function Footer() {
   const path = usePathname();
-  // на карте (режим приложения, /map) подвал не показываем — страница не прокручивается
-  if (path === '/map') return null;
+  // на карте (режим приложения, /map и /be/map) подвал не показываем
+  if (path === '/map' || path === '/be/map') return null;
   const be = path.startsWith('/be');
   // выбор варианта по текущему языку (раньше параметр be затенял внешний булев
   // флаг и ссылки всегда вели на /be — исправлено)

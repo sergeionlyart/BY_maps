@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { RESEARCH } from '@/lib/research';
 import BelarusOutline from '@/components/BelarusOutline';
 import AuthorCard from '@/components/AuthorCard';
+import { useT, useLang } from '@/lib/i18n';
 
 // U-01: домашний маршрут «/» — нарративный лендинг (без интерактивной карты).
 // Карта переехала на «/map». Старые диплинки «/?sel=<id>» перенаправляем туда.
@@ -24,6 +25,9 @@ export default function LandingPage() {
     }
   }, []);
 
+  const t = useT();
+  const lang = useLang();
+
   if (redirecting) return null;
 
   return (
@@ -31,24 +35,22 @@ export default function LandingPage() {
       {/* ── Герой ─────────────────────────────────────────────── */}
       <section className="land-hero">
         <BelarusOutline className="land-hero-outline" strokeWidth={5} />
-        <p className="land-kicker">Открытое исследование · 1897–2075</p>
+        <p className="land-kicker">{t('Открытое исследование · 1897–2075')}</p>
         <h1 className="land-title">
-          Население Беларуси за 129 лет — на проверяемых данных
+          {t('Население Беларуси за 129 лет — на проверяемых данных')}
         </h1>
         <p className="land-lead">
-          Переписи 1897–2019 и оценки до 2026 года, десять исследований и прогноз
-          до 2075-го. Каждое число сопровождается пакетом данных, кода и допущений,
-          который можно скачать, воспроизвести и оспорить — без доверия к автору.
+          {t('Переписи 1897–2019 и оценки до 2026 года, десять исследований и прогноз до 2075-го. Каждое число сопровождается пакетом данных, кода и допущений, который можно скачать, воспроизвести и оспорить — без доверия к автору.')}
         </p>
         <div className="land-cta">
-          <Link href="/map" className="btn primary">Открыть карту →</Link>
-          <Link href="/article" className="btn">Читать статью</Link>
+          <Link href="/map" className="btn primary">{t('Открыть карту →')}</Link>
+          <Link href="/article" className="btn">{t('Читать статью')}</Link>
         </div>
       </section>
 
       {/* ── Сюжеты (ключевые числа + мини-графики) ────────────── */}
       <section className="land-sujets">
-        <h2>Что показывают данные</h2>
+        <h2>{t('Что показывают данные')}</h2>
         <div className="land-sujet-grid">
           {/* 1. Пик 1989 → убыль */}
           <div className="land-sujet sj-neg">
@@ -70,12 +72,11 @@ export default function LandingPage() {
               </svg>
             </div>
             <div className="land-sujet-body">
-              <div className="land-sujet-num">−1,14 млн</div>
+              <div className="land-sujet-num">{t('−1,14 млн')}</div>
               <p className="land-sujet-cap">
-                Пик пройден в переписи 1989 года — 10,20 млн; к началу 2026-го —
-                9,06 млн (−11% за 37 лет).
+                {t('Пик пройден в переписи 1989 года — 10,20 млн; к началу 2026-го — 9,06 млн (−11% за 37 лет).')}
               </p>
-              <Link href="/map" className="land-sujet-more">подробнее →</Link>
+              <Link href="/map" className="land-sujet-more">{t('подробнее →')}</Link>
             </div>
           </div>
 
@@ -99,12 +100,11 @@ export default function LandingPage() {
               </svg>
             </div>
             <div className="land-sujet-body">
-              <div className="land-sujet-num">Село −65 %</div>
+              <div className="land-sujet-num">{t('Село −65 %')}</div>
               <p className="land-sujet-cap">
-                Сельское население: 5,52 млн (1959) → 1,91 млн (2026) — сокращение
-                почти втрое.
+                {t('Сельское население: 5,52 млн (1959) → 1,91 млн (2026) — сокращение почти втрое.')}
               </p>
-              <Link href="/research/aging" className="land-sujet-more">подробнее →</Link>
+              <Link href="/research/aging" className="land-sujet-more">{t('подробнее →')}</Link>
             </div>
           </div>
 
@@ -125,12 +125,11 @@ export default function LandingPage() {
               </svg>
             </div>
             <div className="land-sujet-body">
-              <div className="land-sujet-num">Минск ×4</div>
+              <div className="land-sujet-num">{t('Минск ×4')}</div>
               <p className="land-sujet-cap">
-                Столица выросла вчетверо за советский период — 516 тыс. (1959) →
-                ~2,0 млн; сегодня Минск вчетверо больше второго города.
+                {t('Столица выросла вчетверо за советский период — 516 тыс. (1959) → ~2,0 млн; сегодня Минск вчетверо больше второго города.')}
               </p>
-              <Link href="/research/zipf" className="land-sujet-more">подробнее →</Link>
+              <Link href="/research/zipf" className="land-sujet-more">{t('подробнее →')}</Link>
             </div>
           </div>
 
@@ -157,12 +156,11 @@ export default function LandingPage() {
               </svg>
             </div>
             <div className="land-sujet-body">
-              <div className="land-sujet-num">3 сценария</div>
+              <div className="land-sujet-num">{t('3 сценария')}</div>
               <p className="land-sujet-cap">
-                Прогноз до 2075 года расходится веером: 7,11 млн (оптимистический),
-                5,97 млн (базовый), 4,33 млн (негативный).
+                {t('Прогноз до 2075 года расходится веером: 7,11 млн (оптимистический), 5,97 млн (базовый), 4,33 млн (негативный).')}
               </p>
-              <Link href="/map" className="land-sujet-more">подробнее →</Link>
+              <Link href="/map" className="land-sujet-more">{t('подробнее →')}</Link>
             </div>
           </div>
         </div>
@@ -170,28 +168,27 @@ export default function LandingPage() {
 
       {/* ── Исследования ──────────────────────────────────────── */}
       <section className="land-research">
-        <h2>Исследования</h2>
+        <h2>{t('Исследования')}</h2>
         <p className="page-lead">
-          Десять тем — от иерархии городов до чернобыльского следа. Каждая
-          публикуется с методологическим блоком и{' '}
-          <Link href="/artifacts">проверяемым пакетом артефактов</Link>.
+          {t('Десять тем — от иерархии городов до чернобыльского следа. Каждая публикуется с методологическим блоком и')}{' '}
+          <Link href="/artifacts">{t('проверяемым пакетом артефактов')}</Link>.
         </p>
         <div className="cards">
           {RESEARCH.map((r) =>
             r.status === 'published' ? (
               <Link key={r.slug} href={`/research/${r.slug}`} className="card">
-                <div className="card-code"><span className="ccode">{r.code}</span> · опубликовано</div>
+                <div className="card-code"><span className="ccode">{r.code}</span> · {t('опубликовано')}</div>
                 <div className="card-title">{r.title}</div>
                 <p>{r.question}</p>
                 <div className="card-foot">
-                  {r.artifact ? <><span className="card-ver">пакет v{r.artifact.version}</span> · </> : null}открыть →
+                  {r.artifact ? <><span className="card-ver">{t('пакет v')}{r.artifact.version}</span> · </> : null}{t('открыть →')}
                 </div>
               </Link>
             ) : (
               <div key={r.slug} className="card planned">
                 <div className="card-code">
-                  <span className="ccode">{r.code}</span> · этап {r.stage} плана{' '}
-                  <span className="badge">готовится</span>
+                  <span className="ccode">{r.code}</span> · {t('этап')} {r.stage} {t('плана')}{' '}
+                  <span className="badge">{t('готовится')}</span>
                 </div>
                 <div className="card-title">{r.title}</div>
                 <p>{r.question}</p>
@@ -203,38 +200,32 @@ export default function LandingPage() {
 
       {/* ── «Проверь сам» ─────────────────────────────────────── */}
       <section className="land-verify">
-        <h2>Проверь сам</h2>
+        <h2>{t('Проверь сам')}</h2>
         <p className="page-lead">
-          К каждому исследованию и к прогнозу приложен zip-пакет по единому
-          стандарту: сырые и очищенные данные, код с фиксированными зависимостями,
-          все допущения в явном виде и манифест с контрольными суммами sha256.
-          Пересборка в чистом окружении совпадает с опубликованной байт-в-байт.
+          {t('К каждому исследованию и к прогнозу приложен zip-пакет по единому стандарту: сырые и очищенные данные, код с фиксированными зависимостями, все допущения в явном виде и манифест с контрольными суммами sha256. Пересборка в чистом окружении совпадает с опубликованной байт-в-байт.')}
         </p>
         <div className="land-cta">
           <Link href="/artifacts" className="btn primary">
-            Скачать пакеты и проверить
+            {t('Скачать пакеты и проверить')}
           </Link>
         </div>
       </section>
 
       {/* ── О проекте / авторе ────────────────────────────────── */}
       <section className="land-about">
-        <h2>Кто это сделал и зачем</h2>
+        <h2>{t('Кто это сделал и зачем')}</h2>
         <p className="page-lead">
-          BY Maps — самостоятельное открытое исследование демографии Беларуси на
-          проверяемых данных, с явно выписанными предпосылками и ограничениями.
-          Проект не заменяет профессиональную демографию: его прогнозы — условные
-          сценарии, а корреляции — не причинность.
+          {t('BY Maps — самостоятельное открытое исследование демографии Беларуси на проверяемых данных, с явно выписанными предпосылками и ограничениями. Проект не заменяет профессиональную демографию: его прогнозы — условные сценарии, а корреляции — не причинность.')}
         </p>
-        <AuthorCard variant="full" lang="ru" />
+        <AuthorCard variant="full" lang={lang} />
         <p className="land-about-note">
-          BY Maps — витрина метода: так же можно разобрать ваши данные и процессы.
+          {t('BY Maps — витрина метода: так же можно разобрать ваши данные и процессы.')}
         </p>
         <div className="land-cta">
           <a href="https://www.linkedin.com/in/sergei-audzeichyk" target="_blank" rel="noreferrer" className="btn">LinkedIn</a>
           <a href="https://www.facebook.com/share/1C5Ev1hwPw/?mibextid=wwXIfr" target="_blank" rel="noreferrer" className="btn">Facebook</a>
-          <Link href="/about" className="btn">О проекте</Link>
-          <Link href="/methodology" className="btn">Методология</Link>
+          <Link href="/about" className="btn">{t('О проекте')}</Link>
+          <Link href="/methodology" className="btn">{t('Методология')}</Link>
         </div>
       </section>
     </div>

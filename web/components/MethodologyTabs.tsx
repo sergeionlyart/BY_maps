@@ -2,20 +2,22 @@
 
 import { useState } from 'react';
 import Markdown from '@/components/Markdown';
+import { useT } from '@/lib/i18n';
 
 /** Подразделы методологии: «Методика обработки» и «Источники». Тексты
  *  передаются пропсами (прочитаны на сборке) — SSR помещает активную вкладку
  *  в статический HTML (в отличие от прежнего клиентского fetch, T-08). */
 export default function MethodologyTabs({ method, sources }: { method: string; sources: string }) {
+  const t = useT();
   const [tab, setTab] = useState<'method' | 'sources'>('method');
   return (
     <section id="podrobno" className="method-tabs">
       <div className="seg" style={{ margin: '8px 0 14px' }}>
         <button className={tab === 'method' ? 'on' : ''} onClick={() => setTab('method')}>
-          Методика обработки
+          {t('Методика обработки')}
         </button>
         <button className={tab === 'sources' ? 'on' : ''} onClick={() => setTab('sources')}>
-          Источники данных
+          {t('Источники данных')}
         </button>
       </div>
       <article className="content">

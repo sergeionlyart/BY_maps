@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { useT } from '@/lib/i18n';
 import type { DataFile, Territory, RaionMode } from '@/lib/types';
 import type { ForecastFile, ScenarioId, JumpoffId } from '@/lib/forecast';
 import { forecastAt, hasAdjusted, FORECAST_START, SCENARIO_LABEL, SCENARIO_STYLE } from '@/lib/forecast';
@@ -48,6 +49,7 @@ const FLAG_LABEL: Record<string, string> = {
 };
 
 export default function TerritoryCard({ data, forecast, scenario = 'base', jumpoff = 'official', id, year, baseYear, raionMode, compare, onCompareAdd, onSelect }: Props) {
+  const tl = useT();
   const t: Territory | undefined = id ? data.territories[id] : data.territories['BY'];
   const [inChernobyl, setInChernobyl] = useState(false);
   const tid = t?.id;
@@ -61,7 +63,7 @@ export default function TerritoryCard({ data, forecast, scenario = 'base', jumpo
     }
     return () => { alive = false; };
   }, [tid, tlevel]);
-  if (!t) return <p className="hint">Выберите территорию на карте.</p>;
+  if (!t) return <p className="hint">{tl('Выберите территорию на карте.')}</p>;
 
   const mainSeries = t.level === 'raion' && raionMode === 'noCenter' ? t.popNoCenter : t.pop;
   // исторические плитки не выходят за границу факта (прогноз - отдельной плиткой)
@@ -75,7 +77,7 @@ export default function TerritoryCard({ data, forecast, scenario = 'base', jumpo
 
   const chart: ChartSeries[] = [];
   chart.push({
-    name: t.level === 'raion' ? 'Весь район' : 'Население',
+    name: t.level === 'raion' ? tl('Весь район') : tl('Население'),
     color: CAT[0],
     points: seriesPoints(t.pop).map((p) => ({ year: p.year, value: p.value, major: p.dtype === 'c' })),
   });
@@ -88,7 +90,7 @@ export default function TerritoryCard({ data, forecast, scenario = 'base', jumpo
       const years = Object.keys(centerSeries[0].pop)
         .filter((y) => centerSeries.every((c) => y in c.pop));
       chart.push({
-        name: breakdown.centers.length > 1 ? 'Городские центры' : `${breakdown.centers[0].ru} (центр)`,
+        name: breakdown.centers.length > 1 ? tl('Городские центры') : `${breakdown.centers[0].ru} (${tl('центр')})`,
         color: CAT[1],
         points: years
           .map((y) => ({
@@ -102,14 +104,14 @@ export default function TerritoryCard({ data, forecast, scenario = 'base', jumpo
   }
   if (t.level === 'raion' && t.popNoCenter && Object.keys(t.popNoCenter).length) {
     chart.push({
-      name: 'Без городских центров',
+      name: tl('Без городских центров'),
       color: CAT[2],
       points: seriesPoints(t.popNoCenter).map((p) => ({ year: p.year, value: p.value, major: p.dtype === 'c' })),
     });
   }
   if ((t.level === 'oblast' || t.level === 'country') && t.urban && Object.keys(t.urban).length > 1 && t.id !== 'BY-HM') {
     chart.push({
-      name: 'Городское население',
+      name: tl('Городское население'),
       color: 'var(--viz-urban)',
       points: seriesPoints(t.urban).map((p) => ({ year: p.year, value: p.value, major: p.dtype === 'c' })),
     });
@@ -121,7 +123,7 @@ export default function TerritoryCard({ data, forecast, scenario = 'base', jumpo
     ?? forecast?.territories[t.id]?.[scenario];
   if (forecast && fentry) {
     chart.push({
-      name: `Прогноз (${SCENARIO_LABEL[scenario]})`,
+      name: `${tl('Прогноз')} (${tl(SCENARIO_LABEL[scenario])})`,
       color: SCENARIO_STYLE[scenario].color,
       dash: SCENARIO_STYLE[scenario].dash,
       points: fentry.years.map((y, i) => ({
@@ -140,26 +142,26 @@ export default function TerritoryCard({ data, forecast, scenario = 'base', jumpo
     <div>
       <h2 className="terr-title">{t.ru}</h2>
       <div className="terr-sub">
-        {LEVEL_LABEL[t.level]}{t.be !== t.ru ? ` · бел. ${t.be}` : ''}
+        {tl(LEVEL_LABEL[t.level])}{t.be !== t.ru ? ` · ${tl('бел.')} ${t.be}` : ''}
         {t.area ? ` · ${formatNumber(t.area)} км²` : ''}
       </div>
 
       <div>
-        {t.flags.map((f) => FLAG_LABEL[f] && <span className="badge" key={f}>{FLAG_LABEL[f]}</span>)}
+        {t.flags.map((f) => FLAG_LABEL[f] && <span className="badge" key={f}>{tl(FLAG_LABEL[f])}</span>)}
       </div>
 
       {forecast && year > FORECAST_START && fentry && (
         <div className="stat-row" style={{ marginTop: 8 }}>
           <div className="stat-tile forecast-tile">
-            <div className="st-label">Прогноз на {year} · «{SCENARIO_LABEL[scenario]}»</div>
+            <div className="st-label">{tl('Прогноз на')} {year} · «{tl(SCENARIO_LABEL[scenario])}»</div>
             <div className="st-value">{formatCompact(forecastAt(forecast, t.id, scenario, year, 'pop', jumpoff) ?? 0)}</div>
             <div className="st-delta">
               {fentry.q10 && fentry.q90
-                ? `80% интервал: ${formatCompact(forecastAt(forecast, t.id, scenario, year, 'q10', jumpoff) ?? 0)} – ${formatCompact(forecastAt(forecast, t.id, scenario, year, 'q90', jumpoff) ?? 0)}`
+                ? `${tl('80% интервал:')} ${formatCompact(forecastAt(forecast, t.id, scenario, year, 'q10', jumpoff) ?? 0)} – ${formatCompact(forecastAt(forecast, t.id, scenario, year, 'q90', jumpoff) ?? 0)}`
                 : ''}
               {fentry.q05 && fentry.q95
-                ? ` · 90%: ${formatCompact(forecastAt(forecast, t.id, scenario, year, 'q05', jumpoff) ?? 0)} – ${formatCompact(forecastAt(forecast, t.id, scenario, year, 'q95', jumpoff) ?? 0)}`
-                : ''} · прогноз {forecast.version}{jumpoff === 'adjusted' ? (useAdj ? ' · ряд скорр.' : ' · ряд офиц.') : ''}
+                ? ` · ${tl('90%:')} ${formatCompact(forecastAt(forecast, t.id, scenario, year, 'q05', jumpoff) ?? 0)} – ${formatCompact(forecastAt(forecast, t.id, scenario, year, 'q95', jumpoff) ?? 0)}`
+                : ''} · {tl('прогноз')} {forecast.version}{jumpoff === 'adjusted' ? (useAdj ? ` · ${tl('ряд скорр.')}` : ` · ${tl('ряд офиц.')}`) : ''}
             </div>
           </div>
         </div>
@@ -168,33 +170,29 @@ export default function TerritoryCard({ data, forecast, scenario = 'base', jumpo
       {forecast?.probabilistic && t.id === 'BY' && scenario === 'base' && (
         <div className="prob-panel">
           <div className="prob-head">
-            Вероятностный слой · {forecast.probabilistic.stats.n} симуляций траекторий СКР/ОПЖ,
-            калибр. по 80% PI WPP-2024
+            {tl('Вероятностный слой ·')} {forecast.probabilistic.stats.n} {tl('симуляций траекторий СКР/ОПЖ, калибр. по 80% PI WPP-2024')}
           </div>
           <div className="prob-rows">
-            <span>Убыль населения к 2050 —{' '}
+            <span>{tl('Убыль населения к 2050 —')}{' '}
               <b>{formatPct(forecast.probabilistic.stats.pDecline2051, 0)}</b></span>
-            <span>Ниже 7 млн к 2050 —{' '}
+            <span>{tl('Ниже 7 млн к 2050 —')}{' '}
               <b>{formatPct(forecast.probabilistic.stats.pBelow7M_2051, 0)}</b></span>
-            <span>Ниже 6 млн к 2075 —{' '}
+            <span>{tl('Ниже 6 млн к 2075 —')}{' '}
               <b>{formatPct(forecast.probabilistic.stats.pBelow6M_2075, 0)}</b></span>
           </div>
           <div className="prob-note">
-            Доли из {forecast.probabilistic.stats.n} реализаций при фиксированной
-            миграции (внутримодельные частоты, не безусловные вероятности); ширина
-            80%-полосы страны калибрована по WPP. Веер — эмпирические квантили
-            того же CCMPP, а не перенос интервала WPP.
+            {tl('Доли из')} {forecast.probabilistic.stats.n} {tl('реализаций при фиксированной миграции (внутримодельные частоты, не безусловные вероятности); ширина 80%-полосы страны калибрована по WPP. Веер — эмпирические квантили того же CCMPP, а не перенос интервала WPP.')}
           </div>
         </div>
       )}
 
       <div className="stat-row" style={{ marginTop: 8 }}>
         <div className="stat-tile">
-          <div className="st-label">Население, {Math.min(year, FORECAST_START)}{t.level === 'raion' && raionMode === 'noCenter' ? ', без центра' : ''}</div>
+          <div className="st-label">{tl('Население,')} {Math.min(year, FORECAST_START)}{t.level === 'raion' && raionMode === 'noCenter' ? tl(', без центра') : ''}</div>
           <div className="st-value">{now ? formatCompact(now.value) : '—'}</div>
           {change != null && abs != null && (
             <div className={`st-delta ${change >= 0 ? 'up' : 'down'}`}>
-              {change >= 0 ? '+' : ''}{formatPct(change)} ({abs >= 0 ? '+' : '−'}{formatCompact(Math.abs(abs))}) к {baseYear}
+              {change >= 0 ? '+' : ''}{formatPct(change)} ({abs >= 0 ? '+' : '−'}{formatCompact(Math.abs(abs))}) {tl('к')} {baseYear}
             </div>
           )}
         </div>
@@ -202,30 +200,30 @@ export default function TerritoryCard({ data, forecast, scenario = 'base', jumpo
           <div className="stat-tile">
             <div className="st-label">
               {breakdown.centers.length > 1
-                ? `В центрах (${breakdown.centers.map((c) => c.ru).join(', ')})`
-                : `В центре (${breakdown.centers[0].ru})`}
+                ? `${tl('В центрах')} (${breakdown.centers.map((c) => c.ru).join(', ')})`
+                : `${tl('В центре')} (${breakdown.centers[0].ru})`}
             </div>
             <div className="st-value">{formatCompact(breakdown.centersPop)}</div>
-            <div className="st-delta">{formatPct(breakdown.centersShare)} населения района</div>
+            <div className="st-delta">{formatPct(breakdown.centersShare)} {tl('населения района')}</div>
           </div>
         )}
         {t.level !== 'raion' && t.level !== 'city' && density != null && (
           <div className="stat-tile">
-            <div className="st-label">Плотность</div>
+            <div className="st-label">{tl('Плотность')}</div>
             <div className="st-value">{density.toLocaleString('ru-RU', { maximumFractionDigits: 1 })}</div>
-            <div className="st-delta">чел./км²</div>
+            <div className="st-delta">{tl('чел./км²')}</div>
           </div>
         )}
         {t.level === 'city' && cityDensity(t, year) != null && (
           <div className="stat-tile">
-            <div className="st-label">Плотность города</div>
+            <div className="st-label">{tl('Плотность города')}</div>
             <div className="st-value">{cityDensity(t, year)!.toLocaleString('ru-RU', { maximumFractionDigits: 0 })}</div>
-            <div className="st-delta">чел./км² ({t.area} км², Wikidata)</div>
+            <div className="st-delta">{tl('чел./км²')} ({t.area} {tl('км²')}, Wikidata)</div>
           </div>
         )}
         {t.urban && valueAt(t.urban, year) && t.id !== 'BY-HM' && now && (
           <div className="stat-tile">
-            <div className="st-label">Городское население</div>
+            <div className="st-label">{tl('Городское население')}</div>
             <div className="st-value">{formatPct(valueAt(t.urban, year)!.value / now.value)}</div>
           </div>
         )}
@@ -234,24 +232,24 @@ export default function TerritoryCard({ data, forecast, scenario = 'base', jumpo
       {breakdown && (
         <div className="stat-row">
           <div className="stat-tile">
-            <div className="st-label">Плотность: весь район</div>
+            <div className="st-label">{tl('Плотность: весь район')}</div>
             <div className="st-value">
               {breakdown.densityWhole != null ? breakdown.densityWhole.toLocaleString('ru-RU', { maximumFractionDigits: 1 }) : '—'}
             </div>
-            <div className="st-delta">чел./км²</div>
+            <div className="st-delta">{tl('чел./км²')}</div>
           </div>
           {breakdown.densityCenters != null && (
             <div className="stat-tile">
-              <div className="st-label">В городских центрах</div>
+              <div className="st-label">{tl('В городских центрах')}</div>
               <div className="st-value">{breakdown.densityCenters.toLocaleString('ru-RU', { maximumFractionDigits: 0 })}</div>
-              <div className="st-delta">чел./км² (площадь — Wikidata)</div>
+              <div className="st-delta">{tl('чел./км²')} ({tl('площадь —')} Wikidata)</div>
             </div>
           )}
           {breakdown.densityNoCenter != null && (
             <div className="stat-tile">
-              <div className="st-label">Без городских центров</div>
+              <div className="st-label">{tl('Без городских центров')}</div>
               <div className="st-value">{breakdown.densityNoCenter.toLocaleString('ru-RU', { maximumFractionDigits: 1 })}</div>
-              <div className="st-delta">чел./км² — сельская часть и малые НП</div>
+              <div className="st-delta">{tl('чел./км²')} {tl('— сельская часть и малые НП')}</div>
             </div>
           )}
         </div>
@@ -263,70 +261,69 @@ export default function TerritoryCard({ data, forecast, scenario = 'base', jumpo
           disabled={compare.includes(t.id) || compare.length >= 4}
           onClick={() => onCompareAdd(t.id)}
         >
-          {compare.includes(t.id) ? 'В сравнении' : '+ В сравнение'}
+          {compare.includes(t.id) ? tl('В сравнении') : tl('+ В сравнение')}
         </button>
         {t.raion && data.territories[t.raion] && (
           <button className="btn" onClick={() => onSelect(t.raion!)}>
-            район: {data.territories[t.raion].ru}
+            {tl('район:')} {data.territories[t.raion].ru}
           </button>
         )}
         {centerCities.map((c) => (
           <button className="btn" key={c.id} onClick={() => onSelect(c.id)}>
-            центр: {c.ru}
+            {tl('центр:')} {c.ru}
           </button>
         ))}
         {t.level === 'raion' && (
           <a className="btn" href={`/research/aging?sel=${t.id}`}>
-            INF-02: старение района
+            INF-02: {tl('старение района')}
           </a>
         )}
         {t.level === 'raion' && (
           <a className="btn" href={`/research/wages?sel=${t.id}`}>
-            INF-03: зарплата района
+            INF-03: {tl('зарплата района')}
           </a>
         )}
         {t.level === 'raion' && (
           <a className="btn" href={`/research/access?sel=${t.id}`}>
-            INF-04: доступность района
+            INF-04: {tl('доступность района')}
           </a>
         )}
         {t.level === 'raion' && (
           <a className="btn" href={`/research/migration?sel=${t.id}`}>
-            INF-05: миграция района
+            INF-05: {tl('миграция района')}
           </a>
         )}
         {t.level === 'raion' && (
           <a className="btn" href={`/research/nightlights?sel=${t.id}`}>
-            INF-08: ночные огни
+            INF-08: {tl('ночные огни')}
           </a>
         )}
         {inChernobyl && (
           <a className="btn" href={`/research/chernobyl?sel=${t.id}`}>
-            INF-07: чернобыльский след
+            INF-07: {tl('чернобыльский след')}
           </a>
         )}
       </div>
 
       <div className="chart-block">
         <div className="chart-title">
-          Динамика населения, 1897–{forecast && fentry
-            ? `2075 (с прогнозом${fentry.q10 ? ', полоса — 80% интервал' : ''})`
+          {tl('Динамика населения, 1897–')}{forecast && fentry
+            ? `2075 (${tl('с прогнозом')}${fentry.q10 ? tl(', полоса — 80% интервал') : ''})`
             : '2026'}
         </div>
         <LineChart
           series={chart}
           markYear={year}
           yFormat={(v) => formatCompact(v)}
-          yTooltip={(v) => formatNumber(v) + ' чел.'}
+          yTooltip={(v) => formatNumber(v) + ' ' + tl('чел.')}
           domain={[Math.min(...chart.flatMap((s) => s.points.map((p) => p.year))),
                    forecast && fentry ? 2075 : 2026]}
         />
       </div>
 
       <p className="src-note">
-        Точки — переписи; линии между ними — официальные оценки или линейная
-        интерполяция. {t.note ? `Примечание: ${t.note}. ` : ''}
-        Типы данных: {Object.values(DTYPE_LABEL).join(', ')}. См. «Методика».
+        {tl('Точки — переписи; линии между ними — официальные оценки или линейная интерполяция.')} {t.note ? `${tl('Примечание:')} ${t.note}. ` : ''}
+        {tl('Типы данных:')} {Object.values(DTYPE_LABEL).map((d) => tl(d)).join(', ')}. {tl('См. «Методика».')}
       </p>
     </div>
   );

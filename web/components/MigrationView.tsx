@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { DataFile } from '@/lib/types';
+import { useT } from '@/lib/i18n';
 import MethodDrawer from './MethodDrawer';
 
 interface RaionRec {
@@ -97,6 +98,7 @@ function SaldoChoro({ geo, mig, names, period, selected, onSelect }: {
 }) {
   const [wrapRef, width] = useWidth(640);
   const [hover, setHover] = useState<{ id: string; x: number; y: number } | null>(null);
+  const t = useT();
 
   const { paths, height } = useMemo(() => {
     let minLon = 180, maxLon = -180, minLat = 90, maxLat = -90;
@@ -140,7 +142,7 @@ function SaldoChoro({ geo, mig, names, period, selected, onSelect }: {
 
   return (
     <div className="chart-svg-wrap" ref={wrapRef}>
-      <svg width={width} height={height} role="img" aria-label="сальдо миграции по районам">
+      <svg width={width} height={height} role="img" aria-label={t('сальдо миграции по районам')}>
         {paths.map((p) => (
           <path key={p.id} d={p.d}
             fill={rateColor(mig.raions[p.id]?.[period])}
@@ -159,7 +161,7 @@ function SaldoChoro({ geo, mig, names, period, selected, onSelect }: {
           {legend.map((l, i) => (
             <g key={i} transform={`translate(0, ${i * 15})`}>
               <rect width="12" height="12" fill={l.c} stroke="var(--grid)" strokeWidth="0.5" />
-              <text x="17" y="10" fontSize="9.5" fill="var(--ink-2)">{l.t}</text>
+              <text x="17" y="10" fontSize="9.5" fill="var(--ink-2)">{t(l.t)}</text>
             </g>
           ))}
         </g>
@@ -169,8 +171,8 @@ function SaldoChoro({ geo, mig, names, period, selected, onSelect }: {
           <div className="ct-row"><span className="ct-val">{names[hover.id] ?? hover.id}</span></div>
           <div className="ct-year">
             {period === 'rate1519' ? '2015–2019' : '2024–2025'}:{' '}
-            {hrec[period] != null ? `${hrec[period]! > 0 ? '+' : ''}${hrec[period]} ‰/год` : 'нет данных'}
-            {' · 2019: '}{hrec.net['2019'] > 0 ? '+' : ''}{hrec.net['2019']} чел.
+            {hrec[period] != null ? `${hrec[period]! > 0 ? '+' : ''}${hrec[period]} ‰/год` : t('нет данных')}
+            {' · 2019: '}{hrec.net['2019'] > 0 ? '+' : ''}{hrec.net['2019']} {t('чел.')}
           </div>
         </div>
       )}
@@ -181,6 +183,7 @@ function SaldoChoro({ geo, mig, names, period, selected, onSelect }: {
 /** «Лестница»: ярусы расселения, млн человек, 1959-2026. */
 function Ladder({ mig }: { mig: MigrationData }) {
   const [wrapRef, width] = useWidth(560);
+  const t = useT();
   const height = 330;
   const M = { top: 14, right: 150, bottom: 26, left: 36 };
   const years = mig.ladder.years;
@@ -192,7 +195,7 @@ function Ladder({ mig }: { mig: MigrationData }) {
 
   return (
     <div className="chart-svg-wrap" ref={wrapRef}>
-      <svg width={width} height={height} role="img" aria-label="ярусы расселения">
+      <svg width={width} height={height} role="img" aria-label={t('ярусы расселения')}>
         {[0, 1, 2, 3, 4, 5].filter((v) => v <= maxV).map((v) => (
           <g key={v}>
             <line x1={M.left} x2={width - M.right} y1={Y(v)} y2={Y(v)} stroke="var(--grid)" strokeDasharray="3 4" />
@@ -219,12 +222,12 @@ function Ladder({ mig }: { mig: MigrationData }) {
                 <circle key={i} cx={X(years[i])} cy={Y(v / 1e6)} r="2.6" fill={color} />
               ))}
               <text x={width - M.right + 6} y={y} fontSize="10.5" fill={color}>
-                {label} {(vals[vals.length - 1] / 1e6).toFixed(1)}
+                {t(label)} {(vals[vals.length - 1] / 1e6).toFixed(1)}
               </text>
             </g>
           ));
         })()}
-        <text x={M.left - 24} y={M.top + 4} fontSize="9.5" fill="var(--muted)">млн</text>
+        <text x={M.left - 24} y={M.top + 4} fontSize="9.5" fill="var(--muted)">{t('млн')}</text>
       </svg>
     </div>
   );
@@ -234,6 +237,7 @@ function Ladder({ mig }: { mig: MigrationData }) {
 function Timeline({ mig }: { mig: MigrationData }) {
   const [wrapRef, width] = useWidth(560);
   const [hover, setHover] = useState<Estimate | null>(null);
+  const t = useT();
   const height = 360;
   const M = { top: 16, right: 16, bottom: 44, left: 46 };
   const ext = mig.external;
@@ -252,7 +256,7 @@ function Timeline({ mig }: { mig: MigrationData }) {
 
   return (
     <div className="chart-svg-wrap" ref={wrapRef}>
-      <svg width={width} height={height} role="img" aria-label="хронология оттока 2020-2026">
+      <svg width={width} height={height} role="img" aria-label={t('хронология оттока 2020-2026')}>
         {[0, 100, 200, 300, 400, 500, 600].map((v) => (
           <g key={v}>
             <line x1={M.left} x2={width - M.right} y1={Y(v * 1000)} y2={Y(v * 1000)}
@@ -287,7 +291,7 @@ function Timeline({ mig }: { mig: MigrationData }) {
           </g>
         ))}
         <text x={M.left + iw / 2} y={height - 6} textAnchor="middle" fontSize="10" fill="var(--muted)">
-          накопленный незарегистрированный отток, тыс. человек (полоса — интервал WP-F3; штрихи — оценки со стороны)
+          {t('накопленный незарегистрированный отток, тыс. человек (полоса — интервал WP-F3; штрихи — оценки со стороны)')}
         </text>
       </svg>
       {hover && (
@@ -296,7 +300,7 @@ function Timeline({ mig }: { mig: MigrationData }) {
           <div className="ct-year">
             {fmtK(hover.low)}{hover.high !== hover.low ? `–${fmtK(hover.high)}` : ''} · {hover.who}
           </div>
-          <div className="ct-year">{hover.src}, {hover.published} · снапшот в пакете</div>
+          <div className="ct-year">{hover.src}, {hover.published} · {t('снапшот в пакете')}</div>
         </div>
       )}
     </div>
@@ -306,6 +310,7 @@ function Timeline({ mig }: { mig: MigrationData }) {
 /** Страны назначения: сток ВНЖ 2019 vs последний год. */
 function Countries({ mig }: { mig: MigrationData }) {
   const [wrapRef, width] = useWidth(560);
+  const t = useT();
   const ext = mig.external;
   const top = ext.countries.slice(0, 10);
   const rowH = 26;
@@ -315,7 +320,7 @@ function Countries({ mig }: { mig: MigrationData }) {
 
   return (
     <div className="chart-svg-wrap" ref={wrapRef}>
-      <svg width={width} height={top.length * rowH + 30} role="img" aria-label="страны назначения">
+      <svg width={width} height={top.length * rowH + 30} role="img" aria-label={t('страны назначения')}>
         {top.map((c, i) => (
           <g key={c.geo} transform={`translate(0, ${i * rowH + 8})`}>
             <text x={M.left - 8} y={13} textAnchor="end" fontSize="11" fill="var(--ink)">{c.name}</text>
@@ -329,8 +334,8 @@ function Countries({ mig }: { mig: MigrationData }) {
           </g>
         ))}
         <g transform={`translate(${M.left}, ${top.length * rowH + 14})`}>
-          <rect width="12" height="10" fill="#3b4994" /><text x="17" y="9" fontSize="9.5" fill="var(--ink-2)">сток 2019</text>
-          <rect x="86" width="12" height="10" fill="#5698b9" /><text x="103" y="9" fontSize="9.5" fill="var(--ink-2)">последний год</text>
+          <rect width="12" height="10" fill="#3b4994" /><text x="17" y="9" fontSize="9.5" fill="var(--ink-2)">{t('сток 2019')}</text>
+          <rect x="86" width="12" height="10" fill="#5698b9" /><text x="103" y="9" fontSize="9.5" fill="var(--ink-2)">{t('последний год')}</text>
         </g>
       </svg>
     </div>
@@ -358,7 +363,9 @@ export default function MigrationView() {
     });
   }, []);
 
-  if (!mig || !geo) return <p className="hint">Загрузка данных…</p>;
+  const t = useT();
+
+  if (!mig || !geo) return <p className="hint">{t('Загрузка данных…')}</p>;
 
   const select = (id: string) => {
     setSel(id);
@@ -382,43 +389,39 @@ export default function MigrationView() {
       <div className="controls" style={{ marginBottom: 6 }}>
         <MethodDrawer slug="migration" />
         <a className="btn" href="/artifacts/by-maps-migration-v1.0.0.zip" download>
-          ⬇ Проверяемый пакет (ZIP)
+          ⬇ {t('Проверяемый пакет (ZIP)')}
         </a>
       </div>
 
       <div className="stat-row">
         <div className="stat-tile">
-          <div className="st-label">Официальная статистика vs зеркало</div>
-          <div className="st-value">+{fmtK(off2425)} vs −{Math.round(iv.mid / 1000)} тыс.</div>
+          <div className="st-label">{t('Официальная статистика vs зеркало')}</div>
+          <div className="st-value">+{fmtK(off2425)} vs −{Math.round(iv.mid / 1000)} {t('тыс.')}</div>
           <div className="st-delta">
-            официальное сальдо 2024–2025 против накопленной центральной оценки
-            незарегистрированного оттока 2020–2026 (интервал {Math.round(iv.low / 1000)}–{Math.round(iv.high / 1000)} тыс.);
-            2020–2023 Белстат не публиковал
+            {t('официальное сальдо 2024–2025 против накопленной центральной оценки незарегистрированного оттока 2020–2026 (интервал')} {Math.round(iv.low / 1000)}–{Math.round(iv.high / 1000)} {t('тыс.); 2020–2023 Белстат не публиковал')}
           </div>
         </div>
         <div className="stat-tile">
-          <div className="st-label">ВНЖ граждан РБ в ЕС</div>
+          <div className="st-label">{t('ВНЖ граждан РБ в ЕС')}</div>
           <div className="st-value">{fmtK(ext.euStock['2019'])} → {fmtK(ext.euStock['2024'])}</div>
           <div className="st-delta">
-            сток действующих разрешений, 2019 → 2024 (Eurostat; ×{(ext.euStock['2024'] / ext.euStock['2019']).toFixed(1)});
-            пик первичных ВНЖ — {fmtK(ext.euFirst['2022'])} в 2022
+            {t('сток действующих разрешений, 2019 → 2024 (Eurostat; ×')}{(ext.euStock['2024'] / ext.euStock['2019']).toFixed(1)}{t('); пик первичных ВНЖ —')} {fmtK(ext.euFirst['2022'])} {t('в 2022')}
           </div>
         </div>
         <div className="stat-tile">
-          <div className="st-label">Лестница за 1959–2026</div>
-          <div className="st-value">село −65%</div>
+          <div className="st-label">{t('Лестница за 1959–2026')}</div>
+          <div className="st-value">{t('село −65%')}</div>
           <div className="st-delta">
-            5,5 → 1,9 млн; райцентры ×2,6; Минск ×3,9 — каждая ступень
-            питает следующую, вершина с 2020 г. — зарубеж
+            {t('5,5 → 1,9 млн; райцентры ×2,6; Минск ×3,9 — каждая ступень питает следующую, вершина с 2020 г. — зарубеж')}
           </div>
         </div>
       </div>
 
-      <h2>Внутренняя миграция: лестница работает полвека</h2>
+      <h2>{t('Внутренняя миграция: лестница работает полвека')}</h2>
       <div className="grid-2">
         <div className="chart-block">
           <div className="chart-title">
-            Сальдо миграции районов, ‰/год{' '}
+            {t('Сальдо миграции районов, ‰/год')}{' '}
             <span className="seg" style={{ marginLeft: 10 }}>
               <button className={`btn sm ${period === 'rate1519' ? 'primary' : ''}`}
                 onClick={() => setPeriod('rate1519')}>2015–2019</button>
@@ -430,11 +433,10 @@ export default function MigrationView() {
             selected={sel} onSelect={select} />
         </div>
         <div className="chart-block">
-          <div className="chart-title">Ярусы расселения: куда пересыпается страна</div>
+          <div className="chart-title">{t('Ярусы расселения: куда пересыпается страна')}</div>
           <Ladder mig={mig} />
           <p className="hint" style={{ marginTop: 6 }}>
-            Межобластные направления (перепись-2019, накопленная миграция —
-            «где родились живущие», не годовой поток):
+            {t('Межобластные направления (перепись-2019, накопленная миграция — «где родились живущие», не годовой поток):')}
           </p>
           {flowsTop.map((f) => (
             <div key={f.from + f.to} style={{ display: 'flex', alignItems: 'center', gap: 8, margin: '3px 0' }}>
@@ -453,49 +455,42 @@ export default function MigrationView() {
       {rec && sel && (
         <div className="stat-row">
           <div className="stat-tile">
-            <div className="st-label">{names[sel] ?? sel} · <a href={`/map?sel=${sel}`}>на карту</a></div>
+            <div className="st-label">{names[sel] ?? sel} · <a href={`/map?sel=${sel}`}>{t('на карту')}</a></div>
             <div className="st-value">
               {rec.rate1519 != null ? `${rec.rate1519 > 0 ? '+' : ''}${rec.rate1519} ‰` : '—'}
             </div>
             <div className="st-delta">
-              сальдо в год, среднее 2015–2019; в 2024–2025: {rec.rate2425 != null ? `${rec.rate2425 > 0 ? '+' : ''}${rec.rate2425} ‰` : 'нет данных'}
+              {t('сальдо в год, среднее 2015–2019; в 2024–2025:')} {rec.rate2425 != null ? `${rec.rate2425 > 0 ? '+' : ''}${rec.rate2425} ‰` : t('нет данных')}
             </div>
           </div>
           <div className="stat-tile">
-            <div className="st-label">Сальдо 2019 / 2024 / 2025, человек</div>
+            <div className="st-label">{t('Сальдо 2019 / 2024 / 2025, человек')}</div>
             <div className="st-value">
               {['2019', '2024', '2025'].map((y) => (rec.net[y] > 0 ? '+' : '') + (rec.net[y] ?? '—')).join(' / ')}
             </div>
-            <div className="st-delta">все потоки вместе; 2020–2023 не публиковались</div>
+            <div className="st-delta">{t('все потоки вместе; 2020–2023 не публиковались')}</div>
           </div>
         </div>
       )}
 
-      <h2>Внешняя волна 2020+: интервалы, не точки</h2>
+      <h2>{t('Внешняя волна 2020+: интервалы, не точки')}</h2>
       <div className="grid-2">
         <div className="chart-block">
-          <div className="chart-title">Хронология незарегистрированного оттока (наведите на штрихи-оценки)</div>
+          <div className="chart-title">{t('Хронология незарегистрированного оттока (наведите на штрихи-оценки)')}</div>
           <Timeline mig={mig} />
         </div>
         <div className="chart-block">
-          <div className="chart-title">Страны назначения: действующие ВНЖ граждан РБ</div>
+          <div className="chart-title">{t('Страны назначения: действующие ВНЖ граждан РБ')}</div>
           <Countries mig={mig} />
           <p className="hint" style={{ marginTop: 6 }}>
-            Вне учёта ЕС: {ext.nonEu.map((n) => `${n.name} — ${fmtK(n.stock)} (${n.asof})`).join('; ')}.
-            Россия: независимой оценки стока нет; Росстат учёл 12–23 тыс.
-            прибывших из РБ в год, сальдо в отдельные годы отрицательное.
+            {t('Вне учёта ЕС:')} {ext.nonEu.map((n) => `${n.name} — ${fmtK(n.stock)} (${n.asof})`).join('; ')}.{' '}
+            {t('Россия: независимой оценки стока нет; Росстат учёл 12–23 тыс. прибывших из РБ в год, сальдо в отдельные годы отрицательное.')}
           </p>
         </div>
       </div>
 
       <p className="src-note">
-        Каждая внешняя цифра — с источником и датой обращения ({ext.accessed}),
-        снапшоты страниц в пакете. Оценки поданы интервалами; «зеркальная»
-        статистика не даёт региона происхождения, поэтому по районам внешняя
-        волна не раскладывается — карта районов показывает только
-        зарегистрированную миграцию. Официальные ряды 2020–2023 по миграции
-        не публиковались. Прописка ≠ проживание: часть «уехавших» осталась в
-        официальных рядах. Полные ограничения — в методблоке и LIMITATIONS.md.
+        {t('Каждая внешняя цифра — с источником и датой обращения (')}{ext.accessed}{t('), снапшоты страниц в пакете. Оценки поданы интервалами; «зеркальная» статистика не даёт региона происхождения, поэтому по районам внешняя волна не раскладывается — карта районов показывает только зарегистрированную миграцию. Официальные ряды 2020–2023 по миграции не публиковались. Прописка ≠ проживание: часть «уехавших» осталась в официальных рядах. Полные ограничения — в методблоке и LIMITATIONS.md.')}
       </p>
     </div>
   );
