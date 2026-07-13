@@ -232,6 +232,7 @@ export default function LandingPage() {
         </p>
         <div className="land-cta">
           <a href="https://www.linkedin.com/in/sergei-audzeichyk" target="_blank" rel="noreferrer" className="btn">LinkedIn</a>
+          <a href="https://www.facebook.com/share/1C5Ev1hwPw/?mibextid=wwXIfr" target="_blank" rel="noreferrer" className="btn">Facebook</a>
           <Link href="/about" className="btn">О проекте</Link>
           <Link href="/methodology" className="btn">Методология</Link>
         </div>
