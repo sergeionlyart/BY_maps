@@ -670,6 +670,7 @@ select {
 }
 .lang-switch a { padding: 4px 7px; color: var(--muted); border-radius: 6px; text-decoration: none; }
 .lang-switch a.on { color: var(--ink); font-weight: 700; }
+.lang-switch .lang-off { padding: 4px 7px; color: var(--baseline); cursor: default; user-select: none; }
 .lang-sep { color: var(--border); }
 
 /* --- контентные страницы (article/about/goals/methodology/author) --------- */
@@ -899,7 +900,7 @@ body.map-mode { overflow: hidden; }
     margin: 6px 0 0; padding-top: 8px;
     border-top: 1px solid var(--border); font-size: 15px;
   }
-  .lang-switch a { padding: 8px 10px; }
+  .lang-switch a, .lang-switch .lang-off { padding: 8px 10px; }
   .nav-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,.3); z-index: 55; }
 
   /* --- /map: компактная полоса + чипы (U-05) --- */

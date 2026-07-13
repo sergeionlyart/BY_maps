@@ -33,8 +33,9 @@ export default function SiteNav() {
   const path = usePathname();
   const be = path.startsWith('/be');
   const ruEquiv = be ? (BE_TO_RU[path] ?? '/') : path;
-  const beEquiv = be ? path : (LANG_PAIRS[path] ?? '/be/about');
-  const beReady = be || path in LANG_PAIRS; // есть ли прямой перевод текущей страницы
+  // прямой перевод текущей страницы (карта/исследования/лендинг его не имеют)
+  const beReady = be || path in LANG_PAIRS;
+  const beEquiv = be ? path : LANG_PAIRS[path]; // определён только когда beReady
 
   const [open, setOpen] = useState(false);
   // закрываем бургер-шторку при смене маршрута
@@ -63,14 +64,21 @@ export default function SiteNav() {
             </Link>
           );
         })}
-        <span className="lang-switch" aria-label="Язык">
+        <span className="lang-switch" aria-label="Мова / Язык">
           <Link href={ruEquiv} className={be ? '' : 'on'}>RU</Link>
           <span className="lang-sep">|</span>
-          <Link
-            href={beEquiv}
-            className={be ? 'on' : ''}
-            title={beReady ? undefined : 'па-беларуску даступныя тэкставыя старонкі; карта і даследаванні — хутка'}
-          >BY</Link>
+          {beReady ? (
+            <Link href={beEquiv!} className={be ? 'on' : ''}>BY</Link>
+          ) : (
+            // на непереведённых страницах (карта, исследования, лендинг) BY не
+            // ведёт на /be/about — иначе получался переход на чужую страницу и
+            // откат интерфейса в RU. Кнопка неактивна, с подсказкой.
+            <span
+              className="lang-off"
+              aria-disabled="true"
+              title="Гэтая старонка па-беларуску пакуль недаступная (карта і даследаванні — хутка)"
+            >BY</span>
+          )}
         </span>
       </div>
 
