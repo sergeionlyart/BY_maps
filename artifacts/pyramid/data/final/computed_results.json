@@ -1,0 +1,58 @@
+[
+ {
+  "metric": "census_1959",
+  "value": 8054648
+ },
+ {
+  "metric": "census_1970",
+  "value": 9002338
+ },
+ {
+  "metric": "census_1979",
+  "value": 9532516
+ },
+ {
+  "metric": "census_1989",
+  "value": 10151806
+ },
+ {
+  "metric": "census_2009",
+  "value": 9503807
+ },
+ {
+  "metric": "census_2019",
+  "value": 9413446
+ },
+ {
+  "metric": "estimate_2026",
+  "value": 9056080
+ },
+ {
+  "metric": "model_2075_base",
+  "value": 5970129
+ },
+ {
+  "metric": "model_2075_negative",
+  "value": 4334634
+ },
+ {
+  "metric": "model_2075_optimistic",
+  "value": 7106070
+ },
+ {
+  "metric": "series_total",
+  "value": 128
+ },
+ {
+  "metric": "unknown_2009",
+  "value": 296
+ },
+ {
+  "metric": "wpp_medium_2075_gap_pct",
+  "value": -4.3
+ },
+ {
+  "metric": "wpp_placeholder_series",
+  "value": 0
+ }
+]
