@@ -107,19 +107,26 @@ export default function NightlightsV3View() {
     }
   }, [data]);
 
-  // deep-link: запись
+  // deep-link: запись. С дебаунсом: браузеры лимитируют replaceState
+  // (~100 вызовов за 10 c, дальше SecurityError) - скраббинг слайдера
+  // без дебаунса ронял страницу (тот же баг чинился в PyramidView).
   useEffect(() => {
     if (!data) return;
-    const url = new URL(window.location.href);
-    url.searchParams.set('year', String(year));
-    url.searchParams.set('scenario', scn);
-    url.searchParams.set('jumpoff', jmp);
-    url.searchParams.set('mode', mode);
-    url.searchParams.set('layer', demoFuture ? 'demographic' : layer);
-    if (sel) url.searchParams.set('sel', sel); else url.searchParams.delete('sel');
-    if (openCase) url.searchParams.set('case', openCase);
-    else url.searchParams.delete('case');
-    window.history.replaceState(null, '', url);
+    const id = window.setTimeout(() => {
+      const url = new URL(window.location.href);
+      url.searchParams.set('year', String(year));
+      url.searchParams.set('scenario', scn);
+      url.searchParams.set('jumpoff', jmp);
+      url.searchParams.set('mode', mode);
+      url.searchParams.set('layer', demoFuture ? 'demographic' : layer);
+      if (sel) url.searchParams.set('sel', sel); else url.searchParams.delete('sel');
+      if (openCase) url.searchParams.set('case', openCase);
+      else url.searchParams.delete('case');
+      try {
+        window.history.replaceState(null, '', url);
+      } catch { /* лимит истории - следующая запись догонит */ }
+    }, 350);
+    return () => window.clearTimeout(id);
   }, [data, year, scn, jmp, mode, layer, sel, demoFuture, openCase]);
 
   const evByYear = useMemo(() => {
