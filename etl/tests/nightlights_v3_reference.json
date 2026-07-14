@@ -1,0 +1,12 @@
+{
+ "visual/reconstructed/1992.png": "dd37c9c88342f5758d6a390b0f7afa508cfb40fb191272ac6c8d5a9875d33bdc",
+ "visual/reconstructed/2011.png": "9c26c837b18cf73231299e2c636e8a1136fbcef77fd4d8869f59671fdba50beb",
+ "visual/observed/2012.png": "b62fdcef1bbb388e44ba299061feca47e80cd9bffd4d8f25561c2b356e799e8c",
+ "visual/observed/2021.png": "2571a33ccc6a87328fb04aaee7afa3f40a53a8930d0042757c0929c689fa05c1",
+ "visual/observed/2024.png": "a67a6ccda0adf2b449dff4e57d488151af102f3a6733dc704d9e412a405de7ac",
+ "visual/modeled/2050_base_official.png": "a51cf4bf7f9b35ace257c10cade834fc036db8e772c9e2f32422f1e8dbf356fa",
+ "visual/modeled/2075_base_official.png": "fc186b81f22ddc111dc2a5c3731d244524de73b80475c537f847f35c10d5dcca",
+ "delta/scenarios/sc_2075_negative_official.png": "58fab86d2e061a9378c238b5907158c4524bb41b5dfec84ca39bdd7d4706bab5",
+ "delta/scenarios/sc_2075_optimistic_official.png": "4075013e1a8868a2aeac23e9b0cb907b38a29b6ed0814de2cf4fdc5c85007351",
+ "delta/previous_year/py_2013.png": "8989571fcbef2bc7d4ed644a0489d145a31a608d2dbc59ead0414463cde9593f"
+}

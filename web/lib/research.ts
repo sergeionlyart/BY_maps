@@ -93,7 +93,7 @@ export const RESEARCH: ResearchEntry[] = [
       'Что 33 года ночной светимости (DMSP + VIIRS) говорят о расхождении света и официального населения — и как выглядела бы карта света при трёх сценариях прогноза?',
     status: 'published',
     stage: 7,
-    artifact: { file: 'by-maps-nightlights-v2.0.0.zip', version: '2.0.0', sizeKb: 4606 },
+    artifact: { file: 'by-maps-nightlights-v2.1.0.zip', version: '2.1.0', sizeKb: 4639 },
   },
   {
     slug: 'shocks',

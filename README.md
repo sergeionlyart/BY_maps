@@ -16,9 +16,11 @@
 
 ```
 etl/            воспроизводимый ETL-пайплайн (Python; ядро — стандартная
-                библиотека + shapely + pyyaml; numpy/rasterio нужны только
-                для пересоздания растровых экстрактов nightlights, pdfplumber —
-                для парсинга томов переписей WP-F1; тесты — pytest)
+                библиотека + shapely + pyyaml; numpy/rasterio/Pillow нужны
+                только для пересоздания растровых слоёв nightlights (кадры,
+                delta, рилс), pdfplumber — для парсинга томов переписей
+                WP-F1; тесты — pytest; e2e интерактива «Беларусь из
+                космоса» — Playwright: cd web && npm run build && npm run e2e)
 data/raw/       завендоренные сырые источники (HTML/GeoJSON/JSON) + curated CSV
 web/            Next.js 15 + TypeScript + MapLibre GL (статический экспорт)
 web/public/data/  результаты ETL: data.json + geo/*.geojson

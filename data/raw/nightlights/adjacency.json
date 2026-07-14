@@ -1,0 +1,860 @@
+{
+"BY-HM": [
+"r-minski"
+],
+"r-akciabrski": [
+"r-babrujski",
+"r-hluski",
+"r-kalinkavicki",
+"r-lubanski",
+"r-pietrykauski",
+"r-svietlahorski"
+],
+"r-arshanski": [
+"r-dubrovienski",
+"r-horacki",
+"r-loznienski",
+"r-shklouski",
+"r-siennienski",
+"r-talachynski"
+],
+"r-ashmianski": [
+"r-astraviecki",
+"r-iujeuski",
+"r-smarhonski",
+"r-valozhynski"
+],
+"r-asipovicki": [
+"r-babrujski",
+"r-biarezinski",
+"r-chervienski",
+"r-hluski",
+"r-klichauski",
+"r-puchavicki",
+"r-staradarozhski"
+],
+"r-astraviecki": [
+"r-ashmianski",
+"r-miadzielski",
+"r-pastauski",
+"r-smarhonski"
+],
+"r-babrujski": [
+"r-akciabrski",
+"r-asipovicki",
+"r-hluski",
+"r-kirauski",
+"r-klichauski",
+"r-rahachouski",
+"r-svietlahorski",
+"r-zhlobinski"
+],
+"r-baranavicki": [
+"r-dziatlauski",
+"r-ivacevicki",
+"r-karelicki",
+"r-lachavicki",
+"r-navahrudski",
+"r-niasvizhski",
+"r-slonimski"
+],
+"r-barysauski": [
+"r-biarezinski",
+"r-chashnicki",
+"r-chervienski",
+"r-dokshycki",
+"r-krupski",
+"r-lahojski",
+"r-lepielski",
+"r-smalavicki"
+],
+"r-bialynicki": [
+"r-biarezinski",
+"r-klichauski",
+"r-kruhlanski",
+"r-krupski",
+"r-mahilouski",
+"r-shklouski"
+],
+"r-biarezinski": [
+"r-asipovicki",
+"r-barysauski",
+"r-bialynicki",
+"r-chervienski",
+"r-klichauski",
+"r-krupski"
+],
+"r-biarozauski": [
+"r-drahichynski",
+"r-ivacevicki",
+"r-ivanauski",
+"r-kobrynski",
+"r-pruzhanski"
+],
+"r-bierastavicki": [
+"r-hrodzienski",
+"r-mastouski",
+"r-svislacki",
+"r-vaukavyski"
+],
+"r-bieshankovicki": [
+"r-chashnicki",
+"r-lepielski",
+"r-shumilinski",
+"r-siennienski",
+"r-ushacki",
+"r-viciebski"
+],
+"r-brahinski": [
+"r-chojnicki",
+"r-lojeuski"
+],
+"r-braslauski": [
+"r-mijorski",
+"r-pastauski",
+"r-sharkoushchynski"
+],
+"r-brescki": [
+"r-kamianiecki",
+"r-malarycki",
+"r-zhabinkauski"
+],
+"r-buda-kashalouski": [
+"r-chacherski",
+"r-homielski",
+"r-rahachouski",
+"r-rechycki",
+"r-vietkauski",
+"r-zhlobinski"
+],
+"r-bychauski": [
+"r-chavuski",
+"r-kirauski",
+"r-klichauski",
+"r-mahilouski",
+"r-rahachouski",
+"r-slauharadski"
+],
+"r-chacherski": [
+"r-buda-kashalouski",
+"r-karmianski",
+"r-krasnapolski",
+"r-rahachouski",
+"r-vietkauski"
+],
+"r-chashnicki": [
+"r-barysauski",
+"r-bieshankovicki",
+"r-krupski",
+"r-lepielski",
+"r-siennienski",
+"r-talachynski"
+],
+"r-chavuski": [
+"r-bychauski",
+"r-cherykauski",
+"r-drybinski",
+"r-horacki",
+"r-mahilouski",
+"r-mscislauski",
+"r-shklouski",
+"r-slauharadski"
+],
+"r-chervienski": [
+"r-asipovicki",
+"r-barysauski",
+"r-biarezinski",
+"r-minski",
+"r-puchavicki",
+"r-smalavicki"
+],
+"r-cherykauski": [
+"r-chavuski",
+"r-klimavicki",
+"r-krasnapolski",
+"r-krychauski",
+"r-mscislauski",
+"r-slauharadski"
+],
+"r-chocimski": [
+"r-kasciukovicki",
+"r-klimavicki"
+],
+"r-chojnicki": [
+"r-brahinski",
+"r-kalinkavicki",
+"r-lojeuski",
+"r-mazyrski",
+"r-naraulanski",
+"r-rechycki"
+],
+"r-dobrushski": [
+"r-homielski",
+"r-vietkauski"
+],
+"r-dokshycki": [
+"r-barysauski",
+"r-hlybocki",
+"r-lahojski",
+"r-lepielski",
+"r-miadzielski",
+"r-pastauski",
+"r-ushacki",
+"r-vilejski"
+],
+"r-drahichynski": [
+"r-biarozauski",
+"r-ivanauski",
+"r-kobrynski"
+],
+"r-drybinski": [
+"r-chavuski",
+"r-horacki",
+"r-mahilouski",
+"r-mscislauski",
+"r-shklouski"
+],
+"r-dubrovienski": [
+"r-arshanski",
+"r-horacki",
+"r-loznienski"
+],
+"r-dziarzhynski": [
+"r-minski",
+"r-staubcouski",
+"r-uzdzienski",
+"r-valozhynski"
+],
+"r-dziatlauski": [
+"r-baranavicki",
+"r-lidski",
+"r-mastouski",
+"r-navahrudski",
+"r-shchuchynski",
+"r-slonimski",
+"r-zelvienski"
+],
+"r-hancavicki": [
+"r-ivacevicki",
+"r-klecki",
+"r-lachavicki",
+"r-luniniecki",
+"r-pinski",
+"r-salihorski"
+],
+"r-haradocki": [
+"r-polacki",
+"r-shumilinski",
+"r-viciebski"
+],
+"r-hluski": [
+"r-akciabrski",
+"r-asipovicki",
+"r-babrujski",
+"r-lubanski",
+"r-staradarozhski"
+],
+"r-hlybocki": [
+"r-dokshycki",
+"r-mijorski",
+"r-pastauski",
+"r-polacki",
+"r-sharkoushchynski",
+"r-ushacki"
+],
+"r-homielski": [
+"r-buda-kashalouski",
+"r-dobrushski",
+"r-lojeuski",
+"r-rechycki",
+"r-vietkauski"
+],
+"r-horacki": [
+"r-arshanski",
+"r-chavuski",
+"r-drybinski",
+"r-dubrovienski",
+"r-mscislauski",
+"r-shklouski"
+],
+"r-hrodzienski": [
+"r-bierastavicki",
+"r-mastouski",
+"r-shchuchynski"
+],
+"r-iujeuski": [
+"r-ashmianski",
+"r-lidski",
+"r-navahrudski",
+"r-staubcouski",
+"r-valozhynski",
+"r-voranauski"
+],
+"r-ivacevicki": [
+"r-baranavicki",
+"r-biarozauski",
+"r-hancavicki",
+"r-ivanauski",
+"r-lachavicki",
+"r-pinski",
+"r-pruzhanski",
+"r-slonimski"
+],
+"r-ivanauski": [
+"r-biarozauski",
+"r-drahichynski",
+"r-ivacevicki",
+"r-pinski"
+],
+"r-jelski": [
+"r-lelchycki",
+"r-mazyrski",
+"r-naraulanski"
+],
+"r-kalinkavicki": [
+"r-akciabrski",
+"r-chojnicki",
+"r-mazyrski",
+"r-pietrykauski",
+"r-rechycki",
+"r-svietlahorski"
+],
+"r-kamianiecki": [
+"r-brescki",
+"r-kobrynski",
+"r-pruzhanski",
+"r-zhabinkauski"
+],
+"r-kapylski": [
+"r-klecki",
+"r-niasvizhski",
+"r-salihorski",
+"r-slucki",
+"r-staubcouski",
+"r-uzdzienski"
+],
+"r-karelicki": [
+"r-baranavicki",
+"r-navahrudski",
+"r-niasvizhski",
+"r-staubcouski"
+],
+"r-karmianski": [
+"r-chacherski",
+"r-krasnapolski",
+"r-rahachouski",
+"r-slauharadski"
+],
+"r-kasciukovicki": [
+"r-chocimski",
+"r-klimavicki",
+"r-krasnapolski"
+],
+"r-kirauski": [
+"r-babrujski",
+"r-bychauski",
+"r-klichauski",
+"r-rahachouski"
+],
+"r-klecki": [
+"r-hancavicki",
+"r-kapylski",
+"r-lachavicki",
+"r-niasvizhski",
+"r-salihorski"
+],
+"r-klichauski": [
+"r-asipovicki",
+"r-babrujski",
+"r-bialynicki",
+"r-biarezinski",
+"r-bychauski",
+"r-kirauski",
+"r-mahilouski"
+],
+"r-klimavicki": [
+"r-cherykauski",
+"r-chocimski",
+"r-kasciukovicki",
+"r-krasnapolski",
+"r-krychauski"
+],
+"r-kobrynski": [
+"r-biarozauski",
+"r-drahichynski",
+"r-kamianiecki",
+"r-malarycki",
+"r-pruzhanski",
+"r-zhabinkauski"
+],
+"r-krasnapolski": [
+"r-chacherski",
+"r-cherykauski",
+"r-karmianski",
+"r-kasciukovicki",
+"r-klimavicki",
+"r-slauharadski"
+],
+"r-kruhlanski": [
+"r-bialynicki",
+"r-krupski",
+"r-shklouski",
+"r-talachynski"
+],
+"r-krupski": [
+"r-barysauski",
+"r-bialynicki",
+"r-biarezinski",
+"r-chashnicki",
+"r-kruhlanski",
+"r-talachynski"
+],
+"r-krychauski": [
+"r-cherykauski",
+"r-klimavicki",
+"r-mscislauski"
+],
+"r-lachavicki": [
+"r-baranavicki",
+"r-hancavicki",
+"r-ivacevicki",
+"r-klecki",
+"r-niasvizhski"
+],
+"r-lahojski": [
+"r-barysauski",
+"r-dokshycki",
+"r-minski",
+"r-smalavicki",
+"r-vilejski"
+],
+"r-lelchycki": [
+"r-jelski",
+"r-mazyrski",
+"r-pietrykauski",
+"r-stolinski",
+"r-zhytkavicki"
+],
+"r-lepielski": [
+"r-barysauski",
+"r-bieshankovicki",
+"r-chashnicki",
+"r-dokshycki",
+"r-ushacki"
+],
+"r-lidski": [
+"r-dziatlauski",
+"r-iujeuski",
+"r-navahrudski",
+"r-shchuchynski",
+"r-voranauski"
+],
+"r-lojeuski": [
+"r-brahinski",
+"r-chojnicki",
+"r-homielski",
+"r-rechycki"
+],
+"r-loznienski": [
+"r-arshanski",
+"r-dubrovienski",
+"r-siennienski",
+"r-viciebski"
+],
+"r-lubanski": [
+"r-akciabrski",
+"r-hluski",
+"r-pietrykauski",
+"r-salihorski",
+"r-slucki",
+"r-staradarozhski",
+"r-zhytkavicki"
+],
+"r-luniniecki": [
+"r-hancavicki",
+"r-pinski",
+"r-salihorski",
+"r-stolinski",
+"r-zhytkavicki"
+],
+"r-mahilouski": [
+"r-bialynicki",
+"r-bychauski",
+"r-chavuski",
+"r-drybinski",
+"r-klichauski",
+"r-shklouski"
+],
+"r-maladziechanski": [
+"r-minski",
+"r-smarhonski",
+"r-valozhynski",
+"r-vilejski"
+],
+"r-malarycki": [
+"r-brescki",
+"r-kobrynski",
+"r-zhabinkauski"
+],
+"r-mastouski": [
+"r-bierastavicki",
+"r-dziatlauski",
+"r-hrodzienski",
+"r-shchuchynski",
+"r-vaukavyski",
+"r-zelvienski"
+],
+"r-mazyrski": [
+"r-chojnicki",
+"r-jelski",
+"r-kalinkavicki",
+"r-lelchycki",
+"r-naraulanski",
+"r-pietrykauski"
+],
+"r-miadzielski": [
+"r-astraviecki",
+"r-dokshycki",
+"r-pastauski",
+"r-smarhonski",
+"r-vilejski"
+],
+"r-mijorski": [
+"r-braslauski",
+"r-hlybocki",
+"r-polacki",
+"r-sharkoushchynski",
+"r-vierchniadzvinski"
+],
+"r-minski": [
+"BY-HM",
+"r-chervienski",
+"r-dziarzhynski",
+"r-lahojski",
+"r-maladziechanski",
+"r-puchavicki",
+"r-smalavicki",
+"r-uzdzienski",
+"r-valozhynski",
+"r-vilejski"
+],
+"r-mscislauski": [
+"r-chavuski",
+"r-cherykauski",
+"r-drybinski",
+"r-horacki",
+"r-krychauski"
+],
+"r-naraulanski": [
+"r-chojnicki",
+"r-jelski",
+"r-mazyrski"
+],
+"r-navahrudski": [
+"r-baranavicki",
+"r-dziatlauski",
+"r-iujeuski",
+"r-karelicki",
+"r-lidski",
+"r-staubcouski"
+],
+"r-niasvizhski": [
+"r-baranavicki",
+"r-kapylski",
+"r-karelicki",
+"r-klecki",
+"r-lachavicki",
+"r-staubcouski"
+],
+"r-pastauski": [
+"r-astraviecki",
+"r-braslauski",
+"r-dokshycki",
+"r-hlybocki",
+"r-miadzielski",
+"r-sharkoushchynski"
+],
+"r-pietrykauski": [
+"r-akciabrski",
+"r-kalinkavicki",
+"r-lelchycki",
+"r-lubanski",
+"r-mazyrski",
+"r-zhytkavicki"
+],
+"r-pinski": [
+"r-hancavicki",
+"r-ivacevicki",
+"r-ivanauski",
+"r-luniniecki",
+"r-stolinski"
+],
+"r-polacki": [
+"r-haradocki",
+"r-hlybocki",
+"r-mijorski",
+"r-rasonski",
+"r-shumilinski",
+"r-ushacki",
+"r-vierchniadzvinski"
+],
+"r-pruzhanski": [
+"r-biarozauski",
+"r-ivacevicki",
+"r-kamianiecki",
+"r-kobrynski",
+"r-slonimski",
+"r-svislacki",
+"r-vaukavyski",
+"r-zelvienski"
+],
+"r-puchavicki": [
+"r-asipovicki",
+"r-chervienski",
+"r-minski",
+"r-slucki",
+"r-staradarozhski",
+"r-uzdzienski"
+],
+"r-rahachouski": [
+"r-babrujski",
+"r-buda-kashalouski",
+"r-bychauski",
+"r-chacherski",
+"r-karmianski",
+"r-kirauski",
+"r-slauharadski",
+"r-zhlobinski"
+],
+"r-rasonski": [
+"r-polacki",
+"r-vierchniadzvinski"
+],
+"r-rechycki": [
+"r-buda-kashalouski",
+"r-chojnicki",
+"r-homielski",
+"r-kalinkavicki",
+"r-lojeuski",
+"r-svietlahorski",
+"r-zhlobinski"
+],
+"r-salihorski": [
+"r-hancavicki",
+"r-kapylski",
+"r-klecki",
+"r-lubanski",
+"r-luniniecki",
+"r-slucki",
+"r-zhytkavicki"
+],
+"r-sharkoushchynski": [
+"r-braslauski",
+"r-hlybocki",
+"r-mijorski",
+"r-pastauski"
+],
+"r-shchuchynski": [
+"r-dziatlauski",
+"r-hrodzienski",
+"r-lidski",
+"r-mastouski",
+"r-voranauski"
+],
+"r-shklouski": [
+"r-arshanski",
+"r-bialynicki",
+"r-chavuski",
+"r-drybinski",
+"r-horacki",
+"r-kruhlanski",
+"r-mahilouski",
+"r-talachynski"
+],
+"r-shumilinski": [
+"r-bieshankovicki",
+"r-haradocki",
+"r-polacki",
+"r-ushacki",
+"r-viciebski"
+],
+"r-siennienski": [
+"r-arshanski",
+"r-bieshankovicki",
+"r-chashnicki",
+"r-loznienski",
+"r-talachynski",
+"r-viciebski"
+],
+"r-slauharadski": [
+"r-bychauski",
+"r-chavuski",
+"r-cherykauski",
+"r-karmianski",
+"r-krasnapolski",
+"r-rahachouski"
+],
+"r-slonimski": [
+"r-baranavicki",
+"r-dziatlauski",
+"r-ivacevicki",
+"r-pruzhanski",
+"r-zelvienski"
+],
+"r-slucki": [
+"r-kapylski",
+"r-lubanski",
+"r-puchavicki",
+"r-salihorski",
+"r-staradarozhski",
+"r-uzdzienski"
+],
+"r-smalavicki": [
+"r-barysauski",
+"r-chervienski",
+"r-lahojski",
+"r-minski"
+],
+"r-smarhonski": [
+"r-ashmianski",
+"r-astraviecki",
+"r-maladziechanski",
+"r-miadzielski",
+"r-valozhynski",
+"r-vilejski"
+],
+"r-staradarozhski": [
+"r-asipovicki",
+"r-hluski",
+"r-lubanski",
+"r-puchavicki",
+"r-slucki"
+],
+"r-staubcouski": [
+"r-dziarzhynski",
+"r-iujeuski",
+"r-kapylski",
+"r-karelicki",
+"r-navahrudski",
+"r-niasvizhski",
+"r-uzdzienski",
+"r-valozhynski"
+],
+"r-stolinski": [
+"r-lelchycki",
+"r-luniniecki",
+"r-pinski",
+"r-zhytkavicki"
+],
+"r-svietlahorski": [
+"r-akciabrski",
+"r-babrujski",
+"r-kalinkavicki",
+"r-rechycki",
+"r-zhlobinski"
+],
+"r-svislacki": [
+"r-bierastavicki",
+"r-pruzhanski",
+"r-vaukavyski"
+],
+"r-talachynski": [
+"r-arshanski",
+"r-chashnicki",
+"r-kruhlanski",
+"r-krupski",
+"r-shklouski",
+"r-siennienski"
+],
+"r-ushacki": [
+"r-bieshankovicki",
+"r-dokshycki",
+"r-hlybocki",
+"r-lepielski",
+"r-polacki",
+"r-shumilinski"
+],
+"r-uzdzienski": [
+"r-dziarzhynski",
+"r-kapylski",
+"r-minski",
+"r-puchavicki",
+"r-slucki",
+"r-staubcouski"
+],
+"r-valozhynski": [
+"r-ashmianski",
+"r-dziarzhynski",
+"r-iujeuski",
+"r-maladziechanski",
+"r-minski",
+"r-smarhonski",
+"r-staubcouski"
+],
+"r-vaukavyski": [
+"r-bierastavicki",
+"r-mastouski",
+"r-pruzhanski",
+"r-svislacki",
+"r-zelvienski"
+],
+"r-viciebski": [
+"r-bieshankovicki",
+"r-haradocki",
+"r-loznienski",
+"r-shumilinski",
+"r-siennienski"
+],
+"r-vierchniadzvinski": [
+"r-mijorski",
+"r-polacki",
+"r-rasonski"
+],
+"r-vietkauski": [
+"r-buda-kashalouski",
+"r-chacherski",
+"r-dobrushski",
+"r-homielski"
+],
+"r-vilejski": [
+"r-dokshycki",
+"r-lahojski",
+"r-maladziechanski",
+"r-miadzielski",
+"r-minski",
+"r-smarhonski"
+],
+"r-voranauski": [
+"r-iujeuski",
+"r-lidski",
+"r-shchuchynski"
+],
+"r-zelvienski": [
+"r-dziatlauski",
+"r-mastouski",
+"r-pruzhanski",
+"r-slonimski",
+"r-vaukavyski"
+],
+"r-zhabinkauski": [
+"r-brescki",
+"r-kamianiecki",
+"r-kobrynski",
+"r-malarycki"
+],
+"r-zhlobinski": [
+"r-babrujski",
+"r-buda-kashalouski",
+"r-rahachouski",
+"r-rechycki",
+"r-svietlahorski"
+],
+"r-zhytkavicki": [
+"r-lelchycki",
+"r-lubanski",
+"r-luniniecki",
+"r-pietrykauski",
+"r-salihorski",
+"r-stolinski"
+]
+}

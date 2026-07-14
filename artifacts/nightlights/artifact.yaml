@@ -1,9 +1,11 @@
-# Проверяемый пакет INF-08 v2 «Беларусь из космоса, 1992-2075».
+# Проверяемый пакет INF-08 v2.1 «Беларусь из космоса, 1992-2075»:
+# аналитика + визуальный слой (реконструкция/наблюдения/модель), delta,
+# события и адаптивная скорость.
 # Сборка: python -m etl.artifacts.build nightlights
 
 id: nightlights
 title: "Беларусь из космоса, 1992-2075: гармонизированная ночная светимость DMSP/VIIRS по районам, индекс расхождения свет/население и модельная иллюстрация будущего по прогнозу v2026.4"
-version: "2.0.0"
+version: "2.1.0"
 released: "2026-07-14"
 landing_url: "https://by-population-maps.vercel.app/research/nightlights"
 authors:
@@ -66,6 +68,7 @@ files:
   # ассеты рилс-конвейера
   - { path: data/raw/nightlights/fonts/DejaVuSans.ttf, from: data/raw/nightlights/fonts/DejaVuSans.ttf, role: raw, license: "Bitstream Vera / DejaVu (свободная)" }
   - { path: data/raw/nightlights/qr_nightlights.png, from: data/raw/nightlights/qr_nightlights.png, role: raw, license: "CC BY 4.0 (проект)" }
+  - { path: data/raw/nightlights/adjacency.json, from: data/raw/nightlights/adjacency.json, role: raw, license: "CC BY 4.0 (производная geoBoundaries/OSM)" }
   # ряды населения, прогноз и геометрия зон
   - { path: web/public/data/data.json, from: web/public/data/data.json, role: intermediate, license: "CC BY 4.0" }
   - { path: web/public/data/forecast.json, from: web/public/data/forecast.json, role: intermediate, license: "CC BY 4.0" }
@@ -81,6 +84,9 @@ files:
   - { path: etl/nightlights_fetch.py, from: etl/nightlights_fetch.py, role: code }
   - { path: etl/nightlights_zonal.py, from: etl/nightlights_zonal.py, role: code }
   - { path: etl/nightlights_frames.py, from: etl/nightlights_frames.py, role: code }
+  - { path: etl/nightlights_visual.py, from: etl/nightlights_visual.py, role: code }
+  - { path: etl/nightlights_delta.py, from: etl/nightlights_delta.py, role: code }
+  - { path: etl/nightlights_events.py, from: etl/nightlights_events.py, role: code }
   - { path: tools/render_reel_space.py, from: tools/render_reel_space.py, role: code }
   - { path: tools/reel_space_scene.json, from: tools/reel_space_scene.json, role: params }
   - { path: params/assumptions.json, role: params }
@@ -92,6 +98,9 @@ files:
   # итоговые данные
   - { path: data/final/computed_results.json, role: final, license: "CC BY 4.0" }
   - { path: web/public/data/nightlights_v2.json, from: web/public/data/nightlights_v2.json, role: final, license: "CC BY 4.0" }
+  - { path: web/public/data/nightlights/nightlights_manifest.json, from: web/public/data/nightlights/nightlights_manifest.json, role: final, license: "CC BY 4.0" }
+  - { path: web/public/data/nightlights/nightlights_events.json, from: web/public/data/nightlights/nightlights_events.json, role: final, license: "CC BY 4.0" }
+  - { path: web/public/data/nightlights/nightlights_annotations.json, from: web/public/data/nightlights/nightlights_annotations.json, role: final, license: "CC BY 4.0" }
 
 sources:
   - id: li_harmonized
@@ -127,6 +136,12 @@ environment:
 expected_results:
   - { metric: n_zones, value: 119, tolerance: 0,
       description: "зон: 118 районов + Минск (adm1; в adm2 он «дыра» Минского района)" }
+  - { metric: n_frames_manifest, value: 93, tolerance: 0,
+      description: "кадров визуального слоя: 20 реконструкция + 13 наблюдения + 60 модель" }
+  - { metric: n_events_total, value: 14, tolerance: 0,
+      description: "событий таймлайна (включая методологические переходы 2012/2021 и границу модели)" }
+  - { metric: n_events_regional, value: 9, tolerance: 0,
+      description: "региональных событий по аналитическому скорингу (z-оценка долей с весом и персистентностью)" }
   - { metric: bridge_r2, value: 0.9217, tolerance: 0.001,
       description: "R² моста DN->радианс (simVIIRS/VNL 2014-2024, FE года; гейт >= 0,9)" }
   - { metric: bridge_b, value: 0.9151, tolerance: 0.001,
