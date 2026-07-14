@@ -1,0 +1,104 @@
+{
+ "reel_version": "3.0.0",
+ "data_version": "nightlights v2.1.1 + divergence v1",
+ "site_version": "v2.1.1",
+ "commit": "419cce6dca3c90e8dcb785280e55246fa2817caf",
+ "format": {
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationSec": 65.0
+ },
+ "voiceover": {
+  "approved": false,
+  "proposal_take": "cedar_condensed (сокращённый текст — дословный §8 не помещается в 65 c; см. tts_generation.json)",
+  "voice_wav_sha256": "ed557168f12b57e5c58afc7c4dd8dfbda5eb3dd91f3ea2ed0a2fa1cf15c7af22",
+  "disclosure": "Озвучка создана синтетическим голосом OpenAI"
+ },
+ "renders": {
+  "nightlights_reel_v3_video.mp4": {
+   "sha256": "9378f45fa93a8280d4cab92a6701bbf51e1cf2390409ca3920d1c5a657bd8169",
+   "size_bytes": 3385149,
+   "duration_sec": 65.0,
+   "streams": [
+    {
+     "codec_name": "h264",
+     "codec_type": "video",
+     "width": 1080,
+     "height": 1920,
+     "r_frame_rate": "30/1"
+    }
+   ]
+  },
+  "nightlights_reel_v3_video_condensed.mp4": {
+   "sha256": "6790a5387cb250aaaceb0fc351140bda8d5c923cf5fa2bc67bd2bfee73b0f023",
+   "size_bytes": 3636213,
+   "duration_sec": 65.0,
+   "streams": [
+    {
+     "codec_name": "h264",
+     "codec_type": "video",
+     "width": 1080,
+     "height": 1920,
+     "r_frame_rate": "30/1"
+    }
+   ]
+  },
+  "nightlights_reel_v3_ru_silent.mp4": {
+   "sha256": "53a9e067d618c50793c98b2706e8a65ac5db10f1bb75c75e2b6a10d22d2021e6",
+   "size_bytes": 5030440,
+   "duration_sec": 65.0,
+   "streams": [
+    {
+     "codec_name": "h264",
+     "codec_type": "video",
+     "width": 1080,
+     "height": 1920,
+     "r_frame_rate": "30/1"
+    },
+    {
+     "codec_name": "aac",
+     "codec_type": "audio",
+     "sample_rate": "48000",
+     "r_frame_rate": "0/0"
+    }
+   ],
+   "loudness": {
+    "integrated_lufs": -13.79,
+    "true_peak_dbtp": -1.15
+   }
+  },
+  "nightlights_reel_v3_ru_voice.mp4": {
+   "sha256": "27219893425ca7ca6ce52bd0d1835ea751944bb86ca84379010c1298a914a173",
+   "size_bytes": 5253418,
+   "duration_sec": 65.0,
+   "streams": [
+    {
+     "codec_name": "h264",
+     "codec_type": "video",
+     "width": 1080,
+     "height": 1920,
+     "r_frame_rate": "30/1"
+    },
+    {
+     "codec_name": "aac",
+     "codec_type": "audio",
+     "sample_rate": "48000",
+     "r_frame_rate": "0/0"
+    }
+   ],
+   "loudness": {
+    "integrated_lufs": -14.19,
+    "true_peak_dbtp": -1.33
+   }
+  },
+  "nightlights_reel_v3_cover.webp": {
+   "sha256": "bd604914c334ea8f54b9f918bec0b26293f867c57a87b8161599376dc733526d",
+   "size_bytes": 70056
+  },
+  "nightlights_reel_v3_preview.gif": {
+   "sha256": "f51bdae859fefd2dc5ca48093e924ccc6a8dcc4f3d74ebf1bf48ba2ebc846adc",
+   "size_bytes": 408591
+  }
+ }
+}

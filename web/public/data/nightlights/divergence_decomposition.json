@@ -1,0 +1,2266 @@
+{
+ "note": "D = dlogL - beta*dlogP по 119 зонам, 2012-2024; beta - межрайонная эластичность класса (assumptions). Резидуал - маркер расхождения, не причина.",
+ "rows": [
+  {
+   "id": "BY-HM",
+   "class": "minsk_agglo",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.2895,
+   "populationChange": 0.0556,
+   "beta": 1.0,
+   "expectedLightChange": 0.0556,
+   "residualLevel": 0.2339,
+   "residualShare": -0.2808,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "r-akciabrski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.9847,
+   "populationChange": -0.1629,
+   "beta": 1.66,
+   "expectedLightChange": -0.2705,
+   "residualLevel": 1.2552,
+   "residualShare": 0.7174,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-arshanski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.6447,
+   "populationChange": -0.1337,
+   "beta": 1.66,
+   "expectedLightChange": -0.2219,
+   "residualLevel": 0.8666,
+   "residualShare": 0.3299,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "r-ashmianski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 1.1525,
+   "populationChange": -0.0899,
+   "beta": 1.66,
+   "expectedLightChange": -0.1492,
+   "residualLevel": 1.3016,
+   "residualShare": 0.7671,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-asipovicki",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.9305,
+   "populationChange": -0.1505,
+   "beta": 1.66,
+   "expectedLightChange": -0.2498,
+   "residualLevel": 1.1803,
+   "residualShare": 0.6429,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-astraviecki",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 1.032,
+   "populationChange": 0.1729,
+   "beta": 1.66,
+   "expectedLightChange": 0.287,
+   "residualLevel": 0.745,
+   "residualShare": 0.2075,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-babrujski",
+   "class": "industrial",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.4797,
+   "populationChange": -0.0507,
+   "beta": 1.6,
+   "expectedLightChange": -0.0811,
+   "residualLevel": 0.5607,
+   "residualShare": 0.0257,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "r-baranavicki",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.3334,
+   "populationChange": -0.0557,
+   "beta": 1.66,
+   "expectedLightChange": -0.0925,
+   "residualLevel": 0.4259,
+   "residualShare": -0.1112,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "r-barysauski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.5242,
+   "populationChange": -0.0938,
+   "beta": 1.66,
+   "expectedLightChange": -0.1557,
+   "residualLevel": 0.6799,
+   "residualShare": 0.1432,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "r-bialynicki",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.8643,
+   "populationChange": -0.1759,
+   "beta": 1.66,
+   "expectedLightChange": -0.292,
+   "residualLevel": 1.1563,
+   "residualShare": 0.6223,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-biarezinski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 1.0947,
+   "populationChange": -0.1049,
+   "beta": 1.66,
+   "expectedLightChange": -0.1742,
+   "residualLevel": 1.2688,
+   "residualShare": 0.7306,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-biarozauski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.1024,
+   "populationChange": -0.1254,
+   "beta": 1.66,
+   "expectedLightChange": -0.2081,
+   "residualLevel": 0.3105,
+   "residualShare": -0.2269,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "r-bierastavicki",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.9659,
+   "populationChange": -0.1505,
+   "beta": 1.66,
+   "expectedLightChange": -0.2498,
+   "residualLevel": 1.2157,
+   "residualShare": 0.6769,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-bieshankovicki",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 1.2887,
+   "populationChange": -0.2457,
+   "beta": 1.66,
+   "expectedLightChange": -0.4079,
+   "residualLevel": 1.6965,
+   "residualShare": 1.1678,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-brahinski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 1.7297,
+   "populationChange": -0.1343,
+   "beta": 1.66,
+   "expectedLightChange": -0.223,
+   "residualLevel": 1.9527,
+   "residualShare": 1.4131,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-braslauski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 1.4954,
+   "populationChange": -0.1887,
+   "beta": 1.66,
+   "expectedLightChange": -0.3133,
+   "residualLevel": 1.8087,
+   "residualShare": 1.2681,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-brescki",
+   "class": "oblast_center",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": -0.0648,
+   "populationChange": 0.0791,
+   "beta": 1.0,
+   "expectedLightChange": 0.0791,
+   "residualLevel": -0.1439,
+   "residualShare": -0.6586,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "r-buda-kashalouski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.7035,
+   "populationChange": -0.1457,
+   "beta": 1.66,
+   "expectedLightChange": -0.2419,
+   "residualLevel": 0.9454,
+   "residualShare": 0.4073,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-bychauski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 1.0669,
+   "populationChange": -0.1641,
+   "beta": 1.66,
+   "expectedLightChange": -0.2724,
+   "residualLevel": 1.3393,
+   "residualShare": 0.8017,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-chacherski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 1.5016,
+   "populationChange": -0.0661,
+   "beta": 1.66,
+   "expectedLightChange": -0.1098,
+   "residualLevel": 1.6114,
+   "residualShare": 1.081,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-chashnicki",
+   "class": "industrial",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.8109,
+   "populationChange": -0.2288,
+   "beta": 1.6,
+   "expectedLightChange": -0.366,
+   "residualLevel": 1.177,
+   "residualShare": 0.6434,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-chavuski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.9011,
+   "populationChange": -0.199,
+   "beta": 1.66,
+   "expectedLightChange": -0.3304,
+   "residualLevel": 1.2315,
+   "residualShare": 0.6951,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-chervienski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.9234,
+   "populationChange": 0.0298,
+   "beta": 1.66,
+   "expectedLightChange": 0.0494,
+   "residualLevel": 0.874,
+   "residualShare": 0.3373,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-cherykauski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 1.3552,
+   "populationChange": -0.1504,
+   "beta": 1.66,
+   "expectedLightChange": -0.2496,
+   "residualLevel": 1.6048,
+   "residualShare": 1.0754,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-chocimski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 1.7423,
+   "populationChange": -0.2347,
+   "beta": 1.66,
+   "expectedLightChange": -0.3896,
+   "residualLevel": 2.1319,
+   "residualShare": 1.5951,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-chojnicki",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.9555,
+   "populationChange": -0.1407,
+   "beta": 1.66,
+   "expectedLightChange": -0.2336,
+   "residualLevel": 1.1891,
+   "residualShare": 0.652,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-dobrushski",
+   "class": "industrial",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.8741,
+   "populationChange": -0.1117,
+   "beta": 1.6,
+   "expectedLightChange": -0.1788,
+   "residualLevel": 1.0529,
+   "residualShare": 0.5184,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-dokshycki",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.7107,
+   "populationChange": -0.2069,
+   "beta": 1.66,
+   "expectedLightChange": -0.3435,
+   "residualLevel": 1.0542,
+   "residualShare": 0.5175,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-drahichynski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.4995,
+   "populationChange": -0.1928,
+   "beta": 1.66,
+   "expectedLightChange": -0.3201,
+   "residualLevel": 0.8196,
+   "residualShare": 0.2826,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-drybinski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 1.5414,
+   "populationChange": -0.1844,
+   "beta": 1.66,
+   "expectedLightChange": -0.3061,
+   "residualLevel": 1.8475,
+   "residualShare": 1.307,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-dubrovienski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.7331,
+   "populationChange": -0.1889,
+   "beta": 1.66,
+   "expectedLightChange": -0.3135,
+   "residualLevel": 1.0466,
+   "residualShare": 0.5089,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-dziarzhynski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.7102,
+   "populationChange": 0.1354,
+   "beta": 1.66,
+   "expectedLightChange": 0.2247,
+   "residualLevel": 0.4855,
+   "residualShare": -0.0507,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "r-dziatlauski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 1.6641,
+   "populationChange": -0.2068,
+   "beta": 1.66,
+   "expectedLightChange": -0.3433,
+   "residualLevel": 2.0074,
+   "residualShare": 1.475,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-hancavicki",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.5057,
+   "populationChange": -0.2036,
+   "beta": 1.66,
+   "expectedLightChange": -0.338,
+   "residualLevel": 0.8437,
+   "residualShare": 0.3045,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-haradocki",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 1.195,
+   "populationChange": -0.1976,
+   "beta": 1.66,
+   "expectedLightChange": -0.3281,
+   "residualLevel": 1.523,
+   "residualShare": 0.9877,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-hluski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.9539,
+   "populationChange": -0.2431,
+   "beta": 1.66,
+   "expectedLightChange": -0.4035,
+   "residualLevel": 1.3574,
+   "residualShare": 0.8044,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-hlybocki",
+   "class": "industrial",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.6459,
+   "populationChange": -0.167,
+   "beta": 1.6,
+   "expectedLightChange": -0.2673,
+   "residualLevel": 0.9132,
+   "residualShare": 0.3777,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-homielski",
+   "class": "oblast_center",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.1089,
+   "populationChange": -0.0099,
+   "beta": 1.0,
+   "expectedLightChange": -0.0099,
+   "residualLevel": 0.1188,
+   "residualShare": -0.3959,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "r-horacki",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": -0.0149,
+   "populationChange": -0.1731,
+   "beta": 1.66,
+   "expectedLightChange": -0.2873,
+   "residualLevel": 0.2724,
+   "residualShare": -0.2639,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-hrodzienski",
+   "class": "oblast_center",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.1766,
+   "populationChange": 0.0291,
+   "beta": 1.0,
+   "expectedLightChange": 0.0291,
+   "residualLevel": 0.1474,
+   "residualShare": -0.3675,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "r-iujeuski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 1.1281,
+   "populationChange": -0.3111,
+   "beta": 1.66,
+   "expectedLightChange": -0.5164,
+   "residualLevel": 1.6445,
+   "residualShare": 1.1071,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-ivacevicki",
+   "class": "industrial",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.1593,
+   "populationChange": -0.1388,
+   "beta": 1.6,
+   "expectedLightChange": -0.2221,
+   "residualLevel": 0.3814,
+   "residualShare": -0.1545,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-ivanauski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": -0.0199,
+   "populationChange": -0.179,
+   "beta": 1.66,
+   "expectedLightChange": -0.2972,
+   "residualLevel": 0.2773,
+   "residualShare": -0.2604,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-jelski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.8304,
+   "populationChange": -0.1868,
+   "beta": 1.66,
+   "expectedLightChange": -0.3101,
+   "residualLevel": 1.1405,
+   "residualShare": 0.6079,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-kalinkavicki",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 1.47,
+   "populationChange": -0.1326,
+   "beta": 1.66,
+   "expectedLightChange": -0.2201,
+   "residualLevel": 1.6901,
+   "residualShare": 1.1549,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-kamianiecki",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.3954,
+   "populationChange": -0.1903,
+   "beta": 1.66,
+   "expectedLightChange": -0.316,
+   "residualLevel": 0.7113,
+   "residualShare": 0.1726,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-kapylski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.8609,
+   "populationChange": -0.156,
+   "beta": 1.66,
+   "expectedLightChange": -0.2589,
+   "residualLevel": 1.1199,
+   "residualShare": 0.5833,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-karelicki",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 1.4848,
+   "populationChange": -0.223,
+   "beta": 1.66,
+   "expectedLightChange": -0.3702,
+   "residualLevel": 1.855,
+   "residualShare": 1.3145,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-karmianski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 1.0169,
+   "populationChange": -0.1197,
+   "beta": 1.66,
+   "expectedLightChange": -0.1987,
+   "residualLevel": 1.2156,
+   "residualShare": 0.6765,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-kasciukovicki",
+   "class": "industrial",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.2802,
+   "populationChange": -0.175,
+   "beta": 1.6,
+   "expectedLightChange": -0.2801,
+   "residualLevel": 0.5603,
+   "residualShare": 0.0263,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-kirauski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 1.9367,
+   "populationChange": -0.2223,
+   "beta": 1.66,
+   "expectedLightChange": -0.369,
+   "residualLevel": 2.3058,
+   "residualShare": 1.7681,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-klecki",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 1.202,
+   "populationChange": -0.1786,
+   "beta": 1.66,
+   "expectedLightChange": -0.2964,
+   "residualLevel": 1.4984,
+   "residualShare": 0.9593,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-klichauski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 1.1027,
+   "populationChange": -0.1679,
+   "beta": 1.66,
+   "expectedLightChange": -0.2787,
+   "residualLevel": 1.3814,
+   "residualShare": 0.8496,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-klimavicki",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 1.1526,
+   "populationChange": -0.2071,
+   "beta": 1.66,
+   "expectedLightChange": -0.3438,
+   "residualLevel": 1.4964,
+   "residualShare": 0.9559,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-kobrynski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.2177,
+   "populationChange": -0.059,
+   "beta": 1.66,
+   "expectedLightChange": -0.098,
+   "residualLevel": 0.3157,
+   "residualShare": -0.2217,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "r-krasnapolski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 1.3307,
+   "populationChange": -0.1894,
+   "beta": 1.66,
+   "expectedLightChange": -0.3144,
+   "residualLevel": 1.645,
+   "residualShare": 1.1019,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-kruhlanski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 1.5846,
+   "populationChange": -0.1899,
+   "beta": 1.66,
+   "expectedLightChange": -0.3153,
+   "residualLevel": 1.8999,
+   "residualShare": 1.3588,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-krupski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.8318,
+   "populationChange": -0.1411,
+   "beta": 1.66,
+   "expectedLightChange": -0.2342,
+   "residualLevel": 1.066,
+   "residualShare": 0.5288,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-krychauski",
+   "class": "industrial",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.0047,
+   "populationChange": -0.2005,
+   "beta": 1.6,
+   "expectedLightChange": -0.3208,
+   "residualLevel": 0.3255,
+   "residualShare": -0.2091,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-lachavicki",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 1.2332,
+   "populationChange": -0.2629,
+   "beta": 1.66,
+   "expectedLightChange": -0.4365,
+   "residualLevel": 1.6697,
+   "residualShare": 1.1351,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-lahojski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 1.1074,
+   "populationChange": 0.0888,
+   "beta": 1.66,
+   "expectedLightChange": 0.1474,
+   "residualLevel": 0.9601,
+   "residualShare": 0.4233,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-lelchycki",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.9706,
+   "populationChange": -0.1114,
+   "beta": 1.66,
+   "expectedLightChange": -0.1849,
+   "residualLevel": 1.1555,
+   "residualShare": 0.6146,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-lepielski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.0696,
+   "populationChange": -0.1197,
+   "beta": 1.66,
+   "expectedLightChange": -0.1987,
+   "residualLevel": 0.2683,
+   "residualShare": -0.2681,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-lidski",
+   "class": "industrial",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.5893,
+   "populationChange": -0.0032,
+   "beta": 1.6,
+   "expectedLightChange": -0.0051,
+   "residualLevel": 0.5944,
+   "residualShare": 0.0598,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "r-lojeuski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.5409,
+   "populationChange": -0.2169,
+   "beta": 1.66,
+   "expectedLightChange": -0.3601,
+   "residualLevel": 0.901,
+   "residualShare": 0.3621,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-loznienski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.8651,
+   "populationChange": -0.1276,
+   "beta": 1.66,
+   "expectedLightChange": -0.2119,
+   "residualLevel": 1.077,
+   "residualShare": 0.5391,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-lubanski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 1.4487,
+   "populationChange": -0.1732,
+   "beta": 1.66,
+   "expectedLightChange": -0.2874,
+   "residualLevel": 1.7361,
+   "residualShare": 1.1996,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-luniniecki",
+   "class": "industrial",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.5109,
+   "populationChange": -0.1405,
+   "beta": 1.6,
+   "expectedLightChange": -0.2248,
+   "residualLevel": 0.7357,
+   "residualShare": 0.2014,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-mahilouski",
+   "class": "oblast_center",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.3449,
+   "populationChange": -0.0296,
+   "beta": 1.0,
+   "expectedLightChange": -0.0296,
+   "residualLevel": 0.3746,
+   "residualShare": -0.14,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "r-maladziechanski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.7012,
+   "populationChange": -0.0575,
+   "beta": 1.66,
+   "expectedLightChange": -0.0955,
+   "residualLevel": 0.7966,
+   "residualShare": 0.2602,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "r-malarycki",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.646,
+   "populationChange": -0.1037,
+   "beta": 1.66,
+   "expectedLightChange": -0.1721,
+   "residualLevel": 0.8181,
+   "residualShare": 0.2849,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-mastouski",
+   "class": "industrial",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.7706,
+   "populationChange": -0.2127,
+   "beta": 1.6,
+   "expectedLightChange": -0.3403,
+   "residualLevel": 1.1109,
+   "residualShare": 0.5749,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-mazyrski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.3239,
+   "populationChange": -0.0258,
+   "beta": 1.66,
+   "expectedLightChange": -0.0429,
+   "residualLevel": 0.3667,
+   "residualShare": -0.1694,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "r-miadzielski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 1.1628,
+   "populationChange": -0.1439,
+   "beta": 1.66,
+   "expectedLightChange": -0.2389,
+   "residualLevel": 1.4017,
+   "residualShare": 0.8651,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-mijorski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 1.223,
+   "populationChange": -0.2425,
+   "beta": 1.66,
+   "expectedLightChange": -0.4025,
+   "residualLevel": 1.6255,
+   "residualShare": 1.0908,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-minski",
+   "class": "minsk_agglo",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.4326,
+   "populationChange": 0.4925,
+   "beta": 1.0,
+   "expectedLightChange": 0.4925,
+   "residualLevel": -0.0599,
+   "residualShare": -0.5747,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "r-mscislauski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.2526,
+   "populationChange": -0.2594,
+   "beta": 1.66,
+   "expectedLightChange": -0.4305,
+   "residualLevel": 0.6831,
+   "residualShare": 0.1492,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-naraulanski",
+   "class": "industrial",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 1.3514,
+   "populationChange": -0.0619,
+   "beta": 1.6,
+   "expectedLightChange": -0.099,
+   "residualLevel": 1.4504,
+   "residualShare": 0.9228,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-navahrudski",
+   "class": "industrial",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 1.5789,
+   "populationChange": -0.1578,
+   "beta": 1.6,
+   "expectedLightChange": -0.2524,
+   "residualLevel": 1.8313,
+   "residualShare": 1.2956,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-niasvizhski",
+   "class": "industrial",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.6429,
+   "populationChange": -0.0398,
+   "beta": 1.6,
+   "expectedLightChange": -0.0636,
+   "residualLevel": 0.7066,
+   "residualShare": 0.1712,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-pastauski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 1.1178,
+   "populationChange": -0.1794,
+   "beta": 1.66,
+   "expectedLightChange": -0.2979,
+   "residualLevel": 1.4157,
+   "residualShare": 0.882,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-pietrykauski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 1.0474,
+   "populationChange": -0.2189,
+   "beta": 1.66,
+   "expectedLightChange": -0.3634,
+   "residualLevel": 1.4108,
+   "residualShare": 0.873,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-pinski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.4338,
+   "populationChange": -0.1062,
+   "beta": 1.66,
+   "expectedLightChange": -0.1763,
+   "residualLevel": 0.6101,
+   "residualShare": 0.0723,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "r-polacki",
+   "class": "industrial",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.565,
+   "populationChange": -0.0994,
+   "beta": 1.6,
+   "expectedLightChange": -0.159,
+   "residualLevel": 0.724,
+   "residualShare": 0.1893,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "r-pruzhanski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.4551,
+   "populationChange": -0.1908,
+   "beta": 1.66,
+   "expectedLightChange": -0.3167,
+   "residualLevel": 0.7719,
+   "residualShare": 0.2349,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-puchavicki",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.9944,
+   "populationChange": 0.0006,
+   "beta": 1.66,
+   "expectedLightChange": 0.001,
+   "residualLevel": 0.9934,
+   "residualShare": 0.4566,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "r-rahachouski",
+   "class": "industrial",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.9147,
+   "populationChange": -0.1654,
+   "beta": 1.6,
+   "expectedLightChange": -0.2647,
+   "residualLevel": 1.1794,
+   "residualShare": 0.645,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-rasonski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.6,
+   "populationChange": -0.2363,
+   "beta": 1.66,
+   "expectedLightChange": -0.3922,
+   "residualLevel": 0.9922,
+   "residualShare": 0.4549,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-rechycki",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.4382,
+   "populationChange": -0.0778,
+   "beta": 1.66,
+   "expectedLightChange": -0.1291,
+   "residualLevel": 0.5672,
+   "residualShare": 0.0302,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "r-salihorski",
+   "class": "industrial",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.6892,
+   "populationChange": -0.0658,
+   "beta": 1.6,
+   "expectedLightChange": -0.1052,
+   "residualLevel": 0.7944,
+   "residualShare": 0.2597,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "r-sharkoushchynski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 1.2483,
+   "populationChange": -0.277,
+   "beta": 1.66,
+   "expectedLightChange": -0.4597,
+   "residualLevel": 1.708,
+   "residualShare": 1.1759,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-shchuchynski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.7525,
+   "populationChange": -0.3347,
+   "beta": 1.66,
+   "expectedLightChange": -0.5556,
+   "residualLevel": 1.3081,
+   "residualShare": 0.7724,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-shklouski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.1665,
+   "populationChange": -0.2052,
+   "beta": 1.66,
+   "expectedLightChange": -0.3407,
+   "residualLevel": 0.5072,
+   "residualShare": -0.0286,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-shumilinski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.769,
+   "populationChange": -0.182,
+   "beta": 1.66,
+   "expectedLightChange": -0.3021,
+   "residualLevel": 1.0711,
+   "residualShare": 0.5361,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-siennienski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.8749,
+   "populationChange": -0.2624,
+   "beta": 1.66,
+   "expectedLightChange": -0.4356,
+   "residualLevel": 1.3105,
+   "residualShare": 0.7753,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-slauharadski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.8105,
+   "populationChange": -0.1566,
+   "beta": 1.66,
+   "expectedLightChange": -0.26,
+   "residualLevel": 1.0705,
+   "residualShare": 0.5344,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-slonimski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.2082,
+   "populationChange": -0.0832,
+   "beta": 1.66,
+   "expectedLightChange": -0.1381,
+   "residualLevel": 0.3463,
+   "residualShare": -0.1886,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "r-slucki",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 1.2377,
+   "populationChange": -0.0858,
+   "beta": 1.66,
+   "expectedLightChange": -0.1424,
+   "residualLevel": 1.3801,
+   "residualShare": 0.8437,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "r-smalavicki",
+   "class": "industrial",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.7998,
+   "populationChange": 0.1242,
+   "beta": 1.6,
+   "expectedLightChange": 0.1988,
+   "residualLevel": 0.601,
+   "residualShare": 0.0662,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "r-smarhonski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 1.0274,
+   "populationChange": -0.1097,
+   "beta": 1.66,
+   "expectedLightChange": -0.182,
+   "residualLevel": 1.2095,
+   "residualShare": 0.6729,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-staradarozhski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.9749,
+   "populationChange": -0.0968,
+   "beta": 1.66,
+   "expectedLightChange": -0.1607,
+   "residualLevel": 1.1356,
+   "residualShare": 0.5981,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-staubcouski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 1.4266,
+   "populationChange": -0.0835,
+   "beta": 1.66,
+   "expectedLightChange": -0.1386,
+   "residualLevel": 1.5652,
+   "residualShare": 1.0285,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-stolinski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.8818,
+   "populationChange": -0.1234,
+   "beta": 1.66,
+   "expectedLightChange": -0.2049,
+   "residualLevel": 1.0867,
+   "residualShare": 0.5507,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-svietlahorski",
+   "class": "industrial",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.235,
+   "populationChange": -0.1472,
+   "beta": 1.6,
+   "expectedLightChange": -0.2356,
+   "residualLevel": 0.4706,
+   "residualShare": -0.065,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "r-svislacki",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 1.3204,
+   "populationChange": -0.3438,
+   "beta": 1.66,
+   "expectedLightChange": -0.5707,
+   "residualLevel": 1.891,
+   "residualShare": 1.3547,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-talachynski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.6384,
+   "populationChange": -0.2213,
+   "beta": 1.66,
+   "expectedLightChange": -0.3674,
+   "residualLevel": 1.0057,
+   "residualShare": 0.473,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-ushacki",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 1.1073,
+   "populationChange": -0.2545,
+   "beta": 1.66,
+   "expectedLightChange": -0.4225,
+   "residualLevel": 1.5298,
+   "residualShare": 0.9885,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-uzdzienski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 1.4082,
+   "populationChange": 0.0282,
+   "beta": 1.66,
+   "expectedLightChange": 0.0469,
+   "residualLevel": 1.3613,
+   "residualShare": 0.8223,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-valozhynski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 1.5287,
+   "populationChange": -0.0635,
+   "beta": 1.66,
+   "expectedLightChange": -0.1054,
+   "residualLevel": 1.6341,
+   "residualShare": 1.0978,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-vaukavyski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.6182,
+   "populationChange": -0.1307,
+   "beta": 1.66,
+   "expectedLightChange": -0.2169,
+   "residualLevel": 0.8351,
+   "residualShare": 0.2972,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-viciebski",
+   "class": "oblast_center",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": -0.1031,
+   "populationChange": -0.0319,
+   "beta": 1.0,
+   "expectedLightChange": -0.0319,
+   "residualLevel": -0.0711,
+   "residualShare": -0.5859,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "r-vierchniadzvinski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.7449,
+   "populationChange": -0.2212,
+   "beta": 1.66,
+   "expectedLightChange": -0.3672,
+   "residualLevel": 1.112,
+   "residualShare": 0.5763,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-vietkauski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.9261,
+   "populationChange": -0.0705,
+   "beta": 1.66,
+   "expectedLightChange": -0.1171,
+   "residualLevel": 1.0432,
+   "residualShare": 0.5058,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-vilejski",
+   "class": "industrial",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 1.1841,
+   "populationChange": -0.0867,
+   "beta": 1.6,
+   "expectedLightChange": -0.1387,
+   "residualLevel": 1.3228,
+   "residualShare": 0.7893,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-voranauski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.9128,
+   "populationChange": -0.2986,
+   "beta": 1.66,
+   "expectedLightChange": -0.4957,
+   "residualLevel": 1.4086,
+   "residualShare": 0.8756,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-zelvienski",
+   "class": "rural",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 1.7352,
+   "populationChange": -0.3125,
+   "beta": 1.66,
+   "expectedLightChange": -0.5187,
+   "residualLevel": 2.2539,
+   "residualShare": 1.7164,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-zhabinkauski",
+   "class": "industrial",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": -0.1267,
+   "populationChange": -0.0146,
+   "beta": 1.6,
+   "expectedLightChange": -0.0233,
+   "residualLevel": -0.1034,
+   "residualShare": -0.6363,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "r-zhlobinski",
+   "class": "industrial",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 0.2235,
+   "populationChange": -0.048,
+   "beta": 1.6,
+   "expectedLightChange": -0.0768,
+   "residualLevel": 0.3004,
+   "residualShare": -0.2343,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "r-zhytkavicki",
+   "class": "industrial",
+   "period": [
+    2012,
+    2024
+   ],
+   "observedLightChange": 1.3477,
+   "populationChange": -0.1768,
+   "beta": 1.6,
+   "expectedLightChange": -0.2829,
+   "residualLevel": 1.6306,
+   "residualShare": 1.1014,
+   "qualityFlags": [
+    "vnl_2021_step_in_level_metric",
+    "vnl_2012_partial_first_year"
+   ],
+   "confidence": "medium"
+  }
+ ]
+}

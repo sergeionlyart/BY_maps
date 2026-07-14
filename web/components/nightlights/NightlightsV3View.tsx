@@ -18,8 +18,10 @@ import Timeline from './Timeline';
 import EventCard from './EventCard';
 import LongSpark from './LongSpark';
 import { useT, useLang } from '@/lib/i18n';
+import CasesBlock from './CasesBlock';
 import { useNlData, stopsOf, frameAsset, deltaAsset, sourceTypeOf,
-  fmtPct, type DeltaMode, type NlEvent } from '@/lib/nightlightsV3';
+  fmtPct, type DeltaMode, type NlEvent,
+  type ResearchCandidate } from '@/lib/nightlightsV3';
 
 const SCN_LABEL: Record<string, string> = {
   base: 'базовый', negative: 'негативный', optimistic: 'оптимистичный',
@@ -60,6 +62,8 @@ export default function NightlightsV3View() {
   const [abFrom, setAbFrom] = useState(2012);
   const [abDiff, setAbDiff] = useState(false);
   const [evOverride, setEvOverride] = useState<NlEvent | null>(null);
+  const [demoFuture, setDemoFuture] = useState(false);
+  const [openCase, setOpenCase] = useState<string | null>(null);
   const [cardDismissed, setCardDismissed] = useState<number | null>(null);
   const initDone = useRef(false);
 
@@ -87,6 +91,20 @@ export default function NightlightsV3View() {
     if (q.get('mode') === 'analysis') setMode('analysis');
     const l = q.get('layer');
     if (l === 'delta' || l === 'both' || l === 'abs') setLayer(l);
+    if (l === 'combined') setLayer('both');
+    if (l === 'demographic') { setLayer('abs'); setDemoFuture(true); }
+    const cs = q.get('case');
+    if (cs && data.candidates.some((c) => c.id === cs)) {
+      const cand = data.candidates.find((c) => c.id === cs)!;
+      setOpenCase(cs);
+      setSel(cand.zones[0]);
+      let best = 0, dist = 1e9;
+      st.forEach((y, i) => {
+        const d = Math.abs(y - cand.period[1]);
+        if (d < dist) { dist = d; best = i; }
+      });
+      if (!wantY) setIdx(best);
+    }
   }, [data]);
 
   // deep-link: запись
@@ -97,10 +115,12 @@ export default function NightlightsV3View() {
     url.searchParams.set('scenario', scn);
     url.searchParams.set('jumpoff', jmp);
     url.searchParams.set('mode', mode);
-    url.searchParams.set('layer', layer);
+    url.searchParams.set('layer', demoFuture ? 'demographic' : layer);
     if (sel) url.searchParams.set('sel', sel); else url.searchParams.delete('sel');
+    if (openCase) url.searchParams.set('case', openCase);
+    else url.searchParams.delete('case');
     window.history.replaceState(null, '', url);
-  }, [data, year, scn, jmp, mode, layer, sel]);
+  }, [data, year, scn, jmp, mode, layer, sel, demoFuture, openCase]);
 
   const evByYear = useMemo(() => {
     const m: Record<number, NlEvent[]> = {};
@@ -145,11 +165,12 @@ export default function NightlightsV3View() {
       const i = idx + d;
       if (i < 0 || i >= stops.length || i === idx) continue;
       const y = stops[i];
-      new Image().src = frameAsset(y, data.night, scn, jmp);
+      new Image().src = frameAsset(y, data.night, scn, jmp,
+        demoFuture && y > 2024);
       const da = deltaAsset(y, 'prev', data.night, scn, jmp);
       if (da && effLayer !== 'abs') new Image().src = da;
     }
-  }, [data, idx, stops, scn, jmp, effLayer]);
+  }, [data, idx, stops, scn, jmp, effLayer, demoFuture]);
 
   // сброс перекрытий при смене года
   useEffect(() => { setEvOverride(null); setCardDismissed(null); }, [idx]);
@@ -170,12 +191,16 @@ export default function NightlightsV3View() {
   for (const r of night.rows) rowById[r.id] = r;
   const rec = sel ? rowById[sel] : null;
 
-  const absSrc = frameAsset(year, night, scn, jmp);
+  const absSrc = frameAsset(year, night, scn, jmp, demoFuture && isModel);
+  const activeCase: ResearchCandidate | null =
+    data.candidates.find((c) => c.id === openCase) ?? null;
   const deltaSrc = deltaAsset(year, effDeltaBase, night, scn, jmp);
   const srcLabel = manifest.sourceTypeLabels[sourceTypeOf(year)]?.[lang]
     ?? sourceTypeOf(year);
   const modelBadge = isModel
-    ? `${t('МОДЕЛЬ')} · ${t(SCN_LABEL[scn])} · ${t('старт')}: ${t(JMP_LABEL[jmp])}`
+    ? (demoFuture
+      ? `${t('УСИЛЕННАЯ ВИЗУАЛИЗАЦИЯ')} · ${t('не прогноз радианса')} · ${t(SCN_LABEL[scn])}`
+      : `${t('МОДЕЛЬ')} · ${t(SCN_LABEL[scn])} · ${t('старт')}: ${t(JMP_LABEL[jmp])}`)
     : null;
 
   const abSrcA = mode === 'analysis' && ab
@@ -289,7 +314,24 @@ export default function NightlightsV3View() {
           reducedMotion={reducedMotion}
           abSrc={abSrcA} abLabel={String(abFrom)} curLabel={String(year)}
           dirGlyphs={!!regionalEvent} />
-        {showCard && activeEvent && (
+        {activeCase && (
+          <div className="nlv3-card" role="status">
+            <button className="nlv3-card-close" onClick={() => setOpenCase(null)}
+              aria-label={t('закрыть')}>×</button>
+            <div className="nlv3-card-title">
+              {lang === 'be' ? activeCase.titleBe : activeCase.titleRu}
+              {' · '}{t('кандидат')}
+            </div>
+            <div className="nlv3-card-body">
+              <div>{activeCase.direction === 'light_above_statistics'
+                ? t('свет растёт сильнее статистики населения')
+                : t('свет отстаёт от статистики населения')}
+                {' · '}{activeCase.period[0]}–{activeCase.period[1]}</div>
+              <div className="hint">{t(activeCase.evidenceLevel)}</div>
+            </div>
+          </div>
+        )}
+        {!activeCase && showCard && activeEvent && (
           <EventCard ev={activeEvent} names={names} annotations={annotations}
             onClose={() => { setEvOverride(null); setCardDismissed(year); }} />
         )}
@@ -317,6 +359,20 @@ export default function NightlightsV3View() {
           </span>
         )}
       </div>
+      {isModel && (
+        <div className="controls nlv3-demo-toggle">
+          <span className="hint">{t('Слой будущего:')}</span>
+          <div className="seg">
+            <button className={!demoFuture ? 'on' : ''}
+              onClick={() => setDemoFuture(false)}>{t('Научная шкала')}</button>
+            <button className={demoFuture ? 'on' : ''}
+              onClick={() => setDemoFuture(true)}>{t('Усилить демографическую концентрацию')}</button>
+          </div>
+          {demoFuture && (
+            <span className="forecast-flag">{t('демонстрационный слой')}</span>
+          )}
+        </div>
+      )}
       {isModel && (
         <p className="hint nlv3-model-note">
           {t('Модельная визуализация на основе демографического сценария и пространственной структуры освещения базового года.')}
@@ -373,6 +429,15 @@ export default function NightlightsV3View() {
           </p>
         </div>
       </div>
+
+      <CasesBlock candidates={data.candidates} externalChecks={data.externalChecks} onOpen={(c) => {
+        setOpenCase(c.id);
+        setSel(c.zones[0]);
+        const i = stops.reduce((best, y, ii) =>
+          Math.abs(y - c.period[1]) < Math.abs(stops[best] - c.period[1]) ? ii : best, 0);
+        setIdx(i);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }} />
 
       <p className="src-note">
         {t('Наблюдения: DMSP-OLS stable lights (калибровка Li et al. 2020, версия 1992–2024) и годовые композиты EOG VIIRS VNL v2.1 (зеркало OpenGeoHub); единая шкала — калибровка-«мост» через перекрытие продуктов simVIIRS/VNL 2014–2024, стык проверен out-of-sample, главная метрика — доля района в национальном свете. Будущее (2030–2075) — модель: светимость следует за прогнозом населения проекта (v2026.4) при прочих равных; санкции, энергетика и технологии освещения не моделируются. Свет ≠ население: расхождения — маркер для разбора, а не оценка численности. Полные оговорки — в методблоке и LIMITATIONS.md пакета.')}

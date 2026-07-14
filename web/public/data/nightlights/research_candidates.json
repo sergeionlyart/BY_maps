@@ -1,0 +1,141 @@
+{
+ "note": "Кандидаты-расхождения: сигналы для дополнительного исследования, НЕ причинные выводы. Числа в production-рилсе - только при releaseApproved=true (гейт: пересчёт на production-данных). Локальная диагностика - только VIIRS 2012-2024.",
+ "recomputed": "production data, etl.nightlights_divergence",
+ "candidates": [
+  {
+   "id": "minsk-agglomeration",
+   "titleRu": "Минская агломерация",
+   "titleBe": "Мінская агламерацыя",
+   "status": "candidate",
+   "direction": "light_above_statistics",
+   "directionConfirmedByRecompute": true,
+   "period": [
+    2012,
+    2024
+   ],
+   "zones": [
+    "BY-HM",
+    "r-minski"
+   ],
+   "zonesNote": "агломерация = Минск (BY-HM) + Минский район (r-minski); административный Минск отдельно не интерпретируется",
+   "metrics": {
+    "metric": "level",
+    "lightChangeLog": 0.3711,
+    "populationChangeLog": 0.0995,
+    "betaUsed": 1.0,
+    "expectedLightChangeLog": 0.0995,
+    "lightResidual": 0.2717,
+    "lightResidualPct": 31.2,
+    "populationChange": 10.5,
+    "lightChange": 44.9,
+    "altMetric": "share",
+    "altResidual": -0.2431,
+    "altResidualPct": -21.6,
+    "industrialChange": null
+   },
+   "hypotheses": [
+    "commuting_mobility",
+    "services_logistics",
+    "suburbanization_undercount",
+    "higher_lighting_per_capita",
+    "built_area_expansion"
+   ],
+   "checkRu": "маятниковая мобильность, ввод жилья, занятость по месту работы, дороги и развязки, площадь застройки, энергопотребление, услуги и логистика; свет и площадь следа раздельно",
+   "qualityFlags": [
+    "vnl_2012_partial_first_year",
+    "vnl_2021_step_in_period"
+   ],
+   "evidenceLevel": "данные совместимы с гипотезой; причина не установлена",
+   "releaseApproved": true
+  },
+  {
+   "id": "smolevichi-zhodino",
+   "titleRu": "Смолевичи–Жодино",
+   "titleBe": "Смалявічы–Жодзіна",
+   "status": "candidate",
+   "direction": "light_below_statistics",
+   "directionConfirmedByRecompute": true,
+   "period": [
+    2019,
+    2024
+   ],
+   "zones": [
+    "r-smalavicki"
+   ],
+   "zonesNote": "Смолевичский район включает Жодино (город областного подчинения) и БелАЗ - подписывать географически как зону Смолевичи-Жодино",
+   "metrics": {
+    "metric": "share",
+    "lightChangeLog": -0.2309,
+    "populationChangeLog": 0.055,
+    "betaUsed": 1.6,
+    "expectedLightChangeLog": 0.088,
+    "lightResidual": -0.3189,
+    "lightResidualPct": -27.3,
+    "populationChange": 5.7,
+    "lightChange": -20.6,
+    "altMetric": "level",
+    "altResidual": 0.0833,
+    "altResidualPct": 8.7,
+    "industrialChange": null
+   },
+   "hypotheses": [
+    "industrial_load_change",
+    "lighting_efficiency",
+    "population_measurement_lag",
+    "industrial_site_lighting_change",
+    "commuting_without_residence"
+   ],
+   "checkRu": "физические индексы производства, выпуск/экспорт БелАЗ, занятость и смены, энергопотребление, грузоперевозки, вакансии/зарплата, миграция, программы замены освещения; свет отдельно для жилой зоны, завода, дорог",
+   "qualityFlags": [
+    "vnl_2021_step_in_period"
+   ],
+   "evidenceLevel": "данные совместимы с гипотезой; причина не установлена",
+   "releaseApproved": true
+  },
+  {
+   "id": "astravets",
+   "titleRu": "Островец",
+   "titleBe": "Астравец",
+   "status": "candidate",
+   "direction": "light_above_statistics",
+   "directionConfirmedByRecompute": true,
+   "period": [
+    2012,
+    2024
+   ],
+   "zones": [
+    "r-astraviecki"
+   ],
+   "zonesNote": "Островецкий район (строительство и ввод БелАЭС)",
+   "metrics": {
+    "metric": "share",
+    "lightChangeLog": 0.5497,
+    "populationChangeLog": 0.2061,
+    "betaUsed": 1.66,
+    "expectedLightChangeLog": 0.3421,
+    "lightResidual": 0.2075,
+    "lightResidualPct": 23.1,
+    "populationChange": 22.9,
+    "lightChange": 73.3,
+    "altMetric": "level",
+    "altResidual": 0.745,
+    "altResidualPct": 110.6,
+    "industrialChange": null
+   },
+   "hypotheses": [
+    "large_infrastructure",
+    "construction_lighting",
+    "roads_engineering",
+    "services_housing_growth",
+    "lit_area_expansion_without_population"
+   ],
+   "checkRu": "хронология строительства/ввода БелАЭС, свет площадки отдельно от населённых пунктов, персонал (включая временный), ввод жилья, занятость, энергопотребление, дороги; устойчивость света после строительной фазы",
+   "qualityFlags": [
+    "vnl_2012_partial_first_year",
+    "vnl_2021_step_in_period"
+   ],
+   "evidenceLevel": "данные совместимы с гипотезой; причина не установлена",
+   "releaseApproved": true
+  }
+ ]
+}

@@ -4765,5 +4765,555 @@
     "crossSource": false
    }
   ]
+ },
+ "demoLayer": {
+  "note": "ДЕМОНСТРАЦИОННЫЙ слой demographic_concentration (рилс + экспериментальный режим сайта): 4 класса света с раздельным масштабированием интенсивности I=(P/P0)^beta и ПЛОЩАДИ следа A=(P/P0)^eta (доля самых тусклых пикселей класса в зоне гаснет) - периферия теряет площадь, агломерации остаются очагами. НЕ научный прогноз радианса - каждый кадр несёт впечатанную маркировку. Промышленные точечные объекты (economic_infrastructure_residual) не гасятся автоматически: отдельного прогноза нет -> not_modeled, остаются без изменений",
+  "marking": "УСИЛЕННАЯ ВИЗУАЛИЗАЦИЯ ДЕМОГРАФИЧЕСКОЙ КОНЦЕНТРАЦИИ · не прогноз спутникового радианса",
+  "classes": {
+   "core": {
+    "minNw": 15.0,
+    "beta": 1.0,
+    "eta": 0.0
+   },
+   "halo": {
+    "minNw": 3.0,
+    "maxNw": 15.0,
+    "nearCorePx": 5,
+    "beta": 1.3,
+    "eta": 0.6
+   },
+   "settlement": {
+    "minNw": 3.0,
+    "maxNw": 15.0,
+    "beta": 1.6,
+    "eta": 1.4
+   },
+   "infra": {
+    "minNw": 1.0,
+    "maxNw": 3.0,
+    "beta": 0.3,
+    "eta": 0.4
+   }
+  },
+  "industrialSitesNotModeled": [
+   {
+    "name": "теплицы/ТЭЦ юго-восток Минского района",
+    "lon": 27.865,
+    "lat": 53.835,
+    "radius_km": 1.5
+   },
+   {
+    "name": "теплицы Ждановичи (Минский район)",
+    "lon": 27.398,
+    "lat": 53.853,
+    "radius_km": 1.5
+   },
+   {
+    "name": "теплицы Рудаково (Витебский район)",
+    "lon": 30.173,
+    "lat": 55.139,
+    "radius_km": 1.5
+   },
+   {
+    "name": "промзона Орши",
+    "lon": 30.352,
+    "lat": 54.512,
+    "radius_km": 1.2
+   },
+   {
+    "name": "БМЗ (Жлобин)",
+    "lon": 29.992,
+    "lat": 52.847,
+    "radius_km": 1.5
+   },
+   {
+    "name": "агрокомплекс (Дзержинский район)",
+    "lon": 27.152,
+    "lat": 53.651,
+    "radius_km": 1.2
+   }
+  ],
+  "frames": [
+   {
+    "year": 2030,
+    "scenario": "base",
+    "jumpoff": "official",
+    "asset": "/data/nightlights/visual/demographic/2030_base_official.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "e5ae89dbcc20abde580ee2a20b043102ae5d10c27cd702392a29efe26e92f846"
+   },
+   {
+    "year": 2035,
+    "scenario": "base",
+    "jumpoff": "official",
+    "asset": "/data/nightlights/visual/demographic/2035_base_official.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "aef98ccdf971651fd42b414ae0a5155b656325eb8757606d6b8d29cba690d74e"
+   },
+   {
+    "year": 2040,
+    "scenario": "base",
+    "jumpoff": "official",
+    "asset": "/data/nightlights/visual/demographic/2040_base_official.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "47f722e25e598a7663fcdae91ad46be2e91d95ac5b8c6542c51b75f8209b90bf"
+   },
+   {
+    "year": 2045,
+    "scenario": "base",
+    "jumpoff": "official",
+    "asset": "/data/nightlights/visual/demographic/2045_base_official.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "7da201b2bf41b07e6288155a57abb18b85b8c3bbaa391aacfbdcd04dc09d87dd"
+   },
+   {
+    "year": 2050,
+    "scenario": "base",
+    "jumpoff": "official",
+    "asset": "/data/nightlights/visual/demographic/2050_base_official.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "22ed8f788567fa94a2bf8c45c7df491cd062b70d2022040c6aceafdb27c39fb0"
+   },
+   {
+    "year": 2055,
+    "scenario": "base",
+    "jumpoff": "official",
+    "asset": "/data/nightlights/visual/demographic/2055_base_official.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "aa83b54d19c9ebf94c3c188a15aef9137788c1c3955e8f71943960902984b2ae"
+   },
+   {
+    "year": 2060,
+    "scenario": "base",
+    "jumpoff": "official",
+    "asset": "/data/nightlights/visual/demographic/2060_base_official.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "3ba522141da63bf118d9420e1fdeefc32ab84c1a6fcbb35afe79097c5255f49d"
+   },
+   {
+    "year": 2065,
+    "scenario": "base",
+    "jumpoff": "official",
+    "asset": "/data/nightlights/visual/demographic/2065_base_official.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "6be0c6271888c7b7a6c99c7176595137acd79632028891043b4e525f49aa4fcb"
+   },
+   {
+    "year": 2070,
+    "scenario": "base",
+    "jumpoff": "official",
+    "asset": "/data/nightlights/visual/demographic/2070_base_official.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "08771335c21561565fec1e5c4e1abe0734dd7136de62328b36f134bb998173b6"
+   },
+   {
+    "year": 2075,
+    "scenario": "base",
+    "jumpoff": "official",
+    "asset": "/data/nightlights/visual/demographic/2075_base_official.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "1f3808b90f79da48b57179fe3f386f29afdb92ad508d3dc78f86f6b1abbd8b73"
+   },
+   {
+    "year": 2030,
+    "scenario": "negative",
+    "jumpoff": "official",
+    "asset": "/data/nightlights/visual/demographic/2030_negative_official.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "d683baa46d9ef181d04475e78f0755c6975af9f4b26a9f2a9aa66688efe81f05"
+   },
+   {
+    "year": 2035,
+    "scenario": "negative",
+    "jumpoff": "official",
+    "asset": "/data/nightlights/visual/demographic/2035_negative_official.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "16f04bffeef09a0c8c545bb380954dd3b82bbda9f9917d3dfb88a9210b1867f3"
+   },
+   {
+    "year": 2040,
+    "scenario": "negative",
+    "jumpoff": "official",
+    "asset": "/data/nightlights/visual/demographic/2040_negative_official.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "0e66eb3644c9d7efb0f0874e718825a8ecd4fcfa74ec02fe301c38927bd75af2"
+   },
+   {
+    "year": 2045,
+    "scenario": "negative",
+    "jumpoff": "official",
+    "asset": "/data/nightlights/visual/demographic/2045_negative_official.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "99d7d18a42acff58a8c76c22343a046987f7ac0c129faf285eda09f1b870c0cd"
+   },
+   {
+    "year": 2050,
+    "scenario": "negative",
+    "jumpoff": "official",
+    "asset": "/data/nightlights/visual/demographic/2050_negative_official.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "2795a5a4705a72b0b13e01d9e438305547bc8d10fbcfae63d04da24b5ef589aa"
+   },
+   {
+    "year": 2055,
+    "scenario": "negative",
+    "jumpoff": "official",
+    "asset": "/data/nightlights/visual/demographic/2055_negative_official.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "994a83631dcb045967399bb33103a9a84734e868fd4cb11b3e052cc8273693e4"
+   },
+   {
+    "year": 2060,
+    "scenario": "negative",
+    "jumpoff": "official",
+    "asset": "/data/nightlights/visual/demographic/2060_negative_official.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "2dd724c3bfec9024012ce01699feead743eefcbaa03af4758e59894d97ee7f15"
+   },
+   {
+    "year": 2065,
+    "scenario": "negative",
+    "jumpoff": "official",
+    "asset": "/data/nightlights/visual/demographic/2065_negative_official.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "381a4b8b3ec2e1786d59475f2c1419158740b9a0327fb34548f48bf7ea896fd7"
+   },
+   {
+    "year": 2070,
+    "scenario": "negative",
+    "jumpoff": "official",
+    "asset": "/data/nightlights/visual/demographic/2070_negative_official.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "fc0f1999d73f14ec77d938e99b95743b60b13bdbf9ef9f74d298e879e28ae202"
+   },
+   {
+    "year": 2075,
+    "scenario": "negative",
+    "jumpoff": "official",
+    "asset": "/data/nightlights/visual/demographic/2075_negative_official.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "810afc4491a9cae7698629f664c91fcebf3dba2d8060e1796ed94fe9023d719f"
+   },
+   {
+    "year": 2030,
+    "scenario": "optimistic",
+    "jumpoff": "official",
+    "asset": "/data/nightlights/visual/demographic/2030_optimistic_official.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "82e95362dd93f694010b1823b8a95e0b56e8d54f27b1dc31bd61cee42afaa9f7"
+   },
+   {
+    "year": 2035,
+    "scenario": "optimistic",
+    "jumpoff": "official",
+    "asset": "/data/nightlights/visual/demographic/2035_optimistic_official.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "ebcd5168219213d57427dcd064c611d624021ba97a4017e218cc1c5bda721e93"
+   },
+   {
+    "year": 2040,
+    "scenario": "optimistic",
+    "jumpoff": "official",
+    "asset": "/data/nightlights/visual/demographic/2040_optimistic_official.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "84ee7fac93b1e8ae0ec31abc57501eee389cda2f62e8ea3d3b76c1e7fdd5a81e"
+   },
+   {
+    "year": 2045,
+    "scenario": "optimistic",
+    "jumpoff": "official",
+    "asset": "/data/nightlights/visual/demographic/2045_optimistic_official.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "690ac9d03b5ab8b79ef2ed57ae9c0ff896c6cb7ab2abe62cce6c9df4fc345210"
+   },
+   {
+    "year": 2050,
+    "scenario": "optimistic",
+    "jumpoff": "official",
+    "asset": "/data/nightlights/visual/demographic/2050_optimistic_official.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "b74d15a0f1731748392cec6c161a6509ff0f6f5d0c439976a4ace51e08db3ad0"
+   },
+   {
+    "year": 2055,
+    "scenario": "optimistic",
+    "jumpoff": "official",
+    "asset": "/data/nightlights/visual/demographic/2055_optimistic_official.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "dc8ce514c5cd8b74b1ea931de27b93db188a5c1a0cd875c68993f60906700aa9"
+   },
+   {
+    "year": 2060,
+    "scenario": "optimistic",
+    "jumpoff": "official",
+    "asset": "/data/nightlights/visual/demographic/2060_optimistic_official.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "2256251f194a0de7d43d436d1694071cff1617b26afb2a61453a5372e69a51db"
+   },
+   {
+    "year": 2065,
+    "scenario": "optimistic",
+    "jumpoff": "official",
+    "asset": "/data/nightlights/visual/demographic/2065_optimistic_official.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "50c309b1255a338d942b4982ac079f8f2105d6343028f7a706cf644706b146b0"
+   },
+   {
+    "year": 2070,
+    "scenario": "optimistic",
+    "jumpoff": "official",
+    "asset": "/data/nightlights/visual/demographic/2070_optimistic_official.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "f01d33f7daa9a8b5fa59dd40a8fb33e5b9ae815004d3c6737519294ba437a32c"
+   },
+   {
+    "year": 2075,
+    "scenario": "optimistic",
+    "jumpoff": "official",
+    "asset": "/data/nightlights/visual/demographic/2075_optimistic_official.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "83b24ba791d40079b9b889d0f1f177f489a10f402883df19cbf26b3de93ffd13"
+   },
+   {
+    "year": 2030,
+    "scenario": "base",
+    "jumpoff": "adjusted",
+    "asset": "/data/nightlights/visual/demographic/2030_base_adjusted.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "f3321d5dff3259c9af8130c91349de4f9cbd0a1b71b80aaec94b2cc2e1a911a4"
+   },
+   {
+    "year": 2035,
+    "scenario": "base",
+    "jumpoff": "adjusted",
+    "asset": "/data/nightlights/visual/demographic/2035_base_adjusted.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "6cd8a4c552950ccc2e6332a38832a582bdd059681929ae3b71f3572304bb24ca"
+   },
+   {
+    "year": 2040,
+    "scenario": "base",
+    "jumpoff": "adjusted",
+    "asset": "/data/nightlights/visual/demographic/2040_base_adjusted.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "ba93fbd2bd633f61bb10332a0c1a096c1389f46996f16b93b57746776f13ace2"
+   },
+   {
+    "year": 2045,
+    "scenario": "base",
+    "jumpoff": "adjusted",
+    "asset": "/data/nightlights/visual/demographic/2045_base_adjusted.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "69442e73b510b62bea96415077e0ec7bd27f2941e55ef026b30ade1807326f50"
+   },
+   {
+    "year": 2050,
+    "scenario": "base",
+    "jumpoff": "adjusted",
+    "asset": "/data/nightlights/visual/demographic/2050_base_adjusted.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "a69d3daf0ba0630c8f0c2aaafba7624f92d54eff340914764adc87b8a839abf2"
+   },
+   {
+    "year": 2055,
+    "scenario": "base",
+    "jumpoff": "adjusted",
+    "asset": "/data/nightlights/visual/demographic/2055_base_adjusted.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "9e95a18b4424dbe508800565f6aa645d1a279faa5bedcdd38d0dcee43e310fb3"
+   },
+   {
+    "year": 2060,
+    "scenario": "base",
+    "jumpoff": "adjusted",
+    "asset": "/data/nightlights/visual/demographic/2060_base_adjusted.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "8c9c50000fae14fe605ed64a7994d195e6f82867b894950a6074d0c1b369348e"
+   },
+   {
+    "year": 2065,
+    "scenario": "base",
+    "jumpoff": "adjusted",
+    "asset": "/data/nightlights/visual/demographic/2065_base_adjusted.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "8b2744fb8b571f3b1d5ddd43848474562b3d10276faa3096207bc3a949891845"
+   },
+   {
+    "year": 2070,
+    "scenario": "base",
+    "jumpoff": "adjusted",
+    "asset": "/data/nightlights/visual/demographic/2070_base_adjusted.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "c2a22989989fb275a387e3990c0afb481b2a13216b76eb140ea7dde0ab2ac092"
+   },
+   {
+    "year": 2075,
+    "scenario": "base",
+    "jumpoff": "adjusted",
+    "asset": "/data/nightlights/visual/demographic/2075_base_adjusted.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "154e084415258d78079124c3a20abbb95d935d010806962744a7fab1091afa57"
+   },
+   {
+    "year": 2030,
+    "scenario": "negative",
+    "jumpoff": "adjusted",
+    "asset": "/data/nightlights/visual/demographic/2030_negative_adjusted.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "e8a249f7ede53cf6d6610478dae8f1655a93939cdcf8d37fa38102e5873c2cab"
+   },
+   {
+    "year": 2035,
+    "scenario": "negative",
+    "jumpoff": "adjusted",
+    "asset": "/data/nightlights/visual/demographic/2035_negative_adjusted.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "3e1b9221a6446cb163a0299865dbc5107625da38e2b463a13450e87614b3895b"
+   },
+   {
+    "year": 2040,
+    "scenario": "negative",
+    "jumpoff": "adjusted",
+    "asset": "/data/nightlights/visual/demographic/2040_negative_adjusted.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "28fae3669a5605f03ae5d738238698331ec5e361d6d234041b9ba17d850fb19e"
+   },
+   {
+    "year": 2045,
+    "scenario": "negative",
+    "jumpoff": "adjusted",
+    "asset": "/data/nightlights/visual/demographic/2045_negative_adjusted.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "81b987876e484dbc6b8edbdab401387ba9f2a22c839926102605df27c58a6b20"
+   },
+   {
+    "year": 2050,
+    "scenario": "negative",
+    "jumpoff": "adjusted",
+    "asset": "/data/nightlights/visual/demographic/2050_negative_adjusted.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "b14215ce1902c10ac7d18347456a1b3b66aa32964c5d9be2ad1e984da0c0ed54"
+   },
+   {
+    "year": 2055,
+    "scenario": "negative",
+    "jumpoff": "adjusted",
+    "asset": "/data/nightlights/visual/demographic/2055_negative_adjusted.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "303d0b4df61a95be1786c0340c6b2c137c380e6cbae3e2ec50f0bf2c056a9bd7"
+   },
+   {
+    "year": 2060,
+    "scenario": "negative",
+    "jumpoff": "adjusted",
+    "asset": "/data/nightlights/visual/demographic/2060_negative_adjusted.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "e88ef3de1ce09fad87801e03308184b8a3ca62dcf0336c41e4128c0458e1d6fd"
+   },
+   {
+    "year": 2065,
+    "scenario": "negative",
+    "jumpoff": "adjusted",
+    "asset": "/data/nightlights/visual/demographic/2065_negative_adjusted.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "61ddc6cfa13744b8a8ff48196694fe536da3ec114f82f511b2e838eda85feb5f"
+   },
+   {
+    "year": 2070,
+    "scenario": "negative",
+    "jumpoff": "adjusted",
+    "asset": "/data/nightlights/visual/demographic/2070_negative_adjusted.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "908afef9ccbf3582d92e8ba12fb3fd1456c9bda74d0a250f564214b38f34a66b"
+   },
+   {
+    "year": 2075,
+    "scenario": "negative",
+    "jumpoff": "adjusted",
+    "asset": "/data/nightlights/visual/demographic/2075_negative_adjusted.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "7f76057a46a642e1b271a0e6f57bf66e148ccdb67a0642474b4b5ba2e7307d0f"
+   },
+   {
+    "year": 2030,
+    "scenario": "optimistic",
+    "jumpoff": "adjusted",
+    "asset": "/data/nightlights/visual/demographic/2030_optimistic_adjusted.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "2409f3fa4877499787d1ad50adacf33eaad4d92a4d0b68c33e28999fd174eea7"
+   },
+   {
+    "year": 2035,
+    "scenario": "optimistic",
+    "jumpoff": "adjusted",
+    "asset": "/data/nightlights/visual/demographic/2035_optimistic_adjusted.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "316098e56c52d64c76aaee3112ad11ebfb7f39276de659a74125aafda9823876"
+   },
+   {
+    "year": 2040,
+    "scenario": "optimistic",
+    "jumpoff": "adjusted",
+    "asset": "/data/nightlights/visual/demographic/2040_optimistic_adjusted.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "5af2d1c304af4545fdb01bb29c8c346ff3efc590af8047c218c00f8e1cea2d0d"
+   },
+   {
+    "year": 2045,
+    "scenario": "optimistic",
+    "jumpoff": "adjusted",
+    "asset": "/data/nightlights/visual/demographic/2045_optimistic_adjusted.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "bab243191cacf1c3d82032f36ad270f342dfa8a324be5190e64288381345de16"
+   },
+   {
+    "year": 2050,
+    "scenario": "optimistic",
+    "jumpoff": "adjusted",
+    "asset": "/data/nightlights/visual/demographic/2050_optimistic_adjusted.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "32b047517053f8074394dcc33c6f278f7d6690f24ff3b973193d2461ebe3bab5"
+   },
+   {
+    "year": 2055,
+    "scenario": "optimistic",
+    "jumpoff": "adjusted",
+    "asset": "/data/nightlights/visual/demographic/2055_optimistic_adjusted.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "53812f031a16646569c3a9e3c46ef727450d7eb4a0d36e0bfef523f4485f6a62"
+   },
+   {
+    "year": 2060,
+    "scenario": "optimistic",
+    "jumpoff": "adjusted",
+    "asset": "/data/nightlights/visual/demographic/2060_optimistic_adjusted.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "10578aa70294fe8b4db646a1912bca327cb3fad2063416bac1a42e871737a71d"
+   },
+   {
+    "year": 2065,
+    "scenario": "optimistic",
+    "jumpoff": "adjusted",
+    "asset": "/data/nightlights/visual/demographic/2065_optimistic_adjusted.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "f6b95f6e7ba76fe0b5c4306dc227adf8adb2e8100ca40290ac266bae973440bb"
+   },
+   {
+    "year": 2070,
+    "scenario": "optimistic",
+    "jumpoff": "adjusted",
+    "asset": "/data/nightlights/visual/demographic/2070_optimistic_adjusted.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "6d99fdd3ef9a1a0428c5f1df4c1c3a67fcdb4e905fc637230bd7f9f8131e8ad2"
+   },
+   {
+    "year": 2075,
+    "scenario": "optimistic",
+    "jumpoff": "adjusted",
+    "asset": "/data/nightlights/visual/demographic/2075_optimistic_adjusted.png",
+    "sourceType": "demographic_concentration_demo",
+    "sha256": "dec0e069581ea4d91c03097221c0602f2376bcd8ede4e84357909dd3ebd19982"
+   }
+  ]
  }
 }

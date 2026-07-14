@@ -1,0 +1,9 @@
+{
+ "music_title": "Night Radio Signal (Nightlights Reel v3)",
+ "music_author": "BY Maps project (программная генерация, generate_music.py, seed 20260714)",
+ "license_type": "CC BY 4.0 (произведение проекта)",
+ "license_file": "LICENSE.md (репозиторий)",
+ "source": "video/nightlights-reel/generate_music.py",
+ "date_acquired": "2026-07-14",
+ "allowed_platforms": "все (включая коммерческие соцсети)"
+}

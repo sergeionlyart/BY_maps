@@ -1430,3 +1430,51 @@ a.service-card:hover .sc-cta { text-decoration: underline; }
   .nlv3-analysis-controls .seg button { padding: 6px 8px; font-size: 12.5px; }
 }
 .grid-2 > .chart-block { min-width: 0; }
+
+/* кейсы «Что здесь не сходится» */
+.nlv3-cases { margin-top: 14px; }
+.nlv3-cases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 12px;
+  margin: 8px 0;
+}
+.nlv3-case-card {
+  border: 1px solid var(--grid);
+  border-radius: 10px;
+  padding: 12px;
+  background: var(--surface-1);
+  min-width: 0;
+}
+.nlv3-case-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+}
+.nlv3-case-status {
+  font-size: 11.5px;
+  color: var(--accent-2);
+  border: 1px dashed var(--accent-2);
+  border-radius: 5px;
+  padding: 1px 7px;
+  white-space: nowrap;
+}
+.nlv3-case-line { font-size: 13.5px; margin: 6px 0 2px; }
+.nlv3-case-metric { font-size: 13px; margin: 2px 0; }
+.nlv3-case-metric .neg { color: var(--neg); }
+.nlv3-case-metric .pos { color: var(--pos); }
+.nlv3-case-hyp, .nlv3-case-check { margin: 4px 0; }
+.nlv3-case-actions { display: flex; gap: 8px; margin-top: 8px; }
+.nlv3-demo-toggle { margin-top: 6px; }
+
+/* внешняя проверка кейсов (R4) */
+.nlv3-case-ext { margin-top: 8px; border-top: 1px dashed var(--line); padding-top: 6px; }
+.nlv3-case-ext-list { list-style: none; margin: 4px 0; padding: 0; display: grid; gap: 3px; }
+.nlv3-case-ext-list li { font-size: 12.5px; line-height: 1.45; color: var(--ink-2); }
+.nlv3-ext-verdict { font-weight: 600; padding: 0 6px; border-radius: 8px; font-size: 11.5px; }
+.nlv3-ext-consistent .nlv3-ext-verdict { color: var(--pos); background: color-mix(in srgb, var(--pos) 12%, transparent); }
+.nlv3-ext-inconsistent .nlv3-ext-verdict { color: var(--neg); background: color-mix(in srgb, var(--neg) 12%, transparent); }
+.nlv3-ext-context .nlv3-ext-verdict { color: var(--muted); background: color-mix(in srgb, var(--muted) 12%, transparent); }
+.nlv3-ext-unit { color: var(--muted); }
+.nlv3-case-ext-note { margin-top: 4px; }

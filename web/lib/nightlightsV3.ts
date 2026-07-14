@@ -94,11 +94,33 @@ export interface GeoFeature {
   geometry: { type: 'Polygon' | 'MultiPolygon'; coordinates: number[][][] | number[][][][] };
 }
 
+export interface ExternalCheck {
+  metric: string;
+  zone: string;
+  value: number | null;
+  unit: string;
+  detail?: string;
+  note?: string;
+  source: string;
+  verdict: 'consistent' | 'inconsistent' | 'context';
+  rule?: string;
+}
+
+export interface ExternalCase {
+  caseId: string;
+  period: [number, number];
+  lightResidualPct: number;
+  direction: string;
+  checks: ExternalCheck[];
+}
+
 export interface NlData {
   night: Analytic;
   manifest: Manifest;
   events: EventsFile;
   annotations: Annotations;
+  candidates: ResearchCandidate[];
+  externalChecks: Record<string, ExternalCase>;
   geo: GeoFeature[];
   names: Record<string, string>;
 }
@@ -112,10 +134,12 @@ export function useNlData(lang: string): NlData | null {
       fetch('/data/nightlights/nightlights_manifest.json').then((r) => r.json()),
       fetch('/data/nightlights/nightlights_events.json').then((r) => r.json()),
       fetch('/data/nightlights/nightlights_annotations.json').then((r) => r.json()),
+      fetch('/data/nightlights/research_candidates.json').then((r) => r.json()),
+      fetch('/data/nightlights/external_checks.json').then((r) => r.json()),
       fetch('/data/geo/adm2.geojson').then((r) => r.json()),
       fetch('/data/geo/adm1.geojson').then((r) => r.json()),
       fetch('/data/data.json').then((r) => r.json()),
-    ]).then(([night, manifest, events, annotations, g2, g1, d]) => {
+    ]).then(([night, manifest, events, annotations, cands, ext, g2, g1, d]) => {
       if (!alive) return;
       const geo = [
         ...g2.features.filter((f: GeoFeature) => f.properties.id.startsWith('r-')),
@@ -125,7 +149,10 @@ export function useNlData(lang: string): NlData | null {
       for (const t of Object.values(d.territories) as { id: string; ru: string; be?: string }[]) {
         names[t.id] = lang === 'be' && t.be ? t.be : t.ru;
       }
-      setData({ night, manifest, events, annotations, geo, names });
+      const externalChecks: Record<string, ExternalCase> = {};
+      for (const cs of (ext.cases ?? []) as ExternalCase[]) externalChecks[cs.caseId] = cs;
+      setData({ night, manifest, events, annotations,
+        candidates: cands.candidates ?? [], externalChecks, geo, names });
     });
     return () => { alive = false; };
   }, [lang]);
@@ -137,10 +164,36 @@ export function stopsOf(night: Analytic): number[] {
   return [...night.yearsObs, ...night.nodes];
 }
 
-export function frameAsset(year: number, night: Analytic, scn: string, jmp: string): string {
-  if (year > 2024) return `/data/nightlights/visual/modeled/${year}_${scn}_${jmp}.png`;
+export function frameAsset(year: number, night: Analytic, scn: string, jmp: string,
+  demo = false): string {
+  if (year > 2024) {
+    return demo
+      ? `/data/nightlights/visual/demographic/${year}_${scn}_${jmp}.png`
+      : `/data/nightlights/visual/modeled/${year}_${scn}_${jmp}.png`;
+  }
   if (year >= 2012) return `/data/nightlights/visual/observed/${year}.png`;
   return `/data/nightlights/visual/reconstructed/${year}.png`;
+}
+
+export interface ResearchCandidate {
+  id: string;
+  titleRu: string;
+  titleBe: string;
+  status: string;
+  direction: string;
+  directionConfirmedByRecompute: boolean;
+  period: [number, number];
+  zones: string[];
+  zonesNote: string;
+  metrics: {
+    metric: string; lightResidualPct: number; populationChange: number;
+    lightChange: number; altMetric: string; altResidualPct: number;
+  };
+  hypotheses: string[];
+  checkRu: string;
+  qualityFlags: string[];
+  evidenceLevel: string;
+  releaseApproved: boolean;
 }
 
 export type DeltaMode = 'prev' | 'base2024' | 'scenario' | number; // number = базовый год анализа

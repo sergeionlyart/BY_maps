@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "При использовании данных сошлитесь на пакет и первичные источники (см. PROVENANCE.md)."
+title: "Ночная светимость против статистики населения Беларуси: кандидаты H1-H3 и декомпозиция резидуалов"
+version: "1.0.0"
+date-released: "2026-07-14"
+authors:
+  - name: "Проект «Население Беларуси, 1897-2026»"
+url: "https://by-population-maps.vercel.app/research/nightlights"
+license: CC-BY-4.0
