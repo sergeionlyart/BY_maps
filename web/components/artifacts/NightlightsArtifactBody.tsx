@@ -19,6 +19,17 @@ export default function NightlightsArtifactBody() {
 
       <h2>{t('Версии')}</h2>
       <div className="card">
+        <div className="card-code">v2.1.0 · 2026-07-14 · {t('git-тег')} artifact-nightlights-v2.1.0</div>
+        <p>
+          {t('MINOR: разделение аналитического и визуального слоёв (аналитические числа v2.0.0 без изменений). Визуальный ряд: 1992–2011 — шаблонная VIIRS-like реконструкция, 2012–2024 — наблюдения, 2030–2075 — модель; манифест кадров с sha256; delta-слои с единой шкалой; события и адаптивная скорость из аналитического z-скоринга (методологические переходы исключены, причины — только ручные аннотации с источником). 21 контрольная метрика.')}
+        </p>
+        <div className="card-foot">
+          <a href="/artifacts/by-maps-nightlights-v2.1.0.zip" download>
+            ⬇ by-maps-nightlights-v2.1.0.zip (4,6 МБ)
+          </a>
+        </div>
+      </div>
+      <div className="card">
         <div className="card-code">v2.0.0 · 2026-07-14 · {t('git-тег')} artifact-nightlights-v2.0.0</div>
         <p>
           {t('MAJOR: ряд 9→33 года + модель до 2075. Ретро — DMSP в калибровке Li et al.; современность — EOG VNL v2.1 (зеркало OpenGeoHub); сюжет v1 воспроизведён на независимом источнике (Смолевичский −0,45, Минск +0,07); самый быстрый рост света — Островецкий район (БелАЭС). Модель: light = bright·(pop-ratio)^β + floor, β из межрайонной эластичности; каждый модельный кадр несёт впечатанный маркер «МОДЕЛЬ». 17 контрольных метрик.')}
@@ -42,7 +53,7 @@ export default function NightlightsArtifactBody() {
       </div>
 
       <h2>{t('Состав')}</h2>
-      <pre><code>{`by-maps-nightlights-v2.0.0/
+      <pre><code>{`by-maps-nightlights-v2.1.0/
 ├── README.md · AGENT.md · LIMITATIONS.md · PROVENANCE.md · CHANGELOG.md
 ├── manifest.json                    машиночитаемое описание (sha256, допуски)
 ├── sources/registry.csv             83 записи: URL, лицензии, sha256 глобальных
@@ -58,15 +69,16 @@ export default function NightlightsArtifactBody() {
 ├── docs/notes/nightlights_v2_validation.md   отчёт с гейтами стыка
 ├── code/run.sh                      единственная точка входа (~10 секунд)
 ├── web/public/data/nightlights_v2.json        итог лендинга
-└── checks/                          инварианты, 17 контрольных метрик, chksums`}</code></pre>
+├── web/public/data/nightlights/     манифест кадров, события, аннотации
+└── checks/                          инварианты, 21 контрольная метрика, chksums`}</code></pre>
 
       <h2>{t('Быстрая проверка')}</h2>
-      <pre><code>{`unzip by-maps-nightlights-v2.0.0.zip && cd by-maps-nightlights-v2.0.0
+      <pre><code>{`unzip by-maps-nightlights-v2.1.0.zip && cd by-maps-nightlights-v2.1.0
 bash code/run.sh          # только стандартная библиотека Python >= 3.10
-# == 1/5 Гармонизация DMSP/VIIRS: мост, стык, спайк-отчёт ==
-# == 2/5 Эластичности ==  == 3/5 Финальный набор ==
-# == 4/5 Инварианты ==    == 5/5 Сверка с заявленными результатами ==
-# Все 17 контрольных метрик воспроизведены в допусках.`}</code></pre>
+# == 1/6 Гармонизация ==   == 2/6 Эластичности ==
+# == 3/6 Финальный набор == == 4/6 События и адаптивная скорость ==
+# == 5/6 Инварианты ==      == 6/6 Сверка с заявленными результатами ==
+# Все 21 контрольных метрик воспроизведены в допусках.`}</code></pre>
 
       <p className="hint">
         {t('Живая версия — ')}<Link href={p('/research/nightlights')}>{p('/research/nightlights')}</Link>

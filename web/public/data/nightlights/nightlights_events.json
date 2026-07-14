@@ -1,0 +1,291 @@
+{
+ "events": [
+  {
+   "year": 1994,
+   "kind": "national_change",
+   "score": 3.27,
+   "durationMs": 1000,
+   "quality": "reconstruction",
+   "direction": "rise",
+   "annualizedChange": 0.5298,
+   "regions": []
+  },
+  {
+   "year": 2010,
+   "kind": "regional_change",
+   "score": 6.35,
+   "durationMs": 1000,
+   "pauseAfterMs": 0,
+   "quality": "reconstruction",
+   "scenarioScope": null,
+   "regions": [
+    {
+     "id": "r-mahilouski",
+     "direction": "fall",
+     "annualizedChange": -0.3507,
+     "nationalShareDelta": -0.01383,
+     "confidence": "reconstruction",
+     "annotationKey": null
+    }
+   ]
+  },
+  {
+   "year": 2012,
+   "kind": "source_transition",
+   "durationMs": 1500,
+   "quality": "methodological_boundary",
+   "annotationKey": "source-transition-2012",
+   "regions": []
+  },
+  {
+   "year": 2013,
+   "kind": "regional_change",
+   "score": 8.08,
+   "durationMs": 1350,
+   "pauseAfterMs": 450,
+   "quality": "clean",
+   "scenarioScope": null,
+   "regions": [
+    {
+     "id": "r-puchavicki",
+     "direction": "rise",
+     "annualizedChange": 0.2928,
+     "nationalShareDelta": 0.00212,
+     "confidence": "high",
+     "annotationKey": null
+    }
+   ]
+  },
+  {
+   "year": 2013,
+   "kind": "national_change",
+   "score": 2.73,
+   "durationMs": 1000,
+   "quality": "clean",
+   "direction": "rise",
+   "annualizedChange": 0.548,
+   "regions": []
+  },
+  {
+   "year": 2014,
+   "kind": "regional_change",
+   "score": 4.25,
+   "durationMs": 1000,
+   "pauseAfterMs": 0,
+   "quality": "clean",
+   "scenarioScope": null,
+   "regions": [
+    {
+     "id": "r-astraviecki",
+     "direction": "rise",
+     "annualizedChange": 0.6522,
+     "nationalShareDelta": 0.00225,
+     "confidence": "high",
+     "annotationKey": "astravets-npp"
+    }
+   ]
+  },
+  {
+   "year": 2017,
+   "kind": "regional_change",
+   "score": 4.27,
+   "durationMs": 1000,
+   "pauseAfterMs": 0,
+   "quality": "clean",
+   "scenarioScope": null,
+   "regions": [
+    {
+     "id": "r-kamianiecki",
+     "direction": "rise",
+     "annualizedChange": 0.6452,
+     "nationalShareDelta": 0.0016,
+     "confidence": "high",
+     "annotationKey": null
+    }
+   ]
+  },
+  {
+   "year": 2018,
+   "kind": "regional_change",
+   "score": 5.97,
+   "durationMs": 1000,
+   "pauseAfterMs": 0,
+   "quality": "clean",
+   "scenarioScope": null,
+   "regions": [
+    {
+     "id": "r-mazyrski",
+     "direction": "rise",
+     "annualizedChange": 0.2838,
+     "nationalShareDelta": 0.00399,
+     "confidence": "high",
+     "annotationKey": null
+    },
+    {
+     "id": "r-salihorski",
+     "direction": "rise",
+     "annualizedChange": 0.2246,
+     "nationalShareDelta": 0.00325,
+     "confidence": "high",
+     "annotationKey": null
+    }
+   ]
+  },
+  {
+   "year": 2020,
+   "kind": "regional_change",
+   "score": 4.38,
+   "durationMs": 1000,
+   "pauseAfterMs": 0,
+   "quality": "clean",
+   "scenarioScope": null,
+   "regions": [
+    {
+     "id": "r-lubanski",
+     "direction": "rise",
+     "annualizedChange": 0.59,
+     "nationalShareDelta": 0.00236,
+     "confidence": "high",
+     "annotationKey": null
+    }
+   ]
+  },
+  {
+   "year": 2021,
+   "kind": "quality_note",
+   "durationMs": 650,
+   "quality": "vnl_processing_step",
+   "annotationKey": "vnl-2021",
+   "regions": []
+  },
+  {
+   "year": 2022,
+   "kind": "regional_change",
+   "score": 4.68,
+   "durationMs": 1000,
+   "pauseAfterMs": 0,
+   "quality": "clean",
+   "scenarioScope": null,
+   "regions": [
+    {
+     "id": "r-mazyrski",
+     "direction": "rise",
+     "annualizedChange": 0.2197,
+     "nationalShareDelta": 0.00283,
+     "confidence": "high",
+     "annotationKey": null
+    }
+   ]
+  },
+  {
+   "year": 2023,
+   "kind": "regional_change",
+   "score": 7.3,
+   "durationMs": 1000,
+   "pauseAfterMs": 0,
+   "quality": "clean",
+   "scenarioScope": null,
+   "regions": [
+    {
+     "id": "r-miadzielski",
+     "direction": "rise",
+     "annualizedChange": 2.4279,
+     "nationalShareDelta": 0.00539,
+     "confidence": "high",
+     "annotationKey": null
+    }
+   ]
+  },
+  {
+   "year": 2024,
+   "kind": "regional_change",
+   "score": 20.06,
+   "durationMs": 1350,
+   "pauseAfterMs": 450,
+   "quality": "clean",
+   "scenarioScope": null,
+   "regions": [
+    {
+     "id": "r-kalinkavicki",
+     "direction": "rise",
+     "annualizedChange": 1.1114,
+     "nationalShareDelta": 0.00449,
+     "confidence": "high",
+     "annotationKey": null
+    },
+    {
+     "id": "r-slucki",
+     "direction": "rise",
+     "annualizedChange": 0.7172,
+     "nationalShareDelta": 0.00606,
+     "confidence": "high",
+     "annotationKey": null
+    }
+   ]
+  },
+  {
+   "year": 2030,
+   "kind": "forecast_boundary",
+   "durationMs": 1500,
+   "quality": "methodological_boundary",
+   "annotationKey": "forecast-boundary",
+   "regions": []
+  }
+ ],
+ "durationsMs": {
+  "1992": 380,
+  "1993": 380,
+  "1994": 1000,
+  "1995": 380,
+  "1996": 380,
+  "1997": 380,
+  "1998": 380,
+  "1999": 380,
+  "2000": 380,
+  "2001": 380,
+  "2002": 380,
+  "2003": 380,
+  "2004": 380,
+  "2005": 380,
+  "2006": 380,
+  "2007": 380,
+  "2008": 380,
+  "2009": 380,
+  "2010": 1000,
+  "2011": 380,
+  "2012": 1500,
+  "2013": 1350,
+  "2014": 1000,
+  "2015": 450,
+  "2016": 450,
+  "2017": 1000,
+  "2018": 1000,
+  "2019": 450,
+  "2020": 1000,
+  "2021": 650,
+  "2022": 1000,
+  "2023": 1000,
+  "2024": 1350,
+  "2030": 1500,
+  "2035": 450,
+  "2040": 450,
+  "2045": 450,
+  "2050": 450,
+  "2055": 450,
+  "2060": 450,
+  "2065": 450,
+  "2070": 450,
+  "2075": 450
+ },
+ "params": {
+  "sigmaMin": 0.02,
+  "shareHalfWeight": 0.002,
+  "zRegion": {
+   "reconstruction": 6.0,
+   "observed": 4.0,
+   "model": 4.0
+  },
+  "zNational": 2.5,
+  "note": "скоринг по аналитическим долям (нац. тренд исключён); переходы источников и аномалии продукта вне обычного скоринга"
+ }
+}

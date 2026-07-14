@@ -13,19 +13,22 @@ cd "$(dirname "$0")/.."
 export PYTHONDONTWRITEBYTECODE=1
 PY="${PYTHON:-python3}"
 
-echo "== 1/5 Гармонизация DMSP/VIIRS: мост, стык, спайк-отчёт =="
+echo "== 1/6 Гармонизация DMSP/VIIRS: мост, стык, спайк-отчёт =="
 "$PY" -m etl.nightlights_harmonize
 
-echo "== 2/5 Эластичности: межрайонные (источник beta) и панель =="
+echo "== 2/6 Эластичности: межрайонные (источник beta) и панель =="
 "$PY" -m etl.nightlights_model
 
-echo "== 3/5 Финальный набор: ряд 1992-2024 + модель 2030-2075 =="
+echo "== 3/6 Финальный набор: ряд 1992-2024 + модель 2030-2075 =="
 "$PY" -m etl.nightlights_v2
 
-echo "== 4/5 Инварианты =="
+echo "== 4/6 События и адаптивная скорость (аналитический слой) =="
+"$PY" -m etl.nightlights_events
+
+echo "== 5/6 Инварианты =="
 "$PY" checks/tests/test_invariants.py
 
-echo "== 5/5 Сверка с заявленными результатами =="
+echo "== 6/6 Сверка с заявленными результатами =="
 "$PY" code/verify.py
 
 echo "ГОТОВО: INF-08 v2 воспроизведён и совпадает с заявленным."

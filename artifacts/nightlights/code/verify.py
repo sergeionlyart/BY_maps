@@ -21,8 +21,16 @@ def computed_metrics() -> dict:
     fl = M.load_floor()
     fs = sum(x["floor"] for x in fl.values())
     bs = sum(x["bright"] for x in fl.values())
+    manifest = json.loads((PKG / "web/public/data/nightlights"
+                           / "nightlights_manifest.json").read_text())
+    events = json.loads((PKG / "web/public/data/nightlights"
+                         / "nightlights_events.json").read_text())
     return {
         "n_zones": len(n["rows"]),
+        "n_frames_manifest": len(manifest["frames"]),
+        "n_events_total": len(events["events"]),
+        "n_events_regional": sum(1 for e in events["events"]
+                                 if e["kind"] == "regional_change"),
         "bridge_r2": round(v["bridge"]["r2"], 4),
         "bridge_b": round(v["bridge"]["b"], 4),
         "f18_factor": round(v["f18"], 4),

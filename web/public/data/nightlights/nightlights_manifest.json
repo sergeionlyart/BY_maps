@@ -1,0 +1,4769 @@
+{
+ "version": "3.0.0",
+ "note": "Визуальный слой карты света. Числа, рейтинги и события берутся ТОЛЬКО из аналитического слоя (nightlights_v2.json); реконструкция 1992-2011 - визуальное представление, не наблюдение.",
+ "grid": {
+  "width": 2340,
+  "height": 1212,
+  "bounds": [
+   23.100000000000165,
+   51.20333333333331,
+   32.85000000000017,
+   56.253333333333316
+  ],
+  "crs": "EPSG:4326",
+  "resolutionDeg": 0.00416666666666667,
+  "mask": "adm1 union, all_touched; вне страны = 0",
+  "nodata": "0 -> чёрный/прозрачный"
+ },
+ "render": {
+  "vmax_nw": 120.0,
+  "gamma": 0.9,
+  "normalization": "log1p(rad)/log1p(VMAX), единая на весь ряд, без по-годовой нормализации",
+  "palette": "чёрный -> янтарь -> тёплый белый (256 ступеней)",
+  "ditherSeed": 20260712
+ },
+ "reconstruction": {
+  "method": "шаблонная: пространственная структура = первый реальный кадр VIIRS (VNL-2012); временная динамика = гармонизированный аналитический зональный ряд (DMSP -> мост b, a_bar; f18) x стабилизация median-3; пиксели зоны умножаются на flux_year(зона)/flux_2012(зона) - зеркало модельного слоя (шаблон 2024 x факторы прогноза)",
+  "template": "observed_viirs 2012",
+  "a_bar": -0.0543,
+  "b": 0.9151,
+  "f18": 0.4857,
+  "stab": {
+   "1992": 0.8652,
+   "1993": 1.3691,
+   "1994": 0.7838,
+   "1995": 1.0037,
+   "1996": 1.0,
+   "1997": 1.0,
+   "1998": 0.9729,
+   "1999": 1.2667,
+   "2000": 1.0,
+   "2001": 0.9876,
+   "2002": 1.0,
+   "2003": 1.1387,
+   "2004": 1.0,
+   "2005": 0.8804,
+   "2006": 1.1076,
+   "2007": 0.9427,
+   "2008": 1.0608,
+   "2009": 1.0,
+   "2010": 0.9835,
+   "2011": 1.0424
+  },
+  "caveat": "реконструкция - для визуальной цельности ряда; внутрирайонная структура зафиксирована на 2012 год (исчезнувшие/появившиеся до 2012-го объекты не отображаются); точные локальные выводы - только из аналитического слоя"
+ },
+ "sources": [
+  {
+   "id": "harmonized_dmsp",
+   "title": "Li et al., Harmonization of DMSP and VIIRS NTL 1992-2024 (calDMSP), вырезки по Беларуси",
+   "url": "https://doi.org/10.6084/m9.figshare.9828827",
+   "version": "v10",
+   "license": "CC BY 4.0",
+   "accessed": "2026-07-14",
+   "resolution": "~1 км (30\"), DN 0-63",
+   "files": "data/raw/nightlights/rasters/dmsp_*.tif",
+   "checksums": "data/raw/nightlights/registry_v2.csv"
+  },
+  {
+   "id": "vnl_v21",
+   "title": "EOG VIIRS VNL v2.1 annual average (зеркало OpenGeoHub/Zenodo 17294744), вырезки по Беларуси",
+   "url": "https://zenodo.org/records/17294744",
+   "version": "v2.1 (v20250904)",
+   "license": "CC BY 4.0",
+   "accessed": "2026-07-14",
+   "resolution": "500 м, нВт/см²/ср (значения зеркала x0,1)",
+   "files": "data/raw/nightlights/rasters/vnl_*.tif",
+   "checksums": "data/raw/nightlights/registry_v2.csv"
+  },
+  {
+   "id": "light_model_v2",
+   "title": "Модель светимости 2030-2075 (bright*(pop-ratio)^beta + floor; прогноз v2026.4)",
+   "url": "/artifacts/by-maps-nightlights-v2.0.0.zip",
+   "version": "2.0.0",
+   "license": "CC BY 4.0",
+   "accessed": "2026-07-14",
+   "resolution": "500 м (поле пикселей VNL-2024)",
+   "files": "params/assumptions.json",
+   "checksums": "web/public/artifacts/checksums.txt"
+  }
+ ],
+ "sourceTypeLabels": {
+  "reconstructed_viirs_like": {
+   "ru": "реконструкция VIIRS-like",
+   "be": "рэканструкцыя VIIRS-like"
+  },
+  "observed_viirs": {
+   "ru": "спутниковые наблюдения VIIRS",
+   "be": "спадарожнікавыя назіранні VIIRS"
+  },
+  "modeled_forecast": {
+   "ru": "модельный прогноз",
+   "be": "мадэльны прагноз"
+  }
+ },
+ "frames": [
+  {
+   "year": 1992,
+   "asset": "/data/nightlights/visual/reconstructed/1992.png",
+   "sourceType": "reconstructed_viirs_like",
+   "analyticalSource": "harmonized_dmsp",
+   "comparableToPrevious": false,
+   "qualityFlags": [
+    "reconstruction"
+   ],
+   "referenceYear": null,
+   "sha256": "dd37c9c88342f5758d6a390b0f7afa508cfb40fb191272ac6c8d5a9875d33bdc"
+  },
+  {
+   "year": 1993,
+   "asset": "/data/nightlights/visual/reconstructed/1993.png",
+   "sourceType": "reconstructed_viirs_like",
+   "analyticalSource": "harmonized_dmsp",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "reconstruction"
+   ],
+   "referenceYear": 1992,
+   "sha256": "198ff1049f55c548e331f41a1acb61b975b82d527b196ad7adc71d1bcd046cf2"
+  },
+  {
+   "year": 1994,
+   "asset": "/data/nightlights/visual/reconstructed/1994.png",
+   "sourceType": "reconstructed_viirs_like",
+   "analyticalSource": "harmonized_dmsp",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "reconstruction"
+   ],
+   "referenceYear": 1993,
+   "sha256": "eae66367e2fdda7b3d0aeb840a120b6dc990ba7eea07a0de69b803bd6cb6604a"
+  },
+  {
+   "year": 1995,
+   "asset": "/data/nightlights/visual/reconstructed/1995.png",
+   "sourceType": "reconstructed_viirs_like",
+   "analyticalSource": "harmonized_dmsp",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "reconstruction"
+   ],
+   "referenceYear": 1994,
+   "sha256": "36e6c8b607a4690fe4c5c53df5cf09bc34ed18d64fe4951381cf4d1188292d69"
+  },
+  {
+   "year": 1996,
+   "asset": "/data/nightlights/visual/reconstructed/1996.png",
+   "sourceType": "reconstructed_viirs_like",
+   "analyticalSource": "harmonized_dmsp",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "reconstruction"
+   ],
+   "referenceYear": 1995,
+   "sha256": "b37bf29387ed04321b3f0ae86beda7b33914e522055b7a2503f3439fb407cd60"
+  },
+  {
+   "year": 1997,
+   "asset": "/data/nightlights/visual/reconstructed/1997.png",
+   "sourceType": "reconstructed_viirs_like",
+   "analyticalSource": "harmonized_dmsp",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "reconstruction"
+   ],
+   "referenceYear": 1996,
+   "sha256": "0bf5e5359ad57e313fd7da19f2869f3f9c954d1f2722a8732f7e5afacc1912d5"
+  },
+  {
+   "year": 1998,
+   "asset": "/data/nightlights/visual/reconstructed/1998.png",
+   "sourceType": "reconstructed_viirs_like",
+   "analyticalSource": "harmonized_dmsp",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "reconstruction"
+   ],
+   "referenceYear": 1997,
+   "sha256": "097ac7a5a29ba4630f64216248b71f028b2e72733e9987d0febd3aa95e812220"
+  },
+  {
+   "year": 1999,
+   "asset": "/data/nightlights/visual/reconstructed/1999.png",
+   "sourceType": "reconstructed_viirs_like",
+   "analyticalSource": "harmonized_dmsp",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "reconstruction"
+   ],
+   "referenceYear": 1998,
+   "sha256": "2b638e02d804eac71abeeb1767e16e19deb45cc7b5e723ebd12408b910883a20"
+  },
+  {
+   "year": 2000,
+   "asset": "/data/nightlights/visual/reconstructed/2000.png",
+   "sourceType": "reconstructed_viirs_like",
+   "analyticalSource": "harmonized_dmsp",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "reconstruction"
+   ],
+   "referenceYear": 1999,
+   "sha256": "d7b37c62315d18fb1a86684fc55f7777df0400f7f5dceccc3be2c8312a6af678"
+  },
+  {
+   "year": 2001,
+   "asset": "/data/nightlights/visual/reconstructed/2001.png",
+   "sourceType": "reconstructed_viirs_like",
+   "analyticalSource": "harmonized_dmsp",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "reconstruction"
+   ],
+   "referenceYear": 2000,
+   "sha256": "a6882e2330ee5a9f1529e7c24c302a3fea4bc819a01bcd04686dd051f567f7d7"
+  },
+  {
+   "year": 2002,
+   "asset": "/data/nightlights/visual/reconstructed/2002.png",
+   "sourceType": "reconstructed_viirs_like",
+   "analyticalSource": "harmonized_dmsp",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "reconstruction"
+   ],
+   "referenceYear": 2001,
+   "sha256": "5f710397a8d04f5569877cc3bdd9d8117b855df0eb05e016f1180ca559a2c07a"
+  },
+  {
+   "year": 2003,
+   "asset": "/data/nightlights/visual/reconstructed/2003.png",
+   "sourceType": "reconstructed_viirs_like",
+   "analyticalSource": "harmonized_dmsp",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "reconstruction"
+   ],
+   "referenceYear": 2002,
+   "sha256": "cfdeed4d67e51ed0e5e9e3e81e9fc0a587fa7151681c7052dff62a3a546e2707"
+  },
+  {
+   "year": 2004,
+   "asset": "/data/nightlights/visual/reconstructed/2004.png",
+   "sourceType": "reconstructed_viirs_like",
+   "analyticalSource": "harmonized_dmsp",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "reconstruction"
+   ],
+   "referenceYear": 2003,
+   "sha256": "06d41094c89f5af08bca2529257a9e36767541c29b8b1da4ad6a19b2f4fd1668"
+  },
+  {
+   "year": 2005,
+   "asset": "/data/nightlights/visual/reconstructed/2005.png",
+   "sourceType": "reconstructed_viirs_like",
+   "analyticalSource": "harmonized_dmsp",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "reconstruction"
+   ],
+   "referenceYear": 2004,
+   "sha256": "dd6f86f35c4706dccad81cf590f10ec36097b7b10243c12f33628a1e6c8ea125"
+  },
+  {
+   "year": 2006,
+   "asset": "/data/nightlights/visual/reconstructed/2006.png",
+   "sourceType": "reconstructed_viirs_like",
+   "analyticalSource": "harmonized_dmsp",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "reconstruction"
+   ],
+   "referenceYear": 2005,
+   "sha256": "9701bf21f171869fe753f28cbe5e717e51635b13c2a39fc44c4aecec0dabea8f"
+  },
+  {
+   "year": 2007,
+   "asset": "/data/nightlights/visual/reconstructed/2007.png",
+   "sourceType": "reconstructed_viirs_like",
+   "analyticalSource": "harmonized_dmsp",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "reconstruction"
+   ],
+   "referenceYear": 2006,
+   "sha256": "faf569bf523d4d4f76718ecaa7a837043be39fd3fc8d09ffabc0f83da2f6ac10"
+  },
+  {
+   "year": 2008,
+   "asset": "/data/nightlights/visual/reconstructed/2008.png",
+   "sourceType": "reconstructed_viirs_like",
+   "analyticalSource": "harmonized_dmsp",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "reconstruction"
+   ],
+   "referenceYear": 2007,
+   "sha256": "0ae53137f80ca3da7ed3f3dd908e1dda65cdd793ddc1b72a2ba0b0e5230d5e22"
+  },
+  {
+   "year": 2009,
+   "asset": "/data/nightlights/visual/reconstructed/2009.png",
+   "sourceType": "reconstructed_viirs_like",
+   "analyticalSource": "harmonized_dmsp",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "reconstruction"
+   ],
+   "referenceYear": 2008,
+   "sha256": "01e1a912297acf9680a55c6720f15fd817ad771897c8ab5a405b45951f51ecf2"
+  },
+  {
+   "year": 2010,
+   "asset": "/data/nightlights/visual/reconstructed/2010.png",
+   "sourceType": "reconstructed_viirs_like",
+   "analyticalSource": "harmonized_dmsp",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "reconstruction",
+    "f18_era_corrected"
+   ],
+   "referenceYear": 2009,
+   "sha256": "94cf41443d30fc8680c210ee5d33989ef79dd565b1308481e7e2d526c64f7ea6"
+  },
+  {
+   "year": 2011,
+   "asset": "/data/nightlights/visual/reconstructed/2011.png",
+   "sourceType": "reconstructed_viirs_like",
+   "analyticalSource": "harmonized_dmsp",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "reconstruction",
+    "f18_era_corrected"
+   ],
+   "referenceYear": 2010,
+   "sha256": "9c26c837b18cf73231299e2c636e8a1136fbcef77fd4d8869f59671fdba50beb"
+  },
+  {
+   "year": 2012,
+   "asset": "/data/nightlights/visual/observed/2012.png",
+   "sourceType": "observed_viirs",
+   "analyticalSource": "vnl_v21",
+   "comparableToPrevious": false,
+   "qualityFlags": [
+    "first_viirs_year_partial"
+   ],
+   "referenceYear": null,
+   "sha256": "b62fdcef1bbb388e44ba299061feca47e80cd9bffd4d8f25561c2b356e799e8c"
+  },
+  {
+   "year": 2013,
+   "asset": "/data/nightlights/visual/observed/2013.png",
+   "sourceType": "observed_viirs",
+   "analyticalSource": "vnl_v21",
+   "comparableToPrevious": true,
+   "qualityFlags": [],
+   "referenceYear": 2012,
+   "sha256": "cb098263bcbe74b94dc2ebce1dd6968b94b230e478ed1bfdf7fdafdb72277c19"
+  },
+  {
+   "year": 2014,
+   "asset": "/data/nightlights/visual/observed/2014.png",
+   "sourceType": "observed_viirs",
+   "analyticalSource": "vnl_v21",
+   "comparableToPrevious": true,
+   "qualityFlags": [],
+   "referenceYear": 2013,
+   "sha256": "358b77d0d4fc086d904b8d5b37bbf9da1e13c975aa8d1c49e1873f8f83a4f111"
+  },
+  {
+   "year": 2015,
+   "asset": "/data/nightlights/visual/observed/2015.png",
+   "sourceType": "observed_viirs",
+   "analyticalSource": "vnl_v21",
+   "comparableToPrevious": true,
+   "qualityFlags": [],
+   "referenceYear": 2014,
+   "sha256": "acfbee04360b31c27f75f2a00f0928eb46fe513799151d51b7372a72215cf3ee"
+  },
+  {
+   "year": 2016,
+   "asset": "/data/nightlights/visual/observed/2016.png",
+   "sourceType": "observed_viirs",
+   "analyticalSource": "vnl_v21",
+   "comparableToPrevious": true,
+   "qualityFlags": [],
+   "referenceYear": 2015,
+   "sha256": "629ad62d9b6634cc4698f73d36a89ff446302e3bfc94be817c5500fee7f7143a"
+  },
+  {
+   "year": 2017,
+   "asset": "/data/nightlights/visual/observed/2017.png",
+   "sourceType": "observed_viirs",
+   "analyticalSource": "vnl_v21",
+   "comparableToPrevious": true,
+   "qualityFlags": [],
+   "referenceYear": 2016,
+   "sha256": "d9ba2ac2d71ba7c3ec3296fec86594f215036d5969b8b3f80a190959f9bf99ff"
+  },
+  {
+   "year": 2018,
+   "asset": "/data/nightlights/visual/observed/2018.png",
+   "sourceType": "observed_viirs",
+   "analyticalSource": "vnl_v21",
+   "comparableToPrevious": true,
+   "qualityFlags": [],
+   "referenceYear": 2017,
+   "sha256": "3319b977c700c0e507f34fa4fa49a3dd9291c91f65dc6995009c2582eb52ab10"
+  },
+  {
+   "year": 2019,
+   "asset": "/data/nightlights/visual/observed/2019.png",
+   "sourceType": "observed_viirs",
+   "analyticalSource": "vnl_v21",
+   "comparableToPrevious": true,
+   "qualityFlags": [],
+   "referenceYear": 2018,
+   "sha256": "fe58a408680ed55acb243e526ea582fee0ed044b63b52bcebbbf46e399bb3bdd"
+  },
+  {
+   "year": 2020,
+   "asset": "/data/nightlights/visual/observed/2020.png",
+   "sourceType": "observed_viirs",
+   "analyticalSource": "vnl_v21",
+   "comparableToPrevious": true,
+   "qualityFlags": [],
+   "referenceYear": 2019,
+   "sha256": "f31540d8a258f8dcec7fb73147745e46980cb76c30d7914c155fcc4dbc522df5"
+  },
+  {
+   "year": 2021,
+   "asset": "/data/nightlights/visual/observed/2021.png",
+   "sourceType": "observed_viirs",
+   "analyticalSource": "vnl_v21",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "vnl_processing_step"
+   ],
+   "referenceYear": 2020,
+   "sha256": "2571a33ccc6a87328fb04aaee7afa3f40a53a8930d0042757c0929c689fa05c1"
+  },
+  {
+   "year": 2022,
+   "asset": "/data/nightlights/visual/observed/2022.png",
+   "sourceType": "observed_viirs",
+   "analyticalSource": "vnl_v21",
+   "comparableToPrevious": true,
+   "qualityFlags": [],
+   "referenceYear": 2021,
+   "sha256": "8815dfc264bd4e57ecd8be235b3df3333c15f6e0a8f57ae9c5045305b451d028"
+  },
+  {
+   "year": 2023,
+   "asset": "/data/nightlights/visual/observed/2023.png",
+   "sourceType": "observed_viirs",
+   "analyticalSource": "vnl_v21",
+   "comparableToPrevious": true,
+   "qualityFlags": [],
+   "referenceYear": 2022,
+   "sha256": "252df3509a36c88f18e3ab8a1c8acf6f16fb787b60a79b13dd1c8c6b976ac0eb"
+  },
+  {
+   "year": 2024,
+   "asset": "/data/nightlights/visual/observed/2024.png",
+   "sourceType": "observed_viirs",
+   "analyticalSource": "vnl_v21",
+   "comparableToPrevious": true,
+   "qualityFlags": [],
+   "referenceYear": 2023,
+   "sha256": "a67a6ccda0adf2b449dff4e57d488151af102f3a6733dc704d9e412a405de7ac"
+  },
+  {
+   "year": 2030,
+   "scenario": "base",
+   "jumpoff": "official",
+   "asset": "/data/nightlights/visual/modeled/2030_base_official.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": false,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2024,
+   "sha256": "4f9e2431601a3538590d5d5c6ff56c707d08677dc816371264b3da85c8fea8ef"
+  },
+  {
+   "year": 2035,
+   "scenario": "base",
+   "jumpoff": "official",
+   "asset": "/data/nightlights/visual/modeled/2035_base_official.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2030,
+   "sha256": "7256afa9ba7c0f567da8352744493f2eb1321166ee38d4c908b1cebf39ab2762"
+  },
+  {
+   "year": 2040,
+   "scenario": "base",
+   "jumpoff": "official",
+   "asset": "/data/nightlights/visual/modeled/2040_base_official.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2035,
+   "sha256": "7a50aaf334a80364d9c970a92fdeac4ef41c9e65a6830dbc6d392f6359d787d0"
+  },
+  {
+   "year": 2045,
+   "scenario": "base",
+   "jumpoff": "official",
+   "asset": "/data/nightlights/visual/modeled/2045_base_official.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2040,
+   "sha256": "e9b51d854b597da5e51d623789ed3955a445e7c53a94d3d59b55f1f765089928"
+  },
+  {
+   "year": 2050,
+   "scenario": "base",
+   "jumpoff": "official",
+   "asset": "/data/nightlights/visual/modeled/2050_base_official.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2045,
+   "sha256": "a51cf4bf7f9b35ace257c10cade834fc036db8e772c9e2f32422f1e8dbf356fa"
+  },
+  {
+   "year": 2055,
+   "scenario": "base",
+   "jumpoff": "official",
+   "asset": "/data/nightlights/visual/modeled/2055_base_official.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2050,
+   "sha256": "18327c831cac3686da440ef7a54150a1f6882f1ae0d8f59a41de9c72ede3ecdd"
+  },
+  {
+   "year": 2060,
+   "scenario": "base",
+   "jumpoff": "official",
+   "asset": "/data/nightlights/visual/modeled/2060_base_official.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2055,
+   "sha256": "97c020e86a7189a2671d880b034a080858ee888118fd9cdc2281ad1c92d6b24a"
+  },
+  {
+   "year": 2065,
+   "scenario": "base",
+   "jumpoff": "official",
+   "asset": "/data/nightlights/visual/modeled/2065_base_official.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2060,
+   "sha256": "08a346ddf6dbb5408168acaecbff52966077066588c4b772e8373793216a88ba"
+  },
+  {
+   "year": 2070,
+   "scenario": "base",
+   "jumpoff": "official",
+   "asset": "/data/nightlights/visual/modeled/2070_base_official.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2065,
+   "sha256": "4877bf108cc385cb82272c2679a69d49dee75e51556460568ce3c942a2e8de79"
+  },
+  {
+   "year": 2075,
+   "scenario": "base",
+   "jumpoff": "official",
+   "asset": "/data/nightlights/visual/modeled/2075_base_official.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2070,
+   "sha256": "fc186b81f22ddc111dc2a5c3731d244524de73b80475c537f847f35c10d5dcca"
+  },
+  {
+   "year": 2030,
+   "scenario": "negative",
+   "jumpoff": "official",
+   "asset": "/data/nightlights/visual/modeled/2030_negative_official.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": false,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2024,
+   "sha256": "c60663574b10a02896e76f7abf051d2d5ee23c82df1aca091bfbce56c0920dc5"
+  },
+  {
+   "year": 2035,
+   "scenario": "negative",
+   "jumpoff": "official",
+   "asset": "/data/nightlights/visual/modeled/2035_negative_official.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2030,
+   "sha256": "149d404bd7244c75e7e6ccabd6543bc11f4db9f9918ec6c349384dd46e1d2d98"
+  },
+  {
+   "year": 2040,
+   "scenario": "negative",
+   "jumpoff": "official",
+   "asset": "/data/nightlights/visual/modeled/2040_negative_official.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2035,
+   "sha256": "1e086e02b9037f7dbe2193898a97d951b982f7bd57697ac910bf950ee840d54f"
+  },
+  {
+   "year": 2045,
+   "scenario": "negative",
+   "jumpoff": "official",
+   "asset": "/data/nightlights/visual/modeled/2045_negative_official.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2040,
+   "sha256": "b5df7b41e56ee6dcbc6c07ef31f31beab82fa1e497c982792868950f0814dbe2"
+  },
+  {
+   "year": 2050,
+   "scenario": "negative",
+   "jumpoff": "official",
+   "asset": "/data/nightlights/visual/modeled/2050_negative_official.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2045,
+   "sha256": "9e240e2215ecee773afdebdb6b53af49a27c647e13d47d339539ac77174cc777"
+  },
+  {
+   "year": 2055,
+   "scenario": "negative",
+   "jumpoff": "official",
+   "asset": "/data/nightlights/visual/modeled/2055_negative_official.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2050,
+   "sha256": "821013f2021fd8930a73d66cdc01c7321bcabc4b8da4c1bf42aec408729ddbe4"
+  },
+  {
+   "year": 2060,
+   "scenario": "negative",
+   "jumpoff": "official",
+   "asset": "/data/nightlights/visual/modeled/2060_negative_official.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2055,
+   "sha256": "7e074bd7a2b6897681e3794a99157a905f52d4d196c433fee22449079646003d"
+  },
+  {
+   "year": 2065,
+   "scenario": "negative",
+   "jumpoff": "official",
+   "asset": "/data/nightlights/visual/modeled/2065_negative_official.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2060,
+   "sha256": "1c22781c22aff7ea6b43a083f746b518cf2ccfbb612992b8a21047466bd5aae1"
+  },
+  {
+   "year": 2070,
+   "scenario": "negative",
+   "jumpoff": "official",
+   "asset": "/data/nightlights/visual/modeled/2070_negative_official.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2065,
+   "sha256": "41e192a5775792a198d17e72c919e98054c25ba51188ab1a5a1055fad1fcd1a6"
+  },
+  {
+   "year": 2075,
+   "scenario": "negative",
+   "jumpoff": "official",
+   "asset": "/data/nightlights/visual/modeled/2075_negative_official.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2070,
+   "sha256": "d817e52d3894b1fbf36653647c6eea03d64e698fbe1d3a6d4af6219594059706"
+  },
+  {
+   "year": 2030,
+   "scenario": "optimistic",
+   "jumpoff": "official",
+   "asset": "/data/nightlights/visual/modeled/2030_optimistic_official.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": false,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2024,
+   "sha256": "27f065f293354e2551d7b5454c7b1e90a365b4c3f82f650b6446a8963a864165"
+  },
+  {
+   "year": 2035,
+   "scenario": "optimistic",
+   "jumpoff": "official",
+   "asset": "/data/nightlights/visual/modeled/2035_optimistic_official.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2030,
+   "sha256": "1bdc705cd94347ffafdc65afc6ab08c41a8e0c4eea07be075dcddd827fe4ab28"
+  },
+  {
+   "year": 2040,
+   "scenario": "optimistic",
+   "jumpoff": "official",
+   "asset": "/data/nightlights/visual/modeled/2040_optimistic_official.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2035,
+   "sha256": "7ff5ebea1f36431ef3b7bba2871212181a24a9defefc7bba0403114ab0eb041a"
+  },
+  {
+   "year": 2045,
+   "scenario": "optimistic",
+   "jumpoff": "official",
+   "asset": "/data/nightlights/visual/modeled/2045_optimistic_official.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2040,
+   "sha256": "1ded090938d86a5620937fd8ca87a8ed5779c6ae7c0b5093d7570b47c00d1768"
+  },
+  {
+   "year": 2050,
+   "scenario": "optimistic",
+   "jumpoff": "official",
+   "asset": "/data/nightlights/visual/modeled/2050_optimistic_official.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2045,
+   "sha256": "e0ea3f3acd8a776b74decdafe40d877fbcbc06dd44eb8a22ae207602604b67f3"
+  },
+  {
+   "year": 2055,
+   "scenario": "optimistic",
+   "jumpoff": "official",
+   "asset": "/data/nightlights/visual/modeled/2055_optimistic_official.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2050,
+   "sha256": "3eef4505dd32ae26997415db789c1b168a1dff0b60f629ba6c7130d77252e650"
+  },
+  {
+   "year": 2060,
+   "scenario": "optimistic",
+   "jumpoff": "official",
+   "asset": "/data/nightlights/visual/modeled/2060_optimistic_official.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2055,
+   "sha256": "eb335a7240c60c8fe00130083901ecd321bd637c7ff451820c9bebda4779d8d9"
+  },
+  {
+   "year": 2065,
+   "scenario": "optimistic",
+   "jumpoff": "official",
+   "asset": "/data/nightlights/visual/modeled/2065_optimistic_official.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2060,
+   "sha256": "9aad34cb49237c8fd83105924f1226f52512aff279b726dd800bbd82f25db029"
+  },
+  {
+   "year": 2070,
+   "scenario": "optimistic",
+   "jumpoff": "official",
+   "asset": "/data/nightlights/visual/modeled/2070_optimistic_official.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2065,
+   "sha256": "bd740efb3e88ce73509bbee065946796918779a0a9a40d39bb045c5d066f3f18"
+  },
+  {
+   "year": 2075,
+   "scenario": "optimistic",
+   "jumpoff": "official",
+   "asset": "/data/nightlights/visual/modeled/2075_optimistic_official.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2070,
+   "sha256": "b74de66064cd19b56c5c579d30ad61607d66b22637f97e34978646268ef225a7"
+  },
+  {
+   "year": 2030,
+   "scenario": "base",
+   "jumpoff": "adjusted",
+   "asset": "/data/nightlights/visual/modeled/2030_base_adjusted.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": false,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2024,
+   "sha256": "47a0000077680414d93023b8f496e49e1ce3c74154030bf715c44d7fdb1e6a7f"
+  },
+  {
+   "year": 2035,
+   "scenario": "base",
+   "jumpoff": "adjusted",
+   "asset": "/data/nightlights/visual/modeled/2035_base_adjusted.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2030,
+   "sha256": "74c1a4ce3f97833f81928514c7e0805e5631c2ea17290eabfde46ffb0e7b5b5b"
+  },
+  {
+   "year": 2040,
+   "scenario": "base",
+   "jumpoff": "adjusted",
+   "asset": "/data/nightlights/visual/modeled/2040_base_adjusted.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2035,
+   "sha256": "ead8887b0d1d6ebb74e6c88495a696d1f0ee11a84f3e3887e2e202336d5e3c86"
+  },
+  {
+   "year": 2045,
+   "scenario": "base",
+   "jumpoff": "adjusted",
+   "asset": "/data/nightlights/visual/modeled/2045_base_adjusted.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2040,
+   "sha256": "76ef955b94d86f35ee0df4da0aa3493dcd4ae21cf0d86122e85806eec255ddb3"
+  },
+  {
+   "year": 2050,
+   "scenario": "base",
+   "jumpoff": "adjusted",
+   "asset": "/data/nightlights/visual/modeled/2050_base_adjusted.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2045,
+   "sha256": "b0b4c450b472074c74a8d11a562d8e7353460c804bb3e5d34559fc2a21c6f8d1"
+  },
+  {
+   "year": 2055,
+   "scenario": "base",
+   "jumpoff": "adjusted",
+   "asset": "/data/nightlights/visual/modeled/2055_base_adjusted.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2050,
+   "sha256": "e0dc372a875fa750e62dfef9cdc77007034c514d73352e20cbd418677ca4a7a8"
+  },
+  {
+   "year": 2060,
+   "scenario": "base",
+   "jumpoff": "adjusted",
+   "asset": "/data/nightlights/visual/modeled/2060_base_adjusted.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2055,
+   "sha256": "f70bb3c974c55e41ad6cf479d6c65589b6d55adcc625cfc454564168240bd005"
+  },
+  {
+   "year": 2065,
+   "scenario": "base",
+   "jumpoff": "adjusted",
+   "asset": "/data/nightlights/visual/modeled/2065_base_adjusted.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2060,
+   "sha256": "8bb98fdeb956c8944d04adac9a82f607a9c92f746d7c6c5af1193c2eb6644638"
+  },
+  {
+   "year": 2070,
+   "scenario": "base",
+   "jumpoff": "adjusted",
+   "asset": "/data/nightlights/visual/modeled/2070_base_adjusted.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2065,
+   "sha256": "b5d89505cd378b63e9e4ce6c0237aedd723df0989c0f6d1d310243902ed2bbec"
+  },
+  {
+   "year": 2075,
+   "scenario": "base",
+   "jumpoff": "adjusted",
+   "asset": "/data/nightlights/visual/modeled/2075_base_adjusted.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2070,
+   "sha256": "b9893873479a244dc4523ff0806cc469367417d76baf38107e8d5e7233b4f513"
+  },
+  {
+   "year": 2030,
+   "scenario": "negative",
+   "jumpoff": "adjusted",
+   "asset": "/data/nightlights/visual/modeled/2030_negative_adjusted.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": false,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2024,
+   "sha256": "8bee305f60fe417fdd6c32b1d03c83729f9946396d5cd4d4b3a4020e0cdab4ea"
+  },
+  {
+   "year": 2035,
+   "scenario": "negative",
+   "jumpoff": "adjusted",
+   "asset": "/data/nightlights/visual/modeled/2035_negative_adjusted.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2030,
+   "sha256": "b99888a34b43134b9f8b298920411be3a3c1af158ea47676d5271a729a815225"
+  },
+  {
+   "year": 2040,
+   "scenario": "negative",
+   "jumpoff": "adjusted",
+   "asset": "/data/nightlights/visual/modeled/2040_negative_adjusted.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2035,
+   "sha256": "7d0e95e08f3bb2517dacbc6213627a740fa8bd1f7941f18f0f52df860bc5315c"
+  },
+  {
+   "year": 2045,
+   "scenario": "negative",
+   "jumpoff": "adjusted",
+   "asset": "/data/nightlights/visual/modeled/2045_negative_adjusted.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2040,
+   "sha256": "1f4b1abebd6d1f982b840011b80d646ea26b736bb48c92f20ec18fb2b80cdda5"
+  },
+  {
+   "year": 2050,
+   "scenario": "negative",
+   "jumpoff": "adjusted",
+   "asset": "/data/nightlights/visual/modeled/2050_negative_adjusted.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2045,
+   "sha256": "bfbcad62e8d5dbd7c094cb4f2e3216af0e64bd05b800ec00e6885fae62b6531c"
+  },
+  {
+   "year": 2055,
+   "scenario": "negative",
+   "jumpoff": "adjusted",
+   "asset": "/data/nightlights/visual/modeled/2055_negative_adjusted.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2050,
+   "sha256": "bbcca511737a43b17ff739a880ef8f97750f2e773609e053783a1571aff113ed"
+  },
+  {
+   "year": 2060,
+   "scenario": "negative",
+   "jumpoff": "adjusted",
+   "asset": "/data/nightlights/visual/modeled/2060_negative_adjusted.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2055,
+   "sha256": "50dae13cee8318fccb2d2748755b130bcbf764371a2c0492702843f4d59cde7a"
+  },
+  {
+   "year": 2065,
+   "scenario": "negative",
+   "jumpoff": "adjusted",
+   "asset": "/data/nightlights/visual/modeled/2065_negative_adjusted.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2060,
+   "sha256": "c1b57de5b39dd05960e62597104011be6f663abd8384920090bebfe2275685af"
+  },
+  {
+   "year": 2070,
+   "scenario": "negative",
+   "jumpoff": "adjusted",
+   "asset": "/data/nightlights/visual/modeled/2070_negative_adjusted.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2065,
+   "sha256": "91d61de03df785dd8d708035703d3f7d0d4f291df145045049103862c978a4a3"
+  },
+  {
+   "year": 2075,
+   "scenario": "negative",
+   "jumpoff": "adjusted",
+   "asset": "/data/nightlights/visual/modeled/2075_negative_adjusted.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2070,
+   "sha256": "4ef7e4758cc5f85cc3978b73f378f30bcb60838d98dbd1d6e65e4565711855f7"
+  },
+  {
+   "year": 2030,
+   "scenario": "optimistic",
+   "jumpoff": "adjusted",
+   "asset": "/data/nightlights/visual/modeled/2030_optimistic_adjusted.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": false,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2024,
+   "sha256": "3178ec4a713c8b35fdfd6a177ce679b33e24597bdc1daccd5abc1bd203bcf28a"
+  },
+  {
+   "year": 2035,
+   "scenario": "optimistic",
+   "jumpoff": "adjusted",
+   "asset": "/data/nightlights/visual/modeled/2035_optimistic_adjusted.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2030,
+   "sha256": "6627b71d1544d5636480a5cf28bebf707a55dff26f77991612010b2503694500"
+  },
+  {
+   "year": 2040,
+   "scenario": "optimistic",
+   "jumpoff": "adjusted",
+   "asset": "/data/nightlights/visual/modeled/2040_optimistic_adjusted.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2035,
+   "sha256": "59c42ebec463d3b061a13314e3d94a49a23c0db6535c13517a572d371a6eebf4"
+  },
+  {
+   "year": 2045,
+   "scenario": "optimistic",
+   "jumpoff": "adjusted",
+   "asset": "/data/nightlights/visual/modeled/2045_optimistic_adjusted.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2040,
+   "sha256": "78644229de3d8befc600a768efba610f622b226a3dc3c20b7909ff3b65bb6456"
+  },
+  {
+   "year": 2050,
+   "scenario": "optimistic",
+   "jumpoff": "adjusted",
+   "asset": "/data/nightlights/visual/modeled/2050_optimistic_adjusted.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2045,
+   "sha256": "24659e59b220bd9bbdf372d106795a523de563ce8c1434cb972096518ba090a9"
+  },
+  {
+   "year": 2055,
+   "scenario": "optimistic",
+   "jumpoff": "adjusted",
+   "asset": "/data/nightlights/visual/modeled/2055_optimistic_adjusted.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2050,
+   "sha256": "5bf1e31e5b92928a7268140e9b40ebaab0eeca1851033d6e9e2d0575d8b92dd8"
+  },
+  {
+   "year": 2060,
+   "scenario": "optimistic",
+   "jumpoff": "adjusted",
+   "asset": "/data/nightlights/visual/modeled/2060_optimistic_adjusted.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2055,
+   "sha256": "76ee6fd9459041377f69c93e3cb974ff54e3f5f376617c062cd33dbf01fac399"
+  },
+  {
+   "year": 2065,
+   "scenario": "optimistic",
+   "jumpoff": "adjusted",
+   "asset": "/data/nightlights/visual/modeled/2065_optimistic_adjusted.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2060,
+   "sha256": "d47175f7d948a2f4226ac6c62109411324a82e7c361118d00e6d598c14c626a9"
+  },
+  {
+   "year": 2070,
+   "scenario": "optimistic",
+   "jumpoff": "adjusted",
+   "asset": "/data/nightlights/visual/modeled/2070_optimistic_adjusted.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2065,
+   "sha256": "91d97c73a9feb4d907db13ffbb9d93b1b8dfd11b446d50beb944ef0dca15ba89"
+  },
+  {
+   "year": 2075,
+   "scenario": "optimistic",
+   "jumpoff": "adjusted",
+   "asset": "/data/nightlights/visual/modeled/2075_optimistic_adjusted.png",
+   "sourceType": "modeled_forecast",
+   "analyticalSource": "light_model_v2",
+   "comparableToPrevious": true,
+   "qualityFlags": [
+    "model"
+   ],
+   "referenceYear": 2070,
+   "sha256": "8ae6d459876bc3f6ec29390ebbb2af75de36c3db1a497def91496de78dd938d0"
+  }
+ ],
+ "deltas": {
+  "note": "delta = log1p(rad) - log1p(ref) на радианс-эквивалентных полях; даунсемпл 2x2, сглаживание 3x3, порог 0.15, кап 1.2; единая шкала на все годы; рост - тёплый, спад - холодный, незначимое - прозрачно; кросс-источниковые пары помечены crossSource",
+  "threshold": 0.15,
+  "cap": 1.2,
+  "analysisBases": [
+   1992,
+   2000,
+   2012,
+   2019,
+   2024
+  ],
+  "items": [
+   {
+    "kind": "previous_year",
+    "asset": "/data/nightlights/delta/previous_year/py_1993.png",
+    "cur": "y1993",
+    "ref": "y1992",
+    "year": 1993,
+    "refYear": 1992,
+    "crossSource": false
+   },
+   {
+    "kind": "previous_year",
+    "asset": "/data/nightlights/delta/previous_year/py_1994.png",
+    "cur": "y1994",
+    "ref": "y1993",
+    "year": 1994,
+    "refYear": 1993,
+    "crossSource": false
+   },
+   {
+    "kind": "previous_year",
+    "asset": "/data/nightlights/delta/previous_year/py_1995.png",
+    "cur": "y1995",
+    "ref": "y1994",
+    "year": 1995,
+    "refYear": 1994,
+    "crossSource": false
+   },
+   {
+    "kind": "previous_year",
+    "asset": "/data/nightlights/delta/previous_year/py_1996.png",
+    "cur": "y1996",
+    "ref": "y1995",
+    "year": 1996,
+    "refYear": 1995,
+    "crossSource": false
+   },
+   {
+    "kind": "previous_year",
+    "asset": "/data/nightlights/delta/previous_year/py_1997.png",
+    "cur": "y1997",
+    "ref": "y1996",
+    "year": 1997,
+    "refYear": 1996,
+    "crossSource": false
+   },
+   {
+    "kind": "previous_year",
+    "asset": "/data/nightlights/delta/previous_year/py_1998.png",
+    "cur": "y1998",
+    "ref": "y1997",
+    "year": 1998,
+    "refYear": 1997,
+    "crossSource": false
+   },
+   {
+    "kind": "previous_year",
+    "asset": "/data/nightlights/delta/previous_year/py_1999.png",
+    "cur": "y1999",
+    "ref": "y1998",
+    "year": 1999,
+    "refYear": 1998,
+    "crossSource": false
+   },
+   {
+    "kind": "previous_year",
+    "asset": "/data/nightlights/delta/previous_year/py_2000.png",
+    "cur": "y2000",
+    "ref": "y1999",
+    "year": 2000,
+    "refYear": 1999,
+    "crossSource": false
+   },
+   {
+    "kind": "previous_year",
+    "asset": "/data/nightlights/delta/previous_year/py_2001.png",
+    "cur": "y2001",
+    "ref": "y2000",
+    "year": 2001,
+    "refYear": 2000,
+    "crossSource": false
+   },
+   {
+    "kind": "previous_year",
+    "asset": "/data/nightlights/delta/previous_year/py_2002.png",
+    "cur": "y2002",
+    "ref": "y2001",
+    "year": 2002,
+    "refYear": 2001,
+    "crossSource": false
+   },
+   {
+    "kind": "previous_year",
+    "asset": "/data/nightlights/delta/previous_year/py_2003.png",
+    "cur": "y2003",
+    "ref": "y2002",
+    "year": 2003,
+    "refYear": 2002,
+    "crossSource": false
+   },
+   {
+    "kind": "previous_year",
+    "asset": "/data/nightlights/delta/previous_year/py_2004.png",
+    "cur": "y2004",
+    "ref": "y2003",
+    "year": 2004,
+    "refYear": 2003,
+    "crossSource": false
+   },
+   {
+    "kind": "previous_year",
+    "asset": "/data/nightlights/delta/previous_year/py_2005.png",
+    "cur": "y2005",
+    "ref": "y2004",
+    "year": 2005,
+    "refYear": 2004,
+    "crossSource": false
+   },
+   {
+    "kind": "previous_year",
+    "asset": "/data/nightlights/delta/previous_year/py_2006.png",
+    "cur": "y2006",
+    "ref": "y2005",
+    "year": 2006,
+    "refYear": 2005,
+    "crossSource": false
+   },
+   {
+    "kind": "previous_year",
+    "asset": "/data/nightlights/delta/previous_year/py_2007.png",
+    "cur": "y2007",
+    "ref": "y2006",
+    "year": 2007,
+    "refYear": 2006,
+    "crossSource": false
+   },
+   {
+    "kind": "previous_year",
+    "asset": "/data/nightlights/delta/previous_year/py_2008.png",
+    "cur": "y2008",
+    "ref": "y2007",
+    "year": 2008,
+    "refYear": 2007,
+    "crossSource": false
+   },
+   {
+    "kind": "previous_year",
+    "asset": "/data/nightlights/delta/previous_year/py_2009.png",
+    "cur": "y2009",
+    "ref": "y2008",
+    "year": 2009,
+    "refYear": 2008,
+    "crossSource": false
+   },
+   {
+    "kind": "previous_year",
+    "asset": "/data/nightlights/delta/previous_year/py_2010.png",
+    "cur": "y2010",
+    "ref": "y2009",
+    "year": 2010,
+    "refYear": 2009,
+    "crossSource": false
+   },
+   {
+    "kind": "previous_year",
+    "asset": "/data/nightlights/delta/previous_year/py_2011.png",
+    "cur": "y2011",
+    "ref": "y2010",
+    "year": 2011,
+    "refYear": 2010,
+    "crossSource": false
+   },
+   {
+    "kind": "previous_year",
+    "asset": "/data/nightlights/delta/previous_year/py_2013.png",
+    "cur": "y2013",
+    "ref": "y2012",
+    "year": 2013,
+    "refYear": 2012,
+    "crossSource": false
+   },
+   {
+    "kind": "previous_year",
+    "asset": "/data/nightlights/delta/previous_year/py_2014.png",
+    "cur": "y2014",
+    "ref": "y2013",
+    "year": 2014,
+    "refYear": 2013,
+    "crossSource": false
+   },
+   {
+    "kind": "previous_year",
+    "asset": "/data/nightlights/delta/previous_year/py_2015.png",
+    "cur": "y2015",
+    "ref": "y2014",
+    "year": 2015,
+    "refYear": 2014,
+    "crossSource": false
+   },
+   {
+    "kind": "previous_year",
+    "asset": "/data/nightlights/delta/previous_year/py_2016.png",
+    "cur": "y2016",
+    "ref": "y2015",
+    "year": 2016,
+    "refYear": 2015,
+    "crossSource": false
+   },
+   {
+    "kind": "previous_year",
+    "asset": "/data/nightlights/delta/previous_year/py_2017.png",
+    "cur": "y2017",
+    "ref": "y2016",
+    "year": 2017,
+    "refYear": 2016,
+    "crossSource": false
+   },
+   {
+    "kind": "previous_year",
+    "asset": "/data/nightlights/delta/previous_year/py_2018.png",
+    "cur": "y2018",
+    "ref": "y2017",
+    "year": 2018,
+    "refYear": 2017,
+    "crossSource": false
+   },
+   {
+    "kind": "previous_year",
+    "asset": "/data/nightlights/delta/previous_year/py_2019.png",
+    "cur": "y2019",
+    "ref": "y2018",
+    "year": 2019,
+    "refYear": 2018,
+    "crossSource": false
+   },
+   {
+    "kind": "previous_year",
+    "asset": "/data/nightlights/delta/previous_year/py_2020.png",
+    "cur": "y2020",
+    "ref": "y2019",
+    "year": 2020,
+    "refYear": 2019,
+    "crossSource": false
+   },
+   {
+    "kind": "previous_year",
+    "asset": "/data/nightlights/delta/previous_year/py_2021.png",
+    "cur": "y2021",
+    "ref": "y2020",
+    "year": 2021,
+    "refYear": 2020,
+    "crossSource": false
+   },
+   {
+    "kind": "previous_year",
+    "asset": "/data/nightlights/delta/previous_year/py_2022.png",
+    "cur": "y2022",
+    "ref": "y2021",
+    "year": 2022,
+    "refYear": 2021,
+    "crossSource": false
+   },
+   {
+    "kind": "previous_year",
+    "asset": "/data/nightlights/delta/previous_year/py_2023.png",
+    "cur": "y2023",
+    "ref": "y2022",
+    "year": 2023,
+    "refYear": 2022,
+    "crossSource": false
+   },
+   {
+    "kind": "previous_year",
+    "asset": "/data/nightlights/delta/previous_year/py_2024.png",
+    "cur": "y2024",
+    "ref": "y2023",
+    "year": 2024,
+    "refYear": 2023,
+    "crossSource": false
+   },
+   {
+    "kind": "previous_node",
+    "asset": "/data/nightlights/delta/previous_year/pym_2035_base_official.png",
+    "cur": "m2035_base_official",
+    "ref": "m2030_base_official",
+    "year": 2035,
+    "refYear": 2030,
+    "scenario": "base",
+    "jumpoff": "official",
+    "crossSource": false
+   },
+   {
+    "kind": "previous_node",
+    "asset": "/data/nightlights/delta/previous_year/pym_2040_base_official.png",
+    "cur": "m2040_base_official",
+    "ref": "m2035_base_official",
+    "year": 2040,
+    "refYear": 2035,
+    "scenario": "base",
+    "jumpoff": "official",
+    "crossSource": false
+   },
+   {
+    "kind": "previous_node",
+    "asset": "/data/nightlights/delta/previous_year/pym_2045_base_official.png",
+    "cur": "m2045_base_official",
+    "ref": "m2040_base_official",
+    "year": 2045,
+    "refYear": 2040,
+    "scenario": "base",
+    "jumpoff": "official",
+    "crossSource": false
+   },
+   {
+    "kind": "previous_node",
+    "asset": "/data/nightlights/delta/previous_year/pym_2050_base_official.png",
+    "cur": "m2050_base_official",
+    "ref": "m2045_base_official",
+    "year": 2050,
+    "refYear": 2045,
+    "scenario": "base",
+    "jumpoff": "official",
+    "crossSource": false
+   },
+   {
+    "kind": "previous_node",
+    "asset": "/data/nightlights/delta/previous_year/pym_2055_base_official.png",
+    "cur": "m2055_base_official",
+    "ref": "m2050_base_official",
+    "year": 2055,
+    "refYear": 2050,
+    "scenario": "base",
+    "jumpoff": "official",
+    "crossSource": false
+   },
+   {
+    "kind": "previous_node",
+    "asset": "/data/nightlights/delta/previous_year/pym_2060_base_official.png",
+    "cur": "m2060_base_official",
+    "ref": "m2055_base_official",
+    "year": 2060,
+    "refYear": 2055,
+    "scenario": "base",
+    "jumpoff": "official",
+    "crossSource": false
+   },
+   {
+    "kind": "previous_node",
+    "asset": "/data/nightlights/delta/previous_year/pym_2065_base_official.png",
+    "cur": "m2065_base_official",
+    "ref": "m2060_base_official",
+    "year": 2065,
+    "refYear": 2060,
+    "scenario": "base",
+    "jumpoff": "official",
+    "crossSource": false
+   },
+   {
+    "kind": "previous_node",
+    "asset": "/data/nightlights/delta/previous_year/pym_2070_base_official.png",
+    "cur": "m2070_base_official",
+    "ref": "m2065_base_official",
+    "year": 2070,
+    "refYear": 2065,
+    "scenario": "base",
+    "jumpoff": "official",
+    "crossSource": false
+   },
+   {
+    "kind": "previous_node",
+    "asset": "/data/nightlights/delta/previous_year/pym_2075_base_official.png",
+    "cur": "m2075_base_official",
+    "ref": "m2070_base_official",
+    "year": 2075,
+    "refYear": 2070,
+    "scenario": "base",
+    "jumpoff": "official",
+    "crossSource": false
+   },
+   {
+    "kind": "previous_node",
+    "asset": "/data/nightlights/delta/previous_year/pym_2035_negative_official.png",
+    "cur": "m2035_negative_official",
+    "ref": "m2030_negative_official",
+    "year": 2035,
+    "refYear": 2030,
+    "scenario": "negative",
+    "jumpoff": "official",
+    "crossSource": false
+   },
+   {
+    "kind": "previous_node",
+    "asset": "/data/nightlights/delta/previous_year/pym_2040_negative_official.png",
+    "cur": "m2040_negative_official",
+    "ref": "m2035_negative_official",
+    "year": 2040,
+    "refYear": 2035,
+    "scenario": "negative",
+    "jumpoff": "official",
+    "crossSource": false
+   },
+   {
+    "kind": "previous_node",
+    "asset": "/data/nightlights/delta/previous_year/pym_2045_negative_official.png",
+    "cur": "m2045_negative_official",
+    "ref": "m2040_negative_official",
+    "year": 2045,
+    "refYear": 2040,
+    "scenario": "negative",
+    "jumpoff": "official",
+    "crossSource": false
+   },
+   {
+    "kind": "previous_node",
+    "asset": "/data/nightlights/delta/previous_year/pym_2050_negative_official.png",
+    "cur": "m2050_negative_official",
+    "ref": "m2045_negative_official",
+    "year": 2050,
+    "refYear": 2045,
+    "scenario": "negative",
+    "jumpoff": "official",
+    "crossSource": false
+   },
+   {
+    "kind": "previous_node",
+    "asset": "/data/nightlights/delta/previous_year/pym_2055_negative_official.png",
+    "cur": "m2055_negative_official",
+    "ref": "m2050_negative_official",
+    "year": 2055,
+    "refYear": 2050,
+    "scenario": "negative",
+    "jumpoff": "official",
+    "crossSource": false
+   },
+   {
+    "kind": "previous_node",
+    "asset": "/data/nightlights/delta/previous_year/pym_2060_negative_official.png",
+    "cur": "m2060_negative_official",
+    "ref": "m2055_negative_official",
+    "year": 2060,
+    "refYear": 2055,
+    "scenario": "negative",
+    "jumpoff": "official",
+    "crossSource": false
+   },
+   {
+    "kind": "previous_node",
+    "asset": "/data/nightlights/delta/previous_year/pym_2065_negative_official.png",
+    "cur": "m2065_negative_official",
+    "ref": "m2060_negative_official",
+    "year": 2065,
+    "refYear": 2060,
+    "scenario": "negative",
+    "jumpoff": "official",
+    "crossSource": false
+   },
+   {
+    "kind": "previous_node",
+    "asset": "/data/nightlights/delta/previous_year/pym_2070_negative_official.png",
+    "cur": "m2070_negative_official",
+    "ref": "m2065_negative_official",
+    "year": 2070,
+    "refYear": 2065,
+    "scenario": "negative",
+    "jumpoff": "official",
+    "crossSource": false
+   },
+   {
+    "kind": "previous_node",
+    "asset": "/data/nightlights/delta/previous_year/pym_2075_negative_official.png",
+    "cur": "m2075_negative_official",
+    "ref": "m2070_negative_official",
+    "year": 2075,
+    "refYear": 2070,
+    "scenario": "negative",
+    "jumpoff": "official",
+    "crossSource": false
+   },
+   {
+    "kind": "previous_node",
+    "asset": "/data/nightlights/delta/previous_year/pym_2035_optimistic_official.png",
+    "cur": "m2035_optimistic_official",
+    "ref": "m2030_optimistic_official",
+    "year": 2035,
+    "refYear": 2030,
+    "scenario": "optimistic",
+    "jumpoff": "official",
+    "crossSource": false
+   },
+   {
+    "kind": "previous_node",
+    "asset": "/data/nightlights/delta/previous_year/pym_2040_optimistic_official.png",
+    "cur": "m2040_optimistic_official",
+    "ref": "m2035_optimistic_official",
+    "year": 2040,
+    "refYear": 2035,
+    "scenario": "optimistic",
+    "jumpoff": "official",
+    "crossSource": false
+   },
+   {
+    "kind": "previous_node",
+    "asset": "/data/nightlights/delta/previous_year/pym_2045_optimistic_official.png",
+    "cur": "m2045_optimistic_official",
+    "ref": "m2040_optimistic_official",
+    "year": 2045,
+    "refYear": 2040,
+    "scenario": "optimistic",
+    "jumpoff": "official",
+    "crossSource": false
+   },
+   {
+    "kind": "previous_node",
+    "asset": "/data/nightlights/delta/previous_year/pym_2050_optimistic_official.png",
+    "cur": "m2050_optimistic_official",
+    "ref": "m2045_optimistic_official",
+    "year": 2050,
+    "refYear": 2045,
+    "scenario": "optimistic",
+    "jumpoff": "official",
+    "crossSource": false
+   },
+   {
+    "kind": "previous_node",
+    "asset": "/data/nightlights/delta/previous_year/pym_2055_optimistic_official.png",
+    "cur": "m2055_optimistic_official",
+    "ref": "m2050_optimistic_official",
+    "year": 2055,
+    "refYear": 2050,
+    "scenario": "optimistic",
+    "jumpoff": "official",
+    "crossSource": false
+   },
+   {
+    "kind": "previous_node",
+    "asset": "/data/nightlights/delta/previous_year/pym_2060_optimistic_official.png",
+    "cur": "m2060_optimistic_official",
+    "ref": "m2055_optimistic_official",
+    "year": 2060,
+    "refYear": 2055,
+    "scenario": "optimistic",
+    "jumpoff": "official",
+    "crossSource": false
+   },
+   {
+    "kind": "previous_node",
+    "asset": "/data/nightlights/delta/previous_year/pym_2065_optimistic_official.png",
+    "cur": "m2065_optimistic_official",
+    "ref": "m2060_optimistic_official",
+    "year": 2065,
+    "refYear": 2060,
+    "scenario": "optimistic",
+    "jumpoff": "official",
+    "crossSource": false
+   },
+   {
+    "kind": "previous_node",
+    "asset": "/data/nightlights/delta/previous_year/pym_2070_optimistic_official.png",
+    "cur": "m2070_optimistic_official",
+    "ref": "m2065_optimistic_official",
+    "year": 2070,
+    "refYear": 2065,
+    "scenario": "optimistic",
+    "jumpoff": "official",
+    "crossSource": false
+   },
+   {
+    "kind": "previous_node",
+    "asset": "/data/nightlights/delta/previous_year/pym_2075_optimistic_official.png",
+    "cur": "m2075_optimistic_official",
+    "ref": "m2070_optimistic_official",
+    "year": 2075,
+    "refYear": 2070,
+    "scenario": "optimistic",
+    "jumpoff": "official",
+    "crossSource": false
+   },
+   {
+    "kind": "previous_node",
+    "asset": "/data/nightlights/delta/previous_year/pym_2035_base_adjusted.png",
+    "cur": "m2035_base_adjusted",
+    "ref": "m2030_base_adjusted",
+    "year": 2035,
+    "refYear": 2030,
+    "scenario": "base",
+    "jumpoff": "adjusted",
+    "crossSource": false
+   },
+   {
+    "kind": "previous_node",
+    "asset": "/data/nightlights/delta/previous_year/pym_2040_base_adjusted.png",
+    "cur": "m2040_base_adjusted",
+    "ref": "m2035_base_adjusted",
+    "year": 2040,
+    "refYear": 2035,
+    "scenario": "base",
+    "jumpoff": "adjusted",
+    "crossSource": false
+   },
+   {
+    "kind": "previous_node",
+    "asset": "/data/nightlights/delta/previous_year/pym_2045_base_adjusted.png",
+    "cur": "m2045_base_adjusted",
+    "ref": "m2040_base_adjusted",
+    "year": 2045,
+    "refYear": 2040,
+    "scenario": "base",
+    "jumpoff": "adjusted",
+    "crossSource": false
+   },
+   {
+    "kind": "previous_node",
+    "asset": "/data/nightlights/delta/previous_year/pym_2050_base_adjusted.png",
+    "cur": "m2050_base_adjusted",
+    "ref": "m2045_base_adjusted",
+    "year": 2050,
+    "refYear": 2045,
+    "scenario": "base",
+    "jumpoff": "adjusted",
+    "crossSource": false
+   },
+   {
+    "kind": "previous_node",
+    "asset": "/data/nightlights/delta/previous_year/pym_2055_base_adjusted.png",
+    "cur": "m2055_base_adjusted",
+    "ref": "m2050_base_adjusted",
+    "year": 2055,
+    "refYear": 2050,
+    "scenario": "base",
+    "jumpoff": "adjusted",
+    "crossSource": false
+   },
+   {
+    "kind": "previous_node",
+    "asset": "/data/nightlights/delta/previous_year/pym_2060_base_adjusted.png",
+    "cur": "m2060_base_adjusted",
+    "ref": "m2055_base_adjusted",
+    "year": 2060,
+    "refYear": 2055,
+    "scenario": "base",
+    "jumpoff": "adjusted",
+    "crossSource": false
+   },
+   {
+    "kind": "previous_node",
+    "asset": "/data/nightlights/delta/previous_year/pym_2065_base_adjusted.png",
+    "cur": "m2065_base_adjusted",
+    "ref": "m2060_base_adjusted",
+    "year": 2065,
+    "refYear": 2060,
+    "scenario": "base",
+    "jumpoff": "adjusted",
+    "crossSource": false
+   },
+   {
+    "kind": "previous_node",
+    "asset": "/data/nightlights/delta/previous_year/pym_2070_base_adjusted.png",
+    "cur": "m2070_base_adjusted",
+    "ref": "m2065_base_adjusted",
+    "year": 2070,
+    "refYear": 2065,
+    "scenario": "base",
+    "jumpoff": "adjusted",
+    "crossSource": false
+   },
+   {
+    "kind": "previous_node",
+    "asset": "/data/nightlights/delta/previous_year/pym_2075_base_adjusted.png",
+    "cur": "m2075_base_adjusted",
+    "ref": "m2070_base_adjusted",
+    "year": 2075,
+    "refYear": 2070,
+    "scenario": "base",
+    "jumpoff": "adjusted",
+    "crossSource": false
+   },
+   {
+    "kind": "previous_node",
+    "asset": "/data/nightlights/delta/previous_year/pym_2035_negative_adjusted.png",
+    "cur": "m2035_negative_adjusted",
+    "ref": "m2030_negative_adjusted",
+    "year": 2035,
+    "refYear": 2030,
+    "scenario": "negative",
+    "jumpoff": "adjusted",
+    "crossSource": false
+   },
+   {
+    "kind": "previous_node",
+    "asset": "/data/nightlights/delta/previous_year/pym_2040_negative_adjusted.png",
+    "cur": "m2040_negative_adjusted",
+    "ref": "m2035_negative_adjusted",
+    "year": 2040,
+    "refYear": 2035,
+    "scenario": "negative",
+    "jumpoff": "adjusted",
+    "crossSource": false
+   },
+   {
+    "kind": "previous_node",
+    "asset": "/data/nightlights/delta/previous_year/pym_2045_negative_adjusted.png",
+    "cur": "m2045_negative_adjusted",
+    "ref": "m2040_negative_adjusted",
+    "year": 2045,
+    "refYear": 2040,
+    "scenario": "negative",
+    "jumpoff": "adjusted",
+    "crossSource": false
+   },
+   {
+    "kind": "previous_node",
+    "asset": "/data/nightlights/delta/previous_year/pym_2050_negative_adjusted.png",
+    "cur": "m2050_negative_adjusted",
+    "ref": "m2045_negative_adjusted",
+    "year": 2050,
+    "refYear": 2045,
+    "scenario": "negative",
+    "jumpoff": "adjusted",
+    "crossSource": false
+   },
+   {
+    "kind": "previous_node",
+    "asset": "/data/nightlights/delta/previous_year/pym_2055_negative_adjusted.png",
+    "cur": "m2055_negative_adjusted",
+    "ref": "m2050_negative_adjusted",
+    "year": 2055,
+    "refYear": 2050,
+    "scenario": "negative",
+    "jumpoff": "adjusted",
+    "crossSource": false
+   },
+   {
+    "kind": "previous_node",
+    "asset": "/data/nightlights/delta/previous_year/pym_2060_negative_adjusted.png",
+    "cur": "m2060_negative_adjusted",
+    "ref": "m2055_negative_adjusted",
+    "year": 2060,
+    "refYear": 2055,
+    "scenario": "negative",
+    "jumpoff": "adjusted",
+    "crossSource": false
+   },
+   {
+    "kind": "previous_node",
+    "asset": "/data/nightlights/delta/previous_year/pym_2065_negative_adjusted.png",
+    "cur": "m2065_negative_adjusted",
+    "ref": "m2060_negative_adjusted",
+    "year": 2065,
+    "refYear": 2060,
+    "scenario": "negative",
+    "jumpoff": "adjusted",
+    "crossSource": false
+   },
+   {
+    "kind": "previous_node",
+    "asset": "/data/nightlights/delta/previous_year/pym_2070_negative_adjusted.png",
+    "cur": "m2070_negative_adjusted",
+    "ref": "m2065_negative_adjusted",
+    "year": 2070,
+    "refYear": 2065,
+    "scenario": "negative",
+    "jumpoff": "adjusted",
+    "crossSource": false
+   },
+   {
+    "kind": "previous_node",
+    "asset": "/data/nightlights/delta/previous_year/pym_2075_negative_adjusted.png",
+    "cur": "m2075_negative_adjusted",
+    "ref": "m2070_negative_adjusted",
+    "year": 2075,
+    "refYear": 2070,
+    "scenario": "negative",
+    "jumpoff": "adjusted",
+    "crossSource": false
+   },
+   {
+    "kind": "previous_node",
+    "asset": "/data/nightlights/delta/previous_year/pym_2035_optimistic_adjusted.png",
+    "cur": "m2035_optimistic_adjusted",
+    "ref": "m2030_optimistic_adjusted",
+    "year": 2035,
+    "refYear": 2030,
+    "scenario": "optimistic",
+    "jumpoff": "adjusted",
+    "crossSource": false
+   },
+   {
+    "kind": "previous_node",
+    "asset": "/data/nightlights/delta/previous_year/pym_2040_optimistic_adjusted.png",
+    "cur": "m2040_optimistic_adjusted",
+    "ref": "m2035_optimistic_adjusted",
+    "year": 2040,
+    "refYear": 2035,
+    "scenario": "optimistic",
+    "jumpoff": "adjusted",
+    "crossSource": false
+   },
+   {
+    "kind": "previous_node",
+    "asset": "/data/nightlights/delta/previous_year/pym_2045_optimistic_adjusted.png",
+    "cur": "m2045_optimistic_adjusted",
+    "ref": "m2040_optimistic_adjusted",
+    "year": 2045,
+    "refYear": 2040,
+    "scenario": "optimistic",
+    "jumpoff": "adjusted",
+    "crossSource": false
+   },
+   {
+    "kind": "previous_node",
+    "asset": "/data/nightlights/delta/previous_year/pym_2050_optimistic_adjusted.png",
+    "cur": "m2050_optimistic_adjusted",
+    "ref": "m2045_optimistic_adjusted",
+    "year": 2050,
+    "refYear": 2045,
+    "scenario": "optimistic",
+    "jumpoff": "adjusted",
+    "crossSource": false
+   },
+   {
+    "kind": "previous_node",
+    "asset": "/data/nightlights/delta/previous_year/pym_2055_optimistic_adjusted.png",
+    "cur": "m2055_optimistic_adjusted",
+    "ref": "m2050_optimistic_adjusted",
+    "year": 2055,
+    "refYear": 2050,
+    "scenario": "optimistic",
+    "jumpoff": "adjusted",
+    "crossSource": false
+   },
+   {
+    "kind": "previous_node",
+    "asset": "/data/nightlights/delta/previous_year/pym_2060_optimistic_adjusted.png",
+    "cur": "m2060_optimistic_adjusted",
+    "ref": "m2055_optimistic_adjusted",
+    "year": 2060,
+    "refYear": 2055,
+    "scenario": "optimistic",
+    "jumpoff": "adjusted",
+    "crossSource": false
+   },
+   {
+    "kind": "previous_node",
+    "asset": "/data/nightlights/delta/previous_year/pym_2065_optimistic_adjusted.png",
+    "cur": "m2065_optimistic_adjusted",
+    "ref": "m2060_optimistic_adjusted",
+    "year": 2065,
+    "refYear": 2060,
+    "scenario": "optimistic",
+    "jumpoff": "adjusted",
+    "crossSource": false
+   },
+   {
+    "kind": "previous_node",
+    "asset": "/data/nightlights/delta/previous_year/pym_2070_optimistic_adjusted.png",
+    "cur": "m2070_optimistic_adjusted",
+    "ref": "m2065_optimistic_adjusted",
+    "year": 2070,
+    "refYear": 2065,
+    "scenario": "optimistic",
+    "jumpoff": "adjusted",
+    "crossSource": false
+   },
+   {
+    "kind": "previous_node",
+    "asset": "/data/nightlights/delta/previous_year/pym_2075_optimistic_adjusted.png",
+    "cur": "m2075_optimistic_adjusted",
+    "ref": "m2070_optimistic_adjusted",
+    "year": 2075,
+    "refYear": 2070,
+    "scenario": "optimistic",
+    "jumpoff": "adjusted",
+    "crossSource": false
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2030_base_official.png",
+    "cur": "m2030_base_official",
+    "ref": "y2024",
+    "year": 2030,
+    "refYear": 2024,
+    "scenario": "base",
+    "jumpoff": "official",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2035_base_official.png",
+    "cur": "m2035_base_official",
+    "ref": "y2024",
+    "year": 2035,
+    "refYear": 2024,
+    "scenario": "base",
+    "jumpoff": "official",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2040_base_official.png",
+    "cur": "m2040_base_official",
+    "ref": "y2024",
+    "year": 2040,
+    "refYear": 2024,
+    "scenario": "base",
+    "jumpoff": "official",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2045_base_official.png",
+    "cur": "m2045_base_official",
+    "ref": "y2024",
+    "year": 2045,
+    "refYear": 2024,
+    "scenario": "base",
+    "jumpoff": "official",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2050_base_official.png",
+    "cur": "m2050_base_official",
+    "ref": "y2024",
+    "year": 2050,
+    "refYear": 2024,
+    "scenario": "base",
+    "jumpoff": "official",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2055_base_official.png",
+    "cur": "m2055_base_official",
+    "ref": "y2024",
+    "year": 2055,
+    "refYear": 2024,
+    "scenario": "base",
+    "jumpoff": "official",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2060_base_official.png",
+    "cur": "m2060_base_official",
+    "ref": "y2024",
+    "year": 2060,
+    "refYear": 2024,
+    "scenario": "base",
+    "jumpoff": "official",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2065_base_official.png",
+    "cur": "m2065_base_official",
+    "ref": "y2024",
+    "year": 2065,
+    "refYear": 2024,
+    "scenario": "base",
+    "jumpoff": "official",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2070_base_official.png",
+    "cur": "m2070_base_official",
+    "ref": "y2024",
+    "year": 2070,
+    "refYear": 2024,
+    "scenario": "base",
+    "jumpoff": "official",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2075_base_official.png",
+    "cur": "m2075_base_official",
+    "ref": "y2024",
+    "year": 2075,
+    "refYear": 2024,
+    "scenario": "base",
+    "jumpoff": "official",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2030_negative_official.png",
+    "cur": "m2030_negative_official",
+    "ref": "y2024",
+    "year": 2030,
+    "refYear": 2024,
+    "scenario": "negative",
+    "jumpoff": "official",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2035_negative_official.png",
+    "cur": "m2035_negative_official",
+    "ref": "y2024",
+    "year": 2035,
+    "refYear": 2024,
+    "scenario": "negative",
+    "jumpoff": "official",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2040_negative_official.png",
+    "cur": "m2040_negative_official",
+    "ref": "y2024",
+    "year": 2040,
+    "refYear": 2024,
+    "scenario": "negative",
+    "jumpoff": "official",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2045_negative_official.png",
+    "cur": "m2045_negative_official",
+    "ref": "y2024",
+    "year": 2045,
+    "refYear": 2024,
+    "scenario": "negative",
+    "jumpoff": "official",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2050_negative_official.png",
+    "cur": "m2050_negative_official",
+    "ref": "y2024",
+    "year": 2050,
+    "refYear": 2024,
+    "scenario": "negative",
+    "jumpoff": "official",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2055_negative_official.png",
+    "cur": "m2055_negative_official",
+    "ref": "y2024",
+    "year": 2055,
+    "refYear": 2024,
+    "scenario": "negative",
+    "jumpoff": "official",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2060_negative_official.png",
+    "cur": "m2060_negative_official",
+    "ref": "y2024",
+    "year": 2060,
+    "refYear": 2024,
+    "scenario": "negative",
+    "jumpoff": "official",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2065_negative_official.png",
+    "cur": "m2065_negative_official",
+    "ref": "y2024",
+    "year": 2065,
+    "refYear": 2024,
+    "scenario": "negative",
+    "jumpoff": "official",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2070_negative_official.png",
+    "cur": "m2070_negative_official",
+    "ref": "y2024",
+    "year": 2070,
+    "refYear": 2024,
+    "scenario": "negative",
+    "jumpoff": "official",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2075_negative_official.png",
+    "cur": "m2075_negative_official",
+    "ref": "y2024",
+    "year": 2075,
+    "refYear": 2024,
+    "scenario": "negative",
+    "jumpoff": "official",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2030_optimistic_official.png",
+    "cur": "m2030_optimistic_official",
+    "ref": "y2024",
+    "year": 2030,
+    "refYear": 2024,
+    "scenario": "optimistic",
+    "jumpoff": "official",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2035_optimistic_official.png",
+    "cur": "m2035_optimistic_official",
+    "ref": "y2024",
+    "year": 2035,
+    "refYear": 2024,
+    "scenario": "optimistic",
+    "jumpoff": "official",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2040_optimistic_official.png",
+    "cur": "m2040_optimistic_official",
+    "ref": "y2024",
+    "year": 2040,
+    "refYear": 2024,
+    "scenario": "optimistic",
+    "jumpoff": "official",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2045_optimistic_official.png",
+    "cur": "m2045_optimistic_official",
+    "ref": "y2024",
+    "year": 2045,
+    "refYear": 2024,
+    "scenario": "optimistic",
+    "jumpoff": "official",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2050_optimistic_official.png",
+    "cur": "m2050_optimistic_official",
+    "ref": "y2024",
+    "year": 2050,
+    "refYear": 2024,
+    "scenario": "optimistic",
+    "jumpoff": "official",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2055_optimistic_official.png",
+    "cur": "m2055_optimistic_official",
+    "ref": "y2024",
+    "year": 2055,
+    "refYear": 2024,
+    "scenario": "optimistic",
+    "jumpoff": "official",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2060_optimistic_official.png",
+    "cur": "m2060_optimistic_official",
+    "ref": "y2024",
+    "year": 2060,
+    "refYear": 2024,
+    "scenario": "optimistic",
+    "jumpoff": "official",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2065_optimistic_official.png",
+    "cur": "m2065_optimistic_official",
+    "ref": "y2024",
+    "year": 2065,
+    "refYear": 2024,
+    "scenario": "optimistic",
+    "jumpoff": "official",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2070_optimistic_official.png",
+    "cur": "m2070_optimistic_official",
+    "ref": "y2024",
+    "year": 2070,
+    "refYear": 2024,
+    "scenario": "optimistic",
+    "jumpoff": "official",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2075_optimistic_official.png",
+    "cur": "m2075_optimistic_official",
+    "ref": "y2024",
+    "year": 2075,
+    "refYear": 2024,
+    "scenario": "optimistic",
+    "jumpoff": "official",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2030_base_adjusted.png",
+    "cur": "m2030_base_adjusted",
+    "ref": "y2024",
+    "year": 2030,
+    "refYear": 2024,
+    "scenario": "base",
+    "jumpoff": "adjusted",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2035_base_adjusted.png",
+    "cur": "m2035_base_adjusted",
+    "ref": "y2024",
+    "year": 2035,
+    "refYear": 2024,
+    "scenario": "base",
+    "jumpoff": "adjusted",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2040_base_adjusted.png",
+    "cur": "m2040_base_adjusted",
+    "ref": "y2024",
+    "year": 2040,
+    "refYear": 2024,
+    "scenario": "base",
+    "jumpoff": "adjusted",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2045_base_adjusted.png",
+    "cur": "m2045_base_adjusted",
+    "ref": "y2024",
+    "year": 2045,
+    "refYear": 2024,
+    "scenario": "base",
+    "jumpoff": "adjusted",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2050_base_adjusted.png",
+    "cur": "m2050_base_adjusted",
+    "ref": "y2024",
+    "year": 2050,
+    "refYear": 2024,
+    "scenario": "base",
+    "jumpoff": "adjusted",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2055_base_adjusted.png",
+    "cur": "m2055_base_adjusted",
+    "ref": "y2024",
+    "year": 2055,
+    "refYear": 2024,
+    "scenario": "base",
+    "jumpoff": "adjusted",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2060_base_adjusted.png",
+    "cur": "m2060_base_adjusted",
+    "ref": "y2024",
+    "year": 2060,
+    "refYear": 2024,
+    "scenario": "base",
+    "jumpoff": "adjusted",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2065_base_adjusted.png",
+    "cur": "m2065_base_adjusted",
+    "ref": "y2024",
+    "year": 2065,
+    "refYear": 2024,
+    "scenario": "base",
+    "jumpoff": "adjusted",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2070_base_adjusted.png",
+    "cur": "m2070_base_adjusted",
+    "ref": "y2024",
+    "year": 2070,
+    "refYear": 2024,
+    "scenario": "base",
+    "jumpoff": "adjusted",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2075_base_adjusted.png",
+    "cur": "m2075_base_adjusted",
+    "ref": "y2024",
+    "year": 2075,
+    "refYear": 2024,
+    "scenario": "base",
+    "jumpoff": "adjusted",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2030_negative_adjusted.png",
+    "cur": "m2030_negative_adjusted",
+    "ref": "y2024",
+    "year": 2030,
+    "refYear": 2024,
+    "scenario": "negative",
+    "jumpoff": "adjusted",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2035_negative_adjusted.png",
+    "cur": "m2035_negative_adjusted",
+    "ref": "y2024",
+    "year": 2035,
+    "refYear": 2024,
+    "scenario": "negative",
+    "jumpoff": "adjusted",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2040_negative_adjusted.png",
+    "cur": "m2040_negative_adjusted",
+    "ref": "y2024",
+    "year": 2040,
+    "refYear": 2024,
+    "scenario": "negative",
+    "jumpoff": "adjusted",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2045_negative_adjusted.png",
+    "cur": "m2045_negative_adjusted",
+    "ref": "y2024",
+    "year": 2045,
+    "refYear": 2024,
+    "scenario": "negative",
+    "jumpoff": "adjusted",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2050_negative_adjusted.png",
+    "cur": "m2050_negative_adjusted",
+    "ref": "y2024",
+    "year": 2050,
+    "refYear": 2024,
+    "scenario": "negative",
+    "jumpoff": "adjusted",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2055_negative_adjusted.png",
+    "cur": "m2055_negative_adjusted",
+    "ref": "y2024",
+    "year": 2055,
+    "refYear": 2024,
+    "scenario": "negative",
+    "jumpoff": "adjusted",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2060_negative_adjusted.png",
+    "cur": "m2060_negative_adjusted",
+    "ref": "y2024",
+    "year": 2060,
+    "refYear": 2024,
+    "scenario": "negative",
+    "jumpoff": "adjusted",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2065_negative_adjusted.png",
+    "cur": "m2065_negative_adjusted",
+    "ref": "y2024",
+    "year": 2065,
+    "refYear": 2024,
+    "scenario": "negative",
+    "jumpoff": "adjusted",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2070_negative_adjusted.png",
+    "cur": "m2070_negative_adjusted",
+    "ref": "y2024",
+    "year": 2070,
+    "refYear": 2024,
+    "scenario": "negative",
+    "jumpoff": "adjusted",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2075_negative_adjusted.png",
+    "cur": "m2075_negative_adjusted",
+    "ref": "y2024",
+    "year": 2075,
+    "refYear": 2024,
+    "scenario": "negative",
+    "jumpoff": "adjusted",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2030_optimistic_adjusted.png",
+    "cur": "m2030_optimistic_adjusted",
+    "ref": "y2024",
+    "year": 2030,
+    "refYear": 2024,
+    "scenario": "optimistic",
+    "jumpoff": "adjusted",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2035_optimistic_adjusted.png",
+    "cur": "m2035_optimistic_adjusted",
+    "ref": "y2024",
+    "year": 2035,
+    "refYear": 2024,
+    "scenario": "optimistic",
+    "jumpoff": "adjusted",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2040_optimistic_adjusted.png",
+    "cur": "m2040_optimistic_adjusted",
+    "ref": "y2024",
+    "year": 2040,
+    "refYear": 2024,
+    "scenario": "optimistic",
+    "jumpoff": "adjusted",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2045_optimistic_adjusted.png",
+    "cur": "m2045_optimistic_adjusted",
+    "ref": "y2024",
+    "year": 2045,
+    "refYear": 2024,
+    "scenario": "optimistic",
+    "jumpoff": "adjusted",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2050_optimistic_adjusted.png",
+    "cur": "m2050_optimistic_adjusted",
+    "ref": "y2024",
+    "year": 2050,
+    "refYear": 2024,
+    "scenario": "optimistic",
+    "jumpoff": "adjusted",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2055_optimistic_adjusted.png",
+    "cur": "m2055_optimistic_adjusted",
+    "ref": "y2024",
+    "year": 2055,
+    "refYear": 2024,
+    "scenario": "optimistic",
+    "jumpoff": "adjusted",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2060_optimistic_adjusted.png",
+    "cur": "m2060_optimistic_adjusted",
+    "ref": "y2024",
+    "year": 2060,
+    "refYear": 2024,
+    "scenario": "optimistic",
+    "jumpoff": "adjusted",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2065_optimistic_adjusted.png",
+    "cur": "m2065_optimistic_adjusted",
+    "ref": "y2024",
+    "year": 2065,
+    "refYear": 2024,
+    "scenario": "optimistic",
+    "jumpoff": "adjusted",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2070_optimistic_adjusted.png",
+    "cur": "m2070_optimistic_adjusted",
+    "ref": "y2024",
+    "year": 2070,
+    "refYear": 2024,
+    "scenario": "optimistic",
+    "jumpoff": "adjusted",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "base_2024",
+    "asset": "/data/nightlights/delta/base_2024/b24_2075_optimistic_adjusted.png",
+    "cur": "m2075_optimistic_adjusted",
+    "ref": "y2024",
+    "year": 2075,
+    "refYear": 2024,
+    "scenario": "optimistic",
+    "jumpoff": "adjusted",
+    "crossSource": true,
+    "note": "model_vs_observed"
+   },
+   {
+    "kind": "scenario_vs_base",
+    "asset": "/data/nightlights/delta/scenarios/sc_2030_negative_official.png",
+    "cur": "m2030_negative_official",
+    "ref": "m2030_base_official",
+    "year": 2030,
+    "scenario": "negative",
+    "jumpoff": "official",
+    "crossSource": false
+   },
+   {
+    "kind": "scenario_vs_base",
+    "asset": "/data/nightlights/delta/scenarios/sc_2035_negative_official.png",
+    "cur": "m2035_negative_official",
+    "ref": "m2035_base_official",
+    "year": 2035,
+    "scenario": "negative",
+    "jumpoff": "official",
+    "crossSource": false
+   },
+   {
+    "kind": "scenario_vs_base",
+    "asset": "/data/nightlights/delta/scenarios/sc_2040_negative_official.png",
+    "cur": "m2040_negative_official",
+    "ref": "m2040_base_official",
+    "year": 2040,
+    "scenario": "negative",
+    "jumpoff": "official",
+    "crossSource": false
+   },
+   {
+    "kind": "scenario_vs_base",
+    "asset": "/data/nightlights/delta/scenarios/sc_2045_negative_official.png",
+    "cur": "m2045_negative_official",
+    "ref": "m2045_base_official",
+    "year": 2045,
+    "scenario": "negative",
+    "jumpoff": "official",
+    "crossSource": false
+   },
+   {
+    "kind": "scenario_vs_base",
+    "asset": "/data/nightlights/delta/scenarios/sc_2050_negative_official.png",
+    "cur": "m2050_negative_official",
+    "ref": "m2050_base_official",
+    "year": 2050,
+    "scenario": "negative",
+    "jumpoff": "official",
+    "crossSource": false
+   },
+   {
+    "kind": "scenario_vs_base",
+    "asset": "/data/nightlights/delta/scenarios/sc_2055_negative_official.png",
+    "cur": "m2055_negative_official",
+    "ref": "m2055_base_official",
+    "year": 2055,
+    "scenario": "negative",
+    "jumpoff": "official",
+    "crossSource": false
+   },
+   {
+    "kind": "scenario_vs_base",
+    "asset": "/data/nightlights/delta/scenarios/sc_2060_negative_official.png",
+    "cur": "m2060_negative_official",
+    "ref": "m2060_base_official",
+    "year": 2060,
+    "scenario": "negative",
+    "jumpoff": "official",
+    "crossSource": false
+   },
+   {
+    "kind": "scenario_vs_base",
+    "asset": "/data/nightlights/delta/scenarios/sc_2065_negative_official.png",
+    "cur": "m2065_negative_official",
+    "ref": "m2065_base_official",
+    "year": 2065,
+    "scenario": "negative",
+    "jumpoff": "official",
+    "crossSource": false
+   },
+   {
+    "kind": "scenario_vs_base",
+    "asset": "/data/nightlights/delta/scenarios/sc_2070_negative_official.png",
+    "cur": "m2070_negative_official",
+    "ref": "m2070_base_official",
+    "year": 2070,
+    "scenario": "negative",
+    "jumpoff": "official",
+    "crossSource": false
+   },
+   {
+    "kind": "scenario_vs_base",
+    "asset": "/data/nightlights/delta/scenarios/sc_2075_negative_official.png",
+    "cur": "m2075_negative_official",
+    "ref": "m2075_base_official",
+    "year": 2075,
+    "scenario": "negative",
+    "jumpoff": "official",
+    "crossSource": false
+   },
+   {
+    "kind": "scenario_vs_base",
+    "asset": "/data/nightlights/delta/scenarios/sc_2030_optimistic_official.png",
+    "cur": "m2030_optimistic_official",
+    "ref": "m2030_base_official",
+    "year": 2030,
+    "scenario": "optimistic",
+    "jumpoff": "official",
+    "crossSource": false
+   },
+   {
+    "kind": "scenario_vs_base",
+    "asset": "/data/nightlights/delta/scenarios/sc_2035_optimistic_official.png",
+    "cur": "m2035_optimistic_official",
+    "ref": "m2035_base_official",
+    "year": 2035,
+    "scenario": "optimistic",
+    "jumpoff": "official",
+    "crossSource": false
+   },
+   {
+    "kind": "scenario_vs_base",
+    "asset": "/data/nightlights/delta/scenarios/sc_2040_optimistic_official.png",
+    "cur": "m2040_optimistic_official",
+    "ref": "m2040_base_official",
+    "year": 2040,
+    "scenario": "optimistic",
+    "jumpoff": "official",
+    "crossSource": false
+   },
+   {
+    "kind": "scenario_vs_base",
+    "asset": "/data/nightlights/delta/scenarios/sc_2045_optimistic_official.png",
+    "cur": "m2045_optimistic_official",
+    "ref": "m2045_base_official",
+    "year": 2045,
+    "scenario": "optimistic",
+    "jumpoff": "official",
+    "crossSource": false
+   },
+   {
+    "kind": "scenario_vs_base",
+    "asset": "/data/nightlights/delta/scenarios/sc_2050_optimistic_official.png",
+    "cur": "m2050_optimistic_official",
+    "ref": "m2050_base_official",
+    "year": 2050,
+    "scenario": "optimistic",
+    "jumpoff": "official",
+    "crossSource": false
+   },
+   {
+    "kind": "scenario_vs_base",
+    "asset": "/data/nightlights/delta/scenarios/sc_2055_optimistic_official.png",
+    "cur": "m2055_optimistic_official",
+    "ref": "m2055_base_official",
+    "year": 2055,
+    "scenario": "optimistic",
+    "jumpoff": "official",
+    "crossSource": false
+   },
+   {
+    "kind": "scenario_vs_base",
+    "asset": "/data/nightlights/delta/scenarios/sc_2060_optimistic_official.png",
+    "cur": "m2060_optimistic_official",
+    "ref": "m2060_base_official",
+    "year": 2060,
+    "scenario": "optimistic",
+    "jumpoff": "official",
+    "crossSource": false
+   },
+   {
+    "kind": "scenario_vs_base",
+    "asset": "/data/nightlights/delta/scenarios/sc_2065_optimistic_official.png",
+    "cur": "m2065_optimistic_official",
+    "ref": "m2065_base_official",
+    "year": 2065,
+    "scenario": "optimistic",
+    "jumpoff": "official",
+    "crossSource": false
+   },
+   {
+    "kind": "scenario_vs_base",
+    "asset": "/data/nightlights/delta/scenarios/sc_2070_optimistic_official.png",
+    "cur": "m2070_optimistic_official",
+    "ref": "m2070_base_official",
+    "year": 2070,
+    "scenario": "optimistic",
+    "jumpoff": "official",
+    "crossSource": false
+   },
+   {
+    "kind": "scenario_vs_base",
+    "asset": "/data/nightlights/delta/scenarios/sc_2075_optimistic_official.png",
+    "cur": "m2075_optimistic_official",
+    "ref": "m2075_base_official",
+    "year": 2075,
+    "scenario": "optimistic",
+    "jumpoff": "official",
+    "crossSource": false
+   },
+   {
+    "kind": "scenario_vs_base",
+    "asset": "/data/nightlights/delta/scenarios/sc_2030_negative_adjusted.png",
+    "cur": "m2030_negative_adjusted",
+    "ref": "m2030_base_adjusted",
+    "year": 2030,
+    "scenario": "negative",
+    "jumpoff": "adjusted",
+    "crossSource": false
+   },
+   {
+    "kind": "scenario_vs_base",
+    "asset": "/data/nightlights/delta/scenarios/sc_2035_negative_adjusted.png",
+    "cur": "m2035_negative_adjusted",
+    "ref": "m2035_base_adjusted",
+    "year": 2035,
+    "scenario": "negative",
+    "jumpoff": "adjusted",
+    "crossSource": false
+   },
+   {
+    "kind": "scenario_vs_base",
+    "asset": "/data/nightlights/delta/scenarios/sc_2040_negative_adjusted.png",
+    "cur": "m2040_negative_adjusted",
+    "ref": "m2040_base_adjusted",
+    "year": 2040,
+    "scenario": "negative",
+    "jumpoff": "adjusted",
+    "crossSource": false
+   },
+   {
+    "kind": "scenario_vs_base",
+    "asset": "/data/nightlights/delta/scenarios/sc_2045_negative_adjusted.png",
+    "cur": "m2045_negative_adjusted",
+    "ref": "m2045_base_adjusted",
+    "year": 2045,
+    "scenario": "negative",
+    "jumpoff": "adjusted",
+    "crossSource": false
+   },
+   {
+    "kind": "scenario_vs_base",
+    "asset": "/data/nightlights/delta/scenarios/sc_2050_negative_adjusted.png",
+    "cur": "m2050_negative_adjusted",
+    "ref": "m2050_base_adjusted",
+    "year": 2050,
+    "scenario": "negative",
+    "jumpoff": "adjusted",
+    "crossSource": false
+   },
+   {
+    "kind": "scenario_vs_base",
+    "asset": "/data/nightlights/delta/scenarios/sc_2055_negative_adjusted.png",
+    "cur": "m2055_negative_adjusted",
+    "ref": "m2055_base_adjusted",
+    "year": 2055,
+    "scenario": "negative",
+    "jumpoff": "adjusted",
+    "crossSource": false
+   },
+   {
+    "kind": "scenario_vs_base",
+    "asset": "/data/nightlights/delta/scenarios/sc_2060_negative_adjusted.png",
+    "cur": "m2060_negative_adjusted",
+    "ref": "m2060_base_adjusted",
+    "year": 2060,
+    "scenario": "negative",
+    "jumpoff": "adjusted",
+    "crossSource": false
+   },
+   {
+    "kind": "scenario_vs_base",
+    "asset": "/data/nightlights/delta/scenarios/sc_2065_negative_adjusted.png",
+    "cur": "m2065_negative_adjusted",
+    "ref": "m2065_base_adjusted",
+    "year": 2065,
+    "scenario": "negative",
+    "jumpoff": "adjusted",
+    "crossSource": false
+   },
+   {
+    "kind": "scenario_vs_base",
+    "asset": "/data/nightlights/delta/scenarios/sc_2070_negative_adjusted.png",
+    "cur": "m2070_negative_adjusted",
+    "ref": "m2070_base_adjusted",
+    "year": 2070,
+    "scenario": "negative",
+    "jumpoff": "adjusted",
+    "crossSource": false
+   },
+   {
+    "kind": "scenario_vs_base",
+    "asset": "/data/nightlights/delta/scenarios/sc_2075_negative_adjusted.png",
+    "cur": "m2075_negative_adjusted",
+    "ref": "m2075_base_adjusted",
+    "year": 2075,
+    "scenario": "negative",
+    "jumpoff": "adjusted",
+    "crossSource": false
+   },
+   {
+    "kind": "scenario_vs_base",
+    "asset": "/data/nightlights/delta/scenarios/sc_2030_optimistic_adjusted.png",
+    "cur": "m2030_optimistic_adjusted",
+    "ref": "m2030_base_adjusted",
+    "year": 2030,
+    "scenario": "optimistic",
+    "jumpoff": "adjusted",
+    "crossSource": false
+   },
+   {
+    "kind": "scenario_vs_base",
+    "asset": "/data/nightlights/delta/scenarios/sc_2035_optimistic_adjusted.png",
+    "cur": "m2035_optimistic_adjusted",
+    "ref": "m2035_base_adjusted",
+    "year": 2035,
+    "scenario": "optimistic",
+    "jumpoff": "adjusted",
+    "crossSource": false
+   },
+   {
+    "kind": "scenario_vs_base",
+    "asset": "/data/nightlights/delta/scenarios/sc_2040_optimistic_adjusted.png",
+    "cur": "m2040_optimistic_adjusted",
+    "ref": "m2040_base_adjusted",
+    "year": 2040,
+    "scenario": "optimistic",
+    "jumpoff": "adjusted",
+    "crossSource": false
+   },
+   {
+    "kind": "scenario_vs_base",
+    "asset": "/data/nightlights/delta/scenarios/sc_2045_optimistic_adjusted.png",
+    "cur": "m2045_optimistic_adjusted",
+    "ref": "m2045_base_adjusted",
+    "year": 2045,
+    "scenario": "optimistic",
+    "jumpoff": "adjusted",
+    "crossSource": false
+   },
+   {
+    "kind": "scenario_vs_base",
+    "asset": "/data/nightlights/delta/scenarios/sc_2050_optimistic_adjusted.png",
+    "cur": "m2050_optimistic_adjusted",
+    "ref": "m2050_base_adjusted",
+    "year": 2050,
+    "scenario": "optimistic",
+    "jumpoff": "adjusted",
+    "crossSource": false
+   },
+   {
+    "kind": "scenario_vs_base",
+    "asset": "/data/nightlights/delta/scenarios/sc_2055_optimistic_adjusted.png",
+    "cur": "m2055_optimistic_adjusted",
+    "ref": "m2055_base_adjusted",
+    "year": 2055,
+    "scenario": "optimistic",
+    "jumpoff": "adjusted",
+    "crossSource": false
+   },
+   {
+    "kind": "scenario_vs_base",
+    "asset": "/data/nightlights/delta/scenarios/sc_2060_optimistic_adjusted.png",
+    "cur": "m2060_optimistic_adjusted",
+    "ref": "m2060_base_adjusted",
+    "year": 2060,
+    "scenario": "optimistic",
+    "jumpoff": "adjusted",
+    "crossSource": false
+   },
+   {
+    "kind": "scenario_vs_base",
+    "asset": "/data/nightlights/delta/scenarios/sc_2065_optimistic_adjusted.png",
+    "cur": "m2065_optimistic_adjusted",
+    "ref": "m2065_base_adjusted",
+    "year": 2065,
+    "scenario": "optimistic",
+    "jumpoff": "adjusted",
+    "crossSource": false
+   },
+   {
+    "kind": "scenario_vs_base",
+    "asset": "/data/nightlights/delta/scenarios/sc_2070_optimistic_adjusted.png",
+    "cur": "m2070_optimistic_adjusted",
+    "ref": "m2070_base_adjusted",
+    "year": 2070,
+    "scenario": "optimistic",
+    "jumpoff": "adjusted",
+    "crossSource": false
+   },
+   {
+    "kind": "scenario_vs_base",
+    "asset": "/data/nightlights/delta/scenarios/sc_2075_optimistic_adjusted.png",
+    "cur": "m2075_optimistic_adjusted",
+    "ref": "m2075_base_adjusted",
+    "year": 2075,
+    "scenario": "optimistic",
+    "jumpoff": "adjusted",
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_1992/ab_1993.png",
+    "cur": "y1993",
+    "ref": "y1992",
+    "year": 1993,
+    "refYear": 1992,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_1992/ab_1994.png",
+    "cur": "y1994",
+    "ref": "y1992",
+    "year": 1994,
+    "refYear": 1992,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_1992/ab_1995.png",
+    "cur": "y1995",
+    "ref": "y1992",
+    "year": 1995,
+    "refYear": 1992,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_1992/ab_1996.png",
+    "cur": "y1996",
+    "ref": "y1992",
+    "year": 1996,
+    "refYear": 1992,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_1992/ab_1997.png",
+    "cur": "y1997",
+    "ref": "y1992",
+    "year": 1997,
+    "refYear": 1992,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_1992/ab_1998.png",
+    "cur": "y1998",
+    "ref": "y1992",
+    "year": 1998,
+    "refYear": 1992,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_1992/ab_1999.png",
+    "cur": "y1999",
+    "ref": "y1992",
+    "year": 1999,
+    "refYear": 1992,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_1992/ab_2000.png",
+    "cur": "y2000",
+    "ref": "y1992",
+    "year": 2000,
+    "refYear": 1992,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_1992/ab_2001.png",
+    "cur": "y2001",
+    "ref": "y1992",
+    "year": 2001,
+    "refYear": 1992,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_1992/ab_2002.png",
+    "cur": "y2002",
+    "ref": "y1992",
+    "year": 2002,
+    "refYear": 1992,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_1992/ab_2003.png",
+    "cur": "y2003",
+    "ref": "y1992",
+    "year": 2003,
+    "refYear": 1992,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_1992/ab_2004.png",
+    "cur": "y2004",
+    "ref": "y1992",
+    "year": 2004,
+    "refYear": 1992,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_1992/ab_2005.png",
+    "cur": "y2005",
+    "ref": "y1992",
+    "year": 2005,
+    "refYear": 1992,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_1992/ab_2006.png",
+    "cur": "y2006",
+    "ref": "y1992",
+    "year": 2006,
+    "refYear": 1992,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_1992/ab_2007.png",
+    "cur": "y2007",
+    "ref": "y1992",
+    "year": 2007,
+    "refYear": 1992,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_1992/ab_2008.png",
+    "cur": "y2008",
+    "ref": "y1992",
+    "year": 2008,
+    "refYear": 1992,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_1992/ab_2009.png",
+    "cur": "y2009",
+    "ref": "y1992",
+    "year": 2009,
+    "refYear": 1992,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_1992/ab_2010.png",
+    "cur": "y2010",
+    "ref": "y1992",
+    "year": 2010,
+    "refYear": 1992,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_1992/ab_2011.png",
+    "cur": "y2011",
+    "ref": "y1992",
+    "year": 2011,
+    "refYear": 1992,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_1992/ab_2012.png",
+    "cur": "y2012",
+    "ref": "y1992",
+    "year": 2012,
+    "refYear": 1992,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_1992/ab_2013.png",
+    "cur": "y2013",
+    "ref": "y1992",
+    "year": 2013,
+    "refYear": 1992,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_1992/ab_2014.png",
+    "cur": "y2014",
+    "ref": "y1992",
+    "year": 2014,
+    "refYear": 1992,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_1992/ab_2015.png",
+    "cur": "y2015",
+    "ref": "y1992",
+    "year": 2015,
+    "refYear": 1992,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_1992/ab_2016.png",
+    "cur": "y2016",
+    "ref": "y1992",
+    "year": 2016,
+    "refYear": 1992,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_1992/ab_2017.png",
+    "cur": "y2017",
+    "ref": "y1992",
+    "year": 2017,
+    "refYear": 1992,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_1992/ab_2018.png",
+    "cur": "y2018",
+    "ref": "y1992",
+    "year": 2018,
+    "refYear": 1992,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_1992/ab_2019.png",
+    "cur": "y2019",
+    "ref": "y1992",
+    "year": 2019,
+    "refYear": 1992,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_1992/ab_2020.png",
+    "cur": "y2020",
+    "ref": "y1992",
+    "year": 2020,
+    "refYear": 1992,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_1992/ab_2021.png",
+    "cur": "y2021",
+    "ref": "y1992",
+    "year": 2021,
+    "refYear": 1992,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_1992/ab_2022.png",
+    "cur": "y2022",
+    "ref": "y1992",
+    "year": 2022,
+    "refYear": 1992,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_1992/ab_2023.png",
+    "cur": "y2023",
+    "ref": "y1992",
+    "year": 2023,
+    "refYear": 1992,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_1992/ab_2024.png",
+    "cur": "y2024",
+    "ref": "y1992",
+    "year": 2024,
+    "refYear": 1992,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2000/ab_1992.png",
+    "cur": "y1992",
+    "ref": "y2000",
+    "year": 1992,
+    "refYear": 2000,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2000/ab_1993.png",
+    "cur": "y1993",
+    "ref": "y2000",
+    "year": 1993,
+    "refYear": 2000,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2000/ab_1994.png",
+    "cur": "y1994",
+    "ref": "y2000",
+    "year": 1994,
+    "refYear": 2000,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2000/ab_1995.png",
+    "cur": "y1995",
+    "ref": "y2000",
+    "year": 1995,
+    "refYear": 2000,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2000/ab_1996.png",
+    "cur": "y1996",
+    "ref": "y2000",
+    "year": 1996,
+    "refYear": 2000,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2000/ab_1997.png",
+    "cur": "y1997",
+    "ref": "y2000",
+    "year": 1997,
+    "refYear": 2000,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2000/ab_1998.png",
+    "cur": "y1998",
+    "ref": "y2000",
+    "year": 1998,
+    "refYear": 2000,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2000/ab_1999.png",
+    "cur": "y1999",
+    "ref": "y2000",
+    "year": 1999,
+    "refYear": 2000,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2000/ab_2001.png",
+    "cur": "y2001",
+    "ref": "y2000",
+    "year": 2001,
+    "refYear": 2000,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2000/ab_2002.png",
+    "cur": "y2002",
+    "ref": "y2000",
+    "year": 2002,
+    "refYear": 2000,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2000/ab_2003.png",
+    "cur": "y2003",
+    "ref": "y2000",
+    "year": 2003,
+    "refYear": 2000,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2000/ab_2004.png",
+    "cur": "y2004",
+    "ref": "y2000",
+    "year": 2004,
+    "refYear": 2000,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2000/ab_2005.png",
+    "cur": "y2005",
+    "ref": "y2000",
+    "year": 2005,
+    "refYear": 2000,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2000/ab_2006.png",
+    "cur": "y2006",
+    "ref": "y2000",
+    "year": 2006,
+    "refYear": 2000,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2000/ab_2007.png",
+    "cur": "y2007",
+    "ref": "y2000",
+    "year": 2007,
+    "refYear": 2000,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2000/ab_2008.png",
+    "cur": "y2008",
+    "ref": "y2000",
+    "year": 2008,
+    "refYear": 2000,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2000/ab_2009.png",
+    "cur": "y2009",
+    "ref": "y2000",
+    "year": 2009,
+    "refYear": 2000,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2000/ab_2010.png",
+    "cur": "y2010",
+    "ref": "y2000",
+    "year": 2010,
+    "refYear": 2000,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2000/ab_2011.png",
+    "cur": "y2011",
+    "ref": "y2000",
+    "year": 2011,
+    "refYear": 2000,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2000/ab_2012.png",
+    "cur": "y2012",
+    "ref": "y2000",
+    "year": 2012,
+    "refYear": 2000,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2000/ab_2013.png",
+    "cur": "y2013",
+    "ref": "y2000",
+    "year": 2013,
+    "refYear": 2000,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2000/ab_2014.png",
+    "cur": "y2014",
+    "ref": "y2000",
+    "year": 2014,
+    "refYear": 2000,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2000/ab_2015.png",
+    "cur": "y2015",
+    "ref": "y2000",
+    "year": 2015,
+    "refYear": 2000,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2000/ab_2016.png",
+    "cur": "y2016",
+    "ref": "y2000",
+    "year": 2016,
+    "refYear": 2000,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2000/ab_2017.png",
+    "cur": "y2017",
+    "ref": "y2000",
+    "year": 2017,
+    "refYear": 2000,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2000/ab_2018.png",
+    "cur": "y2018",
+    "ref": "y2000",
+    "year": 2018,
+    "refYear": 2000,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2000/ab_2019.png",
+    "cur": "y2019",
+    "ref": "y2000",
+    "year": 2019,
+    "refYear": 2000,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2000/ab_2020.png",
+    "cur": "y2020",
+    "ref": "y2000",
+    "year": 2020,
+    "refYear": 2000,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2000/ab_2021.png",
+    "cur": "y2021",
+    "ref": "y2000",
+    "year": 2021,
+    "refYear": 2000,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2000/ab_2022.png",
+    "cur": "y2022",
+    "ref": "y2000",
+    "year": 2022,
+    "refYear": 2000,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2000/ab_2023.png",
+    "cur": "y2023",
+    "ref": "y2000",
+    "year": 2023,
+    "refYear": 2000,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2000/ab_2024.png",
+    "cur": "y2024",
+    "ref": "y2000",
+    "year": 2024,
+    "refYear": 2000,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2012/ab_1992.png",
+    "cur": "y1992",
+    "ref": "y2012",
+    "year": 1992,
+    "refYear": 2012,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2012/ab_1993.png",
+    "cur": "y1993",
+    "ref": "y2012",
+    "year": 1993,
+    "refYear": 2012,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2012/ab_1994.png",
+    "cur": "y1994",
+    "ref": "y2012",
+    "year": 1994,
+    "refYear": 2012,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2012/ab_1995.png",
+    "cur": "y1995",
+    "ref": "y2012",
+    "year": 1995,
+    "refYear": 2012,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2012/ab_1996.png",
+    "cur": "y1996",
+    "ref": "y2012",
+    "year": 1996,
+    "refYear": 2012,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2012/ab_1997.png",
+    "cur": "y1997",
+    "ref": "y2012",
+    "year": 1997,
+    "refYear": 2012,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2012/ab_1998.png",
+    "cur": "y1998",
+    "ref": "y2012",
+    "year": 1998,
+    "refYear": 2012,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2012/ab_1999.png",
+    "cur": "y1999",
+    "ref": "y2012",
+    "year": 1999,
+    "refYear": 2012,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2012/ab_2000.png",
+    "cur": "y2000",
+    "ref": "y2012",
+    "year": 2000,
+    "refYear": 2012,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2012/ab_2001.png",
+    "cur": "y2001",
+    "ref": "y2012",
+    "year": 2001,
+    "refYear": 2012,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2012/ab_2002.png",
+    "cur": "y2002",
+    "ref": "y2012",
+    "year": 2002,
+    "refYear": 2012,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2012/ab_2003.png",
+    "cur": "y2003",
+    "ref": "y2012",
+    "year": 2003,
+    "refYear": 2012,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2012/ab_2004.png",
+    "cur": "y2004",
+    "ref": "y2012",
+    "year": 2004,
+    "refYear": 2012,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2012/ab_2005.png",
+    "cur": "y2005",
+    "ref": "y2012",
+    "year": 2005,
+    "refYear": 2012,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2012/ab_2006.png",
+    "cur": "y2006",
+    "ref": "y2012",
+    "year": 2006,
+    "refYear": 2012,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2012/ab_2007.png",
+    "cur": "y2007",
+    "ref": "y2012",
+    "year": 2007,
+    "refYear": 2012,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2012/ab_2008.png",
+    "cur": "y2008",
+    "ref": "y2012",
+    "year": 2008,
+    "refYear": 2012,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2012/ab_2009.png",
+    "cur": "y2009",
+    "ref": "y2012",
+    "year": 2009,
+    "refYear": 2012,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2012/ab_2010.png",
+    "cur": "y2010",
+    "ref": "y2012",
+    "year": 2010,
+    "refYear": 2012,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2012/ab_2011.png",
+    "cur": "y2011",
+    "ref": "y2012",
+    "year": 2011,
+    "refYear": 2012,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2012/ab_2013.png",
+    "cur": "y2013",
+    "ref": "y2012",
+    "year": 2013,
+    "refYear": 2012,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2012/ab_2014.png",
+    "cur": "y2014",
+    "ref": "y2012",
+    "year": 2014,
+    "refYear": 2012,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2012/ab_2015.png",
+    "cur": "y2015",
+    "ref": "y2012",
+    "year": 2015,
+    "refYear": 2012,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2012/ab_2016.png",
+    "cur": "y2016",
+    "ref": "y2012",
+    "year": 2016,
+    "refYear": 2012,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2012/ab_2017.png",
+    "cur": "y2017",
+    "ref": "y2012",
+    "year": 2017,
+    "refYear": 2012,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2012/ab_2018.png",
+    "cur": "y2018",
+    "ref": "y2012",
+    "year": 2018,
+    "refYear": 2012,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2012/ab_2019.png",
+    "cur": "y2019",
+    "ref": "y2012",
+    "year": 2019,
+    "refYear": 2012,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2012/ab_2020.png",
+    "cur": "y2020",
+    "ref": "y2012",
+    "year": 2020,
+    "refYear": 2012,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2012/ab_2021.png",
+    "cur": "y2021",
+    "ref": "y2012",
+    "year": 2021,
+    "refYear": 2012,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2012/ab_2022.png",
+    "cur": "y2022",
+    "ref": "y2012",
+    "year": 2022,
+    "refYear": 2012,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2012/ab_2023.png",
+    "cur": "y2023",
+    "ref": "y2012",
+    "year": 2023,
+    "refYear": 2012,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2012/ab_2024.png",
+    "cur": "y2024",
+    "ref": "y2012",
+    "year": 2024,
+    "refYear": 2012,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2019/ab_1992.png",
+    "cur": "y1992",
+    "ref": "y2019",
+    "year": 1992,
+    "refYear": 2019,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2019/ab_1993.png",
+    "cur": "y1993",
+    "ref": "y2019",
+    "year": 1993,
+    "refYear": 2019,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2019/ab_1994.png",
+    "cur": "y1994",
+    "ref": "y2019",
+    "year": 1994,
+    "refYear": 2019,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2019/ab_1995.png",
+    "cur": "y1995",
+    "ref": "y2019",
+    "year": 1995,
+    "refYear": 2019,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2019/ab_1996.png",
+    "cur": "y1996",
+    "ref": "y2019",
+    "year": 1996,
+    "refYear": 2019,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2019/ab_1997.png",
+    "cur": "y1997",
+    "ref": "y2019",
+    "year": 1997,
+    "refYear": 2019,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2019/ab_1998.png",
+    "cur": "y1998",
+    "ref": "y2019",
+    "year": 1998,
+    "refYear": 2019,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2019/ab_1999.png",
+    "cur": "y1999",
+    "ref": "y2019",
+    "year": 1999,
+    "refYear": 2019,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2019/ab_2000.png",
+    "cur": "y2000",
+    "ref": "y2019",
+    "year": 2000,
+    "refYear": 2019,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2019/ab_2001.png",
+    "cur": "y2001",
+    "ref": "y2019",
+    "year": 2001,
+    "refYear": 2019,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2019/ab_2002.png",
+    "cur": "y2002",
+    "ref": "y2019",
+    "year": 2002,
+    "refYear": 2019,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2019/ab_2003.png",
+    "cur": "y2003",
+    "ref": "y2019",
+    "year": 2003,
+    "refYear": 2019,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2019/ab_2004.png",
+    "cur": "y2004",
+    "ref": "y2019",
+    "year": 2004,
+    "refYear": 2019,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2019/ab_2005.png",
+    "cur": "y2005",
+    "ref": "y2019",
+    "year": 2005,
+    "refYear": 2019,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2019/ab_2006.png",
+    "cur": "y2006",
+    "ref": "y2019",
+    "year": 2006,
+    "refYear": 2019,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2019/ab_2007.png",
+    "cur": "y2007",
+    "ref": "y2019",
+    "year": 2007,
+    "refYear": 2019,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2019/ab_2008.png",
+    "cur": "y2008",
+    "ref": "y2019",
+    "year": 2008,
+    "refYear": 2019,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2019/ab_2009.png",
+    "cur": "y2009",
+    "ref": "y2019",
+    "year": 2009,
+    "refYear": 2019,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2019/ab_2010.png",
+    "cur": "y2010",
+    "ref": "y2019",
+    "year": 2010,
+    "refYear": 2019,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2019/ab_2011.png",
+    "cur": "y2011",
+    "ref": "y2019",
+    "year": 2011,
+    "refYear": 2019,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2019/ab_2012.png",
+    "cur": "y2012",
+    "ref": "y2019",
+    "year": 2012,
+    "refYear": 2019,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2019/ab_2013.png",
+    "cur": "y2013",
+    "ref": "y2019",
+    "year": 2013,
+    "refYear": 2019,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2019/ab_2014.png",
+    "cur": "y2014",
+    "ref": "y2019",
+    "year": 2014,
+    "refYear": 2019,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2019/ab_2015.png",
+    "cur": "y2015",
+    "ref": "y2019",
+    "year": 2015,
+    "refYear": 2019,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2019/ab_2016.png",
+    "cur": "y2016",
+    "ref": "y2019",
+    "year": 2016,
+    "refYear": 2019,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2019/ab_2017.png",
+    "cur": "y2017",
+    "ref": "y2019",
+    "year": 2017,
+    "refYear": 2019,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2019/ab_2018.png",
+    "cur": "y2018",
+    "ref": "y2019",
+    "year": 2018,
+    "refYear": 2019,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2019/ab_2020.png",
+    "cur": "y2020",
+    "ref": "y2019",
+    "year": 2020,
+    "refYear": 2019,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2019/ab_2021.png",
+    "cur": "y2021",
+    "ref": "y2019",
+    "year": 2021,
+    "refYear": 2019,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2019/ab_2022.png",
+    "cur": "y2022",
+    "ref": "y2019",
+    "year": 2022,
+    "refYear": 2019,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2019/ab_2023.png",
+    "cur": "y2023",
+    "ref": "y2019",
+    "year": 2023,
+    "refYear": 2019,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2019/ab_2024.png",
+    "cur": "y2024",
+    "ref": "y2019",
+    "year": 2024,
+    "refYear": 2019,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2024/ab_1992.png",
+    "cur": "y1992",
+    "ref": "y2024",
+    "year": 1992,
+    "refYear": 2024,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2024/ab_1993.png",
+    "cur": "y1993",
+    "ref": "y2024",
+    "year": 1993,
+    "refYear": 2024,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2024/ab_1994.png",
+    "cur": "y1994",
+    "ref": "y2024",
+    "year": 1994,
+    "refYear": 2024,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2024/ab_1995.png",
+    "cur": "y1995",
+    "ref": "y2024",
+    "year": 1995,
+    "refYear": 2024,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2024/ab_1996.png",
+    "cur": "y1996",
+    "ref": "y2024",
+    "year": 1996,
+    "refYear": 2024,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2024/ab_1997.png",
+    "cur": "y1997",
+    "ref": "y2024",
+    "year": 1997,
+    "refYear": 2024,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2024/ab_1998.png",
+    "cur": "y1998",
+    "ref": "y2024",
+    "year": 1998,
+    "refYear": 2024,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2024/ab_1999.png",
+    "cur": "y1999",
+    "ref": "y2024",
+    "year": 1999,
+    "refYear": 2024,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2024/ab_2000.png",
+    "cur": "y2000",
+    "ref": "y2024",
+    "year": 2000,
+    "refYear": 2024,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2024/ab_2001.png",
+    "cur": "y2001",
+    "ref": "y2024",
+    "year": 2001,
+    "refYear": 2024,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2024/ab_2002.png",
+    "cur": "y2002",
+    "ref": "y2024",
+    "year": 2002,
+    "refYear": 2024,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2024/ab_2003.png",
+    "cur": "y2003",
+    "ref": "y2024",
+    "year": 2003,
+    "refYear": 2024,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2024/ab_2004.png",
+    "cur": "y2004",
+    "ref": "y2024",
+    "year": 2004,
+    "refYear": 2024,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2024/ab_2005.png",
+    "cur": "y2005",
+    "ref": "y2024",
+    "year": 2005,
+    "refYear": 2024,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2024/ab_2006.png",
+    "cur": "y2006",
+    "ref": "y2024",
+    "year": 2006,
+    "refYear": 2024,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2024/ab_2007.png",
+    "cur": "y2007",
+    "ref": "y2024",
+    "year": 2007,
+    "refYear": 2024,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2024/ab_2008.png",
+    "cur": "y2008",
+    "ref": "y2024",
+    "year": 2008,
+    "refYear": 2024,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2024/ab_2009.png",
+    "cur": "y2009",
+    "ref": "y2024",
+    "year": 2009,
+    "refYear": 2024,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2024/ab_2010.png",
+    "cur": "y2010",
+    "ref": "y2024",
+    "year": 2010,
+    "refYear": 2024,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2024/ab_2011.png",
+    "cur": "y2011",
+    "ref": "y2024",
+    "year": 2011,
+    "refYear": 2024,
+    "crossSource": true
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2024/ab_2012.png",
+    "cur": "y2012",
+    "ref": "y2024",
+    "year": 2012,
+    "refYear": 2024,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2024/ab_2013.png",
+    "cur": "y2013",
+    "ref": "y2024",
+    "year": 2013,
+    "refYear": 2024,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2024/ab_2014.png",
+    "cur": "y2014",
+    "ref": "y2024",
+    "year": 2014,
+    "refYear": 2024,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2024/ab_2015.png",
+    "cur": "y2015",
+    "ref": "y2024",
+    "year": 2015,
+    "refYear": 2024,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2024/ab_2016.png",
+    "cur": "y2016",
+    "ref": "y2024",
+    "year": 2016,
+    "refYear": 2024,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2024/ab_2017.png",
+    "cur": "y2017",
+    "ref": "y2024",
+    "year": 2017,
+    "refYear": 2024,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2024/ab_2018.png",
+    "cur": "y2018",
+    "ref": "y2024",
+    "year": 2018,
+    "refYear": 2024,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2024/ab_2019.png",
+    "cur": "y2019",
+    "ref": "y2024",
+    "year": 2019,
+    "refYear": 2024,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2024/ab_2020.png",
+    "cur": "y2020",
+    "ref": "y2024",
+    "year": 2020,
+    "refYear": 2024,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2024/ab_2021.png",
+    "cur": "y2021",
+    "ref": "y2024",
+    "year": 2021,
+    "refYear": 2024,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2024/ab_2022.png",
+    "cur": "y2022",
+    "ref": "y2024",
+    "year": 2022,
+    "refYear": 2024,
+    "crossSource": false
+   },
+   {
+    "kind": "analysis_base",
+    "asset": "/data/nightlights/delta/base_2024/ab_2023.png",
+    "cur": "y2023",
+    "ref": "y2024",
+    "year": 2023,
+    "refYear": 2024,
+    "crossSource": false
+   }
+  ]
+ }
+}

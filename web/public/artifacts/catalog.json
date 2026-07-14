@@ -85,11 +85,11 @@
    "research_url": "https://by-population-maps.vercel.app/research/monotowns"
   },
   {
-   "file": "by-maps-nightlights-v2.0.0.zip",
-   "url": "https://by-population-maps.vercel.app/artifacts/by-maps-nightlights-v2.0.0.zip",
-   "size_bytes": 4715594,
-   "sha256": "011e91a5cea5943aae843a65d6046a7da21531aba7dd72e5c30588330a0ea4e2",
-   "version": "2.0.0",
+   "file": "by-maps-nightlights-v2.1.0.zip",
+   "url": "https://by-population-maps.vercel.app/artifacts/by-maps-nightlights-v2.1.0.zip",
+   "size_bytes": 4750421,
+   "sha256": "3a5bb7f00c338ae747ce8095fab9f663236cfe0ab1505db5291c678c9f23c94b",
+   "version": "2.1.0",
    "code": "INF-08",
    "title_ru": "Беларусь из космоса, 1992–2075",
    "research_url": "https://by-population-maps.vercel.app/research/nightlights"
@@ -181,6 +181,13 @@
    "size_bytes": 488372,
    "sha256": "473d430482023f4787712bb6b0ab163c20ab1d963a37a52db625caa87c6b89d7",
    "version": "1.0.0"
+  },
+  {
+   "file": "by-maps-nightlights-v2.0.0.zip",
+   "url": "https://by-population-maps.vercel.app/artifacts/by-maps-nightlights-v2.0.0.zip",
+   "size_bytes": 4715594,
+   "sha256": "011e91a5cea5943aae843a65d6046a7da21531aba7dd72e5c30588330a0ea4e2",
+   "version": "2.0.0"
   }
  ],
  "repository": "https://github.com/sergeionlyart/BY_maps"
