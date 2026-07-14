@@ -88,12 +88,12 @@ export const RESEARCH: ResearchEntry[] = [
   {
     slug: 'nightlights',
     code: 'INF-08',
-    title: 'Ночные огни против официальной статистики',
+    title: 'Беларусь из космоса, 1992–2075',
     question:
-      'Где динамика ночной светимости (VIIRS) расходится с официальной динамикой населения — кандидаты на недоучтённый отток?',
+      'Что 33 года ночной светимости (DMSP + VIIRS) говорят о расхождении света и официального населения — и как выглядела бы карта света при трёх сценариях прогноза?',
     status: 'published',
     stage: 7,
-    artifact: { file: 'by-maps-nightlights-v1.0.0.zip', version: '1.0.0', sizeKb: 477 },
+    artifact: { file: 'by-maps-nightlights-v2.0.0.zip', version: '2.0.0', sizeKb: 4606 },
   },
   {
     slug: 'shocks',

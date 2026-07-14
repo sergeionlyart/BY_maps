@@ -10,3 +10,5 @@ data/cache/
 .DS_Store
 .vercel
 *.tsbuildinfo
+build/
+data/tmp/

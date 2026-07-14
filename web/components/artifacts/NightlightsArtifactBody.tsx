@@ -12,16 +12,27 @@ export default function NightlightsArtifactBody() {
       <div className="page-breadcrumb">
         <Link href={p('/artifacts')}>{t('Артефакты')}</Link> · INF-08
       </div>
-      <h1>{t('Пакет: Ночные огни против официальной статистики')}</h1>
+      <h1>{t('Пакет: Беларусь из космоса, 1992–2075')}</h1>
       <p className="page-lead">
-        {t('Зональная светимость 118 районов и Минска (2015–2023) по подлинным композитам VIIRS (EOG average_masked VNL, обработка WorldPop), докризисные тренды долей и индекс расхождения «свет против официального населения». Конвейер стартует с завендоренной зональной суммы; расчёт детерминирован и идёт на стандартной библиотеке.')}
+        {t('Гармонизированная ночная светимость 118 районов и Минска за 33 года (DMSP 1992–2011 + VIIRS 2012–2024, стык «мостом» с гейтами R² ≥ 0,9 и разрывом ≤ 5%), индекс расхождения «свет против населения» и модельная иллюстрация будущего 2030–2075 по трём сценариям прогноза v2026.4. Вендорены вырезки растров по Беларуси; конвейер от зональных сумм — стандартная библиотека; рилс-конвейер включён и детерминирован.')}
       </p>
 
       <h2>{t('Версии')}</h2>
       <div className="card">
+        <div className="card-code">v2.0.0 · 2026-07-14 · {t('git-тег')} artifact-nightlights-v2.0.0</div>
+        <p>
+          {t('MAJOR: ряд 9→33 года + модель до 2075. Ретро — DMSP в калибровке Li et al.; современность — EOG VNL v2.1 (зеркало OpenGeoHub); сюжет v1 воспроизведён на независимом источнике (Смолевичский −0,45, Минск +0,07); самый быстрый рост света — Островецкий район (БелАЭС). Модель: light = bright·(pop-ratio)^β + floor, β из межрайонной эластичности; каждый модельный кадр несёт впечатанный маркер «МОДЕЛЬ». 17 контрольных метрик.')}
+        </p>
+        <div className="card-foot">
+          <a href="/artifacts/by-maps-nightlights-v2.0.0.zip" download>
+            ⬇ by-maps-nightlights-v2.0.0.zip (4,6 МБ)
+          </a>
+        </div>
+      </div>
+      <div className="card">
         <div className="card-code">v1.0.0 · 2026-07-12 · {t('git-тег')} artifact-nightlights-v1.0.0</div>
         <p>
-          {t('Первый релиз. Расхождение сосредоточено в индустриальных районах (Жодино свет ×0,55, Борисов ×0,78, Гомельский ×0,80, Орша ×0,83 при стабильном населении); Минск держится вровень (индекс ≈ +0,03). Свет — маркер расхождения, не оценка численности. 10 контрольных метрик.')}
+          {t('Первый релиз: VIIRS 2015–2023 (WorldPop fvf), индекс расхождения; расхождение сосредоточено в индустриальных районах (Жодино свет ×0,55, Борисов ×0,78), Минск вровень. В v2 источник оставлен как независимая кросс-проверка.')}
         </p>
         <div className="card-foot">
           <a href="/artifacts/by-maps-nightlights-v1.0.0.zip" download>
@@ -31,29 +42,35 @@ export default function NightlightsArtifactBody() {
       </div>
 
       <h2>{t('Состав')}</h2>
-      <pre><code>{`by-maps-nightlights-v1.0.0/
+      <pre><code>{`by-maps-nightlights-v2.0.0/
 ├── README.md · AGENT.md · LIMITATIONS.md · PROVENANCE.md · CHANGELOG.md
 ├── manifest.json                    машиночитаемое описание (sha256, допуски)
-├── sources/registry.csv             URL и sha256 годовых композитов VIIRS
-├── data/raw/nightlights/zonal_light.csv   зональная светимость 119 зон x 9 лет
-├── etl/nightlights.py               весь расчёт: доли, тренд, индекс (stdlib)
-├── etl/nightlights_extract.py       документация шага извлечения (rasterio)
-├── params/assumptions.yaml          допущения с обоснованиями
-├── code/run.sh                      единственная точка входа (~2 секунды)
-├── web/public/data/nightlights.json итог лендинга
-└── checks/                          инварианты, ожидаемые результаты, chksums`}</code></pre>
+├── sources/registry.csv             83 записи: URL, лицензии, sha256 глобальных
+│                                    файлов и вырезок (DMSP, VNL, simVIIRS)
+├── data/raw/nightlights/rasters/    35 вырезок GeoTIFF по Беларуси
+├── data/raw/nightlights/zonal_*.csv зональные суммы трёх продуктов + floor
+├── etl/nightlights_harmonize.py     гармонизация «мостом» + валидация (stdlib)
+├── etl/nightlights_model.py         эластичности и модель 2030-2075 (stdlib)
+├── etl/nightlights_v2.py            финальный набор (stdlib)
+├── etl/nightlights_{fetch,zonal,frames}.py   растровые шаги (rasterio)
+├── tools/render_reel_space.py       рилс-конвейер 1080x1920 (детерминирован)
+├── params/assumptions.json|yaml     ВСЕ параметры: пороги, дефакеляция, β, floor
+├── docs/notes/nightlights_v2_validation.md   отчёт с гейтами стыка
+├── code/run.sh                      единственная точка входа (~10 секунд)
+├── web/public/data/nightlights_v2.json        итог лендинга
+└── checks/                          инварианты, 17 контрольных метрик, chksums`}</code></pre>
 
       <h2>{t('Быстрая проверка')}</h2>
-      <pre><code>{`unzip by-maps-nightlights-v1.0.0.zip && cd by-maps-nightlights-v1.0.0
+      <pre><code>{`unzip by-maps-nightlights-v2.0.0.zip && cd by-maps-nightlights-v2.0.0
 bash code/run.sh          # только стандартная библиотека Python >= 3.10
-# == 1/3 Зональные суммы, тренды, индекс расхождения ==
-# == 2/3 Инварианты ==
-# == 3/3 Сверка с заявленными результатами ==
-# Все 10 контрольных метрик воспроизведены в допусках.`}</code></pre>
+# == 1/5 Гармонизация DMSP/VIIRS: мост, стык, спайк-отчёт ==
+# == 2/5 Эластичности ==  == 3/5 Финальный набор ==
+# == 4/5 Инварианты ==    == 5/5 Сверка с заявленными результатами ==
+# Все 17 контрольных метрик воспроизведены в допусках.`}</code></pre>
 
       <p className="hint">
         {t('Живая версия — ')}<Link href={p('/research/nightlights')}>{p('/research/nightlights')}</Link>
-        {t('; методика — кнопка «О данных и методике» на странице исследования.')}
+        {t('; методика — кнопка «О данных и методике» на странице исследования. AGENT.md содержит три обязательных задания, включая стресс-тест модели.')}
       </p>
     </div>
   );

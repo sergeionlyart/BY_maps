@@ -26,3 +26,11 @@
 Афіцыйныя долі гарадскога насельніцтва па перапісах — 1999: 69,3%, 2009: 74,5%,
 2019: 77,6% (Белстат, вынікі перапісаў) — выкарыстоўваюцца як эталон для праверкі
 вылічаных сум па гарадах (допуск 1,5 п.п.).
+
+## Начная свяцільнасць (INF-08 «Беларусь з космасу», v2)
+
+| Файл | Крыніца | Змест | Ліцэнзія |
+|---|---|---|---|
+| `nightlights/rasters/dmsp_<1992–2013>.tif` | [Li et al., Harmonization of DMSP and VIIRS NTL 1992–2024](https://doi.org/10.6084/m9.figshare.9828827) (Figshare, v10) | Каліброваны DMSP-OLS stable lights, выразкі па Беларусі (DN 0–63, ~1 км); глабальныя файлы не вендорацца — URL і sha256 у `registry_v2.csv` | CC BY 4.0 |
+| `nightlights/rasters/vnl_<2012–2024>.tif` | [EOG VIIRS VNL v2.1 annual, люстэрка OpenGeoHub](https://zenodo.org/records/17294744) (Zenodo) | Сапраўдныя гадавыя кампазіты EOG (average), 500 м, выразкі па Беларусі ў нВт/см²/ср; факелы двух НПЗ замаскаваныя | CC BY 4.0 (люстэрка); EOG VNL — свабоднае выкарыстанне з цытаваннем |
+| `nightlights/zonal_light.csv` | [WorldPop VIIRS fvf](https://data.worldpop.org/GIS/Covariates/Global_2015_2030/BLR/VIIRS/v1/fvf/) | Занальныя сумы v1 (100 м, average_masked, 2015–2023) — незалежная крыжаваная праверка раду VNL | CC BY 4.0 |

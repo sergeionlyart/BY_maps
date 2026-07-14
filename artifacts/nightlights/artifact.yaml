@@ -1,10 +1,10 @@
-# Проверяемый пакет INF-08 «Ночные огни против официальной статистики».
+# Проверяемый пакет INF-08 v2 «Беларусь из космоса, 1992-2075».
 # Сборка: python -m etl.artifacts.build nightlights
 
 id: nightlights
-title: "Ночные огни против официальной статистики: зональная светимость районов Беларуси и индекс расхождения свет/население, 2015-2023"
-version: "1.0.0"
-released: "2026-07-12"
+title: "Беларусь из космоса, 1992-2075: гармонизированная ночная светимость DMSP/VIIRS по районам, индекс расхождения свет/население и модельная иллюстрация будущего по прогнозу v2026.4"
+version: "2.0.0"
+released: "2026-07-14"
 landing_url: "https://by-population-maps.vercel.app/research/nightlights"
 authors:
   - "Проект «Население Беларуси, 1897-2026»"
@@ -17,18 +17,73 @@ files:
   - { path: PROVENANCE.md, role: docs }
   - { path: CITATION.cff, role: docs }
   - { path: LICENSE.md, role: docs }
-  - { path: sources/registry.csv, from: data/raw/nightlights/registry.csv, role: docs }
-  # сырьё: зональная светимость (извлечена из композитов VIIRS)
-  - { path: data/raw/nightlights/zonal_light.csv, from: data/raw/nightlights/zonal_light.csv, role: raw, license: "CC BY 4.0 (WorldPop/EOG VNL, производная)" }
-  # ряды населения и геометрия зон
+  - { path: sources/registry.csv, from: data/raw/nightlights/registry_v2.csv, role: docs }
+  - { path: docs/notes/nightlights_v2_validation.md, from: docs/notes/nightlights_v2_validation.md, role: docs }
+  # сырьё: вырезки растров по Беларуси (пиксели вне страны обнулены,
+  # факелы двух НПЗ замаскированы; глобальные источники - см. реестр)
+  - { path: data/raw/nightlights/rasters/dmsp_1992.tif, from: data/raw/nightlights/rasters/dmsp_1992.tif, role: raw, license: "CC BY 4.0 (Li et al., производная)" }
+  - { path: data/raw/nightlights/rasters/dmsp_1993.tif, from: data/raw/nightlights/rasters/dmsp_1993.tif, role: raw, license: "CC BY 4.0 (Li et al., производная)" }
+  - { path: data/raw/nightlights/rasters/dmsp_1994.tif, from: data/raw/nightlights/rasters/dmsp_1994.tif, role: raw, license: "CC BY 4.0 (Li et al., производная)" }
+  - { path: data/raw/nightlights/rasters/dmsp_1995.tif, from: data/raw/nightlights/rasters/dmsp_1995.tif, role: raw, license: "CC BY 4.0 (Li et al., производная)" }
+  - { path: data/raw/nightlights/rasters/dmsp_1996.tif, from: data/raw/nightlights/rasters/dmsp_1996.tif, role: raw, license: "CC BY 4.0 (Li et al., производная)" }
+  - { path: data/raw/nightlights/rasters/dmsp_1997.tif, from: data/raw/nightlights/rasters/dmsp_1997.tif, role: raw, license: "CC BY 4.0 (Li et al., производная)" }
+  - { path: data/raw/nightlights/rasters/dmsp_1998.tif, from: data/raw/nightlights/rasters/dmsp_1998.tif, role: raw, license: "CC BY 4.0 (Li et al., производная)" }
+  - { path: data/raw/nightlights/rasters/dmsp_1999.tif, from: data/raw/nightlights/rasters/dmsp_1999.tif, role: raw, license: "CC BY 4.0 (Li et al., производная)" }
+  - { path: data/raw/nightlights/rasters/dmsp_2000.tif, from: data/raw/nightlights/rasters/dmsp_2000.tif, role: raw, license: "CC BY 4.0 (Li et al., производная)" }
+  - { path: data/raw/nightlights/rasters/dmsp_2001.tif, from: data/raw/nightlights/rasters/dmsp_2001.tif, role: raw, license: "CC BY 4.0 (Li et al., производная)" }
+  - { path: data/raw/nightlights/rasters/dmsp_2002.tif, from: data/raw/nightlights/rasters/dmsp_2002.tif, role: raw, license: "CC BY 4.0 (Li et al., производная)" }
+  - { path: data/raw/nightlights/rasters/dmsp_2003.tif, from: data/raw/nightlights/rasters/dmsp_2003.tif, role: raw, license: "CC BY 4.0 (Li et al., производная)" }
+  - { path: data/raw/nightlights/rasters/dmsp_2004.tif, from: data/raw/nightlights/rasters/dmsp_2004.tif, role: raw, license: "CC BY 4.0 (Li et al., производная)" }
+  - { path: data/raw/nightlights/rasters/dmsp_2005.tif, from: data/raw/nightlights/rasters/dmsp_2005.tif, role: raw, license: "CC BY 4.0 (Li et al., производная)" }
+  - { path: data/raw/nightlights/rasters/dmsp_2006.tif, from: data/raw/nightlights/rasters/dmsp_2006.tif, role: raw, license: "CC BY 4.0 (Li et al., производная)" }
+  - { path: data/raw/nightlights/rasters/dmsp_2007.tif, from: data/raw/nightlights/rasters/dmsp_2007.tif, role: raw, license: "CC BY 4.0 (Li et al., производная)" }
+  - { path: data/raw/nightlights/rasters/dmsp_2008.tif, from: data/raw/nightlights/rasters/dmsp_2008.tif, role: raw, license: "CC BY 4.0 (Li et al., производная)" }
+  - { path: data/raw/nightlights/rasters/dmsp_2009.tif, from: data/raw/nightlights/rasters/dmsp_2009.tif, role: raw, license: "CC BY 4.0 (Li et al., производная)" }
+  - { path: data/raw/nightlights/rasters/dmsp_2010.tif, from: data/raw/nightlights/rasters/dmsp_2010.tif, role: raw, license: "CC BY 4.0 (Li et al., производная)" }
+  - { path: data/raw/nightlights/rasters/dmsp_2011.tif, from: data/raw/nightlights/rasters/dmsp_2011.tif, role: raw, license: "CC BY 4.0 (Li et al., производная)" }
+  - { path: data/raw/nightlights/rasters/dmsp_2012.tif, from: data/raw/nightlights/rasters/dmsp_2012.tif, role: raw, license: "CC BY 4.0 (Li et al., производная)" }
+  - { path: data/raw/nightlights/rasters/dmsp_2013.tif, from: data/raw/nightlights/rasters/dmsp_2013.tif, role: raw, license: "CC BY 4.0 (Li et al., производная)" }
+  - { path: data/raw/nightlights/rasters/vnl_2012.tif, from: data/raw/nightlights/rasters/vnl_2012.tif, role: raw, license: "CC BY 4.0 (EOG VNL/OpenGeoHub, производная)" }
+  - { path: data/raw/nightlights/rasters/vnl_2013.tif, from: data/raw/nightlights/rasters/vnl_2013.tif, role: raw, license: "CC BY 4.0 (EOG VNL/OpenGeoHub, производная)" }
+  - { path: data/raw/nightlights/rasters/vnl_2014.tif, from: data/raw/nightlights/rasters/vnl_2014.tif, role: raw, license: "CC BY 4.0 (EOG VNL/OpenGeoHub, производная)" }
+  - { path: data/raw/nightlights/rasters/vnl_2015.tif, from: data/raw/nightlights/rasters/vnl_2015.tif, role: raw, license: "CC BY 4.0 (EOG VNL/OpenGeoHub, производная)" }
+  - { path: data/raw/nightlights/rasters/vnl_2016.tif, from: data/raw/nightlights/rasters/vnl_2016.tif, role: raw, license: "CC BY 4.0 (EOG VNL/OpenGeoHub, производная)" }
+  - { path: data/raw/nightlights/rasters/vnl_2017.tif, from: data/raw/nightlights/rasters/vnl_2017.tif, role: raw, license: "CC BY 4.0 (EOG VNL/OpenGeoHub, производная)" }
+  - { path: data/raw/nightlights/rasters/vnl_2018.tif, from: data/raw/nightlights/rasters/vnl_2018.tif, role: raw, license: "CC BY 4.0 (EOG VNL/OpenGeoHub, производная)" }
+  - { path: data/raw/nightlights/rasters/vnl_2019.tif, from: data/raw/nightlights/rasters/vnl_2019.tif, role: raw, license: "CC BY 4.0 (EOG VNL/OpenGeoHub, производная)" }
+  - { path: data/raw/nightlights/rasters/vnl_2020.tif, from: data/raw/nightlights/rasters/vnl_2020.tif, role: raw, license: "CC BY 4.0 (EOG VNL/OpenGeoHub, производная)" }
+  - { path: data/raw/nightlights/rasters/vnl_2021.tif, from: data/raw/nightlights/rasters/vnl_2021.tif, role: raw, license: "CC BY 4.0 (EOG VNL/OpenGeoHub, производная)" }
+  - { path: data/raw/nightlights/rasters/vnl_2022.tif, from: data/raw/nightlights/rasters/vnl_2022.tif, role: raw, license: "CC BY 4.0 (EOG VNL/OpenGeoHub, производная)" }
+  - { path: data/raw/nightlights/rasters/vnl_2023.tif, from: data/raw/nightlights/rasters/vnl_2023.tif, role: raw, license: "CC BY 4.0 (EOG VNL/OpenGeoHub, производная)" }
+  - { path: data/raw/nightlights/rasters/vnl_2024.tif, from: data/raw/nightlights/rasters/vnl_2024.tif, role: raw, license: "CC BY 4.0 (EOG VNL/OpenGeoHub, производная)" }
+  # зональные суммы (извлечены из вырезок; extract-шаги требуют rasterio
+  # и в run.sh не вызываются - см. AGENT.md)
+  - { path: data/raw/nightlights/zonal_dmsp.csv, from: data/raw/nightlights/zonal_dmsp.csv, role: raw, license: "CC BY 4.0 (производная)" }
+  - { path: data/raw/nightlights/zonal_vnl.csv, from: data/raw/nightlights/zonal_vnl.csv, role: raw, license: "CC BY 4.0 (производная)" }
+  - { path: data/raw/nightlights/zonal_simviirs.csv, from: data/raw/nightlights/zonal_simviirs.csv, role: raw, license: "CC BY 4.0 (производная)" }
+  - { path: data/raw/nightlights/floor_2024.csv, from: data/raw/nightlights/floor_2024.csv, role: raw, license: "CC BY 4.0 (производная)" }
+  - { path: data/raw/nightlights/zonal_light.csv, from: data/raw/nightlights/zonal_light.csv, role: raw, license: "CC BY 4.0 (WorldPop/EOG VNL, производная; кросс-проверка v1)" }
+  # ассеты рилс-конвейера
+  - { path: data/raw/nightlights/fonts/DejaVuSans.ttf, from: data/raw/nightlights/fonts/DejaVuSans.ttf, role: raw, license: "Bitstream Vera / DejaVu (свободная)" }
+  - { path: data/raw/nightlights/qr_nightlights.png, from: data/raw/nightlights/qr_nightlights.png, role: raw, license: "CC BY 4.0 (проект)" }
+  # ряды населения, прогноз и геометрия зон
   - { path: web/public/data/data.json, from: web/public/data/data.json, role: intermediate, license: "CC BY 4.0" }
+  - { path: web/public/data/forecast.json, from: web/public/data/forecast.json, role: intermediate, license: "CC BY 4.0" }
   - { path: web/public/data/geo/adm2.geojson, from: web/public/data/geo/adm2.geojson, role: intermediate, license: "ODbL/CC BY (geoBoundaries/OSM)" }
   - { path: web/public/data/geo/adm1.geojson, from: web/public/data/geo/adm1.geojson, role: intermediate, license: "ODbL/CC BY (geoBoundaries/OSM)" }
   # код
   - { path: etl/__init__.py, from: artifacts/nightlights/shims/etl_init.py, role: code }
   - { path: etl/common.py, from: artifacts/nightlights/shims/common.py, role: code }
   - { path: etl/nightlights.py, from: etl/nightlights.py, role: code }
-  - { path: etl/nightlights_extract.py, from: etl/nightlights_extract.py, role: code }
+  - { path: etl/nightlights_harmonize.py, from: etl/nightlights_harmonize.py, role: code }
+  - { path: etl/nightlights_model.py, from: etl/nightlights_model.py, role: code }
+  - { path: etl/nightlights_v2.py, from: etl/nightlights_v2.py, role: code }
+  - { path: etl/nightlights_fetch.py, from: etl/nightlights_fetch.py, role: code }
+  - { path: etl/nightlights_zonal.py, from: etl/nightlights_zonal.py, role: code }
+  - { path: etl/nightlights_frames.py, from: etl/nightlights_frames.py, role: code }
+  - { path: tools/render_reel_space.py, from: tools/render_reel_space.py, role: code }
+  - { path: tools/reel_space_scene.json, from: tools/reel_space_scene.json, role: params }
+  - { path: params/assumptions.json, role: params }
   - { path: params/assumptions.yaml, role: params }
   - { path: code/run.sh, role: code }
   - { path: code/verify.py, role: code }
@@ -36,19 +91,29 @@ files:
   - { path: checks/tests/test_invariants.py, role: code }
   # итоговые данные
   - { path: data/final/computed_results.json, role: final, license: "CC BY 4.0" }
-  - { path: web/public/data/nightlights.json, from: web/public/data/nightlights.json, role: final, license: "CC BY 4.0" }
+  - { path: web/public/data/nightlights_v2.json, from: web/public/data/nightlights_v2.json, role: final, license: "CC BY 4.0" }
 
 sources:
-  - id: eog_vnl
-    url: "https://eogdata.mines.edu/products/vnl/"
-    description: "EOG VNL 2.1/2.2 average_masked (Colorado School of Mines / Payne Institute) - подлинный годовой композит VIIRS DNB; сам EOG за токеном, используется открытая обработка WorldPop"
-    license: "EOG VNL, свободное использование с цитированием"
-    accessed: "2026-07-12"
+  - id: li_harmonized
+    url: "https://doi.org/10.6084/m9.figshare.9828827"
+    description: "Li et al., Harmonization of DMSP and VIIRS nighttime light data 1992-2024 (Scientific Data): calDMSP 1992-2013 - ретро-сегмент; simVIIRS 2013-2024 - мост калибровки и спайк-сравнение. Анонимная загрузка, sha256 каждого файла - sources/registry.csv"
+    license: "CC BY 4.0"
+    accessed: "2026-07-14"
+  - id: vnl_mirror
+    url: "https://zenodo.org/records/17294744"
+    description: "EOG VIIRS VNL v2.1 annual average (Colorado School of Mines / Payne Institute) в зеркале OpenGeoHub, 500 м EPSG:4326, 2012-2024; значения x10 возвращены к нВт/см²/ср при вырезке. Сам EOG за логином - зеркало ради анонимной воспроизводимости"
+    license: "CC BY 4.0 (зеркало); EOG VNL - свободное использование с цитированием"
+    accessed: "2026-07-14"
   - id: worldpop_viirs
     url: "https://data.worldpop.org/GIS/Covariates/Global_2015_2030/BLR/VIIRS/v1/fvf/"
-    description: "WorldPop: VNL average_masked, вариант fvf, 100 м, обрезано по Беларуси, 2015-2023; URL и sha256 каждого года - sources/registry.csv (растры ~30 МБ/год не вендорятся)"
+    description: "WorldPop fvf (VNL average_masked, 100 м, 2015-2023) - источник v1, в v2 используется как независимая кросс-проверка ряда VNL (R² ln-долей 0,93-0,98)"
     license: "CC BY 4.0 (WorldPop)"
     accessed: "2026-07-12"
+  - id: forecast_v2026_4
+    url: "https://by-population-maps.vercel.app/artifacts/by-maps-forecast-v1.3.0.zip"
+    description: "Прогноз населения проекта v2026.4 (пакет forecast v1.3.0): входы модели будущей светимости - 3 сценария x 2 стартовых ряда, районы/Минск"
+    license: "CC BY 4.0"
+    accessed: "2026-07-14"
 
 entrypoints:
   reproduce: "code/run.sh"
@@ -57,26 +122,40 @@ entrypoints:
 environment:
   python: ">=3.10"
   lock: "code/requirements.lock"
-  seed: null   # расчёт детерминирован
+  seed: 20260712   # дизеринг кадров/рилса; зональный расчёт детерминирован
 
 expected_results:
   - { metric: n_zones, value: 119, tolerance: 0,
       description: "зон: 118 районов + Минск (adm1; в adm2 он «дыра» Минского района)" }
-  - { metric: n_with_div, value: 119, tolerance: 0,
-      description: "зон с посчитанным индексом (полный трендовый ряд, без нулевых лет)" }
-  - { metric: div_minsk, value: 0.0313, tolerance: 0.001,
-      description: "Минск: индекс ≈ 0 - свет столицы держится вровень с населением" }
-  - { metric: div_zhodzina, value: -0.5802, tolerance: 0.001,
-      description: "Смолевичский район (Жодино, БелАЗ; r-smalavicki): доля света ×0,55 при доле населения ×0,99 - крупнейшее надёжное расхождение (индустриальный)" }
-  - { metric: lr_zhodzina, value: 0.5547, tolerance: 0.001,
-      description: "отношение доли света Смолевичского района к тренду" }
-  - { metric: div_barysau, value: -0.2631, tolerance: 0.001,
-      description: "Борисовский район: доля света ×0,78 при доле населения ×1,01" }
-  - { metric: div_homiel, value: -0.2157, tolerance: 0.001,
-      description: "Гомельский район: доля света ×0,80 при доле населения ×1,00" }
-  - { metric: div_orsha, value: -0.2011, tolerance: 0.001,
-      description: "Оршанский район: доля света ×0,83" }
-  - { metric: nat_light_2015, value: 6039471.4, tolerance: 1.0,
-      description: "национальная сумма светимости 2015 (порог > 1 нВт), нВт·пиксели" }
-  - { metric: nat_light_2023, value: 9227688.0, tolerance: 1.0,
-      description: "то же 2023: рост уровня - в основном версия VNL 2.2, поэтому используются ДОЛИ, а не абсолют" }
+  - { metric: bridge_r2, value: 0.9217, tolerance: 0.001,
+      description: "R² моста DN->радианс (simVIIRS/VNL 2014-2024, FE года; гейт >= 0,9)" }
+  - { metric: bridge_b, value: 0.9151, tolerance: 0.001,
+      description: "наклон моста ln V = a_y + b ln S" }
+  - { metric: f18_factor, value: 0.4857, tolerance: 0.001,
+      description: "коррекция F18-эры calDMSP 2010-2013 (остаточное ~2x завышение)" }
+  - { metric: seam_gap, value: -0.0299, tolerance: 0.002,
+      description: "разрыв нац. суммы на стыке, симметричные 4-летние окна 2008-2011|2012-2015 (out-of-sample; гейт +-5%)" }
+  - { metric: nat_light_1992, value: 378550.4, tolerance: 1.0,
+      description: "нац. светимость 1992 в радианс-эквиваленте (калибровка моста)" }
+  - { metric: nat_light_2024, value: 512716.0, tolerance: 1.0,
+      description: "нац. светимость 2024, фактический VNL (нВт/см²/ср x пиксели 500 м)" }
+  - { metric: div_minsk, value: 0.0671, tolerance: 0.001,
+      description: "Минск: v1-индекс расхождения ≈ 0 - свет столицы вровень с населением (ряд VNL)" }
+  - { metric: div_smalavicki, value: -0.4516, tolerance: 0.001,
+      description: "Смолевичский район (Жодино, БелАЗ): доля света ×0,63 от тренда при населении ×0,99 - сюжет v1 воспроизводится на независимом источнике" }
+  - { metric: lr_smalavicki, value: 0.6309, tolerance: 0.001,
+      description: "отношение доли света Смолевичского района к тренду 2015-2019" }
+  - { metric: div_salihorski, value: -0.4662, tolerance: 0.001,
+      description: "Солигорский район: сопоставимое с Жодино расхождение" }
+  - { metric: beta_industrial, value: 1.5979, tolerance: 0.005,
+      description: "межрайонная эластичность яркой компоненты, индустриальный класс (SE 0,18, R² 0,79)" }
+  - { metric: beta_rural, value: 1.6573, tolerance: 0.005,
+      description: "то же, сельский класс (SE 0,15, R² 0,59)" }
+  - { metric: floor_share_2024, value: 0.5146, tolerance: 0.001,
+      description: "доля «инфраструктурного пола» (пиксели 1-5 нВт) в нац. свете 2024" }
+  - { metric: model_2075_base, value: 499824.2, tolerance: 1.0,
+      description: "модельный нац. свет 2075, базовый сценарий, официальный старт" }
+  - { metric: model_2075_negative, value: 432637.0, tolerance: 1.0,
+      description: "то же, негативный: -13% к базовому - агломерация держится, периферия тускнеет" }
+  - { metric: model_2075_optimistic, value: 550229.9, tolerance: 1.0,
+      description: "то же, оптимистичный: +10% к базовому" }

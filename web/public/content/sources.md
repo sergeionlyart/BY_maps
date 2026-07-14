@@ -26,3 +26,11 @@
 Официальные доли городского населения по переписям — 1999: 69,3%, 2009: 74,5%,
 2019: 77,6% (Белстат, итоги переписей) — используются как эталон для проверки
 вычисленных сумм по городам (допуск 1,5 п.п.).
+
+## Ночная светимость (INF-08 «Беларусь из космоса», v2)
+
+| Файл | Источник | Содержание | Лицензия |
+|---|---|---|---|
+| `nightlights/rasters/dmsp_<1992–2013>.tif` | [Li et al., Harmonization of DMSP and VIIRS NTL 1992–2024](https://doi.org/10.6084/m9.figshare.9828827) (Figshare, v10) | Калиброванный DMSP-OLS stable lights, вырезки по Беларуси (DN 0–63, ~1 км); глобальные файлы не вендорятся — URL и sha256 в `registry_v2.csv` | CC BY 4.0 |
+| `nightlights/rasters/vnl_<2012–2024>.tif` | [EOG VIIRS VNL v2.1 annual, зеркало OpenGeoHub](https://zenodo.org/records/17294744) (Zenodo) | Подлинные годовые композиты EOG (average), 500 м, вырезки по Беларуси в нВт/см²/ср; факелы двух НПЗ замаскированы | CC BY 4.0 (зеркало); EOG VNL — свободное использование с цитированием |
+| `nightlights/zonal_light.csv` | [WorldPop VIIRS fvf](https://data.worldpop.org/GIS/Covariates/Global_2015_2030/BLR/VIIRS/v1/fvf/) | Зональные суммы v1 (100 м, average_masked, 2015–2023) — независимая кросс-проверка ряда VNL | CC BY 4.0 |

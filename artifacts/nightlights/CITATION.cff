@@ -1,26 +1,48 @@
 cff-version: 1.2.0
-message: "Цитируйте конкретную версию пакета; первичные данные — EOG VNL / WorldPop ниже"
-title: "Ночные огни против официальной статистики: индекс расхождения по районам Беларуси, 2015–2023 (проверяемый пакет)"
+message: "Цитируйте конкретную версию пакета; первичные данные — Li et al. / EOG VNL ниже"
+title: "Беларусь из космоса, 1992–2075: гармонизированная ночная светимость районов, индекс расхождения свет/население и модельная иллюстрация будущего (проверяемый пакет)"
 type: dataset
-version: 1.0.0
-date-released: "2026-07-12"
+version: 2.0.0
+date-released: "2026-07-14"
 authors:
   - name: "Проект «Население Беларуси, 1897–2026»"
 url: "https://by-population-maps.vercel.app/research/nightlights"
 repository-code: "https://github.com/sergeionlyart/BY_maps"
 identifiers:
   - type: other
-    value: "artifact-nightlights-v1.0.0"
+    value: "artifact-nightlights-v2.0.0"
     description: "git-тег релиза пакета"
 references:
+  - type: article
+    authors:
+      - family-names: "Li"
+        given-names: "Xuecao"
+      - family-names: "Zhou"
+        given-names: "Yuyu"
+      - family-names: "Zhao"
+        given-names: "Min"
+      - family-names: "Zhao"
+        given-names: "Xia"
+    title: "A harmonized global nighttime light dataset 1992–2018 (обновление 1992–2024, Figshare v10)"
+    journal: "Scientific Data"
+    year: 2020
+    doi: "10.1038/s41597-020-0510-y"
   - type: data
     authors:
       - name: "Earth Observation Group, Payne Institute, Colorado School of Mines"
-    title: "VIIRS Nighttime Lights Annual VNL V2.1/V2.2 (average_masked)"
-    url: "https://eogdata.mines.edu/products/vnl/"
+    title: "VIIRS Nighttime Lights Annual VNL V2.1 (average); зеркало OpenGeoHub, Zenodo 17294744"
+    url: "https://zenodo.org/records/17294744"
+  - type: article
+    authors:
+      - family-names: "Elvidge"
+        given-names: "Christopher D."
+    title: "Annual time series of global VIIRS nighttime lights derived from monthly averages: 2012 to 2019"
+    journal: "Remote Sensing"
+    year: 2021
+    doi: "10.3390/rs13050922"
   - type: data
     authors:
       - name: "WorldPop, University of Southampton"
-    title: "VIIRS night-time lights covariate, Belarus (Global_2015_2030, fvf)"
+    title: "VIIRS night-time lights covariate, Belarus (Global_2015_2030, fvf) — кросс-проверка"
     url: "https://data.worldpop.org/GIS/Covariates/Global_2015_2030/BLR/VIIRS/"
 license: CC-BY-4.0
