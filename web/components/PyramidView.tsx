@@ -63,22 +63,31 @@ export default function PyramidView({ annotations }: {
     if (j && ['official', 'adjusted'].includes(j)) setJo(j);
   }, []);
 
-  // deep-link: запись
+  // deep-link: запись. ОБЯЗАТЕЛЬНО с дебаунсом: браузеры лимитируют
+  // history.replaceState (~100 вызовов за 10 c) и бросают SecurityError
+  // — драг слайдера или «рассказ» без дебаунса роняли страницу.
   useEffect(() => {
     if (!data) return;
-    const url = new URL(window.location.href);
-    url.searchParams.set('year', String(year));
-    if (born) url.searchParams.set('born', String(born));
-    else url.searchParams.delete('born');
-    if (year > 2026) {
-      url.searchParams.set('scenario', scn);
-      if (jo === 'adjusted') url.searchParams.set('jumpoff', jo);
-      else url.searchParams.delete('jumpoff');
-    } else {
-      url.searchParams.delete('scenario');
-      url.searchParams.delete('jumpoff');
-    }
-    window.history.replaceState(null, '', url.toString());
+    const id = window.setTimeout(() => {
+      const url = new URL(window.location.href);
+      url.searchParams.set('year', String(year));
+      if (born) url.searchParams.set('born', String(born));
+      else url.searchParams.delete('born');
+      if (year > 2026) {
+        url.searchParams.set('scenario', scn);
+        if (jo === 'adjusted') url.searchParams.set('jumpoff', jo);
+        else url.searchParams.delete('jumpoff');
+      } else {
+        url.searchParams.delete('scenario');
+        url.searchParams.delete('jumpoff');
+      }
+      try {
+        window.history.replaceState(null, '', url.toString());
+      } catch {
+        // превышен лимит истории - deep-link догонит следующей записью
+      }
+    }, 350);
+    return () => window.clearTimeout(id);
   }, [data, year, scn, jo, born]);
 
   const stops = useMemo(() => (data ? stopsOf(data) : []), [data]);
@@ -154,11 +163,14 @@ export default function PyramidView({ annotations }: {
   return (
     <div className="pyr">
       <div className="controls pyr-controls">
-        <button className="play-btn" onClick={() => {
-          if (!playing && idx >= stops.length - 1) setYear(stops[0]);
-          setPlaying(!playing);
-        }}>
-          {playing ? '❚❚' : '▶'} {t('рассказ')}
+        <button className="play-btn pyr-play"
+          aria-label={playing ? t('Пауза') : t('Проиграть таймлайн')}
+          onClick={() => {
+            if (!playing && idx >= stops.length - 1) setYear(stops[0]);
+            setPlaying(!playing);
+          }}>
+          <span className="pyr-play-icon">{playing ? '❚❚' : '▶'}</span>
+          {playing ? t('Пауза') : `${t('Проиграть')} 1959→2075`}
         </button>
         <span className="year-display pyr-year">{stops[idx]}</span>
         <span className={`nlv2-badge pyr-badge pyr-badge-${frame.type}`}>

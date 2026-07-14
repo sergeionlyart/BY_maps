@@ -56,9 +56,10 @@ test('после 2026: сценарии, стартовый ряд, призра
   await expect(page.locator('.pyr-ghost').first()).toBeVisible();
   expect(await page.locator('.pyr-ghost').count()).toBe(17 * 2 * 2);
   await page.getByRole('button', { name: 'негативный' }).click();
-  expect(page.url()).toContain('scenario=negative');
+  // запись URL дебаунсится (лимит браузера на replaceState)
+  await expect.poll(() => page.url()).toContain('scenario=negative');
   await page.getByRole('button', { name: 'скорректированный' }).click();
-  expect(page.url()).toContain('jumpoff=adjusted');
+  await expect.poll(() => page.url()).toContain('jumpoff=adjusted');
   await expect(page.locator('.pyr-badge').first()).toContainText('модель');
   // на истории переключателей нет
   await page.goto('/pyramid?year=2009');
@@ -73,6 +74,45 @@ test('аннотации всплывают на якорных годах и з
   await expect(page.locator('.pyr-ann-title')).toContainText('Эхо войны');
   await page.goto('/pyramid?year=2075');
   await expect(page.locator('.pyr-ann-title')).toContainText('Пирамида или гриб');
+});
+
+test('стресс-драг слайдера: страница живёт, URL пишется с дебаунсом',
+  async ({ page }) => {
+    // лимит браузера ~100 replaceState/10c ронял страницу при драге
+    await page.goto('/pyramid?year=2008');
+    await expect(page.locator('.pyr-row')).toHaveCount(17);
+    const stateCalls = await page.evaluate(async () => {
+      let calls = 0;
+      const orig = history.replaceState.bind(history);
+      history.replaceState = (...a) => { calls += 1; return orig(...a); };
+      const slider = document.querySelector(
+        '.pyr-slider input') as HTMLInputElement;
+      const setter = Object.getOwnPropertyDescriptor(
+        window.HTMLInputElement.prototype, 'value')!.set!;
+      for (let i = 0; i < 140; i++) {
+        setter.call(slider, String(i % 68));
+        slider.dispatchEvent(new Event('input', { bubbles: true }));
+        await new Promise((r) => setTimeout(r, 5));
+      }
+      await new Promise((r) => setTimeout(r, 600));
+      return calls;
+    });
+    // дебаунс: 140 движений -> считанные записи URL, страница жива
+    expect(stateCalls).toBeLessThan(20);
+    await expect(page.locator('.pyr-row')).toHaveCount(17);
+    expect(page.url()).toContain('year=');
+  });
+
+test('кнопка Play запускает автоматическое проматывание', async ({ page }) => {
+  await page.goto('/pyramid');
+  const play = page.locator('.pyr-play');
+  await expect(play).toContainText('Проиграть');
+  await play.click();
+  await expect(play).toContainText('Пауза');
+  await expect(page.locator('.pyr-year')).not.toContainText('1959',
+    { timeout: 5000 });
+  await play.click();
+  await expect(play).toContainText('Проиграть');
 });
 
 test('«рассказ» продвигает год', async ({ page }) => {

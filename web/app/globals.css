@@ -1544,3 +1544,14 @@ a.service-card:hover .sc-cta { text-decoration: underline; }
 @media (prefers-reduced-motion: reduce) {
   .pyr-bar, .pyr-ghost { transition: none; }
 }
+
+/* заметная кнопка воспроизведения пирамиды */
+.pyr-play, .pyr-play.play-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  width: auto; height: auto; border-radius: 999px;
+  padding: 10px 20px; font-size: 15.5px; font-weight: 600;
+  background: var(--accent); color: #fff; border: none;
+  cursor: pointer; min-height: 44px; box-shadow: 0 4px 14px rgba(0,0,0,.25);
+}
+.pyr-play:hover { filter: brightness(1.08); }
+.pyr-play .pyr-play-icon { font-size: 13px; letter-spacing: -1px; }
