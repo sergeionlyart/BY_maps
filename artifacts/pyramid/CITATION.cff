@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "При использовании данных сошлитесь на пакет и первичные источники (см. PROVENANCE.md)."
+title: "Возрастно-половая пирамида Беларуси 1959-2075"
+version: "1.0.0"
+date-released: "2026-07-14"
+authors:
+  - name: "Проект «Население Беларуси, 1897-2026»"
+url: "https://by-population-maps.vercel.app/pyramid"
+license: CC-BY-4.0

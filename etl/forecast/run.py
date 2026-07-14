@@ -39,6 +39,7 @@ from .migration import step_net_migration
 SCEN_DIR = Path(__file__).parent / "scenarios"
 OUT_WEB = ROOT / "web" / "public" / "data" / "forecast.json"
 OUT_CSV = ROOT / "data" / "curated" / "forecast_v2026_4.csv"
+OUT_AGE = ROOT / "data" / "curated" / "forecast_age_by_v2026_4.json"
 
 STEP_YEARS = list(range(2026, 2077, STEP))  # 2026..2076
 EXPORT_YEARS = [y for y in STEP_YEARS if y <= 2071] + [2075]
@@ -251,6 +252,39 @@ def export(all_series: dict[str, dict], sub_series: dict[str, dict],
     print(f"OK: forecast.json + {OUT_CSV.name}")
 
 
+def export_age_structures(all_structs: dict, adj_structs: dict) -> None:
+    """P-3 (INF-11): возрастная деталь прогноза, уровень BY.
+
+    Структуры {пол x 17 групп} на модельных узлах STEP_YEARS
+    (2026..2076) для 3 сценариев x 2 стартовых рядов; BY = сумма
+    областей. Интерполяция на календарную сетку (2030..2075) - на
+    стороне потребителя (etl/pyramids.py), файл несёт чистые узлы.
+    Гейт: сумма структуры узла = итогу сценария (проверяется тестом
+    против forecast_v2026_4.csv, допуск +-0.1%)."""
+    out: dict = {"version": VERSION, "unit": "человек",
+                 "age_groups": AGE_GROUPS, "node_years": STEP_YEARS,
+                 "note": "модельные узлы CCMPP; BY = сумма областей",
+                 "series": {}}
+    for jo, structs in (("official", all_structs), ("adjusted", adj_structs)):
+        for sid, terr_structs in structs.items():
+            per_year = {}
+            for y in STEP_YEARS:
+                agg = {"m": [0.0] * len(AGE_GROUPS),
+                       "f": [0.0] * len(AGE_GROUPS)}
+                for t in TERRITORIES:
+                    st = terr_structs[t][y]
+                    for sex in ("m", "f"):
+                        for i, g in enumerate(AGE_GROUPS):
+                            agg[sex][i] += st[sex][g]
+                per_year[str(y)] = {sex: [round(v, 1) for v in agg[sex]]
+                                    for sex in ("m", "f")}
+            out["series"][f"{sid}:{jo}"] = per_year
+    OUT_AGE.write_text(json.dumps(out, ensure_ascii=False, sort_keys=True,
+                                  separators=(",", ":")))
+    print(f"OK: {OUT_AGE.name} ({len(out['series'])} серий x "
+          f"{len(STEP_YEARS)} узлов)")
+
+
 def main() -> None:
     from . import sub
 
@@ -276,9 +310,13 @@ def main() -> None:
 
     # ряд adjusted (WP-F3): те же сценарии со скорректированного старта
     adj_jump, adj_meta = jumpoff_adjusted()
-    adj_series = {sid: run_scenario(s, jumpoff=adj_jump) for sid, s in scens.items()}
+    adj_series, adj_structs = {}, {}
+    for sid, s in scens.items():
+        adj_series[sid], adj_structs[sid] = run_scenario(
+            s, keep_structures=True, jumpoff=adj_jump)
 
     export(all_series, sub_series, adj_series, adj_meta, adj_jump)
+    export_age_structures(all_structs, adj_structs)
     wpp = wpp_total_variants()
     for sid, series in sorted(all_series.items()):
         p50 = series["BY"][2051] / 1000

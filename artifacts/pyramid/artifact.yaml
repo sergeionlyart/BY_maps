@@ -1,0 +1,116 @@
+# Проверяемый пакет INF-11 «Пирамида, которая переворачивается»:
+# национальные возрастно-половые структуры 1959-2075.
+# Сборка: python -m etl.artifacts.build pyramid
+
+id: pyramid
+title: "Возрастно-половая пирамида Беларуси 1959-2075: переписи БССР/РБ до человека, годовые оценки, когортная интерполяция и три сценария прогноза CCMPP v2026.4 (два стартовых ряда)"
+version: "1.0.0"
+released: "2026-07-14"
+landing_url: "https://by-population-maps.vercel.app/pyramid"
+authors:
+  - "Проект «Население Беларуси, 1897-2026»"
+
+files:
+  - { path: README.md, role: docs }
+  - { path: CHANGELOG.md, role: docs }
+  - { path: AGENT.md, role: docs }
+  - { path: LIMITATIONS.md, role: docs }
+  - { path: PROVENANCE.md, role: docs }
+  - { path: CITATION.cff, role: docs }
+  - { path: LICENSE.md, role: docs }
+  - { path: sources/registry.csv, from: data/raw/pyramid/registry.csv, role: docs }
+  # сырьё: переписи Демоскопа (HTML как есть) + годовые оценки Белстата
+  - { path: data/raw/pyramid/census_1959.html, from: data/raw/pyramid/census_1959.html, role: raw, license: "Демоскоп Weekly (открытая публикация)" }
+  - { path: data/raw/pyramid/census_1970.html, from: data/raw/pyramid/census_1970.html, role: raw, license: "Демоскоп Weekly (открытая публикация)" }
+  - { path: data/raw/pyramid/census_1979.html, from: data/raw/pyramid/census_1979.html, role: raw, license: "Демоскоп Weekly (открытая публикация)" }
+  - { path: data/raw/pyramid/census_1989.html, from: data/raw/pyramid/census_1989.html, role: raw, license: "Демоскоп Weekly (открытая публикация)" }
+  - { path: data/raw/pyramid/dataportal_age_1990-1999.json, from: data/raw/pyramid/dataportal_age_1990-1999.json, role: raw, license: "Белстат, открытые данные" }
+  - { path: data/raw/pyramid/dataportal_age_2000-2009.json, from: data/raw/pyramid/dataportal_age_2000-2009.json, role: raw, license: "Белстат, открытые данные" }
+  - { path: data/raw/pyramid/dataportal_age_2010-2018.json, from: data/raw/pyramid/dataportal_age_2010-2018.json, role: raw, license: "Белстат, открытые данные" }
+  # входы: переписи 2009/2019 (OLAP, до человека), оценки 2019-2026,
+  # возрастная деталь прогноза (экспорт CCMPP v2026.4, задача P-3)
+  - { path: data/curated/age2009.csv, from: data/curated/age2009.csv, role: intermediate, license: "CC BY 4.0" }
+  - { path: data/curated/age2019.csv, from: data/curated/age2019.csv, role: intermediate, license: "CC BY 4.0" }
+  - { path: data/curated/age_current.csv, from: data/curated/age_current.csv, role: intermediate, license: "CC BY 4.0" }
+  - { path: data/curated/forecast_age_by_v2026_4.json, from: data/curated/forecast_age_by_v2026_4.json, role: intermediate, license: "CC BY 4.0" }
+  # кросс-чек: WPP-2024 medium (заглушка прототипа; в датасет НЕ входит)
+  - { path: checks/wpp/blr_single_age_medium_2024-2100.csv, from: data/raw/wpp2024/blr_single_age_medium_2024-2100.csv, role: raw, license: "UN WPP 2024, CC BY 3.0 IGO" }
+  # код
+  - { path: etl/__init__.py, from: artifacts/pyramid/shims/etl_init.py, role: code }
+  - { path: etl/common.py, from: artifacts/pyramid/shims/common.py, role: code }
+  - { path: etl/pyramids.py, from: etl/pyramids.py, role: code }
+  - { path: etl/pyramids_fetch.py, from: etl/pyramids_fetch.py, role: code }
+  # рилс-конвейер R-1 (кадры 1080x1920; требует Pillow+numpy+ffmpeg и
+  # вендоренный шрифт nightlights-пакета - в run.sh НЕ вызывается)
+  - { path: tools/render_reel_pyramid.py, from: tools/render_reel_pyramid.py, role: code }
+  - { path: tools/reel_pyramid_scene.json, from: tools/reel_pyramid_scene.json, role: code }
+  - { path: params/assumptions.yaml, role: params }
+  - { path: code/run.sh, role: code }
+  - { path: code/verify.py, role: code }
+  - { path: code/requirements.lock, role: code }
+  - { path: checks/tests/test_invariants.py, role: code }
+  - { path: checks/wpp_crosscheck.py, role: code }
+  # итог - ровно тот, что на лендинге
+  - { path: data/final/computed_results.json, role: final, license: "CC BY 4.0" }
+  - { path: web/public/data/pyramids.json, from: web/public/data/pyramids.json, role: final, license: "CC BY 4.0" }
+
+sources:
+  - id: demoscope_censuses
+    url: "http://demoscope.ru/weekly/ssp/ (sng_mar_59, sng_age_70/79/89; БССР; см. sources/registry.csv с URL и sha256)"
+    description: "Возрастные таблицы всесоюзных переписей 1959/1970/1979/1989 по БССР"
+    license: "Демоскоп Weekly, открытая публикация (ссылка обязательна)"
+    accessed: "2026-07-14"
+  - id: belstat_age
+    url: "https://dataportal.belstat.gov.by/osids-public-api (10101100003; годовые оценки 1990-2018) + OLAP F201N (переписи 2009/2019) + age_current.csv (2019-2026)"
+    description: "Официальные возрастные структуры Республики Беларусь"
+    license: "Белстат, открытые данные"
+    accessed: "2026-07-14"
+  - id: ccmpp_export
+    url: "прогноз BY Maps v2026.4 (пакет by-maps-forecast-v1.3.0), экспорт возрастной детали data/curated/forecast_age_by_v2026_4.json"
+    description: "Будущее 2030-2075: 3 сценария x 2 стартовых ряда"
+    license: "CC BY 4.0"
+    accessed: "2026-07-14"
+  - id: wpp2024
+    url: "https://population.un.org/wpp/ (single age, Belarus, medium)"
+    description: "Кросс-чек будущего (в датасет не входит)"
+    license: "CC BY 3.0 IGO"
+    accessed: "2026-07-12"
+
+entrypoints:
+  reproduce: "code/run.sh"
+  verify: "python3 checks/tests/test_invariants.py"
+
+environment:
+  python: ">=3.10"
+  lock: "code/requirements.lock"
+  seed: null   # расчёт детерминирован, случайности нет
+
+expected_results:
+  - { metric: series_total, value: 128, tolerance: 0,
+      description: "серий в pyramids.json (68 истории + 60 модельных)" }
+  - { metric: census_1959, value: 8054648, tolerance: 0,
+      description: "итог переписи-1959 (Демоскоп, БССР) - до человека" }
+  - { metric: census_1970, value: 9002338, tolerance: 0,
+      description: "итог переписи-1970 - до человека" }
+  - { metric: census_1979, value: 9532516, tolerance: 0,
+      description: "итог переписи-1979 - до человека" }
+  - { metric: census_1989, value: 10151806, tolerance: 0,
+      description: "итог переписи-1989 - до человека" }
+  - { metric: census_2009, value: 9503807, tolerance: 0,
+      description: "итог переписи-2009 (OLAP F201N) - до человека" }
+  - { metric: census_2019, value: 9413446, tolerance: 0,
+      description: "итог переписи-2019 - до человека" }
+  - { metric: estimate_2026, value: 9056080, tolerance: 0,
+      description: "оценка на 01.01.2026 - точно" }
+  - { metric: unknown_2009, value: 296, tolerance: 0,
+      description: "«возраст не определён» переписи-2009 сохранён" }
+  - { metric: model_2075_base, value: 5970129, tolerance: 5970,
+      description: "сумма пирамиды 2075:base = итогу прогноза (+-0,1%)" }
+  - { metric: model_2075_negative, value: 4334634, tolerance: 4334,
+      description: "2075:negative (+-0,1%)" }
+  - { metric: model_2075_optimistic, value: 7106070, tolerance: 7106,
+      description: "2075:optimistic (+-0,1%)" }
+  - { metric: wpp_placeholder_series, value: 0, tolerance: 0,
+      description: "серий с WPP-заглушкой в итоговом наборе (запрет прода)" }
+  - { metric: wpp_medium_2075_gap_pct, value: -4.3, tolerance: 0.2,
+      description: "кросс-чек: WPP-medium-2075 ниже base на ~4% (5,72 против 5,97 млн; сценарии проекта != варианты ООН)" }

@@ -133,6 +133,16 @@
    "code": "INF-08R",
    "title_ru": "Расхождение свет/статистика: кандидаты H1–H3, декомпозиция и внешняя проверка",
    "research_url": "https://by-population-maps.vercel.app/research/nightlights"
+  },
+  {
+   "file": "by-maps-pyramid-v1.0.0.zip",
+   "url": "https://by-population-maps.vercel.app/artifacts/by-maps-pyramid-v1.0.0.zip",
+   "size_bytes": 351028,
+   "sha256": "f1012f1c59f26fb81c26066c929b32465415b397edf08e6b26e86f221fb736af",
+   "version": "1.0.0",
+   "code": "INF-11",
+   "title_ru": "Возрастно-половая пирамида Беларуси 1959–2075",
+   "research_url": "https://by-population-maps.vercel.app/pyramid"
   }
  ],
  "archive_versions": [
