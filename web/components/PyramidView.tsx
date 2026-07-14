@@ -125,7 +125,8 @@ export default function PyramidView({ annotations }: {
     const hasAnn = data.annotations.some((a) => a.year === cur);
     const atEnd = idx >= stops.length - 1;
     if (atEnd) { setPlaying(false); return; }
-    const delay = hasAnn ? 3200 : (cur >= 2026 ? 700 : 260);
+    // пауза на аннотации: +3 c по решению автора (время на чтение)
+    const delay = hasAnn ? 6200 : (cur >= 2026 ? 700 : 260);
     playRef.current = window.setTimeout(() => {
       setDismissed(new Set());
       setYear(stops[idx + 1]);
