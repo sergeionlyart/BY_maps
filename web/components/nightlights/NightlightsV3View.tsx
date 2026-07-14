@@ -430,7 +430,7 @@ export default function NightlightsV3View() {
         </div>
       </div>
 
-      <CasesBlock candidates={data.candidates} onOpen={(c) => {
+      <CasesBlock candidates={data.candidates} externalChecks={data.externalChecks} onOpen={(c) => {
         setOpenCase(c.id);
         setSel(c.zones[0]);
         const i = stops.reduce((best, y, ii) =>

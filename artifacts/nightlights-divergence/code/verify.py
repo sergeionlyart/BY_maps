@@ -34,6 +34,27 @@ def computed_metrics() -> dict:
         out[f"residual_pct_{c['id']}"] = c["metrics"]["lightResidualPct"]
         out[f"alt_residual_pct_{c['id']}"] = c["metrics"]["altResidualPct"]
         out[f"beta_{c['id']}"] = c["metrics"]["betaUsed"]
+
+    ext = json.loads((nl / "external_checks.json").read_text())
+    def find(cid, metric, zone):
+        case = next(c for c in ext["cases"] if c["caseId"] == cid)
+        return next(ch for ch in case["checks"]
+                    if ch["metric"] == metric and ch["zone"] == zone)
+    out["ext_checks_total"] = sum(len(c["checks"]) for c in ext["cases"])
+    out["ext_ipi_zhodino"] = find(
+        "smolevichi-zhodino", "industrial_production_index",
+        "c-zhodzina")["value"]
+    out["ext_ipi_smalavicki"] = find(
+        "smolevichi-zhodino", "industrial_production_index",
+        "r-smalavicki")["value"]
+    out["ext_ipi_astravets"] = find(
+        "astravets", "industrial_production_index",
+        "r-astraviecki")["value"]
+    out["ext_empl_astravets"] = find(
+        "astravets", "employment", "r-astraviecki")["value"]
+    out["ext_elec_verdict_context"] = int(find(
+        "astravets", "electricity_production_oblast",
+        "BY-HR")["verdict"] == "context")
     return out
 
 

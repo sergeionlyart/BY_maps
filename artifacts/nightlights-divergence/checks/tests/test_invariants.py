@@ -71,6 +71,24 @@ h2 = next(c for c in cands if c["id"] == "smolevichi-zhodino")
 check("H2: шаг VNL-2021 в qualityFlags",
       "vnl_2021_step_in_period" in h2["qualityFlags"])
 
+# 8. внешняя проверка: 3 кейса, допустимые вердикты, источники Белстата
+ext = json.loads((NL / "external_checks.json").read_text())
+check("внешняя проверка: три кейса",
+      {c["caseId"] for c in ext["cases"]} ==
+      {c["id"] for c in cands})
+check("вердикты из допустимого набора",
+      all(ch["verdict"] in ("consistent", "inconsistent", "context")
+          for c in ext["cases"] for ch in c["checks"]))
+check("каждая проверка с источником",
+      all(ch.get("source") for c in ext["cases"] for ch in c["checks"]))
+check("нет причинных формулировок во внешней проверке",
+      not any(w in json.dumps(ext, ensure_ascii=False).lower()
+              for w in CAUSAL))
+h3ext = next(c for c in ext["cases"] if c["caseId"] == "astravets")
+check("генерация области - контекст (не оверклейм)",
+      all(ch["verdict"] == "context" for ch in h3ext["checks"]
+          if ch["metric"] == "electricity_production_oblast"))
+
 if fails:
     print(f"\nПровалено: {len(fails)}")
     sys.exit(1)

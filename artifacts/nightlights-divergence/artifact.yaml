@@ -3,7 +3,7 @@
 # Сборка: python -m etl.artifacts.build nightlights-divergence
 
 id: nightlights-divergence
-title: "Ночная светимость против статистики населения Беларуси: пересчёт трёх исследовательских кандидатов (Минская агломерация, Смолевичи-Жодино, Островец) и зональная декомпозиция резидуалов, 2012-2024"
+title: "Ночная светимость против статистики населения Беларуси: пересчёт трёх исследовательских кандидатов (Минская агломерация, Смолевичи-Жодино, Островец), зональная декомпозиция резидуалов и внешняя проверка открытой статистикой (производство, занятость, зарплата, миграция, электроэнергия), 2012-2024"
 version: "1.0.0"
 released: "2026-07-14"
 landing_url: "https://by-population-maps.vercel.app/research/nightlights"
@@ -20,16 +20,33 @@ files:
   - { path: LICENSE.md, role: docs }
   - { path: sources/registry.csv, from: data/raw/nightlights/registry_v2.csv, role: docs }
   - { path: docs/notes/nightlights_divergence_cases.md, from: docs/notes/nightlights_divergence_cases.md, role: docs }
+  - { path: docs/notes/nightlights_external_checks.md, from: docs/notes/nightlights_external_checks.md, role: docs }
+  - { path: sources/registry_checks.csv, from: data/raw/nightlights/checks/registry.csv, role: docs }
   # входные данные: итоговый набор INF-08 v2.1 (гармонизированный ряд +
   # модель) и демографический ряд проекта - пути повторяют репозиторий
   - { path: web/public/data/nightlights_v2.json, from: web/public/data/nightlights_v2.json, role: intermediate, license: "CC BY 4.0 (производная DMSP/VNL)" }
   - { path: web/public/data/data.json, from: web/public/data/data.json, role: intermediate, license: "CC BY 4.0" }
   - { path: params/assumptions.json, from: artifacts/nightlights/params/assumptions.json, role: params }
+  # внешняя статистика для проверки кейсов (вендорены ответы дата-портала)
+  - { path: data/raw/nightlights/checks/ipi_10206000003_2012-2020.json, from: data/raw/nightlights/checks/ipi_10206000003_2012-2020.json, role: raw, license: "Белстат, открытые данные" }
+  - { path: data/raw/nightlights/checks/ipi_10206000003_2021-2025.json, from: data/raw/nightlights/checks/ipi_10206000003_2021-2025.json, role: raw, license: "Белстат, открытые данные" }
+  - { path: data/raw/nightlights/checks/elec_10207000004_2012-2019.json, from: data/raw/nightlights/checks/elec_10207000004_2012-2019.json, role: raw, license: "Белстат, открытые данные" }
+  - { path: data/raw/nightlights/checks/elec_10207000004_2020-2025.json, from: data/raw/nightlights/checks/elec_10207000004_2020-2025.json, role: raw, license: "Белстат, открытые данные" }
+  - { path: data/raw/nightlights/checks/registry.csv, from: data/raw/nightlights/checks/registry.csv, role: raw }
+  - { path: data/raw/wages/empl_person_10102000017_2010-2019.json, from: data/raw/wages/empl_person_10102000017_2010-2019.json, role: raw, license: "Белстат, открытые данные" }
+  - { path: data/raw/wages/empl_person_10102000017_2020-2026.json, from: data/raw/wages/empl_person_10102000017_2020-2026.json, role: raw, license: "Белстат, открытые данные" }
+  - { path: data/curated/wages.csv, from: data/curated/wages.csv, role: intermediate, license: "CC BY 4.0 (производная Белстат)" }
+  - { path: web/public/data/migration.json, from: web/public/data/migration.json, role: intermediate, license: "CC BY 4.0 (панель INF-05)" }
   # код: расчёт кейсов + классификация зон (подмножество etl)
   - { path: etl/__init__.py, from: artifacts/nightlights-divergence/shims/etl_init.py, role: code }
   - { path: etl/common.py, from: artifacts/nightlights-divergence/shims/common.py, role: code }
   - { path: etl/nightlights_model.py, from: etl/nightlights_model.py, role: code }
   - { path: etl/nightlights_divergence.py, from: etl/nightlights_divergence.py, role: code }
+  - { path: etl/nightlights_checks.py, from: etl/nightlights_checks.py, role: code }
+  - { path: etl/nightlights_checks_fetch.py, from: etl/nightlights_checks_fetch.py, role: code }
+  - { path: etl/registry.py, from: etl/registry.py, role: code }
+  - { path: etl/census_age.py, from: etl/census_age.py, role: code }
+  - { path: etl/wages.py, from: etl/wages.py, role: code }
   - { path: code/run.sh, role: code }
   - { path: code/verify.py, role: code }
   - { path: code/requirements.lock, role: code }
@@ -38,6 +55,7 @@ files:
   - { path: data/final/computed_results.json, role: final, license: "CC BY 4.0" }
   - { path: web/public/data/nightlights/research_candidates.json, from: web/public/data/nightlights/research_candidates.json, role: final, license: "CC BY 4.0" }
   - { path: web/public/data/nightlights/divergence_decomposition.json, from: web/public/data/nightlights/divergence_decomposition.json, role: final, license: "CC BY 4.0" }
+  - { path: web/public/data/nightlights/external_checks.json, from: web/public/data/nightlights/external_checks.json, role: final, license: "CC BY 4.0" }
 
 sources:
   - id: inf08_registry
@@ -50,6 +68,11 @@ sources:
     description: "Демографический ряд проекта по 119 зонам (Белстат, переписи, оценки)"
     license: "CC BY 4.0"
     accessed: "2026-07-13"
+  - id: external_checks
+    url: "https://dataportal.belstat.gov.by/osids-public-api (индикаторы 10206000003, 10207000004, 10102000017, 10218000003; см. sources/registry_checks.csv и data/raw/wages/)"
+    description: "Внешняя статистика проверки кейсов: индекс промпроизводства (районы 2016-2021), электроэнергия по областям и категориям (2012-2020), занятые (2010-2024), зарплата (2010-2025), миграционное сальдо (панель INF-05)"
+    license: "Белстат, открытые данные"
+    accessed: "2026-07-14"
 
 entrypoints:
   reproduce: "code/run.sh"
@@ -79,3 +102,16 @@ expected_results:
       description: "зон в декомпозиции резидуалов (все районы + города)" }
   - { metric: causal_wording_violations, value: 0, tolerance: 0,
       description: "причинных формулировок в кандидатах (запрет без источника)" }
+  # внешняя проверка (R4)
+  - { metric: ext_checks_total, value: 16, tolerance: 0,
+      description: "внешних проверок по трём кейсам (производство/занятость/зарплата/миграция/энергия)" }
+  - { metric: ext_ipi_zhodino, value: 84.4, tolerance: 0.05,
+      description: "накопленный индекс промпроизводства г. Жодино 2019->2021, % (спад согласуется со светом H2)" }
+  - { metric: ext_ipi_smalavicki, value: 138.1, tolerance: 0.05,
+      description: "накопленный индекс промпроизводства Смолевичского района 2019->2021, % (рост района при спаде света - расхождение внутри зоны)" }
+  - { metric: ext_ipi_astravets, value: 376.6, tolerance: 0.05,
+      description: "накопленный индекс промпроизводства Островецкого района 2015->2021, % (ввод БелАЭС: 2021 = 355,3%)" }
+  - { metric: ext_empl_astravets, value: 20.4, tolerance: 0.05,
+      description: "изменение занятости Островецкого района 2012->2024, %" }
+  - { metric: ext_elec_verdict_context, value: 1, tolerance: 0,
+      description: "1 = вердикт по генерации области контекстный (ряд обрывается на 2020, до выхода АЭС на мощность - не оверклейм)" }

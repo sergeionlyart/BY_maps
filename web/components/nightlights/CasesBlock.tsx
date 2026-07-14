@@ -8,7 +8,7 @@
  */
 
 import { useT, useLang } from '@/lib/i18n';
-import type { ResearchCandidate } from '@/lib/nightlightsV3';
+import type { ResearchCandidate, ExternalCase } from '@/lib/nightlightsV3';
 import { fmtPct } from '@/lib/nightlightsV3';
 
 const STATUS_RU: Record<string, string> = {
@@ -16,6 +16,20 @@ const STATUS_RU: Record<string, string> = {
   investigating: 'исследуется',
   partially_confirmed: 'подтверждено частично',
   unexplained: 'объяснение не установлено',
+};
+
+const CHECK_RU: Record<string, string> = {
+  industrial_production_index: 'промпроизводство',
+  employment: 'занятость',
+  relative_wage: 'зарплата к средней',
+  net_migration: 'миграция',
+  electricity_production_oblast: 'электроэнергия (область)',
+};
+
+const VERDICT_RU: Record<string, string> = {
+  consistent: 'согласуется',
+  inconsistent: 'расходится',
+  context: 'контекст',
 };
 
 const HYP_RU: Record<string, string> = {
@@ -36,8 +50,9 @@ const HYP_RU: Record<string, string> = {
   lit_area_expansion_without_population: 'рост следа без роста населения',
 };
 
-export default function CasesBlock({ candidates, onOpen }: {
+export default function CasesBlock({ candidates, externalChecks, onOpen }: {
   candidates: ResearchCandidate[];
+  externalChecks: Record<string, ExternalCase>;
   onOpen: (c: ResearchCandidate) => void;
 }) {
   const t = useT();
@@ -74,6 +89,25 @@ export default function CasesBlock({ candidates, onOpen }: {
               {t('Гипотезы:')} {c.hypotheses.slice(0, 3).map((h) => t(HYP_RU[h] ?? h)).join(', ')}
             </p>
             <p className="hint nlv3-case-check">{t('Проверить:')} {t(c.checkRu)}</p>
+            {externalChecks[c.id] && externalChecks[c.id].checks.length > 0 && (
+              <div className="nlv3-case-ext">
+                <p className="hint nlv3-case-ext-title">{t('Внешняя проверка (открытая статистика):')}</p>
+                <ul className="nlv3-case-ext-list">
+                  {externalChecks[c.id].checks.map((ch, i) => (
+                    <li key={i} className={`nlv3-ext-${ch.verdict}`}>
+                      <span className="nlv3-ext-verdict">{t(VERDICT_RU[ch.verdict])}</span>{' '}
+                      {t(CHECK_RU[ch.metric] ?? ch.metric)}
+                      {ch.zone && !ch.zone.includes('+') ? ` (${ch.zone})` : ''}:{' '}
+                      {ch.value !== null ? `${ch.value > 0 && ch.metric !== 'industrial_production_index' ? '+' : ''}${ch.value}` : t('н/д')}{' '}
+                      <span className="nlv3-ext-unit">{t(ch.unit)}</span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="hint nlv3-case-ext-note">
+                  {t('«Согласуется» — ряд движется в сторону резидуала; это повышает доверие к кейсу, но не устанавливает причину.')}
+                </p>
+              </div>
+            )}
             <div className="nlv3-case-actions">
               <button className="btn" onClick={() => onOpen(c)}>{t('Показать на карте')}</button>
               <a className="btn" href="/artifacts/nightlights" >{t('Артефакт')}</a>

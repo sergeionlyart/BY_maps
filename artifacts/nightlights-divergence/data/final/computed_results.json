@@ -36,6 +36,30 @@
   "value": 119
  },
  {
+  "metric": "ext_checks_total",
+  "value": 16
+ },
+ {
+  "metric": "ext_elec_verdict_context",
+  "value": 1
+ },
+ {
+  "metric": "ext_empl_astravets",
+  "value": 20.4
+ },
+ {
+  "metric": "ext_ipi_astravets",
+  "value": 376.6
+ },
+ {
+  "metric": "ext_ipi_smalavicki",
+  "value": 138.1
+ },
+ {
+  "metric": "ext_ipi_zhodino",
+  "value": 84.4
+ },
+ {
   "metric": "release_approved_all",
   "value": 1
  },
