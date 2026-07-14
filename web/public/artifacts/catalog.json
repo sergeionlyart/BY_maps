@@ -123,6 +123,16 @@
    "code": "INF-01",
    "title_ru": "Иерархия городов и закон Ципфа",
    "research_url": "https://by-population-maps.vercel.app/research/zipf"
+  },
+  {
+   "file": "by-maps-nightlights-divergence-v1.0.0.zip",
+   "url": "https://by-population-maps.vercel.app/artifacts/by-maps-nightlights-divergence-v1.0.0.zip",
+   "size_bytes": 222831,
+   "sha256": "2a83634c08559250f39fdf57afb9dc22c0508c380b7fdd8c26498afbfe28890d",
+   "version": "1.0.0",
+   "code": "INF-08R",
+   "title_ru": "Расхождение свет/статистика: кандидаты H1–H3 и декомпозиция резидуалов",
+   "research_url": "https://by-population-maps.vercel.app/research/nightlights"
   }
  ],
  "archive_versions": [

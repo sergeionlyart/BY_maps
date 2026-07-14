@@ -1,0 +1,60 @@
+{
+ "note": "Кейсы рилса v3: направления и статусы из research_candidates.json; численные резидуалы в рилсе не показываются (release-gate). Формулировки карточек — гипотезы, не выводы.",
+ "cases": [
+  {
+   "caseId": "minsk-agglomeration",
+   "title": "МИНСКАЯ АГЛОМЕРАЦИЯ",
+   "line": "Свет растёт сильнее демографической динамики",
+   "sub": "Гипотезы: маятниковая мобильность, услуги, логистика, субурбанизация",
+   "status": "candidate",
+   "period": [
+    2012,
+    2024
+   ],
+   "direction": "light_above_statistics",
+   "evidenceLevel": "данные совместимы с гипотезой; причина не установлена",
+   "releaseApproved": true,
+   "zones": [
+    "BY-HM",
+    "r-minski"
+   ],
+   "deepLink": "https://by-population-maps.vercel.app/research/nightlights?case=minsk-agglomeration"
+  },
+  {
+   "caseId": "smolevichi-zhodino",
+   "title": "СМОЛЕВИЧИ–ЖОДИНО",
+   "line": "Свет отстаёт от статистики населения",
+   "sub": "Проверить: производство, занятость, энергопотребление, миграцию",
+   "status": "candidate",
+   "period": [
+    2019,
+    2024
+   ],
+   "direction": "light_below_statistics",
+   "evidenceLevel": "данные совместимы с гипотезой; причина не установлена",
+   "releaseApproved": true,
+   "zones": [
+    "r-smalavicki"
+   ],
+   "deepLink": "https://by-population-maps.vercel.app/research/nightlights?case=smolevichi-zhodino"
+  },
+  {
+   "caseId": "astravets",
+   "title": "ОСТРОВЕЦ",
+   "line": "Свет растёт быстрее, чем число жителей",
+   "sub": "Проверить вклад крупной инфраструктуры и БелАЭС",
+   "status": "candidate",
+   "period": [
+    2012,
+    2024
+   ],
+   "direction": "light_above_statistics",
+   "evidenceLevel": "данные совместимы с гипотезой; причина не установлена",
+   "releaseApproved": true,
+   "zones": [
+    "r-astraviecki"
+   ],
+   "deepLink": "https://by-population-maps.vercel.app/research/nightlights?case=astravets"
+  }
+ ]
+}

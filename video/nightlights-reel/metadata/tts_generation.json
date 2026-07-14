@@ -1,0 +1,221 @@
+{
+ "model": "gpt-4o-mini-tts",
+ "sdk_version": "2.45.0",
+ "date_generated": "2026-07-14",
+ "instructions_sha256": "b8752b8bf6d88426d3291b8d0ecfcba46ab43d307850fe4d6da7bb0131df7214",
+ "disclosure": "Озвучка создана синтетическим голосом OpenAI",
+ "takes": {
+  "cedar_condensed": {
+   "voice": "cedar",
+   "script_file": "script/voiceover_ru_tts_condensed.txt",
+   "instructions_sha256": "728241b31185e5190891bba749dd890a873aa8c68d52f139c2f3b1d6f47a62b0",
+   "master_sequential": "audio/takes/cedar_condensed.wav",
+   "fits_scene_windows": true,
+   "scenes": [
+    {
+     "scene": 1,
+     "start": 0.3,
+     "duration_sec": 5.9,
+     "text_sha256": "30ae7a0a726e4f47319891c1bae905be54cbb7bd0ee56eb4b8a5213a4f81c927",
+     "placed_start": 0.3
+    },
+    {
+     "scene": 2,
+     "start": 5.3,
+     "duration_sec": 7.6,
+     "text_sha256": "8308527d74be555ebfef545ab8f792c0d913107f0388e6e23d2d2e88db1247c9",
+     "placed_start": 6.4
+    },
+    {
+     "scene": 3,
+     "start": 12.3,
+     "duration_sec": 12.4,
+     "text_sha256": "c5eeb7fac29e73dc0bee9f0675624a7884e22f05373753718955b969c5c282f1",
+     "placed_start": 14.2
+    },
+    {
+     "scene": 4,
+     "start": 28.3,
+     "duration_sec": 12.2,
+     "text_sha256": "cc0a7be14cd89de90341cbfd0102711f7d85409b2a17992a4cca472d34acecfa",
+     "placed_start": 28.3
+    },
+    {
+     "scene": 5,
+     "start": 40.3,
+     "duration_sec": 11.05,
+     "text_sha256": "0b97fcbc8dfdfb40c74c867f09b5e0fd8015e65e10a03888826819004b5be415",
+     "placed_start": 40.7
+    },
+    {
+     "scene": 6,
+     "start": 52.3,
+     "duration_sec": 8.1,
+     "text_sha256": "ae5d084c1745ddb455f2f4ec36758dd96fe6145a1e1ab7d7c4e53d627795749e",
+     "placed_start": 52.3
+    },
+    {
+     "scene": 7,
+     "start": 62.2,
+     "duration_sec": 4.45,
+     "text_sha256": "ab08fd8831ad3a941abb1053221a6723fa81ae6da74e380d72e7b2cb145987d7",
+     "placed_start": 60.6
+    }
+   ],
+   "master_aligned": "audio/takes/cedar_condensed_aligned.wav"
+  },
+  "cedar_a": {
+   "voice": "cedar",
+   "script_file": "script/voiceover_ru_tts.txt",
+   "instructions_sha256": "b8752b8bf6d88426d3291b8d0ecfcba46ab43d307850fe4d6da7bb0131df7214",
+   "master_sequential": "audio/takes/cedar_a.wav",
+   "fits_scene_windows": false,
+   "scenes": [
+    {
+     "scene": 1,
+     "start": 0.3,
+     "duration_sec": 6.15,
+     "text_sha256": "30ae7a0a726e4f47319891c1bae905be54cbb7bd0ee56eb4b8a5213a4f81c927"
+    },
+    {
+     "scene": 2,
+     "start": 5.3,
+     "duration_sec": 12.4,
+     "text_sha256": "35d1025008ade6d4042f413efa9c17c232dd16b0452d049d86751ae8071406c0"
+    },
+    {
+     "scene": 3,
+     "start": 12.3,
+     "duration_sec": 15.35,
+     "text_sha256": "e3a5b9f0c397cfd80b5584e4bd305ee80774c8d084fb941c27328b5600d75db7"
+    },
+    {
+     "scene": 4,
+     "start": 28.3,
+     "duration_sec": 27.85,
+     "text_sha256": "9bcbf8a3a8f7f624a2fe7bbfdfc248777f6003da6fc68125d8e776061a8ca822"
+    },
+    {
+     "scene": 5,
+     "start": 40.3,
+     "duration_sec": 20.95,
+     "text_sha256": "ca7feeca5bd7bb014513fa72bf22a1a34922be00f471ffd1278e827e3ff8e726"
+    },
+    {
+     "scene": 6,
+     "start": 52.3,
+     "duration_sec": 16.3,
+     "text_sha256": "84702868fa9306a2fd02e15775ad69ac312c78ec56a24accef943c30f16455e9"
+    },
+    {
+     "scene": 7,
+     "start": 62.2,
+     "duration_sec": 4.65,
+     "text_sha256": "ab08fd8831ad3a941abb1053221a6723fa81ae6da74e380d72e7b2cb145987d7"
+    }
+   ]
+  },
+  "cedar_b": {
+   "voice": "cedar",
+   "script_file": "script/voiceover_ru_tts.txt",
+   "instructions_sha256": "25c8e3dae1211086de4d5356465103bb1a5d7df55d25abd78e4ace6aaf92e8d9",
+   "master_sequential": "audio/takes/cedar_b.wav",
+   "fits_scene_windows": false,
+   "scenes": [
+    {
+     "scene": 1,
+     "start": 0.3,
+     "duration_sec": 6.35,
+     "text_sha256": "30ae7a0a726e4f47319891c1bae905be54cbb7bd0ee56eb4b8a5213a4f81c927"
+    },
+    {
+     "scene": 2,
+     "start": 5.3,
+     "duration_sec": 13.4,
+     "text_sha256": "35d1025008ade6d4042f413efa9c17c232dd16b0452d049d86751ae8071406c0"
+    },
+    {
+     "scene": 3,
+     "start": 12.3,
+     "duration_sec": 13.9,
+     "text_sha256": "e3a5b9f0c397cfd80b5584e4bd305ee80774c8d084fb941c27328b5600d75db7"
+    },
+    {
+     "scene": 4,
+     "start": 28.3,
+     "duration_sec": 33.3,
+     "text_sha256": "9bcbf8a3a8f7f624a2fe7bbfdfc248777f6003da6fc68125d8e776061a8ca822"
+    },
+    {
+     "scene": 5,
+     "start": 40.3,
+     "duration_sec": 21.65,
+     "text_sha256": "ca7feeca5bd7bb014513fa72bf22a1a34922be00f471ffd1278e827e3ff8e726"
+    },
+    {
+     "scene": 6,
+     "start": 52.3,
+     "duration_sec": 17.5,
+     "text_sha256": "84702868fa9306a2fd02e15775ad69ac312c78ec56a24accef943c30f16455e9"
+    },
+    {
+     "scene": 7,
+     "start": 62.2,
+     "duration_sec": 4.65,
+     "text_sha256": "ab08fd8831ad3a941abb1053221a6723fa81ae6da74e380d72e7b2cb145987d7"
+    }
+   ]
+  },
+  "marin_control": {
+   "voice": "marin",
+   "script_file": "script/voiceover_ru_tts.txt",
+   "instructions_sha256": "b8752b8bf6d88426d3291b8d0ecfcba46ab43d307850fe4d6da7bb0131df7214",
+   "master_sequential": "audio/takes/marin_control.wav",
+   "fits_scene_windows": false,
+   "scenes": [
+    {
+     "scene": 1,
+     "start": 0.3,
+     "duration_sec": 6.85,
+     "text_sha256": "30ae7a0a726e4f47319891c1bae905be54cbb7bd0ee56eb4b8a5213a4f81c927"
+    },
+    {
+     "scene": 2,
+     "start": 5.3,
+     "duration_sec": 14.55,
+     "text_sha256": "35d1025008ade6d4042f413efa9c17c232dd16b0452d049d86751ae8071406c0"
+    },
+    {
+     "scene": 3,
+     "start": 12.3,
+     "duration_sec": 15.05,
+     "text_sha256": "e3a5b9f0c397cfd80b5584e4bd305ee80774c8d084fb941c27328b5600d75db7"
+    },
+    {
+     "scene": 4,
+     "start": 28.3,
+     "duration_sec": 33.9,
+     "text_sha256": "9bcbf8a3a8f7f624a2fe7bbfdfc248777f6003da6fc68125d8e776061a8ca822"
+    },
+    {
+     "scene": 5,
+     "start": 40.3,
+     "duration_sec": 24.4,
+     "text_sha256": "ca7feeca5bd7bb014513fa72bf22a1a34922be00f471ffd1278e827e3ff8e726"
+    },
+    {
+     "scene": 6,
+     "start": 52.3,
+     "duration_sec": 18.15,
+     "text_sha256": "84702868fa9306a2fd02e15775ad69ac312c78ec56a24accef943c30f16455e9"
+    },
+    {
+     "scene": 7,
+     "start": 62.2,
+     "duration_sec": 4.55,
+     "text_sha256": "ab08fd8831ad3a941abb1053221a6723fa81ae6da74e380d72e7b2cb145987d7"
+    }
+   ]
+  }
+ }
+}

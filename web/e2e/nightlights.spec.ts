@@ -170,3 +170,60 @@ test('prefers-reduced-motion: без зума и импульса', async ({ pag
   expect(pulse === 0 || transition === '0s').toBeTruthy();
   expect(cls).toBeTruthy();
 });
+
+// --- Рилс v3: кейсы H1-H3, deep-link case=, демонстрационный слой ---
+
+test('блок «Что здесь не сходится»: три карточки-кандидата', async ({ page }) => {
+  await page.goto(PAGE);
+  const cards = page.locator('.nlv3-case-card');
+  await expect(cards).toHaveCount(3);
+  await expect(cards.first().locator('.nlv3-case-status'))
+    .toContainText(/кандидат/i);
+  // числа резидуалов только при releaseApproved (гейт)
+  const data = await page.evaluate(async () => {
+    const r = await fetch('/data/nightlights/research_candidates.json');
+    return r.json();
+  });
+  for (let i = 0; i < 3; i++) {
+    const hasMetric = await cards.nth(i).locator('.nlv3-case-metric').count();
+    expect(hasMetric > 0).toBe(Boolean(data.candidates[i].releaseApproved));
+  }
+});
+
+test('deep-link ?case= открывает карточку кейса на сцене', async ({ page }) => {
+  await page.goto(`${PAGE}?case=smolevichi-zhodino`);
+  const card = page.locator('.nlv3-card');
+  await expect(card).toBeVisible();
+  await expect(card).toContainText(/Смолевичи|Жодино/);
+  await expect(card).toContainText('кандидат');
+  await card.locator('.nlv3-card-close').click();
+  // после закрытия кейса может показаться карточка события — важно,
+  // что карточки кандидата больше нет
+  await expect(page.locator('.nlv3-card', { hasText: 'кандидат' }))
+    .toHaveCount(0);
+});
+
+test('«Показать на карте» открывает кейс и пишет case= в URL', async ({ page }) => {
+  await page.goto(PAGE);
+  await page.locator('.nlv3-case-card .btn').first().click();
+  await expect(page.locator('.nlv3-card')).toBeVisible();
+  expect(page.url()).toContain('case=');
+});
+
+test('слой будущего: научная шкала <-> демографическая концентрация', async ({ page }) => {
+  const errors = collectErrors(page);
+  await page.goto(`${PAGE}?year=2050`);
+  const toggle = page.locator('.nlv3-demo-toggle');
+  await expect(toggle).toBeVisible();
+  await toggle.getByRole('button', { name: /Усилить демографическую/ }).click();
+  await expect(page.locator('.nlv3-model-badge'))
+    .toContainText(/УСИЛЕННАЯ ВІЗУАЛІЗАЦЫЯ|УСИЛЕННАЯ ВИЗУАЛИЗАЦИЯ/i);
+  const src = await page.locator('.nlv2-frame').first().getAttribute('src');
+  expect(src).toContain('/visual/demographic/');
+  expect(page.url()).toContain('layer=demographic');
+  await toggle.getByRole('button', { name: /Научная шкала/ }).click();
+  const src2 = await page.locator('.nlv2-frame').first().getAttribute('src');
+  expect(src2).not.toContain('/visual/demographic/');
+  await page.waitForTimeout(500);
+  expect(errors).toEqual([]);
+});

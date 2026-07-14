@@ -43,6 +43,24 @@
       "industrial": ["r-babrujski", "r-chashnicki", "r-dobrushski", "r-hlybocki", "r-ivacevicki", "r-kasciukovicki", "r-krychauski", "r-lidski", "r-luniniecki", "r-mastouski", "r-naraulanski", "r-navahrudski", "r-niasvizhski", "r-polacki", "r-rahachouski", "r-salihorski", "r-smalavicki", "r-svietlahorski", "r-vilejski", "r-zhabinkauski", "r-zhlobinski", "r-zhytkavicki"],
       "classes_comment": "industrial = районы моногородов высокой зависимости (INF-06 mono_dependence=high, привязка city_raion.csv), минус облцентры и агломерация; rural = остальные 90; приоритет agglo > oblast_center > industrial"
     },
+    "demo_layer": {
+      "comment": "ДЕМОНСТРАЦИОННЫЙ слой demographic_concentration (рилс + экспериментальный режим сайта): 4 класса света с раздельным масштабированием интенсивности I=(P/P0)^beta и ПЛОЩАДИ следа A=(P/P0)^eta (доля самых тусклых пикселей класса в зоне гаснет) - периферия теряет площадь, агломерации остаются очагами. НЕ научный прогноз радианса - каждый кадр несёт впечатанную маркировку. Промышленные точечные объекты (economic_infrastructure_residual) не гасятся автоматически: отдельного прогноза нет -> not_modeled, остаются без изменений",
+      "classes": {
+        "core": {"minNw": 15.0, "beta": 1.0, "eta": 0.0},
+        "halo": {"minNw": 3.0, "maxNw": 15.0, "nearCorePx": 5, "beta": 1.3, "eta": 0.6},
+        "settlement": {"minNw": 3.0, "maxNw": 15.0, "beta": 1.6, "eta": 1.4},
+        "infra": {"minNw": 1.0, "maxNw": 3.0, "beta": 0.3, "eta": 0.4}
+      },
+      "industrial_sites_not_modeled": [
+        {"name": "теплицы/ТЭЦ юго-восток Минского района", "lon": 27.865, "lat": 53.835, "radius_km": 1.5},
+        {"name": "теплицы Ждановичи (Минский район)", "lon": 27.398, "lat": 53.853, "radius_km": 1.5},
+        {"name": "теплицы Рудаково (Витебский район)", "lon": 30.173, "lat": 55.139, "radius_km": 1.5},
+        {"name": "промзона Орши", "lon": 30.352, "lat": 54.512, "radius_km": 1.2},
+        {"name": "БМЗ (Жлобин)", "lon": 29.992, "lat": 52.847, "radius_km": 1.5},
+        {"name": "агрокомплекс (Дзержинский район)", "lon": 27.152, "lat": 53.651, "radius_km": 1.2}
+      ],
+      "marking_ru": "УСИЛЕННАЯ ВИЗУАЛИЗАЦИЯ ДЕМОГРАФИЧЕСКОЙ КОНЦЕНТРАЦИИ · не прогноз спутникового радианса"
+    },
     "adjusted_scaling": "oblast_ratio",
     "adjusted_comment": "у районов только официальный старт прогноза; adjusted-ряд района = официальный * (область_adjusted/область_official) - зеркальная оценка оттока по районам не раскладывается (WP-F3). Анкер: знаменатель pop2024 для adjusted-ветки умножается на отношение adjusted/official на старте прогноза (2026) - измеренный свет 2024 произведён фактическим (adjusted-конвенция) населением, без поправки ветка занижалась бы на (отношение)^beta при той же динамике"
   }

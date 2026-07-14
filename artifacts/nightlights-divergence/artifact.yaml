@@ -1,0 +1,81 @@
+# Проверяемый пакет «Расхождение свет/статистика»: пересчёт гипотез
+# H1-H3 и зональная декомпозиция резидуалов на production-данных INF-08.
+# Сборка: python -m etl.artifacts.build nightlights-divergence
+
+id: nightlights-divergence
+title: "Ночная светимость против статистики населения Беларуси: пересчёт трёх исследовательских кандидатов (Минская агломерация, Смолевичи-Жодино, Островец) и зональная декомпозиция резидуалов, 2012-2024"
+version: "1.0.0"
+released: "2026-07-14"
+landing_url: "https://by-population-maps.vercel.app/research/nightlights"
+authors:
+  - "Проект «Население Беларуси, 1897-2026»"
+
+files:
+  - { path: README.md, role: docs }
+  - { path: CHANGELOG.md, role: docs }
+  - { path: AGENT.md, role: docs }
+  - { path: LIMITATIONS.md, role: docs }
+  - { path: PROVENANCE.md, role: docs }
+  - { path: CITATION.cff, role: docs }
+  - { path: LICENSE.md, role: docs }
+  - { path: sources/registry.csv, from: data/raw/nightlights/registry_v2.csv, role: docs }
+  - { path: docs/notes/nightlights_divergence_cases.md, from: docs/notes/nightlights_divergence_cases.md, role: docs }
+  # входные данные: итоговый набор INF-08 v2.1 (гармонизированный ряд +
+  # модель) и демографический ряд проекта - пути повторяют репозиторий
+  - { path: web/public/data/nightlights_v2.json, from: web/public/data/nightlights_v2.json, role: intermediate, license: "CC BY 4.0 (производная DMSP/VNL)" }
+  - { path: web/public/data/data.json, from: web/public/data/data.json, role: intermediate, license: "CC BY 4.0" }
+  - { path: params/assumptions.json, from: artifacts/nightlights/params/assumptions.json, role: params }
+  # код: расчёт кейсов + классификация зон (подмножество etl)
+  - { path: etl/__init__.py, from: artifacts/nightlights-divergence/shims/etl_init.py, role: code }
+  - { path: etl/common.py, from: artifacts/nightlights-divergence/shims/common.py, role: code }
+  - { path: etl/nightlights_model.py, from: etl/nightlights_model.py, role: code }
+  - { path: etl/nightlights_divergence.py, from: etl/nightlights_divergence.py, role: code }
+  - { path: code/run.sh, role: code }
+  - { path: code/verify.py, role: code }
+  - { path: code/requirements.lock, role: code }
+  - { path: checks/tests/test_invariants.py, role: code }
+  # итоговые данные - ровно те, что на лендинге (гейт releaseApproved)
+  - { path: data/final/computed_results.json, role: final, license: "CC BY 4.0" }
+  - { path: web/public/data/nightlights/research_candidates.json, from: web/public/data/nightlights/research_candidates.json, role: final, license: "CC BY 4.0" }
+  - { path: web/public/data/nightlights/divergence_decomposition.json, from: web/public/data/nightlights/divergence_decomposition.json, role: final, license: "CC BY 4.0" }
+
+sources:
+  - id: inf08_registry
+    url: "см. sources/registry.csv - реестр INF-08 (Li et al. Figshare 9828827 v10 calDMSP, EOG VIIRS VNL v2.1 через Zenodo 17294744, WorldPop fvf) с URL, лицензиями и sha256"
+    description: "Гармонизированный ряд светимости 1992-2024 и его сырьё"
+    license: "CC BY 4.0 (по источникам, см. реестр)"
+    accessed: "2026-07-13"
+  - id: population_series
+    url: "https://by-population-maps.vercel.app/data/data.json"
+    description: "Демографический ряд проекта по 119 зонам (Белстат, переписи, оценки)"
+    license: "CC BY 4.0"
+    accessed: "2026-07-13"
+
+entrypoints:
+  reproduce: "code/run.sh"
+  verify: "python3 checks/tests/test_invariants.py"
+
+environment:
+  python: ">=3.10"
+  lock: "code/requirements.lock"
+  seed: null   # расчёт детерминирован, случайности нет
+
+expected_results:
+  - { metric: candidates_total, value: 3, tolerance: 0,
+      description: "исследовательских кандидатов (H1-H3), все со статусом candidate" }
+  - { metric: release_approved_all, value: 1, tolerance: 0,
+      description: "1 = у всех кандидатов направление подтверждено пересчётом (releaseApproved)" }
+  - { metric: residual_pct_minsk-agglomeration, value: 31.2, tolerance: 0.05,
+      description: "H1: свет агломерации выше ожидаемого по населению (уровни, 2012-2024), %" }
+  - { metric: alt_residual_pct_minsk-agglomeration, value: -21.6, tolerance: 0.05,
+      description: "H1 альтернативная метрика (доли): агломерация теряет долю - метрикозависимость зафиксирована" }
+  - { metric: residual_pct_smolevichi-zhodino, value: -27.3, tolerance: 0.05,
+      description: "H2: свет зоны отстаёт от статистики населения (доли, 2019-2024), %" }
+  - { metric: residual_pct_astravets, value: 23.1, tolerance: 0.05,
+      description: "H3: свет Островца выше ожидаемого по населению (доли, 2012-2024), %" }
+  - { metric: beta_smolevichi-zhodino, value: 1.6, tolerance: 0.005,
+      description: "H2: применённая эластичность (класс industrial)" }
+  - { metric: decomposition_zones, value: 119, tolerance: 0,
+      description: "зон в декомпозиции резидуалов (все районы + города)" }
+  - { metric: causal_wording_violations, value: 0, tolerance: 0,
+      description: "причинных формулировок в кандидатах (запрет без источника)" }

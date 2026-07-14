@@ -12,3 +12,8 @@ data/cache/
 *.tsbuildinfo
 build/
 data/tmp/
+.env
+# медиа рилса: mp4/wav не версионируются в git - ассеты GitHub-релиза
+video/nightlights-reel/renders/
+video/nightlights-reel/audio/*.wav
+video/nightlights-reel/audio/takes/

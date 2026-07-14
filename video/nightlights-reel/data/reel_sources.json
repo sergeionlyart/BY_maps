@@ -1,0 +1,38 @@
+{
+ "note": "Источники каждого числа и слоя рилса v3. Числа кейсов проходят release-gate: показываются только при releaseApproved=true в research_candidates.json.",
+ "layers": {
+  "observed_viirs_2012_2024": {
+   "source": "EOG VIIRS VNL v2.1 annual (зеркало Zenodo 17294744, значения x10 при чтении)",
+   "fields": "data/tmp/nl_fields/y{year}.npy",
+   "license": "CC BY 4.0 (EOG public)"
+  },
+  "reconstruction_1992_2011": {
+   "source": "визуальная VIIRS-like реконструкция: шаблон VNL-2012 x зональные факторы аналитического ряда (DMSP calDMSP, Li et al., Figshare 9828827 v10, мост f18=0.4857, b=0.9151, R2=0.9217)",
+   "marking": "везде подписывается «реконструкция VIIRS-like»"
+  },
+  "demographic_concentration_2030_2075": {
+   "source": "демонстрационный слой etl/nightlights_demo.py: классы света (core/halo/settlement/infra), I=(P/P0)^beta, A=(P/P0)^eta; прогноз населения v2026.4",
+   "marking": "УСИЛЕННАЯ ВИЗУАЛИЗАЦИЯ ДЕМОГРАФИЧЕСКОЙ КОНЦЕНТРАЦИИ · не прогноз спутникового радианса · МОДЕЛЬ · сценарий"
+  }
+ },
+ "numbers": {
+  "population_2075_by_scenario": {
+   "value_source": "web/public/data/forecast.json -> territories.BY.{optimistic,base,negative}.pop[-1], подставляется рендером автоматически",
+   "model": "прогноз населения v2026.4, когортно-компонентный, три сценария"
+  },
+  "case_residuals": {
+   "value_source": "web/public/data/nightlights/research_candidates.json",
+   "gate": "releaseApproved=true обязателен; в рилсе v3 числа резидуалов НЕ показываются — только направления расхождений",
+   "method": "D = dlog L - beta*dlog P (per-case метрика level|share, см. docs/notes/nightlights_divergence_cases.md)"
+  },
+  "chart_divergence": {
+   "value_source": "web/public/data/nightlights_v2.json (аналитический ряд): доля зоны Смолевичи-Жодино в национальном свете vs доля в населении, 2012-2024, нормировка 2012=100",
+   "zones": ["r-smalavicki", "BY-ZHO"]
+  }
+ },
+ "audio": {
+  "voiceover": "OpenAI gpt-4o-mini-tts (metadata/tts_generation.json), дисклоужер в финальном кадре",
+  "music": "metadata/music_license.json (программная генерация проекта, CC BY 4.0)"
+ },
+ "ui_screenshot": "data/ui_screenshot.png — /research/nightlights (playwright, тёмная тема)"
+}

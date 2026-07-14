@@ -1,0 +1,54 @@
+[
+ {
+  "metric": "alt_residual_pct_astravets",
+  "value": 110.6
+ },
+ {
+  "metric": "alt_residual_pct_minsk-agglomeration",
+  "value": -21.6
+ },
+ {
+  "metric": "alt_residual_pct_smolevichi-zhodino",
+  "value": 8.7
+ },
+ {
+  "metric": "beta_astravets",
+  "value": 1.66
+ },
+ {
+  "metric": "beta_minsk-agglomeration",
+  "value": 1.0
+ },
+ {
+  "metric": "beta_smolevichi-zhodino",
+  "value": 1.6
+ },
+ {
+  "metric": "candidates_total",
+  "value": 3
+ },
+ {
+  "metric": "causal_wording_violations",
+  "value": 0
+ },
+ {
+  "metric": "decomposition_zones",
+  "value": 119
+ },
+ {
+  "metric": "release_approved_all",
+  "value": 1
+ },
+ {
+  "metric": "residual_pct_astravets",
+  "value": 23.1
+ },
+ {
+  "metric": "residual_pct_minsk-agglomeration",
+  "value": 31.2
+ },
+ {
+  "metric": "residual_pct_smolevichi-zhodino",
+  "value": -27.3
+ }
+]

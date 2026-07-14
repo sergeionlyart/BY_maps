@@ -1,0 +1,18 @@
+{
+ "note": "Входные данные рилса v3 и их sha256 (байт-в-байт).",
+ "commit": "419cce6dca3c90e8dcb785280e55246fa2817caf",
+ "files": {
+  "video/nightlights-reel/data/reel_story.json": "fab2a9c5f74daa30db41274b1dd08b7ab9e9000a6e29bd72b0e0797b0cf4d4dc",
+  "video/nightlights-reel/data/reel_sources.json": "90dae604d947838b342f9721eed2d1a774f03b8adf5ff6f73f9fa7155b1291e5",
+  "video/nightlights-reel/data/research_cases.json": "2fc8b581f8803e61b4e0e2c5a3c80ac9ce3740466170615774f64ccc2bcf36b6",
+  "video/nightlights-reel/data/captions_timing.json": "903ba4ddb85341f3b1e7c6fad12e4c0c820cff4ec8513dcd6e4a292e1c39e09a",
+  "video/nightlights-reel/data/captions_condensed_timing.json": "bacdde6fd4c62ffe6c317e36292c44726ea50aac503170ac1ab0508c2b5d16e1",
+  "video/nightlights-reel/script/voiceover_ru_tts.txt": "551cd5d53d5b6c841f82916ddcebb9a3e84b31c364209dad23f5a767f590f7b9",
+  "video/nightlights-reel/script/voiceover_ru_tts_condensed.txt": "ce9652402df8de0b25c837929480f614346970aeef008160251e3801cd353414",
+  "web/public/data/nightlights/research_candidates.json": "5224ce5c90e7a07116eb673727aaed82998259e6f316a62f51264977bd0caf4b",
+  "web/public/data/nightlights/nightlights_manifest.json": "81bfe9b53171cc23aab35ead41e0ee05891404ea2e32acd6179d1523c0e44379",
+  "web/public/data/nightlights_v2.json": "b3e798ee65ce52ae7bbe2d7538aa3b6256c9fc82f55bad4e9429d19fface92d2",
+  "web/public/data/forecast.json": "bca6a75b8cd99af895bc121d3637b8ed7e481d4a2f9a3292979988b3474f1c93",
+  "artifacts/nightlights/params/assumptions.json": "fff05f46129cca7176df909a4de9e954e22285190617a021f78b790ce9e8574c"
+ }
+}
