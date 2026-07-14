@@ -178,7 +178,7 @@ def test_durations_cover_all_stops(events, night):
     stops = list(range(1992, 2025)) + night["nodes"]
     for y in stops:
         d = events["durationsMs"].get(str(y))
-        assert d is not None and 300 <= d <= 1600, (y, d)
+        assert d is not None and 600 <= d <= 3200, (y, d)
 
 
 def test_events_reproducible(events, night):

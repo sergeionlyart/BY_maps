@@ -21,8 +21,9 @@
 изменение; ручные объяснения с источниками - nightlights_annotations.json.
 
 Скорость воспроизведения (мс на кадр) выводится из силы события:
-  тихо 380-450 / умеренно 650 / событие 1000 / крупное 1350;
-  методологический переход - остановка 1500 с пояснением.
+  тихо 760-900 / умеренно 1300 / событие 2000 / крупное 2700;
+  методологический переход - остановка 3000 с пояснением
+  (удвоено относительно таблицы распоряжения по решению автора).
 
 Запуск: python -m etl.nightlights_events
   -> web/public/data/nightlights/nightlights_events.json
@@ -45,13 +46,15 @@ Z_REGION = {"reconstruction": 6.0, "observed": 4.0, "model": 4.0}
 Z_NATIONAL = 2.5
 MAX_SECONDARY = 2
 
-DUR_QUIET_RECON = 380
-DUR_QUIET_OBS = 450
-DUR_MODERATE = 650
-DUR_EVENT = 1000
-DUR_MAJOR = 1350
-DUR_BOUNDARY = 1500
-PAUSE_AFTER_MAJOR = 450
+# длительности удвоены по решению автора от 14.07.2026 («в два раза
+# медленнее» против исходной таблицы распоряжения 320-1500 мс)
+DUR_QUIET_RECON = 760
+DUR_QUIET_OBS = 900
+DUR_MODERATE = 1300
+DUR_EVENT = 2000
+DUR_MAJOR = 2700
+DUR_BOUNDARY = 3000
+PAUSE_AFTER_MAJOR = 900
 
 
 def _adjacency() -> dict[str, set[str]]:

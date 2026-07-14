@@ -4,7 +4,7 @@
 **Что тестируем:** 4 мастера в `build/reels/`:
 `space_ru_hookA_portrait.mp4`, `space_ru_hookB_portrait.mp4`,
 `space_be_hookA_portrait.mp4`, `space_be_hookB_portrait.mp4`
-(1080×1920, 48,6 c, H.264 ≈14 Мбит/с CBR; кадры регенерируются
+(1080×1920, 97,2 c — хронометраж удвоен по решению автора от 14.07.2026, исходное ТЗ 45–55 с; H.264 ≈14 Мбит/с CBR; кадры регенерируются
 `python tools/render_reel_space.py --lang ru --hook A` бит-в-бит, сид 20260712).
 
 ## Процедура (5 зрителей, не знакомых с проектом)

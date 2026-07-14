@@ -19,7 +19,7 @@ export const ARTIFACT_SEO: Record<string, ArtifactSeo> = {
   migration: { ru: 'Внутренняя и внешняя миграция в Беларуси', be: 'Унутраная і знешняя міграцыя ў Беларусі', file: 'by-maps-migration-v1.0.0.zip', version: '1.0.0' },
   monotowns: { ru: 'Моногорода Беларуси и градообразующие предприятия', be: 'Монагарады Беларусі і горадаўтваральныя прадпрыемствы', file: 'by-maps-monotowns-v1.0.0.zip', version: '1.0.0' },
   chernobyl: { ru: 'Чернобыльский след в демографии районов Беларуси', be: 'Чарнобыльскі след у дэмаграфіі раёнаў Беларусі', file: 'by-maps-chernobyl-v1.0.0.zip', version: '1.0.0' },
-  nightlights: { ru: 'Беларусь из космоса: ночная светимость районов, 1992–2075', be: 'Беларусь з космасу: начная свяцільнасць раёнаў, 1992–2075', file: 'by-maps-nightlights-v2.1.0.zip', version: '2.1.0' },
+  nightlights: { ru: 'Беларусь из космоса: ночная светимость районов, 1992–2075', be: 'Беларусь з космасу: начная свяцільнасць раёнаў, 1992–2075', file: 'by-maps-nightlights-v2.1.1.zip', version: '2.1.1' },
   shocks: { ru: 'Демографические шоки XX века в Беларуси', be: 'Дэмаграфічныя шокі XX стагоддзя ў Беларусі', file: 'by-maps-shocks-v1.0.0.zip', version: '1.0.0' },
   ml: { ru: 'ML-challenger структурной модели районов Беларуси', be: 'ML-challenger структурнай мадэлі раёнаў Беларусі', file: 'by-maps-mlchallenger-v1.0.0.zip', version: '1.0.0' },
   forecast: { ru: 'Прогноз населения Беларуси 2026–2075', be: 'Прагноз насельніцтва Беларусі 2026–2075', file: 'by-maps-forecast-v1.3.0.zip', version: '1.3.0' },

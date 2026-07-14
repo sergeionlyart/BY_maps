@@ -5,7 +5,7 @@
 
 id: nightlights
 title: "Беларусь из космоса, 1992-2075: гармонизированная ночная светимость DMSP/VIIRS по районам, индекс расхождения свет/население и модельная иллюстрация будущего по прогнозу v2026.4"
-version: "2.1.0"
+version: "2.1.1"
 released: "2026-07-14"
 landing_url: "https://by-population-maps.vercel.app/research/nightlights"
 authors:
