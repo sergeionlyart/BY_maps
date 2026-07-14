@@ -19,6 +19,7 @@ function ruPaths(): string[] {
     ...RESEARCH.map((r) => `/research/${r.slug}`),
     '/artifacts',
     ...ARTIFACT_SLUGS.map((s) => `/artifacts/${s}`),
+    '/pyramid',
     '/methodology',
     '/article',
     '/about',
