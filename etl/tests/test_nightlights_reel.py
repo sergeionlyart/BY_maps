@@ -170,6 +170,9 @@ def test_loudness_manifest():
 
 @pytest.fixture(scope="module")
 def renderer():
+    # компоновка кадров тянет etl/nightlights_frames -> rasterio: растровый
+    # стек в CI не ставится (данные завендорены) - тесты кадров локальные
+    pytest.importorskip("rasterio")
     sys.path.insert(0, str(ROOT))
     sys.path.insert(0, str(REEL))
     import render
