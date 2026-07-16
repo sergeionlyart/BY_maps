@@ -236,7 +236,7 @@ export default function NightlightsV3View() {
             onClick={() => { setMode('analysis'); setPlaying(false); }}>{t('Анализ')}</button>
         </div>
         <MethodDrawer slug="nightlights" />
-        <a className="btn" href="/artifacts/by-maps-nightlights-v2.1.1.zip" download>
+        <a className="btn" href="/artifacts/by-maps-nightlights-v2.1.2.zip" download>
           ⬇ {t('Пакет (ZIP)')}
         </a>
       </div>

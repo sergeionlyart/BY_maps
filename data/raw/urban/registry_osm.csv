@@ -1,0 +1,2 @@
+id,title,url,license,accessed,sha256,size_bytes,vendored,notes
+geofabrik_belarus_pbf,Geofabrik OSM extract: Belarus (belarus-latest.osm.pbf),https://download.geofabrik.de/europe/belarus-latest.osm.pbf,ODbL 1.0 (OpenStreetMap contributors),2026-07-16,048d0ccfb8847ac584b45b2eed96cf8f13a117bdd671dccda4bb2b93248080cc,346256091,no,md5 cd2d35c0beb372c835b51396fe0759f3 (сверен с belarus-latest.osm.pbf.md5 Geofabrik); osmosis_replication_timestamp 2026-07-15T20:21:10Z; в репозиторий не вендорится (~350 МБ)

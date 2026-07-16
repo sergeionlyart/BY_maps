@@ -93,7 +93,7 @@ export const RESEARCH: ResearchEntry[] = [
       'Что 33 года ночной светимости (DMSP + VIIRS) говорят о расхождении света и официального населения — и как выглядела бы карта света при трёх сценариях прогноза?',
     status: 'published',
     stage: 7,
-    artifact: { file: 'by-maps-nightlights-v2.1.1.zip', version: '2.1.1', sizeKb: 4640 },
+    artifact: { file: 'by-maps-nightlights-v2.1.2.zip', version: '2.1.2', sizeKb: 4645 },
   },
   {
     slug: 'shocks',
@@ -115,5 +115,15 @@ export const RESEARCH: ResearchEntry[] = [
     stage: 8,
     artifactSlug: 'mlchallenger',
     artifact: { file: 'by-maps-mlchallenger-v1.0.0.zip', version: '1.0.0', sizeKb: 872 },
+  },
+  {
+    slug: 'urban-overhang',
+    code: 'INF-12',
+    title: 'Цена пустеющей карты: материальный навес городов',
+    question:
+      'Что происходит с физической оболочкой города, когда людей становится меньше? Спутниковый ряд застройки GHSL 1975–2020 против рядов населения: где накопленный фонд на жителя растёт, где активность смещается из ядра на край — и где навеса нет.',
+    status: 'published',
+    stage: 9,
+    artifact: { file: 'by-maps-urban-overhang-v1.0.0.zip', version: '1.0.0', sizeKb: 743 },
   },
 ];

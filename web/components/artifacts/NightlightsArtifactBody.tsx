@@ -32,6 +32,17 @@ export default function NightlightsArtifactBody() {
 
       <h2>{t('Версии')}</h2>
       <div className="card">
+        <div className="card-code">v2.1.2 · 2026-07-16 · {t('git-тег')} artifact-nightlights-v2.1.2</div>
+        <p>
+          {t('Техническая пересборка: релиз R3 добавил в вендоренные параметры блок demo_layer и sha256 demo-кадров в визуальный манифест. Аналитические результаты не изменились — все контрольные метрики и допуски идентичны v2.1.1.')}
+        </p>
+        <div className="card-foot">
+          <a href="/artifacts/by-maps-nightlights-v2.1.2.zip" download>
+            ⬇ by-maps-nightlights-v2.1.2.zip (4,6 МБ)
+          </a>
+        </div>
+      </div>
+      <div className="card">
         <div className="card-code">v2.1.1 · 2026-07-14 · {t('git-тег')} artifact-nightlights-v2.1.1</div>
         <p>
           {t('PATCH: скорость воспроизведения снижена вдвое по решению автора — адаптивные длительности событийного слоя 760–2700 мс (остановка на переходах 3000 мс), сцена рилса ~97 с. Аналитика, события и кадры без изменений.')}

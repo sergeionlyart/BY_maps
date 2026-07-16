@@ -7,6 +7,10 @@ web/.next/
 web/out/
 web/next-env.d.ts
 data/cache/
+# INF-12: глобальные тайлы GHSL, клипы и PBF не вендорятся (URL+sha256 в реестрах)
+data/raw/ghsl/
+data/raw/urban/rasters/
+data/raw/urban/osm/
 .DS_Store
 .vercel
 *.tsbuildinfo

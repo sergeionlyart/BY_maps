@@ -1,0 +1,82 @@
+[
+ {
+  "metric": "n_cities",
+  "value": 92
+ },
+ {
+  "metric": "n_declining",
+  "value": 39
+ },
+ {
+  "metric": "n_growing",
+  "value": 39
+ },
+ {
+  "metric": "n_overhang_robust",
+  "value": 39
+ },
+ {
+  "metric": "share_declining_with_overhang",
+  "value": 1.0
+ },
+ {
+  "metric": "median_mor_declining",
+  "value": 0.01828
+ },
+ {
+  "metric": "median_bpc_1990",
+  "value": 67.3
+ },
+ {
+  "metric": "median_bpc_2020",
+  "value": 119.41
+ },
+ {
+  "metric": "matching_pairs",
+  "value": 31
+ },
+ {
+  "metric": "matching_median_mor_gap",
+  "value": 0.00238
+ },
+ {
+  "metric": "matching_sign_test_p",
+  "value": 0.0708
+ },
+ {
+  "metric": "median_mor_growing",
+  "value": 0.01384
+ },
+ {
+  "metric": "pop_share_in_overhang",
+  "value": 0.1584
+ },
+ {
+  "metric": "type_counts.T1",
+  "value": 38
+ },
+ {
+  "metric": "type_counts.T2",
+  "value": 0
+ },
+ {
+  "metric": "type_counts.T3",
+  "value": 1
+ },
+ {
+  "metric": "type_counts.T4",
+  "value": 38
+ },
+ {
+  "metric": "type_counts.T5",
+  "value": 0
+ },
+ {
+  "metric": "type_counts.T6",
+  "value": 0
+ },
+ {
+  "metric": "type_counts.TX",
+  "value": 15
+ }
+]

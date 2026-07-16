@@ -218,4 +218,4 @@ consistent/inconsistent/context — пра ўзгодненасць шэрага
 
 ---
 
-*Версія даследавання: v2.1.1 · [Спампаваць правяральны пакет (ZIP)](/artifacts/by-maps-nightlights-v2.1.1.zip) · [Пра артэфакты](/artifacts)*
+*Версія даследавання: v2.1.1 · [Спампаваць правяральны пакет (ZIP)](/artifacts/by-maps-nightlights-v2.1.2.zip) · [Пра артэфакты](/artifacts)*

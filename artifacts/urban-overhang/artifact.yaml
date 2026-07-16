@@ -1,0 +1,160 @@
+# Декларативное описание проверяемого пакета INF-12 `urban-overhang`
+# (ARTIFACT_STANDARD.md v1.0). Сборка: python -m etl.artifacts.build urban-overhang
+
+id: urban-overhang
+title: "Цена пустеющей карты: материальный навес городов Беларуси, 1975–2020"
+version: "1.0.0"
+released: "2026-07-16"
+landing_url: "https://by-population-maps.vercel.app/research/urban-overhang"
+authors:
+  - "Проект «Население Беларуси, 1897–2026»"
+
+files:
+  - { path: README.md, role: docs }
+  - { path: REPORT.md, role: docs }
+  - { path: EXECUTIVE_BRIEF.md, role: docs }
+  - { path: METHODS.md, role: docs }
+  - { path: LIMITATIONS.md, role: docs }
+  - { path: VALIDATION.md, role: docs }
+  - { path: DATA_DICTIONARY.md, role: docs }
+  - { path: PROVENANCE.md, role: docs }
+  - { path: PREREGISTRATION.md, role: docs }
+  - { path: AGENT.md, role: docs }
+  - { path: CHANGELOG.md, role: docs }
+  - { path: CITATION.cff, role: docs }
+  - { path: LICENSE.md, role: docs }
+  - { path: claims.yaml, role: docs }
+  - { path: sources/registry.csv, role: docs }
+  - { path: sources/raw/registry_ghsl.csv, from: data/raw/urban/registry_ghsl.csv, role: raw }
+  - { path: sources/raw/registry_osm.csv, from: data/raw/urban/registry_osm.csv, role: raw }
+  - { path: sources/raw/city_registry.csv, from: data/curated/urban/city_registry.csv, role: raw }
+  - { path: sources/raw/exclusions.csv, from: data/curated/urban/exclusions.csv, role: raw }
+  - { path: sources/raw/city_population.csv, from: data/curated/urban/city_population.csv,
+      role: raw, license: "официальная статистика (Белстат/переписи), компиляция pop-stat.mashke.org; использование с указанием источника" }
+  - { path: sources/raw/monotowns.csv, from: data/curated/monotowns.csv, role: raw, license: "CC BY 4.0 (BY Maps, INF-06)" }
+  - { path: sources/raw/morph_city_epoch.csv, from: data/raw/urban/morph_city_epoch.csv,
+      role: raw, license: "CC BY 4.0 (производная GHS-BUILT-S R2023A, JRC)" }
+  - { path: sources/raw/morph_fixed.csv, from: data/raw/urban/morph_fixed.csv,
+      role: raw, license: "CC BY 4.0 (производная GHS-BUILT-S R2023A, JRC)" }
+  - { path: sources/raw/morph_flows.csv, from: data/raw/urban/morph_flows.csv,
+      role: raw, license: "CC BY 4.0 (производная GHS-BUILT-S R2023A, JRC)" }
+  - { path: sources/raw/morph_qa.csv, from: data/raw/urban/morph_qa.csv,
+      role: raw, license: "CC BY 4.0 (производная GHS-BUILT-S R2023A, JRC)" }
+  - { path: sources/raw/city_light.csv, from: data/raw/urban/city_light.csv,
+      role: raw, license: "CC BY 4.0 (производная calDMSP Li et al. / VNL EOG, вырезки INF-08)" }
+  - { path: sources/raw/city_roads.csv, from: data/raw/urban/city_roads.csv,
+      role: raw, license: "ODbL 1.0 (производная OSM, © OpenStreetMap contributors)" }
+  - { path: sources/raw/city_poi.csv, from: data/raw/urban/city_poi.csv,
+      role: raw, license: "ODbL 1.0 (производная OSM, © OpenStreetMap contributors)" }
+  - { path: sources/raw/city_buildings.csv, from: data/raw/urban/city_buildings.csv,
+      role: raw, license: "ODbL 1.0 (производная OSM, © OpenStreetMap contributors)" }
+  - { path: sources/raw/admin_areas.csv, from: data/raw/urban/admin_areas.csv,
+      role: raw, license: "ODbL 1.0 (производная OSM, © OpenStreetMap contributors)" }
+  - { path: sources/raw/admin_built.csv, from: data/raw/urban/admin_built.csv,
+      role: raw, license: "ODbL 1.0/CC BY 4.0 (пересечение админ-границ OSM и GHSL)" }
+  - { path: code/run.sh, role: code }
+  - { path: code/build.py, from: etl/urban.py, role: code }
+  - { path: code/verify.py, role: code }
+  - { path: code/fetch.py, role: code }
+  - { path: code/requirements.lock, role: code }
+  - { path: code/extract/urban_registry.py, from: etl/urban_registry.py, role: code }
+  - { path: code/extract/urban_extract.py, from: etl/urban_extract.py, role: code }
+  - { path: code/extract/urban_morph.py, from: etl/urban_morph.py, role: code }
+  - { path: code/extract/urban_light.py, from: etl/urban_light.py, role: code }
+  - { path: code/extract/urban_osm.py, from: etl/urban_osm.py, role: code }
+  - { path: code/extract/urban_webgrids.py, from: etl/urban_webgrids.py, role: code }
+  - { path: params/assumptions.yaml, role: params }
+  - { path: checks/tests/test_invariants.py, role: code }
+  - { path: data/final/city_metrics.csv, from: data/raw/urban/final/city_metrics.csv, role: final, license: "CC BY 4.0" }
+  - { path: data/final/city_interval_metrics.csv, from: data/raw/urban/final/city_interval_metrics.csv, role: final, license: "CC BY 4.0" }
+  - { path: data/final/city_typology.csv, from: data/raw/urban/final/city_typology.csv, role: final, license: "CC BY 4.0" }
+  - { path: data/final/computed_results.json, from: data/raw/urban/final/computed_results.json, role: final, license: "CC BY 4.0" }
+  - { path: data/final/story.json, from: web/public/data/urban_overhang.json, role: final, license: "CC BY 4.0" }
+
+sources:
+  - id: ghsl_built_s_r2023a
+    url: "https://human-settlement.emergency.copernicus.eu/ghs_buS2023.php"
+    description: "GHS-BUILT-S R2023A: накопленная застроенная поверхность, 100 м, Молльвейде, эпохи 1975–2020; 40 тайлов с URL+sha256 в sources/raw/registry_ghsl.csv"
+    license: "CC BY 4.0 (Pesaresi M., Politis P. (2023), European Commission JRC)"
+    accessed: "2026-07-16"
+    sha256: ""
+    vendored: "sources/raw/registry_ghsl.csv"
+    fetch: "python3 code/fetch.py --ghsl"
+  - id: geofabrik_belarus_pbf
+    url: "https://download.geofabrik.de/europe/belarus-latest.osm.pbf"
+    description: "Снимок OSM Беларуси (выгрузка 2026-07-15); дороги, сервисы, здания, административные границы"
+    license: "ODbL 1.0 (© OpenStreetMap contributors)"
+    accessed: "2026-07-16"
+    sha256: "048d0ccfb8847ac584b45b2eed96cf8f13a117bdd671dccda4bb2b93248080cc"
+    vendored: "sources/raw/registry_osm.csv"
+    fetch: "python3 code/fetch.py --osm"
+  - id: bymaps_population
+    url: "https://pop-stat.mashke.org/belarus-cities.htm"
+    description: "Ряды населения 94 городов (переписи и оценки Белстата; компиляция pop-stat.mashke.org, обработка BY Maps)"
+    license: "использование с указанием источника"
+    accessed: "2026-07-16"
+    sha256: ""
+    vendored: "sources/raw/city_population.csv"
+    fetch: "см. пакет by-maps-zipf"
+  - id: inf08_nightlights_clips
+    url: "https://by-population-maps.vercel.app/artifacts/nightlights"
+    description: "Зональные суммы ночной светимости по маскам городов (calDMSP 1992–2013, VNL 2012–2024; вырезки INF-08 v2 c дефакеляцией)"
+    license: "CC BY 4.0 (Li et al.); VNL — Earth Observation Group"
+    accessed: "2026-07-16"
+    sha256: ""
+    vendored: "sources/raw/city_light.csv"
+    fetch: "пакет by-maps-nightlights-v2.1.1"
+  - id: inf06_monotowns
+    url: "https://by-population-maps.vercel.app/artifacts/monotowns"
+    description: "Реестр моногородов (mono_dependence для алгоритма выбора кейса)"
+    license: "CC BY 4.0 (BY Maps)"
+    accessed: "2026-07-16"
+    sha256: ""
+    vendored: "sources/raw/monotowns.csv"
+    fetch: "пакет by-maps-monotowns-v1.0.0"
+
+entrypoints:
+  reproduce: "code/run.sh"
+  verify: "python3 code/verify.py"
+
+environment:
+  python: ">=3.10"
+  lock: "code/requirements.lock"
+  seed: null            # расчёт детерминирован, случайности нет
+
+# Контрольные значения покрывают все ключевые числа лендинга и REPORT.
+expected_results:
+  - { metric: n_cities, value: 92, tolerance: 0,
+      description: "городов в панели главного интервала 1990-2020" }
+  - { metric: n_declining, value: 39, tolerance: 0,
+      description: "городов с сокращением населения (PGR < -0.001)" }
+  - { metric: n_growing, value: 39, tolerance: 0,
+      description: "городов с ростом населения (PGR > 0.001)" }
+  - { metric: n_overhang_robust, value: 39, tolerance: 0,
+      description: "сокращающихся с устойчиво положительным MOR (9 сценариев + MDC)" }
+  - { metric: share_declining_with_overhang, value: 1.0, tolerance: 0.0001,
+      description: "доля сокращающихся с устойчивым навесом" }
+  - { metric: median_mor_declining, value: 0.01828, tolerance: 0.0002,
+      description: "медианный темп материального навеса сокращающихся, 1/год" }
+  - { metric: median_bpc_1990, value: 67.3, tolerance: 0.05,
+      description: "медианная застройка на жителя 1990, м² (панель)" }
+  - { metric: median_bpc_2020, value: 119.41, tolerance: 0.05,
+      description: "медианная застройка на жителя 2020, м² (панель)" }
+  - { metric: matching_pairs, value: 31, tolerance: 0,
+      description: "сопоставленных пар сокращающийся-двойник" }
+  - { metric: matching_median_mor_gap, value: 0.00238, tolerance: 0.0002,
+      description: "медианный разрыв MOR в парах, 1/год" }
+  - { metric: matching_sign_test_p, value: 0.0708, tolerance: 0.001,
+      description: "двусторонний знаковый тест разрыва MOR в парах (описательный)" }
+  - { metric: median_mor_growing, value: 0.01384, tolerance: 0.0002,
+      description: "медианный MOR растущих городов, 1/год" }
+  - { metric: pop_share_in_overhang, value: 0.1584, tolerance: 0.001,
+      description: "доля населения панели в городах с устойчивым навесом" }
+  - { metric: type_counts.T1, value: 38, tolerance: 0,
+      description: "городов типа T1 (компактный рост)" }
+  - { metric: type_counts.T3, value: 1, tolerance: 0,
+      description: "городов типа T3 (стабильная оболочка при депопуляции)" }
+  - { metric: type_counts.T4, value: 38, tolerance: 0,
+      description: "городов типа T4 (расширение при депопуляции)" }
+  - { metric: type_counts.TX, value: 15, tolerance: 0,
+      description: "городов с неопределённой траекторией" }

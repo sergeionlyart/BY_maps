@@ -9,6 +9,7 @@ c9d8ef85623610cb8f0ed6651d69c327239449eb42169b11ef442c54b47698d6  by-maps-foreca
 7208813565d06d1f0678ac3f7d9115bcb7d8ad6f2061139baea6251f0f79a925  by-maps-forecast-v1.1.0.zip
 47a5ce5bcfb59b98d5ff6a293c9a801bea7dda357976d3ce7a73610d58947486  by-maps-forecast-v1.2.0.zip
 a693b3663ad5ac5197bbae0da7b4badd9388e2a7f8ec25d28378e6a6fa494a58  by-maps-forecast-v1.3.0.zip
+3b421742f47b2b54e66842d0412a746322f144cf11a70ca9f34a8a3cb62880ac  by-maps-forecast-v1.3.1.zip
 8c4ac37956bb202e6200e038eb9cd0e90fec58affa5a8c2d1bc2a4c573d2a155  by-maps-migration-v1.0.0.zip
 fcffd75a2794cb1156d9c545a647394a6ceade9ca5d473e3c3f6aaf00d5b03dd  by-maps-mlchallenger-v1.0.0.zip
 952d247e35451572067b19cef800e24391ab29d79164eaef38b41df3ec30911e  by-maps-monotowns-v1.0.0.zip
@@ -16,6 +17,8 @@ fcffd75a2794cb1156d9c545a647394a6ceade9ca5d473e3c3f6aaf00d5b03dd  by-maps-mlchal
 011e91a5cea5943aae843a65d6046a7da21531aba7dd72e5c30588330a0ea4e2  by-maps-nightlights-v2.0.0.zip
 3a5bb7f00c338ae747ce8095fab9f663236cfe0ab1505db5291c678c9f23c94b  by-maps-nightlights-v2.1.0.zip
 340a32606df55371a853317f0984ea77376386e0b6d4b949a35727736db6c254  by-maps-nightlights-v2.1.1.zip
+bfb536a17c8e9d7f1ed23f285cccb91d7605f1f7df062da9b008a3cd265ddbda  by-maps-nightlights-v2.1.2.zip
 e77b0911a0714036ad2722f99ece12b23fd5cecc02153260a662d97be0c4bdb3  by-maps-shocks-v1.0.0.zip
+9fa8dc8f90330daf7e5329e90f4b28e9ade3aee4ef6b8a23407b47627bbe2542  by-maps-urban-overhang-v1.0.0.zip
 bde4b4106417e5b518e77740099670d8912b00e32b0334c6942d753ebaca2678  by-maps-wages-v1.0.0.zip
 d08c65ec8f2f6485461522f6655af51adae0af6e9d956e44749f591266ab2da3  by-maps-zipf-v1.0.0.zip

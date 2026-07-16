@@ -2,13 +2,14 @@ import { describe, expect, it } from 'vitest';
 import { RESEARCH } from './research';
 
 describe('реестр исследований', () => {
-  it('слаги уникальны; коды — INF-01..09 + ML', () => {
+  it('слаги уникальны; коды — INF-01..09 + ML + INF-12', () => {
     const slugs = RESEARCH.map((r) => r.slug);
     expect(new Set(slugs).size).toBe(slugs.length);
-    expect(RESEARCH).toHaveLength(10);
+    expect(RESEARCH).toHaveLength(11);
     expect(RESEARCH.map((r) => r.code)).toEqual([
       ...Array.from({ length: 9 }, (_, i) => `INF-0${i + 1}`),
       'ML',
+      'INF-12',
     ]);
   });
 
@@ -18,7 +19,7 @@ describe('реестр исследований', () => {
       // имя пакета образовано от slug пакета (artifactSlug, если задан) и версии
       const pkg = r.artifactSlug ?? r.slug;
       expect(r.artifact!.file).toBe(`by-maps-${pkg}-v${r.artifact!.version}.zip`);
-      expect(r.artifact!.file).toMatch(/^by-maps-[a-z]+-v\d+\.\d+\.\d+\.zip$/);
+      expect(r.artifact!.file).toMatch(/^by-maps-[a-z][a-z-]*[a-z]-v\d+\.\d+\.\d+\.zip$/);
     }
   });
 });

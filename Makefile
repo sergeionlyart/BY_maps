@@ -34,6 +34,17 @@ stage8:           ## INF-06 + INF-09: monotowns.json, shocks.json
 	$(PY) -m etl.monotowns
 	$(PY) -m etl.shocks
 
+stage9:           ## INF-12: urban_overhang.json (метрики от вендоренных агрегатов)
+	$(PY) -m etl.urban_registry
+	$(PY) -m etl.urban
+
+stage9-extract:   ## INF-12: растровые шаги (требует rasterio+numpy+scipy+pyosmium)
+	$(PY) -m etl.urban_extract
+	$(PY) -m etl.urban_morph
+	$(PY) -m etl.urban_light
+	$(PY) -m etl.urban_osm all
+	$(PY) -m etl.urban_webgrids
+
 test:             ## все проверки данных
 	$(PY) -m pytest etl/tests/ -q
 

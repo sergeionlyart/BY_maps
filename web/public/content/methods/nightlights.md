@@ -217,4 +217,4 @@ consistent/inconsistent/context — о согласованности рядов
 
 ---
 
-*Версия исследования: v2.1.1 · [Скачать проверяемый пакет (ZIP)](/artifacts/by-maps-nightlights-v2.1.1.zip) · [Об артефактах](/artifacts)*
+*Версия исследования: v2.1.1 · [Скачать проверяемый пакет (ZIP)](/artifacts/by-maps-nightlights-v2.1.2.zip) · [Об артефактах](/artifacts)*

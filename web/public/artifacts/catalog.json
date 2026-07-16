@@ -1,6 +1,6 @@
 {
  "project": "BY Maps — Население Беларуси, 1897–2026",
- "generated": "2026-07-14",
+ "generated": "2026-07-16",
  "base_url": "https://by-population-maps.vercel.app",
  "note": "Контрольные суммы соответствуют состоянию репозитория/сайта на дату generated. Каждый пакет содержит AGENT.md с заданиями для LLM-агентов.",
  "site_data": [
@@ -45,11 +45,11 @@
    "research_url": "https://by-population-maps.vercel.app/research/chernobyl"
   },
   {
-   "file": "by-maps-forecast-v1.3.0.zip",
-   "url": "https://by-population-maps.vercel.app/artifacts/by-maps-forecast-v1.3.0.zip",
-   "size_bytes": 2100118,
-   "sha256": "a693b3663ad5ac5197bbae0da7b4badd9388e2a7f8ec25d28378e6a6fa494a58",
-   "version": "1.3.0",
+   "file": "by-maps-forecast-v1.3.1.zip",
+   "url": "https://by-population-maps.vercel.app/artifacts/by-maps-forecast-v1.3.1.zip",
+   "size_bytes": 2101093,
+   "sha256": "3b421742f47b2b54e66842d0412a746322f144cf11a70ca9f34a8a3cb62880ac",
+   "version": "1.3.1",
    "code": "FORECAST",
    "title_ru": "Прогноз населения 2026–2075 (v2026.4)",
    "research_url": "https://by-population-maps.vercel.app/artifacts/forecast"
@@ -85,14 +85,34 @@
    "research_url": "https://by-population-maps.vercel.app/research/monotowns"
   },
   {
-   "file": "by-maps-nightlights-v2.1.1.zip",
-   "url": "https://by-population-maps.vercel.app/artifacts/by-maps-nightlights-v2.1.1.zip",
-   "size_bytes": 4750940,
-   "sha256": "340a32606df55371a853317f0984ea77376386e0b6d4b949a35727736db6c254",
-   "version": "2.1.1",
+   "file": "by-maps-nightlights-divergence-v1.0.0.zip",
+   "url": "https://by-population-maps.vercel.app/artifacts/by-maps-nightlights-divergence-v1.0.0.zip",
+   "size_bytes": 301517,
+   "sha256": "3dc56a7b0e128dcf3959d19c53c2dffdce5d757e32f095a4cb68c7c7c64be748",
+   "version": "1.0.0",
+   "code": "INF-08R",
+   "title_ru": "Расхождение свет/статистика: кандидаты H1–H3, декомпозиция и внешняя проверка",
+   "research_url": "https://by-population-maps.vercel.app/research/nightlights"
+  },
+  {
+   "file": "by-maps-nightlights-v2.1.2.zip",
+   "url": "https://by-population-maps.vercel.app/artifacts/by-maps-nightlights-v2.1.2.zip",
+   "size_bytes": 4756304,
+   "sha256": "bfb536a17c8e9d7f1ed23f285cccb91d7605f1f7df062da9b008a3cd265ddbda",
+   "version": "2.1.2",
    "code": "INF-08",
    "title_ru": "Беларусь из космоса, 1992–2075",
    "research_url": "https://by-population-maps.vercel.app/research/nightlights"
+  },
+  {
+   "file": "by-maps-pyramid-v1.0.0.zip",
+   "url": "https://by-population-maps.vercel.app/artifacts/by-maps-pyramid-v1.0.0.zip",
+   "size_bytes": 351028,
+   "sha256": "f1012f1c59f26fb81c26066c929b32465415b397edf08e6b26e86f221fb736af",
+   "version": "1.0.0",
+   "code": "INF-11",
+   "title_ru": "Возрастно-половая пирамида Беларуси 1959–2075",
+   "research_url": "https://by-population-maps.vercel.app/pyramid"
   },
   {
    "file": "by-maps-shocks-v1.0.0.zip",
@@ -103,6 +123,16 @@
    "code": "INF-09",
    "title_ru": "Демографические шоки XX века",
    "research_url": "https://by-population-maps.vercel.app/research/shocks"
+  },
+  {
+   "file": "by-maps-urban-overhang-v1.0.0.zip",
+   "url": "https://by-population-maps.vercel.app/artifacts/by-maps-urban-overhang-v1.0.0.zip",
+   "size_bytes": 761020,
+   "sha256": "9fa8dc8f90330daf7e5329e90f4b28e9ade3aee4ef6b8a23407b47627bbe2542",
+   "version": "1.0.0",
+   "code": "INF-12",
+   "title_ru": "Цена пустеющей карты: материальный навес городов",
+   "research_url": "https://by-population-maps.vercel.app/research/urban-overhang"
   },
   {
    "file": "by-maps-wages-v1.0.0.zip",
@@ -123,26 +153,6 @@
    "code": "INF-01",
    "title_ru": "Иерархия городов и закон Ципфа",
    "research_url": "https://by-population-maps.vercel.app/research/zipf"
-  },
-  {
-   "file": "by-maps-nightlights-divergence-v1.0.0.zip",
-   "url": "https://by-population-maps.vercel.app/artifacts/by-maps-nightlights-divergence-v1.0.0.zip",
-   "size_bytes": 301517,
-   "sha256": "3dc56a7b0e128dcf3959d19c53c2dffdce5d757e32f095a4cb68c7c7c64be748",
-   "version": "1.0.0",
-   "code": "INF-08R",
-   "title_ru": "Расхождение свет/статистика: кандидаты H1–H3, декомпозиция и внешняя проверка",
-   "research_url": "https://by-population-maps.vercel.app/research/nightlights"
-  },
-  {
-   "file": "by-maps-pyramid-v1.0.0.zip",
-   "url": "https://by-population-maps.vercel.app/artifacts/by-maps-pyramid-v1.0.0.zip",
-   "size_bytes": 351028,
-   "sha256": "f1012f1c59f26fb81c26066c929b32465415b397edf08e6b26e86f221fb736af",
-   "version": "1.0.0",
-   "code": "INF-11",
-   "title_ru": "Возрастно-половая пирамида Беларуси 1959–2075",
-   "research_url": "https://by-population-maps.vercel.app/pyramid"
   }
  ],
  "archive_versions": [
@@ -196,6 +206,13 @@
    "version": "1.2.0"
   },
   {
+   "file": "by-maps-forecast-v1.3.0.zip",
+   "url": "https://by-population-maps.vercel.app/artifacts/by-maps-forecast-v1.3.0.zip",
+   "size_bytes": 2100118,
+   "sha256": "a693b3663ad5ac5197bbae0da7b4badd9388e2a7f8ec25d28378e6a6fa494a58",
+   "version": "1.3.0"
+  },
+  {
    "file": "by-maps-nightlights-v1.0.0.zip",
    "url": "https://by-population-maps.vercel.app/artifacts/by-maps-nightlights-v1.0.0.zip",
    "size_bytes": 488372,
@@ -215,6 +232,13 @@
    "size_bytes": 4750421,
    "sha256": "3a5bb7f00c338ae747ce8095fab9f663236cfe0ab1505db5291c678c9f23c94b",
    "version": "2.1.0"
+  },
+  {
+   "file": "by-maps-nightlights-v2.1.1.zip",
+   "url": "https://by-population-maps.vercel.app/artifacts/by-maps-nightlights-v2.1.1.zip",
+   "size_bytes": 4750940,
+   "sha256": "340a32606df55371a853317f0984ea77376386e0b6d4b949a35727736db6c254",
+   "version": "2.1.1"
   }
  ],
  "repository": "https://github.com/sergeionlyart/BY_maps"

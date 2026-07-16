@@ -1,0 +1,115 @@
+# INF-12 «Цена пустеющей карты»: допущения. Каждое - с обоснованием.
+#
+# СТАТУС ПАРАМЕТРОВ (честное разделение):
+#  [P] - заморожено пререгистрацией v0.1 (2026-07-16, до расчётов);
+#  [O] - операционализация, зафиксированная в ходе реализации ДО анализа
+#        результатов, но в пререгистрации отсутствующая (полоса PGR, таблица
+#        rel_err и формула MDC, параметры matching, agreement_min, порог EES,
+#        минимальный размер зоны CEUR);
+#  [A] - датированная поправка к пререгистрации (см. PREREGISTRATION.md,
+#        раздел «Поправки»).
+
+population:
+  minimum_primary_city_population: 10000   # хотя бы в одном опорном году 1959-2026
+  exploratory_minimum: 5000                # малые города в MVP не публикуются
+  interpolation: linear_between_verified_points   # метка [MODEL]
+  extrapolation: none                      # вне наблюдаемого ряда - None
+  benchmark_years: [1959, 1970, 1979, 1989, 1999, 2009, 2019, 2026]
+
+built:
+  source: GHS_BUILT_S_R2023A               # 100 м, Молльвейде ESRI:54009
+  observed_epochs: [1975, 1980, 1985, 1990, 1995, 2000, 2005, 2010, 2015, 2020]
+  observed_end_year: 2020
+  ghsl_2025_2030_are_observations: false   # модельные эпохи продукта исключены
+  monotonic_stock: true                    # продукт не измеряет снос;
+                                           # тип «физическое сжатие» не присваивается
+  primary_measure: built_surface_m2
+  freeze_after_2020: true                  # B(t>2020)=B(2020) для световых отношений [MODEL]
+
+morphology:                                # [P], кроме seed_reanchor_rule [A]
+  primary_threshold: 0.10                  # доля застройки ячейки
+  sensitivity_thresholds: [0.05, 0.10, 0.20]
+  connectivity: 8
+  closing_radius_m: 100
+  sensitivity_closing_radius_m: [0, 100, 200]
+  analysis_buffer_m: 1000
+  min_component_area_ha: 5
+  seed_search_radius_m: 2000
+  seed_reanchor_rule: largest_component_in_window   # [A2]: было nearest cell;
+                                           # ближайший осколок перепривязывал
+                                           # город (коллапс контура Бреста)
+  merged_allocation: nearest_seed_edt      # multi-source allocation
+
+frames:
+  list: [MORPH_DYNAMIC, MORPH_FIXED_FRAME, ADMIN_OSM]
+  primary: MORPH_FIXED_FRAME               # сопоставимое суммирование во времени
+  core_definition: contour_1975            # исторический контур первой эпохи
+  edge_definition: entered_stock_after_1975
+
+growth:
+  formula: log_annualized                  # g=(ln X2-ln X1)/(t2-t1)
+  main_interval: [1990, 2020]              # эпоха депопуляции
+  secondary_intervals: [[1975, 1990], [2000, 2020], [2010, 2020]]
+  pgr_stability_band: 0.001                # 1/год: |PGR|<eps = «стабильно»
+  lcrpgr_publish_only_if_abs_pgr_gte: 0.005
+
+uncertainty:                               # [O] целиком
+  built_relative_error_by_size:            # консервативные значения [MODEL];
+    - { built_2020_km2_gte: 10.0, rel_err: 0.05 }   # уточняются OSM-валидацией
+    - { built_2020_km2_gte: 1.0,  rel_err: 0.10 }
+    - { built_2020_km2_gte: 0.0,  rel_err: 0.20 }
+  mdc_formula: sqrt2_times_rel_err_over_dt # порог ~1 сигма сценарно-
+                                           # измерительного шума; множитель
+                                           # уровня доверия НЕ применялся -
+                                           # это floor обнаружимости, а не
+                                           # мощностной MDC (см. LIMITATIONS)
+  robust_sign: same_sign_all_9_scenarios_and_above_mdc
+  agreement_min: 0.75                      # доля сценариев с тем же типом
+  typology_robust_gate: true               # ТЗ §10.3: класс только при
+                                           # устойчивом знаке MOR, иначе TX/T5
+
+nightlights:
+  reuse_artifact: INF-08 v2.1              # вырезки deflared (факелы НПЗ обнулены)
+  primary_window_vnl: [2012, 2024]         # [P] один сенсор, без моста
+  dmsp_context: [1992, 2013]               # [O] контекст [MODEL]; в пререгистрации
+                                           # 1992-2011, расширено до фактического
+                                           # покрытия вырезок calDMSP (2013)
+  vnl_threshold_nw: 1.0
+  dmsp_dn_threshold: 1
+  window_means_years: 3                    # ранние/поздние окна 2012-14 / 2022-24
+  sug_built_window: [2013, 2020]           # фонд: наблюдаемый интервал (dt=7);
+                                           # свет: центры окон 2013-2023 (dt=10);
+                                           # несовпадение окон - в LIMITATIONS
+  ceur_epsilons: { light: 1.0, built_m2: 10000.0 }   # [O]
+  ceur_min_zone_m2: 50000                  # [O] 5 га: гейт публикации CEUR/IHS
+  zones_consistency: built_and_light_share_same_zones  # ядро/край/буфер
+                                           # строго раздельно в обоих слоях
+  normalization: [absolute, national_share]
+  industrial_exclusion: deflare_only       # [A1]: пререгистрация требовала
+                                           # вариант both (с промзонами и без);
+                                           # RES/NRES-разметки в MVP нет -
+                                           # датированная поправка, см.
+                                           # PREREGISTRATION.md и LIMITATIONS
+
+osm:
+  use_fixed_pbf_snapshot: true             # Geofabrik belarus-latest, дата в реестре
+  use_edit_timestamp_as_construction_date: false
+  road_classes_major: [motorway, trunk, primary, secondary, tertiary]
+  road_classes_local: [residential, unclassified, living_street]
+  road_assignment: segment_midpoint_in_fixed_frame
+  poi_missing_tag_is_not_absence: true     # отсутствие тега != отсутствие сервиса
+  accessibility_isochrones: not_in_mvp     # полнота POI не гейтована реестрами
+
+matching:
+  treated_pgr_lt: -0.002
+  control_pgr_gt: -0.001
+  features_at_1990: [ln_population, built_pc, density, ln_dist_minsk]
+  standardization: zscore
+  caliper_ln_population: 0.7               # урок INF-06: города одного порядка
+  method: nearest_neighbour_with_replacement
+
+publication:
+  allow_financial_cost_claims: false
+  allow_2025_as_observed_without_custom_validation: false
+  causal_language: forbidden
+  quality_cx_in_headlines: false

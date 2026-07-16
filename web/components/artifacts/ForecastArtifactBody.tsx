@@ -19,6 +19,17 @@ export default function ForecastArtifactBody() {
 
       <h2>{t('Версии')}</h2>
       <div className="card">
+        <div className="card-code">v1.3.1 · 2026-07-16 · {t('git-тег')} artifact-forecast-v1.3.1 · {t('прогноз')} v2026.4</div>
+        <p>
+          {t('Техническая пересборка: релиз INF-11 добавил в вендоренный etl/forecast/run.py экспорт возрастных структур CCMPP (для датасета пирамиды). Числовые результаты прогноза не изменились — все контрольные метрики и допуски идентичны v1.3.0.')}
+        </p>
+        <div className="card-foot">
+          <a href="/artifacts/by-maps-forecast-v1.3.1.zip" download>
+            ⬇ by-maps-forecast-v1.3.1.zip (2051 КБ)
+          </a>
+        </div>
+      </div>
+      <div className="card">
         <div className="card-code">v1.3.0 · 2026-07-12 · {t('git-тег')} artifact-forecast-v1.3.0 · {t('прогноз')} v2026.4</div>
         <p>
           {t('Вероятностный слой: пропорциональный перенос 80% PI WPP заменён симуляцией — 600 реализаций персистентных отклонений траекторий СКР и ОПЖ от медианы WPP через тот же CCMPP, эмпирические квантили q05…q95. Амплитуды калиброваны под 80% PI WPP на 2050 (6,7% против 7,1%) и 2075 (16,5% против 16,3%), т.е. на страновом уровне ширина ≈ WPP; новизна — декомпозиция и вероятностные утверждения по стране: P(убыль к 2050) = 100% (доля реализаций при детерминированной миграции), P(<6 млн к 2075) ≈ 50%. Области делят общий шок — их полосы занижают областную неопределённость. Медианы и сценарии идентичны v1.2.0. 30 метрик (+4 вероятностных).')}
@@ -74,8 +85,8 @@ export default function ForecastArtifactBody() {
         </div>
       </div>
 
-      <h2>{t('Состав')} (v1.3.0)</h2>
-      <pre><code>{`by-maps-forecast-v1.3.0/
+      <h2>{t('Состав')} (v1.3.1)</h2>
+      <pre><code>{`by-maps-forecast-v1.3.1/
 ├── README.md · AGENT.md · LIMITATIONS.md · PROVENANCE.md · CHANGELOG.md
 ├── manifest.json                    машиночитаемое описание (sha256, допуски)
 ├── sources/registry.csv             реестр 18 первоисточников (WP-F1)
@@ -98,7 +109,7 @@ export default function ForecastArtifactBody() {
 └── checks/                          инварианты, ожидаемые результаты, chksums`}</code></pre>
 
       <h2>{t('Быстрая проверка')}</h2>
-      <pre><code>{`unzip by-maps-forecast-v1.3.0.zip && cd by-maps-forecast-v1.3.0
+      <pre><code>{`unzip by-maps-forecast-v1.3.1.zip && cd by-maps-forecast-v1.3.1
 pip install -r code/requirements.lock   # PyYAML
 bash code/run.sh
 # == 1/7 Реконструкция оттока (WP-F3): интервал и adjustment.csv ==

@@ -1,0 +1,174 @@
+# INF-12 «Цена пустеющей карты» (urban-overhang) — реестр главных утверждений.
+# Схема: ТЗ §3.1. Классы (ТЗ §3.1): DATA — прямо в источнике; CALC — детерминированное
+# преобразование; MODEL — зависит от статистической/пространственной модели;
+# INTERPRETATION — содержательная интерпретация; LIMITATION — ограничение, способное
+# изменить вывод. Каждое число имеет период, единицу и рамку (основная — MORPH_FIXED_FRAME,
+# главный интервал 1990→2020). Пути source_result — относительно корня пакета.
+# Каноническая сводка — data/final/computed_results.json; проверка — AGENT.md.
+
+version: "1.0.0"
+frozen_metrics: 2026-07-16          # пререгистрация; PREREGISTRATION.md
+primary_frame: MORPH_FIXED_FRAME
+main_interval: {start: 1990, end: 2020}
+
+claims:
+
+  - claim_id: C-001
+    text: >-
+      У всех 39 сокращающихся городов панели (PGR<0, качество A/B) площадь
+      накопленной застройки на постоянного жителя устойчиво росла между 1990 и
+      2020 годами: темп материального навеса MOR положителен и устойчив к границам.
+    type: CALC
+    metric_ids: [built_surface_pc_m2, material_overhang_rate_annual]
+    scope: "39 сокращающихся городов панели из 92 (качество A/B; реестр 94; Фаниполь — класс C вне панели, Мачулищи без точки 1990 — без метрик)"
+    period: {start: 1990, end: 2020}
+    frame: MORPH_FIXED_FRAME
+    source_result:
+      file: data/final/computed_results.json
+      filter: "n_declining == 39 and n_overhang_robust == 39 and share_declining_with_overhang == 1.0"
+      cross_check:
+        file: data/final/city_interval_metrics.csv
+        filter: "frame_id == 'MORPH_FIXED_FRAME' and year_start == 1990 and year_end == 2020 and pgr_annual < -0.001 and robust_sign == 1"
+    caveats:
+      - "«Устойчиво» = знак MOR одинаков во всех 9 сценариях границ (пороги 5/10/20% × замыкание 0/100/200 м) и выше minimum_detectable_change."
+      - "Навес создаётся сочетанием общенационального роста накопленного фонда со сжатием знаменателя (числа жителей), а не «особым строительством» в сокращающихся городах (см. C-004)."
+      - "Базовый GHSL монотонен: снос не измеряется (см. C-008); часть межэпохового роста фонда может быть сенсорной."
+    status: verified
+
+  - claim_id: C-002
+    text: >-
+      Медианный темп материального навеса сокращающихся городов составляет
+      +1,83 %/год за 1990–2020.
+    type: CALC
+    metric_ids: [material_overhang_rate_annual]
+    scope: "39 сокращающихся городов панели"
+    period: {start: 1990, end: 2020}
+    frame: MORPH_FIXED_FRAME
+    source_result:
+      file: data/final/computed_results.json
+      filter: "median_mor_declining == 0.01828"     # 0,01828 /год = +1,83 %/год
+    caveats:
+      - "MOR — лог-годовой темп (BGR − PGR); значение медианное по 39 городам, не среднее."
+      - "Отдельные города разбросаны шире (напр. Кричев +1,85 %/год, Червень +2,84 %/год, Борисов +0,96 %/год)."
+    status: verified
+
+  - claim_id: C-003
+    text: >-
+      Медианный фонд на жителя по панели вырос с 67,3 до 119,4 м²/жителя между
+      1990 и 2020 годами.
+    type: CALC
+    metric_ids: [built_surface_pc_m2]
+    scope: "92 города панели (качество A/B)"
+    period: {start: 1990, end: 2020}
+    frame: MORPH_FIXED_FRAME
+    units: "м² застроенной поверхности на постоянного жителя"
+    source_result:
+      file: data/final/computed_results.json
+      filter: "median_bpc_1990 == 67.3 and median_bpc_2020 == 119.41"
+    caveats:
+      - "BPC = площадь застроенной поверхности / население; НЕ жилая площадь, НЕ полезная площадь помещений, НЕ денежная стоимость."
+      - "Медиана по панели; показатель «на жителя» механически растёт при падении знаменателя — числитель и знаменатель публикуются раздельно."
+    status: verified
+
+  - claim_id: C-004
+    text: >-
+      Медианный разрыв MOR между сокращающимися городами и их сопоставленными
+      стабильными «двойниками» составляет +0,24 п.п./год (31 пара; знаковый
+      тест 21/31, p = 0,071) — статистически неотличим от нуля, публикуется
+      как описательное различие.
+    type: CALC
+    metric_ids: [material_overhang_rate_annual]
+    scope: "31 сопоставленная пара (сокращающийся ↔ стабильный двойник)"
+    period: {start: 1990, end: 2020}
+    frame: MORPH_FIXED_FRAME
+    source_result:
+      file: data/final/computed_results.json
+      filter: "matching_pairs == 31 and matching_median_mor_gap == 0.00238 and matching_sign_test_p == 0.0708"   # 0,00238 /год = +0,24 п.п./год
+    caveats:
+      - "НЕ причинная оценка. Matching балансирует исходные характеристики (ln населения, фонд на жителя, плотность, расстояние до Минска на 1990), но не устанавливает причину (ТЗ §11.3)."
+      - "Различие статистически неотличимо от нуля (двусторонний знаковый тест p = 0,071) и меньше MDC; вывод «у сокращающихся систематически больше» данными не поддерживается."
+      - "Навес у сокращающихся создаётся знаменателем, а не «особым» строительством; пары сбалансированы: SMD после подбора ≤ 0,054 по всем 4 признакам (story.json → national.matching.balance), калипер |Δln P1990| ≤ 0,7 (макс ≈ 0,55, см. AGENT.md задание 9)."
+    status: verified
+
+  - claim_id: C-005
+    text: >-
+      Фонд на жителя рос быстрее населения (MOR>0) во всех 93 городах, для
+      которых главный интервал измерим (92 панели A/B + Фаниполь класса C),
+      включая растущие; минимальный MOR +0,22 %/год (Заславль).
+    type: CALC
+    metric_ids: [material_overhang_rate_annual, built_surface_pc_m2]
+    scope: "93 города с метриками главного интервала (панель A/B: 39 сокращающихся, 39 растущих, 14 стабильных; плюс Фаниполь класса C)"
+    period: {start: 1990, end: 2020}
+    frame: MORPH_FIXED_FRAME
+    source_result:
+      file: data/final/city_interval_metrics.csv
+      filter: "frame_id == 'MORPH_FIXED_FRAME' and year_start == 1990 and year_end == 2020 -> min(material_overhang_rate_annual) > 0"
+      cross_check:
+        file: data/final/story.json
+        filter: "cities['c-zaslauje'].main.mor == 0.00219 (минимум по панели)"
+    caveats:
+      - "Следствие монотонности GHSL (C-008): продукт не измеряет снос, поэтому отрицательный навес возможен лишь при росте населения быстрее фонда — в данных не встречается."
+      - "Часть роста фонда может быть сенсорной (разные поколения Landsat/Sentinel); консервативная ошибка по классу размера учитывает, но не устраняет это."
+      - "Показатель «на жителя» растёт механически при падении знаменателя; вывод не означает ухудшения качества жизни."
+    status: verified
+
+  - claim_id: C-006
+    text: >-
+      Строгого контрпримера (город с устойчиво отрицательным навесом) в данных
+      нет; в качестве обязательного отрицательного кейса выбран нестрогий
+      контрпример — Борисов, сокращающийся город со слабейшим устойчивым навесом
+      (MOR +0,96 %/год).
+    type: INTERPRETATION
+    metric_ids: [material_overhang_rate_annual]
+    scope: "c-barysau (Борисов)"
+    period: {start: 1990, end: 2020}
+    frame: MORPH_FIXED_FRAME
+    source_result:
+      file: data/final/story.json
+      filter: "cases[?role=='counterexample'] == {city_id: 'c-barysau', strict: false}"
+      cross_check:
+        file: checks/tests/test_invariants.py
+        filter: "FROZEN_CASES['counterexample'] == 'c-barysau' (инвариант прогоняется в run.sh; в computed_results.json кейсов нет - формат плоского списка метрик)"
+    caveats:
+      - "Статус нестрогий (strict: false): фонд на жителя вырос во всех 93 городах с измеримым интервалом (C-005), город с отрицательным навесом отсутствует."
+      - "Причина отсутствия строгого контрпримера методическая — монотонность GHSL (C-008), не выбор авторов."
+      - "Выбор нестрогого кейса задокументирован датированной поправкой PREREGISTRATION.md [2026-07-16]: правка алгоритма выбора СЮЖЕТА, не метрик."
+    status: verified
+
+  - claim_id: C-007
+    text: >-
+      Модальный тип сокращающихся городов — T4 «расширение во время депопуляции»
+      (38 из 39; ещё 1 — T3 «стабильная оболочка при депопуляции»).
+    type: CALC
+    metric_ids: [material_overhang_rate_annual, built_surface_growth_rate_annual, population_growth_rate_annual]
+    scope: "39 сокращающихся городов панели (T3 + T4)"
+    period: {start: 1990, end: 2020}
+    frame: MORPH_FIXED_FRAME
+    source_result:
+      file: data/final/computed_results.json
+      filter: "type_counts.T4 == 38 and type_counts.T3 == 1"
+      cross_check:
+        file: data/final/city_typology.csv
+        filter: "primary_type in ('T3','T4') -> ровно 39 строк; T4 == 38, T3 == 1"
+    caveats:
+      - "Типология правиловая (ТЗ §10.2) с гейтом устойчивости §10.3: тип присваивается только при robust_sign; неустойчивые города получают TX (15 в панели, включая растущий Заславль) и в этот подсчёт не входят."
+      - "city_typology.csv содержит 94 строки (весь реестр: T1=39, T4=38, T3=1, TX=16); панель A/B — 92 (T1=38, TX=15). Расхождение — города класса C: Фаниполь (T1) и Мачулищи (TX). Согласовано."
+    status: verified
+
+  - claim_id: C-008
+    text: >-
+      Строгое физическое сжатие города (снос) базовый продукт не измеряет:
+      исторический GHS-BUILT-S — монотонный накопительный ряд.
+    type: LIMITATION
+    metric_ids: [built_surface_m2]
+    scope: "все города; структурное ограничение продукта GHSL"
+    period: null
+    frame: all
+    source_result:
+      file: params/assumptions.yaml
+      filter: "built.monotonic_stock == true and built.ghsl_2025_2030_are_observations == false"
+    caveats:
+      - "Следствие: тип «физическое и демографическое сжатие» не присваивается по базовому GHSL (ТЗ §7.5, §10.2); «отрицательный навес» надёжным исходом не является."
+      - "Снос исследуется только отдельным change-detection модулем по независимым снимкам — вне MVP."
+      - "Эпохи продукта 2025/2030 — модельные экстраполяции, наблюдениями не называются."
+    status: verified
