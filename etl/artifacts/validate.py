@@ -127,8 +127,10 @@ def validate_tree(root: Path) -> dict:
 def run_reproduction(root: Path, m: dict) -> None:
     """Полный прогон run.sh + сверка с expected_results в допусках."""
     run = root / m["entrypoints"]["reproduce"]
+    # 30 мин: ML-пакеты (mlchallenger: OOF-CV + перестановочный нуль) на
+    # медленных CI-раннерах не укладываются в прежние 600 с
     proc = subprocess.run(["bash", str(run)], cwd=root, capture_output=True,
-                          text=True, timeout=600)
+                          text=True, timeout=1800)
     if proc.returncode != 0:
         _fail(f"run.sh завершился с ошибкой:\n{proc.stdout[-2000:]}\n{proc.stderr[-2000:]}")
 
