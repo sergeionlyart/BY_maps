@@ -28,6 +28,9 @@ export const ARTIFACT_SEO: Record<string, ArtifactSeo> = {
   /* INF-13 BEGIN */
   pension: { ru: 'Коэффициент поддержки по районам Беларуси, 1989–2056', be: 'Каэфіцыент падтрымкі па раёнах Беларусі, 1989–2056', file: 'by-maps-pension-v1.0.0.zip', version: '1.0.0' },
   /* INF-13 END */
+  /* INF-15 BEGIN */
+  grid: { ru: 'Полотно: карта расселения Беларуси по сетке 1 км, 1975–2050', be: 'Палатно: карта расселення Беларусі па сетцы 1 км, 1975–2050', file: 'by-maps-grid-v1.0.0.zip', version: '1.0.0' },
+  /* INF-15 END */
 };
 
 /** Предметные title/description для metadata (задача 8). */

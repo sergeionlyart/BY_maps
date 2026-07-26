@@ -1,0 +1,38 @@
+Источник: GHS_POP_GLOBE_R2023A_input_metadata.xlsx, лист 'INPUT METADATA'
+Файл поставляется JRC ВНУТРИ каждого тайла GHS-POP R2023A (.zip), извлечён
+из GHS_POP_E2020_GLOBE_R2023A_54009_1000_V1_0_R4_C20.zip 2026-07-26.
+Строка Belarus, использована при расследовании D-005 (docs/decisions/INF-15.md).
+
+Country: Belarus
+Continent: Europe
+ISOAlpha: BLR
+ISONum: 112
+Populated: YES
+Admin1: Region
+Admin2: District
+Units: 129
+Admin level: 2
+Total Area km2: 206450.12233
+min Area km2: 30.618713
+max Area km2: 3325.987727
+average Area km2: 1600.38854519
+SD Area km2: 743.322486618
+Source: National Statistical Committee, 2009 Census, GeoHive, http://www.geohive.com/.
+Populated Units: 129
+Census year: 2009
+Total Census Population: 10018692
+min Density km2: 5.88454088899
+max Density km2: 8571.04599044
+average Density km2: 48.52838974822999
+Total Populated Area km2: 206450.12233
+min Populated Area km2: 30.618713
+max Populated Area km2: 3325.987727
+average Populated Area km2: 1600.38854519
+SD Populated Area km2: 743.322486618
+Population weighted AVGArea km2: 1050.5720003768956
+PopSource Type: Final Census
+PopEstim/ProjType: not applicable
+GrowthRateLevel: 2
+GrowthRateStart: 1999
+GrowthRateEnd: 2009
+WUP boundaries estimate admin level: 2

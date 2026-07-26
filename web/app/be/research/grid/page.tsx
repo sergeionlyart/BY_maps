@@ -1,0 +1,25 @@
+import type { Metadata } from 'next';
+import GridView from '@/components/GridView';
+import ResearchShell from '@/components/ResearchShell';
+import { authors, altFor } from '@/lib/seo';
+
+export const metadata: Metadata = {
+  authors,
+  title: 'Палатно: карта расселення Беларусі па сетцы 1 км, 1975–2050 — Насельніцтва Беларусі',
+  description:
+    'Краіна без адміністрацыйных межаў: сетка ў адзін кіламетр, насельніцтва па клетках з 1975 па 2050 год з GHS-POP, каліброванага пад афіцыйную статыстыку. Людзі канцэнтруюцца хутчэй, чым пустее тэрыторыя — але крыжаваная праверка з начнымі агнямі не пацвердзіла напрамак змен, таму вывад падаецца як адкрытае пытанне.',
+  alternates: altFor('/be/research/grid'),
+};
+
+export default function GridPageBe() {
+  return (
+    <ResearchShell
+      code="INF-15"
+      version="v1.0.0"
+      title="Полотно: карта расселения Беларуси по сетке 1 км, 1975–2050"
+      lead="Страна без административных границ: сетка в один километр вместо 118 районов одним цветом. Клетки — из открытого набора данных Европейской комиссии (GHS-POP), приведённого к официальной статистике, с 1975 по 2050 год."
+    >
+      <GridView />
+    </ResearchShell>
+  );
+}

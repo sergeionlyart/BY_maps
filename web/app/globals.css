@@ -1602,3 +1602,47 @@ a.service-card:hover .sc-cta { text-decoration: underline; }
   .pen-view .seg button.scn-base.on { color: #0d0d0d; }
 }
 /* INF-13 END */
+/* INF-15 BEGIN */
+.gv-root { display: flex; flex-direction: column; gap: 12px; }
+.gv-honesty {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--neg);
+  background: color-mix(in srgb, var(--neg) 8%, var(--surface-1));
+  font-size: 14.5px;
+  line-height: 1.55;
+}
+.gv-toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.gv-metric-switch { display: inline-flex; gap: 6px; flex-wrap: wrap; }
+.gv-toggle { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; cursor: pointer; }
+.gv-map { width: 100%; height: 62vh; min-height: 380px; max-height: 640px; border-radius: 10px; overflow: hidden; border: 1px solid var(--border); }
+.gv-slider-zone { display: flex; flex-direction: column; gap: 4px; }
+.gv-range { width: 100%; }
+.gv-slider-track {
+  display: flex; height: 8px; border-radius: 5px; overflow: hidden; border: 1px solid var(--border);
+}
+.gv-slider-observed { background: var(--accent); }
+.gv-slider-model {
+  background: repeating-linear-gradient(45deg, var(--chip-model), var(--chip-model) 4px, transparent 4px, transparent 8px);
+  font-size: 9px; color: var(--muted); text-align: right; padding-right: 4px; line-height: 8px;
+}
+.gv-year-label { display: flex; align-items: center; gap: 8px; font-size: 20px; font-weight: 700; }
+.gv-scn-switch { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+.gv-scn-switch > div { display: inline-flex; gap: 6px; flex-wrap: wrap; }
+.gv-panel { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-top: 4px; }
+.gv-stat { padding: 10px 12px; border-radius: 8px; background: var(--surface-1); border: 1px solid var(--border); }
+.gv-stat-value { font-size: 22px; font-weight: 700; }
+.gv-g3-callout {
+  padding: 12px 14px; border-radius: 10px; border: 1px solid var(--border);
+  border-left: 3px solid var(--chip-interp);
+  background: color-mix(in srgb, var(--chip-interp) 8%, var(--surface-1));
+  font-size: 14px; line-height: 1.55;
+}
+.gv-cell-card { position: relative; padding: 12px 36px 12px 14px; border-radius: 8px; background: var(--surface-1); border: 1px solid var(--border); }
+.gv-cell-close { position: absolute; top: 6px; right: 8px; background: none; border: none; font-size: 18px; cursor: pointer; color: var(--muted); min-height: 32px; min-width: 32px; }
+@media (max-width: 640px) {
+  .gv-map { height: 52vh; min-height: 320px; }
+  .gv-panel { grid-template-columns: repeat(2, 1fr); }
+}
+/* INF-15 END */

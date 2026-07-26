@@ -45,6 +45,19 @@ stage9-extract:   ## INF-12: растровые шаги (требует rasteri
 	$(PY) -m etl.urban_osm all
 	$(PY) -m etl.urban_webgrids
 
+# INF-15 BEGIN
+stage10:          ## INF-15: метрики+прогноз+кадры+сеть от вендоренных клеток
+                  ## (требует .venv с requirements-raster.txt: rasterio, scipy, Pillow)
+	$(PY) -m etl.grid
+	$(PY) -m etl.grid_project
+	$(PY) -m etl.grid_frames
+	$(PY) -m etl.grid_network
+
+stage10-extract:  ## INF-15: скачивание+клип тайлов GHS-POP (требует сеть+rasterio)
+	$(PY) -m etl.grid_fetch
+	$(PY) -m etl.grid_extract
+# INF-15 END
+
 test:             ## все проверки данных
 	$(PY) -m pytest etl/tests/ -q
 

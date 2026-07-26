@@ -1,0 +1,177 @@
+# Декларативное описание проверяемого пакета INF-15 `grid`
+# (ARTIFACT_STANDARD.md v1.0). Сборка: python -m etl.artifacts.build grid
+
+id: grid
+title: "Полотно: карта расселения Беларуси по сетке 1 км, 1975–2050"
+version: "1.0.0"
+released: "2026-07-26"
+landing_url: "https://by-population-maps.vercel.app/research/grid"
+authors:
+  - "Проект «Население Беларуси, 1897–2026»"
+
+files:
+  - { path: README.md, role: docs }
+  - { path: EXECUTIVE_BRIEF.md, role: docs }
+  - { path: METHODS.md, role: docs }
+  - { path: LIMITATIONS.md, role: docs }
+  - { path: VALIDATION.md, role: docs }
+  - { path: DATA_DICTIONARY.md, role: docs }
+  - { path: PROVENANCE.md, role: docs }
+  - { path: PREREGISTRATION.md, role: docs }
+  - { path: AGENT.md, role: docs }
+  - { path: CHANGELOG.md, role: docs }
+  - { path: CITATION.cff, role: docs }
+  - { path: LICENSE.md, role: docs }
+  - { path: claims.yaml, role: docs }
+  - { path: sources/registry.csv, role: docs }
+
+  - { path: sources/raw/registry_ghsl_pop.csv, from: data/raw/grid/registry_ghsl_pop.csv, role: raw,
+      license: "CC BY 4.0 (Schiavina, Freire, MacManus 2023, GHS-POP R2023A, JRC)" }
+  - { path: sources/raw/ghsl_pop_input_metadata_belarus_extract.txt,
+      from: data/raw/grid/sources/ghsl_pop_input_metadata_belarus_extract.txt, role: raw,
+      license: "European Commission Reuse and Copyright Notice, © European Union 1995-2023" }
+  - { path: sources/raw/reconciliation.csv, from: data/raw/grid/reconciliation.csv, role: raw }
+  - { path: sources/raw/g2_reconciliation.csv, from: data/raw/grid/g2_reconciliation.csv, role: raw }
+  - { path: sources/raw/g3_nightlights_crosscheck.json, from: data/raw/grid/g3_nightlights_crosscheck.json, role: raw }
+  - { path: sources/raw/g3_nightlights_rows.csv, from: data/raw/grid/g3_nightlights_rows.csv, role: raw }
+  - { path: sources/raw/grid_meta.json, from: data/raw/grid/grid_meta.json, role: raw }
+  - { path: sources/raw/metrics_observed.json, from: data/raw/grid/metrics_observed.json, role: raw,
+      license: "CC BY 4.0 (BY Maps; производная GHS-POP R2023A + официальная статистика Белстата)" }
+  - { path: sources/raw/metrics_forecast.json, from: data/raw/grid/metrics_forecast.json, role: raw,
+      license: "CC BY 4.0 (BY Maps)" }
+  - { path: sources/raw/network_metrics.json, from: data/raw/grid/network_metrics.json, role: raw,
+      license: "ODbL 1.0 (производная OSM, © OpenStreetMap contributors) + CC BY 4.0 (BY Maps)" }
+  - { path: sources/raw/network_by_raion.csv, from: data/raw/grid/network_by_raion.csv, role: raw,
+      license: "ODbL 1.0 (производная OSM, © OpenStreetMap contributors)" }
+  - { path: sources/raw/registry_road_stats.csv, from: data/raw/grid/registry_road_stats.csv, role: raw }
+
+  - { path: sources/raw/rasters/pop_1975.tif, from: data/raw/grid/rasters_constrained/pop_1975.tif, role: raw,
+      license: "CC BY 4.0 (производная GHS-POP R2023A, JRC; калибровано под официальные данные - см. METHODS.md)" }
+  - { path: sources/raw/rasters/pop_1980.tif, from: data/raw/grid/rasters_constrained/pop_1980.tif, role: raw }
+  - { path: sources/raw/rasters/pop_1985.tif, from: data/raw/grid/rasters_constrained/pop_1985.tif, role: raw }
+  - { path: sources/raw/rasters/pop_1990.tif, from: data/raw/grid/rasters_constrained/pop_1990.tif, role: raw }
+  - { path: sources/raw/rasters/pop_1995.tif, from: data/raw/grid/rasters_constrained/pop_1995.tif, role: raw }
+  - { path: sources/raw/rasters/pop_2000.tif, from: data/raw/grid/rasters_constrained/pop_2000.tif, role: raw }
+  - { path: sources/raw/rasters/pop_2005.tif, from: data/raw/grid/rasters_constrained/pop_2005.tif, role: raw }
+  - { path: sources/raw/rasters/pop_2010.tif, from: data/raw/grid/rasters_constrained/pop_2010.tif, role: raw }
+  - { path: sources/raw/rasters/pop_2015.tif, from: data/raw/grid/rasters_constrained/pop_2015.tif, role: raw }
+  - { path: sources/raw/rasters/pop_2020.tif, from: data/raw/grid/rasters_constrained/pop_2020.tif, role: raw }
+
+  - { path: code/run.sh, role: code }
+  - { path: code/build.py, role: code }
+  - { path: code/verify.py, role: code }
+  - { path: code/requirements.lock, role: code }
+  - { path: code/extract/grid_fetch.py, from: etl/grid_fetch.py, role: code }
+  - { path: code/extract/grid_extract.py, from: etl/grid_extract.py, role: code }
+  - { path: code/extract/grid.py, from: etl/grid.py, role: code }
+  - { path: code/extract/grid_project.py, from: etl/grid_project.py, role: code }
+  - { path: code/extract/grid_frames.py, from: etl/grid_frames.py, role: code }
+  - { path: code/extract/grid_network.py, from: etl/grid_network.py, role: code }
+
+  - { path: params/assumptions.yaml, role: params }
+  - { path: checks/tests/test_invariants.py, role: code }
+
+  - { path: data/final/grid.json, from: web/public/data/grid.json, role: final, license: "CC BY 4.0 (BY Maps)" }
+  - { path: data/final/computed_results.json, role: final, license: "CC BY 4.0 (BY Maps)" }
+
+sources:
+  - id: ghs_pop_r2023a
+    url: "https://human-settlement.emergency.copernicus.eu/download.php?ds=pop"
+    description: "GHS-POP R2023A: население мира по клеткам 1 км, Молльвейде, эпохи 1975-2020 (шаг 5 лет); 40 тайлов (4 на эпоху) с URL+sha256 в sources/raw/registry_ghsl_pop.csv"
+    license: "CC BY 4.0 (Schiavina, Freire, MacManus (2023), European Commission JRC, GHS-POP R2023A)"
+    accessed: "2026-07-26"
+    sha256: ""
+    vendored: "sources/raw/registry_ghsl_pop.csv"
+    fetch: "python3 code/extract/grid_fetch.py"
+  - id: bymaps_data_json
+    url: "https://by-population-maps.vercel.app/data/data.json"
+    description: "Официальные ряды населения 118 районов + Минска (переписи Белстата 1959-2019, оценки; проект BY Maps)"
+    license: "использование с указанием источника (Белстат, компиляция pop-stat.mashke.org)"
+    accessed: "2026-07-26"
+    sha256: ""
+    vendored: "sources/raw/metrics_observed.json (пере-агрегировано)"
+    fetch: "см. пакет by-maps-zipf / основной репозиторий web/public/data/data.json"
+  - id: bymaps_forecast_json
+    url: "https://by-population-maps.vercel.app/data/forecast.json"
+    description: "Прогноз населения районов до 2075 (версия v2026.4, 3 сценария), проект BY Maps"
+    license: "CC BY 4.0 (BY Maps)"
+    accessed: "2026-07-26"
+    sha256: ""
+    vendored: "sources/raw/metrics_forecast.json (пере-агрегировано)"
+    fetch: "основной репозиторий web/public/data/forecast.json"
+  - id: inf07_chernobyl_zones
+    url: "https://by-population-maps.vercel.app/artifacts/chernobyl"
+    description: "Классификация районов по чернобыльским зонам (data/curated/chernobyl_zones.csv, INF-07)"
+    license: "CC BY 4.0 (BY Maps)"
+    accessed: "2026-07-26"
+    sha256: ""
+    vendored: "используется на этапе расчёта G-4 (не хранится отдельно в пакете - производный список см. VALIDATION.md)"
+    fetch: "основной репозиторий data/curated/chernobyl_zones.csv"
+  - id: inf08_nightlights_v2
+    url: "https://by-population-maps.vercel.app/artifacts/nightlights"
+    description: "Зональная светимость VIIRS по районам (nightlights_v2.json, сегмент 2012-2024), проект BY Maps INF-08 v2 - использована для перекрёстной проверки G-3"
+    license: "CC BY 4.0 (Li et al.; EOG VNL, вырезки и агрегация BY Maps)"
+    accessed: "2026-07-26"
+    sha256: ""
+    vendored: "sources/raw/g3_nightlights_crosscheck.json, g3_nightlights_rows.csv"
+    fetch: "пакет by-maps-nightlights-v2.2.0 (или актуальная версия)"
+  - id: inf04_osm_road_graph
+    url: "https://download.geofabrik.de/europe/belarus-latest.osm.pbf"
+    description: "Дорожный граф Беларуси (etl/osm_graph.py, INF-04), классы motorway..tertiary со скоростями"
+    license: "ODbL 1.0 (© OpenStreetMap contributors)"
+    accessed: "2026-07-11"
+    sha256: ""
+    vendored: "sources/raw/network_by_raion.csv (агрегировано по районам/классам)"
+    fetch: "основной репозиторий data/raw/osm/graph_edges.csv.gz"
+
+entrypoints:
+  reproduce: "code/run.sh"
+  verify: "python3 code/verify.py"
+
+environment:
+  python: ">=3.10"
+  lock: "code/requirements.lock"
+  seed: 42
+
+# Контрольные значения покрывают все ключевые числа лендинга (G-7, раздел 7 ТЗ).
+expected_results:
+  - { metric: national_below5_1975, value: 0.7155, tolerance: 0.0001,
+      description: "доля площади страны с плотностью <5 чел/км², 1975 (constrained)" }
+  - { metric: national_below5_2020, value: 0.7422, tolerance: 0.0001,
+      description: "доля площади страны с плотностью <5 чел/км², 2020 (constrained)" }
+  - { metric: national_pw_density_1975, value: 3105.573, tolerance: 0.01,
+      description: "плотность, взвешенная по населению, 1975" }
+  - { metric: national_pw_density_2020, value: 5657.336, tolerance: 0.01,
+      description: "плотность, взвешенная по населению, 2020" }
+  - { metric: national_arith_density_1990, value: 48.883, tolerance: 0.01,
+      description: "арифметическая плотность страны, 1990 (пик наблюдаемого ряда)" }
+  - { metric: national_arith_density_2020, value: 44.882, tolerance: 0.01,
+      description: "арифметическая плотность страны, 2020" }
+  - { metric: g1_n_failed_raions_ever, value: 119, tolerance: 0,
+      description: "районов, вышедших за допуск ±3% хотя бы в одной эпохе (сырой продукт, до калибровки)" }
+  - { metric: g1_raw_max_abs_pct_diff, value: 209.78, tolerance: 0.5,
+      description: "максимальное |отклонение| сырого grid_sum от офиц. ряда района по всем эпохам" }
+  - { metric: g2_max_pct_diff, value: 0.0, tolerance: 0.1,
+      description: "макс. отклонение суммы клеток района от прогноза района (все сценарии/варианты)" }
+  - { metric: g3_pct_agree, value: 32.8, tolerance: 0.1,
+      description: "согласие знака изменения население/огни 2012-2020, % районов (G-3 НЕ пройдена, см. D-007)" }
+  - { metric: g3_n_raions, value: 119, tolerance: 0,
+      description: "районов, включённых в проверку G-3" }
+  - { metric: g4_growth_1975_2020_excl_polesye_chernobyl, value: 0.0292, tolerance: 0.001,
+      description: "рост area_share_below(5) 1975->2020 без Полесья и Чернобыля (36 районов)" }
+  - { metric: g5_max_shift_km, value: 2.03, tolerance: 0.1,
+      description: "макс. сдвиг центра масс при альтернативных весах/пороге, км" }
+  - { metric: settlement_components_n_2020, value: 3685, tolerance: 0,
+      description: "число связных компонент расселения (порог 1 чел/км², 8-связность), 2020" }
+  - { metric: settlement_components_largest_share_2020, value: 0.4547, tolerance: 0.001,
+      description: "доля населения в крупнейшей компоненте, 2020" }
+  - { metric: g6_road_km_total, value: 76958.8, tolerance: 1.0,
+      description: "суммарная длина дорожной сети OSM (motorway..tertiary, снимок 2026), км" }
+  - { metric: g6_delta_pct, value: -10.97, tolerance: 0.01,
+      description: "отклонение суммы OSM от офиц. статистики Белдорцентра (86446 км), % - G-6 пройдена" }
+  - { metric: g6_pass, value: 1, tolerance: 0,
+      description: "G-6 пройдена (допуск ±15%) - network_per_capita публикуется с абсолютными км" }
+  - { metric: c3_spearman_rho, value: -0.7508, tolerance: 0.001,
+      description: "корреляция Спирмена network_per_capita_2026 vs темп изменения района 1989-2026 (C-3 подтверждена)" }
+  - { metric: c3_p_value_log10, value: -21.9, tolerance: 0.5,
+      description: "log10(p-value) корреляции C-3 (p≈1.25e-22, высоко значимо)" }

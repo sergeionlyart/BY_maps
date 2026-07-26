@@ -1,0 +1,113 @@
+# INF-15 «Полотно»: допущения. Каждое - с обоснованием.
+#
+# СТАТУС ПАРАМЕТРОВ (честное разделение):
+#  [P] - заморожено пререгистрацией v0.1 (2026-07-26, до расчётов);
+#  [O] - операционализация, зафиксированная в ходе реализации ДО анализа
+#        результатов, но в пререгистрации не расписанная дословно;
+#  [A] - датированная поправка к пререгистрации/решение по ходу работы
+#        (см. docs/decisions/INF-15.md D-001..D-007).
+
+grid:                                            # [P]
+  cell_km: 1.0
+  source_crs: GHS_POP_R2023A_54009               # Молльвейде, нативная равновеликая
+  analysis_crs: ESRI:54009                        # [A] D-001: НЕ EPSG:3857 из
+                                                   # примера Приложения А ТЗ -
+                                                   # сохраняет реальный размер ячейки
+  clip_bbox_moll: [1602000.0, 5998000.0, 2459000.0, 6512000.0]
+  epochs_observed: [1975, 1980, 1985, 1990, 1995, 2000, 2005, 2010, 2015, 2020]
+
+depopulation_thresholds:                         # [P]
+  primary_chel_km2: 5
+  secondary_chel_km2: 1
+  auxiliary_chel_km2: 25
+
+settlement_components:                           # [P]
+  density_threshold_chel_km2: 1
+  connectivity: 8                                 # queen's case
+
+reconciliation:                                  # [P] пороги; [A] методика калибровки
+  raion_tolerance_pct: 3.0
+  national_tolerance_pct: 1.0
+  max_failed_raions_before_drop: 15
+  raw_product_status: failed                      # [A] D-005: 119/119 районов
+                                                   # хоть раз вне допуска; нац.
+                                                   # уровень тоже вне допуска
+                                                   # на всех 10 эпохах (1.7-3.4%)
+  calibration_method: constrained_dasymetric_redistribution   # [A] D-005:
+                                                   # GHS-POP = только внутрирайонный
+                                                   # пространственный вес; итог
+                                                   # района/страны = офиц. ряд
+  calibration_review: approve_with_conditions_3x0  # [A]: независимое ревью трёх
+                                                   # ролей (docs/notes/grid_validation.md)
+
+forecast:                                        # [P]/[A]
+  years_native: [2026, 2031, 2036, 2041, 2046]
+  year_2050: interpolated_linear_between_2046_2051   # НЕ нативный узел forecast.json
+  scenarios: [base, optimistic, negative]
+  jumpoff: official
+  variants: [A, B]
+  variant_a: log_linear_trend_extrapolation_of_within_raion_cell_share  # [A] D-006
+  variant_b_anchors_n: 7                          # [A] D-006: авто-обнаружены
+                                                   # связными компонентами
+                                                   # плотности >=1500 чел/км² в 2020
+  variant_b_suburb_inner_km: 8.0                   # [A] D-006
+  variant_b_suburb_peak_km: 20.0
+  variant_b_suburb_outer_km: 45.0
+  variant_b_suburb_boost_max: 0.35
+  variant_b_periphery_far_km: 60.0
+  variant_b_periphery_penalty_max: 0.25
+  g2_tolerance_pct: 0.1
+
+centroid_track:                                  # [P]
+  years: [1897, 1913, 1940, 1959, 1970, 1979, 1989, 1999, 2009, 2019, 2026,
+          2031, 2036, 2041, 2046, 2050]
+  err_km_1897_1959: 25
+  err_km_1970_2020: 10
+  err_km_2026_2050: 10
+  g5_sensitivity_shift_threshold_km: 15
+  g5_perturbation_pct: 10                          # [A]: дифференцированное
+                                                   # возмущение веса района ±10%,
+                                                   # seed=42 (равномерный множитель
+                                                   # не меняет средневзвешенное -
+                                                   # первая версия проверки была
+                                                   # математически бессмысленной,
+                                                   # исправлено до публикации)
+
+network_per_capita:                              # [P]/[O]
+  road_classes_available: [motorway, trunk, primary, secondary, tertiary]  # [O]:
+                                                   # исходный список в пререгистрации
+                                                   # (+residential/unclassified/track)
+                                                   # шире, чем реально доступно в
+                                                   # уже готовом снимке INF-04
+  osm_reconciliation_tolerance_pct: 15
+  snapshot_year: 2026
+  depopulation_reference_years: [1989, 2026]
+
+nightlights_crosscheck:                          # [P]
+  years: [2012, 2020]
+  agreement_threshold_pct: 70
+  result_pct: 32.8                                 # [A] D-007: НЕ пройдена;
+                                                   # доминирующий паттерн - "население
+                                                   # упало, свет вырос" у 63.9% районов
+
+polesye_operational_list:                        # [A] D-004
+  n_raions: 27
+  definition: "16 районов Брестской области + 11 южных районов Гомельской
+    области, прилегающих к бассейну Припяти - административный proxy, не
+    строгая физико-географическая граница (у Полесья нет единого перечня
+    районов)"
+
+chernobyl_exclusion:                             # использует существующий проект
+  source: data/curated/chernobyl_zones.csv
+  classes_excluded: [1, 2]
+  n_raions: 12
+
+budgets:                                         # [P]
+  grid_json_kb_max: 1536
+  frames_total_mb_max: 12.0
+  frame_kb_max: 220
+  first_load_mb_max: 3.5
+  actual_frames_total_mb: 2.82
+  actual_frame_kb_max: 220
+
+seed: 42
