@@ -226,6 +226,56 @@ def ccmpp_city_step(pop: dict, surv: dict, mig_rate: dict, phi: float,
     return new
 
 
+# ------------------------------------------ выгрузка возрастной детали
+# (INF-13/14, этап 0: только ДОПОЛНИТЕЛЬНАЯ выгрузка уже вычисляемой
+# моделью проекции - ни reconcile(), ни один опубликованный итог не
+# меняются; см. docs/decisions/INF-13.md)
+
+def age_split_for_export(children: dict, obl_structures: dict, totals: dict,
+                         export_years: list[int]) -> dict:
+    """Возрастно-половое распределение УЖЕ ЗАФИКСИРОВАННЫХ итогов
+    территорий (`totals` - результат обычного reconcile(), идентичен
+    публикуемому в forecast.json) по полу x 17 группам.
+
+    Не пересчитывает totals и не меняет ни одного опубликованного числа:
+    берёт totals как жёсткое построчное ограничение (сумма по полу/
+    возрасту территории == totals[t][year] ТОЧНО - последним шагом
+    каждой итерации всегда идёт построчная нормировка) и `obl_structures`
+    как целевое постолбцовое ограничение (сумма по территориям области
+    -> целевая возрастно-половая структура области), сходится через
+    несколько раундов IPF (8 итераций - расхождение со столбцовой целью
+    практически исчезает). Используется только для дополнительного
+    экспорта районной возрастной детали - вычислительное ядро прогноза
+    не затрагивает."""
+    obl = oblast_of()
+    groups: dict[str, list[str]] = {}
+    for t in children:
+        groups.setdefault(obl[t], []).append(t)
+
+    out: dict[str, dict[int, dict]] = {t: {} for t in children}
+    for year in export_years:
+        for o, kids in groups.items():
+            target = interp_struct(obl_structures[o], year)
+            structs = {t: interp_struct(children[t], year) for t in kids}
+            for _ in range(8):
+                for s in ("m", "f"):
+                    for g in AGE_GROUPS:
+                        colsum = sum(structs[t][s][g] for t in kids)
+                        cf = target[s][g] / colsum if colsum > 0 else 0.0
+                        for t in kids:
+                            structs[t][s][g] *= cf
+                for t in kids:
+                    rowsum = sum(structs[t]["m"].values()) + \
+                        sum(structs[t]["f"].values())
+                    rf = totals[t][year] / rowsum if rowsum > 0 else 0.0
+                    for s in ("m", "f"):
+                        for g in AGE_GROUPS:
+                            structs[t][s][g] *= rf
+            for t in kids:
+                out[t][year] = structs[t]
+    return out
+
+
 # ------------------------------------------------------------ проекция
 
 def project_children() -> dict:

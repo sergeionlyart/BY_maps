@@ -40,6 +40,8 @@ SCEN_DIR = Path(__file__).parent / "scenarios"
 OUT_WEB = ROOT / "web" / "public" / "data" / "forecast.json"
 OUT_CSV = ROOT / "data" / "curated" / "forecast_v2026_4.csv"
 OUT_AGE = ROOT / "data" / "curated" / "forecast_age_by_v2026_4.json"
+OUT_AGE_RAION = ROOT / "data" / "curated" / "forecast_age_raion_v2026_4.json"
+RAION_AGE_YEARS = [2026, 2031, 2036, 2041, 2046, 2051, 2056]
 
 STEP_YEARS = list(range(2026, 2077, STEP))  # 2026..2076
 EXPORT_YEARS = [y for y in STEP_YEARS if y <= 2071] + [2075]
@@ -285,6 +287,72 @@ def export_age_structures(all_structs: dict, adj_structs: dict) -> None:
           f"{len(STEP_YEARS)} узлов)")
 
 
+def export_age_structures_raion(children: dict, all_structs: dict,
+                                adj_structs: dict, official: dict) -> None:
+    """INF-13/14, этап 0: районная возрастная деталь прогноза - ДОПОЛНИТЕЛЬНАЯ
+    выгрузка того, что модель этапа 5 (sub.py, Гамильтон-Перри/CCMPP + IPF)
+    уже вычисляет внутри себя для sub_series, но не публикует по возрасту.
+    Ни один существующий расчёт/итог (forecast.json, forecast_v2026_4.csv,
+    forecast_age_by_v2026_4.json) не меняется этой функцией.
+
+    Периметр района - как r-* в forecast.json (район-хост включает город
+    обл. подчинения, HOSTED). Узлы 2026..2056 шагом 5 лет; 3 сценария x
+    официальный/скорректированный (adjusted, WP-F3) старт: для adjusted
+    применяется ТА ЖЕ IPF-схема к скорректированным областным структурам
+    (adj_structs, уже вычислены в main() для уровней 0-1), календарная
+    точка 2026 в обоих случаях калибруется к официальным РАЙОННЫМ итогам
+    (official) - районного разреза недоучтённого оттока не существует,
+    поэтому adjusted-вариант на уровне района отражает только форму
+    областной скорректированной траектории после 2026, а не отдельную
+    районную поправку 2026 года. Решение и его обоснование - см.
+    docs/decisions/INF-13.md."""
+    from . import sub
+
+    raions = sorted(t for t in children if t.startswith("r-"))
+    territories: dict[str, dict] = {r: {} for r in raions}
+
+    for jo, structs_by_sid in (("official", all_structs), ("adjusted", adj_structs)):
+        for sid, obl_structures in structs_by_sid.items():
+            totals = sub.reconcile(children, obl_structures, RAION_AGE_YEARS,
+                                   calibrate_2026=official)
+            split = sub.age_split_for_export(children, obl_structures, totals,
+                                             RAION_AGE_YEARS)
+            key = f"{sid}:{jo}"
+            for r in raions:
+                per_year = {}
+                for y in RAION_AGE_YEARS:
+                    cell = split[r][y]
+                    if r in sub.HOSTED:
+                        city_cell = split[sub.HOSTED[r]][y]
+                        cell = {s: {g: cell[s][g] + city_cell[s][g]
+                                    for g in AGE_GROUPS} for s in ("m", "f")}
+                    per_year[str(y)] = {s: [round(cell[s][g], 1) for g in AGE_GROUPS]
+                                        for s in ("m", "f")}
+                territories[r][key] = per_year
+
+    out = {
+        "version": VERSION,
+        "unit": "человек",
+        "age_groups": AGE_GROUPS,
+        "node_years": RAION_AGE_YEARS,
+        "scenarios": ["base", "optimistic", "negative"],
+        "jumpoffs": ["official", "adjusted"],
+        "note": ("районная возрастная деталь прогноза - выгрузка из "
+                "существующей модели этапа 5 (Гамильтон-Перри/CCMPP, IPF к "
+                "области); периметр района - как r-* в forecast.json "
+                "(район-хост включает город обл. подчинения); adjusted - та "
+                "же IPF-схема к скорректированным (WP-F3) областным "
+                "структурам, старт-2026 в обоих случаях калиброван к "
+                "официальным районным итогам (районный разрез недоучтённого "
+                "оттока не публикуется). Подробности - docs/decisions/INF-13.md."),
+        "territories": territories,
+    }
+    OUT_AGE_RAION.write_text(json.dumps(out, ensure_ascii=False, sort_keys=True,
+                                        separators=(",", ":")))
+    print(f"OK: {OUT_AGE_RAION.name} ({len(raions)} районов x "
+          f"{len(RAION_AGE_YEARS)} узлов x 6 серий)")
+
+
 def main() -> None:
     from . import sub
 
@@ -317,6 +385,7 @@ def main() -> None:
 
     export(all_series, sub_series, adj_series, adj_meta, adj_jump)
     export_age_structures(all_structs, adj_structs)
+    export_age_structures_raion(children, all_structs, adj_structs, official)
     wpp = wpp_total_variants()
     for sid, series in sorted(all_series.items()):
         p50 = series["BY"][2051] / 1000
