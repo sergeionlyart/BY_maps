@@ -1,0 +1,135 @@
+'use client';
+
+/** SVG-хороплет 118 районов по коэффициенту поддержки (SR). Лёгкая
+ *  проекция без MapLibre — тот же приём, что AgingView и MLChallengerView
+ *  (простой единственный скалярный показатель на район, без слоёв карты). */
+
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { useT } from '@/lib/i18n';
+import type { PensionFile, PolicyId, SeriesKey } from '@/lib/pension';
+import { valueAt } from '@/lib/pension';
+import { srColor, SR_LEGEND } from './scale';
+
+interface GeoFeature {
+  properties: { id: string };
+  geometry: { type: 'Polygon' | 'MultiPolygon'; coordinates: number[][][] | number[][][][] };
+}
+
+export default function PensionMap({
+  geo,
+  pf,
+  names,
+  policy,
+  seriesKey,
+  year,
+  selected,
+  onSelect,
+}: {
+  geo: GeoFeature[];
+  pf: PensionFile;
+  names: Record<string, string>;
+  policy: PolicyId;
+  seriesKey: SeriesKey;
+  year: number;
+  selected: string | null;
+  onSelect: (id: string) => void;
+}) {
+  const t = useT();
+  const wrapRef = useRef<HTMLDivElement>(null);
+  const [width, setWidth] = useState(640);
+  const [hover, setHover] = useState<{ id: string; x: number; y: number } | null>(null);
+
+  useEffect(() => {
+    const el = wrapRef.current;
+    if (!el) return;
+    const ro = new ResizeObserver(() => el.clientWidth > 40 && setWidth(el.clientWidth));
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
+
+  const { paths, height } = useMemo(() => {
+    let minLon = 180, maxLon = -180, minLat = 90, maxLat = -90;
+    const eachRing = (f: GeoFeature, cb: (ring: number[][]) => void) => {
+      const polys = f.geometry.type === 'Polygon'
+        ? [f.geometry.coordinates as number[][][]]
+        : (f.geometry.coordinates as number[][][][]);
+      for (const poly of polys) for (const ring of poly) cb(ring);
+    };
+    for (const f of geo) eachRing(f, (ring) => {
+      for (const [lon, lat] of ring) {
+        if (lon < minLon) minLon = lon; if (lon > maxLon) maxLon = lon;
+        if (lat < minLat) minLat = lat; if (lat > maxLat) maxLat = lat;
+      }
+    });
+    const kx = Math.cos(((minLat + maxLat) / 2) * Math.PI / 180);
+    const pad = 6;
+    const iw = width - pad * 2;
+    const scale = iw / ((maxLon - minLon) * kx);
+    const h = Math.round((maxLat - minLat) * scale) + pad * 2;
+    const X = (lon: number) => pad + (lon - minLon) * kx * scale;
+    const Y = (lat: number) => pad + (maxLat - lat) * scale;
+    const ps = geo.map((f) => {
+      let d = '';
+      eachRing(f, (ring) => {
+        d += ring.map(([lon, lat], i) =>
+          `${i ? 'L' : 'M'}${X(lon).toFixed(1)},${Y(lat).toFixed(1)}`).join('') + 'Z';
+      });
+      return { id: f.properties.id, d };
+    });
+    return { paths: ps, height: h };
+  }, [geo, width]);
+
+  const valueOf = (id: string): number | null => {
+    const entry = pf.territories[id];
+    if (!entry) return null;
+    return valueAt(entry.sr, pf.years.territory, policy, seriesKey, year);
+  };
+
+  const hoverVal = hover ? valueOf(hover.id) : null;
+
+  return (
+    <div className="chart-svg-wrap" ref={wrapRef}>
+      <svg width={width} height={height} role="img" aria-label={t('карта районов по коэффициенту поддержки')}>
+        {paths.map((p) => (
+          <path
+            key={p.id}
+            d={p.d}
+            fill={srColor(valueOf(p.id))}
+            stroke={p.id === selected ? 'var(--ink)' : 'var(--surface-1)'}
+            strokeWidth={p.id === selected ? 1.8 : 0.6}
+            style={{ cursor: 'pointer' }}
+            onPointerMove={(e) => {
+              const box = wrapRef.current!.getBoundingClientRect();
+              setHover({ id: p.id, x: e.clientX - box.left, y: e.clientY - box.top });
+            }}
+            onPointerLeave={() => setHover(null)}
+            onClick={() => onSelect(p.id)}
+          >
+            <title>{`${names[p.id] ?? p.id}${valueOf(p.id) != null ? `: ${valueOf(p.id)!.toFixed(2)}` : ''}`}</title>
+          </path>
+        ))}
+        {paths.filter((p) => p.id === selected).map((p) => (
+          <path key={p.id + '-sel'} d={p.d} fill="none" stroke="var(--ink)" strokeWidth="1.8" pointerEvents="none" />
+        ))}
+      </svg>
+      <div className="choro-legend">
+        {SR_LEGEND.map((s) => (
+          <span className="cl-item" key={s.label}>
+            <span className="cl-swatch" style={{ background: s.color }} />
+            {t(s.label)}
+          </span>
+        ))}
+      </div>
+      {hover && (
+        <div className="chart-tooltip" style={{ left: Math.min(hover.x + 14, width - 200), top: hover.y - 8 }}>
+          <div className="ct-row"><span className="ct-val">{names[hover.id] ?? hover.id}</span></div>
+          <div className="ct-year">
+            {hoverVal != null
+              ? <>{t('работающих на 1 пожилого:')} <strong>{hoverVal.toFixed(2)}</strong></>
+              : t('нет данных на этот год')}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}

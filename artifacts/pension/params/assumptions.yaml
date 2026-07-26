@@ -1,0 +1,119 @@
+# INF-13 «Кто кого содержит» (pension): все допущения с обоснованиями.
+# Файл ДОКУМЕНТИРУЕТ параметры; кодом не читается напрямую (значения
+# зашиты в etl/pension.py константами - для стресс-теста правьте константы
+# там и перезапускайте code/run.sh, конкретные рецепты - в AGENT.md).
+#
+# СТАТУС (честное разделение, по образцу urban-overhang):
+#  [P] - заморожено пререгистрацией v0.1 (2026-07-26, до расчётов);
+#  [D] - определяется действующим НПА (не выбор исследователя);
+#  [O] - операционализация, зафиксированная в ходе реализации ДО анализа
+#        результатов, но в пререгистрации не детализированная.
+
+age_boundary:                                # [D] закон, не константа
+  source: "Указ Президента №137 от 11.04.2016, график +6 мес/год 2017-2022"
+  data_file: "data/curated/retirement_age.csv"
+  final_as_is: { m: 63.0, f: 58.0 }          # финал графика с 2022 года
+  variants: [as_is, "65_60", "67_62"]        # [P] политические контрфакты
+  policy_applies_from: 2026                  # [P]: гипотетические графики не
+                                             # переписывают прошлое - до 2026
+                                             # действует ТОЛЬКО as_is
+  within_group_distribution: uniform         # [O]: равномерное распределение
+                                             # внутри 5-летних групп при
+                                             # дробном делении по границе
+                                             # возраста (не кратной 5 годам)
+
+metrics:                                     # [P] формулы, Приложение А ТЗ
+  SR: "P[16..A(t)-1] / P[>=A(t)]"            # суммируется по обоим полам
+  TDR: "(P[0..15] + P[>=A(t)]) / P[16..A(t)-1]"
+  working_lower_bound: 16.0                  # [P] нижняя граница трудоспособного
+  CG: "(E * W * tau) / (R * B)"              # класс MODEL всегда
+
+crossing:                                    # [P]
+  thresholds: [2.0, 1.5, 1.0]
+  interpolation: linear_between_forecast_nodes
+  rounding_years: integer
+
+contribution_gap:                            # CG - целиком класс MODEL
+  contribution_rate: 0.29                    # [D] ст.5 закона №118-З:
+                                             # 28% работодатель + 1% работник,
+                                             # пенсионное страхование ТОЛЬКО;
+                                             # НЕ включает отдельные 6%
+                                             # социального страхования (иное
+                                             # назначение фонда)
+  k_oblast_anchor_year: 2019                 # [O] последний год, где есть И
+                                             # возрастная структура области
+                                             # (перепись), И официальные
+                                             # получатели пенсий по годам
+  k_oblast_extension: "перенесено на прогнозные годы без изменения -
+                       районного разреза получателей не существует"
+  avg_pension_and_wages: "held at latest observed nominal level for all
+                          forecast years"    # [O] изолирует демографический
+                                             # эффект, НЕ прогноз реальной
+                                             # экономики (см. LIMITATIONS.md)
+  employment_forecast_years_2031plus: "2024 employment-rate / working-age-population
+                                       ratio held constant"   # [O]
+  commute_suppression:                       # G-7, [P]
+    cutoff_minutes: 45
+    fallback: suppress_within_cutoff
+    source: "data/curated/travel_times.csv (min_minsk, INF-04)"
+  sensitivity_bands_g5: [-10, 10]            # [P] проценты; расширяется до
+                                             # [-20,20] без районной занятости
+                                             # (в MVP занятость по районам
+                                             # есть - расширение не применялось)
+
+policy_variants:                             # [P]
+  as_is: "действующий график (финал 63м/58ж)"
+  "65_60": "65 муж. / 60 жен."
+  "67_62": "67 муж. / 62 жен."
+
+validation_gates:                            # [P] раздел 7 ТЗ; факт - VALIDATION.md
+  G1_national_shares_2025_01_01: { below16: 0.171, above_working: 0.245, tol_pp: 0.3 }
+  G2_raion_sum_vs_oblast_tol_pct: 0.1
+  G3_backtest: { window: "2009->2019", benchmark: "frozen SR-2009", correct_sign_min_share: 0.80 }
+  G4_national_SR_2050_vs_UN_WPP_2024_medium_tol_pct: 5
+  G5_sign_preserved_min_share_of_raions: 0.90
+  G6_expected_results_coverage_pct: 100
+  G7_commute_zone_minutes: 45
+
+backtest_g3_substitution:                    # [O], см. docs/decisions/INF-13.md
+  reason: "районного разреза переписи-1999 не существует - CCR-модель
+          sub.py (откалиброванная именно на паре 2009-2019) не может быть
+          честно бэктестирована на этом же окне"
+  method: "survival-only проекция 2009->2019: национальная таблица
+           смертности HMD-2018, БЕЗ миграции, БЕЗ калибровки к 2019, CWR из
+           самого 2009 года (независимый «наивный демограф»)"
+  window: [2009, 2019]
+
+national_history:
+  1989: "web/public/data/pyramids.json (уже опубликованный ряд WP P-1)"
+  1999: "web/public/data/pyramids.json (уже опубликованный ряд WP P-1)"
+  2009: "census_structure(2009) - сумма 7 регионов"
+  2019: "census_structure(2019) - сумма 7 регионов"
+
+forecast:
+  version: "v2026.4"
+  scenarios: [base, optimistic, negative]
+  jumpoffs: [official, adjusted]             # adjusted = WP-F3, поправка на
+                                             # незарегистрированный отток
+                                             # 2020+ (см. LIMITATIONS.md)
+  territory_years: [2009, 2019, 2026, 2031, 2036, 2041, 2046, 2051, 2056]
+  national_years: [1989, 1999, 2009, 2019, 2026, 2031, 2036, 2041, 2046, 2051, 2056]
+  post_2050_uncertainty: "диапазон трёх сценариев, не точка"    # [P]
+
+rounding:
+  SR: 2
+  TDR: 2
+  CG: 2
+  years: integer
+
+publication:                                 # редакционный контракт, раздел 8 ТЗ
+  crossing_year_raion_as_interval_when_g3_fails: true
+  cg_class: MODEL_always
+  causal_language_about_retirement_age_policy: forbidden   # H3: «сдвигает
+                                                           # дату», не «решает
+                                                           # проблему»
+  no_district_level_real_finance_claims: true   # CG не описывается как
+                                                # самостоятельный районный
+                                                # финансовый баланс (раздел 8
+                                                # пререгистрации; см. также
+                                                # checks/tests/test_invariants.py)

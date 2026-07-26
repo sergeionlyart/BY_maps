@@ -1,0 +1,66 @@
+[
+ {
+  "metric": "cg_suppressed_count",
+  "value": 5
+ },
+ {
+  "metric": "cv_sr_2026",
+  "value": 0.1907
+ },
+ {
+  "metric": "cv_sr_2046",
+  "value": 0.193
+ },
+ {
+  "metric": "g1_share_above_model",
+  "value": 24.56
+ },
+ {
+  "metric": "karelicki_cg_2046",
+  "value": 0.53
+ },
+ {
+  "metric": "karelicki_sr_2009",
+  "value": 1.48
+ },
+ {
+  "metric": "karelicki_sr_2046",
+  "value": 1.05
+ },
+ {
+  "metric": "national_crossing_year_1_5",
+  "value": 2050
+ },
+ {
+  "metric": "national_crossing_year_2_0",
+  "value": 2038
+ },
+ {
+  "metric": "national_sr_2009",
+  "value": 2.73
+ },
+ {
+  "metric": "national_sr_2046",
+  "value": 1.68
+ },
+ {
+  "metric": "national_sr_2056",
+  "value": 1.41
+ },
+ {
+  "metric": "raions_below_1_5_2009",
+  "value": 1
+ },
+ {
+  "metric": "raions_below_1_5_2046",
+  "value": 69
+ },
+ {
+  "metric": "sd_sr_2026",
+  "value": 0.3811
+ },
+ {
+  "metric": "sd_sr_2046",
+  "value": 0.2849
+ }
+]

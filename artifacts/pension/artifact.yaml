@@ -1,0 +1,207 @@
+# Декларативное описание проверяемого пакета INF-13 `pension`
+# (ARTIFACT_STANDARD.md v1.0). Сборка: python -m etl.artifacts.build pension
+
+id: pension
+title: "Кто кого содержит: коэффициент поддержки, нагрузка и год перехода по 118 районам Беларуси, 1989-2056"
+version: "1.0.0"
+released: "2026-07-26"
+landing_url: "https://by-population-maps.vercel.app/research/pension"
+authors:
+  - "Проект «Население Беларуси, 1897–2026»"
+
+files:
+  - { path: README.md, role: docs }
+  - { path: CHANGELOG.md, role: docs }
+  - { path: AGENT.md, role: docs }
+  - { path: LIMITATIONS.md, role: docs }
+  - { path: PROVENANCE.md, role: docs }
+  - { path: CITATION.cff, role: docs }
+  - { path: LICENSE.md, role: docs }
+  - { path: PREREGISTRATION.md, role: docs }
+  - { path: claims.yaml, role: docs }
+  - { path: METHODS.md, role: docs }
+  - { path: VALIDATION.md, role: docs }
+  - { path: DATA_DICTIONARY.md, role: docs }
+  - { path: EXECUTIVE_BRIEF.md, role: docs }
+
+  - { path: sources/registry.csv, from: data/raw/pension/registry.csv, role: docs }
+  # документальные источники (не читаются кодом в рантайме - только сверка
+  # происхождения и контрольных сумм, AGENT.md задание 1)
+  - { path: sources/raw/belstat_naselenie_2025-01-01.pdf, from: data/raw/pension/belstat_naselenie_2025-01-01.pdf,
+      role: raw, license: "Национальный статистический комитет Республики Беларусь, официальная статистика" }
+  - { path: sources/raw/president_ukaz137_2016.html, from: data/raw/pension/president_ukaz137_2016.html,
+      role: raw, license: "официальный правовой акт (не объект авторского права)" }
+  - { path: sources/raw/myfin_pension_table.html, from: data/raw/pension/myfin_pension_table.html,
+      role: raw, license: "вторичный источник (частный финансовый портал), только для перекрёстной сверки" }
+  - { path: sources/raw/fszn_rate_law118z_art5.html, from: data/raw/pension/fszn_rate_law118z_art5.html,
+      role: raw, license: "текст статута через частный правовой агрегатор" }
+  - { path: sources/raw/owid_pop_age_groups_blr.csv, from: data/raw/pension/owid_pop_age_groups_blr.csv,
+      role: raw, license: "CC BY (Our World in Data, первичные данные UN WPP 2024)" }
+
+  # код: модуль pension + минимальное подмножество etl.forecast/registry/
+  # census_age/wages, необходимое именно для его цепочки импортов (прямых и
+  # ленивых внутри функций) - см. PROVENANCE.md
+  - { path: etl/__init__.py, from: artifacts/pension/shims/etl_init.py, role: code }
+  - { path: etl/common.py, from: artifacts/pension/shims/common.py, role: code }
+  - { path: etl/registry.py, from: etl/registry.py, role: code }
+  - { path: etl/census_age.py, from: etl/census_age.py, role: code }
+  - { path: etl/wages.py, from: etl/wages.py, role: code }
+  - { path: etl/pension.py, from: etl/pension.py, role: code }
+  - { path: etl/forecast/__init__.py, from: etl/forecast/__init__.py, role: code }
+  - { path: etl/forecast/data.py, from: etl/forecast/data.py, role: code }
+  - { path: etl/forecast/sub.py, from: etl/forecast/sub.py, role: code }
+  - { path: etl/forecast/lifetable.py, from: etl/forecast/lifetable.py, role: code }
+  - { path: etl/forecast/ccmpp.py, from: etl/forecast/ccmpp.py, role: code }
+  - { path: etl/forecast/migration.py, from: etl/forecast/migration.py, role: code }
+  - { path: etl/forecast/run.py, from: etl/forecast/run.py, role: code }
+  - { path: etl/forecast/scenarios/base.yaml, from: etl/forecast/scenarios/base.yaml, role: params }
+  - { path: etl/forecast/scenarios/optimistic.yaml, from: etl/forecast/scenarios/optimistic.yaml, role: params }
+  - { path: etl/forecast/scenarios/negative.yaml, from: etl/forecast/scenarios/negative.yaml, role: params }
+  - { path: params/assumptions.yaml, role: params }
+  - { path: code/run.sh, role: code }
+  - { path: code/verify.py, role: code }
+  - { path: code/requirements.lock, role: code }
+  - { path: checks/tests/test_invariants.py, role: code }
+
+  # входные данные (пути повторяют репозиторий - код работает без правок)
+  - { path: data/curated/age2009.csv, from: data/curated/age2009.csv, role: intermediate, license: "CC BY 4.0" }
+  - { path: data/curated/age2019.csv, from: data/curated/age2019.csv, role: intermediate, license: "CC BY 4.0" }
+  - { path: data/curated/age_current.csv, from: data/curated/age_current.csv, role: intermediate, license: "CC BY 4.0" }
+  - { path: data/curated/wages.csv, from: data/curated/wages.csv, role: intermediate, license: "открытые данные Белстата" }
+  - { path: data/curated/travel_times.csv, from: data/curated/travel_times.csv, role: intermediate, license: "ODbL 1.0 (производная OpenStreetMap, INF-04)" }
+  - { path: data/curated/retirement_age.csv, from: data/curated/retirement_age.csv, role: intermediate, license: "официальный правовой акт (не объект авторского права)" }
+  - { path: data/curated/mortality.csv, from: data/curated/mortality.csv, role: intermediate, license: "CC BY 4.0 (OWID)/HMD" }
+  - { path: data/curated/fertility_oblast.csv, from: data/curated/fertility_oblast.csv, role: intermediate, license: "CC BY 4.0 (Белстат, Демографический ежегодник)" }
+  - { path: data/curated/migration_internal.csv, from: data/curated/migration_internal.csv, role: intermediate, license: "открытые данные Белстата (перепись, матрица F602)" }
+  - { path: data/curated/forecast_age_by_v2026_4.json, from: data/curated/forecast_age_by_v2026_4.json, role: intermediate, license: "CC BY 4.0 (BY Maps)" }
+  - { path: data/curated/forecast_age_raion_v2026_4.json, from: data/curated/forecast_age_raion_v2026_4.json, role: intermediate, license: "CC BY 4.0 (BY Maps)" }
+  - { path: data/raw/wages/wage_10218000003_2010-2019.json, from: data/raw/wages/wage_10218000003_2010-2019.json, role: intermediate, license: "открытые данные Белстата" }
+  - { path: data/raw/wages/wage_10218000003_2020-2026.json, from: data/raw/wages/wage_10218000003_2020-2026.json, role: intermediate, license: "открытые данные Белстата" }
+  - { path: data/raw/wages/empl_person_10102000017_2010-2019.json, from: data/raw/wages/empl_person_10102000017_2010-2019.json, role: intermediate, license: "открытые данные Белстата" }
+  - { path: data/raw/wages/empl_person_10102000017_2020-2026.json, from: data/raw/wages/empl_person_10102000017_2020-2026.json, role: intermediate, license: "открытые данные Белстата" }
+  - { path: data/raw/pension/recipients_10106000001_2000-2020.json, from: data/raw/pension/recipients_10106000001_2000-2020.json, role: intermediate, license: "открытые данные Белстата" }
+  - { path: data/raw/pension/avg_pension_10106000002_2000-2025.json, from: data/raw/pension/avg_pension_10106000002_2000-2025.json, role: intermediate, license: "открытые данные Белстата" }
+  - { path: data/raw/wpp2024/blr_indicators_medium.csv, from: data/raw/wpp2024/blr_indicators_medium.csv, role: intermediate, license: "CC BY 3.0 IGO (UN WPP 2024)" }
+  - { path: web/public/data/pyramids.json, from: web/public/data/pyramids.json, role: intermediate, license: "CC BY 4.0 (BY Maps, WP P-1)" }
+
+  # итоговые данные - ровно те, что на лендинге (регенерируются тем же
+  # прогоном run.sh; здесь - опубликованный снимок)
+  - { path: web/public/data/pension.json, from: web/public/data/pension.json, role: final, license: "CC BY 4.0" }
+  - { path: data/curated/pension_inputs.csv, from: data/curated/pension_inputs.csv, role: final, license: "CC BY 4.0" }
+  - { path: docs/notes/pension_validation.md, from: docs/notes/pension_validation.md, role: final, license: "CC BY 4.0" }
+  # контрольный снимок (без from: - лежит в самом пакете, см.
+  # ARTIFACT_STANDARD.md; регенерируется code/verify.py при каждом прогоне)
+  - { path: data/final/computed_results.json, role: final, license: "CC BY 4.0" }
+
+sources:
+  - id: recipients_oblast
+    url: "https://dataportal.belstat.gov.by/osids-public-api/indicator/indicatorValuesSearch"
+    description: "Дата-портал Белстата, индикатор 10106000001 «Численность пенсионеров на конец периода», область, 2000-2020"
+    license: "открытые данные Белстата"
+    accessed: "2026-07-26"
+    sha256: "f71c58a646018b864f571b152547307ed24f119aae09ee29633fb1990b755997"
+    vendored: "data/raw/pension/recipients_10106000001_2000-2020.json"
+  - id: avg_pension_oblast
+    url: "https://dataportal.belstat.gov.by/osids-public-api/indicator/indicatorValuesSearch"
+    description: "Дата-портал Белстата, индикатор 10106000002 «Средний размер назначенных пенсий на конец периода», область, 2000-2025"
+    license: "открытые данные Белстата"
+    accessed: "2026-07-26"
+    sha256: "bd2791b268e4250050a51046eb702ffee303cd4be32cf4d8e96e49ee075dd914"
+    vendored: "data/raw/pension/avg_pension_10106000002_2000-2025.json"
+  - id: belstat_age_shares_2025
+    url: "https://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/oficial_statistika/2025/naselenie_2025.pdf"
+    description: "Белстат, инфографика «Население Республики Беларусь. На 1 января 2025 г.» - реперные абсолютные числа для гейта G-1"
+    license: "Национальный статистический комитет Республики Беларусь, официальная статистика"
+    accessed: "2026-07-26"
+    sha256: "62ebb64150011f6008391d29fb25d0be676e5ad5c310af6c3bfa7183e6682e8c"
+    vendored: "sources/raw/belstat_naselenie_2025-01-01.pdf"
+  - id: ukaz137_2016_president
+    url: "https://president.gov.by/ru/documents/ukaz-137-ot-11-aprelja-2016-g-13449"
+    description: "Указ Президента №137 от 11.04.2016 «О совершенствовании пенсионного обеспечения» - график повышения пенсионного возраста (data/curated/retirement_age.csv)"
+    license: "официальный правовой акт (не объект авторского права)"
+    accessed: "2026-07-26"
+    sha256: "0094bbc4d134e913a89d63ef38c3cc9ca27345ce8efffa7473bbfac52b15aee0"
+    vendored: "sources/raw/president_ukaz137_2016.html"
+  - id: myfin_pension_table
+    url: "https://myfin.by/wiki/term/tablica-vyhoda-na-pensiyu"
+    description: "myfin.by, «Таблица выхода на пенсию» - только для перекрёстной сверки календарного графика (НЕ первичный источник)"
+    license: "вторичный источник (частный финансовый портал)"
+    accessed: "2026-07-26"
+    sha256: "227a87cdaec9a8c2dfa6dcdfb4e4a99eec149ff68ff9c13d6928f9d694aceee8"
+    vendored: "sources/raw/myfin_pension_table.html"
+  - id: fszn_rate_law118z
+    url: "https://zakony-by.com/zakon_rb_o_vznosah_v_byudzhet_gosudarstvennogo_vnebyudzhetnogo_fonda_sotsial_noj_zawity_naseleniya_respubliki_belarus/5.htm"
+    description: "Закон РБ №118-З от 15.07.2021, ст.5 - ставка пенсионного страхования (28% работодатель + 1% работник = CONTRIB_RATE 0.29 в etl/pension.py)"
+    license: "текст статута через частный правовой агрегатор"
+    accessed: "2026-07-26"
+    sha256: "39646e28b2b981b67ace21dc21f9a3b22c65e12c7a94d78e4812c90432a2dd1b"
+    vendored: "sources/raw/fszn_rate_law118z_art5.html"
+  - id: owid_wpp2024_age_groups
+    url: "https://ourworldindata.org/grapher/population-by-age-group-with-projections.csv"
+    description: "Our World in Data (зеркало UN WPP 2024 medium) - возрастные группы Беларуси для расчёта потенциального коэффициента поддержки UN на 2050 (гейт G-4)"
+    license: "CC BY (Our World in Data, первичные данные UN WPP 2024)"
+    accessed: "2026-07-26"
+    sha256: "e69ab10e010434b459973fcf620f3b52c0ad99aebb9308005e2f26087a261e0f"
+    vendored: "sources/raw/owid_pop_age_groups_blr.csv"
+  - id: wpf1_census_age_2009_2019
+    url: "см. data/raw/registry_wpf1.csv (пакет by-maps-aging) - OLAP-куб F201N Белстата, census.belstat.gov.by"
+    description: "Возрастно-половые структуры районов, переписи 2009/2019 - переиспользованы без повторного скачивания (data/curated/age2009.csv, age2019.csv)"
+    license: "CC BY 4.0"
+    accessed: "2026-07-11"
+  - id: inf03_wages_employment
+    url: "https://dataportal.belstat.gov.by/osids-public-api/indicator/indicatorValuesSearch"
+    description: "Индикаторы 10218000003 (зарплата) и 10102000017 (занятые) по районам - уже завендорены этапом INF-03/INF-08, переиспользованы без повторного скачивания (data/raw/wages/*.json)"
+    license: "открытые данные Белстата"
+    accessed: "2026-07-11"
+  - id: un_wpp2024_indicators
+    url: "https://population.un.org/wpp/"
+    description: "UN WPP 2024 Medium, сводные демографические показатели - переиспользованы из data/raw/wpp2024/ (сценарий base, follow_wpp: true в etl/forecast/scenarios/base.yaml)"
+    license: "CC BY 3.0 IGO"
+    accessed: "2026-07-11"
+    sha256: "26215b1e1ac71ab090ee17367316e0bec7083f0526889ed0157a27008c581deb"
+
+entrypoints:
+  reproduce: "code/run.sh"
+  verify: "python3 code/verify.py"
+
+environment:
+  python: ">=3.10"
+  lock: "code/requirements.lock"
+  seed: null   # расчёт детерминирован, случайности нет
+
+# Контрольные значения покрывают H1 (доля районов SR<1,5 2009 vs 2046),
+# H2 (CV(SR) 2026 vs 2046), национальный и районный CALC-слой, MODEL-слой
+# (CG Кореличского района, число подавленных G-7) и DATA-слой (гейт G-1).
+expected_results:
+  - { metric: national_sr_2009, value: 2.73, tolerance: 0.01,
+      description: "SR страны, 1989-2019: перепись 2009, as_is/base:official" }
+  - { metric: national_sr_2046, value: 1.68, tolerance: 0.01,
+      description: "SR страны, прогноз 2046, базовый сценарий, официальный старт" }
+  - { metric: national_sr_2056, value: 1.41, tolerance: 0.01,
+      description: "SR страны, прогноз 2056, базовый сценарий, официальный старт" }
+  - { metric: national_crossing_year_1_5, value: 2050, tolerance: 0,
+      description: "год перехода порога SR<1,5 страной (as_is, base:official) - точный год, не завязан на G-3" }
+  - { metric: national_crossing_year_2_0, value: 2038, tolerance: 0,
+      description: "год перехода порога SR<2,0 страной (as_is, base:official)" }
+  - { metric: raions_below_1_5_2009, value: 1, tolerance: 0,
+      description: "районов из 118 с SR<1,5 в 2009 году (H1: пререгистрация ожидала 0 - фактически 1, Кореличский район, см. docs/decisions/INF-13.md)" }
+  - { metric: raions_below_1_5_2046, value: 69, tolerance: 0,
+      description: "районов из 118 с SR<1,5 в 2046 году, базовый сценарий (H1: 58,5% > 50%)" }
+  - { metric: karelicki_sr_2009, value: 1.48, tolerance: 0.01,
+      description: "SR Кореличского района, перепись 2009 - единственный район ниже 1,5 уже в 2009" }
+  - { metric: karelicki_sr_2046, value: 1.05, tolerance: 0.01,
+      description: "SR Кореличского района, прогноз 2046, base:official" }
+  - { metric: karelicki_cg_2046, value: 0.53, tolerance: 0.02,
+      description: "CG (MODEL) Кореличского района, 2046, base:official - условный индекс, не показатель реальных выплат" }
+  - { metric: cg_suppressed_count, value: 5, tolerance: 0,
+      description: "районов с подавленным CG (G-7: зона <=45 мин доступности до Минска)" }
+  - { metric: cv_sr_2026, value: 0.1907, tolerance: 0.002,
+      description: "межрайонный коэффициент вариации SR, 2026 (H2: должен вырасти к 2046)" }
+  - { metric: cv_sr_2046, value: 0.193, tolerance: 0.002,
+      description: "межрайонный коэффициент вариации SR, 2046 (H2: 0,193 > 0,191 в 2026 - формально подтверждает H2)" }
+  - { metric: sd_sr_2026, value: 0.3811, tolerance: 0.002,
+      description: "межрайонное стандартное отклонение SR, 2026 (находка B скептика: абсолютный разброс, в отличие от CV, СУЖАЕТСЯ к 2046 - см. LIMITATIONS.md)" }
+  - { metric: sd_sr_2046, value: 0.2849, tolerance: 0.002,
+      description: "межрайонное стандартное отклонение SR, 2046 - на 25% ниже 2026 года: страна сходится к более низкому общему уровню, а не расслаивается в абсолютном выражении" }
+  - { metric: g1_share_above_model, value: 24.56, tolerance: 0.05,
+      description: "гейт G-1: модельная доля населения старше трудоспособного возраста на 01.01.2025, %, против эталона Белстата 24,57%" }

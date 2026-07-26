@@ -2,14 +2,15 @@ import { describe, expect, it } from 'vitest';
 import { RESEARCH } from './research';
 
 describe('реестр исследований', () => {
-  it('слаги уникальны; коды — INF-01..09 + ML + INF-12', () => {
+  it('слаги уникальны; коды — INF-01..09 + ML + INF-12 + INF-13', () => {
     const slugs = RESEARCH.map((r) => r.slug);
     expect(new Set(slugs).size).toBe(slugs.length);
-    expect(RESEARCH).toHaveLength(11);
+    expect(RESEARCH).toHaveLength(12);
     expect(RESEARCH.map((r) => r.code)).toEqual([
       ...Array.from({ length: 9 }, (_, i) => `INF-0${i + 1}`),
       'ML',
       'INF-12',
+      'INF-13',
     ]);
   });
 

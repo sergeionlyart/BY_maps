@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "Цитируйте конкретную версию пакета"
+title: "Кто кого содержит: коэффициент поддержки, нагрузка и год перехода по 118 районам Беларуси, 1989-2056 (проверяемый пакет)"
+type: dataset
+version: 1.0.0
+date-released: "2026-07-26"
+authors:
+  - name: "Проект «Население Беларуси, 1897–2026»"
+url: "https://by-population-maps.vercel.app/research/pension"
+repository-code: "https://github.com/sergeionlyart/BY_maps"
+identifiers:
+  - type: other
+    value: "artifact-pension-v1.0.0"
+    description: "git-тег релиза пакета"
+license: CC-BY-4.0

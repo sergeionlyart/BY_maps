@@ -1574,3 +1574,31 @@ a.service-card:hover .sc-cta { text-decoration: underline; }
 }
 .pyr-play:hover { filter: brightness(1.08); }
 .pyr-play .pyr-play-icon { font-size: 13px; letter-spacing: -1px; }
+
+/* INF-13 BEGIN */
+/* /research/pension: три переключателя (сценарий/стартовый ряд/пенсионный
+   возраст) с длинными подписями и текстом кнопок переполняли строку на узких
+   экранах (.seg по построению не переносится - сегментированный контрол).
+   На узких вьюпортах подпись уходит на свою строку, кнопки переносятся. */
+@media (max-width: 480px) {
+  .pen-view .control-group { flex-wrap: wrap; row-gap: 4px; }
+  .pen-view .control-group .control-label { flex: 1 0 100%; }
+  .pen-view .seg { flex-wrap: wrap; }
+  .pen-view .seg button { flex: 1 1 auto; }
+}
+/* Независимая проверка (docs/decisions/INF-13.md) нашла: белый текст
+   .seg button.on/.scn-base.on на --accent в тёмной теме (#3987e5) даёт
+   3.64:1 - ниже AA 4.5:1 (замер по формуле WCAG в браузере). В светлой
+   теме тот же контур проходит (5.67:1) - баг только тёмной темы. Это
+   ПРЕДСУЩЕСТВУЮЩИЙ дефект общего компонента .seg (не внесён этой сдачей,
+   есть и на /map, /pyramid), затрагивающий переключатели сценария/
+   стартового ряда/пенсионного возраста этой страницы - чинится здесь
+   только для .pen-view (общие файлы - без рефакторинга чужого кода),
+   тем же приёмом, что уже применён к .scn-optimistic.on/.scn-negative.on
+   (тёмный текст вместо белого). Сайтовый баг вне .pen-view вынесен
+   отдельной задачей, не входит в эту сдачу. */
+@media (prefers-color-scheme: dark) {
+  .pen-view .seg button.on,
+  .pen-view .seg button.scn-base.on { color: #0d0d0d; }
+}
+/* INF-13 END */

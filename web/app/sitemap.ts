@@ -9,6 +9,7 @@ const ARTIFACT_SLUGS = [
   'zipf', 'aging', 'wages', 'access', 'migration',
   'monotowns', 'chernobyl', 'nightlights', 'shocks', 'ml', 'forecast', 'pyramid',
   'urban-overhang',
+  /* INF-13 BEGIN */ 'pension', /* INF-13 END */
 ];
 
 /** Канонические RU-пути всех индексируемых страниц (BE-двойник добавляется автоматически). */
