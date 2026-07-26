@@ -19,7 +19,7 @@
 
 | # | Дата (ISO) | Группа | WP / этап | Коммит/PR | Что сдано | Замок держался |
 |---|---|---|---|---|---|---|
-| 1 | 2026-07-26T18:35:00+03:00 | INF-13 | этап 0 (подготовка) | (см. docs/decisions/INF-13.md) | районная возрастная деталь прогноза (`forecast_age_raion_v2026_4.json`), параметризация `E2E_PORT` в `web/playwright.config.ts`, служебные файлы регламента (этот файл, `LOCKS/`, `docs/decisions/INF-13.md`, `docs/decisions/INF-15.md`) | — |
+| 1 | 2026-07-26T18:35:00+03:00 | INF-13 | этап 0 (подготовка) | `3d23181` (master, squash от `feature/inf13-pension`@`bb661a5`) | пререгистрация (`docs/preregistration/pension-v0.1.md`), районная возрастная деталь прогноза (`forecast_age_raion_v2026_4.json`), параметризация `E2E_PORT` в `web/playwright.config.ts`, служебные файлы регламента (этот файл, `LOCKS/`, `docs/decisions/INF-13.md`, `docs/decisions/INF-15.md`) | ~2 мин, снят после мержа |
 
 ## Активные замки
 
