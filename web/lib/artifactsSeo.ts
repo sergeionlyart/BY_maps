@@ -25,6 +25,9 @@ export const ARTIFACT_SEO: Record<string, ArtifactSeo> = {
   pyramid: { ru: 'Возрастно-половая пирамида Беларуси 1959–2075', be: 'Узростава-палавая піраміда Беларусі 1959–2075', file: 'by-maps-pyramid-v1.0.0.zip', version: '1.0.0' },
   forecast: { ru: 'Прогноз населения Беларуси 2026–2075', be: 'Прагноз насельніцтва Беларусі 2026–2075', file: 'by-maps-forecast-v1.3.1.zip', version: '1.3.1' },
   'urban-overhang': { ru: 'Материальный навес городов Беларуси, 1975–2020', be: 'Матэрыяльны навес гарадоў Беларусі, 1975–2020', file: 'by-maps-urban-overhang-v1.0.0.zip', version: '1.0.0' },
+  /* INF-15 BEGIN */
+  grid: { ru: 'Полотно: карта расселения Беларуси по сетке 1 км, 1975–2050', be: 'Палатно: карта расселення Беларусі па сетцы 1 км, 1975–2050', file: 'by-maps-grid-v1.0.0.zip', version: '1.0.0' },
+  /* INF-15 END */
 };
 
 /** Предметные title/description для metadata (задача 8). */

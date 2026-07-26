@@ -1,0 +1,10 @@
+# INF-15 «Полотно»: тяжёлые зависимости для пересоздания растровых
+# экстрактов из тайлов GHS-POP (~ГБ на диске в кэше, не в репозитории).
+# НЕ устанавливаются в основном CI-шаге (см. requirements.txt) - растровые
+# тесты skip'аются без rasterio (etl/tests/test_grid*.py).
+#
+# Установка:  .venv/bin/pip install -r requirements-raster.txt
+#
+# numpy и Pillow уже есть в requirements.txt - здесь не дублируются.
+rasterio>=1.3
+scipy>=1.11

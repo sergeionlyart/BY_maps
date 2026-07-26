@@ -1,0 +1,3130 @@
+{
+  "generated_by": "etl.grid_network",
+  "g6": {
+    "osm_total_km": 76958.8,
+    "osm_total_km_by_class": {
+      "motorway": 1013.3,
+      "motorway_link": 109.2,
+      "primary": 13257.8,
+      "primary_link": 154.7,
+      "secondary": 7887.7,
+      "secondary_link": 23.8,
+      "tertiary": 49559.2,
+      "tertiary_link": 34.3,
+      "trunk": 4471.2,
+      "trunk_link": 447.6
+    },
+    "official_total_km": 86446.0,
+    "official_republican_km": 15934.0,
+    "official_local_km": 70512.0,
+    "official_source": "beldorcenter_2026",
+    "official_accessed": "2026-07-26",
+    "delta_pct": -10.97,
+    "tolerance_pct": 15.0,
+    "passed": true,
+    "mode": "absolute",
+    "note": "Снимок INF-04 содержит только классы motorway/trunk/primary/secondary/tertiary (+_link) — без residential/unclassified/track; официальная статистика включает ВСЕ дороги общего пользования (включая местные проездные/дворовые). Сравнение — общий итог против общего итога (раздел 7 ТЗ, проверка 6), классового сопоставления республиканские<->motorway/trunk не делаем (не 1:1 совместимые классификации).",
+    "geometry_note": "6822 рёбер (0.82%) не попали ни в один полигон covered_by (расхождение клип-границы Geofabrik-выгрузки и adm2-полигонов проекта) — присвоены ближайшему району (STRtree.nearest); 408 рёбер лежат на общей границе двух районов (совпадающая грань полигонов) — присвоены по приоритету последнего в списке (BY-HM тут не участвует, кроме случаев Минск/Минский район)."
+  },
+  "correlation_c3": {
+    "n_raions": 118,
+    "variable_x": "network_per_capita_2026 (road_km_per_1000, все классы OSM)",
+    "variable_y": "pop_change_1989_2026_pct (официальная численность data.json)",
+    "spearman_rho": -0.7508,
+    "p_value": 1.2496102965852653e-22,
+    "method": "scipy.stats.spearmanr",
+    "sign": "negative",
+    "significant_at_0.05": true,
+    "supports_c3": true,
+    "hypothesis": "C-3 (пререгистрация grid-v0.1.md §3): дорожной сети на одного жителя больше там, где депопуляция сильнее -> ожидаем отрицательную и значимую корреляцию Спирмена.",
+    "note": "Проверка на исключение городских районов INF-12 (доп. условие контракта опровержения C-3 в §7 пререгистрации) в этом модуле не выполнялась — вне рамок текущего WP (только базовая корреляция §3); если базовая корреляция не подтверждает C-3, доп. проверка не требуется по контракту опровержения."
+  },
+  "national": {
+    "road_km_total": 76958.8,
+    "pop_current_total": 9056121,
+    "pop_current_total_note": "сумма по 119 территориям (118 районов + г. Минск, тот же периметр зон, что в etl/nightlights_extract.py::_zone_labels) - НЕ равна полной численности страны: население областных/районных городов (c-baranavichy и т.п.) учтено в data.json отдельными территориями и в эту сумму не входит, т.к. они не входят в периметр 119 зон этого модуля.",
+    "road_km_per_1000": 8.498,
+    "n_edges": 833438,
+    "n_edges_snapped_to_nearest": 6822,
+    "n_edges_on_shared_boundary": 408
+  },
+  "territories": {
+    "r-baranavicki": {
+      "road_km_total": 1056.98,
+      "road_km_by_class": {
+        "tertiary": 566.592,
+        "secondary": 153.445,
+        "primary": 182.414,
+        "motorway_link": 11.243,
+        "primary_link": 1.356,
+        "secondary_link": 0.978,
+        "motorway": 140.726,
+        "tertiary_link": 0.226
+      },
+      "area_km2": 2228.0,
+      "pop_current": {
+        "year": 2026,
+        "value": 196068,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 214104,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -8.424,
+      "road_km_per_1000": 5.391,
+      "road_km_per_km2": 0.4744,
+      "relative_index_per_1000_vs_national_mean": 0.245
+    },
+    "r-brescki": {
+      "road_km_total": 923.27,
+      "road_km_by_class": {
+        "secondary": 120.464,
+        "tertiary": 478.11,
+        "trunk": 148.59,
+        "trunk_link": 13.593,
+        "primary": 156.545,
+        "primary_link": 4.839,
+        "tertiary_link": 0.897,
+        "secondary_link": 0.229
+      },
+      "area_km2": 1709.9,
+      "pop_current": {
+        "year": 2026,
+        "value": 393012,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 300830,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": 30.643,
+      "road_km_per_1000": 2.349,
+      "road_km_per_km2": 0.54,
+      "relative_index_per_1000_vs_national_mean": 0.107
+    },
+    "r-biarozauski": {
+      "road_km_total": 608.84,
+      "road_km_by_class": {
+        "secondary": 26.592,
+        "tertiary": 377.193,
+        "primary": 119.483,
+        "motorway_link": 8.085,
+        "primary_link": 0.833,
+        "motorway": 76.175,
+        "secondary_link": 0.142,
+        "tertiary_link": 0.341
+      },
+      "area_km2": 1400.8,
+      "pop_current": {
+        "year": 2026,
+        "value": 56182,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 69755,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -19.458,
+      "road_km_per_1000": 10.837,
+      "road_km_per_km2": 0.4346,
+      "relative_index_per_1000_vs_national_mean": 0.492
+    },
+    "r-hancavicki": {
+      "road_km_total": 298.02,
+      "road_km_by_class": {
+        "tertiary": 137.237,
+        "secondary": 83.215,
+        "primary": 77.243,
+        "primary_link": 0.327
+      },
+      "area_km2": 1685.6,
+      "pop_current": {
+        "year": 2026,
+        "value": 23441,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 38104,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -38.482,
+      "road_km_per_1000": 12.714,
+      "road_km_per_km2": 0.1768,
+      "relative_index_per_1000_vs_national_mean": 0.577
+    },
+    "r-drahichynski": {
+      "road_km_total": 724.66,
+      "road_km_by_class": {
+        "secondary": 146.373,
+        "tertiary": 499.96,
+        "secondary_link": 0.277,
+        "primary": 33.738,
+        "trunk": 43.899,
+        "trunk_link": 0.099,
+        "tertiary_link": 0.311
+      },
+      "area_km2": 1897.5,
+      "pop_current": {
+        "year": 2026,
+        "value": 32343,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 53917,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -40.013,
+      "road_km_per_1000": 22.405,
+      "road_km_per_km2": 0.3819,
+      "relative_index_per_1000_vs_national_mean": 1.017
+    },
+    "r-zhabinkauski": {
+      "road_km_total": 372.03,
+      "road_km_by_class": {
+        "tertiary": 272.189,
+        "trunk_link": 3.668,
+        "secondary": 22.456,
+        "primary": 38.936,
+        "trunk": 34.59,
+        "primary_link": 0.195
+      },
+      "area_km2": 686.8,
+      "pop_current": {
+        "year": 2026,
+        "value": 24277,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 25855,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -6.103,
+      "road_km_per_1000": 15.325,
+      "road_km_per_km2": 0.5417,
+      "relative_index_per_1000_vs_national_mean": 0.696
+    },
+    "r-ivanauski": {
+      "road_km_total": 570.96,
+      "road_km_by_class": {
+        "tertiary": 443.926,
+        "secondary": 58.967,
+        "primary": 37.91,
+        "tertiary_link": 0.476,
+        "secondary_link": 0.215,
+        "trunk_link": 0.679,
+        "trunk": 28.736,
+        "primary_link": 0.047
+      },
+      "area_km2": 1566.5,
+      "pop_current": {
+        "year": 2026,
+        "value": 33772,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 52971,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -36.244,
+      "road_km_per_1000": 16.906,
+      "road_km_per_km2": 0.3645,
+      "relative_index_per_1000_vs_national_mean": 0.768
+    },
+    "r-ivacevicki": {
+      "road_km_total": 664.54,
+      "road_km_by_class": {
+        "primary_link": 1.067,
+        "tertiary": 388.612,
+        "motorway_link": 9.505,
+        "trunk": 22.363,
+        "primary": 135.883,
+        "secondary": 12.098,
+        "motorway": 94.646,
+        "tertiary_link": 0.199,
+        "trunk_link": 0.164
+      },
+      "area_km2": 2985.3,
+      "pop_current": {
+        "year": 2026,
+        "value": 48662,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 67743,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -28.167,
+      "road_km_per_1000": 13.656,
+      "road_km_per_km2": 0.2226,
+      "relative_index_per_1000_vs_national_mean": 0.62
+    },
+    "r-kamianiecki": {
+      "road_km_total": 903.1,
+      "road_km_by_class": {
+        "primary": 240.094,
+        "tertiary": 576.821,
+        "secondary": 82.185,
+        "primary_link": 3.446,
+        "secondary_link": 0.266,
+        "tertiary_link": 0.286
+      },
+      "area_km2": 1747.0,
+      "pop_current": {
+        "year": 2026,
+        "value": 30162,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 43986,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -31.428,
+      "road_km_per_1000": 29.942,
+      "road_km_per_km2": 0.5169,
+      "relative_index_per_1000_vs_national_mean": 1.359
+    },
+    "r-kobrynski": {
+      "road_km_total": 833.35,
+      "road_km_by_class": {
+        "secondary": 68.392,
+        "motorway_link": 3.853,
+        "primary": 140.663,
+        "tertiary": 454.869,
+        "trunk": 88.85,
+        "trunk_link": 14.177,
+        "primary_link": 1.27,
+        "motorway": 60.541,
+        "tertiary_link": 0.73
+      },
+      "area_km2": 2075.0,
+      "pop_current": {
+        "year": 2026,
+        "value": 80557,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 88186,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -8.651,
+      "road_km_per_1000": 10.345,
+      "road_km_per_km2": 0.4016,
+      "relative_index_per_1000_vs_national_mean": 0.47
+    },
+    "r-luniniecki": {
+      "road_km_total": 659.81,
+      "road_km_by_class": {
+        "tertiary": 365.025,
+        "secondary": 159.275,
+        "trunk_link": 3.908,
+        "primary": 56.852,
+        "primary_link": 1.062,
+        "trunk": 73.377,
+        "tertiary_link": 0.305
+      },
+      "area_km2": 2693.1,
+      "pop_current": {
+        "year": 2026,
+        "value": 59463,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 82705,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -28.102,
+      "road_km_per_1000": 11.096,
+      "road_km_per_km2": 0.245,
+      "relative_index_per_1000_vs_national_mean": 0.504
+    },
+    "r-lachavicki": {
+      "road_km_total": 446.41,
+      "road_km_by_class": {
+        "tertiary": 352.685,
+        "primary": 81.635,
+        "primary_link": 0.543,
+        "secondary": 11.46,
+        "tertiary_link": 0.09
+      },
+      "area_km2": 1346.8,
+      "pop_current": {
+        "year": 2026,
+        "value": 21059,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 39877,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -47.19,
+      "road_km_per_1000": 21.198,
+      "road_km_per_km2": 0.3315,
+      "relative_index_per_1000_vs_national_mean": 0.962
+    },
+    "r-malarycki": {
+      "road_km_total": 531.5,
+      "road_km_by_class": {
+        "secondary": 94.614,
+        "tertiary": 357.306,
+        "trunk": 59.159,
+        "primary": 19.99,
+        "trunk_link": 0.387,
+        "secondary_link": 0.048
+      },
+      "area_km2": 1385.7,
+      "pop_current": {
+        "year": 2026,
+        "value": 22006,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 28719,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -23.375,
+      "road_km_per_1000": 24.153,
+      "road_km_per_km2": 0.3836,
+      "relative_index_per_1000_vs_national_mean": 1.097
+    },
+    "r-pinski": {
+      "road_km_total": 975.92,
+      "road_km_by_class": {
+        "tertiary": 592.236,
+        "tertiary_link": 0.286,
+        "secondary": 122.174,
+        "primary": 200.078,
+        "trunk_link": 4.41,
+        "trunk": 56.426,
+        "primary_link": 0.306
+      },
+      "area_km2": 3330.7,
+      "pop_current": {
+        "year": 2026,
+        "value": 162875,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 190898,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -14.68,
+      "road_km_per_1000": 5.992,
+      "road_km_per_km2": 0.293,
+      "relative_index_per_1000_vs_national_mean": 0.272
+    },
+    "r-pruzhanski": {
+      "road_km_total": 829.21,
+      "road_km_by_class": {
+        "primary": 290.215,
+        "secondary": 49.718,
+        "tertiary": 488.936,
+        "secondary_link": 0.071,
+        "tertiary_link": 0.083,
+        "primary_link": 0.19
+      },
+      "area_km2": 2853.3,
+      "pop_current": {
+        "year": 2026,
+        "value": 39913,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 68898,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -42.069,
+      "road_km_per_1000": 20.776,
+      "road_km_per_km2": 0.2906,
+      "relative_index_per_1000_vs_national_mean": 0.943
+    },
+    "r-stolinski": {
+      "road_km_total": 571.55,
+      "road_km_by_class": {
+        "tertiary": 371.476,
+        "primary": 113.3,
+        "secondary": 86.597,
+        "primary_link": 0.175
+      },
+      "area_km2": 3358.1,
+      "pop_current": {
+        "year": 2026,
+        "value": 66836,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 91812,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -27.203,
+      "road_km_per_1000": 8.551,
+      "road_km_per_km2": 0.1702,
+      "relative_index_per_1000_vs_national_mean": 0.388
+    },
+    "r-arshanski": {
+      "road_km_total": 953.67,
+      "road_km_by_class": {
+        "tertiary": 604.802,
+        "trunk_link": 11.522,
+        "primary": 170.427,
+        "secondary": 23.207,
+        "motorway_link": 12.22,
+        "trunk": 80.326,
+        "motorway": 50.48,
+        "primary_link": 0.351,
+        "tertiary_link": 0.339
+      },
+      "area_km2": 1725.3,
+      "pop_current": {
+        "year": 2026,
+        "value": 137772,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 182930,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -24.686,
+      "road_km_per_1000": 6.922,
+      "road_km_per_km2": 0.5528,
+      "relative_index_per_1000_vs_national_mean": 0.314
+    },
+    "r-bieshankovicki": {
+      "road_km_total": 531.54,
+      "road_km_by_class": {
+        "tertiary": 369.367,
+        "secondary": 15.755,
+        "primary": 84.776,
+        "trunk_link": 0.202,
+        "trunk": 61.439
+      },
+      "area_km2": 1218.3,
+      "pop_current": {
+        "year": 2026,
+        "value": 12842,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 25799,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -50.223,
+      "road_km_per_1000": 41.391,
+      "road_km_per_km2": 0.4363,
+      "relative_index_per_1000_vs_national_mean": 1.879
+    },
+    "r-braslauski": {
+      "road_km_total": 904.58,
+      "road_km_by_class": {
+        "tertiary": 683.136,
+        "primary": 133.163,
+        "secondary": 88.057,
+        "tertiary_link": 0.118,
+        "primary_link": 0.108
+      },
+      "area_km2": 2284.8,
+      "pop_current": {
+        "year": 2026,
+        "value": 22349,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 35711,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -37.417,
+      "road_km_per_1000": 40.475,
+      "road_km_per_km2": 0.3959,
+      "relative_index_per_1000_vs_national_mean": 1.838
+    },
+    "r-vierchniadzvinski": {
+      "road_km_total": 674.18,
+      "road_km_by_class": {
+        "secondary": 91.142,
+        "trunk": 1.439,
+        "tertiary": 458.414,
+        "primary": 122.737,
+        "primary_link": 0.421,
+        "tertiary_link": 0.03
+      },
+      "area_km2": 2192.0,
+      "pop_current": {
+        "year": 2026,
+        "value": 17875,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 32235,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -44.548,
+      "road_km_per_1000": 37.717,
+      "road_km_per_km2": 0.3076,
+      "relative_index_per_1000_vs_national_mean": 1.712
+    },
+    "r-viciebski": {
+      "road_km_total": 1183.35,
+      "road_km_by_class": {
+        "tertiary": 590.947,
+        "trunk_link": 14.871,
+        "primary": 283.987,
+        "primary_link": 11.275,
+        "secondary": 169.316,
+        "secondary_link": 0.816,
+        "tertiary_link": 0.549,
+        "trunk": 111.586
+      },
+      "area_km2": 2802.4,
+      "pop_current": {
+        "year": 2026,
+        "value": 391400,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 409023,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -4.309,
+      "road_km_per_1000": 3.023,
+      "road_km_per_km2": 0.4223,
+      "relative_index_per_1000_vs_national_mean": 0.137
+    },
+    "r-haradocki": {
+      "road_km_total": 841.99,
+      "road_km_by_class": {
+        "tertiary": 691.329,
+        "trunk": 73.357,
+        "secondary": 35.941,
+        "trunk_link": 0.294,
+        "primary": 41.07
+      },
+      "area_km2": 3034.6,
+      "pop_current": {
+        "year": 2026,
+        "value": 19609,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 38197,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -48.664,
+      "road_km_per_1000": 42.939,
+      "road_km_per_km2": 0.2775,
+      "relative_index_per_1000_vs_national_mean": 1.95
+    },
+    "r-hlybocki": {
+      "road_km_total": 607.07,
+      "road_km_by_class": {
+        "tertiary": 448.783,
+        "secondary": 54.804,
+        "primary": 103.306,
+        "secondary_link": 0.09,
+        "primary_link": 0.082
+      },
+      "area_km2": 1755.7,
+      "pop_current": {
+        "year": 2026,
+        "value": 32383,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 51657,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -37.311,
+      "road_km_per_1000": 18.746,
+      "road_km_per_km2": 0.3458,
+      "relative_index_per_1000_vs_national_mean": 0.851
+    },
+    "r-dokshycki": {
+      "road_km_total": 648.65,
+      "road_km_by_class": {
+        "tertiary": 397.649,
+        "secondary_link": 0.161,
+        "secondary": 30.069,
+        "primary": 187.354,
+        "tertiary_link": 1.577,
+        "trunk": 31.801,
+        "primary_link": 0.042
+      },
+      "area_km2": 2245.5,
+      "pop_current": {
+        "year": 2026,
+        "value": 19630,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 37624,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -47.826,
+      "road_km_per_1000": 33.044,
+      "road_km_per_km2": 0.2889,
+      "relative_index_per_1000_vs_national_mean": 1.5
+    },
+    "r-dubrovienski": {
+      "road_km_total": 479.66,
+      "road_km_by_class": {
+        "secondary": 54.223,
+        "tertiary": 290.424,
+        "trunk": 79.348,
+        "primary": 50.679,
+        "trunk_link": 4.987
+      },
+      "area_km2": 1230.5,
+      "pop_current": {
+        "year": 2026,
+        "value": 12770,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 25235,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -49.396,
+      "road_km_per_1000": 37.562,
+      "road_km_per_km2": 0.3898,
+      "relative_index_per_1000_vs_national_mean": 1.705
+    },
+    "r-loznienski": {
+      "road_km_total": 508.0,
+      "road_km_by_class": {
+        "tertiary": 375.981,
+        "trunk_link": 0.095,
+        "trunk": 44.384,
+        "primary": 36.499,
+        "secondary": 51.041
+      },
+      "area_km2": 1371.9,
+      "pop_current": {
+        "year": 2026,
+        "value": 14218,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 23778,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -40.205,
+      "road_km_per_1000": 35.729,
+      "road_km_per_km2": 0.3703,
+      "relative_index_per_1000_vs_national_mean": 1.622
+    },
+    "r-lepielski": {
+      "road_km_total": 561.12,
+      "road_km_by_class": {
+        "tertiary": 352.104,
+        "primary": 113.315,
+        "secondary": 25.998,
+        "trunk": 69.699
+      },
+      "area_km2": 1871.9,
+      "pop_current": {
+        "year": 2026,
+        "value": 29427,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 43854,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -32.898,
+      "road_km_per_1000": 19.068,
+      "road_km_per_km2": 0.2998,
+      "relative_index_per_1000_vs_national_mean": 0.866
+    },
+    "r-mijorski": {
+      "road_km_total": 631.98,
+      "road_km_by_class": {
+        "tertiary": 423.652,
+        "secondary": 87.167,
+        "primary": 120.675,
+        "tertiary_link": 0.454,
+        "primary_link": 0.031
+      },
+      "area_km2": 1789.3,
+      "pop_current": {
+        "year": 2026,
+        "value": 16640,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 33495,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -50.321,
+      "road_km_per_1000": 37.98,
+      "road_km_per_km2": 0.3532,
+      "relative_index_per_1000_vs_national_mean": 1.724
+    },
+    "r-pastauski": {
+      "road_km_total": 961.3,
+      "road_km_by_class": {
+        "tertiary": 713.468,
+        "secondary": 92.563,
+        "primary": 151.558,
+        "secondary_link": 0.265,
+        "tertiary_link": 3.091,
+        "primary_link": 0.358
+      },
+      "area_km2": 2138.7,
+      "pop_current": {
+        "year": 2026,
+        "value": 30360,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 50002,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -39.282,
+      "road_km_per_1000": 31.663,
+      "road_km_per_km2": 0.4495,
+      "relative_index_per_1000_vs_national_mean": 1.438
+    },
+    "r-polacki": {
+      "road_km_total": 1117.16,
+      "road_km_by_class": {
+        "secondary": 105.352,
+        "tertiary": 760.977,
+        "primary": 241.46,
+        "primary_link": 7.87,
+        "secondary_link": 1.252,
+        "tertiary_link": 0.249
+      },
+      "area_km2": 3229.8,
+      "pop_current": {
+        "year": 2026,
+        "value": 193163,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 208373,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -7.299,
+      "road_km_per_1000": 5.784,
+      "road_km_per_km2": 0.3459,
+      "relative_index_per_1000_vs_national_mean": 0.263
+    },
+    "r-rasonski": {
+      "road_km_total": 464.02,
+      "road_km_by_class": {
+        "tertiary": 316.512,
+        "primary": 120.747,
+        "secondary": 26.765
+      },
+      "area_km2": 1940.8,
+      "pop_current": {
+        "year": 2026,
+        "value": 7888,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 15387,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -48.736,
+      "road_km_per_1000": 58.827,
+      "road_km_per_km2": 0.2391,
+      "relative_index_per_1000_vs_national_mean": 2.671
+    },
+    "r-siennienski": {
+      "road_km_total": 815.83,
+      "road_km_by_class": {
+        "tertiary": 630.223,
+        "primary": 171.443,
+        "trunk": 13.836,
+        "trunk_link": 0.11,
+        "primary_link": 0.185,
+        "tertiary_link": 0.03
+      },
+      "area_km2": 1955.1,
+      "pop_current": {
+        "year": 2026,
+        "value": 17677,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 39391,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -55.124,
+      "road_km_per_1000": 46.152,
+      "road_km_per_km2": 0.4173,
+      "relative_index_per_1000_vs_national_mean": 2.095
+    },
+    "r-talachynski": {
+      "road_km_total": 549.21,
+      "road_km_by_class": {
+        "tertiary": 283.132,
+        "secondary": 74.372,
+        "primary": 85.696,
+        "motorway_link": 12.578,
+        "tertiary_link": 0.252,
+        "motorway": 93.075,
+        "primary_link": 0.104
+      },
+      "area_km2": 1496.7,
+      "pop_current": {
+        "year": 2026,
+        "value": 20741,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 40793,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -49.155,
+      "road_km_per_1000": 26.479,
+      "road_km_per_km2": 0.3669,
+      "relative_index_per_1000_vs_national_mean": 1.202
+    },
+    "r-ushacki": {
+      "road_km_total": 494.88,
+      "road_km_by_class": {
+        "tertiary": 338.158,
+        "primary": 126.705,
+        "secondary": 30.019
+      },
+      "area_km2": 1477.3,
+      "pop_current": {
+        "year": 2026,
+        "value": 10979,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 23395,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -53.071,
+      "road_km_per_1000": 45.075,
+      "road_km_per_km2": 0.335,
+      "relative_index_per_1000_vs_national_mean": 2.047
+    },
+    "r-chashnicki": {
+      "road_km_total": 545.09,
+      "road_km_by_class": {
+        "tertiary": 383.411,
+        "primary": 128.266,
+        "secondary": 33.251,
+        "primary_link": 0.076,
+        "tertiary_link": 0.084
+      },
+      "area_km2": 1460.2,
+      "pop_current": {
+        "year": 2026,
+        "value": 25316,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 43473,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -41.766,
+      "road_km_per_1000": 21.531,
+      "road_km_per_km2": 0.3733,
+      "relative_index_per_1000_vs_national_mean": 0.978
+    },
+    "r-sharkoushchynski": {
+      "road_km_total": 419.81,
+      "road_km_by_class": {
+        "tertiary": 271.587,
+        "secondary": 65.979,
+        "primary": 82.21,
+        "primary_link": 0.037
+      },
+      "area_km2": 1193.3,
+      "pop_current": {
+        "year": 2026,
+        "value": 12274,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 24971,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -50.847,
+      "road_km_per_1000": 34.203,
+      "road_km_per_km2": 0.3518,
+      "relative_index_per_1000_vs_national_mean": 1.553
+    },
+    "r-shumilinski": {
+      "road_km_total": 508.86,
+      "road_km_by_class": {
+        "tertiary": 343.125,
+        "secondary": 83.066,
+        "primary": 82.354,
+        "primary_link": 0.281,
+        "tertiary_link": 0.035
+      },
+      "area_km2": 1757.4,
+      "pop_current": {
+        "year": 2026,
+        "value": 15374,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 28098,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -45.284,
+      "road_km_per_1000": 33.099,
+      "road_km_per_km2": 0.2896,
+      "relative_index_per_1000_vs_national_mean": 1.503
+    },
+    "r-akciabrski": {
+      "road_km_total": 385.74,
+      "road_km_by_class": {
+        "tertiary": 203.252,
+        "primary": 67.264,
+        "secondary": 115.22
+      },
+      "area_km2": 1376.8,
+      "pop_current": {
+        "year": 2026,
+        "value": 12377,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 20612,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -39.952,
+      "road_km_per_1000": 31.166,
+      "road_km_per_km2": 0.2802,
+      "relative_index_per_1000_vs_national_mean": 1.415
+    },
+    "r-brahinski": {
+      "road_km_total": 377.22,
+      "road_km_by_class": {
+        "tertiary": 248.566,
+        "secondary": 27.61,
+        "primary": 100.931,
+        "tertiary_link": 0.082,
+        "primary_link": 0.034
+      },
+      "area_km2": 1935.2,
+      "pop_current": {
+        "year": 2026,
+        "value": 11187,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 26161,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -57.238,
+      "road_km_per_1000": 33.72,
+      "road_km_per_km2": 0.1949,
+      "relative_index_per_1000_vs_national_mean": 1.531
+    },
+    "r-buda-kashalouski": {
+      "road_km_total": 515.0,
+      "road_km_by_class": {
+        "tertiary": 332.997,
+        "trunk": 106.813,
+        "trunk_link": 6.259,
+        "primary": 68.536,
+        "primary_link": 0.065,
+        "tertiary_link": 0.334
+      },
+      "area_km2": 1564.2,
+      "pop_current": {
+        "year": 2026,
+        "value": 27887,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 51100,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -45.427,
+      "road_km_per_1000": 18.468,
+      "road_km_per_km2": 0.3292,
+      "relative_index_per_1000_vs_national_mean": 0.838
+    },
+    "r-vietkauski": {
+      "road_km_total": 379.98,
+      "road_km_by_class": {
+        "tertiary": 269.149,
+        "primary": 71.484,
+        "secondary": 39.325,
+        "primary_link": 0.027
+      },
+      "area_km2": 1509.3,
+      "pop_current": {
+        "year": 2026,
+        "value": 16682,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 35321,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -52.77,
+      "road_km_per_1000": 22.778,
+      "road_km_per_km2": 0.2518,
+      "relative_index_per_1000_vs_national_mean": 1.034
+    },
+    "r-homielski": {
+      "road_km_total": 938.15,
+      "road_km_by_class": {
+        "tertiary": 499.763,
+        "secondary": 94.055,
+        "primary": 154.501,
+        "trunk_link": 10.964,
+        "tertiary_link": 0.57,
+        "trunk": 172.337,
+        "primary_link": 5.813,
+        "secondary_link": 0.151
+      },
+      "area_km2": 2109.1,
+      "pop_current": {
+        "year": 2026,
+        "value": 567928,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 591823,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -4.038,
+      "road_km_per_1000": 1.652,
+      "road_km_per_km2": 0.4448,
+      "relative_index_per_1000_vs_national_mean": 0.075
+    },
+    "r-dobrushski": {
+      "road_km_total": 372.38,
+      "road_km_by_class": {
+        "trunk": 31.538,
+        "tertiary": 259.89,
+        "primary": 74.445,
+        "secondary": 5.882,
+        "trunk_link": 0.037,
+        "primary_link": 0.592
+      },
+      "area_km2": 1398.2,
+      "pop_current": {
+        "year": 2026,
+        "value": 33727,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 53675,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -37.164,
+      "road_km_per_1000": 11.041,
+      "road_km_per_km2": 0.2663,
+      "relative_index_per_1000_vs_national_mean": 0.501
+    },
+    "r-jelski": {
+      "road_km_total": 344.56,
+      "road_km_by_class": {
+        "tertiary": 177.194,
+        "primary": 103.536,
+        "secondary": 53.637,
+        "trunk": 10.163,
+        "primary_link": 0.029
+      },
+      "area_km2": 1378.9,
+      "pop_current": {
+        "year": 2026,
+        "value": 13350,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 25780,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -48.216,
+      "road_km_per_1000": 25.81,
+      "road_km_per_km2": 0.2499,
+      "relative_index_per_1000_vs_national_mean": 1.172
+    },
+    "r-zhlobinski": {
+      "road_km_total": 662.98,
+      "road_km_by_class": {
+        "tertiary": 456.881,
+        "secondary": 73.251,
+        "primary": 41.068,
+        "trunk_link": 8.707,
+        "primary_link": 0.416,
+        "trunk": 82.656
+      },
+      "area_km2": 2090.7,
+      "pop_current": {
+        "year": 2026,
+        "value": 96085,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 98181,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -2.135,
+      "road_km_per_1000": 6.9,
+      "road_km_per_km2": 0.3171,
+      "relative_index_per_1000_vs_national_mean": 0.313
+    },
+    "r-zhytkavicki": {
+      "road_km_total": 540.91,
+      "road_km_by_class": {
+        "primary": 125.124,
+        "tertiary": 317.023,
+        "secondary": 59.206,
+        "trunk": 39.425,
+        "tertiary_link": 0.085,
+        "secondary_link": 0.044
+      },
+      "area_km2": 2891.2,
+      "pop_current": {
+        "year": 2026,
+        "value": 31474,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 52610,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -40.175,
+      "road_km_per_1000": 17.186,
+      "road_km_per_km2": 0.1871,
+      "relative_index_per_1000_vs_national_mean": 0.78
+    },
+    "r-kalinkavicki": {
+      "road_km_total": 736.37,
+      "road_km_by_class": {
+        "tertiary": 476.678,
+        "trunk_link": 5.429,
+        "primary_link": 1.878,
+        "secondary": 86.483,
+        "trunk": 63.918,
+        "primary": 101.847,
+        "secondary_link": 0.113,
+        "tertiary_link": 0.022
+      },
+      "area_km2": 2746.7,
+      "pop_current": {
+        "year": 2026,
+        "value": 53257,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 79009,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -32.594,
+      "road_km_per_1000": 13.827,
+      "road_km_per_km2": 0.2681,
+      "relative_index_per_1000_vs_national_mean": 0.628
+    },
+    "r-karmianski": {
+      "road_km_total": 255.07,
+      "road_km_by_class": {
+        "tertiary": 218.633,
+        "primary": 36.371,
+        "primary_link": 0.068
+      },
+      "area_km2": 921.9,
+      "pop_current": {
+        "year": 2026,
+        "value": 12663,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 26144,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -51.564,
+      "road_km_per_1000": 20.143,
+      "road_km_per_km2": 0.2767,
+      "relative_index_per_1000_vs_national_mean": 0.915
+    },
+    "r-lelchycki": {
+      "road_km_total": 489.78,
+      "road_km_by_class": {
+        "tertiary": 314.912,
+        "primary": 144.25,
+        "secondary": 30.173,
+        "tertiary_link": 0.342,
+        "primary_link": 0.102
+      },
+      "area_km2": 3259.6,
+      "pop_current": {
+        "year": 2026,
+        "value": 22701,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 33926,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -33.087,
+      "road_km_per_1000": 21.575,
+      "road_km_per_km2": 0.1503,
+      "relative_index_per_1000_vs_national_mean": 0.98
+    },
+    "r-lojeuski": {
+      "road_km_total": 305.27,
+      "road_km_by_class": {
+        "tertiary": 233.951,
+        "primary": 53.53,
+        "trunk": 3.748,
+        "secondary": 14.044
+      },
+      "area_km2": 1049.2,
+      "pop_current": {
+        "year": 2026,
+        "value": 10321,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 20413,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -49.439,
+      "road_km_per_1000": 29.578,
+      "road_km_per_km2": 0.291,
+      "relative_index_per_1000_vs_national_mean": 1.343
+    },
+    "r-mazyrski": {
+      "road_km_total": 498.06,
+      "road_km_by_class": {
+        "tertiary": 330.78,
+        "secondary_link": 0.927,
+        "primary_link": 5.352,
+        "primary": 89.004,
+        "secondary": 71.999
+      },
+      "area_km2": 1638.0,
+      "pop_current": {
+        "year": 2026,
+        "value": 125375,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 124653,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": 0.579,
+      "road_km_per_1000": 3.973,
+      "road_km_per_km2": 0.3041,
+      "relative_index_per_1000_vs_national_mean": 0.18
+    },
+    "r-naraulanski": {
+      "road_km_total": 276.76,
+      "road_km_by_class": {
+        "tertiary": 187.374,
+        "secondary": 13.082,
+        "primary": 76.057,
+        "tertiary_link": 0.149,
+        "primary_link": 0.094
+      },
+      "area_km2": 1528.6,
+      "pop_current": {
+        "year": 2026,
+        "value": 10237,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 21036,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -51.336,
+      "road_km_per_1000": 27.035,
+      "road_km_per_km2": 0.1811,
+      "relative_index_per_1000_vs_national_mean": 1.227
+    },
+    "r-pietrykauski": {
+      "road_km_total": 555.73,
+      "road_km_by_class": {
+        "tertiary": 220.835,
+        "secondary": 273.75,
+        "trunk": 60.901,
+        "secondary_link": 0.147,
+        "tertiary_link": 0.093
+      },
+      "area_km2": 2826.1,
+      "pop_current": {
+        "year": 2026,
+        "value": 24199,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 49256,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -50.871,
+      "road_km_per_1000": 22.965,
+      "road_km_per_km2": 0.1966,
+      "relative_index_per_1000_vs_national_mean": 1.043
+    },
+    "r-rahachouski": {
+      "road_km_total": 607.71,
+      "road_km_by_class": {
+        "tertiary": 396.015,
+        "primary": 111.244,
+        "trunk": 59.759,
+        "secondary": 38.948,
+        "primary_link": 0.252,
+        "trunk_link": 1.452,
+        "tertiary_link": 0.04
+      },
+      "area_km2": 2084.0,
+      "pop_current": {
+        "year": 2026,
+        "value": 48999,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 89408,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -45.196,
+      "road_km_per_1000": 12.402,
+      "road_km_per_km2": 0.2916,
+      "relative_index_per_1000_vs_national_mean": 0.563
+    },
+    "r-rechycki": {
+      "road_km_total": 769.1,
+      "road_km_by_class": {
+        "tertiary": 527.195,
+        "primary": 94.86,
+        "secondary": 41.704,
+        "trunk_link": 4.82,
+        "trunk": 100.377,
+        "tertiary_link": 0.146
+      },
+      "area_km2": 2734.5,
+      "pop_current": {
+        "year": 2026,
+        "value": 92809,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 111370,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -16.666,
+      "road_km_per_1000": 8.287,
+      "road_km_per_km2": 0.2813,
+      "relative_index_per_1000_vs_national_mean": 0.376
+    },
+    "r-svietlahorski": {
+      "road_km_total": 517.7,
+      "road_km_by_class": {
+        "tertiary": 357.204,
+        "primary": 123.171,
+        "secondary": 36.512,
+        "primary_link": 0.333,
+        "secondary_link": 0.321,
+        "tertiary_link": 0.159
+      },
+      "area_km2": 1856.5,
+      "pop_current": {
+        "year": 2026,
+        "value": 73739,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 96592,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -23.659,
+      "road_km_per_1000": 7.021,
+      "road_km_per_km2": 0.2789,
+      "relative_index_per_1000_vs_national_mean": 0.319
+    },
+    "r-chojnicki": {
+      "road_km_total": 346.68,
+      "road_km_by_class": {
+        "tertiary": 271.466,
+        "secondary": 10.958,
+        "primary": 64.075,
+        "primary_link": 0.125,
+        "tertiary_link": 0.053
+      },
+      "area_km2": 2045.9,
+      "pop_current": {
+        "year": 2026,
+        "value": 17704,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 38834,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -54.411,
+      "road_km_per_1000": 19.582,
+      "road_km_per_km2": 0.1694,
+      "relative_index_per_1000_vs_national_mean": 0.889
+    },
+    "r-chacherski": {
+      "road_km_total": 319.25,
+      "road_km_by_class": {
+        "primary": 81.155,
+        "tertiary": 223.511,
+        "trunk": 14.589
+      },
+      "area_km2": 1155.2,
+      "pop_current": {
+        "year": 2026,
+        "value": 13965,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 27568,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -49.343,
+      "road_km_per_1000": 22.861,
+      "road_km_per_km2": 0.2764,
+      "relative_index_per_1000_vs_national_mean": 1.038
+    },
+    "r-astraviecki": {
+      "road_km_total": 758.29,
+      "road_km_by_class": {
+        "tertiary": 543.207,
+        "primary": 117.75,
+        "secondary": 96.572,
+        "tertiary_link": 0.303,
+        "primary_link": 0.46
+      },
+      "area_km2": 1569.1,
+      "pop_current": {
+        "year": 2026,
+        "value": 28462,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 29886,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -4.765,
+      "road_km_per_1000": 26.642,
+      "road_km_per_km2": 0.4833,
+      "relative_index_per_1000_vs_national_mean": 1.21
+    },
+    "r-ashmianski": {
+      "road_km_total": 704.96,
+      "road_km_by_class": {
+        "tertiary": 469.371,
+        "secondary": 118.292,
+        "primary": 73.062,
+        "trunk": 41.645,
+        "trunk_link": 2.588
+      },
+      "area_km2": 1226.4,
+      "pop_current": {
+        "year": 2026,
+        "value": 28351,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 38480,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -26.323,
+      "road_km_per_1000": 24.865,
+      "road_km_per_km2": 0.5748,
+      "relative_index_per_1000_vs_national_mean": 1.129
+    },
+    "r-bierastavicki": {
+      "road_km_total": 415.16,
+      "road_km_by_class": {
+        "tertiary": 309.588,
+        "primary": 91.115,
+        "secondary": 14.173,
+        "secondary_link": 0.026,
+        "tertiary_link": 0.03,
+        "primary_link": 0.226
+      },
+      "area_km2": 722.9,
+      "pop_current": {
+        "year": 2026,
+        "value": 13955,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 21224,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -34.249,
+      "road_km_per_1000": 29.75,
+      "road_km_per_km2": 0.5743,
+      "relative_index_per_1000_vs_national_mean": 1.351
+    },
+    "r-vaukavyski": {
+      "road_km_total": 684.63,
+      "road_km_by_class": {
+        "tertiary": 477.462,
+        "secondary": 47.883,
+        "primary": 157.485,
+        "primary_link": 1.539,
+        "tertiary_link": 0.236,
+        "secondary_link": 0.024
+      },
+      "area_km2": 1191.8,
+      "pop_current": {
+        "year": 2026,
+        "value": 61967,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 78159,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -20.717,
+      "road_km_per_1000": 11.048,
+      "road_km_per_km2": 0.5744,
+      "relative_index_per_1000_vs_national_mean": 0.502
+    },
+    "r-voranauski": {
+      "road_km_total": 787.19,
+      "road_km_by_class": {
+        "tertiary": 587.133,
+        "primary": 98.315,
+        "secondary": 63.776,
+        "trunk_link": 0.097,
+        "trunk": 37.66,
+        "primary_link": 0.207
+      },
+      "area_km2": 1422.4,
+      "pop_current": {
+        "year": 2026,
+        "value": 19813,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 39150,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -49.392,
+      "road_km_per_1000": 39.731,
+      "road_km_per_km2": 0.5534,
+      "relative_index_per_1000_vs_national_mean": 1.804
+    },
+    "r-hrodzienski": {
+      "road_km_total": 1491.3,
+      "road_km_by_class": {
+        "secondary": 143.612,
+        "tertiary": 916.72,
+        "primary": 278.212,
+        "primary_link": 15.284,
+        "trunk_link": 20.609,
+        "secondary_link": 1.962,
+        "tertiary_link": 1.791,
+        "trunk": 113.113
+      },
+      "area_km2": 2766.0,
+      "pop_current": {
+        "year": 2026,
+        "value": 412736,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 341487,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": 20.864,
+      "road_km_per_1000": 3.613,
+      "road_km_per_km2": 0.5392,
+      "relative_index_per_1000_vs_national_mean": 0.164
+    },
+    "r-dziatlauski": {
+      "road_km_total": 695.72,
+      "road_km_by_class": {
+        "tertiary": 561.265,
+        "secondary": 19.274,
+        "primary": 69.592,
+        "trunk": 43.817,
+        "primary_link": 1.514,
+        "secondary_link": 0.095,
+        "tertiary_link": 0.163
+      },
+      "area_km2": 1523.0,
+      "pop_current": {
+        "year": 2026,
+        "value": 21481,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 42747,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -49.749,
+      "road_km_per_1000": 32.388,
+      "road_km_per_km2": 0.4568,
+      "relative_index_per_1000_vs_national_mean": 1.471
+    },
+    "r-zelvienski": {
+      "road_km_total": 498.11,
+      "road_km_by_class": {
+        "primary": 112.899,
+        "tertiary": 376.776,
+        "secondary": 7.865,
+        "tertiary_link": 0.141,
+        "primary_link": 0.433
+      },
+      "area_km2": 904.2,
+      "pop_current": {
+        "year": 2026,
+        "value": 12072,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 28532,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -57.69,
+      "road_km_per_1000": 41.262,
+      "road_km_per_km2": 0.5509,
+      "relative_index_per_1000_vs_national_mean": 1.873
+    },
+    "r-iujeuski": {
+      "road_km_total": 852.73,
+      "road_km_by_class": {
+        "tertiary": 597.373,
+        "secondary": 47.644,
+        "primary": 87.935,
+        "primary_link": 0.483,
+        "tertiary_link": 0.122,
+        "trunk": 111.012,
+        "trunk_link": 8.161
+      },
+      "area_km2": 1872.2,
+      "pop_current": {
+        "year": 2026,
+        "value": 18381,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 41358,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -55.556,
+      "road_km_per_1000": 46.392,
+      "road_km_per_km2": 0.4555,
+      "relative_index_per_1000_vs_national_mean": 2.106
+    },
+    "r-karelicki": {
+      "road_km_total": 526.78,
+      "road_km_by_class": {
+        "tertiary": 434.764,
+        "motorway_link": 0.767,
+        "secondary": 29.998,
+        "primary": 50.613,
+        "motorway": 10.462,
+        "secondary_link": 0.021,
+        "primary_link": 0.16
+      },
+      "area_km2": 1091.7,
+      "pop_current": {
+        "year": 2026,
+        "value": 17288,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 34056,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -49.237,
+      "road_km_per_1000": 30.471,
+      "road_km_per_km2": 0.4825,
+      "relative_index_per_1000_vs_national_mean": 1.383
+    },
+    "r-lidski": {
+      "road_km_total": 966.09,
+      "road_km_by_class": {
+        "secondary": 82.439,
+        "tertiary": 618.421,
+        "trunk": 156.946,
+        "primary": 95.394,
+        "primary_link": 1.951,
+        "trunk_link": 10.498,
+        "secondary_link": 0.282,
+        "tertiary_link": 0.162
+      },
+      "area_km2": 1567.2,
+      "pop_current": {
+        "year": 2026,
+        "value": 130194,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 140851,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -7.566,
+      "road_km_per_1000": 7.42,
+      "road_km_per_km2": 0.6164,
+      "relative_index_per_1000_vs_national_mean": 0.337
+    },
+    "r-mastouski": {
+      "road_km_total": 582.16,
+      "road_km_by_class": {
+        "tertiary": 416.896,
+        "primary": 156.314,
+        "secondary": 8.647,
+        "primary_link": 0.216,
+        "secondary_link": 0.032,
+        "tertiary_link": 0.058
+      },
+      "area_km2": 1305.9,
+      "pop_current": {
+        "year": 2026,
+        "value": 24187,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 42358,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -42.899,
+      "road_km_per_1000": 24.069,
+      "road_km_per_km2": 0.4458,
+      "relative_index_per_1000_vs_national_mean": 1.093
+    },
+    "r-navahrudski": {
+      "road_km_total": 701.01,
+      "road_km_by_class": {
+        "tertiary": 518.597,
+        "primary": 130.772,
+        "secondary": 50.298,
+        "primary_link": 0.838,
+        "tertiary_link": 0.482,
+        "secondary_link": 0.026
+      },
+      "area_km2": 1641.3,
+      "pop_current": {
+        "year": 2026,
+        "value": 39455,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 62689,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -37.062,
+      "road_km_per_1000": 17.767,
+      "road_km_per_km2": 0.4271,
+      "relative_index_per_1000_vs_national_mean": 0.807
+    },
+    "r-svislacki": {
+      "road_km_total": 518.53,
+      "road_km_by_class": {
+        "tertiary": 408.017,
+        "primary": 89.747,
+        "secondary": 20.544,
+        "tertiary_link": 0.095,
+        "secondary_link": 0.05,
+        "primary_link": 0.074
+      },
+      "area_km2": 1440.4,
+      "pop_current": {
+        "year": 2026,
+        "value": 11790,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 29240,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -59.679,
+      "road_km_per_1000": 43.98,
+      "road_km_per_km2": 0.36,
+      "relative_index_per_1000_vs_national_mean": 1.997
+    },
+    "r-slonimski": {
+      "road_km_total": 637.96,
+      "road_km_by_class": {
+        "tertiary": 438.827,
+        "secondary": 62.479,
+        "primary": 90.933,
+        "primary_link": 1.726,
+        "trunk": 43.097,
+        "secondary_link": 0.113,
+        "trunk_link": 0.782
+      },
+      "area_km2": 1436.2,
+      "pop_current": {
+        "year": 2026,
+        "value": 59101,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 71661,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -17.527,
+      "road_km_per_1000": 10.794,
+      "road_km_per_km2": 0.4442,
+      "relative_index_per_1000_vs_national_mean": 0.49
+    },
+    "r-smarhonski": {
+      "road_km_total": 844.5,
+      "road_km_by_class": {
+        "tertiary": 646.679,
+        "primary": 129.785,
+        "trunk_link": 1.657,
+        "secondary": 41.232,
+        "tertiary_link": 3.538,
+        "trunk": 21.607
+      },
+      "area_km2": 1510.5,
+      "pop_current": {
+        "year": 2026,
+        "value": 47106,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 59755,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -21.168,
+      "road_km_per_1000": 17.928,
+      "road_km_per_km2": 0.5591,
+      "relative_index_per_1000_vs_national_mean": 0.814
+    },
+    "r-shchuchynski": {
+      "road_km_total": 985.02,
+      "road_km_by_class": {
+        "tertiary": 675.484,
+        "secondary": 135.325,
+        "primary": 90.444,
+        "trunk_link": 3.93,
+        "trunk": 78.879,
+        "secondary_link": 0.152,
+        "primary_link": 0.79,
+        "tertiary_link": 0.015
+      },
+      "area_km2": 1915.4,
+      "pop_current": {
+        "year": 2026,
+        "value": 29879,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 68709,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -56.514,
+      "road_km_per_1000": 32.967,
+      "road_km_per_km2": 0.5143,
+      "relative_index_per_1000_vs_national_mean": 1.497
+    },
+    "r-barysauski": {
+      "road_km_total": 1001.19,
+      "road_km_by_class": {
+        "primary": 149.919,
+        "tertiary": 589.998,
+        "motorway_link": 10.841,
+        "secondary": 159.258,
+        "secondary_link": 0.054,
+        "primary_link": 3.087,
+        "tertiary_link": 0.757,
+        "motorway": 87.275
+      },
+      "area_km2": 2950.6,
+      "pop_current": {
+        "year": 2026,
+        "value": 165511,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 197433,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -16.169,
+      "road_km_per_1000": 6.049,
+      "road_km_per_km2": 0.3393,
+      "relative_index_per_1000_vs_national_mean": 0.275
+    },
+    "r-biarezinski": {
+      "road_km_total": 703.09,
+      "road_km_by_class": {
+        "tertiary": 466.342,
+        "secondary": 23.289,
+        "trunk_link": 11.175,
+        "trunk": 88.734,
+        "primary": 113.388,
+        "primary_link": 0.042,
+        "tertiary_link": 0.122
+      },
+      "area_km2": 1956.0,
+      "pop_current": {
+        "year": 2026,
+        "value": 20828,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 35477,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -41.292,
+      "road_km_per_1000": 33.757,
+      "road_km_per_km2": 0.3595,
+      "relative_index_per_1000_vs_national_mean": 1.533
+    },
+    "r-valozhynski": {
+      "road_km_total": 1012.08,
+      "road_km_by_class": {
+        "tertiary": 663.539,
+        "secondary": 89.012,
+        "trunk_link": 21.477,
+        "trunk": 174.983,
+        "primary": 62.711,
+        "primary_link": 0.225,
+        "tertiary_link": 0.135
+      },
+      "area_km2": 1928.4,
+      "pop_current": {
+        "year": 2026,
+        "value": 33045,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 54372,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -39.224,
+      "road_km_per_1000": 30.627,
+      "road_km_per_km2": 0.5248,
+      "relative_index_per_1000_vs_national_mean": 1.391
+    },
+    "r-vilejski": {
+      "road_km_total": 1074.95,
+      "road_km_by_class": {
+        "tertiary": 716.904,
+        "secondary": 155.022,
+        "primary": 201.398,
+        "tertiary_link": 0.792,
+        "secondary_link": 0.072,
+        "primary_link": 0.763
+      },
+      "area_km2": 2424.9,
+      "pop_current": {
+        "year": 2026,
+        "value": 44806,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 68940,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -35.007,
+      "road_km_per_1000": 23.991,
+      "road_km_per_km2": 0.4433,
+      "relative_index_per_1000_vs_national_mean": 1.089
+    },
+    "r-dziarzhynski": {
+      "road_km_total": 843.31,
+      "road_km_by_class": {
+        "tertiary": 514.42,
+        "secondary": 79.138,
+        "primary": 73.582,
+        "motorway_link": 5.004,
+        "trunk_link": 9.024,
+        "motorway": 78.488,
+        "trunk": 79.828,
+        "tertiary_link": 1.493,
+        "primary_link": 2.031,
+        "secondary_link": 0.306
+      },
+      "area_km2": 1204.2,
+      "pop_current": {
+        "year": 2026,
+        "value": 71137,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 58574,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": 21.448,
+      "road_km_per_1000": 11.855,
+      "road_km_per_km2": 0.7003,
+      "relative_index_per_1000_vs_national_mean": 0.538
+    },
+    "r-kapylski": {
+      "road_km_total": 872.25,
+      "road_km_by_class": {
+        "secondary": 193.671,
+        "tertiary": 540.826,
+        "primary": 137.723,
+        "primary_link": 0.026
+      },
+      "area_km2": 1595.5,
+      "pop_current": {
+        "year": 2026,
+        "value": 25565,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 45818,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -44.203,
+      "road_km_per_1000": 34.119,
+      "road_km_per_km2": 0.5467,
+      "relative_index_per_1000_vs_national_mean": 1.549
+    },
+    "r-klecki": {
+      "road_km_total": 453.14,
+      "road_km_by_class": {
+        "secondary": 116.549,
+        "tertiary": 256.652,
+        "primary": 79.938
+      },
+      "area_km2": 981.0,
+      "pop_current": {
+        "year": 2026,
+        "value": 24751,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 43376,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -42.938,
+      "road_km_per_1000": 18.308,
+      "road_km_per_km2": 0.4619,
+      "relative_index_per_1000_vs_national_mean": 0.831
+    },
+    "r-krupski": {
+      "road_km_total": 704.88,
+      "road_km_by_class": {
+        "tertiary": 458.857,
+        "primary": 90.941,
+        "secondary": 67.541,
+        "motorway_link": 10.343,
+        "motorway": 76.851,
+        "primary_link": 0.217,
+        "tertiary_link": 0.13
+      },
+      "area_km2": 2130.2,
+      "pop_current": {
+        "year": 2026,
+        "value": 20857,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 36472,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -42.814,
+      "road_km_per_1000": 33.796,
+      "road_km_per_km2": 0.3309,
+      "relative_index_per_1000_vs_national_mean": 1.534
+    },
+    "r-lahojski": {
+      "road_km_total": 953.2,
+      "road_km_by_class": {
+        "tertiary": 611.581,
+        "primary": 162.714,
+        "secondary": 66.322,
+        "trunk": 99.297,
+        "trunk_link": 11.95,
+        "primary_link": 0.586,
+        "secondary_link": 0.089,
+        "tertiary_link": 0.662
+      },
+      "area_km2": 2338.6,
+      "pop_current": {
+        "year": 2026,
+        "value": 38315,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 44458,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -13.818,
+      "road_km_per_1000": 24.878,
+      "road_km_per_km2": 0.4076,
+      "relative_index_per_1000_vs_national_mean": 1.13
+    },
+    "r-lubanski": {
+      "road_km_total": 595.32,
+      "road_km_by_class": {
+        "tertiary": 310.404,
+        "primary": 98.179,
+        "secondary": 186.673,
+        "tertiary_link": 0.062
+      },
+      "area_km2": 1829.8,
+      "pop_current": {
+        "year": 2026,
+        "value": 27739,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 47824,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -41.998,
+      "road_km_per_1000": 21.461,
+      "road_km_per_km2": 0.3253,
+      "relative_index_per_1000_vs_national_mean": 0.974
+    },
+    "r-maladziechanski": {
+      "road_km_total": 730.71,
+      "road_km_by_class": {
+        "secondary": 73.71,
+        "tertiary": 561.867,
+        "primary": 92.126,
+        "primary_link": 2.062,
+        "secondary_link": 0.179,
+        "tertiary_link": 0.767
+      },
+      "area_km2": 1388.8,
+      "pop_current": {
+        "year": 2026,
+        "value": 126372,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 146900,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -13.974,
+      "road_km_per_1000": 5.782,
+      "road_km_per_km2": 0.5261,
+      "relative_index_per_1000_vs_national_mean": 0.263
+    },
+    "r-minski": {
+      "road_km_total": 1946.79,
+      "road_km_by_class": {
+        "secondary": 395.9,
+        "tertiary": 798.874,
+        "trunk_link": 95.909,
+        "motorway_link": 13.676,
+        "trunk": 450.349,
+        "secondary_link": 3.828,
+        "primary": 111.593,
+        "primary_link": 5.321,
+        "tertiary_link": 1.821,
+        "motorway": 69.522
+      },
+      "area_km2": 2028.0,
+      "pop_current": {
+        "year": 2026,
+        "value": 286544,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 147140,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": 94.742,
+      "road_km_per_1000": 6.794,
+      "road_km_per_km2": 0.96,
+      "relative_index_per_1000_vs_national_mean": 0.308
+    },
+    "r-miadzielski": {
+      "road_km_total": 833.49,
+      "road_km_by_class": {
+        "secondary": 101.027,
+        "tertiary": 541.567,
+        "primary": 190.134,
+        "primary_link": 0.216,
+        "tertiary_link": 0.454,
+        "secondary_link": 0.092
+      },
+      "area_km2": 1951.6,
+      "pop_current": {
+        "year": 2026,
+        "value": 23472,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 41145,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -42.953,
+      "road_km_per_1000": 35.51,
+      "road_km_per_km2": 0.4271,
+      "relative_index_per_1000_vs_national_mean": 1.612
+    },
+    "r-niasvizhski": {
+      "road_km_total": 500.4,
+      "road_km_by_class": {
+        "tertiary": 354.246,
+        "primary": 111.375,
+        "secondary": 12.452,
+        "motorway_link": 1.089,
+        "motorway": 20.837,
+        "primary_link": 0.297,
+        "tertiary_link": 0.099
+      },
+      "area_km2": 856.4,
+      "pop_current": {
+        "year": 2026,
+        "value": 38176,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 48463,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -21.227,
+      "road_km_per_1000": 13.108,
+      "road_km_per_km2": 0.5843,
+      "relative_index_per_1000_vs_national_mean": 0.595
+    },
+    "r-puchavicki": {
+      "road_km_total": 925.42,
+      "road_km_by_class": {
+        "trunk_link": 7.229,
+        "primary": 134.439,
+        "tertiary": 672.421,
+        "secondary": 16.868,
+        "trunk": 94.162,
+        "primary_link": 0.096,
+        "tertiary_link": 0.205
+      },
+      "area_km2": 2394.0,
+      "pop_current": {
+        "year": 2026,
+        "value": 66628,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 76982,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -13.45,
+      "road_km_per_1000": 13.889,
+      "road_km_per_km2": 0.3866,
+      "relative_index_per_1000_vs_national_mean": 0.631
+    },
+    "r-salihorski": {
+      "road_km_total": 796.71,
+      "road_km_by_class": {
+        "tertiary": 462.136,
+        "secondary": 242.315,
+        "primary_link": 0.346,
+        "secondary_link": 0.468,
+        "primary": 80.297,
+        "trunk": 10.309,
+        "tertiary_link": 0.082,
+        "trunk_link": 0.754
+      },
+      "area_km2": 2475.5,
+      "pop_current": {
+        "year": 2026,
+        "value": 124494,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 140378,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -11.315,
+      "road_km_per_1000": 6.4,
+      "road_km_per_km2": 0.3218,
+      "relative_index_per_1000_vs_national_mean": 0.291
+    },
+    "r-slucki": {
+      "road_km_total": 859.25,
+      "road_km_by_class": {
+        "primary": 85.059,
+        "tertiary": 431.328,
+        "secondary": 223.735,
+        "trunk": 109.061,
+        "trunk_link": 8.959,
+        "primary_link": 1.108
+      },
+      "area_km2": 1788.8,
+      "pop_current": {
+        "year": 2026,
+        "value": 83789,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 105633,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -20.679,
+      "road_km_per_1000": 10.255,
+      "road_km_per_km2": 0.4804,
+      "relative_index_per_1000_vs_national_mean": 0.466
+    },
+    "r-smalavicki": {
+      "road_km_total": 864.41,
+      "road_km_by_class": {
+        "secondary": 100.636,
+        "primary": 137.185,
+        "tertiary": 450.868,
+        "primary_link": 8.293,
+        "trunk": 53.44,
+        "trunk_link": 13.648,
+        "motorway_link": 5.432,
+        "secondary_link": 1.482,
+        "tertiary_link": 3.405,
+        "motorway": 90.016
+      },
+      "area_km2": 1391.8,
+      "pop_current": {
+        "year": 2026,
+        "value": 120449,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 101432,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": 18.749,
+      "road_km_per_1000": 7.177,
+      "road_km_per_km2": 0.6211,
+      "relative_index_per_1000_vs_national_mean": 0.326
+    },
+    "r-staradarozhski": {
+      "road_km_total": 455.27,
+      "road_km_by_class": {
+        "tertiary": 295.216,
+        "secondary": 58.224,
+        "primary": 101.826
+      },
+      "area_km2": 1411.4,
+      "pop_current": {
+        "year": 2026,
+        "value": 18564,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 27581,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -32.693,
+      "road_km_per_1000": 24.524,
+      "road_km_per_km2": 0.3226,
+      "relative_index_per_1000_vs_national_mean": 1.113
+    },
+    "r-staubcouski": {
+      "road_km_total": 761.17,
+      "road_km_by_class": {
+        "tertiary": 543.905,
+        "motorway_link": 4.576,
+        "secondary": 32.088,
+        "primary": 115.641,
+        "secondary_link": 0.452,
+        "primary_link": 0.339,
+        "motorway": 64.168
+      },
+      "area_km2": 1885.7,
+      "pop_current": {
+        "year": 2026,
+        "value": 36904,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 49915,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -26.066,
+      "road_km_per_1000": 20.626,
+      "road_km_per_km2": 0.4037,
+      "relative_index_per_1000_vs_national_mean": 0.936
+    },
+    "r-uzdzienski": {
+      "road_km_total": 651.5,
+      "road_km_by_class": {
+        "primary": 69.924,
+        "tertiary": 484.45,
+        "trunk_link": 4.994,
+        "primary_link": 2.372,
+        "secondary": 19.435,
+        "trunk": 70.211,
+        "tertiary_link": 0.119
+      },
+      "area_km2": 1135.8,
+      "pop_current": {
+        "year": 2026,
+        "value": 23507,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 27393,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -14.186,
+      "road_km_per_1000": 27.715,
+      "road_km_per_km2": 0.5736,
+      "relative_index_per_1000_vs_national_mean": 1.258
+    },
+    "r-chervienski": {
+      "road_km_total": 638.97,
+      "road_km_by_class": {
+        "tertiary": 419.353,
+        "trunk_link": 10.214,
+        "secondary": 53.969,
+        "tertiary_link": 0.104,
+        "primary": 51.268,
+        "trunk": 104.027,
+        "primary_link": 0.033
+      },
+      "area_km2": 1603.2,
+      "pop_current": {
+        "year": 2025,
+        "value": 33325,
+        "is_fallback": true
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 41136,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -18.988,
+      "road_km_per_1000": 19.174,
+      "road_km_per_km2": 0.3986,
+      "relative_index_per_1000_vs_national_mean": 0.871
+    },
+    "r-asipovicki": {
+      "road_km_total": 604.94,
+      "road_km_by_class": {
+        "tertiary": 302.372,
+        "trunk": 101.844,
+        "secondary": 51.862,
+        "trunk_link": 7.648,
+        "primary": 140.358,
+        "primary_link": 0.79,
+        "tertiary_link": 0.035,
+        "secondary_link": 0.03
+      },
+      "area_km2": 1928.6,
+      "pop_current": {
+        "year": 2026,
+        "value": 42273,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 62261,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -32.104,
+      "road_km_per_1000": 14.31,
+      "road_km_per_km2": 0.3137,
+      "relative_index_per_1000_vs_national_mean": 0.65
+    },
+    "r-babrujski": {
+      "road_km_total": 833.02,
+      "road_km_by_class": {
+        "tertiary": 452.062,
+        "trunk": 122.103,
+        "primary": 162.377,
+        "secondary": 63.312,
+        "primary_link": 6.675,
+        "secondary_link": 2.148,
+        "trunk_link": 24.286,
+        "tertiary_link": 0.054
+      },
+      "area_km2": 1680.0,
+      "pop_current": {
+        "year": 2026,
+        "value": 220044,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 253123,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -13.068,
+      "road_km_per_1000": 3.786,
+      "road_km_per_km2": 0.4958,
+      "relative_index_per_1000_vs_national_mean": 0.172
+    },
+    "r-bychauski": {
+      "road_km_total": 530.51,
+      "road_km_by_class": {
+        "tertiary": 327.266,
+        "secondary": 21.644,
+        "primary": 142.38,
+        "primary_link": 0.065,
+        "trunk": 39.156
+      },
+      "area_km2": 2262.3,
+      "pop_current": {
+        "year": 2026,
+        "value": 26972,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 55271,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -51.2,
+      "road_km_per_1000": 19.669,
+      "road_km_per_km2": 0.2345,
+      "relative_index_per_1000_vs_national_mean": 0.893
+    },
+    "r-bialynicki": {
+      "road_km_total": 522.07,
+      "road_km_by_class": {
+        "secondary": 24.033,
+        "tertiary": 321.788,
+        "primary": 70.286,
+        "primary_link": 1.049,
+        "trunk_link": 9.958,
+        "trunk": 94.959
+      },
+      "area_km2": 1427.9,
+      "pop_current": {
+        "year": 2026,
+        "value": 16784,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 30274,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -44.56,
+      "road_km_per_1000": 31.105,
+      "road_km_per_km2": 0.3656,
+      "relative_index_per_1000_vs_national_mean": 1.412
+    },
+    "r-hluski": {
+      "road_km_total": 416.92,
+      "road_km_by_class": {
+        "tertiary": 293.515,
+        "primary": 98.392,
+        "secondary": 24.944,
+        "tertiary_link": 0.07
+      },
+      "area_km2": 1314.3,
+      "pop_current": {
+        "year": 2026,
+        "value": 11527,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 22784,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -49.407,
+      "road_km_per_1000": 36.169,
+      "road_km_per_km2": 0.3172,
+      "relative_index_per_1000_vs_national_mean": 1.642
+    },
+    "r-horacki": {
+      "road_km_total": 494.08,
+      "road_km_by_class": {
+        "tertiary": 320.717,
+        "primary": 129.965,
+        "secondary": 43.365,
+        "primary_link": 0.035
+      },
+      "area_km2": 1304.8,
+      "pop_current": {
+        "year": 2026,
+        "value": 36539,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 63991,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -42.9,
+      "road_km_per_1000": 13.522,
+      "road_km_per_km2": 0.3787,
+      "relative_index_per_1000_vs_national_mean": 0.614
+    },
+    "r-drybinski": {
+      "road_km_total": 197.77,
+      "road_km_by_class": {
+        "tertiary": 121.918,
+        "secondary": 17.849,
+        "primary": 58.003
+      },
+      "area_km2": 764.5,
+      "pop_current": {
+        "year": 2026,
+        "value": 8922,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1999,
+        "value": 15941,
+        "is_fallback": true
+      },
+      "pop_change_1989_2026_pct": -44.031,
+      "road_km_per_1000": 22.167,
+      "road_km_per_km2": 0.2587,
+      "relative_index_per_1000_vs_national_mean": 1.006
+    },
+    "r-kasciukovicki": {
+      "road_km_total": 423.38,
+      "road_km_by_class": {
+        "tertiary": 311.916,
+        "primary": 102.982,
+        "secondary": 8.031,
+        "primary_link": 0.451
+      },
+      "area_km2": 1415.7,
+      "pop_current": {
+        "year": 2026,
+        "value": 20523,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 34672,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -40.808,
+      "road_km_per_1000": 20.63,
+      "road_km_per_km2": 0.2991,
+      "relative_index_per_1000_vs_national_mean": 0.937
+    },
+    "r-kirauski": {
+      "road_km_total": 449.87,
+      "road_km_by_class": {
+        "tertiary": 286.405,
+        "trunk": 34.206,
+        "primary": 85.389,
+        "secondary": 41.793,
+        "tertiary_link": 0.08,
+        "trunk_link": 1.862,
+        "primary_link": 0.133
+      },
+      "area_km2": 1270.8,
+      "pop_current": {
+        "year": 2026,
+        "value": 16151,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 30114,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -46.367,
+      "road_km_per_1000": 27.854,
+      "road_km_per_km2": 0.354,
+      "relative_index_per_1000_vs_national_mean": 1.265
+    },
+    "r-klimavicki": {
+      "road_km_total": 530.44,
+      "road_km_by_class": {
+        "tertiary": 425.822,
+        "primary": 99.474,
+        "primary_link": 0.318,
+        "tertiary_link": 1.382,
+        "trunk": 3.445
+      },
+      "area_km2": 1568.0,
+      "pop_current": {
+        "year": 2026,
+        "value": 21131,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 36431,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -41.997,
+      "road_km_per_1000": 25.103,
+      "road_km_per_km2": 0.3383,
+      "relative_index_per_1000_vs_national_mean": 1.14
+    },
+    "r-klichauski": {
+      "road_km_total": 467.83,
+      "road_km_by_class": {
+        "tertiary": 387.606,
+        "primary": 80.219
+      },
+      "area_km2": 1741.7,
+      "pop_current": {
+        "year": 2026,
+        "value": 13034,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 24544,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -46.895,
+      "road_km_per_1000": 35.893,
+      "road_km_per_km2": 0.2686,
+      "relative_index_per_1000_vs_national_mean": 1.63
+    },
+    "r-krasnapolski": {
+      "road_km_total": 288.33,
+      "road_km_by_class": {
+        "tertiary": 206.802,
+        "secondary": 18.543,
+        "primary": 62.927,
+        "tertiary_link": 0.062
+      },
+      "area_km2": 1171.8,
+      "pop_current": {
+        "year": 2026,
+        "value": 8232,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 20964,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -60.733,
+      "road_km_per_1000": 35.026,
+      "road_km_per_km2": 0.2461,
+      "relative_index_per_1000_vs_national_mean": 1.59
+    },
+    "r-kruhlanski": {
+      "road_km_total": 316.46,
+      "road_km_by_class": {
+        "tertiary": 254.754,
+        "primary": 61.703
+      },
+      "area_km2": 851.8,
+      "pop_current": {
+        "year": 2026,
+        "value": 11955,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 19013,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -37.122,
+      "road_km_per_1000": 26.471,
+      "road_km_per_km2": 0.3715,
+      "relative_index_per_1000_vs_national_mean": 1.202
+    },
+    "r-krychauski": {
+      "road_km_total": 292.52,
+      "road_km_by_class": {
+        "tertiary": 224.404,
+        "primary": 44.956,
+        "secondary": 23.16
+      },
+      "area_km2": 765.0,
+      "pop_current": {
+        "year": 2026,
+        "value": 26879,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 45268,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -40.623,
+      "road_km_per_1000": 10.883,
+      "road_km_per_km2": 0.3824,
+      "relative_index_per_1000_vs_national_mean": 0.494
+    },
+    "r-mahilouski": {
+      "road_km_total": 1054.0,
+      "road_km_by_class": {
+        "tertiary": 486.827,
+        "primary": 293.312,
+        "secondary": 129.307,
+        "trunk_link": 18.75,
+        "primary_link": 6.928,
+        "trunk": 116.665,
+        "secondary_link": 2.004,
+        "tertiary_link": 0.201
+      },
+      "area_km2": 2041.8,
+      "pop_current": {
+        "year": 2026,
+        "value": 391650,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 414372,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -5.483,
+      "road_km_per_1000": 2.691,
+      "road_km_per_km2": 0.5162,
+      "relative_index_per_1000_vs_national_mean": 0.122
+    },
+    "r-mscislauski": {
+      "road_km_total": 524.52,
+      "road_km_by_class": {
+        "tertiary": 366.239,
+        "primary": 137.9,
+        "secondary": 20.382
+      },
+      "area_km2": 1335.0,
+      "pop_current": {
+        "year": 2026,
+        "value": 17429,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 32112,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -45.724,
+      "road_km_per_1000": 30.095,
+      "road_km_per_km2": 0.3929,
+      "relative_index_per_1000_vs_national_mean": 1.366
+    },
+    "r-slauharadski": {
+      "road_km_total": 302.06,
+      "road_km_by_class": {
+        "tertiary": 162.852,
+        "secondary": 42.074,
+        "primary": 95.113,
+        "tertiary_link": 0.415,
+        "primary_link": 1.463,
+        "secondary_link": 0.14
+      },
+      "area_km2": 1284.4,
+      "pop_current": {
+        "year": 2026,
+        "value": 11635,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 23791,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -51.095,
+      "road_km_per_1000": 25.961,
+      "road_km_per_km2": 0.2352,
+      "relative_index_per_1000_vs_national_mean": 1.179
+    },
+    "r-chocimski": {
+      "road_km_total": 260.57,
+      "road_km_by_class": {
+        "tertiary": 199.771,
+        "primary": 58.895,
+        "secondary": 1.859,
+        "primary_link": 0.045
+      },
+      "area_km2": 859.4,
+      "pop_current": {
+        "year": 2026,
+        "value": 9226,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 18201,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -49.31,
+      "road_km_per_1000": 28.243,
+      "road_km_per_km2": 0.3032,
+      "relative_index_per_1000_vs_national_mean": 1.282
+    },
+    "r-chavuski": {
+      "road_km_total": 475.42,
+      "road_km_by_class": {
+        "tertiary": 353.885,
+        "primary": 121.396,
+        "primary_link": 0.144
+      },
+      "area_km2": 1498.2,
+      "pop_current": {
+        "year": 2026,
+        "value": 15940,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 31248,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -48.989,
+      "road_km_per_1000": 29.826,
+      "road_km_per_km2": 0.3173,
+      "relative_index_per_1000_vs_national_mean": 1.354
+    },
+    "r-cherykauski": {
+      "road_km_total": 246.45,
+      "road_km_by_class": {
+        "tertiary": 147.782,
+        "primary": 89.822,
+        "secondary": 8.816,
+        "primary_link": 0.034
+      },
+      "area_km2": 997.1,
+      "pop_current": {
+        "year": 2026,
+        "value": 11873,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 22486,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -47.198,
+      "road_km_per_1000": 20.758,
+      "road_km_per_km2": 0.2472,
+      "relative_index_per_1000_vs_national_mean": 0.942
+    },
+    "r-shklouski": {
+      "road_km_total": 525.3,
+      "road_km_by_class": {
+        "tertiary": 327.896,
+        "trunk_link": 3.57,
+        "primary": 132.162,
+        "secondary": 25.023,
+        "trunk": 36.495,
+        "primary_link": 0.157
+      },
+      "area_km2": 1566.7,
+      "pop_current": {
+        "year": 2026,
+        "value": 23334,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 43382,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": -46.213,
+      "road_km_per_1000": 22.512,
+      "road_km_per_km2": 0.3353,
+      "relative_index_per_1000_vs_national_mean": 1.022
+    },
+    "BY-HM": {
+      "road_km_total": 808.19,
+      "road_km_by_class": {
+        "secondary": 242.834,
+        "trunk_link": 27.014,
+        "primary": 272.244,
+        "trunk": 70.687,
+        "tertiary": 160.684,
+        "secondary_link": 3.167,
+        "primary_link": 31.027,
+        "tertiary_link": 0.533
+      },
+      "area_km2": 216.4,
+      "pop_current": {
+        "year": 2026,
+        "value": 1995091,
+        "is_fallback": false
+      },
+      "pop_baseline_1989": {
+        "year": 1989,
+        "value": 1589436,
+        "is_fallback": false
+      },
+      "pop_change_1989_2026_pct": 25.522,
+      "road_km_per_1000": 0.405,
+      "road_km_per_km2": 3.7347,
+      "relative_index_per_1000_vs_national_mean": 0.018
+    }
+  }
+}
