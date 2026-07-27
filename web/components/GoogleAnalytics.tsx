@@ -3,6 +3,7 @@
 import Script from 'next/script';
 import { useEffect, useState } from 'react';
 
+// Do not load the analytics script until the visitor explicitly opts in.
 const MEASUREMENT_ID = 'G-D27077RPNV';
 const CONSENT_KEY = 'by-maps-analytics-consent';
 
