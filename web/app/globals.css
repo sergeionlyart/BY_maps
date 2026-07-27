@@ -1680,11 +1680,21 @@ a.service-card:hover .sc-cta { text-decoration: underline; }
    (разд. 5 п.4). На мобильном становится липкой панелью целиком (разд. 6
    п.3) - раньше липким был только .pyr-slider (ползунок), кнопка уезжала. */
 .pen-timebar {
-  display: flex; align-items: center; gap: 14px; flex-wrap: nowrap;
+  display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
   margin: 10px 0 4px; padding: 10px; border: 1px solid var(--line); border-radius: 12px;
   background: var(--surface-1);
 }
-.pen-timebar .pyr-slider { flex: 1 1 auto; min-width: 0; margin: 0; }
+/* кнопка ▶ и год не должны сжиматься при нехватке ширины строки (баг:
+   на средних ширинах экрана, между мобильным брейкпоинтом и полным
+   десктопом, .pyr-slider с flex:1 1 auto продавливался почти до нуля,
+   а текст кнопки переносился на две строки внутри пилюли, годы под
+   ползунком налезали друг на друга нечитаемым комком). Слайдеру задан
+   разумный min-width - если ему не хватает места в строке, он вместе с
+   остальным содержимым .pen-timebar переносится на новую строку целиком
+   (flex-wrap: wrap на родителе), а не сплющивается на месте. */
+.pen-timebar .pen-play,
+.pen-timebar .pen-year { flex: 0 0 auto; white-space: nowrap; }
+.pen-timebar .pyr-slider { flex: 1 1 320px; min-width: 320px; margin: 0; }
 .pen-reduced-motion-note, .pen-play-hint { flex-basis: 100%; margin: 6px 0 0; }
 @media (max-width: 640px) {
   .pen-timebar {
@@ -1717,7 +1727,17 @@ a.service-card:hover .sc-cta { text-decoration: underline; }
   border: 1px solid var(--line); border-radius: 8px; padding: 8px 12px; margin-bottom: 6px;
   font-size: 13.5px; font-weight: 600; cursor: pointer; color: var(--ink); min-height: 40px;
 }
-.pen-setting-hint { margin: 3px 0 0; font-size: 12px; }
+/* .control-group (общий класс, display:flex в одну строку) переносит
+   свои поля на новую строку только при ширине ≤480px (правило ниже в
+   файле, унаследовано от исходной сдачи). Пояснение под переключателем -
+   новый для этой страницы элемент; на средних ширинах экрана (между
+   480px и полным десктопом) он не помещался рядом с лейблом+кнопками в
+   одну строку и сжимал сегмент кнопок («базовый»/«скорректированный»
+   переставали помещаться целиком). Пояснение всегда переносится на свою
+   строку под кнопками, независимо от ширины экрана - и на десктопе это
+   тоже читается лучше, чем зажатое сбоку. */
+.pen-view .control-group { flex-wrap: wrap; }
+.pen-setting-hint { flex-basis: 100%; width: 100%; margin: 3px 0 0; font-size: 12px; }
 .pen-policy-primary .control-label { font-size: 14.5px; font-weight: 700; }
 .pen-policy-primary .seg button { font-weight: 600; }
 @media (max-width: 640px) {
