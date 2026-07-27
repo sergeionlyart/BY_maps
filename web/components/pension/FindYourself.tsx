@@ -58,6 +58,7 @@ export default function FindYourself({
         <label className="hint" htmlFor="pen-birth">{t('Год рождения:')}</label>
         <input
           id="pen-birth"
+          className="pen-birth-input"
           type="number"
           min={1940}
           max={2056}

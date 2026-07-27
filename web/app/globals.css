@@ -1790,4 +1790,20 @@ a.service-card:hover .sc-cta { text-decoration: underline; }
      (.pen-view-скоуп), Pyramid не трогаем. */
   .pen-view .pyr-tick { padding: 15px 10px; }
 }
+
+/* поле «Год рождения» («Найди себя»): базовое правило `select, input {
+   color: inherit }` (см. начало файла) даёт белый текст в тёмной теме, но
+   не задаёт фон - инпут остаётся с браузерным белым фоном по умолчанию =>
+   белый текст на белом фоне, ввод не виден. Предсуществующий баг (с самой
+   первой сдачи INF-13, не внесён этой правкой) - чинится здесь явным
+   фоном/рамкой, как у остальных полей ввода проекта (.pyr-find input). */
+.pen-view .pen-birth-input {
+  background: var(--surface-1);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 6px 8px;
+  font-size: 15px;
+  width: 92px;
+}
 /* INF-13 UX END */
