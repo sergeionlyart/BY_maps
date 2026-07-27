@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import SiteNav from '@/components/SiteNav';
 import Footer from '@/components/Footer';
+import GoogleAnalytics from '@/components/GoogleAnalytics';
 import { LangProvider } from '@/lib/i18n';
 import './globals.css';
 
@@ -33,6 +34,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
           <Footer />
         </LangProvider>
+        <GoogleAnalytics />
       </body>
     </html>
   );
