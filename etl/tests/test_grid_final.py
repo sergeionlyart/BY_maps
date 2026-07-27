@@ -37,10 +37,41 @@ def test_years(data):
     assert data["years"]["forecast"] == [2026, 2031, 2036, 2041, 2046, 2050]
 
 
+def test_centroid_track_extends_to_2050_without_degenerate_points(data):
+    """D-009: до фикса centroid_pre_grid() усреднял по единственному
+    району (BY-HM), в 1897/1959 трек молча вырождался в координаты
+    Минска - обнаружено при доработке B-5. Трек финального grid.json
+    также обязан достраиваться прогнозом до 2050 (не обрывается на
+    2020, как было до doc/decisions/INF-15.md D-006/D-009)."""
+    track = data["national"]["centroid_track"]
+    years = [c["year"] for c in track]
+    assert years == sorted(years), "трек должен быть отсортирован по году"
+    assert years[0] == 1897
+    assert years[-1] == 2050
+    assert 1970 in years and 2020 in years and 2026 in years
+
+    coords_by_year = {c["year"]: (c["lon"], c["lat"]) for c in track}
+    assert coords_by_year[1897] != coords_by_year[1970], (
+        "1897 и 1970 не должны совпадать с точностью до вырождения "
+        "«среднее по одному району» (см. D-009)")
+
+    by_year = {c["year"]: c for c in track}
+    assert by_year[1897]["dtype"] == "e"
+    assert by_year[1897]["err_km"] > by_year[1970]["err_km"], (
+        "оценка 1897 года грубее (город. население переписи) - err_km обязан быть шире")
+    for c in track:
+        assert 51.0 <= c["lat"] <= 57.0
+        assert 22.0 <= c["lon"] <= 33.0
+        assert "err_km" in c and "dtype" in c
+
+
 def test_frames_present_for_key_years(data):
-    assert "2020" in data["frames"]
-    assert "2050:base:A" in data["frames"]
-    assert len(data["frames"]) == 46
+    """B-2 (docs/decisions/INF-15.md): frames разбит на pop/density -
+    режим «класс плотности» получил собственный набор из 46 кадров."""
+    for mode in ("pop", "density"):
+        assert "2020" in data["frames"][mode]
+        assert "2050:base:A" in data["frames"][mode]
+        assert len(data["frames"][mode]) == 46
 
 
 def test_territories_count(data):

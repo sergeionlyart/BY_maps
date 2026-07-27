@@ -6,6 +6,8 @@ node_modules/
 web/.next/
 web/out/
 web/next-env.d.ts
+web/test-results/
+web/playwright-report/
 data/cache/
 # INF-12: глобальные тайлы GHSL, клипы и PBF не вендорятся (URL+sha256 в реестрах)
 data/raw/ghsl/

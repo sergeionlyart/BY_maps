@@ -41,6 +41,16 @@ from .grid import (EPOCHS, RASTERS_CONSTRAINED, RAW, THRESH_PRIMARY,
                     settlement_components, centroid_grid, country_mask,
                     zone_labels, load_raion_series)
 
+# WP-1/B-5 (docs/notes/grid_ux_audit_2026-07-27.md, "два замечания к
+# содержанию"): методблок §2 обещает трек центра масс 1897-2050, но
+# наблюдаемые данные заканчиваются 2020 годом. Решение - достроить трек
+# РЕАЛЬНЫМИ прогнозными точками (не текстовой оговоркой): считаем центр
+# масс на растрах прогноза канонической комбинации base:A (тот же дефолт,
+# что показан на карте при первом заходе на прогнозные годы) - одна
+# согласованная линия, не по одной на каждый сценарий/вариант. dtype "f".
+CENTROID_FORECAST_SCENARIO = "base"
+CENTROID_FORECAST_VARIANT = "A"
+
 FORECAST_YEARS_NATIVE = [2026, 2031, 2036, 2041, 2046]
 FORECAST_YEAR_2050_FROM = (2046, 2051)   # интерполяция
 FORECAST_YEARS = FORECAST_YEARS_NATIVE + [2050]
@@ -191,7 +201,8 @@ def project_epoch(slope, intercept, t_mean, ever_populated, labels, ids,
     return share_raw * scale[labels]
 
 
-def write_grid_json(observed: dict, forecast_out: dict, forecast_version: str) -> None:
+def write_grid_json(observed: dict, forecast_out: dict, forecast_version: str,
+                     centroid_forecast: list | None = None) -> None:
     """Собирает финальный web/public/data/grid.json (Приложение А ТЗ, раздел
     «Контракт данных») - объединяет наблюдаемую и модельную часть.
 
@@ -206,19 +217,29 @@ def write_grid_json(observed: dict, forecast_out: dict, forecast_version: str) -
     net = json.loads(net_path.read_text()) if net_path.exists() else None
 
     frames_dir = OUT / "grid_frames"
-    frames = {}
-    for epoch in observed["epochs"]:
-        p = frames_dir / f"pop_{epoch}.webp"
-        if p.exists():
-            frames[str(epoch)] = f"/data/grid_frames/{p.name}"
-    for year in FORECAST_YEARS:
-        for scn in SCENARIOS:
-            for variant in VARIANTS:
-                p = frames_dir / f"pop_{year}_{scn}_{variant}.webp"
-                if p.exists():
-                    frames[f"{year}:{scn}:{variant}"] = f"/data/grid_frames/{p.name}"
+    # WP-1/B-2 (docs/notes/grid_ux_audit_2026-07-27.md): frames теперь
+    # разбит по РЕЖИМУ показателя (pop/density) - переключатель "Класс
+    # плотности" на странице был декорацией именно потому, что раньше
+    # существовал только один плоский словарь frames{key->url} без разбивки
+    # по режиму, и metric никуда не передавался. "Метры сети на жителя" -
+    # без кадров, живой choropleth из territories[].network_per_capita.
+    frames: dict = {"pop": {}, "density": {}}
+    for mode in ("pop", "density"):
+        for epoch in observed["epochs"]:
+            p = frames_dir / f"{mode}_{epoch}.webp"
+            if p.exists():
+                frames[mode][str(epoch)] = f"/data/grid_frames/{p.name}"
+        for year in FORECAST_YEARS:
+            for scn in SCENARIOS:
+                for variant in VARIANTS:
+                    p = frames_dir / f"{mode}_{year}_{scn}_{variant}.webp"
+                    if p.exists():
+                        frames[mode][f"{year}:{scn}:{variant}"] = f"/data/grid_frames/{p.name}"
 
     national = dict(observed["national"])
+    if centroid_forecast:
+        track = list(national.get("centroid_track", [])) + list(centroid_forecast)
+        national["centroid_track"] = sorted(track, key=lambda p: p["year"])
     for key in ("area_share_below", "arithmetic_density", "population_weighted_density"):
         merged = {k: dict(v) if isinstance(v, dict) else v
                   for k, v in national.get(key, {}).items()} if key == "area_share_below" else dict(national.get(key, {}))
@@ -250,7 +271,7 @@ def write_grid_json(observed: dict, forecast_out: dict, forecast_version: str) -
             }
 
     out = {
-        "version": "1.0.0",
+        "version": "1.1.0",
         "forecast_version": forecast_version,
         "grid": {
             "crs": grid_meta["crs"], "cell_m": grid_meta["cell_m"],
@@ -276,7 +297,7 @@ def write_grid_json(observed: dict, forecast_out: dict, forecast_version: str) -
             "claims": ["C-001", "C-002", "C-003"],
             "claims_status": {"C-001": "open_question", "C-002": "open_question",
                               "C-003": "verified"},
-            "artifact": "by-maps-grid-v1.0.0.zip",
+            "artifact": "by-maps-grid-v1.1.0.zip",
             "honesty": "GHS-POP — дазиметрическая производная официальной "
                        "статистики (не независимая перепись); районные/"
                        "национальные суммы клеток откалиброваны под "
@@ -315,6 +336,7 @@ def main() -> None:
                           "settlement_components": {}}
     territories_forecast = {tid: {"pop_grid_sum": {}} for tid in ids}
     g2_report = []
+    centroid_forecast = []
 
     for scenario in SCENARIOS:
         for variant in VARIANTS:
@@ -323,6 +345,13 @@ def main() -> None:
                 proj = project_epoch(slope, intercept, t_mean, ever_populated,
                                       labels, ids, forecast_by_raion, year,
                                       scenario, variant, suburb_score, periphery_score)
+
+                if scenario == CENTROID_FORECAST_SCENARIO and variant == CENTROID_FORECAST_VARIANT:
+                    c = centroid_grid(proj, transform, crs)
+                    c["year"] = year
+                    c["dtype"] = "f"
+                    c["err_km"] = 10
+                    centroid_forecast.append(c)
 
                 for d, dkey in [(THRESH_PRIMARY, "5"), (THRESH_SECONDARY, "1"),
                                  (THRESH_AUX, "25")]:
@@ -372,7 +401,7 @@ def main() -> None:
           f"data/raw/grid/metrics_forecast.json ({len(g2_report)} проверок G-2)")
 
     forecast_out = json.loads((RAW / "metrics_forecast.json").read_text())
-    write_grid_json(observed, forecast_out, forecast_version)
+    write_grid_json(observed, forecast_out, forecast_version, centroid_forecast)
 
 
 if __name__ == "__main__":

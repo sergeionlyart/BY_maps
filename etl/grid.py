@@ -39,7 +39,20 @@ RASTERS_CONSTRAINED = RAW / "rasters_constrained"
 CURATED = ROOT / "data" / "curated"
 
 EPOCHS = [1975, 1980, 1985, 1990, 1995, 2000, 2005, 2010, 2015, 2020]
-PRE_GRID_YEARS = [1897, 1913, 1940, 1959, 1970]  # до GHS-POP, взвешено по data.json
+# WP-1/B-5 (docs/notes/grid_ux_audit_2026-07-27.md): изначально
+# [1897,1913,1940,1959,1970] - проверено на реальных данных при
+# доработке и найден скрытый дефект: data.json для 1913/1940 не имеет
+# ТОЧНОГО совпадения года НИ У ОДНОГО района (centroid_pre_grid искал
+# ключ словаря без интерполяции), а для 1897/1959 - только у ОДНОГО
+# района (BY-HM, Минск) => "средневзвешенный по району" центр для этих
+# двух лет вычислялся из ЕДИНСТВЕННОЙ точки (Минск) и совпадал 1:1 для
+# обоих лет - формально не падало, но результат был данными не
+# подкреплён и вводил в заблуждение (см. docs/decisions/INF-15.md D-009).
+# 1970 - первый год с полным покрытием (118/118 районов, точное
+# совпадение) - оставлен как есть. 1897 - заменён на отдельную функцию
+# centroid_1897_cities() (см. ниже), взвешенную по городскому населению
+# переписи 1897 (не по районам - районных данных для этого года нет).
+PRE_GRID_YEARS = [1970]
 
 # Замороженные пороги (docs/preregistration/grid-v0.1.md §6)
 THRESH_PRIMARY = 5.0
@@ -218,8 +231,16 @@ def _moll_to_lonlat(x: float, y: float) -> tuple[float, float]:
 
 
 def centroid_pre_grid(year: int, official: dict, raion_centroids_moll: dict) -> dict | None:
-    """Центр масс до 1975 - взвешено офиц. численностью района на его геогр. центроиде."""
+    """Центр масс до 1975 - взвешено офиц. численностью района на его геогр. центроиде.
+
+    Требует ТОЧНОГО совпадения года в ряду района (без интерполяции) -
+    осознанно: интерполяция численности РАЙОНА на несуществующий год
+    добавила бы вторую модельную прослойку поверх и без того грубой
+    оценки. Год допускается в трек, только если так набирается больше
+    одного независимого района (см. D-009) - иначе используется другая
+    функция (centroid_1897_cities)."""
     num_x = num_y = den = 0.0
+    n_raions = 0
     for tid, series in official.items():
         pop = series.get(year)
         if pop is None:
@@ -230,10 +251,44 @@ def centroid_pre_grid(year: int, official: dict, raion_centroids_moll: dict) -> 
         num_x += cx * pop
         num_y += cy * pop
         den += pop
-    if den == 0:
+        n_raions += 1
+    if den == 0 or n_raions < 2:
         return None
     lon, lat = _moll_to_lonlat(num_x / den, num_y / den)
-    return {"lon": round(lon, 5), "lat": round(lat, 5)}
+    return {"lon": round(lon, 5), "lat": round(lat, 5), "n_raions": n_raions}
+
+
+def centroid_1897_cities() -> dict | None:
+    """Центр масс 1897 - взвешено ГОРОДСКИМ населением переписи 1897 года
+    (data/raw/shocks/census_lang.json, источник Демоскоп/INF-09), т.к.
+    районных данных на 1897 год в проекте нет ни для одного района, кроме
+    Минска (см. D-009). Это НЕ то же самое, что население всего района:
+    покрывает ~590 тыс. из ~6,67 млн человек по стране (только городское
+    население переписи, ~8,9%) - осознанно более грубая оценка с явно
+    более широким коридором погрешности (см. вызывающий код, err_km)."""
+    census_path = ROOT / "data" / "raw" / "shocks" / "census_lang.json"
+    if not census_path.exists():
+        return None
+    cl = json.loads(census_path.read_text())
+    data = json.loads((OUT / "data.json").read_text())["territories"]
+    num_lon = num_lat = den = 0.0
+    n_cities = 0
+    for c in cl.get("cities", []):
+        pop = c.get("total_1897")
+        cid = c.get("city_id")
+        if not pop or not cid or cid not in data:
+            continue
+        lon, lat = data[cid].get("lon"), data[cid].get("lat")
+        if lon is None or lat is None:
+            continue
+        num_lon += lon * pop
+        num_lat += lat * pop
+        den += pop
+        n_cities += 1
+    if den == 0:
+        return None
+    return {"lon": round(num_lon / den, 5), "lat": round(num_lat / den, 5),
+            "n_cities": n_cities, "pop_covered": round(den)}
 
 
 def _raion_centroids_moll(raions: list, minsk: dict) -> dict:
@@ -423,9 +478,17 @@ def main() -> None:
         c = centroid_pre_grid(year, official, raion_centroids)
         if c:
             c["year"] = year
-            c["dtype"] = "c" if year in (1959, 1970) else "e"
-            c["err_km"] = 25
+            c["dtype"] = "c"
+            c["err_km"] = 10
+            c["method"] = "raion_population_weighted"
             national["centroid_track"].append(c)
+    c1897 = centroid_1897_cities()
+    if c1897:
+        c1897["year"] = 1897
+        c1897["dtype"] = "e"
+        c1897["err_km"] = 40  # шире 10/25 - только городское население переписи (D-009)
+        c1897["method"] = "city_population_weighted_1897_census"
+        national["centroid_track"].append(c1897)
     national["centroid_track"].sort(key=lambda r: r["year"])
 
     # ---- G-1.2: национальная сверка (сумма растра vs офиц. страновой ряд) ----

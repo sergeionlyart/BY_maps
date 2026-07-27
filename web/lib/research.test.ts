@@ -5,6 +5,7 @@ describe('реестр исследований', () => {
   it('слаги уникальны; коды — INF-01..09 + ML + INF-12 + INF-13 + INF-15', () => {
     const slugs = RESEARCH.map((r) => r.slug);
     expect(new Set(slugs).size).toBe(slugs.length);
+    /* INF-15 BEGIN */
     expect(RESEARCH).toHaveLength(13);
     expect(RESEARCH.map((r) => r.code)).toEqual([
       ...Array.from({ length: 9 }, (_, i) => `INF-0${i + 1}`),
@@ -13,6 +14,7 @@ describe('реестр исследований', () => {
       'INF-13',
       'INF-15',
     ]);
+    /* INF-15 END */
   });
 
   it('каждое опубликованное исследование имеет корректно именованный пакет', () => {

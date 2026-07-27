@@ -148,25 +148,23 @@
     },
     "centroid_track": [
       {
-        "lon": 27.60279,
-        "lat": 53.88341,
+        "lon": 27.73766,
+        "lat": 53.60539,
+        "n_cities": 28,
+        "pop_covered": 590988,
         "year": 1897,
         "dtype": "e",
-        "err_km": 25
-      },
-      {
-        "lon": 27.60279,
-        "lat": 53.88341,
-        "year": 1959,
-        "dtype": "c",
-        "err_km": 25
+        "err_km": 40,
+        "method": "city_population_weighted_1897_census"
       },
       {
         "lon": 27.99933,
         "lat": 53.50404,
+        "n_raions": 118,
         "year": 1970,
         "dtype": "c",
-        "err_km": 25
+        "err_km": 10,
+        "method": "raion_population_weighted"
       },
       {
         "lon": 27.98096,
@@ -4069,9 +4067,7 @@
     },
     "g5_centroid_sensitivity": {
       "shift_km_by_year": {
-        "1897": 0.0,
-        "1959": 0.0,
-        "1970": 2.03,
+        "1970": 1.08,
         "1975": 0.08,
         "1980": 0.07,
         "1985": 0.07,
@@ -4083,7 +4079,7 @@
         "2015": 0.07,
         "2020": 0.07
       },
-      "max_shift_km": 2.03,
+      "max_shift_km": 1.08,
       "tolerance_km": 15,
       "pass": true
     }

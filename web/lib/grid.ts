@@ -9,10 +9,18 @@ import { useEffect, useState } from 'react';
 
 export type Scenario = 'base' | 'optimistic' | 'negative';
 export type Variant = 'A' | 'B';
+export type Metric = 'pop' | 'density' | 'network';
 
 export const OBSERVED_YEARS = [1975, 1980, 1985, 1990, 1995, 2000, 2005, 2010, 2015, 2020];
 export const FORECAST_YEARS = [2026, 2031, 2036, 2041, 2046, 2050];
 export const ALL_YEARS = [...OBSERVED_YEARS, ...FORECAST_YEARS];
+
+/** Ближайший узел данных (B-1, вариант А) - ползунок дискретный по 16
+ *  узлам, но deep-link может прийти с произвольным годом (?year=1993). */
+export function nearestYear(y: number): number {
+  return ALL_YEARS.reduce((best, cand) =>
+    Math.abs(cand - y) < Math.abs(best - y) ? cand : best, ALL_YEARS[0]);
+}
 
 export interface GridMeta {
   crs: string;
@@ -54,7 +62,7 @@ export interface GridData {
   forecast_version: string;
   grid: GridMeta;
   years: { observed: number[]; forecast: number[] };
-  frames: Record<string, string>;
+  frames: { pop: Record<string, string>; density: Record<string, string> };
   national: {
     area_share_below: { '5': Record<string, number>; '1': Record<string, number>; '25': Record<string, number> };
     arithmetic_density: Record<string, number>;
@@ -184,4 +192,27 @@ export function fmtInt(n: number): string {
 
 export function fmtPct(n: number): string {
   return `${(n * 100).toFixed(1)}%`;
+}
+
+/** Секвенциальная шкала «метры сети на жителя» (B-2, часть 1) - тот же
+ *  тон, что и у `SEQ` в `lib/scales.ts`, но отдельный набор порогов
+ *  (диапазон значений по стране - 0,4-58,8 км/1000 жит., см. G-6). */
+export const NETWORK_SEQ = ['#cde2fb', '#9ec5f4', '#6da7ec', '#3987e5', '#1c5cab', '#104281'];
+export const NETWORK_BREAKS = [5, 11, 18, 27, 40];
+
+export function networkColor(v: number | null | undefined): string {
+  if (v == null) return 'transparent';
+  let i = 0;
+  while (i < NETWORK_BREAKS.length && v >= NETWORK_BREAKS[i]) i++;
+  return NETWORK_SEQ[Math.min(i, NETWORK_SEQ.length - 1)];
+}
+
+export function networkLegendStops(): { color: string; label: string }[] {
+  return NETWORK_SEQ.map((c, i) => {
+    let label: string;
+    if (i === 0) label = `< ${NETWORK_BREAKS[0]}`;
+    else if (i >= NETWORK_BREAKS.length) label = `≥ ${NETWORK_BREAKS[NETWORK_BREAKS.length - 1]}`;
+    else label = `${NETWORK_BREAKS[i - 1]}–${NETWORK_BREAKS[i]}`;
+    return { color: c, label };
+  });
 }

@@ -19,6 +19,17 @@ export default function GridArtifactBody() {
 
       <h2>{t('Версии')}</h2>
       <div className="card">
+        <div className="card-code">v1.1.0 · 2026-07-28 · {t('git-тег')} artifact-grid-v1.1.0</div>
+        <p>
+          {t('MINOR: доработка интерфейса страницы (дискретный ползунок по 16 узлам, режим «класс плотности» — ещё 46 кадров, режим «метры сети на жителя», коридор погрешности трека центра масс) и исправление вырожденных точек трека 1897–1959 (см. CHANGELOG.md, D-009). Трек центра масс достроен реальным прогнозом до 2050 года. 26 контрольных метрик (было 20), выводы C-1/C-2/C-3 не изменились.')}
+        </p>
+        <div className="card-foot">
+          <a href="/artifacts/by-maps-grid-v1.1.0.zip" download>
+            ⬇ by-maps-grid-v1.1.0.zip
+          </a>
+        </div>
+      </div>
+      <div className="card">
         <div className="card-code">v1.0.0 · 2026-07-26 · {t('git-тег')} artifact-grid-v1.0.0</div>
         <p>
           {t('Первый релиз. 10 наблюдаемых эпох (1975–2020) + прогноз до 2050 (3 сценария × 2 варианта). 20 контрольных метрик, воспроизведение на стандартной библиотеке за секунды.')}
@@ -31,7 +42,7 @@ export default function GridArtifactBody() {
       </div>
 
       <h2>{t('Состав')}</h2>
-      <pre><code>{`by-maps-grid-v1.0.0/
+      <pre><code>{`by-maps-grid-v1.1.0/
 ├── README.md · AGENT.md · LIMITATIONS.md · PROVENANCE.md · METHODS.md
 ├── VALIDATION.md · DATA_DICTIONARY.md · EXECUTIVE_BRIEF.md · CHANGELOG.md
 ├── PREREGISTRATION.md · claims.yaml · CITATION.cff · LICENSE.md
@@ -47,12 +58,12 @@ export default function GridArtifactBody() {
 └── checks/                          инварианты, ожидаемые результаты, chksums`}</code></pre>
 
       <h2>{t('Быстрая проверка')}</h2>
-      <pre><code>{`unzip by-maps-grid-v1.0.0.zip && cd by-maps-grid-v1.0.0
+      <pre><code>{`unzip by-maps-grid-v1.1.0.zip && cd by-maps-grid-v1.1.0
 bash code/run.sh          # только стандартная библиотека Python >= 3.10
 # == 1/3 Пересчёт контрольных метрик из sources/raw ==
 # == 2/3 Инварианты данных ==
 # == 3/3 Сверка с заявленными результатами ==
-# Все 20 контрольных метрик воспроизведены в допусках.`}</code></pre>
+# Все 26 контрольных метрик воспроизведены в допусках.`}</code></pre>
 
       <h2>{t('Честно о находках')}</h2>
       <ul>

@@ -1616,18 +1616,39 @@ a.service-card:hover .sc-cta { text-decoration: underline; }
 .gv-toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
 .gv-metric-switch { display: inline-flex; gap: 6px; flex-wrap: wrap; }
 .gv-toggle { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; cursor: pointer; }
+.gv-play { width: 34px; height: 34px; }
 .gv-map { width: 100%; height: 62vh; min-height: 380px; max-height: 640px; border-radius: 10px; overflow: hidden; border: 1px solid var(--border); }
+.gv-legend { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: 12.5px; padding: 6px 2px; }
+.gv-legend-title { font-weight: 600; }
+.gv-legend-tick { padding: 1px 5px; border-radius: 4px; background: var(--surface-1); border: 1px solid var(--border); }
+.gv-legend-row { display: inline-flex; align-items: center; gap: 5px; }
+.gv-legend-swatch { display: inline-block; width: 13px; height: 13px; border-radius: 3px; border: 1px solid var(--border); }
+.gv-legend-note { flex-basis: 100%; }
 .gv-slider-zone { display: flex; flex-direction: column; gap: 4px; }
 .gv-range { width: 100%; }
+.gv-range:disabled { opacity: 0.45; cursor: not-allowed; }
 .gv-slider-track {
-  display: flex; height: 8px; border-radius: 5px; overflow: hidden; border: 1px solid var(--border);
+  position: relative; display: flex; height: 8px; border-radius: 5px; overflow: hidden; border: 1px solid var(--border);
 }
 .gv-slider-observed { background: var(--accent); }
 .gv-slider-model {
   background: repeating-linear-gradient(45deg, var(--chip-model), var(--chip-model) 4px, transparent 4px, transparent 8px);
   font-size: 9px; color: var(--muted); text-align: right; padding-right: 4px; line-height: 8px;
 }
+.gv-slider-node {
+  position: absolute; top: -3px; width: 2px; height: 14px; background: var(--ink-2);
+  opacity: 0.55; transform: translateX(-1px); pointer-events: none;
+}
+.gv-slider-node.model { background: var(--chip-model); }
 .gv-year-label { display: flex; align-items: center; gap: 8px; font-size: 20px; font-weight: 700; }
+.gv-network-note, .gv-snap-notice { margin: 2px 0 0; }
+.gv-network-callout {
+  padding: 12px 14px; border-radius: 10px; border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  background: color-mix(in srgb, var(--accent) 8%, var(--surface-1));
+  font-size: 14px; line-height: 1.55;
+}
+.gv-track-caption { max-width: 68ch; }
 .gv-scn-switch { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
 .gv-scn-switch > div { display: inline-flex; gap: 6px; flex-wrap: wrap; }
 .gv-panel { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-top: 4px; }
@@ -1641,6 +1662,22 @@ a.service-card:hover .sc-cta { text-decoration: underline; }
 }
 .gv-cell-card { position: relative; padding: 12px 36px 12px 14px; border-radius: 8px; background: var(--surface-1); border: 1px solid var(--border); }
 .gv-cell-close { position: absolute; top: 6px; right: 8px; background: none; border: none; font-size: 18px; cursor: pointer; color: var(--muted); min-height: 32px; min-width: 32px; }
+.gv-chips { display: flex; flex-direction: column; gap: 4px; }
+.gv-chip { font-size: 13px; line-height: 1.4; padding: 5px 10px; border-radius: 6px; border-left: 3px solid var(--border); background: var(--surface-1); }
+.gv-chip-open_question { border-left-color: var(--chip-interp); }
+.gv-chip-verified { border-left-color: var(--pos); }
+.gv-howto { padding: 10px 14px; border-radius: 10px; background: var(--surface-1); border: 1px solid var(--border); font-size: 14px; line-height: 1.5; }
+.gv-howto-title { font-weight: 700; margin-bottom: 4px; }
+.gv-howto p { margin: 3px 0; }
+.gv-finding {
+  padding: 12px 14px; border-radius: 10px; border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  background: color-mix(in srgb, var(--accent) 6%, var(--surface-1));
+  font-size: 14.5px; line-height: 1.6;
+}
+.gv-finding p { margin: 6px 0; }
+.gv-next { font-size: 13.5px; line-height: 1.6; color: var(--ink-2); }
+.gv-next a { color: var(--accent); }
 @media (max-width: 640px) {
   .gv-map { height: 52vh; min-height: 320px; }
   .gv-panel { grid-template-columns: repeat(2, 1fr); }

@@ -49,14 +49,24 @@ def main() -> None:
         "доля площади страны с плотностью <5 чел/км², 1975 (constrained)")
     add("national_below5_2020", nat["area_share_below"]["5"]["2020"], 0.0001,
         "доля площади страны с плотностью <5 чел/км², 2020 (constrained)")
+    add("national_below1_2020", nat["area_share_below"]["1"]["2020"], 0.0001,
+        "доля площади страны с плотностью <1 чел/км², 2020 (доработка v1.1.0, B-8)")
     add("national_pw_density_1975", nat["population_weighted_density"]["1975"], 0.01,
         "плотность, взвешенная по населению, 1975")
     add("national_pw_density_2020", nat["population_weighted_density"]["2020"], 0.01,
         "плотность, взвешенная по населению, 2020")
+    add("national_arith_density_1975", nat["arithmetic_density"]["1975"], 0.01,
+        "арифметическая плотность страны, 1975 (доработка v1.1.0, находка на странице)")
     add("national_arith_density_1990", nat["arithmetic_density"]["1990"], 0.01,
         "арифметическая плотность страны, 1990 (пик наблюдаемого ряда)")
     add("national_arith_density_2020", nat["arithmetic_density"]["2020"], 0.01,
         "арифметическая плотность страны, 2020")
+
+    nat_f = forecast["national"]
+    add("national_below5_2050_base_A", nat_f["area_share_below"]["5"]["2050:base:A"], 0.0001,
+        "доля площади страны с плотностью <5 чел/км², 2050 базовый/A (доработка v1.1.0, находка на странице)")
+    add("national_pw_density_2050_base_A", nat_f["population_weighted_density"]["2050:base:A"], 0.01,
+        "плотность, взвешенная по населению, 2050 базовый/A (доработка v1.1.0, находка на странице)")
 
     summary = observed["reconciliation_summary"]
     add("g1_n_failed_raions_ever", summary["n_failed_raions_ever"], 0,
@@ -88,12 +98,17 @@ def main() -> None:
     add("settlement_components_largest_share_2020",
         round(sc2020["largest_share_of_pop"], 4), 0.001,
         "доля населения в крупнейшей компоненте, 2020")
+    add("settlement_components_largest_area_share_2020",
+        round(sc2020["largest_share_of_area"], 5), 0.001,
+        "доля площади страны в крупнейшей компоненте расселения, 2020 (доработка v1.1.0, находка на странице)")
 
     net_path = SRC / "network_metrics.json"
     if net_path.exists():
         net = json.loads(net_path.read_text())
         add("g6_road_km_total", net["g6"]["osm_total_km"], 1.0,
             "суммарная длина дорожной сети OSM (motorway..tertiary), км")
+        add("g6_road_km_official", net["g6"]["official_total_km"], 1.0,
+            "официальная длина дорожной сети (РУП «Белдорцентр»), км (доработка v1.1.0)")
         add("g6_delta_pct", net["g6"]["delta_pct"], 0.01,
             "отклонение суммы OSM от официальной статистики протяжённости дорог, %")
         add("g6_pass", 1 if net["g6"]["passed"] else 0, 0,

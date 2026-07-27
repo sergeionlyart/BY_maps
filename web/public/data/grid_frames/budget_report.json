@@ -1,8 +1,8 @@
 {
-  "n_frames": 46,
-  "total_mb": 2.818,
+  "n_frames": 92,
+  "total_mb": 7.301,
   "total_mb_budget": 12.0,
-  "frame_kb_max_observed": 66.2,
+  "frame_kb_max_observed": 102.2,
   "frame_kb_budget": 220,
   "within_budget": true
 }

@@ -55,6 +55,20 @@ SCN_RU = {"base": "базовый", "negative": "негативный", "optimis
 VARIANT_RU = {"A": "инерция", "B": "пригороды/периферия"}
 FONT_PATH = ROOT / "data" / "raw" / "nightlights" / "fonts" / "DejaVuSans.ttf"
 
+# Классы плотности (WP-1/B-2, docs/notes/grid_ux_audit_2026-07-27.md):
+# пороги 1 и 5 - замороженные пороги пререгистрации (docs/preregistration/
+# grid-v0.1.md §6: primary=5, secondary=1); верхний класс "густо" - без
+# отдельного замороженного порога, выбран описательно (>=50 чел/км² -
+# заметно выше средней плотности страны ~45). Цвета - 4 узла из той же
+# секвенциальной шкалы _STOPS (не новая палитра, чтобы класс и "люди в
+# клетке" читались как один язык цвета).
+DENSITY_CLASSES = [
+    (0.0, 1.0, (15, 35, 66), "почти никого"),      # < 1 чел/км²
+    (1.0, 5.0, (20, 90, 110), "редко"),             # 1-5
+    (5.0, 50.0, (70, 160, 165), "обычно"),          # 5-50
+    (50.0, float("inf"), (235, 245, 240), "густо"),  # >= 50
+]
+
 
 def lut() -> np.ndarray:
     t = np.linspace(0, 1, 256)
@@ -99,6 +113,80 @@ def _to_webp(v: np.ndarray, path, rng, table, badge: str | None,
                     fill=BGD)
         d.text((w - bw - pad * 2, m + 8 + pad - tb[1]), badge, font=font, fill=TXT)
     img.save(path, format="WEBP", quality=72, method=6)
+
+
+def _classify_rgb(a: np.ndarray) -> np.ndarray:
+    """Значения плотности -> RGB по DENSITY_CLASSES (плоская заливка,
+    без дизеринга - классы дискретны, полутон между ними был бы ложью)."""
+    h, w = a.shape
+    rgb = np.zeros((h, w, 3), dtype="uint8")
+    for lo, hi, color, _label in DENSITY_CLASSES:
+        mask = (a >= lo) & (a < hi)
+        rgb[mask] = color
+    return rgb
+
+
+def _to_webp_flat(rgb: np.ndarray, path, badge: str | None) -> None:
+    img = Image.fromarray(rgb, mode="RGB")
+    if badge:
+        HATCH, TXT, BGD = (110, 200, 210), (250, 253, 250), (8, 8, 24)
+        d = ImageDraw.Draw(img)
+        w, h = img.size
+        step, m = 18, 3
+        for x0 in range(0, w, step):
+            d.line([(x0, m), (min(x0 + 9, w), m)], fill=HATCH, width=2)
+            d.line([(x0, h - m), (min(x0 + 9, w), h - m)], fill=HATCH, width=2)
+        for y0 in range(0, h, step):
+            d.line([(m, y0), (m, min(y0 + 9, h))], fill=HATCH, width=2)
+            d.line([(w - m, y0), (w - m, min(y0 + 9, h))], fill=HATCH, width=2)
+        font = ImageFont.truetype(str(FONT_PATH), 42)
+        pad = 14
+        tb = d.textbbox((0, 0), badge, font=font)
+        bw, bh = tb[2] - tb[0], tb[3] - tb[1]
+        d.rectangle([w - bw - pad * 3, m + 8, w - m - 6, m + 8 + bh + pad * 2],
+                    fill=BGD)
+        d.text((w - bw - pad * 2, m + 8 + pad - tb[1]), badge, font=font, fill=TXT)
+    img.save(path, format="WEBP", quality=80, method=6, lossless=False)
+
+
+def render_observed_density() -> list[str]:
+    names = []
+    for epoch in EPOCHS:
+        with rasterio.open(RASTERS_CONSTRAINED / f"pop_{epoch}.tif") as s:
+            a = s.read(1)
+        rgb = _classify_rgb(a)
+        name = f"density_{epoch}.webp"
+        _to_webp_flat(rgb, FRAMES / name, None)
+        names.append(name)
+    return names
+
+
+def render_forecast_density() -> list[str]:
+    ids, feats, raions, minsk = _adm_geoms_moll()
+    ref = RASTERS_CONSTRAINED / "pop_2020.tif"
+    labels, ids2, transform, crs = zone_labels(ref)
+    stack, transform, crs, shape = load_observed_stack()
+    slope, intercept, ever_populated, t_mean = fit_log_share_trend(stack, labels, ids)
+    forecast_by_raion, _ = load_forecast()
+    with rasterio.open(ref) as s:
+        raster_2020 = s.read(1)
+    anchors = anchors_from_2020(raster_2020, transform)
+    suburb_score, periphery_score = suburb_periphery_adjustment(shape, transform, anchors)
+
+    names = []
+    for year in FORECAST_YEARS:
+        for scn in SCENARIOS:
+            for variant in VARIANTS:
+                proj = project_epoch(slope, intercept, t_mean, ever_populated,
+                                      labels, ids, forecast_by_raion, year,
+                                      scn, variant, suburb_score, periphery_score)
+                rgb = _classify_rgb(proj)
+                badge = f"МОДЕЛЬ · {SCN_RU[scn]} · {VARIANT_RU[variant]}"
+                name = f"density_{year}_{scn}_{variant}.webp"
+                _to_webp_flat(rgb, FRAMES / name, badge)
+                names.append(name)
+        print(f"  прогноз (плотность) {year}: ok")
+    return names
 
 
 def render_observed(table, rng) -> list[str]:
@@ -155,6 +243,11 @@ def write_meta() -> None:
         "crs_analysis": grid_meta["crs"],
         "note": "кадры - image-overlay в 4 угловых координатах EPSG:4326; "
                 "расчётная сетка/площадь ячейки - в ESRI:54009 (см. D-001)",
+        "density_classes": [
+            {"min": lo, "max": (hi if hi != float("inf") else None),
+             "color": f"rgb({color[0]},{color[1]},{color[2]})", "label": label}
+            for lo, hi, color, label in DENSITY_CLASSES
+        ],
     }
     (FRAMES / "meta.json").write_text(json.dumps(meta, indent=2, ensure_ascii=False))
 
@@ -223,7 +316,12 @@ def main() -> None:
     fut = render_forecast(table, rng)
     print(f"OK: {len(fut)} кадров прогноза")
 
-    all_names = obs + fut
+    obs_d = render_observed_density()
+    fut_d = render_forecast_density()
+    print(f"OK: {len(obs_d) + len(fut_d)} кадров класса плотности "
+          f"(WP-1/B-2, docs/notes/grid_ux_audit_2026-07-27.md)")
+
+    all_names = obs + fut + obs_d + fut_d
     sizes = [(FRAMES / n).stat().st_size for n in all_names]
     total_mb = sum(sizes) / 1e6
     big = [n for n in all_names if (FRAMES / n).stat().st_size > FRAME_KB_MAX * 1024]
