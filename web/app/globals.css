@@ -1646,3 +1646,148 @@ a.service-card:hover .sc-cta { text-decoration: underline; }
   .gv-panel { grid-template-columns: repeat(2, 1fr); }
 }
 /* INF-15 END */
+
+/* INF-13 UX BEGIN (handoff/10_pension_ux_copy/INF-13_PENSION_UX_AND_COPY_v1.md)
+   Новая компоновка десктопа/мобильного + два слоя текста для /research/pension.
+   Всё - только внутри .pen-view, добавлением в конец файла (ТЗ, границы).
+   Расчёт/данные/архив/методблок не затронуты - это чисто вёрстка и подача. */
+
+.pen-header { margin-bottom: 4px; }
+.pen-header h1 { margin-bottom: 2px; }
+.pen-subtitle { color: var(--muted); font-size: 15px; font-style: italic; margin: 0 0 10px; }
+.pen-lead p { margin: 0 0 8px; line-height: 1.55; }
+.pen-layer-toggle { display: flex; align-items: center; gap: 8px; margin: 10px 0 14px; flex-wrap: wrap; }
+.pen-layer-toggle-label { font-size: 12.5px; color: var(--muted); }
+
+.pen-howto { border: 1px solid var(--line); border-radius: 10px; padding: 8px 12px; margin: 10px 0 16px; background: var(--surface-1); }
+.pen-howto-toggle {
+  background: none; border: none; padding: 4px 0; cursor: pointer; font-weight: 650;
+  font-size: 13.5px; color: var(--ink); min-height: 32px; display: flex; align-items: center; gap: 6px;
+}
+.pen-howto-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 6px; }
+.pen-howto-step { font-size: 13px; line-height: 1.5; }
+.pen-howto-step p { margin: 0; }
+@media (max-width: 720px) {
+  .pen-howto-steps { grid-template-columns: 1fr; }
+}
+
+.pen-map-block { margin-top: 4px; }
+.pen-map-caption-sub { margin: 2px 0 8px; }
+.pen-map-block .chart-svg-wrap svg { width: 100%; height: auto; }
+.pen-map-tooltip .md p { margin: 0; font-size: 12.5px; line-height: 1.4; }
+
+/* строка времени: кнопка ▶ + год + ползунок - один блок, сразу под картой
+   (разд. 5 п.4). На мобильном становится липкой панелью целиком (разд. 6
+   п.3) - раньше липким был только .pyr-slider (ползунок), кнопка уезжала. */
+.pen-timebar {
+  display: flex; align-items: center; gap: 14px; flex-wrap: nowrap;
+  margin: 10px 0 4px; padding: 10px; border: 1px solid var(--line); border-radius: 12px;
+  background: var(--surface-1);
+}
+.pen-timebar .pyr-slider { flex: 1 1 auto; min-width: 0; margin: 0; }
+.pen-reduced-motion-note, .pen-play-hint { flex-basis: 100%; margin: 6px 0 0; }
+@media (max-width: 640px) {
+  .pen-timebar {
+    position: sticky; bottom: 0; z-index: 40; flex-wrap: wrap;
+    box-shadow: 0 -4px 14px rgba(0,0,0,.12);
+  }
+  .pen-timebar .pyr-slider { position: static; border: none; padding: 0; background: none; box-shadow: none; }
+  .pen-play { padding: 8px 14px; font-size: 14px; }
+}
+
+/* легенда: компактная (3 словесные подписи) на мобильном, полная - на
+   десктопе всегда, на мобильном по тапу (разд. 5 п.5, разд. 6 п.5). */
+.pen-legend-compact { display: none; align-items: center; gap: 4px 10px; font-size: 11.5px; margin-top: 6px; }
+.pen-legend-toggle {
+  background: none; border: 1px solid var(--line); border-radius: 8px; color: var(--accent);
+  font-size: 11px; padding: 2px 8px; cursor: pointer; min-height: 28px;
+}
+@media (max-width: 640px) {
+  .pen-legend-compact { display: flex; }
+  .pen-legend-full { display: none; }
+  .pen-legend-full.pen-legend-open { display: flex; }
+}
+
+/* настройки: сценарий/стартовый ряд - аккордеон на мобильном (закрыт по
+   умолчанию), пенсионный возраст - отдельно и заметнее (разд. 5 п.7, разд.
+   6 п.2). На десктопе аккордеон всегда развёрнут, кнопка-переключатель
+   скрыта - остальные страницы этот класс не используют. */
+.pen-settings-toggle {
+  display: none; width: 100%; text-align: left; background: var(--surface-1);
+  border: 1px solid var(--line); border-radius: 8px; padding: 8px 12px; margin-bottom: 6px;
+  font-size: 13.5px; font-weight: 600; cursor: pointer; color: var(--ink); min-height: 40px;
+}
+.pen-setting-hint { margin: 3px 0 0; font-size: 12px; }
+.pen-policy-primary .control-label { font-size: 14.5px; font-weight: 700; }
+.pen-policy-primary .seg button { font-weight: 600; }
+@media (max-width: 640px) {
+  .pen-settings-toggle { display: block; }
+  .pen-settings-acc:not(.open) .pen-settings-body { display: none; }
+}
+
+/* карточка района: шторка снизу на мобильном (разд. 6 п.6), открывается по
+   тапу на район (PensionView.select() ставит cardOpen=true). Свёрнутое
+   состояние - обычный блок в потоке страницы (НЕ fixed): .pen-timebar уже
+   занимает низ экрана липкой панелью (разд. 6 п.3), а два одновременных
+   fixed-элемента с bottom:0 перекрывали бы друг друга. Раскрытая шторка -
+   fixed поверх всего, включая панель времени (это осознанный компромисс:
+   пока открыта карточка района, время не листают). На десктопе - обычный
+   блок в потоке, ручка/пик скрыты. */
+.pen-sheet-handle { display: none; }
+@media (max-width: 640px) {
+  .pen-card-sheet:not(.open) {
+    border: 1px solid var(--line); border-radius: 12px; background: var(--surface-1);
+  }
+  .pen-card-sheet.open {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 50;
+    max-height: 80vh; overflow-y: auto; background: var(--page);
+    border-top: 1px solid var(--line); border-radius: 16px 16px 0 0;
+    box-shadow: 0 -8px 24px rgba(0,0,0,.22);
+    padding: 0 14px 14px; margin: 0;
+  }
+  .pen-sheet-handle {
+    display: flex; align-items: center; gap: 10px; width: 100%;
+    background: none; border: none; padding: 10px 12px; cursor: pointer;
+    min-height: 44px; color: var(--ink);
+  }
+  .pen-card-sheet.open .pen-sheet-handle { position: sticky; top: 0; background: var(--page); padding: 10px 0 6px; }
+  .pen-sheet-grip { width: 36px; height: 4px; border-radius: 3px; background: var(--line); flex: 0 0 auto; }
+  .pen-sheet-peek { font-size: 13.5px; font-weight: 650; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .pen-card-sheet:not(.open) .pen-sheet-body { display: none; }
+  .pen-card-sheet:not(.open) .controls { display: none; }
+  .pen-card-sheet.open .pen-sheet-body { padding: 0 2px; }
+}
+
+/* длинные текстовые блоки (Три вывода / Чего не говорит) - свёрнуты до
+   первого абзаца на мобильном, кнопка «Подробнее» (разд. 6 п.7). */
+.pen-more-btn { display: none; }
+@media (max-width: 640px) {
+  .pen-collapsible:not(.open) .pen-collapsible-body { max-height: 6.5em; overflow: hidden; position: relative; }
+  .pen-collapsible:not(.open) .pen-collapsible-body::after {
+    content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 2.2em;
+    background: linear-gradient(to bottom, transparent, var(--page));
+  }
+  .pen-more-btn {
+    display: inline-block; margin: 6px 0 16px; background: none; border: 1px solid var(--line);
+    border-radius: 8px; padding: 6px 14px; color: var(--accent); cursor: pointer; min-height: 36px; font-size: 13px;
+  }
+}
+
+.pen-finding { margin-top: 16px; }
+.pen-finding h3 { font-size: 15px; margin-bottom: 4px; }
+.pen-find-result { margin: 8px 0; line-height: 1.55; }
+.pen-method-pitch { margin-top: 26px; }
+.pen-method-pitch p { line-height: 1.55; }
+
+/* тап-цели ≥44px на мобильном (чеклист приёмки) */
+@media (max-width: 640px) {
+  .pen-view .pen-howto-toggle,
+  .pen-view .pen-legend-toggle,
+  .pen-view .pen-more-btn,
+  .pen-view .pen-layer-toggle .seg button { min-height: 44px; }
+  /* метки годов слайдера (.pyr-tick) - унаследованы от PyramidView, на
+     мобильном были ~37×21px (замер аудита); увеличиваем именно здесь
+     (.pen-view-скоуп), Pyramid не трогаем. */
+  .pen-view .pyr-tick { padding: 15px 10px; }
+}
+/* INF-13 UX END */

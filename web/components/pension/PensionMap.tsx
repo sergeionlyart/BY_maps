@@ -8,7 +8,9 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { useT } from '@/lib/i18n';
 import type { PensionFile, PolicyId, SeriesKey } from '@/lib/pension';
 import { valueAt } from '@/lib/pension';
-import { srColor, SR_LEGEND } from './scale';
+import { srColor } from './scale';
+import { ruNum, fillTemplate, type ContentGetter } from '@/lib/pensionContent';
+import Markdown from '@/components/Markdown';
 
 interface GeoFeature {
   properties: { id: string };
@@ -24,6 +26,7 @@ export default function PensionMap({
   year,
   selected,
   onSelect,
+  C,
 }: {
   geo: GeoFeature[];
   pf: PensionFile;
@@ -33,6 +36,7 @@ export default function PensionMap({
   year: number;
   selected: string | null;
   onSelect: (id: string) => void;
+  C: ContentGetter;
 }) {
   const t = useT();
   const wrapRef = useRef<HTMLDivElement>(null);
@@ -112,22 +116,16 @@ export default function PensionMap({
           <path key={p.id + '-sel'} d={p.d} fill="none" stroke="var(--ink)" strokeWidth="1.8" pointerEvents="none" />
         ))}
       </svg>
-      <div className="choro-legend">
-        {SR_LEGEND.map((s) => (
-          <span className="cl-item" key={s.label}>
-            <span className="cl-swatch" style={{ background: s.color }} />
-            {t(s.label)}
-          </span>
-        ))}
-      </div>
+
       {hover && (
-        <div className="chart-tooltip" style={{ left: Math.min(hover.x + 14, width - 200), top: hover.y - 8 }}>
-          <div className="ct-row"><span className="ct-val">{names[hover.id] ?? hover.id}</span></div>
-          <div className="ct-year">
-            {hoverVal != null
-              ? <>{t('работающих на 1 пожилого:')} <strong>{hoverVal.toFixed(2)}</strong></>
-              : t('нет данных на этот год')}
-          </div>
+        <div className="chart-tooltip pen-map-tooltip" style={{ left: Math.min(hover.x + 14, width - 220), top: hover.y - 8 }}>
+          {hoverVal != null ? (
+            <Markdown text={fillTemplate(C.get('micro.tooltip'), {
+              district: names[hover.id] ?? hover.id, year, value: ruNum(hoverVal, 2),
+            })} />
+          ) : (
+            <div className="ct-year">{C.get('micro.no-data') || t('нет данных на этот год')}</div>
+          )}
         </div>
       )}
     </div>

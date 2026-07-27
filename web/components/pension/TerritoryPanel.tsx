@@ -4,16 +4,30 @@
  *  порогам (интервал вместо даты, если у района активен crossing_interval —
  *  гейт G-3 не пройден на районном уровне), условная денежная арифметика
  *  (или явная причина, почему скрыта — запрещённое слово из ТЗ §Абсолютное
- *  правило сюда никогда не попадает), веер
- *  трёх сценариев SR и «пенсионный крест». */
+ *  правило сюда никогда не попадает, кроме единственного разрешённого места -
+ *  card.cg-note.p2 в слое «Просто», где отрицание «не бюджет района» прямо
+ *  требует раздел 9 п.1 нового ТЗ handoff/10_pension_ux_copy), веер
+ *  трёх сценариев SR и «пенсионный крест».
+ *
+ *  INF-13 UX: подписи плиток/блоков и пояснения - из контент-файлов (§7.8),
+ *  сама механика (сеть точек, crossingDisplay, CG-состояния) не менялась.
+ *  Режим "шторки" на мобильном - в обёртке PensionView, этот компонент
+ *  не знает о sheet-механике, просто рендерит содержимое целиком. */
 
 import { useT } from '@/lib/i18n';
 import type { PensionFile, PolicyId, ScenarioId, JumpoffId, TerritoryEntry, ThresholdKey } from '@/lib/pension';
-import { THRESHOLDS, THRESHOLD_LABEL, valueAt, crossingDisplay, seriesKey as mkSeriesKey } from '@/lib/pension';
+import { THRESHOLDS, valueAt, crossingDisplay, seriesKey as mkSeriesKey } from '@/lib/pension';
 import { SCENARIO_STYLE, SCENARIO_LABEL } from '@/lib/forecast';
+import { ruNum, fillTemplate, type ContentGetter } from '@/lib/pensionContent';
 import LineChart from '@/components/LineChart';
+import Markdown from '@/components/Markdown';
 
 const CARD_YEARS = [2036, 2046, 2056];
+const THRESHOLD_CONTENT_KEY: Record<ThresholdKey, string> = {
+  '2.0': 'card.threshold.2_0',
+  '1.5': 'card.threshold.1_5',
+  '1.0': 'card.threshold.1_0',
+};
 
 export default function TerritoryPanel({
   pf,
@@ -25,6 +39,8 @@ export default function TerritoryPanel({
   jumpoff,
   policy,
   year,
+  layer,
+  C,
 }: {
   pf: PensionFile;
   id: string;
@@ -35,6 +51,8 @@ export default function TerritoryPanel({
   jumpoff: JumpoffId;
   policy: PolicyId;
   year: number;
+  layer: 'simple' | 'pro';
+  C: ContentGetter;
 }) {
   const t = useT();
   const key = mkSeriesKey(scenario, jumpoff);
@@ -77,46 +95,48 @@ export default function TerritoryPanel({
 
       <div className="stat-row">
         <div className="stat-tile">
-          <div className="st-label">{t('SR сейчас')} ({year})</div>
-          <div className="st-value">{srNow != null ? srNow.toFixed(2) : '—'}</div>
+          <div className="st-label">{C.get('card.sr-now-label')} ({year})</div>
+          <div className="st-value">{srNow != null ? ruNum(srNow, 2) : '—'}</div>
         </div>
         {cardSr.map(({ y, v }) => (
           <div className="stat-tile" key={y}>
-            <div className="st-label">SR {y}</div>
-            <div className="st-value">{v != null ? v.toFixed(2) : '—'}</div>
+            <div className="st-label">{fillTemplate(C.get('card.sr-year-label'), { y })}</div>
+            <div className="st-value">{v != null ? ruNum(v, 2) : '—'}</div>
           </div>
         ))}
       </div>
 
       <div className="chart-block">
-        <div className="chart-title">{t('Год перехода порогов')}</div>
+        <div className="chart-title">{C.get('card.crossing-title')}</div>
         <div className="stat-row">
           {THRESHOLDS.map((th) => (
-            <CrossingTile key={th} th={th} entry={entry} policy={policy} skey={key} />
+            <CrossingTile key={th} th={th} entry={entry} policy={policy} skey={key} C={C} />
           ))}
         </div>
+        {C.has('card.crossing-note') && <Markdown text={C.get('card.crossing-note')} />}
       </div>
 
       <div className="prob-panel">
-        <div className="prob-head">{t('Условная денежная арифметика (CG)')}</div>
+        <div className="prob-head">{C.get('card.cg-title')}</div>
         {entry.cg_suppressed ? (
-          <div className="prob-note">
-            {t('Не показывается: район в пределах 45 минут эффективной доступности до Минска — маятниковая миграция искажает базу взносов, количественная поправка недоступна (проверка G-7). Это не реальные доходы или расходы района.')}
-          </div>
+          <div className="prob-note">{C.get('card.cg-suppressed')}</div>
         ) : cgVal != null ? (
           <>
-            <div className="prob-rows"><span><b>{cgVal.toFixed(2)}</b> {t('(1,00 — взносы работающих района равны условной потребности его пожилых)')}</span></div>
+            <div className="prob-rows">
+              <span><b>{ruNum(cgVal, 2)}</b> {layer === 'pro' && C.has('card.cg-value-note') ? C.get('card.cg-value-note') : ''}</span>
+            </div>
             <div className="prob-note">
-              {t('Условный сравнительный индекс, не реальные доходы или расходы района: общереспубликанский пенсионный фонд по районам не делится. При текущем экономическом масштабе района CG пропорционален SR — это тот же демографический ряд, пересчитанный в условные деньги, а не независимое подтверждение тренда.')}
+              {C.has('card.cg-note.p1') && <Markdown text={C.get('card.cg-note.p1')} />}
+              {C.has('card.cg-note.p2') && <Markdown text={C.get('card.cg-note.p2')} />}
             </div>
           </>
         ) : (
-          <div className="prob-note">{t('Не рассчитывается для факта до 2026 года — денежный слой использует текущие занятость и зарплату района.')}</div>
+          <div className="prob-note">{C.get('card.cg-not-yet')}</div>
         )}
       </div>
 
       <div className="chart-block">
-        <div className="chart-title">{t('Веер трёх сценариев, SR')}</div>
+        <div className="chart-title">{C.get('card.fan-title')}</div>
         <LineChart
           series={fanSeries}
           domain={[years[0], years[years.length - 1]]}
@@ -127,7 +147,7 @@ export default function TerritoryPanel({
       </div>
 
       <div className="chart-block">
-        <div className="chart-title">{t('«Пенсионный крест»: работающие и пожилые')}</div>
+        <div className="chart-title">{C.get('card.cross-title')}</div>
         <LineChart
           series={[
             { name: t('работающие (индекс на 100 пожилых)'), color: 'var(--accent)', points: crossPts },
@@ -138,25 +158,32 @@ export default function TerritoryPanel({
           yFormat={(v) => v.toFixed(0)}
         />
         <p className="hint" style={{ marginTop: 6 }}>
-          {t('Индекс на 100 человек старше трудоспособного возраста района (не абсолютная численность: районный разрез по отдельным возрастным группам на клиенте недоступен). Пересечение линий тождественно году, когда работающих становится столько же, сколько пожилых —')}{' '}
-          {cross1.kind === 'year' ? cross1.value : cross1.kind === 'interval' ? t(cross1.value) : t('не наступает до 2056 года')}.
+          {C.get('card.cross-note')}
+          {/* слой «Профессионально»: card.cross-note нарочно обрывается на тире,
+              ждёт продолжения значением (как в исходном коде); слой «Просто» -
+              самостоятельное законченное предложение (ТЗ §7.8), ничего не
+              дописываем, иначе получится "...уже произошло. после 2045." */}
+          {layer === 'pro' && (
+            <>{' '}{cross1.kind === 'year' ? cross1.value : cross1.kind === 'interval' ? t(cross1.value) : C.get('card.cross-not-yet')}.</>
+          )}
         </p>
       </div>
     </div>
   );
 }
 
-function CrossingTile({ th, entry, policy, skey }: {
+function CrossingTile({ th, entry, policy, skey, C }: {
   th: ThresholdKey;
   entry: TerritoryEntry;
   policy: PolicyId;
   skey: `${ScenarioId}:${JumpoffId}`;
+  C: ContentGetter;
 }) {
   const t = useT();
   const c = crossingDisplay(entry, policy, skey, th);
   return (
     <div className="stat-tile" data-threshold={th}>
-      <div className="st-label">{t(THRESHOLD_LABEL[th])}</div>
+      <div className="st-label">{C.get(THRESHOLD_CONTENT_KEY[th])}</div>
       <div className="st-value pen-crossing-value" data-kind={c.kind} style={{ fontSize: c.kind === 'interval' ? 13.5 : 17 }}>
         {c.kind === 'year' ? c.value : c.kind === 'interval' ? t(c.value) : t('не наступает до 2056')}
       </div>

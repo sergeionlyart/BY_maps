@@ -4,12 +4,20 @@
  *  действующему (или выбранному гипотетическому) графику → SR в выбранном
  *  районе на ближайший доступный год. Полностью на клиенте: состояние живёт
  *  только в React (useState), никуда не отправляется и нигде не
- *  сохраняется (localStorage/сеть здесь не используются намеренно). */
+ *  сохраняется (localStorage/сеть здесь не используются намеренно).
+ *
+ *  INF-13 UX (handoff/10_pension_ux_copy §7.9): слой «Просто» - одна
+ *  цельная фраза (грамматика русского требует разных падежей вокруг числа,
+ *  поэтому не собирается из тех же фрагментов, что и профессиональный слой -
+ *  один шаблон на весь результат). Слой «Профессионально» - тот же состав
+ *  фрагментов, что был в коде до этой правки, перенесённый в контент-файл. */
 
 import { useState } from 'react';
 import { useT } from '@/lib/i18n';
 import type { PensionFile, PolicyId, ScenarioId, JumpoffId } from '@/lib/pension';
 import { findRetirementYear, nearestTerritoryYear, valueAt, seriesKey as mkSeriesKey } from '@/lib/pension';
+import { ruNum, fillTemplate, type ContentGetter } from '@/lib/pensionContent';
+import Markdown from '@/components/Markdown';
 
 export default function FindYourself({
   pf,
@@ -18,6 +26,8 @@ export default function FindYourself({
   policy,
   scenario,
   jumpoff,
+  layer,
+  C,
 }: {
   pf: PensionFile;
   territoryId: string;
@@ -25,6 +35,8 @@ export default function FindYourself({
   policy: PolicyId;
   scenario: ScenarioId;
   jumpoff: JumpoffId;
+  layer: 'simple' | 'pro';
+  C: ContentGetter;
 }) {
   const t = useT();
   const [birth, setBirth] = useState<number | null>(null);
@@ -40,7 +52,8 @@ export default function FindYourself({
 
   return (
     <div className="chart-block pen-find">
-      <div className="chart-title">{t('Найди себя')}</div>
+      <div className="chart-title">{C.get('find.title')}</div>
+      {C.has('find.lead.p1') && <Markdown text={C.get('find.lead.p1')} />}
       <div className="controls" style={{ marginBottom: 6 }}>
         <label className="hint" htmlFor="pen-birth">{t('Год рождения:')}</label>
         <input
@@ -62,23 +75,33 @@ export default function FindYourself({
         </div>
       </div>
       {birth != null && retireYear != null && (
-        <p className="pen-find-result">
-          {t('Выход на пенсию:')} <strong>{retireYear}</strong> {t('год')}
-          {beyondHorizon && ` (${t('за пределами горизонта прогноза, 2056 год')})`}
-          {'. '}
-          {sr != null ? (
+        <div className="pen-find-result">
+          {sr == null ? (
+            C.get('find.result-nodata')
+          ) : layer === 'simple' ? (
             <>
-              {t('В районе')} «{territoryName}»{dataYear !== retireYear ? ` ${t('на ближайший доступный год')} ${dataYear}` : ` ${t('в этот год')}`}{' '}
-              {t('на одного пожилого будет приходиться')} <strong>{sr.toFixed(2)}</strong> {t('работающих')}
-              {scenario !== 'base' ? ` (${t('сценарий')}: ${t(scenario === 'optimistic' ? 'оптимистический' : 'негативный')})` : ''}.
+              <Markdown text={fillTemplate(dataYear === retireYear ? C.get('find.result-main') : C.get('find.result-main-nearest'), {
+                retireYear, district: territoryName, dataYear: dataYear ?? '', sr: ruNum(sr, 2),
+              })} />
+              {beyondHorizon && <span className="hint">{C.get('find.result-beyond-note')}</span>}
+              {scenario !== 'base' && (
+                <span className="hint">{' '}{fillTemplate(C.get('find.result-scenario-note'), { scenario: t(scenario === 'optimistic' ? 'оптимистический' : 'негативный') })}</span>
+              )}
             </>
           ) : (
-            t('Данных SR для этого года и района нет.')
+            <>
+              {C.get('find.result-retire-label')} <strong>{retireYear}</strong> {C.get('find.result-year-word')}
+              {beyondHorizon && ` (${C.get('find.result-beyond-suffix')})`}
+              {'. '}
+              {C.get('find.result-in-district')} «{territoryName}»{dataYear !== retireYear ? ` ${C.get('find.result-nearest-year')} ${dataYear}` : ` ${C.get('find.result-this-year')}`}{' '}
+              {C.get('find.result-will-have')} <strong>{ruNum(sr, 2)}</strong> {C.get('find.result-workers-word')}
+              {scenario !== 'base' ? ` (${C.get('find.result-scenario-word')}: ${t(scenario === 'optimistic' ? 'оптимистический' : 'негативный')})` : ''}.
+            </>
           )}
-        </p>
+        </div>
       )}
       <p className="hint" style={{ marginTop: 4 }}>
-        {t('Расчёт выполняется в браузере: год рождения никуда не отправляется и нигде не сохраняется.')}
+        {C.get('find.lead.p2') || t('Расчёт выполняется в браузере: год рождения никуда не отправляется и нигде не сохраняется.')}
       </p>
     </div>
   );

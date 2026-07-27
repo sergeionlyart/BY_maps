@@ -182,3 +182,25 @@ export const THRESHOLD_LABEL: Record<ThresholdKey, string> = {
   '1.5': '1,5 к 1',
   '1.0': '1 к 1',
 };
+
+/** Сколько районов из скольких имеют SR ниже порога в заданном году (общий
+ *  приём для счётчика на карте и для «Вывода 1» в Findings.tsx - раньше
+ *  дублировался в двух местах с разными порогами, теперь один расчёт). */
+export function countBelowThreshold(
+  pf: PensionFile,
+  threshold: number,
+  year: number,
+  key: SeriesKey,
+  policy: PolicyId = 'as_is',
+): { below: number; total: number } {
+  const years = pf.years.territory;
+  let below = 0;
+  let total = 0;
+  for (const entry of Object.values(pf.territories)) {
+    const v = valueAt(entry.sr, years, policy, key, year);
+    if (v == null) continue;
+    total++;
+    if (v < threshold) below++;
+  }
+  return { below, total };
+}

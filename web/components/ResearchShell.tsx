@@ -16,12 +16,18 @@ export default function ResearchShell({
   version,
   title,
   lead,
+  hideHeader,
   children,
 }: {
   code: string;
   version?: string;
   title: string;
   lead: string;
+  /** Скрыть <h1>/лид оболочки, когда вьюшка сама рисует заголовок и лид
+   *  (INF-13: два слоя текста, переключатель «Просто/Профессионально» -
+   *  title/lead всё равно идут в JsonLd/SEO). Опционально, по умолчанию
+   *  false - остальные страницы исследований не затронуты. */
+  hideHeader?: boolean;
   children: React.ReactNode;
 }) {
   const t = useT();
@@ -44,8 +50,12 @@ export default function ResearchShell({
         {code}
         {version ? ` · ${version}` : ''}
       </div>
-      <h1>{t(title)}</h1>
-      <p className="page-lead">{t(lead)}</p>
+      {!hideHeader && (
+        <>
+          <h1>{t(title)}</h1>
+          <p className="page-lead">{t(lead)}</p>
+        </>
+      )}
       {children}
       <AuthorCard variant="compact" lang={lang} />
     </div>
