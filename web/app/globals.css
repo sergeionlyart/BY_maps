@@ -1827,3 +1827,19 @@ a.service-card:hover .sc-cta { text-decoration: underline; }
   width: 92px;
 }
 /* INF-13 UX END */
+
+/* INF-13: видеоверсия исследования (ReelBlock). Вертикальный формат 9:16,
+   ширина ограничена - на десктопе ролик не должен растягиваться на всю
+   колонку, на телефоне занимает её целиком. */
+.pen-reel-block { text-align: center; }
+.pen-reel {
+  display: block;
+  margin: 8px auto 0;
+  width: min(100%, 320px);
+  aspect-ratio: 9 / 16;
+  height: auto;
+  border-radius: 10px;
+  background: #0c0c0b;
+  border: 1px solid var(--border);
+}
+.pen-reel-caption { margin-top: 10px; }

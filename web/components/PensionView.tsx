@@ -31,6 +31,7 @@ import PensionLegend from '@/components/pension/PensionLegend';
 import TerritoryPanel from '@/components/pension/TerritoryPanel';
 import FindYourself from '@/components/pension/FindYourself';
 import Findings from '@/components/pension/Findings';
+import ReelBlock from '@/components/pension/ReelBlock';
 
 interface GeoFeature {
   properties: { id: string };
@@ -190,6 +191,13 @@ export default function PensionView() {
           </div>
         </div>
       </header>
+
+      {/* 1b. Видеоверсия исследования (рилс R-P1, 53 с, RU/BE) - вставлена
+             сразу после лида: это 53-секундный пересказ страницы для тех,
+             кто пришёл из соцсетей по ссылке из самого ролика. */}
+      {C.has('reel.title') && (
+        <ReelBlock title={C.get('reel.title')} caption={C.has('reel.caption') ? C.get('reel.caption') : undefined} />
+      )}
 
       {/* 2. «Как читать эту карту» (разд. 5 п.2) */}
       <div className="pen-howto">

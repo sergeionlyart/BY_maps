@@ -84,9 +84,17 @@ def test_disclaimer_never_says_budget(scene):
 
 
 def test_duration_within_spec_range(scene):
-    """ТЗ (Storyboard): «~35-40 секунд»."""
+    """ТЗ (Storyboard) для v1.0 - «~35-40 секунд»; с v1.1 к ролику добавлены
+    бренд-интро (5 с) и расширенный бренд-финал, поэтому верхняя граница
+    поднята до производственного требования всех рилсов проекта -
+    handoff/07_reels/REELS_SCENARIOS.md, «Общие производственные
+    требования» п.1: «1080x1920, 30-45 с». С v1.4 (сцена «хроника» на десять
+    районов) ролик стал длиннее этого потолка - 53,0 с, решение автора от
+    27.07.2026 при постановке задачи на хронику. Само требование в
+    REELS_SCENARIOS.md ещё НЕ обновлено - отдельная задача. Граница здесь
+    поднята до 53,5 с, чтобы тест продолжал сторожить хронометраж."""
     duration = scene["format"]["durationSec"]
-    assert 35.0 <= duration <= 40.5, duration
+    assert 35.0 <= duration <= 53.5, duration
 
 
 def test_resolution_is_1080x1920(scene, mod):
@@ -199,8 +207,13 @@ def test_frame_at_2046_shows_69_below_threshold(mod, pension, scene):
     proj = mod.make_projector(bbox, mod.MAP_X0, mod.MAP_Y0, mod.MAP_W, mod.MAP_H)
     mod.precompute_pixels(feats, proj)
 
+    # С v1.3 год 2046 - граница сегментов (пролёт 2026->2046, затем
+    # остановка на 2046), поэтому строгое вхождение year[0] < 2046 < year[1]
+    # больше не выполняется ни для одного сегмента: берём пролётный сегмент
+    # (year[0] != year[1]), внутри которого 2046 достигается при k = 1,0.
     seg = next(s for s in scene["timeline"]
-              if s["scene"] == "forecast" and s["year"][0] < 2046 < s["year"][1])
+              if s["scene"] == "forecast" and s["year"][0] != s["year"][1]
+              and s["year"][0] <= 2046 <= s["year"][1])
     fps = scene["format"]["fps"]
     # t, при котором year(t) == 2046 внутри найденного сегмента
     k = (2046 - seg["year"][0]) / (seg["year"][1] - seg["year"][0])
