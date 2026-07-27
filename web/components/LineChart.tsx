@@ -65,10 +65,17 @@ export default function LineChart({ series, height = 190, yFormat, yTooltip, dom
     return t;
   }, [x0, x1]);
 
-  // ширина контейнера через ResizeObserver (надёжно при поздней раскладке)
+  // ширина контейнера через ResizeObserver (надёжно при поздней раскладке).
+  // Синхронное чтение el.clientWidth сразу в эффекте - не только в колбэке
+  // ResizeObserver: в части окружений первый колбэк ResizeObserver ни разу
+  // не срабатывает даже при последующем реальном ресайзе (воспроизведено на
+  // /research/pension, 2026-07-27 - узкий контейнер, ширина оставалась на
+  // дефолте 388, график вылезал за пределы страницы). ResizeObserver
+  // остаётся для реакции на дальнейшие изменения размера.
   useEffect(() => {
     const el = wrapRef.current;
     if (!el) return;
+    if (el.clientWidth > 40) setWidth(el.clientWidth);
     const ro = new ResizeObserver(() => {
       const w = el.clientWidth;
       if (w > 40) setWidth(w);

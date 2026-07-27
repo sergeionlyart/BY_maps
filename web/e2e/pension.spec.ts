@@ -10,7 +10,13 @@ import { test, expect, type Page } from '@playwright/test';
 
 function collectErrors(page: Page) {
   const errors: string[] = [];
-  page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
+  page.on('console', (m) => {
+    // WebKit (mobile-проект): нативные элементы управления <video controls>
+    // пытаются подгрузить иконки PiP/AirPlay из системного набора, которого
+    // нет в headless-тестовом окружении - шум движка, не имеет отношения к
+    // реальному воспроизведению (не воспроизводится в вебките с полным GUI).
+    if (m.type() === 'error' && !/Button failed to load, iconName/.test(m.text())) errors.push(m.text());
+  });
   page.on('pageerror', (e) => errors.push(String(e)));
   page.on('response', (r) => {
     if (r.status() >= 400 && !r.url().includes('favicon')) {
