@@ -3,7 +3,7 @@
 
 id: grid
 title: "Полотно: карта расселения Беларуси по сетке 1 км, 1975–2050"
-version: "1.1.0"
+version: "1.2.0"
 released: "2026-07-28"
 landing_url: "https://by-population-maps.vercel.app/research/grid"
 authors:
@@ -44,6 +44,10 @@ files:
   - { path: sources/raw/network_by_raion.csv, from: data/raw/grid/network_by_raion.csv, role: raw,
       license: "ODbL 1.0 (производная OSM, © OpenStreetMap contributors)" }
   - { path: sources/raw/registry_road_stats.csv, from: data/raw/grid/registry_road_stats.csv, role: raw }
+  - { path: sources/raw/story_metrics.json, from: data/raw/grid/story_metrics.json, role: raw,
+      license: "CC BY 4.0 (BY Maps; производная GHS-POP R2023A + OSM + официальная статистика)" }
+  - { path: sources/raw/g9_concentration_check.json, from: data/raw/grid/g9_concentration_check.json, role: raw,
+      license: "CC BY 4.0 (BY Maps)" }
 
   - { path: sources/raw/rasters/pop_1975.tif, from: data/raw/grid/rasters_constrained/pop_1975.tif, role: raw,
       license: "CC BY 4.0 (производная GHS-POP R2023A, JRC; калибровано под официальные данные - см. METHODS.md)" }
@@ -67,6 +71,7 @@ files:
   - { path: code/extract/grid_project.py, from: etl/grid_project.py, role: code }
   - { path: code/extract/grid_frames.py, from: etl/grid_frames.py, role: code }
   - { path: code/extract/grid_network.py, from: etl/grid_network.py, role: code }
+  - { path: code/extract/grid_story.py, from: etl/grid_story.py, role: code }
 
   - { path: params/assumptions.yaml, role: params }
   - { path: checks/tests/test_invariants.py, role: code }
@@ -187,3 +192,55 @@ expected_results:
       description: "корреляция Спирмена network_per_capita_2026 vs темп изменения района 1989-2026 (C-3 подтверждена)" }
   - { metric: c3_p_value_log10, value: -21.9, tolerance: 0.5,
       description: "log10(p-value) корреляции C-3 (p≈1.25e-22, высоко значимо)" }
+
+  # v2 «История» (доработка) - гипотезы C-004/C-005, docs/preregistration/grid-v0.2.md
+  - { metric: c004_band1_5_change_pct, value: -20.5, tolerance: 0.05,
+      description: "C-004: изменение населения в клетках 1-5 чел/км², 1975->2020, %" }
+  - { metric: c004_band5_25_change_pct, value: -25.8, tolerance: 0.05,
+      description: "C-004: изменение населения в клетках 5-25 чел/км², 1975->2020, %" }
+  - { metric: c004_band25_100_change_pct, value: -29.3, tolerance: 0.05,
+      description: "C-004: изменение населения в клетках 25-100 чел/км², 1975->2020, %" }
+  - { metric: c004_band100_500_change_pct, value: -21.6, tolerance: 0.05,
+      description: "C-004: изменение населения в клетках 100-500 чел/км², 1975->2020, %" }
+  - { metric: c004_band500_2000_change_pct, value: 10.3, tolerance: 0.05,
+      description: "C-004: изменение населения в клетках 500-2000 чел/км² («правило пятисот»), 1975->2020, %" }
+  - { metric: c004_band2000plus_change_pct, value: 18.1, tolerance: 0.05,
+      description: "C-004: изменение населения в клетках 2000+ чел/км², 1975->2020, %" }
+  - { metric: c005_band0_2_change_pct, value: 12.6, tolerance: 0.05,
+      description: "C-005: изменение населения в клетках 0-2 км от магистрали, 1975->2020, %" }
+  - { metric: c005_band2_5_change_pct, value: -18.7, tolerance: 0.05,
+      description: "C-005: изменение населения в клетках 2-5 км от магистрали, 1975->2020, %" }
+  - { metric: c005_band5_10_change_pct, value: -38.4, tolerance: 0.05,
+      description: "C-005: изменение населения в клетках 5-10 км от магистрали, 1975->2020, %" }
+  - { metric: c005_band10_20_change_pct, value: -41.4, tolerance: 0.05,
+      description: "C-005: изменение населения в клетках 10-20 км от магистрали, 1975->2020, %" }
+  - { metric: c005_band20plus_change_pct, value: -38.8, tolerance: 0.05,
+      description: "C-005: изменение населения в клетках 20+ км от магистрали, 1975->2020, %" }
+  - { metric: half_population_area_km2_1975, value: 1131, tolerance: 0,
+      description: "площадь, вмещающая половину населения страны, 1975, км²" }
+  - { metric: half_population_area_km2_2020, value: 598, tolerance: 0,
+      description: "площадь, вмещающая половину населения страны, 2020, км²" }
+  - { metric: half_population_area_km2_2050_base_A, value: 284, tolerance: 0,
+      description: "площадь, вмещающая половину населения страны, 2050 базовый/A, км²" }
+  - { metric: raion_deepest_decline_change_pct, value: -74.3, tolerance: 0.05,
+      description: "Брагинский район, изменение населения 1975->2020, % (глубочайший спад)" }
+  - { metric: raion_top_growth_change_pct, value: 98.0, tolerance: 0.05,
+      description: "Брестский район, изменение населения 1975->2020, % (наибольший рост)" }
+  - { metric: n_raions_shrunk, value: 99, tolerance: 0,
+      description: "районов (из 118) с сокращением населения 1975->2020" }
+  - { metric: n_raions_shrunk_40pct_or_more, value: 61, tolerance: 0,
+      description: "районов с сокращением населения на 40% и более" }
+  - { metric: g9_top5_share_1975, value: 0.2556, tolerance: 0.0005,
+      description: "G-9: средняя по стране доля населения района в топ-5 самых плотных клетках, 1975" }
+  - { metric: g9_top5_share_2020, value: 0.2584, tolerance: 0.0005,
+      description: "G-9: то же, 2020 (почти не изменилось за 45 лет - 25,6%->25,8%)" }
+  - { metric: g9_top5_share_2050_base_A, value: 0.5541, tolerance: 0.0005,
+      description: "G-9: то же, 2050 базовый/A - модель прогнозирует скачок до 55,4% (см. D-013)" }
+  - { metric: g9_n_raions_violated, value: 62, tolerance: 0,
+      description: "G-9: районов, где прогнозный темп концентрации превышает исторический максимум в 3+ раза" }
+  - { metric: g9_pct_raions_violated, value: 52.5, tolerance: 0.1,
+      description: "G-9: доля районов-нарушителей, %" }
+  - { metric: g9_max_ratio_to_historical, value: 26.75, tolerance: 0.05,
+      description: "G-9: максимальное отношение прогнозного темпа к историческому по районам" }
+  - { metric: g9_pass, value: 0, tolerance: 0,
+      description: "G-9 НЕ пройдена (0) - честно, по конструкции: вариант A/Б переконцентрирует население внутри района сильнее, чем допускает исторический темп (см. D-013)" }

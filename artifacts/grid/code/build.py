@@ -118,6 +118,64 @@ def main() -> None:
         add("c3_p_value_log10", round(math.log10(net["correlation_c3"]["p_value"]), 1), 0.5,
             "log10(p-value) корреляции C-3 (значение очень мало - сравниваем в лог-масштабе)")
 
+    story_path = SRC / "story_metrics.json"
+    if story_path.exists():
+        story = json.loads(story_path.read_text())
+
+        c004 = story["c004_density_bands"]["bands"]
+        band_names = ["1_5", "5_25", "25_100", "100_500", "500_2000", "2000plus"]
+        for name, b in zip(band_names, c004):
+            add(f"c004_band{name}_change_pct", b["change_pct"], 0.05,
+                f"C-004: изменение населения в клетках {b['lo']}-{b['hi'] or '2000+'} чел/км², "
+                "1975->2020, %")
+
+        c005 = story["c005_highway_distance"]["bands"]
+        hw_names = ["0_2", "2_5", "5_10", "10_20", "20plus"]
+        for name, b in zip(hw_names, c005):
+            add(f"c005_band{name}_change_pct", b["change_pct"], 0.05,
+                f"C-005: изменение населения в клетках {b['lo']}-{b['hi'] or '20+'} км "
+                "от магистрали, 1975->2020, %")
+
+        half = story["half_population_area_km2"]
+        add("half_population_area_km2_1975", half["1975"], 0,
+            "площадь, вмещающая половину населения страны, 1975, км²")
+        add("half_population_area_km2_2020", half["2020"], 0,
+            "площадь, вмещающая половину населения страны, 2020, км²")
+        add("half_population_area_km2_2050_base_A", half["2050:base:A"], 0,
+            "площадь, вмещающая половину населения страны, 2050 базовый/A, км²")
+
+        raions = story["raions"]
+        deepest = min(raions["shrunk_most"], key=lambda r: r["change_pct"])
+        top_growth = max(raions["grew_most"], key=lambda r: r["change_pct"])
+        add("raion_deepest_decline_change_pct", deepest["change_pct"], 0.05,
+            f"{deepest['name_ru']}, изменение населения 1975->2020, % (глубочайший спад)")
+        add("raion_top_growth_change_pct", top_growth["change_pct"], 0.05,
+            f"{top_growth['name_ru']}, изменение населения 1975->2020, % (наибольший рост)")
+        add("n_raions_shrunk", raions["n_raions_shrunk"], 0,
+            "районов (из 118) с сокращением населения 1975->2020")
+        add("n_raions_shrunk_40pct_or_more", raions["n_raions_shrunk_40pct_or_more"], 0,
+            "районов с сокращением населения на 40% и более")
+
+    g9_path = SRC / "g9_concentration_check.json"
+    if g9_path.exists():
+        g9 = json.loads(g9_path.read_text())
+        by_year = g9["national_mean_top5_share_by_year"]
+        add("g9_top5_share_1975", by_year["1975"], 0.0005,
+            "G-9: средняя по стране доля населения района в топ-5 самых плотных клетках, 1975")
+        add("g9_top5_share_2020", by_year["2020"], 0.0005,
+            "G-9: то же, 2020 (почти не изменилось за 45 лет)")
+        add("g9_top5_share_2050_base_A", g9["national_mean_top5_share_2050_base_a"], 0.0005,
+            "G-9: то же, 2050 базовый/A - модель прогнозирует резкий скачок (см. D-013)")
+        add("g9_n_raions_violated", g9["n_raions_violated"], 0,
+            "G-9: районов, где прогнозный темп концентрации превышает исторический максимум "
+            "в 3+ раза")
+        add("g9_pct_raions_violated", g9["pct_raions_violated"], 0.1,
+            "G-9: доля районов-нарушителей, %")
+        add("g9_max_ratio_to_historical", g9["max_ratio_to_historical"], 0.05,
+            "G-9: максимальное отношение прогнозного темпа к историческому по районам")
+        add("g9_pass", 1 if g9["pass"] else 0, 0,
+            "G-9 пройдена (1) или нет (0) - честно, по конструкции, не пройдена (см. D-013)")
+
     (FINAL / "computed_results.json").write_text(
         json.dumps(results, indent=2, ensure_ascii=False) + "\n")
     print(f"OK: {len(results)} контрольных метрик -> data/final/computed_results.json")

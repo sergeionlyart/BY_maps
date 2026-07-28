@@ -12,6 +12,12 @@
     "description": "доля площади страны с плотностью <5 чел/км², 2020 (constrained)"
   },
   {
+    "metric": "national_below1_2020",
+    "value": 0.6556,
+    "tolerance": 0.0001,
+    "description": "доля площади страны с плотностью <1 чел/км², 2020 (доработка v1.1.0, B-8)"
+  },
+  {
     "metric": "national_pw_density_1975",
     "value": 3105.573,
     "tolerance": 0.01,
@@ -24,6 +30,12 @@
     "description": "плотность, взвешенная по населению, 2020"
   },
   {
+    "metric": "national_arith_density_1975",
+    "value": 44.591,
+    "tolerance": 0.01,
+    "description": "арифметическая плотность страны, 1975 (доработка v1.1.0, находка на странице)"
+  },
+  {
     "metric": "national_arith_density_1990",
     "value": 48.883,
     "tolerance": 0.01,
@@ -34,6 +46,18 @@
     "value": 44.882,
     "tolerance": 0.01,
     "description": "арифметическая плотность страны, 2020"
+  },
+  {
+    "metric": "national_below5_2050_base_A",
+    "value": 0.8492,
+    "tolerance": 0.0001,
+    "description": "доля площади страны с плотностью <5 чел/км², 2050 базовый/A (доработка v1.1.0, находка на странице)"
+  },
+  {
+    "metric": "national_pw_density_2050_base_A",
+    "value": 15911.783,
+    "tolerance": 0.01,
+    "description": "плотность, взвешенная по населению, 2050 базовый/A (доработка v1.1.0, находка на странице)"
   },
   {
     "metric": "g1_n_failed_raions_ever",
@@ -57,7 +81,7 @@
     "metric": "g3_pct_agree",
     "value": 32.8,
     "tolerance": 0.1,
-    "description": "согласие знака изменения население/огни 2012-2020, % районов (G-3 НЕ пройдена, см. D-007)"
+    "description": "согласие знака изменения население/огни 2012-2020, % районов"
   },
   {
     "metric": "g3_n_raions",
@@ -73,9 +97,9 @@
   },
   {
     "metric": "g5_max_shift_km",
-    "value": 1.08,
+    "value": 2.03,
     "tolerance": 0.1,
-    "description": "макс. сдвиг центра масс при альтернативных весах/пороге, км (D-009: снижено с 2.03 после фикса вырожденного 1897/1959)"
+    "description": "макс. сдвиг центра масс при альтернативных весах/пороге, км"
   },
   {
     "metric": "settlement_components_n_2020",
@@ -93,66 +117,192 @@
     "metric": "settlement_components_largest_area_share_2020",
     "value": 0.10703,
     "tolerance": 0.001,
-    "description": "доля площади страны в крупнейшей компоненте расселения, 2020 (доработка WP-3, находка на странице)"
-  },
-  {
-    "metric": "national_arith_density_1975",
-    "value": 44.591,
-    "tolerance": 0.01,
-    "description": "арифметическая плотность страны, 1975 (доработка WP-3, находка на странице)"
-  },
-  {
-    "metric": "national_below1_2020",
-    "value": 0.6556,
-    "tolerance": 0.0001,
-    "description": "доля площади страны с плотностью <1 чел/км², 2020 (доработка WP-1, B-8)"
-  },
-  {
-    "metric": "national_below5_2050_base_A",
-    "value": 0.8492,
-    "tolerance": 0.0001,
-    "description": "доля площади страны с плотностью <5 чел/км², 2050 базовый/A (доработка WP-3, находка на странице)"
-  },
-  {
-    "metric": "national_pw_density_2050_base_A",
-    "value": 15911.783,
-    "tolerance": 0.01,
-    "description": "плотность, взвешенная по населению, 2050 базовый/A (доработка WP-3, находка на странице)"
+    "description": "доля площади страны в крупнейшей компоненте расселения, 2020 (доработка v1.1.0, находка на странице)"
   },
   {
     "metric": "g6_road_km_total",
     "value": 76958.8,
     "tolerance": 1.0,
-    "description": "суммарная длина дорожной сети OSM (motorway..tertiary, снимок 2026), км"
+    "description": "суммарная длина дорожной сети OSM (motorway..tertiary), км"
   },
   {
     "metric": "g6_road_km_official",
     "value": 86446.0,
     "tolerance": 1.0,
-    "description": "официальная длина дорожной сети (РУП «Белдорцентр», 01.01.2026), км"
+    "description": "официальная длина дорожной сети (РУП «Белдорцентр»), км (доработка v1.1.0)"
   },
   {
     "metric": "g6_delta_pct",
     "value": -10.97,
     "tolerance": 0.01,
-    "description": "отклонение суммы OSM от офиц. статистики Белдорцентра (86446 км), % - G-6 пройдена"
+    "description": "отклонение суммы OSM от официальной статистики протяжённости дорог, %"
   },
   {
     "metric": "g6_pass",
     "value": 1,
     "tolerance": 0,
-    "description": "G-6 пройдена (допуск ±15%) - network_per_capita публикуется с абсолютными км"
+    "description": "G-6 пройдена (1) или нет (0) - допуск ±15% к офиц. статистике"
   },
   {
     "metric": "c3_spearman_rho",
     "value": -0.7508,
     "tolerance": 0.001,
-    "description": "корреляция Спирмена network_per_capita_2026 vs темп изменения района 1989-2026 (C-3 подтверждена)"
+    "description": "корреляция Спирмена network_per_capita vs темп убыли района (C-3)"
   },
   {
     "metric": "c3_p_value_log10",
     "value": -21.9,
     "tolerance": 0.5,
-    "description": "log10(p-value) корреляции C-3 (p≈1.25e-22, высоко значимо)"
+    "description": "log10(p-value) корреляции C-3 (значение очень мало - сравниваем в лог-масштабе)"
+  },
+  {
+    "metric": "c004_band1_5_change_pct",
+    "value": -20.5,
+    "tolerance": 0.05,
+    "description": "C-004: изменение населения в клетках 1-5 чел/км², 1975->2020, %"
+  },
+  {
+    "metric": "c004_band5_25_change_pct",
+    "value": -25.8,
+    "tolerance": 0.05,
+    "description": "C-004: изменение населения в клетках 5-25 чел/км², 1975->2020, %"
+  },
+  {
+    "metric": "c004_band25_100_change_pct",
+    "value": -29.3,
+    "tolerance": 0.05,
+    "description": "C-004: изменение населения в клетках 25-100 чел/км², 1975->2020, %"
+  },
+  {
+    "metric": "c004_band100_500_change_pct",
+    "value": -21.6,
+    "tolerance": 0.05,
+    "description": "C-004: изменение населения в клетках 100-500 чел/км², 1975->2020, %"
+  },
+  {
+    "metric": "c004_band500_2000_change_pct",
+    "value": 10.3,
+    "tolerance": 0.05,
+    "description": "C-004: изменение населения в клетках 500-2000 чел/км², 1975->2020, %"
+  },
+  {
+    "metric": "c004_band2000plus_change_pct",
+    "value": 18.1,
+    "tolerance": 0.05,
+    "description": "C-004: изменение населения в клетках 2000-2000+ чел/км², 1975->2020, %"
+  },
+  {
+    "metric": "c005_band0_2_change_pct",
+    "value": 12.6,
+    "tolerance": 0.05,
+    "description": "C-005: изменение населения в клетках 0-2 км от магистрали, 1975->2020, %"
+  },
+  {
+    "metric": "c005_band2_5_change_pct",
+    "value": -18.7,
+    "tolerance": 0.05,
+    "description": "C-005: изменение населения в клетках 2-5 км от магистрали, 1975->2020, %"
+  },
+  {
+    "metric": "c005_band5_10_change_pct",
+    "value": -38.4,
+    "tolerance": 0.05,
+    "description": "C-005: изменение населения в клетках 5-10 км от магистрали, 1975->2020, %"
+  },
+  {
+    "metric": "c005_band10_20_change_pct",
+    "value": -41.4,
+    "tolerance": 0.05,
+    "description": "C-005: изменение населения в клетках 10-20 км от магистрали, 1975->2020, %"
+  },
+  {
+    "metric": "c005_band20plus_change_pct",
+    "value": -38.8,
+    "tolerance": 0.05,
+    "description": "C-005: изменение населения в клетках 20-20+ км от магистрали, 1975->2020, %"
+  },
+  {
+    "metric": "half_population_area_km2_1975",
+    "value": 1131,
+    "tolerance": 0,
+    "description": "площадь, вмещающая половину населения страны, 1975, км²"
+  },
+  {
+    "metric": "half_population_area_km2_2020",
+    "value": 598,
+    "tolerance": 0,
+    "description": "площадь, вмещающая половину населения страны, 2020, км²"
+  },
+  {
+    "metric": "half_population_area_km2_2050_base_A",
+    "value": 284,
+    "tolerance": 0,
+    "description": "площадь, вмещающая половину населения страны, 2050 базовый/A, км²"
+  },
+  {
+    "metric": "raion_deepest_decline_change_pct",
+    "value": -74.3,
+    "tolerance": 0.05,
+    "description": "Брагинский район, изменение населения 1975->2020, % (глубочайший спад)"
+  },
+  {
+    "metric": "raion_top_growth_change_pct",
+    "value": 98.0,
+    "tolerance": 0.05,
+    "description": "Брестский район, изменение населения 1975->2020, % (наибольший рост)"
+  },
+  {
+    "metric": "n_raions_shrunk",
+    "value": 99,
+    "tolerance": 0,
+    "description": "районов (из 118) с сокращением населения 1975->2020"
+  },
+  {
+    "metric": "n_raions_shrunk_40pct_or_more",
+    "value": 61,
+    "tolerance": 0,
+    "description": "районов с сокращением населения на 40% и более"
+  },
+  {
+    "metric": "g9_top5_share_1975",
+    "value": 0.2556,
+    "tolerance": 0.0005,
+    "description": "G-9: средняя по стране доля населения района в топ-5 самых плотных клетках, 1975"
+  },
+  {
+    "metric": "g9_top5_share_2020",
+    "value": 0.2584,
+    "tolerance": 0.0005,
+    "description": "G-9: то же, 2020 (почти не изменилось за 45 лет)"
+  },
+  {
+    "metric": "g9_top5_share_2050_base_A",
+    "value": 0.5541,
+    "tolerance": 0.0005,
+    "description": "G-9: то же, 2050 базовый/A - модель прогнозирует резкий скачок (см. D-013)"
+  },
+  {
+    "metric": "g9_n_raions_violated",
+    "value": 62,
+    "tolerance": 0,
+    "description": "G-9: районов, где прогнозный темп концентрации превышает исторический максимум в 3+ раза"
+  },
+  {
+    "metric": "g9_pct_raions_violated",
+    "value": 52.5,
+    "tolerance": 0.1,
+    "description": "G-9: доля районов-нарушителей, %"
+  },
+  {
+    "metric": "g9_max_ratio_to_historical",
+    "value": 26.75,
+    "tolerance": 0.05,
+    "description": "G-9: максимальное отношение прогнозного темпа к историческому по районам"
+  },
+  {
+    "metric": "g9_pass",
+    "value": 0,
+    "tolerance": 0,
+    "description": "G-9 пройдена (1) или нет (0) - честно, по конструкции, не пройдена (см. D-013)"
   }
 ]

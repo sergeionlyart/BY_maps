@@ -65,6 +65,28 @@ def test_centroid_track_extends_to_2050_without_degenerate_points(data):
         assert "err_km" in c and "dtype" in c
 
 
+def test_g9_concentration_check_present_and_honestly_failing(data):
+    """D-013 (docs/decisions/INF-15.md): G-9 - проверка внутрирайонного
+    распределения, которую G-2 (сверка только суммы клеток района) не
+    делает. Найдено и независимо перепроверено 28.07.2026: наблюдаемая
+    доля топ-5 клеток района практически не менялась 45 лет (1975-2020,
+    разброс 25.0-26.5%), а лог-линейная экстраполяция доли клетки даёт
+    55.4% уже к 2050 (canonical base:A). Это ОЖИДАЕМО непройденная
+    проверка - тест фиксирует нынешнее (честно опубликованное) состояние,
+    а не требует его "исправить". Если в будущем экстраполяция изменится
+    так, что G-9 станет проходить, - это следует сознательно отразить
+    здесь (не расширять допуск молча)."""
+    g9 = data["validation"]["g9_concentration_check"]
+    assert g9["pass"] is False
+    assert g9["n_raions_checked"] == 118
+    assert g9["n_raions_violated"] > 50
+    # наблюдаемый период (1975-2020) - концентрация практически неподвижна
+    hist = g9["national_mean_top5_share_by_year"]
+    assert abs(hist["2020"] - hist["1975"]) < 0.02
+    # прогноз 2050 base:A - более чем вдвое от наблюдаемого уровня 2020 года
+    assert g9["national_mean_top5_share_2050_base_a"] > hist["2020"] * 2
+
+
 def test_frames_present_for_key_years(data):
     """B-2 (docs/decisions/INF-15.md): frames разбит на pop/density -
     режим «класс плотности» получил собственный набор из 46 кадров."""

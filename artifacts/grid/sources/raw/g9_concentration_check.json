@@ -1,0 +1,1087 @@
+{
+  "description": "Доля населения района в топ-5 самых плотных клетках (TOP_N=5) - грубая мера внутрирайонной концентрации. G-2 сверяет только сумму клеток района, не форму распределения внутри - этот тест проверяет форму.",
+  "national_mean_top5_share_by_year": {
+    "1975": 0.2556,
+    "1980": 0.2537,
+    "1985": 0.2519,
+    "1990": 0.2502,
+    "1995": 0.257,
+    "2000": 0.2644,
+    "2005": 0.2626,
+    "2010": 0.2613,
+    "2015": 0.2601,
+    "2020": 0.2584
+  },
+  "national_mean_top5_share_2050_base_a": 0.5541,
+  "n_raions_checked": 118,
+  "n_raions_violated": 62,
+  "pct_raions_violated": 52.5,
+  "rate_multiplier_threshold": 3.0,
+  "max_ratio_to_historical": 26.75,
+  "median_ratio_to_historical": 3.4,
+  "pass": false,
+  "per_raion": [
+    {
+      "raion": "r-baranavicki",
+      "share_2020": 0.171,
+      "share_2050_base_a": 0.2565,
+      "forecast_rate_per_year": 0.002848,
+      "hist_max_rate_per_year": 0.001506,
+      "ratio_to_historical": 1.89,
+      "violated": false
+    },
+    {
+      "raion": "r-brescki",
+      "share_2020": 0.1679,
+      "share_2050_base_a": 0.2733,
+      "forecast_rate_per_year": 0.003513,
+      "hist_max_rate_per_year": 0.001677,
+      "ratio_to_historical": 2.1,
+      "violated": false
+    },
+    {
+      "raion": "r-biarozauski",
+      "share_2020": 0.2054,
+      "share_2050_base_a": 0.916,
+      "forecast_rate_per_year": 0.023685,
+      "hist_max_rate_per_year": 0.002811,
+      "ratio_to_historical": 8.43,
+      "violated": true
+    },
+    {
+      "raion": "r-hancavicki",
+      "share_2020": 0.4123,
+      "share_2050_base_a": 0.9418,
+      "forecast_rate_per_year": 0.017649,
+      "hist_max_rate_per_year": 0.00314,
+      "ratio_to_historical": 5.62,
+      "violated": true
+    },
+    {
+      "raion": "r-drahichynski",
+      "share_2020": 0.2146,
+      "share_2050_base_a": 0.4042,
+      "forecast_rate_per_year": 0.006323,
+      "hist_max_rate_per_year": 0.00405,
+      "ratio_to_historical": 1.56,
+      "violated": false
+    },
+    {
+      "raion": "r-zhabinkauski",
+      "share_2020": 0.3334,
+      "share_2050_base_a": 0.5101,
+      "forecast_rate_per_year": 0.005889,
+      "hist_max_rate_per_year": 0.003166,
+      "ratio_to_historical": 1.86,
+      "violated": false
+    },
+    {
+      "raion": "r-ivanauski",
+      "share_2020": 0.232,
+      "share_2050_base_a": 0.2216,
+      "forecast_rate_per_year": 0.000347,
+      "hist_max_rate_per_year": 0.001271,
+      "ratio_to_historical": 0.27,
+      "violated": false
+    },
+    {
+      "raion": "r-ivacevicki",
+      "share_2020": 0.2024,
+      "share_2050_base_a": 0.5867,
+      "forecast_rate_per_year": 0.012809,
+      "hist_max_rate_per_year": 0.000907,
+      "ratio_to_historical": 14.12,
+      "violated": true
+    },
+    {
+      "raion": "r-kamianiecki",
+      "share_2020": 0.1762,
+      "share_2050_base_a": 0.6389,
+      "forecast_rate_per_year": 0.015422,
+      "hist_max_rate_per_year": 0.003777,
+      "ratio_to_historical": 4.08,
+      "violated": true
+    },
+    {
+      "raion": "r-kobrynski",
+      "share_2020": 0.1726,
+      "share_2050_base_a": 0.3584,
+      "forecast_rate_per_year": 0.006191,
+      "hist_max_rate_per_year": 0.002894,
+      "ratio_to_historical": 2.14,
+      "violated": false
+    },
+    {
+      "raion": "r-luniniecki",
+      "share_2020": 0.1695,
+      "share_2050_base_a": 0.5884,
+      "forecast_rate_per_year": 0.013965,
+      "hist_max_rate_per_year": 0.001126,
+      "ratio_to_historical": 12.4,
+      "violated": true
+    },
+    {
+      "raion": "r-lachavicki",
+      "share_2020": 0.2753,
+      "share_2050_base_a": 0.3079,
+      "forecast_rate_per_year": 0.001087,
+      "hist_max_rate_per_year": 0.00252,
+      "ratio_to_historical": 0.43,
+      "violated": false
+    },
+    {
+      "raion": "r-malarycki",
+      "share_2020": 0.3815,
+      "share_2050_base_a": 0.9495,
+      "forecast_rate_per_year": 0.018932,
+      "hist_max_rate_per_year": 0.005141,
+      "ratio_to_historical": 3.68,
+      "violated": true
+    },
+    {
+      "raion": "r-pinski",
+      "share_2020": 0.266,
+      "share_2050_base_a": 0.3724,
+      "forecast_rate_per_year": 0.003548,
+      "hist_max_rate_per_year": 0.002663,
+      "ratio_to_historical": 1.33,
+      "violated": false
+    },
+    {
+      "raion": "r-pruzhanski",
+      "share_2020": 0.2325,
+      "share_2050_base_a": 0.7288,
+      "forecast_rate_per_year": 0.016542,
+      "hist_max_rate_per_year": 0.001803,
+      "ratio_to_historical": 9.17,
+      "violated": true
+    },
+    {
+      "raion": "r-stolinski",
+      "share_2020": 0.1132,
+      "share_2050_base_a": 0.3103,
+      "forecast_rate_per_year": 0.006569,
+      "hist_max_rate_per_year": 0.003482,
+      "ratio_to_historical": 1.89,
+      "violated": false
+    },
+    {
+      "raion": "r-arshanski",
+      "share_2020": 0.1534,
+      "share_2050_base_a": 0.6984,
+      "forecast_rate_per_year": 0.018166,
+      "hist_max_rate_per_year": 0.001529,
+      "ratio_to_historical": 11.88,
+      "violated": true
+    },
+    {
+      "raion": "r-bieshankovicki",
+      "share_2020": 0.18,
+      "share_2050_base_a": 0.3125,
+      "forecast_rate_per_year": 0.004418,
+      "hist_max_rate_per_year": 0.001652,
+      "ratio_to_historical": 2.67,
+      "violated": false
+    },
+    {
+      "raion": "r-braslauski",
+      "share_2020": 0.2761,
+      "share_2050_base_a": 0.3813,
+      "forecast_rate_per_year": 0.003507,
+      "hist_max_rate_per_year": 0.003895,
+      "ratio_to_historical": 0.9,
+      "violated": false
+    },
+    {
+      "raion": "r-vierchniadzvinski",
+      "share_2020": 0.1844,
+      "share_2050_base_a": 0.5453,
+      "forecast_rate_per_year": 0.012031,
+      "hist_max_rate_per_year": 0.000612,
+      "ratio_to_historical": 19.65,
+      "violated": true
+    },
+    {
+      "raion": "r-viciebski",
+      "share_2020": 0.13,
+      "share_2050_base_a": 0.6366,
+      "forecast_rate_per_year": 0.016885,
+      "hist_max_rate_per_year": 0.001026,
+      "ratio_to_historical": 16.46,
+      "violated": true
+    },
+    {
+      "raion": "r-haradocki",
+      "share_2020": 0.1987,
+      "share_2050_base_a": 0.2622,
+      "forecast_rate_per_year": 0.002116,
+      "hist_max_rate_per_year": 0.001971,
+      "ratio_to_historical": 1.07,
+      "violated": false
+    },
+    {
+      "raion": "r-hlybocki",
+      "share_2020": 0.2578,
+      "share_2050_base_a": 0.3067,
+      "forecast_rate_per_year": 0.00163,
+      "hist_max_rate_per_year": 0.001851,
+      "ratio_to_historical": 0.88,
+      "violated": false
+    },
+    {
+      "raion": "r-dokshycki",
+      "share_2020": 0.251,
+      "share_2050_base_a": 0.2416,
+      "forecast_rate_per_year": 0.000315,
+      "hist_max_rate_per_year": 0.000785,
+      "ratio_to_historical": 0.4,
+      "violated": false
+    },
+    {
+      "raion": "r-dubrovienski",
+      "share_2020": 0.3272,
+      "share_2050_base_a": 0.9908,
+      "forecast_rate_per_year": 0.022119,
+      "hist_max_rate_per_year": 0.001543,
+      "ratio_to_historical": 14.34,
+      "violated": true
+    },
+    {
+      "raion": "r-loznienski",
+      "share_2020": 0.2106,
+      "share_2050_base_a": 0.562,
+      "forecast_rate_per_year": 0.011716,
+      "hist_max_rate_per_year": 0.003642,
+      "ratio_to_historical": 3.22,
+      "violated": true
+    },
+    {
+      "raion": "r-lepielski",
+      "share_2020": 0.3546,
+      "share_2050_base_a": 0.6821,
+      "forecast_rate_per_year": 0.010915,
+      "hist_max_rate_per_year": 0.000966,
+      "ratio_to_historical": 11.29,
+      "violated": true
+    },
+    {
+      "raion": "r-mijorski",
+      "share_2020": 0.2439,
+      "share_2050_base_a": 0.5134,
+      "forecast_rate_per_year": 0.008982,
+      "hist_max_rate_per_year": 0.001096,
+      "ratio_to_historical": 8.19,
+      "violated": true
+    },
+    {
+      "raion": "r-pastauski",
+      "share_2020": 0.2644,
+      "share_2050_base_a": 0.9908,
+      "forecast_rate_per_year": 0.024213,
+      "hist_max_rate_per_year": 0.002475,
+      "ratio_to_historical": 9.78,
+      "violated": true
+    },
+    {
+      "raion": "r-polacki",
+      "share_2020": 0.2168,
+      "share_2050_base_a": 0.2627,
+      "forecast_rate_per_year": 0.001531,
+      "hist_max_rate_per_year": 0.001038,
+      "ratio_to_historical": 1.47,
+      "violated": false
+    },
+    {
+      "raion": "r-rasonski",
+      "share_2020": 0.1847,
+      "share_2050_base_a": 0.1839,
+      "forecast_rate_per_year": 2.5e-05,
+      "hist_max_rate_per_year": 0.001902,
+      "ratio_to_historical": 0.01,
+      "violated": false
+    },
+    {
+      "raion": "r-siennienski",
+      "share_2020": 0.2154,
+      "share_2050_base_a": 0.5218,
+      "forecast_rate_per_year": 0.010211,
+      "hist_max_rate_per_year": 0.002206,
+      "ratio_to_historical": 4.63,
+      "violated": true
+    },
+    {
+      "raion": "r-talachynski",
+      "share_2020": 0.2312,
+      "share_2050_base_a": 0.5499,
+      "forecast_rate_per_year": 0.010623,
+      "hist_max_rate_per_year": 0.001428,
+      "ratio_to_historical": 7.44,
+      "violated": true
+    },
+    {
+      "raion": "r-ushacki",
+      "share_2020": 0.1719,
+      "share_2050_base_a": 0.2873,
+      "forecast_rate_per_year": 0.003847,
+      "hist_max_rate_per_year": 0.001543,
+      "ratio_to_historical": 2.49,
+      "violated": false
+    },
+    {
+      "raion": "r-chashnicki",
+      "share_2020": 0.2964,
+      "share_2050_base_a": 0.7294,
+      "forecast_rate_per_year": 0.014434,
+      "hist_max_rate_per_year": 0.00239,
+      "ratio_to_historical": 6.04,
+      "violated": true
+    },
+    {
+      "raion": "r-sharkoushchynski",
+      "share_2020": 0.2525,
+      "share_2050_base_a": 0.9745,
+      "forecast_rate_per_year": 0.024066,
+      "hist_max_rate_per_year": 0.001589,
+      "ratio_to_historical": 15.14,
+      "violated": true
+    },
+    {
+      "raion": "r-shumilinski",
+      "share_2020": 0.2209,
+      "share_2050_base_a": 0.805,
+      "forecast_rate_per_year": 0.01947,
+      "hist_max_rate_per_year": 0.001295,
+      "ratio_to_historical": 15.04,
+      "violated": true
+    },
+    {
+      "raion": "r-akciabrski",
+      "share_2020": 0.368,
+      "share_2050_base_a": 0.9501,
+      "forecast_rate_per_year": 0.019406,
+      "hist_max_rate_per_year": 0.003104,
+      "ratio_to_historical": 6.25,
+      "violated": true
+    },
+    {
+      "raion": "r-brahinski",
+      "share_2020": 0.6737,
+      "share_2050_base_a": 0.721,
+      "forecast_rate_per_year": 0.001577,
+      "hist_max_rate_per_year": 0.004204,
+      "ratio_to_historical": 0.38,
+      "violated": false
+    },
+    {
+      "raion": "r-buda-kashalouski",
+      "share_2020": 0.23,
+      "share_2050_base_a": 0.9935,
+      "forecast_rate_per_year": 0.025451,
+      "hist_max_rate_per_year": 0.001953,
+      "ratio_to_historical": 13.03,
+      "violated": true
+    },
+    {
+      "raion": "r-vietkauski",
+      "share_2020": 0.3639,
+      "share_2050_base_a": 0.9996,
+      "forecast_rate_per_year": 0.021189,
+      "hist_max_rate_per_year": 0.001949,
+      "ratio_to_historical": 10.87,
+      "violated": true
+    },
+    {
+      "raion": "r-homielski",
+      "share_2020": 0.1287,
+      "share_2050_base_a": 0.141,
+      "forecast_rate_per_year": 0.000413,
+      "hist_max_rate_per_year": 0.001278,
+      "ratio_to_historical": 0.32,
+      "violated": false
+    },
+    {
+      "raion": "r-dobrushski",
+      "share_2020": 0.2397,
+      "share_2050_base_a": 0.8521,
+      "forecast_rate_per_year": 0.020413,
+      "hist_max_rate_per_year": 0.000763,
+      "ratio_to_historical": 26.75,
+      "violated": true
+    },
+    {
+      "raion": "r-jelski",
+      "share_2020": 0.313,
+      "share_2050_base_a": 0.5311,
+      "forecast_rate_per_year": 0.007268,
+      "hist_max_rate_per_year": 0.005097,
+      "ratio_to_historical": 1.43,
+      "violated": false
+    },
+    {
+      "raion": "r-zhlobinski",
+      "share_2020": 0.1937,
+      "share_2050_base_a": 0.3401,
+      "forecast_rate_per_year": 0.00488,
+      "hist_max_rate_per_year": 0.002338,
+      "ratio_to_historical": 2.09,
+      "violated": false
+    },
+    {
+      "raion": "r-zhytkavicki",
+      "share_2020": 0.2523,
+      "share_2050_base_a": 0.302,
+      "forecast_rate_per_year": 0.001658,
+      "hist_max_rate_per_year": 0.000671,
+      "ratio_to_historical": 2.47,
+      "violated": false
+    },
+    {
+      "raion": "r-kalinkavicki",
+      "share_2020": 0.2623,
+      "share_2050_base_a": 0.8933,
+      "forecast_rate_per_year": 0.021033,
+      "hist_max_rate_per_year": 0.0028,
+      "ratio_to_historical": 7.51,
+      "violated": true
+    },
+    {
+      "raion": "r-karmianski",
+      "share_2020": 0.3415,
+      "share_2050_base_a": 0.8813,
+      "forecast_rate_per_year": 0.017992,
+      "hist_max_rate_per_year": 0.002219,
+      "ratio_to_historical": 8.11,
+      "violated": true
+    },
+    {
+      "raion": "r-lelchycki",
+      "share_2020": 0.392,
+      "share_2050_base_a": 0.8818,
+      "forecast_rate_per_year": 0.016326,
+      "hist_max_rate_per_year": 0.005759,
+      "ratio_to_historical": 2.83,
+      "violated": false
+    },
+    {
+      "raion": "r-lojeuski",
+      "share_2020": 0.3882,
+      "share_2050_base_a": 0.3548,
+      "forecast_rate_per_year": 0.001114,
+      "hist_max_rate_per_year": 0.000693,
+      "ratio_to_historical": 1.61,
+      "violated": false
+    },
+    {
+      "raion": "r-mazyrski",
+      "share_2020": 0.1737,
+      "share_2050_base_a": 0.4667,
+      "forecast_rate_per_year": 0.009766,
+      "hist_max_rate_per_year": 0.000985,
+      "ratio_to_historical": 9.91,
+      "violated": true
+    },
+    {
+      "raion": "r-naraulanski",
+      "share_2020": 0.3573,
+      "share_2050_base_a": 0.5953,
+      "forecast_rate_per_year": 0.007932,
+      "hist_max_rate_per_year": 0.001201,
+      "ratio_to_historical": 6.61,
+      "violated": true
+    },
+    {
+      "raion": "r-pietrykauski",
+      "share_2020": 0.2483,
+      "share_2050_base_a": 0.7996,
+      "forecast_rate_per_year": 0.018377,
+      "hist_max_rate_per_year": 0.002181,
+      "ratio_to_historical": 8.42,
+      "violated": true
+    },
+    {
+      "raion": "r-rahachouski",
+      "share_2020": 0.2425,
+      "share_2050_base_a": 0.456,
+      "forecast_rate_per_year": 0.007118,
+      "hist_max_rate_per_year": 0.001355,
+      "ratio_to_historical": 5.26,
+      "violated": true
+    },
+    {
+      "raion": "r-rechycki",
+      "share_2020": 0.1659,
+      "share_2050_base_a": 0.2293,
+      "forecast_rate_per_year": 0.002114,
+      "hist_max_rate_per_year": 0.000906,
+      "ratio_to_historical": 2.33,
+      "violated": false
+    },
+    {
+      "raion": "r-svietlahorski",
+      "share_2020": 0.2024,
+      "share_2050_base_a": 0.299,
+      "forecast_rate_per_year": 0.00322,
+      "hist_max_rate_per_year": 0.001655,
+      "ratio_to_historical": 1.95,
+      "violated": false
+    },
+    {
+      "raion": "r-chojnicki",
+      "share_2020": 0.3112,
+      "share_2050_base_a": 0.3473,
+      "forecast_rate_per_year": 0.001204,
+      "hist_max_rate_per_year": 0.003015,
+      "ratio_to_historical": 0.4,
+      "violated": false
+    },
+    {
+      "raion": "r-chacherski",
+      "share_2020": 0.473,
+      "share_2050_base_a": 0.5834,
+      "forecast_rate_per_year": 0.003681,
+      "hist_max_rate_per_year": 0.004452,
+      "ratio_to_historical": 0.83,
+      "violated": false
+    },
+    {
+      "raion": "r-astraviecki",
+      "share_2020": 0.2898,
+      "share_2050_base_a": 0.7043,
+      "forecast_rate_per_year": 0.013819,
+      "hist_max_rate_per_year": 0.003231,
+      "ratio_to_historical": 4.28,
+      "violated": true
+    },
+    {
+      "raion": "r-ashmianski",
+      "share_2020": 0.3013,
+      "share_2050_base_a": 0.9384,
+      "forecast_rate_per_year": 0.021239,
+      "hist_max_rate_per_year": 0.000899,
+      "ratio_to_historical": 23.62,
+      "violated": true
+    },
+    {
+      "raion": "r-bierastavicki",
+      "share_2020": 0.1993,
+      "share_2050_base_a": 0.947,
+      "forecast_rate_per_year": 0.024924,
+      "hist_max_rate_per_year": 0.003498,
+      "ratio_to_historical": 7.13,
+      "violated": true
+    },
+    {
+      "raion": "r-vaukavyski",
+      "share_2020": 0.1868,
+      "share_2050_base_a": 0.7135,
+      "forecast_rate_per_year": 0.017554,
+      "hist_max_rate_per_year": 0.003266,
+      "ratio_to_historical": 5.37,
+      "violated": true
+    },
+    {
+      "raion": "r-voranauski",
+      "share_2020": 0.2457,
+      "share_2050_base_a": 0.2814,
+      "forecast_rate_per_year": 0.001192,
+      "hist_max_rate_per_year": 0.001224,
+      "ratio_to_historical": 0.97,
+      "violated": false
+    },
+    {
+      "raion": "r-hrodzienski",
+      "share_2020": 0.1598,
+      "share_2050_base_a": 0.2364,
+      "forecast_rate_per_year": 0.002552,
+      "hist_max_rate_per_year": 0.000588,
+      "ratio_to_historical": 4.34,
+      "violated": true
+    },
+    {
+      "raion": "r-dziatlauski",
+      "share_2020": 0.2943,
+      "share_2050_base_a": 0.5293,
+      "forecast_rate_per_year": 0.007834,
+      "hist_max_rate_per_year": 0.003933,
+      "ratio_to_historical": 1.99,
+      "violated": false
+    },
+    {
+      "raion": "r-zelvienski",
+      "share_2020": 0.2737,
+      "share_2050_base_a": 0.8036,
+      "forecast_rate_per_year": 0.017663,
+      "hist_max_rate_per_year": 0.004786,
+      "ratio_to_historical": 3.69,
+      "violated": true
+    },
+    {
+      "raion": "r-iujeuski",
+      "share_2020": 0.2314,
+      "share_2050_base_a": 0.3383,
+      "forecast_rate_per_year": 0.003563,
+      "hist_max_rate_per_year": 0.003909,
+      "ratio_to_historical": 0.91,
+      "violated": false
+    },
+    {
+      "raion": "r-karelicki",
+      "share_2020": 0.2115,
+      "share_2050_base_a": 0.4965,
+      "forecast_rate_per_year": 0.009497,
+      "hist_max_rate_per_year": 0.001949,
+      "ratio_to_historical": 4.87,
+      "violated": true
+    },
+    {
+      "raion": "r-lidski",
+      "share_2020": 0.1604,
+      "share_2050_base_a": 0.3844,
+      "forecast_rate_per_year": 0.007467,
+      "hist_max_rate_per_year": 0.001126,
+      "ratio_to_historical": 6.63,
+      "violated": true
+    },
+    {
+      "raion": "r-mastouski",
+      "share_2020": 0.2918,
+      "share_2050_base_a": 0.78,
+      "forecast_rate_per_year": 0.016274,
+      "hist_max_rate_per_year": 0.001747,
+      "ratio_to_historical": 9.32,
+      "violated": true
+    },
+    {
+      "raion": "r-navahrudski",
+      "share_2020": 0.3233,
+      "share_2050_base_a": 0.3183,
+      "forecast_rate_per_year": 0.000169,
+      "hist_max_rate_per_year": 0.002173,
+      "ratio_to_historical": 0.08,
+      "violated": false
+    },
+    {
+      "raion": "r-svislacki",
+      "share_2020": 0.26,
+      "share_2050_base_a": 0.8883,
+      "forecast_rate_per_year": 0.020946,
+      "hist_max_rate_per_year": 0.003284,
+      "ratio_to_historical": 6.38,
+      "violated": true
+    },
+    {
+      "raion": "r-slonimski",
+      "share_2020": 0.2286,
+      "share_2050_base_a": 0.9979,
+      "forecast_rate_per_year": 0.025642,
+      "hist_max_rate_per_year": 0.002004,
+      "ratio_to_historical": 12.8,
+      "violated": true
+    },
+    {
+      "raion": "r-smarhonski",
+      "share_2020": 0.2352,
+      "share_2050_base_a": 0.2968,
+      "forecast_rate_per_year": 0.002053,
+      "hist_max_rate_per_year": 0.002289,
+      "ratio_to_historical": 0.9,
+      "violated": false
+    },
+    {
+      "raion": "r-shchuchynski",
+      "share_2020": 0.2217,
+      "share_2050_base_a": 0.925,
+      "forecast_rate_per_year": 0.023444,
+      "hist_max_rate_per_year": 0.00284,
+      "ratio_to_historical": 8.25,
+      "violated": true
+    },
+    {
+      "raion": "r-barysauski",
+      "share_2020": 0.2337,
+      "share_2050_base_a": 0.4141,
+      "forecast_rate_per_year": 0.006011,
+      "hist_max_rate_per_year": 0.007383,
+      "ratio_to_historical": 0.81,
+      "violated": false
+    },
+    {
+      "raion": "r-biarezinski",
+      "share_2020": 0.2619,
+      "share_2050_base_a": 0.575,
+      "forecast_rate_per_year": 0.010436,
+      "hist_max_rate_per_year": 0.003397,
+      "ratio_to_historical": 3.07,
+      "violated": true
+    },
+    {
+      "raion": "r-valozhynski",
+      "share_2020": 0.18,
+      "share_2050_base_a": 0.2189,
+      "forecast_rate_per_year": 0.001298,
+      "hist_max_rate_per_year": 0.003742,
+      "ratio_to_historical": 0.35,
+      "violated": false
+    },
+    {
+      "raion": "r-vilejski",
+      "share_2020": 0.2258,
+      "share_2050_base_a": 0.3054,
+      "forecast_rate_per_year": 0.002655,
+      "hist_max_rate_per_year": 0.001252,
+      "ratio_to_historical": 2.12,
+      "violated": false
+    },
+    {
+      "raion": "r-dziarzhynski",
+      "share_2020": 0.2003,
+      "share_2050_base_a": 0.794,
+      "forecast_rate_per_year": 0.019791,
+      "hist_max_rate_per_year": 0.002525,
+      "ratio_to_historical": 7.84,
+      "violated": true
+    },
+    {
+      "raion": "r-kapylski",
+      "share_2020": 0.2154,
+      "share_2050_base_a": 0.5885,
+      "forecast_rate_per_year": 0.012436,
+      "hist_max_rate_per_year": 0.003766,
+      "ratio_to_historical": 3.3,
+      "violated": true
+    },
+    {
+      "raion": "r-klecki",
+      "share_2020": 0.2892,
+      "share_2050_base_a": 0.6306,
+      "forecast_rate_per_year": 0.011382,
+      "hist_max_rate_per_year": 0.001281,
+      "ratio_to_historical": 8.89,
+      "violated": true
+    },
+    {
+      "raion": "r-krupski",
+      "share_2020": 0.2238,
+      "share_2050_base_a": 0.8831,
+      "forecast_rate_per_year": 0.021974,
+      "hist_max_rate_per_year": 0.002891,
+      "ratio_to_historical": 7.6,
+      "violated": true
+    },
+    {
+      "raion": "r-lahojski",
+      "share_2020": 0.1446,
+      "share_2050_base_a": 0.3212,
+      "forecast_rate_per_year": 0.005887,
+      "hist_max_rate_per_year": 0.001541,
+      "ratio_to_historical": 3.82,
+      "violated": true
+    },
+    {
+      "raion": "r-lubanski",
+      "share_2020": 0.2535,
+      "share_2050_base_a": 0.7008,
+      "forecast_rate_per_year": 0.01491,
+      "hist_max_rate_per_year": 0.00127,
+      "ratio_to_historical": 11.74,
+      "violated": true
+    },
+    {
+      "raion": "r-maladziechanski",
+      "share_2020": 0.1415,
+      "share_2050_base_a": 0.158,
+      "forecast_rate_per_year": 0.000551,
+      "hist_max_rate_per_year": 0.001683,
+      "ratio_to_historical": 0.33,
+      "violated": false
+    },
+    {
+      "raion": "r-minski",
+      "share_2020": 0.2056,
+      "share_2050_base_a": 0.4372,
+      "forecast_rate_per_year": 0.007721,
+      "hist_max_rate_per_year": 0.002827,
+      "ratio_to_historical": 2.73,
+      "violated": false
+    },
+    {
+      "raion": "r-miadzielski",
+      "share_2020": 0.1266,
+      "share_2050_base_a": 0.2877,
+      "forecast_rate_per_year": 0.005368,
+      "hist_max_rate_per_year": 0.00077,
+      "ratio_to_historical": 6.97,
+      "violated": true
+    },
+    {
+      "raion": "r-niasvizhski",
+      "share_2020": 0.2522,
+      "share_2050_base_a": 0.2924,
+      "forecast_rate_per_year": 0.001341,
+      "hist_max_rate_per_year": 0.003902,
+      "ratio_to_historical": 0.34,
+      "violated": false
+    },
+    {
+      "raion": "r-puchavicki",
+      "share_2020": 0.1527,
+      "share_2050_base_a": 0.2388,
+      "forecast_rate_per_year": 0.002868,
+      "hist_max_rate_per_year": 0.00164,
+      "ratio_to_historical": 1.75,
+      "violated": false
+    },
+    {
+      "raion": "r-salihorski",
+      "share_2020": 0.1786,
+      "share_2050_base_a": 0.2168,
+      "forecast_rate_per_year": 0.001274,
+      "hist_max_rate_per_year": 0.001465,
+      "ratio_to_historical": 0.87,
+      "violated": false
+    },
+    {
+      "raion": "r-slucki",
+      "share_2020": 0.2024,
+      "share_2050_base_a": 0.211,
+      "forecast_rate_per_year": 0.000284,
+      "hist_max_rate_per_year": 0.001007,
+      "ratio_to_historical": 0.28,
+      "violated": false
+    },
+    {
+      "raion": "r-smalavicki",
+      "share_2020": 0.3522,
+      "share_2050_base_a": 0.4666,
+      "forecast_rate_per_year": 0.003813,
+      "hist_max_rate_per_year": 0.006409,
+      "ratio_to_historical": 0.59,
+      "violated": false
+    },
+    {
+      "raion": "r-staradarozhski",
+      "share_2020": 0.3327,
+      "share_2050_base_a": 0.3462,
+      "forecast_rate_per_year": 0.000449,
+      "hist_max_rate_per_year": 0.002501,
+      "ratio_to_historical": 0.18,
+      "violated": false
+    },
+    {
+      "raion": "r-staubcouski",
+      "share_2020": 0.2338,
+      "share_2050_base_a": 0.3683,
+      "forecast_rate_per_year": 0.004483,
+      "hist_max_rate_per_year": 0.00507,
+      "ratio_to_historical": 0.88,
+      "violated": false
+    },
+    {
+      "raion": "r-uzdzienski",
+      "share_2020": 0.282,
+      "share_2050_base_a": 0.7403,
+      "forecast_rate_per_year": 0.015277,
+      "hist_max_rate_per_year": 0.008209,
+      "ratio_to_historical": 1.86,
+      "violated": false
+    },
+    {
+      "raion": "r-chervienski",
+      "share_2020": 0.1948,
+      "share_2050_base_a": 0.4638,
+      "forecast_rate_per_year": 0.008966,
+      "hist_max_rate_per_year": 0.002992,
+      "ratio_to_historical": 3.0,
+      "violated": false
+    },
+    {
+      "raion": "r-asipovicki",
+      "share_2020": 0.2275,
+      "share_2050_base_a": 0.5248,
+      "forecast_rate_per_year": 0.009909,
+      "hist_max_rate_per_year": 0.000915,
+      "ratio_to_historical": 10.83,
+      "violated": true
+    },
+    {
+      "raion": "r-babrujski",
+      "share_2020": 0.1553,
+      "share_2050_base_a": 0.1861,
+      "forecast_rate_per_year": 0.001027,
+      "hist_max_rate_per_year": 0.000908,
+      "ratio_to_historical": 1.13,
+      "violated": false
+    },
+    {
+      "raion": "r-bychauski",
+      "share_2020": 0.2863,
+      "share_2050_base_a": 0.8292,
+      "forecast_rate_per_year": 0.018097,
+      "hist_max_rate_per_year": 0.001798,
+      "ratio_to_historical": 10.06,
+      "violated": true
+    },
+    {
+      "raion": "r-bialynicki",
+      "share_2020": 0.3309,
+      "share_2050_base_a": 0.8267,
+      "forecast_rate_per_year": 0.016528,
+      "hist_max_rate_per_year": 0.001356,
+      "ratio_to_historical": 12.19,
+      "violated": true
+    },
+    {
+      "raion": "r-hluski",
+      "share_2020": 0.3155,
+      "share_2050_base_a": 0.982,
+      "forecast_rate_per_year": 0.022217,
+      "hist_max_rate_per_year": 0.002855,
+      "ratio_to_historical": 7.78,
+      "violated": true
+    },
+    {
+      "raion": "r-horacki",
+      "share_2020": 0.2987,
+      "share_2050_base_a": 0.5558,
+      "forecast_rate_per_year": 0.00857,
+      "hist_max_rate_per_year": 0.001027,
+      "ratio_to_historical": 8.34,
+      "violated": true
+    },
+    {
+      "raion": "r-drybinski",
+      "share_2020": 0.301,
+      "share_2050_base_a": 0.4957,
+      "forecast_rate_per_year": 0.006492,
+      "hist_max_rate_per_year": 0.007506,
+      "ratio_to_historical": 0.86,
+      "violated": false
+    },
+    {
+      "raion": "r-kasciukovicki",
+      "share_2020": 0.3536,
+      "share_2050_base_a": 0.9529,
+      "forecast_rate_per_year": 0.019977,
+      "hist_max_rate_per_year": 0.001491,
+      "ratio_to_historical": 13.4,
+      "violated": true
+    },
+    {
+      "raion": "r-kirauski",
+      "share_2020": 0.299,
+      "share_2050_base_a": 0.6222,
+      "forecast_rate_per_year": 0.010774,
+      "hist_max_rate_per_year": 0.003062,
+      "ratio_to_historical": 3.52,
+      "violated": true
+    },
+    {
+      "raion": "r-klimavicki",
+      "share_2020": 0.3056,
+      "share_2050_base_a": 0.9602,
+      "forecast_rate_per_year": 0.02182,
+      "hist_max_rate_per_year": 0.001401,
+      "ratio_to_historical": 15.58,
+      "violated": true
+    },
+    {
+      "raion": "r-klichauski",
+      "share_2020": 0.3053,
+      "share_2050_base_a": 0.7463,
+      "forecast_rate_per_year": 0.014702,
+      "hist_max_rate_per_year": 0.00237,
+      "ratio_to_historical": 6.2,
+      "violated": true
+    },
+    {
+      "raion": "r-krasnapolski",
+      "share_2020": 0.4211,
+      "share_2050_base_a": 0.5791,
+      "forecast_rate_per_year": 0.005267,
+      "hist_max_rate_per_year": 0.001506,
+      "ratio_to_historical": 3.5,
+      "violated": true
+    },
+    {
+      "raion": "r-kruhlanski",
+      "share_2020": 0.4021,
+      "share_2050_base_a": 0.4706,
+      "forecast_rate_per_year": 0.002285,
+      "hist_max_rate_per_year": 0.005363,
+      "ratio_to_historical": 0.43,
+      "violated": false
+    },
+    {
+      "raion": "r-krychauski",
+      "share_2020": 0.2813,
+      "share_2050_base_a": 0.2578,
+      "forecast_rate_per_year": 0.000781,
+      "hist_max_rate_per_year": 0.001648,
+      "ratio_to_historical": 0.47,
+      "violated": false
+    },
+    {
+      "raion": "r-mahilouski",
+      "share_2020": 0.139,
+      "share_2050_base_a": 0.1454,
+      "forecast_rate_per_year": 0.000214,
+      "hist_max_rate_per_year": 0.001325,
+      "ratio_to_historical": 0.16,
+      "violated": false
+    },
+    {
+      "raion": "r-mscislauski",
+      "share_2020": 0.4012,
+      "share_2050_base_a": 0.3782,
+      "forecast_rate_per_year": 0.000765,
+      "hist_max_rate_per_year": 0.001742,
+      "ratio_to_historical": 0.44,
+      "violated": false
+    },
+    {
+      "raion": "r-slauharadski",
+      "share_2020": 0.404,
+      "share_2050_base_a": 0.4465,
+      "forecast_rate_per_year": 0.001416,
+      "hist_max_rate_per_year": 0.00279,
+      "ratio_to_historical": 0.51,
+      "violated": false
+    },
+    {
+      "raion": "r-chocimski",
+      "share_2020": 0.4622,
+      "share_2050_base_a": 0.4375,
+      "forecast_rate_per_year": 0.000823,
+      "hist_max_rate_per_year": 0.003381,
+      "ratio_to_historical": 0.24,
+      "violated": false
+    },
+    {
+      "raion": "r-chavuski",
+      "share_2020": 0.2672,
+      "share_2050_base_a": 0.8482,
+      "forecast_rate_per_year": 0.019367,
+      "hist_max_rate_per_year": 0.002737,
+      "ratio_to_historical": 7.08,
+      "violated": true
+    },
+    {
+      "raion": "r-cherykauski",
+      "share_2020": 0.437,
+      "share_2050_base_a": 0.5105,
+      "forecast_rate_per_year": 0.002453,
+      "hist_max_rate_per_year": 0.003195,
+      "ratio_to_historical": 0.77,
+      "violated": false
+    },
+    {
+      "raion": "r-shklouski",
+      "share_2020": 0.2312,
+      "share_2050_base_a": 0.9649,
+      "forecast_rate_per_year": 0.024458,
+      "hist_max_rate_per_year": 0.003001,
+      "ratio_to_historical": 8.15,
+      "violated": true
+    }
+  ]
+}

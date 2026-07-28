@@ -8,6 +8,8 @@ import { networkColor } from '@/lib/grid';
 
 const BOUNDS: [[number, number], [number, number]] = [[22.9, 51.1], [33.0, 56.3]];
 
+const CHERNOBYL_COLOR: Record<number, string> = { 1: '#c0392b', 2: '#d98a3d' };
+
 export interface GridMapProps {
   frameUrl: string | null;
   boundsLonLat: [number, number, number, number] | null; // W,S,E,N
@@ -22,6 +24,21 @@ export interface GridMapProps {
   onTerritoryClick: (id: string) => void;
   adm2: GeoJSON.FeatureCollection | null;
   adm1: GeoJSON.FeatureCollection | null;
+  /** Режим «История» (v2): переопределяет автозум на произвольный bbox
+   *  шага вместо целой страны; null - обычный национальный вид. */
+  zoomBounds?: [number, number, number, number] | null;
+  /** Шаг 2 истории: полупрозрачная маска по порогу плотности 1975 года,
+   *  рисуется поверх обычного кадра «люди в клетке». */
+  rule500FrameUrl?: string | null;
+  showRule500?: boolean;
+  /** Шаг 3 истории: слой магистралей (motorway/trunk/primary). */
+  highwaysGeojson?: GeoJSON.FeatureCollection | null;
+  showHighways?: boolean;
+  /** Шаг 4 истории: хороплет чернобыльских зон (class 1/2). Использует тот
+   *  же слой gv-adm2-fill, что и режим «метры сети на жителя» (оба
+   *  режима взаимоисключающие - см. GridView.tsx). */
+  chernobylZones?: Record<string, number> | null;
+  showChernobyl?: boolean;
 }
 
 /** Карта «Полотна»: растровый image-overlay кадра (webp) + опциональные
@@ -32,6 +49,9 @@ export interface GridMapProps {
 export default function GridMap({
   frameUrl, boundsLonLat, metric, networkValues, reducedMotion, showBorders, showCentroidTrack,
   centroidTrack, centroidUpToYear, onMapClick, onTerritoryClick, adm2, adm1,
+  zoomBounds = null, rule500FrameUrl = null, showRule500 = false,
+  highwaysGeojson = null, showHighways = false,
+  chernobylZones = null, showChernobyl = false,
 }: GridMapProps) {
   const divRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<maplibregl.Map | null>(null);
@@ -143,13 +163,53 @@ export default function GridMap({
     if (map.getLayer('gv-adm1-line')) {
       map.setPaintProperty('gv-adm1-line', 'line-opacity', showBorders ? 0.9 : 0);
     }
+    // gv-adm2-fill обслуживает два взаимоисключающих режима хороплета -
+    // «метры сети на жителя» (свободный режим) и чернобыльские зоны (шаг 4
+    // истории) - оба никогда не активны одновременно (история и «сеть» не
+    // пересекаются, см. GridView.tsx), поэтому один слой на двоих безопасен.
+    const fillMode: 'network' | 'chernobyl' | 'none' =
+      metric === 'network' ? 'network' : showChernobyl ? 'chernobyl' : 'none';
     if (map.getLayer('gv-adm2-fill')) {
-      map.setPaintProperty('gv-adm2-fill', 'fill-opacity', metric === 'network' ? 0.88 : 0);
-      if (metric === 'network' && networkValues) {
+      map.setPaintProperty('gv-adm2-fill', 'fill-opacity', fillMode !== 'none' ? 0.88 : 0);
+      if (fillMode === 'network' && networkValues) {
         for (const [id, v] of Object.entries(networkValues)) {
           map.setFeatureState({ source: 'gv-adm2', id }, { color: networkColor(v) });
         }
+      } else if (fillMode === 'chernobyl' && chernobylZones) {
+        for (const [id, cls] of Object.entries(chernobylZones)) {
+          map.setFeatureState({ source: 'gv-adm2', id }, { color: CHERNOBYL_COLOR[cls] ?? '#888' });
+        }
       }
+    }
+
+    // Шаг 2 истории: маска по порогу 500 чел/км² (1975), поверх кадра.
+    if (rule500FrameUrl && boundsLonLat) {
+      const [w, s, e, n] = boundsLonLat;
+      const coords: [[number, number], [number, number], [number, number], [number, number]] = [
+        [w, n], [e, n], [e, s], [w, s],
+      ];
+      const src = map.getSource('gv-rule500') as maplibregl.ImageSource | undefined;
+      if (src) {
+        src.updateImage({ url: rule500FrameUrl, coordinates: coords });
+      } else {
+        map.addSource('gv-rule500', { type: 'image', url: rule500FrameUrl, coordinates: coords });
+        map.addLayer({ id: 'gv-rule500-layer', type: 'raster', source: 'gv-rule500',
+          paint: { 'raster-fade-duration': reducedMotion ? 0 : 120 } });
+      }
+    }
+    if (map.getLayer('gv-rule500-layer')) {
+      map.setLayoutProperty('gv-rule500-layer', 'visibility', showRule500 ? 'visible' : 'none');
+    }
+
+    // Шаг 3 истории: слой магистралей.
+    if (highwaysGeojson && !map.getSource('gv-highways')) {
+      map.addSource('gv-highways', { type: 'geojson', data: highwaysGeojson });
+      map.addLayer({ id: 'gv-highways-line', type: 'line', source: 'gv-highways',
+        paint: { 'line-color': '#e0663f', 'line-width': 1.6, 'line-opacity': 0.85 },
+        layout: { 'line-cap': 'round', 'line-join': 'round' } });
+    }
+    if (map.getLayer('gv-highways-line')) {
+      map.setLayoutProperty('gv-highways-line', 'visibility', showHighways ? 'visible' : 'none');
     }
 
     const track = centroidTrack.filter((p) => p.year <= centroidUpToYear);
@@ -204,18 +264,28 @@ export default function GridMap({
     }
   }
 
-  // B-5: автозум/врезка на область трека при включении кнопки «Центр масс
-  // населения» - на масштабе всей страны сдвиг в единицы км физически не
-  // виден. Зум считается по ПОЛНОМУ треку (1897-2050), не только по видимой
-  // за текущий год части - иначе картинка дёргалась бы при каждом шаге
-  // ползунка. Срабатывает только на фронте включения/выключения кнопки.
+  // B-5 + режим «История» (v2): автозум приоритет - bbox шага истории
+  // (zoomBounds) > область трека центра масс (при включении кнопки) >
+  // страна целиком. zoomBounds меняется на каждом шаге истории и должен
+  // зумить каждый раз (не только на "фронте"), поэтому логика отличается
+  // от прежней track-only версии - трек зумит один раз на переключение,
+  // zoomBounds зумит на каждое изменение значения.
   const prevShowTrack = useRef(false);
+  const prevZoomBounds = useRef<string | null>(null);
   useEffect(() => {
     const map = mapRef.current;
     if (!map || !loadedRef.current) return;
-    if (showCentroidTrack === prevShowTrack.current) return;
+    const zbKey = zoomBounds ? zoomBounds.join(',') : null;
+    const trackChanged = showCentroidTrack !== prevShowTrack.current;
+    const zoomChanged = zbKey !== prevZoomBounds.current;
+    if (!trackChanged && !zoomChanged) return;
     prevShowTrack.current = showCentroidTrack;
-    if (showCentroidTrack && centroidTrack.length) {
+    prevZoomBounds.current = zbKey;
+
+    if (zoomBounds) {
+      const [w, s, e, n] = zoomBounds;
+      map.fitBounds([[w, s], [e, n]], { padding: 40, duration: 600 });
+    } else if (showCentroidTrack && centroidTrack.length) {
       const lons = centroidTrack.map((p) => p.lon);
       const lats = centroidTrack.map((p) => p.lat);
       map.fitBounds(
@@ -226,7 +296,7 @@ export default function GridMap({
       map.fitBounds(BOUNDS, { padding: 16, duration: 500 });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [showCentroidTrack]);
+  }, [showCentroidTrack, zoomBounds]);
 
   useEffect(syncLayers);
 

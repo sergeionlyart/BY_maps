@@ -201,8 +201,101 @@ def project_epoch(slope, intercept, t_mean, ever_populated, labels, ids,
     return share_raw * scale[labels]
 
 
+TOP_N_CONCENTRATION = 5
+G9_RATE_MULTIPLIER = 3.0  # допуск: прогнозный темп не выше Kx худшего наблюдаемого
+
+
+def top5_share_by_raion(pop: np.ndarray, labels: np.ndarray, ids: list[str]) -> dict:
+    """Доля населения района в TOP_N_CONCENTRATION самых плотных его клетках
+    (грубая мера внутрирайонной концентрации - см. docs/notes/
+    grid_three_scenarios_2026-07-28.md §3.6 и docs/decisions/INF-15.md D-013).
+    BY-HM (город, не район) исключён - показатель осмыслен для района."""
+    flat_pop = pop.ravel()
+    flat_lab = labels.ravel()
+    out = {}
+    for i, tid in enumerate(ids):
+        if tid == "BY-HM":
+            continue
+        cells = flat_pop[flat_lab == i + 1].astype("float64")
+        total = cells.sum()
+        if total <= 0:
+            continue
+        top = np.sort(cells)[-TOP_N_CONCENTRATION:].sum() if cells.size >= TOP_N_CONCENTRATION else total
+        out[tid] = top / total
+    return out
+
+
+def compute_g9_concentration_check(stack: np.ndarray, labels: np.ndarray, ids: list[str],
+                                     epochs: list[int], forecast_2050_base_a: np.ndarray) -> dict:
+    """G-9 (D-013): проверка внутрирайонного распределения, которую G-2 не
+    делает - G-2 сверяет только СУММУ клеток района с прогнозом района, а
+    не то, как эта сумма разложена между клетками. Находка (docs/notes/
+    grid_three_scenarios_2026-07-28.md §3.6, независимо перепроверена
+    28.07.2026): национальная средняя доля топ-5 клеток района практически
+    не менялась 45 наблюдаемых лет (25.6% в 1975 -> 25.9% в 2020, разброс
+    по всем 10 эпохам 25.0-26.5%), а лог-линейная экстраполяция доли клетки
+    (project_epoch/fit_log_share_trend) даёт 55.3% уже к 2050 году (тот же
+    порядок и у варианта Б - 55.2%, т.к. оба варианта используют одну и ту
+    же необязательно ограниченную экспоненциальную базу share_raw до
+    вариант-специфичной коррекции). Порог по каждому району: прогнозный
+    темп роста доли (2020->2050, канонический base:A) не должен превышать
+    G9_RATE_MULTIPLIER раз худший наблюдаемый 5-летний темп 1975-2020."""
+    n = len(ids)
+    shares_by_epoch = [top5_share_by_raion(stack[i], labels, ids) for i in range(len(epochs))]
+    raions = [tid for tid in ids if tid != "BY-HM" and tid in shares_by_epoch[0]]
+
+    hist_max_abs_rate = {}
+    for tid in raions:
+        series = [shares_by_epoch[i].get(tid) for i in range(len(epochs))]
+        rates = [abs(series[i] - series[i - 1]) / (epochs[i] - epochs[i - 1])
+                 for i in range(1, len(epochs)) if series[i] is not None and series[i - 1] is not None]
+        hist_max_abs_rate[tid] = max(rates) if rates else 0.0
+
+    share_2020 = shares_by_epoch[-1]
+    share_2050 = top5_share_by_raion(forecast_2050_base_a, labels, ids)
+
+    per_raion = []
+    n_violations = 0
+    for tid in raions:
+        if tid not in share_2050:
+            continue
+        rate = float(abs(share_2050[tid] - share_2020[tid]) / 30.0)
+        baseline = float(max(hist_max_abs_rate[tid], 1e-6))
+        ratio = rate / baseline
+        violated = bool(ratio > G9_RATE_MULTIPLIER)
+        if violated:
+            n_violations += 1
+        per_raion.append({"raion": tid, "share_2020": round(float(share_2020[tid]), 4),
+                           "share_2050_base_a": round(float(share_2050[tid]), 4),
+                           "forecast_rate_per_year": round(rate, 6),
+                           "hist_max_rate_per_year": round(baseline, 6),
+                           "ratio_to_historical": round(ratio, 2), "violated": violated})
+
+    national_by_epoch = {str(epochs[i]): round(float(np.mean(list(shares_by_epoch[i].values()))), 4)
+                          for i in range(len(epochs))}
+    national_2050 = round(float(np.mean(list(share_2050.values()))), 4)
+    ratios = [r["ratio_to_historical"] for r in per_raion]
+
+    return {
+        "description": "Доля населения района в топ-5 самых плотных клетках "
+                        "(TOP_N=5) - грубая мера внутрирайонной концентрации. "
+                        "G-2 сверяет только сумму клеток района, не форму "
+                        "распределения внутри - этот тест проверяет форму.",
+        "national_mean_top5_share_by_year": national_by_epoch,
+        "national_mean_top5_share_2050_base_a": national_2050,
+        "n_raions_checked": len(per_raion),
+        "n_raions_violated": n_violations,
+        "pct_raions_violated": round(n_violations / len(per_raion) * 100, 1) if per_raion else 0.0,
+        "rate_multiplier_threshold": G9_RATE_MULTIPLIER,
+        "max_ratio_to_historical": round(max(ratios), 2) if ratios else 0.0,
+        "median_ratio_to_historical": round(float(np.median(ratios)), 2) if ratios else 0.0,
+        "pass": n_violations == 0,
+        "per_raion": per_raion,
+    }
+
+
 def write_grid_json(observed: dict, forecast_out: dict, forecast_version: str,
-                     centroid_forecast: list | None = None) -> None:
+                     centroid_forecast: list | None = None, g9: dict | None = None) -> None:
     """Собирает финальный web/public/data/grid.json (Приложение А ТЗ, раздел
     «Контракт данных») - объединяет наблюдаемую и модельную часть.
 
@@ -271,7 +364,7 @@ def write_grid_json(observed: dict, forecast_out: dict, forecast_version: str,
             }
 
     out = {
-        "version": "1.1.0",
+        "version": "1.2.0",
         "forecast_version": forecast_version,
         "grid": {
             "crs": grid_meta["crs"], "cell_m": grid_meta["cell_m"],
@@ -292,12 +385,15 @@ def write_grid_json(observed: dict, forecast_out: dict, forecast_version: str,
             "g4_g5": observed["validation"],
             "g6_network": net["g6"] if net else None,
             "c3_correlation": net["correlation_c3"] if net else None,
+            "g9_concentration_check": ({k: v for k, v in g9.items() if k != "per_raion"}
+                                        if g9 else None),
         },
         "meta": {
-            "claims": ["C-001", "C-002", "C-003"],
+            "claims": ["C-001", "C-002", "C-003", "C-004", "C-005"],
             "claims_status": {"C-001": "open_question", "C-002": "open_question",
-                              "C-003": "verified"},
-            "artifact": "by-maps-grid-v1.1.0.zip",
+                              "C-003": "verified", "C-004": "verified",
+                              "C-005": "open_question"},
+            "artifact": "by-maps-grid-v1.2.0.zip",
             "honesty": "GHS-POP — дазиметрическая производная официальной "
                        "статистики (не независимая перепись); районные/"
                        "национальные суммы клеток откалиброваны под "
@@ -337,6 +433,7 @@ def main() -> None:
     territories_forecast = {tid: {"pop_grid_sum": {}} for tid in ids}
     g2_report = []
     centroid_forecast = []
+    proj_2050_base_a = None
 
     for scenario in SCENARIOS:
         for variant in VARIANTS:
@@ -352,6 +449,8 @@ def main() -> None:
                     c["dtype"] = "f"
                     c["err_km"] = 10
                     centroid_forecast.append(c)
+                if scenario == "base" and variant == "A" and year == 2050:
+                    proj_2050_base_a = proj
 
                 for d, dkey in [(THRESH_PRIMARY, "5"), (THRESH_SECONDARY, "1"),
                                  (THRESH_AUX, "25")]:
@@ -378,6 +477,16 @@ def main() -> None:
           f"{max_g2_dev:.4f}% (допуск 0.1%)")
     assert max_g2_dev <= 0.1 + 1e-6, "G-2 не выполнен! Нормировка сломана."
 
+    assert proj_2050_base_a is not None
+    g9 = compute_g9_concentration_check(stack, labels, ids, EPOCHS, proj_2050_base_a)
+    print(f"\nG-9: внутрирайонная концентрация (топ-5 клеток) - "
+          f"нац. средняя {g9['national_mean_top5_share_by_year']['1975']*100:.1f}% (1975) -> "
+          f"{g9['national_mean_top5_share_by_year']['2020']*100:.1f}% (2020) -> "
+          f"{g9['national_mean_top5_share_2050_base_a']*100:.1f}% (2050 base:A); "
+          f"{g9['n_raions_violated']}/{g9['n_raions_checked']} районов темпом > "
+          f"{G9_RATE_MULTIPLIER}x худшего наблюдаемого - {'ПРОЙДЕНА' if g9['pass'] else 'НЕ ПРОЙДЕНА'} "
+          f"(это ожидаемо - см. docs/decisions/INF-15.md D-013)")
+
     anchors_out = [{"lon": None, "lat": None, "x_m": a[0], "y_m": a[1], "pop": a[2]}
                    for a in anchors]
 
@@ -401,7 +510,9 @@ def main() -> None:
           f"data/raw/grid/metrics_forecast.json ({len(g2_report)} проверок G-2)")
 
     forecast_out = json.loads((RAW / "metrics_forecast.json").read_text())
-    write_grid_json(observed, forecast_out, forecast_version, centroid_forecast)
+    (RAW / "g9_concentration_check.json").write_text(
+        json.dumps(g9, indent=2, ensure_ascii=False) + "\n")
+    write_grid_json(observed, forecast_out, forecast_version, centroid_forecast, g9)
 
 
 if __name__ == "__main__":

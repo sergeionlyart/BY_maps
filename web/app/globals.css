@@ -1613,11 +1613,17 @@ a.service-card:hover .sc-cta { text-decoration: underline; }
   font-size: 14.5px;
   line-height: 1.55;
 }
+.gv-mode-switch { display: flex; align-items: center; gap: 8px; }
+.gv-mode-switch button { padding: 8px 18px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface-1); font-size: 15px; font-weight: 600; cursor: pointer; }
+.gv-mode-switch button.on { background: var(--accent); color: #fff; border-color: var(--accent); }
 .gv-toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
 .gv-metric-switch { display: inline-flex; gap: 6px; flex-wrap: wrap; }
 .gv-toggle { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; cursor: pointer; }
-.gv-play { width: 34px; height: 34px; }
+.gv-toolbar-hint { min-height: 1.4em; margin: 0 0 2px; }
 .gv-map { width: 100%; height: 62vh; min-height: 380px; max-height: 640px; border-radius: 10px; overflow: hidden; border: 1px solid var(--border); }
+.gv-play-row, .gv-story-play-row { display: flex; align-items: center; gap: 12px; }
+.gv-play-big { width: 46px; height: 46px; min-width: 46px; font-size: 17px; flex-shrink: 0; }
+.gv-play-label { font-size: 14.5px; font-weight: 600; }
 .gv-legend { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: 12.5px; padding: 6px 2px; }
 .gv-legend-title { font-weight: 600; }
 .gv-legend-tick { padding: 1px 5px; border-radius: 4px; background: var(--surface-1); border: 1px solid var(--border); }
@@ -1625,10 +1631,16 @@ a.service-card:hover .sc-cta { text-decoration: underline; }
 .gv-legend-swatch { display: inline-block; width: 13px; height: 13px; border-radius: 3px; border: 1px solid var(--border); }
 .gv-legend-note { flex-basis: 100%; }
 .gv-slider-zone { display: flex; flex-direction: column; gap: 4px; }
-.gv-range { width: 100%; }
-.gv-range:disabled { opacity: 0.45; cursor: not-allowed; }
-.gv-slider-track {
-  position: relative; display: flex; height: 8px; border-radius: 5px; overflow: hidden; border: 1px solid var(--border);
+/* Слайдер и дорожка узлов слиты в один визуальный элемент (этап 1 v2,
+   handoff/09_next_research/INF-15_grid_v2_brief.md §5.2): декоративная
+   подложка .gv-slider-bg и невидимый нативный <input type=range> занимают
+   одно и то же место (position:absolute, один под другим), поэтому
+   выглядят как одна дорожка, а не два ряда друг под другом. */
+.gv-slider-merged { position: relative; height: 26px; }
+.gv-slider-bg {
+  position: absolute; left: 0; right: 0; top: 9px; height: 8px;
+  display: flex; border-radius: 5px; overflow: hidden; border: 1px solid var(--border);
+  pointer-events: none;
 }
 .gv-slider-observed { background: var(--accent); }
 .gv-slider-model {
@@ -1637,9 +1649,24 @@ a.service-card:hover .sc-cta { text-decoration: underline; }
 }
 .gv-slider-node {
   position: absolute; top: -3px; width: 2px; height: 14px; background: var(--ink-2);
-  opacity: 0.55; transform: translateX(-1px); pointer-events: none;
+  opacity: 0.55; transform: translateX(-1px);
 }
 .gv-slider-node.model { background: var(--chip-model); }
+.gv-range-overlay {
+  position: absolute; left: 0; right: 0; top: 0; width: 100%; height: 26px; margin: 0;
+  -webkit-appearance: none; appearance: none; background: transparent; cursor: pointer;
+}
+.gv-range-overlay:disabled { opacity: 0.45; cursor: not-allowed; }
+.gv-range-overlay::-webkit-slider-runnable-track { background: transparent; height: 26px; }
+.gv-range-overlay::-moz-range-track { background: transparent; height: 26px; }
+.gv-range-overlay::-webkit-slider-thumb {
+  -webkit-appearance: none; margin-top: 7px; width: 16px; height: 16px; border-radius: 50%;
+  background: var(--accent); border: 2px solid var(--surface-1); box-shadow: 0 0 0 1px var(--border);
+}
+.gv-range-overlay::-moz-range-thumb {
+  width: 16px; height: 16px; border-radius: 50%; background: var(--accent);
+  border: 2px solid var(--surface-1); box-shadow: 0 0 0 1px var(--border);
+}
 .gv-year-label { display: flex; align-items: center; gap: 8px; font-size: 20px; font-weight: 700; }
 .gv-network-note, .gv-snap-notice { margin: 2px 0 0; }
 .gv-network-callout {
@@ -1666,9 +1693,33 @@ a.service-card:hover .sc-cta { text-decoration: underline; }
 .gv-chip { font-size: 13px; line-height: 1.4; padding: 5px 10px; border-radius: 6px; border-left: 3px solid var(--border); background: var(--surface-1); }
 .gv-chip-open_question { border-left-color: var(--chip-interp); }
 .gv-chip-verified { border-left-color: var(--pos); }
-.gv-howto { padding: 10px 14px; border-radius: 10px; background: var(--surface-1); border: 1px solid var(--border); font-size: 14px; line-height: 1.5; }
-.gv-howto-title { font-weight: 700; margin-bottom: 4px; }
-.gv-howto p { margin: 3px 0; }
+.gv-click-hint { margin: 2px 0; }
+.gv-trend { display: inline-block; margin-left: 8px; font-size: 13px; font-weight: 600; vertical-align: middle; }
+.gv-trend-up { color: var(--pos); }
+.gv-trend-down { color: var(--neg); }
+.gv-restart-story { align-self: flex-start; }
+.gv-share-copied { color: var(--pos); font-weight: 600; }
+/* Режим «История» (v2) - панель шага */
+.gv-story-panel {
+  padding: 16px 18px; border-radius: 12px; border: 1px solid var(--border);
+  background: var(--surface-1); display: flex; flex-direction: column; gap: 10px;
+}
+.gv-story-step-no { font-size: 12px; color: var(--muted); font-weight: 600; letter-spacing: 0.03em; text-transform: uppercase; }
+.gv-story-title { margin: 0; font-size: 21px; }
+.gv-story-body { font-size: 15px; line-height: 1.6; }
+.gv-story-body p { margin: 0 0 10px; }
+.gv-story-table { border-collapse: collapse; margin: 8px 0; font-size: 14px; }
+.gv-story-table td { padding: 3px 12px 3px 0; }
+.gv-story-table-val { font-weight: 700; text-align: right; }
+.gv-story-caveat {
+  font-size: 13.5px; color: var(--ink-2); border-left: 3px solid var(--chip-interp);
+  padding: 6px 10px; background: color-mix(in srgb, var(--chip-interp) 8%, transparent); border-radius: 0 6px 6px 0;
+}
+.gv-story-step7-controls { display: flex; flex-wrap: wrap; gap: 14px; margin: 10px 0; }
+.gv-story-step7-controls > div { display: inline-flex; gap: 6px; flex-wrap: wrap; }
+.gv-story-freemode-btn { margin-top: 4px; }
+.gv-story-nav { display: flex; align-items: center; gap: 8px; margin-top: 4px; }
+.gv-story-nav .btn.primary { margin-left: auto; }
 .gv-finding {
   padding: 12px 14px; border-radius: 10px; border: 1px solid var(--border);
   border-left: 3px solid var(--accent);
