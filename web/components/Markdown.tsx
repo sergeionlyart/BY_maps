@@ -49,9 +49,33 @@ export default function Markdown({ text }: { text: string }) {
     const out: React.ReactNode[] = [];
     let i = 0;
     let k = 0;
+    let firstImage = true;
     while (i < lines.length) {
       const line = lines[i];
       if (!line.trim()) { i++; continue; }
+      // одиночная картинка ![alt](src) в абзаце -> figure, следующая строка,
+      // если она целиком курсивная (*...*), становится figcaption. Первая
+      // картинка страницы грузится сразу, остальные - loading="lazy".
+      // 1600x900 - фиксированный размер конвейера иллюстраций (assets_grid.py,
+      // 16:9 при ширине 1600px); задаём его явно, чтобы не было сдвига вёрстки.
+      const im = line.match(/^!\[([^\]]*)\]\(([^)\s]+)\)\s*$/);
+      if (im) {
+        const [, alt, src] = im;
+        i++;
+        let caption: React.ReactNode = null;
+        const cm = i < lines.length && lines[i].match(/^\*([^*]+)\*\s*$/);
+        if (cm) { caption = inline(cm[1], k); i++; }
+        const eager = firstImage;
+        firstImage = false;
+        out.push(
+          <figure className="md-figure" key={k++}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={src} alt={alt} width={1600} height={900} loading={eager ? undefined : 'lazy'} />
+            {caption && <figcaption>{caption}</figcaption>}
+          </figure>,
+        );
+        continue;
+      }
       if (line.startsWith('```')) {
         const buf: string[] = [];
         i++;

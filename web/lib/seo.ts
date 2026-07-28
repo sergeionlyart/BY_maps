@@ -109,6 +109,8 @@ export function articleJsonLd(opts: {
   path: string;
   lang: Lang;
   scholarly?: boolean;
+  /** Абсолютный URL превью, если у страницы своя og-картинка (по умолчанию — общий og.png). */
+  image?: string;
 }) {
   return {
     '@context': 'https://schema.org',
@@ -118,7 +120,7 @@ export function articleJsonLd(opts: {
     inLanguage: opts.lang,
     url: absUrl(opts.path),
     mainEntityOfPage: absUrl(opts.path),
-    image: `${SITE_URL}/og.png`,
+    image: opts.image ?? `${SITE_URL}/og.png`,
     author: { '@type': 'Person', name: AUTHOR_NAME, url: AUTHOR_URL },
     publisher: {
       '@type': 'Organization',

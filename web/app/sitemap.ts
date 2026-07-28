@@ -24,6 +24,7 @@ function ruPaths(): string[] {
     '/pyramid',
     '/methodology',
     '/article',
+    '/article/grid',
     '/about',
     '/goals',
     '/author',

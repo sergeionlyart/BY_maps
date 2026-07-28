@@ -711,6 +711,15 @@ select {
 .content table { border-collapse: collapse; font-size: 14px; width: 100%; }
 .content th, .content td { border: 1px solid var(--border); padding: 6px 10px; text-align: left; }
 .content th { background: var(--surface-1); font-weight: 600; }
+.content figure.md-figure { margin: 26px 0; }
+.content figure.md-figure img {
+  display: block; width: 100%; height: auto;
+  border-radius: 10px; border: 1px solid var(--border);
+}
+.content figure.md-figure figcaption {
+  margin-top: 8px; font-size: 14px; line-height: 1.5;
+  color: var(--ink-2); text-align: center;
+}
 
 /* оглавление статьи */
 .content-toc {
