@@ -264,6 +264,132 @@
     "description": "районов с сокращением населения на 40% и более"
   },
   {
+    "metric": "c007_band0_2_change_pct",
+    "value": -3.8,
+    "tolerance": 0.05,
+    "description": "C-007: изменение населения в клетках 0-2 км от крупной реки, 1975->2020, %"
+  },
+  {
+    "metric": "c007_band2_5_change_pct",
+    "value": 12.5,
+    "tolerance": 0.05,
+    "description": "C-007: изменение населения в клетках 2-5 км от крупной реки, 1975->2020, %"
+  },
+  {
+    "metric": "c007_band5_10_change_pct",
+    "value": -6.4,
+    "tolerance": 0.05,
+    "description": "C-007: изменение населения в клетках 5-10 км от крупной реки, 1975->2020, %"
+  },
+  {
+    "metric": "c007_band10_20_change_pct",
+    "value": -43.9,
+    "tolerance": 0.05,
+    "description": "C-007: изменение населения в клетках 10-20 км от крупной реки, 1975->2020, %"
+  },
+  {
+    "metric": "c007_band20plus_change_pct",
+    "value": -36.5,
+    "tolerance": 0.05,
+    "description": "C-007: изменение населения в клетках 20-20+ км от крупной реки, 1975->2020, %"
+  },
+  {
+    "metric": "c007_share_0_2_2020_pct",
+    "value": 49.5,
+    "tolerance": 0.05,
+    "description": "C-007: доля населения страны в поясе 0-2 км от реки, 2020 - БОЛЬШЕ доли пояса 2-5 км, опровергает исходную формулировку «максимум не у воды»"
+  },
+  {
+    "metric": "c007_share_2_5_2020_pct",
+    "value": 38.9,
+    "tolerance": 0.05,
+    "description": "C-007: доля населения страны в поясе 2-5 км от реки, 2020"
+  },
+  {
+    "metric": "c007_share_near5km_1975_pct",
+    "value": 86.6,
+    "tolerance": 0.05,
+    "description": "C-007: доля населения страны в пределах 5 км от крупной реки, 1975"
+  },
+  {
+    "metric": "c007_share_near5km_2020_pct",
+    "value": 88.4,
+    "tolerance": 0.05,
+    "description": "C-007: то же, 2020 - страна физически придвинулась к воде"
+  },
+  {
+    "metric": "c006_both_change_pct",
+    "value": 11.7,
+    "tolerance": 0.05,
+    "description": "C-006: изменение в группе «река+дорога», 1975->2020, % (единственная растущая)"
+  },
+  {
+    "metric": "c006_river_only_change_pct",
+    "value": -41.8,
+    "tolerance": 0.05,
+    "description": "C-006: изменение в группе «только река», 1975->2020, %"
+  },
+  {
+    "metric": "c006_road_only_change_pct",
+    "value": -54.2,
+    "tolerance": 0.05,
+    "description": "C-006: изменение в группе «только дорога», 1975->2020, % - выборка крохотная"
+  },
+  {
+    "metric": "c006_road_only_n_cells",
+    "value": 69,
+    "tolerance": 0,
+    "description": "C-006: число клеток в группе «только дорога» - статистически хрупкая группа"
+  },
+  {
+    "metric": "c006_neither_change_pct",
+    "value": -26.8,
+    "tolerance": 0.05,
+    "description": "C-006: изменение в группе «ни река, ни дорога», 1975->2020, %"
+  },
+  {
+    "metric": "c006_both_share_2020_pct",
+    "value": 76.5,
+    "tolerance": 0.05,
+    "description": "C-006: доля населения страны в группе «река+дорога», 2020"
+  },
+  {
+    "metric": "c006_both_area_share_pct",
+    "value": 26.6,
+    "tolerance": 0.05,
+    "description": "C-006: доля площади страны в группе «река+дорога», 2020"
+  },
+  {
+    "metric": "c006_both_change_2050_pct",
+    "value": -21.3,
+    "tolerance": 0.05,
+    "description": "C-006: прогнозное изменение группы «река+дорога» 2020->2050 (базовый/A)"
+  },
+  {
+    "metric": "c006_check_n_both",
+    "value": 133,
+    "tolerance": 0,
+    "description": "C-006 независимая проверка (города, 1989-2019): городов в группе «река+дорога»"
+  },
+  {
+    "metric": "c006_check_n_rest",
+    "value": 2,
+    "tolerance": 0,
+    "description": "C-006 независимая проверка: городов в остальных группах - крохотная выборка"
+  },
+  {
+    "metric": "c006_check_p_value",
+    "value": 0.0502,
+    "tolerance": 0.001,
+    "description": "C-006 независимая проверка: p-значение теста Манна-Уитни"
+  },
+  {
+    "metric": "c006_check_direction_confirmed",
+    "value": 1,
+    "tolerance": 0,
+    "description": "C-006 независимая проверка: направление совпадает с гипотезой (1=да)"
+  },
+  {
     "metric": "g9_top5_share_1975",
     "value": 0.2556,
     "tolerance": 0.0005,

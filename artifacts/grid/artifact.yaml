@@ -3,7 +3,7 @@
 
 id: grid
 title: "Полотно: карта расселения Беларуси по сетке 1 км, 1975–2050"
-version: "1.2.0"
+version: "1.3.0"
 released: "2026-07-28"
 landing_url: "https://by-population-maps.vercel.app/research/grid"
 authors:
@@ -48,6 +48,8 @@ files:
       license: "CC BY 4.0 (BY Maps; производная GHS-POP R2023A + OSM + официальная статистика)" }
   - { path: sources/raw/g9_concentration_check.json, from: data/raw/grid/g9_concentration_check.json, role: raw,
       license: "CC BY 4.0 (BY Maps)" }
+  - { path: sources/raw/river_edges.csv.gz, from: data/raw/osm/river_edges.csv.gz, role: raw,
+      license: "ODbL 1.0 (производная OSM, © OpenStreetMap contributors)" }
 
   - { path: sources/raw/rasters/pop_1975.tif, from: data/raw/grid/rasters_constrained/pop_1975.tif, role: raw,
       license: "CC BY 4.0 (производная GHS-POP R2023A, JRC; калибровано под официальные данные - см. METHODS.md)" }
@@ -72,6 +74,7 @@ files:
   - { path: code/extract/grid_frames.py, from: etl/grid_frames.py, role: code }
   - { path: code/extract/grid_network.py, from: etl/grid_network.py, role: code }
   - { path: code/extract/grid_story.py, from: etl/grid_story.py, role: code }
+  - { path: code/extract/osm_rivers.py, from: etl/osm_rivers.py, role: code }
 
   - { path: params/assumptions.yaml, role: params }
   - { path: checks/tests/test_invariants.py, role: code }
@@ -128,6 +131,14 @@ sources:
     sha256: ""
     vendored: "sources/raw/network_by_raion.csv (агрегировано по районам/классам)"
     fetch: "основной репозиторий data/raw/osm/graph_edges.csv.gz"
+  - id: osm_river_graph_v3
+    url: "https://download.geofabrik.de/europe/belarus-latest.osm.pbf"
+    description: "Слой рек Беларуси (etl/osm_rivers.py, доработка v3), waterway=river; повторная выгрузка Geofabrik 2026-07-27 (свежее снимка дорог 2026-07-10 - расхождение раскрыто, см. docs/decisions/INF-15.md D-015); для расчётов используются только реки длиной >=20 км в границах Беларуси (docs/preregistration/grid-v0.2.md §8.4)"
+    license: "ODbL 1.0 (© OpenStreetMap contributors)"
+    accessed: "2026-07-28"
+    sha256: "e1d690ea84f8c289336d251a3f6b6304a86f3683c3f641fa4d1c38c44cc84774"
+    vendored: "sources/raw/river_edges.csv.gz"
+    fetch: "основной репозиторий data/raw/osm/river_edges.csv.gz"
 
 entrypoints:
   reproduce: "code/run.sh"
@@ -244,3 +255,49 @@ expected_results:
       description: "G-9: максимальное отношение прогнозного темпа к историческому по районам" }
   - { metric: g9_pass, value: 0, tolerance: 0,
       description: "G-9 НЕ пройдена (0) - честно, по конструкции: вариант A/Б переконцентрирует население внутри района сильнее, чем допускает исторический темп (см. D-013)" }
+
+  # v3 «История» (доработка, реки) - гипотезы C-006/C-007, docs/preregistration/
+  # grid-v0.2.md §8; исход - docs/decisions/INF-15.md D-015 (C-006 подтверждена
+  # направленно, C-007 ОПРОВЕРГНУТА собственным заранее заданным критерием)
+  - { metric: c007_band0_2_change_pct, value: -3.8, tolerance: 0.05,
+      description: "C-007: изменение населения в клетках 0-2 км от крупной реки, 1975->2020, %" }
+  - { metric: c007_band2_5_change_pct, value: 12.5, tolerance: 0.05,
+      description: "C-007: изменение населения в клетках 2-5 км от крупной реки, 1975->2020, %" }
+  - { metric: c007_band5_10_change_pct, value: -6.4, tolerance: 0.05,
+      description: "C-007: изменение населения в клетках 5-10 км от крупной реки, 1975->2020, %" }
+  - { metric: c007_band10_20_change_pct, value: -43.9, tolerance: 0.05,
+      description: "C-007: изменение населения в клетках 10-20 км от крупной реки, 1975->2020, %" }
+  - { metric: c007_band20plus_change_pct, value: -36.5, tolerance: 0.05,
+      description: "C-007: изменение населения в клетках 20+ км от крупной реки, 1975->2020, %" }
+  - { metric: c007_share_0_2_2020_pct, value: 49.5, tolerance: 0.05,
+      description: "C-007: доля населения страны в поясе 0-2 км от реки, 2020 - БОЛЬШЕ доли пояса 2-5 км, опровергает исходную формулировку «максимум не у воды» (см. D-015)" }
+  - { metric: c007_share_2_5_2020_pct, value: 38.9, tolerance: 0.05,
+      description: "C-007: доля населения страны в поясе 2-5 км от реки, 2020" }
+  - { metric: c007_share_near5km_1975_pct, value: 86.6, tolerance: 0.05,
+      description: "C-007: доля населения страны в пределах 5 км от крупной реки, 1975" }
+  - { metric: c007_share_near5km_2020_pct, value: 88.4, tolerance: 0.05,
+      description: "C-007: то же, 2020 - страна физически придвинулась к воде" }
+  - { metric: c006_both_change_pct, value: 11.7, tolerance: 0.05,
+      description: "C-006: изменение населения в группе «река рядом (≤5км) И дорога рядом (≤2км)», 1975->2020, % (единственная растущая группа)" }
+  - { metric: c006_river_only_change_pct, value: -41.8, tolerance: 0.05,
+      description: "C-006: изменение в группе «только река» (>20км от дороги), 1975->2020, %" }
+  - { metric: c006_road_only_change_pct, value: -54.2, tolerance: 0.05,
+      description: "C-006: изменение в группе «только дорога» (>20км от реки), 1975->2020, % - выборка крохотная, см. c006_road_only_n_cells" }
+  - { metric: c006_road_only_n_cells, value: 69, tolerance: 0,
+      description: "C-006: число клеток в группе «только дорога» - статистически хрупкая группа (см. D-015)" }
+  - { metric: c006_neither_change_pct, value: -26.8, tolerance: 0.05,
+      description: "C-006: изменение в группе «ни река, ни дорога», 1975->2020, %" }
+  - { metric: c006_both_share_2020_pct, value: 76.5, tolerance: 0.05,
+      description: "C-006: доля населения страны в группе «река+дорога», 2020" }
+  - { metric: c006_both_area_share_pct, value: 26.6, tolerance: 0.05,
+      description: "C-006: доля площади страны в группе «река+дорога», 2020" }
+  - { metric: c006_both_change_2050_pct, value: -21.3, tolerance: 0.05,
+      description: "C-006: прогнозное изменение группы «река+дорога» 2020->2050 (базовый/A) - хорошая география перестаёт спасать" }
+  - { metric: c006_check_n_both, value: 133, tolerance: 0,
+      description: "C-006 независимая проверка (города, 1989-2019): городов в группе «река+дорога»" }
+  - { metric: c006_check_n_rest, value: 2, tolerance: 0,
+      description: "C-006 независимая проверка: городов в остальных трёх группах вместе - крохотная выборка, проверка малоинформативна (см. D-015)" }
+  - { metric: c006_check_p_value, value: 0.0502, tolerance: 0.001,
+      description: "C-006 независимая проверка: p-значение теста Манна-Уитни (номинально <0.10, но ненадёжно при n_rest=2)" }
+  - { metric: c006_check_direction_confirmed, value: 1, tolerance: 0,
+      description: "C-006 независимая проверка: направление совпадает с гипотезой (1=да)" }

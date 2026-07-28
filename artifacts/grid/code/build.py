@@ -156,6 +156,57 @@ def main() -> None:
         add("n_raions_shrunk_40pct_or_more", raions["n_raions_shrunk_40pct_or_more"], 0,
             "районов с сокращением населения на 40% и более")
 
+        # v3: реки (C-006/C-007) - docs/preregistration/grid-v0.2.md §8;
+        # исход - docs/decisions/INF-15.md D-015 (C-006 подтверждена
+        # направленно, C-007 ОПРОВЕРГНУТА собственным заранее заданным
+        # критерием - публикуется как есть, не подгоняется под ожидание)
+        if "c007_river_distance" in story:
+            c007 = story["c007_river_distance"]["bands"]
+            riv_names = ["0_2", "2_5", "5_10", "10_20", "20plus"]
+            for name, b in zip(riv_names, c007):
+                add(f"c007_band{name}_change_pct", b["change_pct"], 0.05,
+                    f"C-007: изменение населения в клетках {b['lo']}-{b['hi'] or '20+'} км "
+                    "от крупной реки, 1975->2020, %")
+            add("c007_share_0_2_2020_pct", c007[0]["share_2020_pct"], 0.05,
+                "C-007: доля населения страны в поясе 0-2 км от реки, 2020 - БОЛЬШЕ доли "
+                "пояса 2-5 км, опровергает исходную формулировку «максимум не у воды»")
+            add("c007_share_2_5_2020_pct", c007[1]["share_2020_pct"], 0.05,
+                "C-007: доля населения страны в поясе 2-5 км от реки, 2020")
+            near5 = story["c007_river_distance"]["share_near_5km_pct"]
+            add("c007_share_near5km_1975_pct", near5["1975"], 0.05,
+                "C-007: доля населения страны в пределах 5 км от крупной реки, 1975")
+            add("c007_share_near5km_2020_pct", near5["2020"], 0.05,
+                "C-007: то же, 2020 - страна физически придвинулась к воде")
+
+        if "c006_river_road_matrix" in story:
+            groups = {g["id"]: g for g in story["c006_river_road_matrix"]["groups"]}
+            add("c006_both_change_pct", groups["both"]["change_pct"], 0.05,
+                "C-006: изменение в группе «река+дорога», 1975->2020, % (единственная растущая)")
+            add("c006_river_only_change_pct", groups["river_only"]["change_pct"], 0.05,
+                "C-006: изменение в группе «только река», 1975->2020, %")
+            add("c006_road_only_change_pct", groups["road_only"]["change_pct"], 0.05,
+                "C-006: изменение в группе «только дорога», 1975->2020, % - выборка крохотная")
+            add("c006_road_only_n_cells", groups["road_only"]["n_cells"], 0,
+                "C-006: число клеток в группе «только дорога» - статистически хрупкая группа")
+            add("c006_neither_change_pct", groups["neither"]["change_pct"], 0.05,
+                "C-006: изменение в группе «ни река, ни дорога», 1975->2020, %")
+            add("c006_both_share_2020_pct", groups["both"]["share_2020_pct"], 0.05,
+                "C-006: доля населения страны в группе «река+дорога», 2020")
+            add("c006_both_area_share_pct", groups["both"]["area_share_pct"], 0.05,
+                "C-006: доля площади страны в группе «река+дорога», 2020")
+            add("c006_both_change_2050_pct", groups["both"]["change_2050_pct"], 0.05,
+                "C-006: прогнозное изменение группы «река+дорога» 2020->2050 (базовый/A)")
+
+            chk = story["c006_river_road_matrix"]["independent_check"]
+            add("c006_check_n_both", chk["n_both"], 0,
+                "C-006 независимая проверка (города, 1989-2019): городов в группе «река+дорога»")
+            add("c006_check_n_rest", chk["n_rest"], 0,
+                "C-006 независимая проверка: городов в остальных группах - крохотная выборка")
+            add("c006_check_p_value", chk["p_value"], 0.001,
+                "C-006 независимая проверка: p-значение теста Манна-Уитни")
+            add("c006_check_direction_confirmed", 1 if chk["direction_confirmed"] else 0, 0,
+                "C-006 независимая проверка: направление совпадает с гипотезой (1=да)")
+
     g9_path = SRC / "g9_concentration_check.json"
     if g9_path.exists():
         g9 = json.loads(g9_path.read_text())

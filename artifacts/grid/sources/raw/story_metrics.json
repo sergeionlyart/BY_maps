@@ -1,6 +1,21 @@
 {
-  "version": "0.2.0",
+  "version": "0.3.0",
   "rule500_frame": "/data/grid_frames/story_rule500_1975.webp",
+  "matrix_frame": "/data/grid_frames/story_matrix_2020.webp",
+  "river_buffer_frame": "/data/grid_frames/story_river_buffer.webp",
+  "islands_frames": {
+    "1975": "/data/grid_frames/story_islands_1975.webp",
+    "1980": "/data/grid_frames/story_islands_1980.webp",
+    "1985": "/data/grid_frames/story_islands_1985.webp",
+    "1990": "/data/grid_frames/story_islands_1990.webp",
+    "1995": "/data/grid_frames/story_islands_1995.webp",
+    "2000": "/data/grid_frames/story_islands_2000.webp",
+    "2005": "/data/grid_frames/story_islands_2005.webp",
+    "2010": "/data/grid_frames/story_islands_2010.webp",
+    "2015": "/data/grid_frames/story_islands_2015.webp",
+    "2020": "/data/grid_frames/story_islands_2020.webp",
+    "2050:base:A": "/data/grid_frames/story_islands_2050_base_A.webp"
+  },
   "c004_density_bands": {
     "bounds_pop_per_km2": [
       1,
@@ -122,6 +137,288 @@
         "pop_1975": 21002,
         "pop_2020": 12860,
         "change_pct": -38.8
+      }
+    ]
+  },
+  "c006_river_road_matrix": {
+    "river_near_km": 5.0,
+    "river_far_km": 20.0,
+    "road_near_km": 2.0,
+    "road_far_km": 10.0,
+    "groups": [
+      {
+        "id": "both",
+        "n_cells": 55599,
+        "pop_1975": 6436874,
+        "pop_2020": 7188219,
+        "pop_2050_base_A": 5655882,
+        "change_pct": 11.7,
+        "change_2050_pct": -21.3,
+        "share_2020_pct": 76.5,
+        "area_share_pct": 26.6
+      },
+      {
+        "id": "river_only",
+        "n_cells": 21736,
+        "pop_1975": 201636,
+        "pop_2020": 117353,
+        "pop_2050_base_A": 56697,
+        "change_pct": -41.8,
+        "change_2050_pct": -51.7,
+        "share_2020_pct": 1.2,
+        "area_share_pct": 10.4
+      },
+      {
+        "id": "road_only",
+        "n_cells": 69,
+        "pop_1975": 770,
+        "pop_2020": 353,
+        "pop_2050_base_A": 60,
+        "change_pct": -54.2,
+        "change_2050_pct": -83.0,
+        "share_2020_pct": 0.0,
+        "area_share_pct": 0.0
+      },
+      {
+        "id": "neither",
+        "n_cells": 542,
+        "pop_1975": 4595,
+        "pop_2020": 3363,
+        "pop_2050_base_A": 1425,
+        "change_pct": -26.8,
+        "change_2050_pct": -57.6,
+        "share_2020_pct": 0.0,
+        "area_share_pct": 0.3
+      }
+    ],
+    "independent_check": {
+      "n_cities_total": 197,
+      "n_both": 133,
+      "n_rest": 2,
+      "years": [
+        1989,
+        2019
+      ],
+      "test": "mann_whitney_u",
+      "p_threshold": 0.1,
+      "both_median_change_pct": -6.8,
+      "rest_median_change_pct": -31.5,
+      "u_statistic": 241.0,
+      "p_value": 0.0502,
+      "direction_confirmed": true,
+      "significant_p10": true
+    }
+  },
+  "c007_river_distance": {
+    "bands_km": [
+      0,
+      2,
+      5,
+      10,
+      20
+    ],
+    "n_edges": 802238,
+    "n_river_cells": 28646,
+    "bands": [
+      {
+        "lo": 0,
+        "hi": 2,
+        "n_cells": 77525,
+        "pop_1975": 4837352,
+        "pop_2020": 4653287,
+        "change_pct": -3.8,
+        "share_1975_pct": 51.8,
+        "share_2020_pct": 49.5
+      },
+      {
+        "lo": 2,
+        "hi": 5,
+        "n_cells": 87402,
+        "pop_1975": 3248918,
+        "pop_2020": 3654987,
+        "change_pct": 12.5,
+        "share_1975_pct": 34.8,
+        "share_2020_pct": 38.9
+      },
+      {
+        "lo": 5,
+        "hi": 10,
+        "n_cells": 59297,
+        "pop_1975": 1025758,
+        "pop_2020": 960264,
+        "change_pct": -6.4,
+        "share_1975_pct": 11.0,
+        "share_2020_pct": 10.2
+      },
+      {
+        "lo": 10,
+        "hi": 20,
+        "n_cells": 36512,
+        "pop_1975": 206991,
+        "pop_2020": 116173,
+        "change_pct": -43.9,
+        "share_1975_pct": 2.2,
+        "share_2020_pct": 1.2
+      },
+      {
+        "lo": 20,
+        "hi": null,
+        "n_cells": 179762,
+        "pop_1975": 13219,
+        "pop_2020": 8389,
+        "change_pct": -36.5,
+        "share_1975_pct": 0.1,
+        "share_2020_pct": 0.1
+      }
+    ],
+    "share_near_5km_pct": {
+      "1975": 86.6,
+      "2020": 88.4
+    },
+    "cities": [
+      {
+        "id": "c-minsk",
+        "name_ru": "Минск",
+        "name_be": "Мінск",
+        "lon": 27.561837,
+        "lat": 53.902246,
+        "river_km": 0.4,
+        "road_km": 0.0,
+        "change_pct_1989_2019": 27.0,
+        "group": "both",
+        "is_exception": false
+      },
+      {
+        "id": "c-mahilou",
+        "name_ru": "Могилёв",
+        "name_be": "Магілёў",
+        "lon": 30.34296,
+        "lat": 53.90894,
+        "river_km": 0.8,
+        "road_km": 0.0,
+        "change_pct_1989_2019": -0.7,
+        "group": "both",
+        "is_exception": false
+      },
+      {
+        "id": "c-brest",
+        "name_ru": "Брест",
+        "name_be": "Брэст",
+        "lon": 23.656944444,
+        "lat": 52.084722222,
+        "river_km": 0.0,
+        "road_km": 0.8,
+        "change_pct_1989_2019": 31.4,
+        "group": "both",
+        "is_exception": false
+      },
+      {
+        "id": "c-hrodna",
+        "name_ru": "Гродно",
+        "name_be": "Гродна",
+        "lon": 23.816666666,
+        "lat": 53.666666666,
+        "river_km": 0.8,
+        "road_km": 0.3,
+        "change_pct_1989_2019": 31.6,
+        "group": "both",
+        "is_exception": false
+      },
+      {
+        "id": "c-viciebsk",
+        "name_ru": "Витебск",
+        "name_be": "Віцебск",
+        "lon": 30.166666666,
+        "lat": 55.183333333,
+        "river_km": 1.4,
+        "road_km": 1.5,
+        "change_pct_1989_2019": 4.2,
+        "group": "both",
+        "is_exception": false
+      },
+      {
+        "id": "c-pinsk",
+        "name_ru": "Пинск",
+        "name_be": "Пінск",
+        "lon": 26.103055555,
+        "lat": 52.115277777,
+        "river_km": 0.6,
+        "road_km": 0.0,
+        "change_pct_1989_2019": 6.4,
+        "group": "both",
+        "is_exception": false
+      },
+      {
+        "id": "c-navapolack",
+        "name_ru": "Новополоцк",
+        "name_be": "Наваполацк",
+        "lon": 28.666666666,
+        "lat": 55.533333333,
+        "river_km": 0.4,
+        "road_km": 0.4,
+        "change_pct_1989_2019": 6.7,
+        "group": "both",
+        "is_exception": false
+      },
+      {
+        "id": "c-babrujsk",
+        "name_ru": "Бобруйск",
+        "name_be": "Бабруйск",
+        "lon": 29.233333333,
+        "lat": 53.15,
+        "river_km": 1.2,
+        "road_km": 0.2,
+        "change_pct_1989_2019": -4.0,
+        "group": "both",
+        "is_exception": false
+      },
+      {
+        "id": "c-homiel",
+        "name_ru": "Гомель",
+        "name_be": "Гомель",
+        "lon": 30.983333333,
+        "lat": 52.441666666,
+        "river_km": 3.4,
+        "road_km": 0.2,
+        "change_pct_1989_2019": 1.9,
+        "group": "both",
+        "is_exception": false
+      },
+      {
+        "id": "c-baranavichy",
+        "name_ru": "Барановичи",
+        "name_be": "Баранавічы",
+        "lon": 26.017777777,
+        "lat": 53.1325,
+        "river_km": 6.0,
+        "road_km": 3.1,
+        "change_pct_1989_2019": 9.9,
+        "group": "buffer",
+        "is_exception": false
+      },
+      {
+        "id": "c-salihorsk",
+        "name_ru": "Солигорск",
+        "name_be": "Салігорск",
+        "lon": 27.5425,
+        "lat": 52.78416,
+        "river_km": 1.7,
+        "road_km": 5.5,
+        "change_pct_1989_2019": 9.5,
+        "group": "buffer",
+        "is_exception": true
+      },
+      {
+        "id": "c-maladziechna",
+        "name_ru": "Молодечно",
+        "name_be": "Маладзечна",
+        "lon": 26.851666666,
+        "lat": 54.313611111,
+        "river_km": 1.7,
+        "road_km": 0.1,
+        "change_pct_1989_2019": 0.0,
+        "group": "both",
+        "is_exception": true
       }
     ]
   },

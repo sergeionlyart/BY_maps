@@ -364,7 +364,7 @@ def write_grid_json(observed: dict, forecast_out: dict, forecast_version: str,
             }
 
     out = {
-        "version": "1.2.0",
+        "version": "1.3.0",
         "forecast_version": forecast_version,
         "grid": {
             "crs": grid_meta["crs"], "cell_m": grid_meta["cell_m"],
@@ -389,11 +389,12 @@ def write_grid_json(observed: dict, forecast_out: dict, forecast_version: str,
                                         if g9 else None),
         },
         "meta": {
-            "claims": ["C-001", "C-002", "C-003", "C-004", "C-005"],
+            "claims": ["C-001", "C-002", "C-003", "C-004", "C-005", "C-006", "C-007"],
             "claims_status": {"C-001": "open_question", "C-002": "open_question",
                               "C-003": "verified", "C-004": "verified",
-                              "C-005": "open_question"},
-            "artifact": "by-maps-grid-v1.2.0.zip",
+                              "C-005": "open_question", "C-006": "open_question",
+                              "C-007": "refuted"},
+            "artifact": "by-maps-grid-v1.3.0.zip",
             "honesty": "GHS-POP — дазиметрическая производная официальной "
                        "статистики (не независимая перепись); районные/"
                        "национальные суммы клеток откалиброваны под "

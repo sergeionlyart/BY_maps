@@ -1617,6 +1617,8 @@ a.service-card:hover .sc-cta { text-decoration: underline; }
 .gv-mode-switch button { padding: 8px 18px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface-1); font-size: 15px; font-weight: 600; cursor: pointer; }
 .gv-mode-switch button.on { background: var(--accent); color: #fff; border-color: var(--accent); }
 .gv-toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.gv-layer-toggles { font-size: 13px; opacity: 0.92; }
+.gv-layer-toggles .btn { padding: 5px 12px; font-size: 13px; }
 .gv-metric-switch { display: inline-flex; gap: 6px; flex-wrap: wrap; }
 .gv-toggle { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; cursor: pointer; }
 .gv-toolbar-hint { min-height: 1.4em; margin: 0 0 2px; }
@@ -1693,6 +1695,7 @@ a.service-card:hover .sc-cta { text-decoration: underline; }
 .gv-chip { font-size: 13px; line-height: 1.4; padding: 5px 10px; border-radius: 6px; border-left: 3px solid var(--border); background: var(--surface-1); }
 .gv-chip-open_question { border-left-color: var(--chip-interp); }
 .gv-chip-verified { border-left-color: var(--pos); }
+.gv-chip-refuted { border-left-color: var(--neg); }
 .gv-click-hint { margin: 2px 0; }
 .gv-trend { display: inline-block; margin-left: 8px; font-size: 13px; font-weight: 600; vertical-align: middle; }
 .gv-trend-up { color: var(--pos); }
@@ -1720,6 +1723,31 @@ a.service-card:hover .sc-cta { text-decoration: underline; }
 .gv-story-freemode-btn { margin-top: 4px; }
 .gv-story-nav { display: flex; align-items: center; gap: 8px; margin-top: 4px; }
 .gv-story-nav .btn.primary { margin-left: auto; }
+/* v3: мини-график (шаги 2-5), таблица городов (шаг 5), заключение (шаг 9) */
+.gv-minichart { display: flex; flex-direction: column; gap: 5px; margin: 10px 0; font-size: 12.5px; }
+.gv-minichart-row { display: grid; grid-template-columns: 100px 1fr 56px; align-items: center; gap: 8px; }
+.gv-minichart-row.highlight .gv-minichart-label { font-weight: 700; }
+.gv-minichart-label { color: var(--ink-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.gv-minichart-track { position: relative; height: 12px; background: var(--surface-2); border-radius: 3px; overflow: hidden; }
+.gv-minichart-bar { position: absolute; top: 0; bottom: 0; left: 0; border-radius: 3px; }
+.gv-minichart-bar.pos { background: var(--pos); }
+.gv-minichart-bar.neg { background: var(--neg); }
+.gv-minichart-value { text-align: right; font-variant-numeric: tabular-nums; }
+.gv-show-cities-btn { align-self: flex-start; }
+.gv-cities-table { width: 100%; font-size: 13px; }
+.gv-cities-table th { text-align: left; font-weight: 600; color: var(--muted); padding: 2px 10px 4px 0; }
+.gv-cities-table td { padding: 2px 10px 2px 0; }
+.gv-city-exception td:first-child { font-weight: 700; }
+.gv-story-conclusion { border-top: 1px solid var(--border); padding-top: 10px; margin-top: 4px; }
+.gv-story-conclusion p { margin: 0 0 8px; }
+/* v3, свободный режим: таблица всех районов (этап 6 п.3) */
+.gv-raion-table-wrap { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+.gv-raion-table-scroll { max-height: 360px; overflow-y: auto; width: 100%; border: 1px solid var(--border); border-radius: 8px; }
+.gv-raion-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.gv-raion-table th { position: sticky; top: 0; background: var(--surface-1); text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--border); }
+.gv-raion-table th button { background: none; border: none; font: inherit; font-weight: 600; color: var(--ink-2); cursor: pointer; padding: 0; }
+.gv-raion-table td { padding: 4px 10px; border-bottom: 1px solid var(--surface-2); }
+.gv-raion-table-csv { align-self: flex-start; }
 .gv-finding {
   padding: 12px 14px; border-radius: 10px; border: 1px solid var(--border);
   border-left: 3px solid var(--accent);

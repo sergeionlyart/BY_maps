@@ -20,7 +20,10 @@ export interface GridMapProps {
   showCentroidTrack: boolean;
   centroidTrack: CentroidPoint[];
   centroidUpToYear: number;
-  onMapClick: (lon: number, lat: number) => void;
+  /** v3: третий параметр - id района под кликом (если удалось определить
+   *  через gv-adm2-fill, вне зависимости от метрики) - для карточки места
+   *  в свободном режиме (этап 6 п.2 доработки v3). */
+  onMapClick: (lon: number, lat: number, territoryId?: string | null) => void;
   onTerritoryClick: (id: string) => void;
   adm2: GeoJSON.FeatureCollection | null;
   adm1: GeoJSON.FeatureCollection | null;
@@ -39,6 +42,22 @@ export interface GridMapProps {
    *  режима взаимоисключающие - см. GridView.tsx). */
   chernobylZones?: Record<string, number> | null;
   showChernobyl?: boolean;
+  /** v3: слой рек (шаги 3-5 и свободный режим по тумблеру). */
+  riversGeojson?: GeoJSON.FeatureCollection | null;
+  showRivers?: boolean;
+  /** v3, шаг 3: пояса 0-2/2-5 км от реки. */
+  riverBufferFrameUrl?: string | null;
+  showRiverBuffer?: boolean;
+  /** v3, шаги 4-5: 4-цветная маска групп река x дорога. */
+  matrixFrameUrl?: string | null;
+  showMatrix?: boolean;
+  /** v3, шаг 8: острова расселения текущего года (пересчитывается в
+   *  GridView.tsx по `idx`/`storyData.islands_frames`). */
+  islandsFrameUrl?: string | null;
+  /** v3: подписи 12 крупнейших городов. */
+  cityLabels?: { id: string; name_ru: string; name_be: string; lon: number; lat: number }[] | null;
+  showCityLabels?: boolean;
+  lang?: 'ru' | 'be';
 }
 
 /** Карта «Полотна»: растровый image-overlay кадра (webp) + опциональные
@@ -52,6 +71,11 @@ export default function GridMap({
   zoomBounds = null, rule500FrameUrl = null, showRule500 = false,
   highwaysGeojson = null, showHighways = false,
   chernobylZones = null, showChernobyl = false,
+  riversGeojson = null, showRivers = false,
+  riverBufferFrameUrl = null, showRiverBuffer = false,
+  matrixFrameUrl = null, showMatrix = false,
+  islandsFrameUrl = null,
+  cityLabels = null, showCityLabels = false, lang = 'ru',
 }: GridMapProps) {
   const divRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<maplibregl.Map | null>(null);
@@ -89,14 +113,13 @@ export default function GridMap({
       syncLayers();
     });
     map.on('click', (e) => {
+      const feats = map.getLayer('gv-adm2-fill')
+        ? map.queryRenderedFeatures(e.point, { layers: ['gv-adm2-fill'] }) : [];
+      const territoryId = feats[0]?.properties?.id as string | undefined;
       if (metricRef.current === 'network') {
-        const feats = map.queryRenderedFeatures(e.point, {
-          layers: [map.getLayer('gv-adm2-fill') ? 'gv-adm2-fill' : ''].filter(Boolean),
-        });
-        const id = feats[0]?.properties?.id as string | undefined;
-        if (id) { onTerritoryClickRef.current(id); return; }
+        if (territoryId) { onTerritoryClickRef.current(territoryId); return; }
       }
-      onMapClickRef.current(e.lngLat.lng, e.lngLat.lat);
+      onMapClickRef.current(e.lngLat.lng, e.lngLat.lat, territoryId ?? null);
     });
 
     // Контейнер может изменить размер после инициализации (шрифты,
@@ -201,7 +224,7 @@ export default function GridMap({
       map.setLayoutProperty('gv-rule500-layer', 'visibility', showRule500 ? 'visible' : 'none');
     }
 
-    // Шаг 3 истории: слой магистралей.
+    // Шаг 3(-5) истории: слой магистралей.
     if (highwaysGeojson && !map.getSource('gv-highways')) {
       map.addSource('gv-highways', { type: 'geojson', data: highwaysGeojson });
       map.addLayer({ id: 'gv-highways-line', type: 'line', source: 'gv-highways',
@@ -210,6 +233,110 @@ export default function GridMap({
     }
     if (map.getLayer('gv-highways-line')) {
       map.setLayoutProperty('gv-highways-line', 'visibility', showHighways ? 'visible' : 'none');
+    }
+
+    // v3, шаг 3(-5): слой рек.
+    if (riversGeojson && !map.getSource('gv-rivers')) {
+      map.addSource('gv-rivers', { type: 'geojson', data: riversGeojson });
+      map.addLayer({ id: 'gv-rivers-line', type: 'line', source: 'gv-rivers',
+        paint: { 'line-color': '#3d7fc4', 'line-width': 1.8, 'line-opacity': 0.8 },
+        layout: { 'line-cap': 'round', 'line-join': 'round' } },
+        map.getLayer('gv-highways-line') ? 'gv-highways-line' : undefined);
+    }
+    if (map.getLayer('gv-rivers-line')) {
+      map.setLayoutProperty('gv-rivers-line', 'visibility', showRivers ? 'visible' : 'none');
+    }
+
+    // v3, шаг 3: пояса 0-2/2-5 км от реки - маска поверх кадра.
+    if (riverBufferFrameUrl && boundsLonLat) {
+      const [w, s, e, n] = boundsLonLat;
+      const coords: [[number, number], [number, number], [number, number], [number, number]] = [
+        [w, n], [e, n], [e, s], [w, s],
+      ];
+      const src = map.getSource('gv-river-buffer') as maplibregl.ImageSource | undefined;
+      if (src) {
+        src.updateImage({ url: riverBufferFrameUrl, coordinates: coords });
+      } else {
+        map.addSource('gv-river-buffer', { type: 'image', url: riverBufferFrameUrl, coordinates: coords });
+        map.addLayer({ id: 'gv-river-buffer-layer', type: 'raster', source: 'gv-river-buffer',
+          paint: { 'raster-fade-duration': reducedMotion ? 0 : 120 } });
+      }
+    }
+    if (map.getLayer('gv-river-buffer-layer')) {
+      map.setLayoutProperty('gv-river-buffer-layer', 'visibility', showRiverBuffer ? 'visible' : 'none');
+    }
+
+    // v3, шаги 4-5: 4-цветная маска групп река x дорога.
+    if (matrixFrameUrl && boundsLonLat) {
+      const [w, s, e, n] = boundsLonLat;
+      const coords: [[number, number], [number, number], [number, number], [number, number]] = [
+        [w, n], [e, n], [e, s], [w, s],
+      ];
+      const src = map.getSource('gv-matrix') as maplibregl.ImageSource | undefined;
+      if (src) {
+        src.updateImage({ url: matrixFrameUrl, coordinates: coords });
+      } else {
+        map.addSource('gv-matrix', { type: 'image', url: matrixFrameUrl, coordinates: coords });
+        map.addLayer({ id: 'gv-matrix-layer', type: 'raster', source: 'gv-matrix',
+          paint: { 'raster-fade-duration': reducedMotion ? 0 : 120 } });
+      }
+    }
+    if (map.getLayer('gv-matrix-layer')) {
+      map.setLayoutProperty('gv-matrix-layer', 'visibility', showMatrix ? 'visible' : 'none');
+    }
+
+    // v3, шаг 8: острова расселения текущего года (URL меняется по мере
+    // прокрутки - тот же паттерн updateImage, что и у основного кадра).
+    if (islandsFrameUrl && boundsLonLat) {
+      const [w, s, e, n] = boundsLonLat;
+      const coords: [[number, number], [number, number], [number, number], [number, number]] = [
+        [w, n], [e, n], [e, s], [w, s],
+      ];
+      const src = map.getSource('gv-islands') as maplibregl.ImageSource | undefined;
+      if (src) {
+        src.updateImage({ url: islandsFrameUrl, coordinates: coords });
+      } else {
+        map.addSource('gv-islands', { type: 'image', url: islandsFrameUrl, coordinates: coords });
+        map.addLayer({ id: 'gv-islands-layer', type: 'raster', source: 'gv-islands',
+          paint: { 'raster-fade-duration': reducedMotion ? 0 : 120 } });
+      }
+      map.setLayoutProperty('gv-islands-layer', 'visibility', 'visible');
+    } else if (map.getLayer('gv-islands-layer')) {
+      map.setLayoutProperty('gv-islands-layer', 'visibility', 'none');
+    }
+
+    // v3: подписи 12 крупнейших городов (с шага 3 и на национальном виде).
+    if (cityLabels && cityLabels.length && !map.getSource('gv-cities')) {
+      const citiesGeo: GeoJSON.FeatureCollection = {
+        type: 'FeatureCollection',
+        features: cityLabels.map((c) => ({
+          type: 'Feature', properties: { name: lang === 'be' ? c.name_be : c.name_ru },
+          geometry: { type: 'Point', coordinates: [c.lon, c.lat] },
+        })),
+      };
+      map.addSource('gv-cities', { type: 'geojson', data: citiesGeo });
+      map.addLayer({ id: 'gv-cities-pts', type: 'circle', source: 'gv-cities',
+        paint: { 'circle-radius': 2.5, 'circle-color': '#2a2a2a', 'circle-stroke-width': 1,
+          'circle-stroke-color': '#fff' } });
+      map.addLayer({ id: 'gv-cities-labels', type: 'symbol', source: 'gv-cities',
+        layout: { 'text-field': ['get', 'name'], 'text-size': 10.5, 'text-offset': [0, 0.9],
+          'text-anchor': 'top', 'text-font': ['Open Sans Regular'] },
+        paint: { 'text-color': '#2a2a2a', 'text-halo-color': '#fff', 'text-halo-width': 1.4 } });
+    }
+    if (map.getSource('gv-cities')) {
+      const src = map.getSource('gv-cities') as maplibregl.GeoJSONSource;
+      if (cityLabels && cityLabels.length) {
+        src.setData({
+          type: 'FeatureCollection',
+          features: cityLabels.map((c) => ({
+            type: 'Feature', properties: { name: lang === 'be' ? c.name_be : c.name_ru },
+            geometry: { type: 'Point', coordinates: [c.lon, c.lat] },
+          })),
+        });
+      }
+      for (const id of ['gv-cities-pts', 'gv-cities-labels']) {
+        if (map.getLayer(id)) map.setLayoutProperty(id, 'visibility', showCityLabels ? 'visible' : 'none');
+      }
     }
 
     const track = centroidTrack.filter((p) => p.year <= centroidUpToYear);

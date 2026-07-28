@@ -1,6 +1,9 @@
-"""Инварианты web/public/data/grid_story.json и слоя магистралей (INF-15 v2,
-этап 2 - handoff/09_next_research/INF-15_grid_v2_brief.md раздел 7,
-гипотезы C-004/C-005 - docs/preregistration/grid-v0.2.md)."""
+"""Инварианты web/public/data/grid_story.json и слоёв магистралей/рек
+(INF-15 v2 этап 2 - handoff/09_next_research/INF-15_grid_v2_brief.md
+раздел 7, гипотезы C-004/C-005; INF-15 v3 - реки, гипотезы C-006/C-007 -
+docs/preregistration/grid-v0.2.md §§3, 8; исход - docs/decisions/
+INF-15.md D-015: C-006 подтверждена направленно (open_question), C-007
+ОПРОВЕРГНУТА собственным заранее заданным критерием)."""
 from __future__ import annotations
 
 import json
@@ -11,12 +14,14 @@ import pytest
 ROOT = Path(__file__).resolve().parents[2]
 STORY_JSON = ROOT / "web" / "public" / "data" / "grid_story.json"
 HIGHWAYS_GEOJSON = ROOT / "web" / "public" / "data" / "geo" / "grid_highways.geojson"
+RIVERS_GEOJSON = ROOT / "web" / "public" / "data" / "geo" / "grid_rivers.geojson"
 
 pytestmark = pytest.mark.skipif(
     not STORY_JSON.exists(), reason="etl.grid_story ещё не прогонялся")
 
 BUDGET_STORY_KB = 100
 BUDGET_HIGHWAYS_KB = 2048
+BUDGET_RIVERS_KB = 2048
 
 
 @pytest.fixture(scope="module")
@@ -27,6 +32,7 @@ def story():
 def test_budgets():
     assert STORY_JSON.stat().st_size / 1024 <= BUDGET_STORY_KB
     assert HIGHWAYS_GEOJSON.stat().st_size / 1024 <= BUDGET_HIGHWAYS_KB
+    assert RIVERS_GEOJSON.stat().st_size / 1024 <= BUDGET_RIVERS_KB
 
 
 def test_c004_density_bands_match_independent_recount(story):
@@ -123,3 +129,89 @@ def test_highways_geojson_valid():
     assert len(f0["geometry"]["coordinates"][0]) == 2
     lon, lat = f0["geometry"]["coordinates"][0]
     assert 20 < lon < 36 and 51 < lat < 57   # грубая проверка - координаты над Беларусью
+
+
+# --------------------------------------------------------------------
+# v3: реки, C-006 (матрица река x дорога), C-007 (пояса удалённости) -
+# docs/preregistration/grid-v0.2.md §8, docs/decisions/INF-15.md D-015
+# --------------------------------------------------------------------
+
+def test_rivers_geojson_valid():
+    d = json.loads(RIVERS_GEOJSON.read_text())
+    assert d["type"] == "FeatureCollection"
+    assert len(d["features"]) > 50
+    f0 = d["features"][0]
+    assert f0["geometry"]["type"] == "LineString"
+    lon, lat = f0["geometry"]["coordinates"][0]
+    assert 20 < lon < 36 and 51 < lat < 57
+
+
+def test_c007_river_distance_bands_sum_to_country(story):
+    """Доли по 5 поясам должны в сумме давать ~100% населения страны в
+    каждом году (полное разбиение растра на непересекающиеся пояса)."""
+    bands = story["c007_river_distance"]["bands"]
+    assert len(bands) == 5
+    for key in ("share_1975_pct", "share_2020_pct"):
+        total = sum(b[key] for b in bands if b[key] is not None)
+        assert abs(total - 100.0) < 1.0
+
+
+def test_c007_refuted_by_own_criterion(story):
+    """D-015: критерий опровержения §8.1 - "пояс 0-2 км имеет бо́льшую
+    долю населения, чем пояс 2-5 км" - сработал. Регресс-тест фиксирует
+    именно это (честный провал, не повод скрыть находку)."""
+    bands = story["c007_river_distance"]["bands"]
+    share_0_2 = bands[0]["share_2020_pct"]
+    share_2_5 = bands[1]["share_2020_pct"]
+    assert share_0_2 > share_2_5   # опровержение C-007, как заявлено в тексте истории
+    # при этом ТЕМП РОСТА в 2-5 км выше, чем у самой воды (частично
+    # похоже на находку документа v3, но не то же самое утверждение)
+    assert bands[1]["change_pct"] > bands[0]["change_pct"]
+
+
+def test_c006_matrix_only_intersection_group_grows(story):
+    """C-006: критерий опровержения §8.1 ("растёт более чем одна из
+    четырёх групп" ИЛИ "группа река+дорога не растёт") НЕ сработал -
+    растёт ровно группа пересечения."""
+    groups = {g["id"]: g for g in story["c006_river_road_matrix"]["groups"]}
+    assert set(groups) == {"both", "river_only", "road_only", "neither"}
+    assert groups["both"]["change_pct"] > 0
+    for gid in ("river_only", "road_only", "neither"):
+        assert groups[gid]["change_pct"] < 0
+
+
+def test_c006_independent_check_present_and_honest_about_sample_size(story):
+    """Независимая проверка на городах (docs/preregistration/grid-v0.2.md
+    §8.2) должна присутствовать и явно фиксировать размер групп - маленькая
+    группа сравнения (n_rest) не должна маскироваться."""
+    chk = story["c006_river_road_matrix"]["independent_check"]
+    assert chk["n_cities_total"] > 150
+    assert chk["n_both"] + chk["n_rest"] <= chk["n_cities_total"]
+    assert "p_value" in chk and "direction_confirmed" in chk
+
+
+def test_c007_cities_include_named_examples(story):
+    cities = {c["id"]: c for c in story["c007_river_distance"]["cities"]}
+    assert "c-minsk" in cities and "c-salihorsk" in cities and "c-maladziechna" in cities
+    assert cities["c-salihorsk"]["is_exception"] is True
+    assert cities["c-maladziechna"]["is_exception"] is True
+    # значения обязаны быть реальными числами (не None, не хардкод в компоненте)
+    for c in cities.values():
+        assert isinstance(c["river_km"], (int, float))
+        assert isinstance(c["road_km"], (int, float))
+
+
+def test_islands_frames_cover_observed_years_and_2050(story):
+    frames = story["islands_frames"]
+    for y in (1975, 1980, 1985, 1990, 1995, 2000, 2005, 2010, 2015, 2020):
+        assert str(y) in frames
+    assert "2050:base:A" in frames
+    for url in frames.values():
+        rel = url.lstrip("/")
+        assert (ROOT / "web" / "public" / rel).exists()
+
+
+def test_matrix_and_river_buffer_frames_exist(story):
+    for key in ("matrix_frame", "river_buffer_frame", "rule500_frame"):
+        rel = story[key].lstrip("/")
+        assert (ROOT / "web" / "public" / rel).exists()

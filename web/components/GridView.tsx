@@ -23,13 +23,14 @@ import { useT, useLang } from '@/lib/i18n';
 import MethodDrawer from './MethodDrawer';
 import GridMap from './grid/GridMap';
 import StoryPanel from './grid/StoryPanel';
+import RaionTable from './grid/RaionTable';
 import {
   useGridData, frameKey, loadCellGrid, cellHasBinary, lonLatToCellIndex,
   cellValue, fmtInt, fmtPct, ALL_YEARS, nearestYear, networkLegendStops,
   type Scenario, type Variant, type Metric,
 } from '@/lib/grid';
 import {
-  useGridStoryData, useHighwaysGeojson, buildStoryValues, STORY_STEPS, STEP4_PART2,
+  useGridStoryData, useHighwaysGeojson, useRiversGeojson, buildStoryValues, STORY_STEPS,
 } from '@/lib/gridStory';
 import { useGridStoryContent } from '@/lib/gridStoryContent';
 
@@ -44,6 +45,11 @@ const METRIC_HINT_RU: Record<Metric, string> = {
 };
 const BORDERS_HINT_RU = 'Показать привычное деление на 118 районов — чтобы понять, где вы находитесь. По умолчанию выключено: вся идея карты в том, чтобы посмотреть на страну без них.';
 const TRACK_HINT_RU = 'Точка, в которой страна «уравновешена» по числу жителей. За 45 лет она сместилась к Минску на 11,7 км — меньше, чем можно надёжно измерить нашим методом, поэтому вокруг неё показан коридор погрешности.';
+const RIVERS_HINT_RU = 'Крупные реки Беларуси (длиннее 20 км в её границах) — по ним расселялась страна ещё до дорог. Видно на шагах истории про реки.';
+const HIGHWAYS_HINT_RU = 'Магистрали (motorway/trunk/primary) — снимок OpenStreetMap 2026 года.';
+const MATRIX_HINT_RU = 'Четыре группы клеток по близости к реке и дороге — растёт только пересечение обеих, остальные три группы убывают.';
+const CHERNOBYL_HINT_RU = 'Районы зоны отчуждения и отселения (INF-07).';
+const ISLANDS_HINT_RU = 'Острова расселения — каждое связное пятно населённых клеток своим цветом. Доступно для 1975–2020 и 2050 года.';
 const SCN_HINT_RU: Record<Scenario, string> = {
   base: 'Три набора предположений о рождаемости, смертности и отъезде. Не три версии будущего, а границы, в которых оно вероятнее всего окажется.',
   optimistic: 'Три набора предположений о рождаемости, смертности и отъезде. Не три версии будущего, а границы, в которых оно вероятнее всего окажется.',
@@ -62,9 +68,11 @@ const CLAIM_LABEL_RU: Record<string, string> = {
   'C-003': 'дорожной сети на жителя больше там, где сильнее убыль',
   'C-004': 'изменение населения клетки зависит от того, сколько людей было в 1975 году («правило пятисот»)',
   'C-005': 'население клетки зависит от удалённости от ближайшей магистрали',
+  'C-006': 'население клетки растёт только там, где рядом одновременно и река, и магистраль',
+  'C-007': 'максимум плотности приходится не на береговую линию, а на пояс 2–5 км от реки',
 };
 const CLAIM_STATUS_RU: Record<string, string> = {
-  open_question: 'Открытый вопрос', verified: 'Подтверждено',
+  open_question: 'Открытый вопрос', verified: 'Подтверждено', refuted: 'Опровергнуто',
 };
 
 interface FrameMeta {
@@ -86,6 +94,10 @@ function useReducedMotion(): boolean {
   return reduced;
 }
 
+function fmtSignedShort(n: number): string {
+  return `${n > 0 ? '+' : ''}${n.toFixed(1)}`;
+}
+
 function trendArrow(cur: number | null | undefined, prev: number | null | undefined): { dir: 'up' | 'down' | 'flat'; delta: number } | null {
   if (cur == null || prev == null) return null;
   const delta = cur - prev;
@@ -105,9 +117,18 @@ export default function GridView() {
 
   const [mode, setMode] = useState<'story' | 'free'>('story');
   const [storyStepIdx, setStoryStepIdx] = useState(0);
-  const [step4Part, setStep4Part] = useState<'se' | 'west'>('se');
+  const [zoomSeqIdx, setZoomSeqIdx] = useState(0);
+  const [showCities, setShowCities] = useState(false);
   const [shareCopied, setShareCopied] = useState(false);
   const autoplayedStep = useRef<number | null>(null);
+  // Свободный режим (v3, этап 6): дополнительные слои, показывавшиеся в
+  // истории, остаются доступны тумблерами - иначе читатель, впечатлённый
+  // шагом 5, не может посмотреть на свой район в том же разрезе.
+  const [showRiversFree, setShowRiversFree] = useState(false);
+  const [showHighwaysFree, setShowHighwaysFree] = useState(false);
+  const [showMatrixFree, setShowMatrixFree] = useState(false);
+  const [showChernobylFree, setShowChernobylFree] = useState(false);
+  const [showIslandsFree, setShowIslandsFree] = useState(false);
 
   const [idx, setIdx] = useState(ALL_YEARS.indexOf(2020));
   const year = ALL_YEARS[idx];
@@ -119,7 +140,7 @@ export default function GridView() {
   const [showTrack, setShowTrack] = useState(false);
   const [playing, setPlaying] = useState(false);
   const [hoveredHint, setHoveredHint] = useState<string | null>(null);
-  const [cell, setCell] = useState<{ lon: number; lat: number; value: number | null; exact: boolean } | null>(null);
+  const [cell, setCell] = useState<{ lon: number; lat: number; value: number | null; exact: boolean; raionId?: string | null } | null>(null);
   const [territory, setTerritory] = useState<{ id: string; name: string; value: number | null } | null>(null);
   const [snapNotice, setSnapNotice] = useState<string | null>(null);
   const initDone = useRef(false);
@@ -144,8 +165,12 @@ export default function GridView() {
   }, [metric]);
 
   const currentStep = mode === 'story' ? STORY_STEPS[storyStepIdx] : null;
-  const highwaysNeeded = currentStep?.overlay === 'highway';
+  const highwaysNeeded = currentStep?.overlay === 'river-buffer' || currentStep?.overlay === 'matrix'
+    || (mode === 'free' && showHighwaysFree);
   const highwaysGeojson = useHighwaysGeojson(highwaysNeeded);
+  const riversNeeded = currentStep?.overlay === 'river-buffer' || currentStep?.overlay === 'matrix'
+    || (mode === 'free' && showRiversFree);
+  const riversGeojson = useRiversGeojson(riversNeeded);
 
   // deep-link: чтение при монтировании - ?story=N приоритетнее v1-параметров
   useEffect(() => {
@@ -213,7 +238,8 @@ export default function GridView() {
     const step = STORY_STEPS[storyStepIdx];
     if (!step) return;
     setPlaying(false);
-    setStep4Part('se');
+    setZoomSeqIdx(0);
+    setShowCities(false);
     setMetric(step.metric);
     if (step.scenario) setScenario(step.scenario);
     if (step.variant) setVariant(step.variant);
@@ -231,6 +257,21 @@ export default function GridView() {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mode, storyStepIdx]);
+
+  // Шаг 6 истории (v3): автопоследовательность трёх зумов (юго-восток ->
+  // запад -> Полесье -> национальный вид). Не запускается при
+  // prefers-reduced-motion - сразу показывается финальная стадия (индекс
+  // последнего элемента), чтобы карта не дёргалась без анимации перехода.
+  useEffect(() => {
+    if (mode !== 'story') return;
+    const step = STORY_STEPS[storyStepIdx];
+    if (!step?.zoomSequence) return;
+    if (reducedMotion) { setZoomSeqIdx(step.zoomSequence.length - 1); return; }
+    if (zoomSeqIdx >= step.zoomSequence.length - 1) return;
+    const ms = step.zoomSequence[zoomSeqIdx].ms;
+    const timer = window.setTimeout(() => setZoomSeqIdx((i) => i + 1), ms);
+    return () => window.clearTimeout(timer);
+  }, [mode, storyStepIdx, zoomSeqIdx, reducedMotion]);
 
   const isForecast = year > 2020;
   const key = data ? frameKey(year, scenario, variant) : null;
@@ -276,22 +317,22 @@ export default function GridView() {
 
   function pauseUser() { setPlaying(false); }
 
-  async function handleMapClick(lon: number, lat: number) {
+  async function handleMapClick(lon: number, lat: number, raionId?: string | null) {
     pauseUser();
     if (!data || mode === 'story') return;
     setTerritory(null);
-    setCell({ lon, lat, value: null, exact: false });
+    setCell({ lon, lat, value: null, exact: false, raionId });
     const idx2 = lonLatToCellIndex(lon, lat, data.grid);
     if (!idx2) return;
     if (cellHasBinary(key ?? '')) {
       const arr = await loadCellGrid(key!);
       if (arr) {
         const v = cellValue(arr, idx2.row, idx2.col, data.grid);
-        setCell({ lon, lat, value: v, exact: true });
+        setCell({ lon, lat, value: v, exact: true, raionId });
         return;
       }
     }
-    setCell({ lon, lat, value: null, exact: false });
+    setCell({ lon, lat, value: null, exact: false, raionId });
   }
 
   function handleTerritoryClick(id: string) {
@@ -347,11 +388,24 @@ export default function GridView() {
   const prevSettlement = prevKey ? data.national.settlement_components[prevKey] : null;
 
   const zoomBounds = mode === 'story'
-    ? (currentStep?.id === 4 ? (step4Part === 'se' ? currentStep.bounds : STEP4_PART2.bounds) : (currentStep?.bounds ?? null))
+    ? (currentStep?.zoomSequence ? (currentStep.zoomSequence[zoomSeqIdx]?.bounds ?? null) : (currentStep?.bounds ?? null))
     : null;
   const showRule500 = mode === 'story' && currentStep?.overlay === 'rule500';
-  const showHighways = mode === 'story' && currentStep?.overlay === 'highway';
-  const showChernobylOverlay = mode === 'story' && currentStep?.id === 4 && step4Part === 'se';
+  const showRiverBuffer = mode === 'story' && currentStep?.overlay === 'river-buffer';
+  const showMatrix = (mode === 'story' && currentStep?.overlay === 'matrix') || (mode === 'free' && showMatrixFree);
+  const showRiversOverlay = (mode === 'story'
+    && (currentStep?.overlay === 'river-buffer' || currentStep?.overlay === 'matrix'))
+    || (mode === 'free' && showRiversFree);
+  const showHighways = (mode === 'story'
+    && (currentStep?.overlay === 'river-buffer' || currentStep?.overlay === 'matrix'))
+    || (mode === 'free' && showHighwaysFree);
+  const showChernobylOverlay = (mode === 'story' && currentStep?.overlay === 'chernobyl-zoom'
+    && currentStep.zoomSequence?.[zoomSeqIdx]?.chernobyl === true) || (mode === 'free' && showChernobylFree);
+  const showCityLabels = mode === 'story'
+    && (currentStep?.overlay === 'river-buffer' || currentStep?.overlay === 'matrix' || currentStep?.id === 9);
+  const islandsKey = year <= 2020 ? String(year) : (year === 2050 ? '2050:base:A' : null);
+  const showIslandsOverlay = (mode === 'story' && currentStep?.overlay === 'islands') || (mode === 'free' && showIslandsFree);
+  const islandsFrameUrl = showIslandsOverlay && islandsKey ? (storyData?.islands_frames[islandsKey] ?? null) : null;
   const storyValues = storyData ? buildStoryValues(data, storyData, lang) : {};
 
   return (
@@ -396,6 +450,16 @@ export default function GridView() {
         showHighways={showHighways}
         chernobylZones={storyData?.chernobyl_zone_class ?? null}
         showChernobyl={showChernobylOverlay}
+        riversGeojson={riversGeojson}
+        showRivers={showRiversOverlay}
+        riverBufferFrameUrl={storyData ? storyData.river_buffer_frame : null}
+        showRiverBuffer={showRiverBuffer}
+        matrixFrameUrl={storyData ? storyData.matrix_frame : null}
+        showMatrix={showMatrix}
+        islandsFrameUrl={islandsFrameUrl}
+        cityLabels={storyData ? storyData.c007_river_distance.cities : null}
+        showCityLabels={showCityLabels}
+        lang={lang}
       />
 
       {mode === 'story' && currentStep && (
@@ -415,11 +479,13 @@ export default function GridView() {
             step={storyStepIdx + 1}
             content={storyContent}
             values={storyValues}
+            story={storyData}
+            lang={lang}
             onNext={() => setStoryStepIdx((i) => Math.min(i + 1, STORY_STEPS.length - 1))}
             onPrev={() => setStoryStepIdx((i) => Math.max(i - 1, 0))}
             onShare={handleShareStep}
-            step4Part={step4Part}
-            onShowSecondPart={() => setStep4Part('west')}
+            showCities={showCities}
+            onToggleCities={() => setShowCities((v) => !v)}
             scenario={scenario}
             variant={variant}
             onScenario={setScenario}
@@ -499,6 +565,39 @@ export default function GridView() {
           <p className="hint gv-toolbar-hint" aria-live="polite">
             {t(hoveredHint ?? METRIC_HINT_RU[metric])}
           </p>
+
+          <div className="gv-toolbar gv-layer-toggles" role="group" aria-label={t('Дополнительные слои')}>
+            <button className={`btn${showRiversFree ? ' active' : ''}`} aria-pressed={showRiversFree}
+              onMouseEnter={() => setHoveredHint(RIVERS_HINT_RU)} onMouseLeave={() => setHoveredHint(null)}
+              onFocus={() => setHoveredHint(RIVERS_HINT_RU)} onBlur={() => setHoveredHint(null)}
+              onClick={() => setShowRiversFree((v) => !v)}>
+              {t('Реки')}
+            </button>
+            <button className={`btn${showHighwaysFree ? ' active' : ''}`} aria-pressed={showHighwaysFree}
+              onMouseEnter={() => setHoveredHint(HIGHWAYS_HINT_RU)} onMouseLeave={() => setHoveredHint(null)}
+              onFocus={() => setHoveredHint(HIGHWAYS_HINT_RU)} onBlur={() => setHoveredHint(null)}
+              onClick={() => setShowHighwaysFree((v) => !v)}>
+              {t('Магистрали')}
+            </button>
+            <button className={`btn${showMatrixFree ? ' active' : ''}`} aria-pressed={showMatrixFree}
+              onMouseEnter={() => setHoveredHint(MATRIX_HINT_RU)} onMouseLeave={() => setHoveredHint(null)}
+              onFocus={() => setHoveredHint(MATRIX_HINT_RU)} onBlur={() => setHoveredHint(null)}
+              onClick={() => setShowMatrixFree((v) => !v)}>
+              {t('Река × дорога')}
+            </button>
+            <button className={`btn${showChernobylFree ? ' active' : ''}`} aria-pressed={showChernobylFree}
+              onMouseEnter={() => setHoveredHint(CHERNOBYL_HINT_RU)} onMouseLeave={() => setHoveredHint(null)}
+              onFocus={() => setHoveredHint(CHERNOBYL_HINT_RU)} onBlur={() => setHoveredHint(null)}
+              onClick={() => setShowChernobylFree((v) => !v)}>
+              {t('Чернобыльские зоны')}
+            </button>
+            <button className={`btn${showIslandsFree ? ' active' : ''}`} aria-pressed={showIslandsFree}
+              onMouseEnter={() => setHoveredHint(ISLANDS_HINT_RU)} onMouseLeave={() => setHoveredHint(null)}
+              onFocus={() => setHoveredHint(ISLANDS_HINT_RU)} onBlur={() => setHoveredHint(null)}
+              onClick={() => setShowIslandsFree((v) => !v)}>
+              {t('Острова расселения')}
+            </button>
+          </div>
 
           <div className="gv-legend" aria-label={t('Легенда')}>
             {metric === 'pop' && (
@@ -614,6 +713,12 @@ export default function GridView() {
               ) : (
                 <p className="hint">{t('Точное число для этой комбинации года/сценария не подгружено — показаны только национальные показатели выше.')}</p>
               )}
+              {cell.raionId && storyData?.raions.by_id[cell.raionId] && (
+                <p className="hint gv-cell-raion">
+                  {t('Район:')} {(lang === 'be' ? storyData.raions.by_id[cell.raionId].name_be : storyData.raions.by_id[cell.raionId].name_ru)}
+                  {' — '}{t('изменение 1975→2020:')} {fmtSignedShort(storyData.raions.by_id[cell.raionId].change_pct)}%
+                </p>
+              )}
             </div>
           )}
           {!cell && !territory && (
@@ -638,6 +743,8 @@ export default function GridView() {
               {t('За')} {lastTrackPt.year - visibleTrack[0].year} {t('лет центр тяжести населения сместился на несколько километров в сторону Минска — направление устойчивое, а величина для новейшего периода сопоставима с собственной погрешностью метода (±')}{lastTrackPt.err_km}{t(' км), поэтому мы не подаём её как точную. Узлы 1897 и 1970 построены другим методом (см. методблок) и обведены более широким коридором.')}
             </p>
           )}
+
+          <RaionTable data={data} story={storyData} lang={lang} />
 
           <button className="btn gv-restart-story" onClick={() => { setMode('story'); setStoryStepIdx(0); }}>
             {storyContent ? storyContent['nav.restart'] : t('Смотреть историю с начала')}

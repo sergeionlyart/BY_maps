@@ -1,12 +1,13 @@
 import { test, expect, type Page, type Locator } from '@playwright/test';
 
 /**
- * INF-15 «Полотно» v2 (handoff/09_next_research/INF-15_grid_v2_brief.md):
- * режим «История» (7 шагов, по умолчанию) + режим «Свободно» (инструмент
- * v1). e2e покрывает: переключение режимов, переходы по шагам, deep-link
- * ?story=N, прокрутку внутри шага, а также весь набор v1 (B-1…B-8) на
- * переработанной разметке (слитый слайдер .gv-range-overlay вместо
- * .gv-range, ▶ вынесена из тулбара).
+ * INF-15 «Полотно» v3 (доработка «готовый копирайтинг раздела и доработка
+ * демонстрационной карты», реки): режим «История» расширен с 7 до 9 шагов
+ * (новые шаги 3-5 про реки/матрицу река×дорога, «три пустоты» на шаге 6) +
+ * режим «Свободно» с новыми тумблерами слоёв и таблицей районов. e2e
+ * покрывает: переключение режимов, переходы по шагам, deep-link ?story=N,
+ * прокрутку внутри шага, новые слои свободного режима, а также весь набор
+ * v1/v2 (B-1…B-8) на переработанной разметке.
  */
 
 const PAGE = '/research/grid';
@@ -49,6 +50,7 @@ test('RU: страница открывается без ошибок в реж�
   await expect(page.locator('.gv-honesty')).toContainText('независимый подсчёт');
   await expect(page.locator('.gv-mode-switch button.on')).toContainText('История');
   await expect(page.locator('.gv-story-panel')).toBeVisible();
+  await expect(page.locator('.gv-story-step-no')).toContainText('9'); // "Шаг 1 из 9"
   await page.waitForTimeout(600);
   expect(errors).toEqual([]);
 });
@@ -64,12 +66,10 @@ test('BE: страница открывается без ошибок', async ({
 
 test('BE-паритет: режим «История» переведён, ?story=N deep-link и переключатель работают', async ({ page }) => {
   const errors = collectErrors(page);
-  await page.goto(`${PAGE_BE}?story=4`);
+  await page.goto(`${PAGE_BE}?story=6`);
   await expect(page.locator('.gv-mode-switch button.on')).toContainText('Гісторыя');
-  await expect(page.locator('.gv-story-step-no')).toContainText('4');
-  // step1.title в grid-story.be.md - "1975 год. Палатно яшчэ амаль суцэльнае."
-  // (перевод отдельного контент-файла, не be-dict) - шаг 4 здесь ссылается
-  // на реальных, переведённых районов, не на id
+  await expect(page.locator('.gv-story-step-no')).toContainText('6');
+  // именованный район west-группы шага 6 - перевод отдельного контент-файла
   await expect(page.locator('.gv-story-body')).toContainText('Брагінскі');
   await expect(page.locator('.gv-story-body')).not.toContainText('{{');
   await page.locator('.gv-mode-switch button', { hasText: 'Свабодна' }).click();
@@ -80,7 +80,7 @@ test('BE-паритет: режим «История» переведён, ?stor
 });
 
 // ---------------------------------------------------------------------
-// Режим «История»
+// Режим «История» (9 шагов)
 // ---------------------------------------------------------------------
 
 test('История: шаг 1 показывает заголовок и текст, переход «дальше» работает', async ({ page }) => {
@@ -93,74 +93,123 @@ test('История: шаг 1 показывает заголовок и тек
 });
 
 test('История: deep-link ?story=N открывает шаг N напрямую', async ({ page }) => {
-  await page.goto(`${PAGE}?story=4`);
-  await expect(page.locator('.gv-story-step-no')).toContainText('4');
+  await page.goto(`${PAGE}?story=6`);
+  await expect(page.locator('.gv-story-step-no')).toContainText('6');
   await expect(page.locator('.gv-story-title')).toContainText('пустот');
 });
 
 test('История: шаг 2 - прокрутка запускается сама и останавливается на 2020', async ({ page }) => {
   test.setTimeout(20_000);
   // на проекте reduced-motion прокрутка НЕ должна стартовать сама - это
-  // отдельно проверено ниже ("prefers-reduced-motion: прокрутка шага 2
-  // не стартует сама"), здесь же ждать автостарта было бы неверно.
+  // отдельно проверено ниже, здесь же ждать автостарта было бы неверно.
   const rm = await page.evaluate(() => window.matchMedia('(prefers-reduced-motion: reduce)').matches);
   test.skip(rm, 'проверяется отдельным тестом на reduced-motion');
   await page.goto(`${PAGE}?story=2`);
   await expect(page.locator('.gv-story-play-row')).toBeVisible();
-  // прокрутка стартует сама (500 мс задержка) - проверяем, что играет
   await expect(page.locator('.gv-play-big')).toContainText('❚❚', { timeout: 3000 });
-  // и останавливается сама на 2020 (не доходит до 2050)
   await expect(page.locator('.gv-play-big')).toContainText('▶', { timeout: 15_000 });
   await expect(page.locator('.gv-story-play-row .gv-year-label')).toContainText('2020');
 });
 
-test('История: шаг 2 - таблица правила пятисот заполнена реальными числами', async ({ page }) => {
+test('История: шаг 2 - таблица правила пятисот и мини-график заполнены реальными числами', async ({ page }) => {
   await page.goto(`${PAGE}?story=2`);
-  // таблица рендерится только после загрузки контент-файла и grid_story.json
-  // (оба - асинхронный fetch) - ждём появления строк, а не читаем сразу
   await expect(page.locator('.gv-story-table tr')).toHaveCount(4);
   const rows = await page.locator('.gv-story-table tr').allInnerTexts();
   expect(rows.length).toBe(4);
   for (const r of rows) {
-    expect(r).toMatch(/-?\d+[.,]\d%/); // не прочерк и не пустой токен {{...}}
+    expect(r).toMatch(/-?\d+[.,]\d%/);
     expect(r).not.toContain('{{');
   }
+  await expect(page.locator('.gv-minichart-row')).toHaveCount(4);
 });
 
-test('История: шаг 3 показывает оговорку про дазиметрию без сокращений', async ({ page }) => {
+test('История: шаг 3 (реки) - доля населения у воды растёт, детали без {{токенов}}', async ({ page }) => {
   await page.goto(`${PAGE}?story=3`);
+  await expect(page.locator('.gv-story-step-no')).toContainText('3');
+  await expect(page.locator('.gv-story-body')).toContainText('Днепр');
+  const body = await page.locator('.gv-story-body').innerText();
+  expect(body).not.toContain('{{');
+  expect(body).toMatch(/\d+[.,]\d%/);
+  await expect(page.locator('.gv-minichart-row')).toHaveCount(2);
+});
+
+test('История: шаг 4 (вода без дороги) - показывает крохотную выборку «только дорога» честно', async ({ page }) => {
+  await page.goto(`${PAGE}?story=4`);
+  await expect(page.locator('.gv-story-step-no')).toContainText('4');
+  await expect(page.locator('.gv-story-body')).not.toBeEmpty();
+  const body = await page.locator('.gv-story-body').innerText();
+  expect(body).not.toContain('{{');
+  // раздел 4 документа v3: место «дорога без реки» почти не встречается -
+  // текст должен честно называть число клеток, а не молчать о хрупкости
+  expect(body).toMatch(/\d+ квадратных километр/);
+});
+
+test('История: шаг 5 (матрица река×дорога) - таблица, «показать города», оговорка без сокращений', async ({ page }) => {
+  await page.goto(`${PAGE}?story=5`);
+  await expect(page.locator('.gv-story-step-no')).toContainText('5');
+  await expect(page.locator('.gv-story-table tr')).toHaveCount(4);
+  const rows = await page.locator('.gv-story-table tr').allInnerTexts();
+  for (const r of rows) expect(r).not.toContain('{{');
+
   const caveat = await page.locator('.gv-story-caveat').innerText();
   expect(caveat).toContain('заложена в самом методе');
   expect(caveat).toContain('независимому источнику');
-  expect(caveat).toContain('не как закон');
+  expect(caveat).toContain('нельзя считать окончательной');
+
+  await expect(page.locator('.gv-cities-table')).toHaveCount(0);
+  await page.locator('.gv-show-cities-btn').click();
+  await expect(page.locator('.gv-cities-table tr')).toHaveCount(13); // заголовок + 12 городов
+  const citiesText = await page.locator('.gv-cities-table').innerText();
+  expect(citiesText).toContain('Минск');
+  expect(citiesText).toContain('Солигорск');
 });
 
-test('История: шаг 4 - кнопка «показать вторую» подставляет имена без {{токенов}} (регресс by_id)', async ({ page }) => {
-  await page.goto(`${PAGE}?story=4`);
-  const paras = page.locator('.gv-story-body p');
-  const part1 = await paras.last().innerText();
-  expect(part1).not.toContain('{{');
-  await page.getByRole('button', { name: /вторую/ }).click();
-  const part2 = await paras.last().innerText();
-  expect(part2).not.toContain('{{');
-  expect(part2).toContain('Свислочский');
-  expect(part2).not.toBe(part1);
+test('История: шаг 6 (три пустоты) - все три группы названы, регресс by_id (Свислочский)', async ({ page }) => {
+  await page.goto(`${PAGE}?story=6`);
+  await expect(page.locator('.gv-story-step-no')).toContainText('6');
+  await expect(page.locator('.gv-story-body')).toContainText('Свислочский');
+  const body = await page.locator('.gv-story-body').innerText();
+  expect(body).not.toContain('{{');
+  expect(body).toContain('Брагинский');       // юго-восток (Чернобыль)
+  expect(body).toContain('Полесс');           // третья, географическая группа
 });
 
-test('История: шаг 7 - переключение сценария/варианта и переход в «Свободно»', async ({ page }) => {
+test('История: шаг 7 (переезд) - названы растущие районы', async ({ page }) => {
   await page.goto(`${PAGE}?story=7`);
+  await expect(page.locator('.gv-story-step-no')).toContainText('7');
+  await expect(page.locator('.gv-story-body')).toContainText('Брестский');
+  const body = await page.locator('.gv-story-body').innerText();
+  expect(body).not.toContain('{{');
+  expect(body).toContain('Минск');
+});
+
+test('История: шаг 8 (лоскуты) - числа островов без {{токенов}}', async ({ page }) => {
+  await page.goto(`${PAGE}?story=8`);
+  await expect(page.locator('.gv-story-step-no')).toContainText('8');
+  await expect(page.locator('.gv-story-body')).not.toBeEmpty();
+  const body = await page.locator('.gv-story-body').innerText();
+  expect(body).not.toContain('{{');
+  expect(body).toMatch(/\d+/);
+});
+
+test('История: шаг 9 - переключение сценария/варианта, вывод из трёх пунктов, переход в «Свободно»', async ({ page }) => {
+  await page.goto(`${PAGE}?story=9`);
+  await expect(page.locator('.gv-story-step-no')).toContainText('9');
   const negBtn = page.locator('.gv-story-step7-controls').getByRole('button', { name: 'негативный' });
   await negBtn.click();
   await expect(negBtn).toHaveAttribute('aria-pressed', 'true');
+  const conclusion = await page.locator('.gv-story-conclusion').innerText();
+  expect(conclusion).not.toContain('{{');
+  expect(conclusion.length).toBeGreaterThan(100);
   await page.locator('.gv-story-freemode-btn').click();
   await expect(page.locator('.gv-mode-switch button.on')).toContainText('Свободно');
-  await expect(page.locator('.gv-toolbar')).toBeVisible();
+  await expect(page.locator('.gv-metric-switch')).toBeVisible();
 });
 
 test('История: переключатель режима «Свободно» ↔ «История» работает вручную', async ({ page }) => {
   await page.goto(PAGE);
   await page.getByRole('tab', { name: 'Свободно' }).click();
-  await expect(page.locator('.gv-toolbar')).toBeVisible();
+  await expect(page.locator('.gv-metric-switch')).toBeVisible();
   await expect(page.locator('.gv-story-panel')).toHaveCount(0);
   await page.getByRole('tab', { name: 'История' }).click();
   await expect(page.locator('.gv-story-panel')).toBeVisible();
@@ -175,8 +224,17 @@ test('prefers-reduced-motion: прокрутка шага 2 не стартуе�
   await expect(page.locator('.gv-story-play-row .gv-year-label')).toContainText('1975');
 });
 
+test('prefers-reduced-motion: автопоследовательность зумов шага 6 сразу показывает финальную стадию', async ({ page }) => {
+  const rm = await page.evaluate(() => window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  test.skip(!rm, 'проект reduced-motion');
+  const errors = collectErrors(page);
+  await page.goto(`${PAGE}?story=6`);
+  await page.waitForTimeout(800);
+  expect(errors).toEqual([]);
+});
+
 // ---------------------------------------------------------------------
-// Режим «Свободно» (v1, на переработанной разметке)
+// Режим «Свободно» (v1/v2, на переработанной разметке)
 // ---------------------------------------------------------------------
 
 test('Свободно: скраббинг по узлам данных без падений и зависших запросов', async ({ page }) => {
@@ -351,4 +409,43 @@ test('Свободно: «Смотреть историю с начала» во
   await gotoFree(page);
   await page.getByRole('button', { name: /историю с начала/ }).click();
   await expect(page.locator('.gv-story-step-no')).toContainText('1');
+});
+
+// ---------------------------------------------------------------------
+// Свободно: новые слои v3 (этап 6 доработки) + таблица районов
+// ---------------------------------------------------------------------
+
+test('Свободно: тумблер «Реки» запрашивает grid_rivers.geojson', async ({ page }) => {
+  await gotoFree(page);
+  const reqPromise = page.waitForRequest((r) => r.url().includes('grid_rivers.geojson'));
+  await page.getByRole('button', { name: 'Реки', exact: true }).click();
+  const req = await reqPromise;
+  expect(req.url()).toContain('grid_rivers.geojson');
+});
+
+test('Свободно: тумблеры «Река × дорога» и «Острова расселения» переключаются', async ({ page }) => {
+  await gotoFree(page);
+  const matrixBtn = page.getByRole('button', { name: 'Река × дорога' });
+  const islandsBtn = page.getByRole('button', { name: 'Острова расселения' });
+  await matrixBtn.click();
+  await expect(matrixBtn).toHaveAttribute('aria-pressed', 'true');
+  await islandsBtn.click();
+  await expect(islandsBtn).toHaveAttribute('aria-pressed', 'true');
+});
+
+test('Свободно: таблица районов открывается, сортируется и экспортируется в CSV', async ({ page }) => {
+  await gotoFree(page);
+  await expect(page.locator('.gv-raion-table')).toHaveCount(0);
+  await page.locator('.gv-raion-table-toggle').click();
+  await expect(page.locator('.gv-raion-table tbody tr')).toHaveCount(119);
+
+  const firstColBefore = await page.locator('.gv-raion-table tbody tr').first().locator('td').first().innerText();
+  await page.locator('.gv-raion-table th button', { hasText: 'район' }).click();
+  const firstColAfter = await page.locator('.gv-raion-table tbody tr').first().locator('td').first().innerText();
+  expect(firstColAfter).not.toBe(firstColBefore); // сортировка по имени переставила первую строку
+
+  const downloadPromise = page.waitForEvent('download');
+  await page.locator('.gv-raion-table-csv').click();
+  const download = await downloadPromise;
+  expect(download.suggestedFilename()).toBe('grid_raions.csv');
 });
