@@ -284,7 +284,7 @@ git worktree add ../BY_maps-inf13 -b feature/inf13-pension origin/main
 python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 cd web && npm ci
 ```
-Главный чекаут `/Users/sergejavdejcik/Code/BY_maps` остаётся на `main`, коммитов в нём нет.
+Главный чекаут репозитория остаётся на `main`, коммитов в нём нет.
 
 **Файлы группы (эксклюзивно).** `etl/pension.py`; `etl/tests/test_pension*.py`; `data/raw/pension/**`; `data/curated/pension_inputs.csv`; `data/curated/forecast_age_raion_v2026_4.json`; `web/public/data/pension.json`; `artifacts/pension/**`; `web/app/research/pension/**`; `web/app/be/research/pension/**`; `web/app/artifacts/pension/**`; `web/components/PensionView.tsx`; `web/components/pension/**`; `web/lib/pension.ts`; `web/public/content/methods/pension.md` и `.../methods/be/pension.md`; `web/e2e/pension.spec.ts`; `tools/render_reel_pension.py`; `tools/reel_pension_scene.json`; `docs/preregistration/pension-v0.1.md`; `docs/notes/pension_validation.md`; `docs/decisions/INF-13.md`.
 

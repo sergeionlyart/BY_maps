@@ -1,17 +1,24 @@
 import sharp from 'sharp';
-import { readFileSync, writeFileSync } from 'node:fs';
+import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const webDir = resolve(__dirname, '..');
 
-// --- 1. Read + parse the Belarus outline ------------------------------------
-const outlinePath =
-  '/private/tmp/claude-501/-Users-sergejavdejcik-Code-BY-maps/e6ea4743-cd1d-4e3e-b6d9-7a25edbea11a/scratchpad/by_outline.txt';
-const raw = readFileSync(outlinePath, 'utf8').trim().split('\n');
-const [W, H] = raw[0].trim().split(/\s+/).map(Number); // ~1000 511
-const d = raw[1].trim();
+// --- 1. Reuse the repository-controlled Belarus outline --------------------
+const outlineComponentPath = resolve(webDir, 'components', 'BelarusOutline.tsx');
+const outlineComponent = readFileSync(outlineComponentPath, 'utf8');
+const viewBoxMatch = outlineComponent.match(/viewBox="0 0 (\d+) (\d+)"/);
+const pathMatch = outlineComponent.match(/<path d="([^"]+)"/);
+
+if (!viewBoxMatch || !pathMatch) {
+  throw new Error(`Cannot read the Belarus outline from ${outlineComponentPath}`);
+}
+
+const W = Number(viewBoxMatch[1]);
+const H = Number(viewBoxMatch[2]);
+const d = pathMatch[1];
 
 // --- 2. Fit the outline into the right ~45% ---------------------------------
 // Right region: x 640..1180 (540 wide). Belarus aspect ~1.96:1 (wide),
@@ -72,12 +79,4 @@ const info = await sharp(Buffer.from(svg), { density: 200 })
   .png()
   .toFile(outPng);
 
-const bytes = readFileSync(outPng).length;
-const note =
-  `og.png render succeeded\n` +
-  `dimensions: ${info.width}x${info.height}\n` +
-  `bytes: ${bytes}\n` +
-  `g transform: ${gTransform}\n`;
-writeFileSync(resolve(webDir, 'public/og-debug-note.txt'), note);
-
-console.log(note);
+console.log(`Rendered public/og.png (${info.width}x${info.height})`);

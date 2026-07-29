@@ -1,0 +1,36 @@
+title = "BY Maps secret scanning configuration"
+
+[extend]
+useDefault = true
+
+[[rules]]
+id = "generic-api-key"
+
+  [[rules.allowlists]]
+  description = "Public Akamai mPulse browser beacon identifier in preserved source snapshots."
+  condition = "AND"
+  paths = [
+    '''(?:^|\./)data/raw/migration/snap_dhs_yearbook2024_table3\.html$''',
+    '''(?:^|\./)web/public/artifacts/by-maps-migration-v1\.0\.0\.zip!by-maps-migration-v1\.0\.0/data/raw/migration/snap_dhs_yearbook2024_table3\.html$''',
+  ]
+  regexTarget = "line"
+  regexes = [ '''(?i)BOOMR_API_key''' ]
+
+  [[rules.allowlists]]
+  description = "Public read-only Ghost Content API identifier in preserved source snapshots."
+  condition = "AND"
+  paths = [
+    '''(?:^|\./)data/raw/migration/snap_dron_korshunov_mirror\.html$''',
+    '''(?:^|\./)web/public/artifacts/by-maps-migration-v1\.0\.0\.zip!by-maps-migration-v1\.0\.0/data/raw/migration/snap_dron_korshunov_mirror\.html$''',
+  ]
+  regexTarget = "line"
+  regexes = [ '''(?i)data-key''' ]
+
+[[rules]]
+id = "sourcegraph-access-token"
+
+  [[rules.allowlists]]
+  description = "Historical patch stores Git object identifiers, not Sourcegraph access tokens."
+  paths = [
+    '''(?:^|\./)handoff/07_reels/upgrade_reel_pension_v1\.5\.0\.patch$''',
+  ]

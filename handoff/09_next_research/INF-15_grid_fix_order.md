@@ -19,8 +19,6 @@
 docs/notes/grid_ux_audit_2026-07-27.md
 ```
 
-(абсолютный путь: `/Users/sergejavdejcik/Code/BY_maps/docs/notes/grid_ux_audit_2026-07-27.md`)
-
 ---
 
 ## 2. Что установлено (кратко)

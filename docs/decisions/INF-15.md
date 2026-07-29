@@ -380,8 +380,8 @@ build` (чисто), `E2E_PORT=3115 npx playwright test` — 41/41 в
 
 Замок очереди взят/снят через временный detached-worktree
 (`git worktree add --detach`) от `origin/master`, т.к. `master` уже
-занят основным чекаутом (`/Users/sergejavdejcik/Code/BY_maps`) —
-worktree с тем же именем ветки создать нельзя. Squash-мерж
+занят основным чекаутом репозитория — worktree с тем же именем ветки
+создать нельзя. Squash-мерж
 `feature/inf15-grid` → `master`: коммит `6f86d79`. Запись в очереди —
 `MERGE_QUEUE.md` №12.
 

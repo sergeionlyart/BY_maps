@@ -18,7 +18,55 @@ data/raw/urban/osm/
 *.tsbuildinfo
 build/
 data/tmp/
+
+# Local environment and credentials. Commit only the documented template.
 .env
+.env.*
+!.env.example
+.envrc
+.direnv/
+*.pem
+*.key
+*.p12
+*.pfx
+*service-account*.json
+*service_account*.json
+*credentials*.json
+firebase-adminsdk-*.json
+
+# Logs, diagnostics, local state and temporary files.
+*.log
+logs/
+log/
+debug/
+*.pid
+*.trace
+*.prof
+*.db
+*.sqlite*
+*.bak
+*.backup
+*.dump
+*.tmp
+*.swp
+*.swo
+*.orig
+*.rej
+*~
+tmp/
+temp/
+scratch/
+
+# Private local tooling configuration.
+.claude/
+.codex/
+.cursor/
+.mcp/
+.idea/
+.vscode/
+*.code-workspace
+web/.vercel/
+
 # медиа рилса: mp4/wav не версионируются в git - ассеты GitHub-релиза
 video/nightlights-reel/renders/
 video/nightlights-reel/audio/*.wav

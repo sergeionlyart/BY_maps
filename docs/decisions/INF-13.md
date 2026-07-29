@@ -725,7 +725,7 @@ macOS/Homebrew ffmpeg) дал `reel_pension_ru.mp4` sha256
 
 **2. `vercel deploy --prod`, вызванный из `web/` (обычный способ всех
 предыдущих публикаций этой сдачи), стал падать с ошибкой
-`~/Code/BY_maps/web/web does not exist`.** **Вопрос:** три подряд
+`<repo-root>/web/web does not exist`.** **Вопрос:** три подряд
 успешных деплоя раньше в этой же сдаче использовали ровно тот же вызов;
 воспроизвелось стабильно (не разовый сбой) при повторных попытках, в том
 числе с explicit `--cwd`. `vercel project inspect` подтвердил `Root
