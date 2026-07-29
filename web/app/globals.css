@@ -741,6 +741,14 @@ select {
   .content-toc { float: none; width: auto; margin: 0 0 16px; }
 }
 
+/* список статей (ArticlesMenu) - верхний блок той же боковой колонки на
+   страницах /article/*, разделитель перед собственным оглавлением статьи */
+.content-toc-current { color: var(--ink); font-weight: 650; }
+.content-toc-sep {
+  border: none; border-top: 1px solid var(--border);
+  margin: 10px 0;
+}
+
 /* плашки-«чипы»: [Данные] / [Расчёт] / [Модель] / [Интерпретация] */
 /* релиз 1.2 (A-4): плашки-чипы — цветной текст+точка+рамка, фон 10%-тон */
 .chip {

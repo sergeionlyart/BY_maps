@@ -26,7 +26,7 @@ test('RU: страница открывается без ошибок, огла�
   const errors = collectErrors(page);
   await page.goto(PAGE);
   await expect(page.locator('h1')).toContainText('Страна не вымирает');
-  await expect(page.locator('.content-toc li')).toHaveCount(16);
+  await expect(page.locator('.content-toc-headings li')).toHaveCount(16);
   const figures = page.locator('.md-figure');
   await expect(figures).toHaveCount(N_IMAGES);
   for (let i = 0; i < N_IMAGES; i++) {
@@ -39,7 +39,7 @@ test('BE: страница открывается без ошибок, заго�
   const errors = collectErrors(page);
   await page.goto(PAGE_BE);
   await expect(page.locator('h1')).toContainText('Краіна не вымірае');
-  await expect(page.locator('.content-toc li')).toHaveCount(16);
+  await expect(page.locator('.content-toc-headings li')).toHaveCount(16);
   await expect(page.locator('.md-figure')).toHaveCount(N_IMAGES);
   expect(errors).toEqual([]);
 });
@@ -121,4 +121,60 @@ test('мобильный: нет горизонтальной прокрутки
   await page.goto(PAGE);
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
   expect(overflow).toBeLessThanOrEqual(1);
+});
+
+// ---------------------------------------------------------------------
+// Боковое меню «Статьи» (реестр web/lib/articles.ts, см. D-018)
+// ---------------------------------------------------------------------
+
+test('RU: меню «Статьи» видно на /article/grid, текущая страница не ссылка', async ({ page }) => {
+  const errors = collectErrors(page);
+  await page.goto(PAGE);
+  const menu = page.locator('.content-toc-articles');
+  await expect(menu).toBeVisible();
+  await expect(menu.locator('.content-toc-title')).toHaveText('Статьи');
+  const items = menu.locator('li');
+  await expect(items).toHaveCount(2);
+  await expect(menu.locator('.content-toc-current')).toHaveText('Страна не вымирает. Она переезжает');
+  await expect(menu.locator('a')).toHaveAttribute('href', '/article');
+  expect(errors).toEqual([]);
+});
+
+test('RU: меню «Статьи» на /article ведёт на /article/grid', async ({ page }) => {
+  await page.goto('/article');
+  const menu = page.locator('.content-toc-articles');
+  await expect(menu.locator('.content-toc-current')).toHaveText('Страна, которая стягивается к столице');
+  await expect(menu.locator('a')).toHaveAttribute('href', '/article/grid');
+});
+
+test('BE: меню «Статьи» переведено на обеих страницах', async ({ page }) => {
+  await page.goto('/be/article');
+  const menu1 = page.locator('.content-toc-articles');
+  await expect(menu1.locator('.content-toc-title')).toHaveText('Артыкулы');
+  await expect(menu1.locator('.content-toc-current')).toHaveText('Краіна, якая сцягваецца да сталіцы');
+  await expect(menu1.locator('a')).toHaveAttribute('href', '/be/article/grid');
+
+  await page.goto(PAGE_BE);
+  const menu2 = page.locator('.content-toc-articles');
+  await expect(menu2.locator('.content-toc-current')).toHaveText('Краіна не вымірае. Яна пераязджае');
+  await expect(menu2.locator('a')).toHaveAttribute('href', '/be/article');
+});
+
+test('навигация: вкладка "Статьи" (мн. число), активна на /article/grid тоже', async ({ page }) => {
+  await page.goto(PAGE);
+  const navLink = page.locator('nav a[href="/article"]').first();
+  await expect(navLink).toHaveText('Статьи');
+});
+
+test('RU: основная статья ссылается на /article/grid из текста', async ({ page }) => {
+  await page.goto('/article');
+  const link = page.locator('.content a[href="/article/grid"]');
+  await expect(link).toBeVisible();
+  await expect(link).toHaveText('«Страна не вымирает. Она переезжает»');
+});
+
+test('BE: основная статья ссылается на /be/article/grid из текста', async ({ page }) => {
+  await page.goto('/be/article');
+  const link = page.locator('.content a[href="/be/article/grid"]');
+  await expect(link).toBeVisible();
 });

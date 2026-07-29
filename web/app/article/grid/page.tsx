@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import ContentDoc from '@/components/ContentDoc';
 import AuthorCard from '@/components/AuthorCard';
+import ArticlesMenu from '@/components/ArticlesMenu';
 import JsonLd from '@/components/JsonLd';
 import { loadContent } from '@/lib/content';
 import { authors, ogBase, altFor, articleJsonLd, absUrl } from '@/lib/seo';
@@ -22,7 +23,11 @@ export default function Page() {
         title: c.title, description: c.description, path: '/article/grid', lang: 'ru',
         scholarly: false, image: absUrl(ogImage.url),
       })} />
-      <ContentDoc body={c.body} toc={true} lang="ru" footer={<AuthorCard variant="full" lang="ru" />} />
+      <ContentDoc
+        body={c.body} toc={true} lang="ru"
+        articlesNav={<ArticlesMenu current="/article/grid" lang="ru" />}
+        footer={<AuthorCard variant="full" lang="ru" />}
+      />
     </>
   );
 }

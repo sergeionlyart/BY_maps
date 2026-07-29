@@ -12,7 +12,7 @@ export function toRu(p: string): string { return p === '/be' ? '/' : p.slice(3);
 const NAV = [
   { href: '/map', label: 'Карта' },
   { href: '/research', label: 'Исследования' },
-  { href: '/article', label: 'Статья' },
+  { href: '/article', label: 'Статьи' },
   { href: '/methodology', label: 'Методология' },
   { href: '/artifacts', label: 'Данные и артефакты' },
   { href: '/about', label: 'О проекте' },

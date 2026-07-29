@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import ContentDoc from '@/components/ContentDoc';
 import AuthorCard from '@/components/AuthorCard';
+import ArticlesMenu from '@/components/ArticlesMenu';
 import JsonLd from '@/components/JsonLd';
 import { loadContent } from '@/lib/content';
 import { authors, ogImage, ogBase, altFor, articleJsonLd } from '@/lib/seo';
@@ -18,7 +19,11 @@ export default function Page() {
   return (
     <>
       <JsonLd data={articleJsonLd({ title: c.title, description: c.description, path: '/be/article', lang: 'be' })} />
-      <ContentDoc body={c.body} toc={true} lang="be" footer={<AuthorCard variant="full" lang="be" />} />
+      <ContentDoc
+        body={c.body} toc={true} lang="be"
+        articlesNav={<ArticlesMenu current="/article" lang="be" />}
+        footer={<AuthorCard variant="full" lang="be" />}
+      />
     </>
   );
 }
