@@ -111,10 +111,23 @@ def sr_color(v: float | None) -> tuple[int, int, int]:
 TERRITORY_YEARS = [2009, 2019, 2026, 2031, 2036, 2041, 2046, 2051, 2056]
 SCENARIO = "base:official"     # заморожено в пререгистрации (docs/preregistration/pension-v0.1.md), см. Findings.tsx KEY
 
-MAP_X0, MAP_Y0, MAP_W, MAP_H = 40, 430, 1000, 1010
-LEGEND_Y = MAP_Y0 + MAP_H + 30
+# --- безопасная зона 4:5 (v1.5) --------------------------------------------
+# Facebook с июня 2025 отдаёт любое видео как Reels, но в ленте показывает его
+# кадрированным до 4:5 - то есть от кадра 1080x1920 видно только центральные
+# 1080x1350 (y 285..1635), а верх и низ срезаются. В v1.4 в срез уходило самое
+# важное: логотип и адрес сайта в интро, год и счётчик на карте, заголовок и
+# последняя строка хроники. Поэтому с v1.5 весь смысловой контент верстается
+# внутри SAFE_TOP..SAFE_BOT, а внешние поля несут только дублирующую строку
+# логотипа и адреса - их потеря в ленте ничего не ломает. Мастер остаётся
+# 9:16: это родной формат Reels и Stories, и в полном просмотре поля работают
+# как рамка кадра.
+SAFE_TOP, SAFE_BOT = 300, 1600
+BAND_INK = (112, 103, 88)      # цвет дублирующих надписей во внешних полях
+
+MAP_X0, MAP_Y0, MAP_W, MAP_H = 40, 560, 1000, 780
+LEGEND_Y = MAP_Y0 + MAP_H + 20
 CAPTION_Y = LEGEND_Y + 90
-SOURCE_Y = H - 60
+SOURCE_Y = 1540
 
 
 def font(sz: int) -> ImageFont.FreeTypeFont:
@@ -319,8 +332,8 @@ def make_hatch_overlay(w: int, h: int, color=ACCENT, alpha=64,
 GHOST = (56, 52, 47)           # «недостающий» человек в пиктограмме сцены hook
 SIL_FILL = (33, 37, 46)        # заливка силуэта страны (чуть светлее фона)
 SIL_EDGE = (198, 150, 90)      # кромка силуэта: медный из палитры бренда
-INTRO_MAP_BOX = (110, 800, 860, 780)     # x0, y0, w, h
-FINALE_MAP_BOX = (170, 570, 740, 640)
+INTRO_MAP_BOX = (140, 950, 800, 500)     # x0, y0, w, h
+FINALE_MAP_BOX = (230, 740, 620, 420)
 
 _SIL_CACHE: dict[tuple, Image.Image] = {}
 
@@ -419,9 +432,9 @@ def draw_ratio_row(img: Image.Image, d: ImageDraw.ImageDraw, y: int,
     """Строка «N работающих : 1 пожилой». Цвет фигур работающих берётся из
     той же шкалы sr_color, что красит карту в основной части ролика -
     зритель видит те же цвета, что через секунду увидит на хороплете."""
-    d.text((110, y), label, font=font(30), fill=DIM, anchor="la")
+    d.text((110, y), label, font=font(29), fill=DIM, anchor="la")
     col = sr_color(value)
-    icon_h, step, x0, top = 150, 104, 110, y + 46
+    icon_h, step, x0, top = 128, 90, 110, y + 40
     full = int(shown)
     rest = shown - full
     # Серый «недостающий» человек в незакрытой ячейке: именно он делает
@@ -435,10 +448,10 @@ def draw_ratio_row(img: Image.Image, d: ImageDraw.ImageDraw, y: int,
         draw_person(img, x0 + i * step, top, icon_h, col)
     if rest > 0.02:
         draw_person(img, x0 + full * step, top, icon_h, col, frac=rest)
-    d.line([(546, top - 6), (546, top + icon_h + 6)], fill=(64, 60, 52), width=3)
-    draw_person(img, 600, top, icon_h, AMBER)
+    d.line([(500, top - 6), (500, top + icon_h + 6)], fill=(64, 60, 52), width=3)
+    draw_person(img, 552, top, icon_h, AMBER)
     lit = tuple(int(c + (INK[i] - c) * 0.35) for i, c in enumerate(col))
-    d.text((1010, top + icon_h / 2 - 42), ru_num(shown), font=font(76),
+    d.text((1010, top + icon_h / 2 - 38), ru_num(shown), font=font(68),
            fill=lit, anchor="ra")
 
 
@@ -447,7 +460,7 @@ def draw_district_dots(img: Image.Image, d: ImageDraw.ImageDraw, y: int,
     """118 районов = 118 клеток, отсортированных по числу работающих на
     пожилого и покрашенных той же шкалой sr_color. Пять самых тёмно-красных
     слева - это и есть районы, где работающих меньше, чем пожилых."""
-    per_row, cell, gap = 20, 40, 8
+    per_row, cell, gap = 20, 34, 7
     grid_w = per_row * cell + (per_row - 1) * gap - (cell + gap) * 0
     x0 = (W - (per_row * (cell + gap) - gap)) / 2
     for i, v in enumerate(values[:shown]):
@@ -459,7 +472,7 @@ def draw_district_dots(img: Image.Image, d: ImageDraw.ImageDraw, y: int,
                         outline=AMBER, width=3)
 
 
-CHRON_BOX = (190, 180, 700, 700)      # карта в сцене «хроника»: x0, y0, w, h
+CHRON_BOX = (240, 430, 600, 520)      # карта в сцене «хроника»: x0, y0, w, h
 CHRON_N = 10                          # сколько районов показываем
 CHRON_DIM = (34, 33, 30)              # остальные 108 районов гаснут
 _CHRON_CACHE: list | None = None
@@ -520,8 +533,8 @@ def draw_chronicle(img: Image.Image, d: ImageDraw.ImageDraw, T: dict,
     lit_ids = {r["id"] for r in rows[:lit]}
     colors = {r["id"]: sr_color(r["sr56"]) for r in rows}
 
-    tracked_text(d, (W / 2, 46), T["brand"], 34, AMBER, track=0.22)
-    wrap_center(d, 100, T["chronTitle"], 40, INK, maxw=W - 120)
+    draw_frame_bands(d, T)
+    wrap_center(d, 320, T["chronTitle"], 40, INK, maxw=W - 120)
 
     for f in feats:
         col = colors[f["id"]] if f["id"] in lit_ids else CHRON_DIM
@@ -532,21 +545,21 @@ def draw_chronicle(img: Image.Image, d: ImageDraw.ImageDraw, T: dict,
             for ring in f["chron_rings"]:
                 d.line(ring + [ring[0]], fill=HIGHLIGHT, width=3)
 
-    y0, rh = 920, 82
+    y0, rh = 1000, 60
     for i, r in enumerate(rows[:lit]):
         y = y0 + i * rh
         fresh = tl - (first + i * step) < 0.35
         col = HIGHLIGHT if fresh else INK
-        d.rectangle([70, y + 14, 92, y + 50], fill=colors[r["id"]])
-        d.text((116, y + 8), r["name"], font=font(36), fill=col, anchor="la")
-        d.text((700, y + 12), f"{ru_num(r['sr09'])} → {ru_num(r['sr56'])}",
-               font=font(34), fill=DIM, anchor="ra")
+        d.rectangle([70, y + 8, 90, y + 38], fill=colors[r["id"]])
+        d.text((112, y), r["name"], font=font(33), fill=col, anchor="la")
+        d.text((700, y + 4), f"{ru_num(r['sr09'])} → {ru_num(r['sr56'])}",
+               font=font(31), fill=DIM, anchor="ra")
         tail = (T["chronCross"].format(year=int(round(r["cross"])))
                 if r["cross"] else T["chronNoCross"])
-        d.text((1010, y + 12), tail, font=font(30),
+        d.text((1010, y + 6), tail, font=font(27),
                fill=AMBER if r["cross"] else DIM, anchor="ra")
     if lit >= CHRON_N and tl > first + CHRON_N * step + 0.3:
-        d.text((W / 2, 1790), T["chronFoot"], font=font(30), fill=DIM,
+        d.text((W / 2, 1640), T["chronFoot"], font=font(26), fill=BAND_INK,
                anchor="ma")
 
 
@@ -597,7 +610,7 @@ def draw_events_panel(d: ImageDraw.ImageDraw, T: dict,
     shown = [e for e in events if year >= e[0]]
     if not shown:
         return
-    x0, y0, x1 = 588, 452, 1052
+    x0, y0, x1 = 588, 582, 1052
     y1 = y0 + 52 + 34 * len(shown)
     d.rectangle([x0, y0, x1, y1], fill=(14, 14, 13), outline=AMBER, width=2)
     d.text(((x0 + x1) / 2, y0 + 12), T["eventsTitle"], font=font(23),
@@ -608,7 +621,15 @@ def draw_events_panel(d: ImageDraw.ImageDraw, T: dict,
                font=font(27), fill=AMBER if fresh else INK, anchor="la")
 
 
-def draw_wordmark(d: ImageDraw.ImageDraw, T: dict, y: int = 96,
+def draw_frame_bands(d: ImageDraw.ImageDraw, T: dict, top: bool = True) -> None:
+    """Внешние поля кадра (то, что срезает лента Facebook): дублирующие
+    логотип и адрес сайта. Ничего уникального здесь быть не должно."""
+    if top:
+        tracked_text(d, (W / 2, 150), T["brand"], 30, BAND_INK, track=0.22)
+    d.text((W / 2, 1716), T["ctaUrl"], font=font(28), fill=BAND_INK, anchor="ma")
+
+
+def draw_wordmark(d: ImageDraw.ImageDraw, T: dict, y: int = 320,
                   sz: int = 62, kicker: bool = True) -> None:
     tracked_text(d, (W / 2, y), T["brand"], sz, AMBER, track=0.22, stroke=1)
     if kicker:
@@ -673,12 +694,12 @@ def draw_legend(d: ImageDraw.ImageDraw, T: dict) -> None:
 def draw_toggle(d: ImageDraw.ImageDraw, T: dict, k: float) -> None:
     """Переключатель пенсионного возраста 63/58 -> 65/60 - визуальный аналог
     сегмент-контрола .seg на живой странице (PensionSlider/страница)."""
-    y0, h = 250, 64
-    w = 260
+    y0, h = 428, 56
+    w = 250
     gap = 20
     x0 = W / 2 - w - gap / 2
     x1 = W / 2 + gap / 2
-    d.text((W / 2, y0 - 34), T["toggleLabel"], font=font(26), fill=DIM, anchor="ma")
+    d.text((W / 2, y0 - 32), T["toggleLabel"], font=font(25), fill=DIM, anchor="ma")
     on_a = INK if k < 0.5 else DIM
     fill_a = AMBER if k < 0.5 else (30, 28, 24)
     on_b = DIM if k < 0.5 else INK
@@ -718,24 +739,25 @@ def render_frame(gi: int, fps: int, pension: dict, feats: list[dict],
         # Титульная карточка: логотип -> заголовок -> пояснение -> контур
         # страны. Всё, кроме контура, стоит в кадре с нулевой секунды -
         # зритель не должен ждать проявления, чтобы понять, что смотрит.
+        draw_frame_bands(d, T, top=False)
         draw_wordmark(d, T)
-        d.line([(W / 2 - 120, 268), (W / 2 + 120, 268)], fill=AMBER, width=3)
+        d.line([(W / 2 - 120, 492), (W / 2 + 120, 492)], fill=AMBER, width=3)
 
-        y = wrap_center(d, 350, T["introHeadline"], 78, INK, maxw=W - 120,
+        y = wrap_center(d, 540, T["introHeadline"], 72, INK, maxw=W - 120,
                         lh=1.18)
         rule = min(1.0, max(0.0, (t - 0.25) / 0.9)) * 520
         if rule > 2:
-            d.line([(W / 2 - rule / 2, y + 26), (W / 2 + rule / 2, y + 26)],
+            d.line([(W / 2 - rule / 2, y + 22), (W / 2 + rule / 2, y + 22)],
                    fill=AMBER, width=7)
-        wrap_center(d, y + 80, T["introSub"], 36, DIM, maxw=W - 140, lh=1.4)
+        wrap_center(d, y + 66, T["introSub"], 34, DIM, maxw=W - 140, lh=1.35)
 
         # Контур виден уже на нулевом кадре (это обложка ролика в ленте),
         # доводка до полной непрозрачности - за 0,6 с.
         paste_country(img, feats, INTRO_MAP_BOX,
                       alpha=min(1.0, 0.6 + t / 0.6 * 0.4))
-        d.text((W / 2, 1620), T["introMeta"], font=font(27), fill=DIM,
+        d.text((W / 2, 1490), T["introMeta"], font=font(26), fill=DIM,
                anchor="ma")
-        fit_text(d, (W / 2, 1700), T["ctaUrl"], 36, AMBER)
+        fit_text(d, (W / 2, 1540), T["ctaUrl"], 36, AMBER)
         d.line([(0, H - 6), (W * t / duration, H - 6)], fill=AMBER, width=6)
         return img
 
@@ -746,8 +768,8 @@ def render_frame(gi: int, fps: int, pension: dict, feats: list[dict],
         # будет меньше, чем пожилых. Все числа и название худшего района
         # берутся из pension.json, руками не вписаны.
         tl = t - seg["t"][0]
-        tracked_text(d, (W / 2, 60), T["brand"], 38, AMBER, track=0.22)
-        wrap_center(d, 140, T["hookLine"], 40, INK, maxw=W - 120)
+        draw_frame_bands(d, T)
+        wrap_center(d, 320, T["hookLine"], 40, INK, maxw=W - 120)
 
         srs56 = {tid: sr_interp(terr["sr"]["as_is"][SCENARIO], 2056)
                  for tid, terr in pension["territories"].items()}
@@ -765,17 +787,17 @@ def render_frame(gi: int, fps: int, pension: dict, feats: list[dict],
             if tl < start:
                 continue
             grow = min(1.0, (tl - start) / 0.55)
-            draw_ratio_row(img, d, 300 + i * 250, label, val, val * grow)
+            draw_ratio_row(img, d, 450 + i * 212, label, val, val * grow)
 
         if tl >= 2.60:
             vals = sorted(srs56.values())
             shown = int(len(vals) * min(1.0, (tl - 2.60) / 0.6))
-            draw_district_dots(img, d, 1150, vals, shown)
-            d.text((W / 2, 1450), T["scaleDots"], font=font(26), fill=DIM,
+            draw_district_dots(img, d, 1105, vals, shown)
+            d.text((W / 2, 1360), T["scaleDots"], font=font(25), fill=DIM,
                    anchor="ma")
         if tl >= 3.20:
             ev = crossing_events(pension)
-            wrap_center(d, 1545,
+            wrap_center(d, 1425,
                         T["scaleWorst"].format(
                             below10=below10,
                             firstYear=int(round(ev[0][0])) if ev else "—"),
@@ -793,30 +815,31 @@ def render_frame(gi: int, fps: int, pension: dict, feats: list[dict],
         # Зеркало интро: тот же логотип, тот же контур страны - зритель
         # закрывает ролик тем же кадром, каким открыл. Вывод считается из
         # pension.json, а не вписан в сцену (тот же принцип, что у callouts).
+        draw_frame_bands(d, T, top=False)
         draw_wordmark(d, T)
-        d.line([(W / 2 - 120, 268), (W / 2 + 120, 268)], fill=AMBER, width=3)
+        d.line([(W / 2 - 120, 492), (W / 2 + 120, 492)], fill=AMBER, width=3)
 
         srs56 = {tid: sr_interp(terr["sr"]["as_is"][SCENARIO], 2056)
                  for tid, terr in pension["territories"].items()}
         lead = T["finaleLead"].format(year=2056,
                                       below15=sum(1 for v in srs56.values()
                                                   if v < 1.5))
-        y = wrap_center(d, 340, lead, 46, AMBER, maxw=W - 120, lh=1.3)
+        wrap_center(d, 540, lead, 44, AMBER, maxw=W - 120, lh=1.3)
 
         paste_country(img, feats, FINALE_MAP_BOX,
                       alpha=min(1.0, 0.3 + (t - seg["t"][0]) / 0.8 * 0.7))
 
         bx0, bx1 = 90, W - 90
-        by0 = 1280
-        d.rectangle([bx0, by0, bx1, by0 + 258], outline=AMBER, width=3)
-        d.text((W / 2, by0 + 34), T["disclaimerTitle"], font=font(30),
+        by0 = 1180
+        d.rectangle([bx0, by0, bx1, by0 + 240], outline=AMBER, width=3)
+        d.text((W / 2, by0 + 30), T["disclaimerTitle"], font=font(28),
                fill=AMBER, anchor="ma")
-        wrap_center(d, by0 + 92, T["disclaimer"], 32, INK, maxw=bx1 - bx0 - 80)
+        wrap_center(d, by0 + 84, T["disclaimer"], 30, INK, maxw=bx1 - bx0 - 80)
 
-        d.text((W / 2, 1650), T["finaleCtaLabel"], font=font(30), fill=INK,
+        d.text((W / 2, 1448), T["finaleCtaLabel"], font=font(28), fill=INK,
                anchor="ma")
-        fit_text(d, (W / 2, 1700), T["ctaUrl"], 42, AMBER)
-        d.text((W / 2, 1800), T["sourceNote"], font=font(24), fill=DIM,
+        fit_text(d, (W / 2, 1492), T["ctaUrl"], 40, AMBER)
+        d.text((W / 2, 1560), T["sourceNote"], font=font(22), fill=DIM,
                anchor="ma")
         d.line([(0, H - 6), (W * t / duration, H - 6)], fill=AMBER, width=6)
         return img
@@ -829,34 +852,47 @@ def render_frame(gi: int, fps: int, pension: dict, feats: list[dict],
 
     is_forecast_look = scene_id in ("forecast", "policy")
 
-    d.text((W / 2, 60), str(int(round(year))), font=font(92), fill=INK, anchor="ma")
+    draw_frame_bands(d, T)
+    d.text((W / 2, 296), str(int(round(year))), font=font(84), fill=INK,
+           anchor="ma")
     dtyp = year_dtype(year, pension["dtype"]["territory"])
-    d.text((W / 2, 168), T["typeLabels"].get(dtyp, dtyp), font=font(28),
-           fill=AMBER if dtyp == "f" else DIM, anchor="ma")
+    if scene_id != "policy":
+        # в сцене "policy" эту строку заменяет переключатель возраста, а тип
+        # ряда всё равно продублирован плашкой "ПРОГНОЗ" справа
+        d.text((W / 2, 396), T["typeLabels"].get(dtyp, dtyp), font=font(26),
+               fill=AMBER if dtyp == "f" else DIM, anchor="ma")
     if scene_id != "policy":
         # в сцене "policy" это место занимает переключатель возраста
         # (draw_toggle) - подпись карты здесь не рисуется, чтобы не
         # накладывался текст.
-        d.text((W / 2, 202), T["mapSubtitle"], font=font(22), fill=DIM, anchor="ma")
+        d.text((W / 2, 430), T["mapSubtitle"], font=font(22), fill=DIM, anchor="ma")
 
     if is_forecast_look:
-        f1 = font(28)
+        f1 = font(26)
         tw = d.textlength(T["forecastBadge"], font=f1)
-        d.rectangle([W - tw - 56, 26, W - 20, 66], fill=(30, 24, 16))
-        d.text((W - 38, 32), T["forecastBadge"], font=f1, fill=AMBER, anchor="ra")
+        # плашка переехала внутрь карты, в левый верхний угол поля штриховки:
+        # в шапке она упиралась то в год (84 px по центру), то в счётчик
+        # сцены policy. Северо-запад страны до края бокса не достаёт, место
+        # свободно, и плашка оказывается прямо на зоне прогноза, которую
+        # обозначает.
+        bx = MAP_X0 + 14
+        d.rectangle([bx, MAP_Y0 + 14, bx + tw + 30, MAP_Y0 + 54],
+                    fill=(30, 24, 16))
+        d.text((bx + 15, MAP_Y0 + 19), T["forecastBadge"], font=f1,
+               fill=AMBER, anchor="la")
 
     if scene_id == "policy":
         draw_toggle(d, T, k)
         counter_label, counter_val = T["counterLabel15"], below15
-        counter_y = 345
+        counter_y = 496
     elif is_forecast_look:
         counter_label, counter_val = T["counterLabel15"], below15
-        counter_y = 250
+        counter_y = 468
     else:
         counter_label, counter_val = T["counterLabel20"], below20
-        counter_y = 250
+        counter_y = 468
     fit_text(d, (W / 2, counter_y),
-            f"{counter_label}: {counter_val} / 118", 44,
+            f"{counter_label}: {counter_val} / 118", 42,
             AMBER if is_forecast_look else INK)
 
     draw_map(img, feats, srs)
