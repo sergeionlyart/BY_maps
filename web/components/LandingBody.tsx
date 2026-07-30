@@ -227,7 +227,7 @@ export default function LandingBody() {
           {lang === 'ru' && (
             <>
               {' '}
-              <a href="https://dobrovola.dev/pl/work/by-maps">
+              <a href="https://dobrovola.dev/ru/work/by-maps">
                 {t('Описание проекта BY Maps в исследовательском портфолио.')}
               </a>
             </>
