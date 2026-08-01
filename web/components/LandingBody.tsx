@@ -224,6 +224,14 @@ export default function LandingBody() {
         <AuthorCard variant="full" lang={lang} />
         <p className="land-about-note">
           {t('BY Maps — витрина метода: так же можно разобрать ваши данные и процессы.')}
+          {lang === 'ru' && (
+            <>
+              {' '}
+              <a href="https://dobrovola.dev/ru/work/by-maps">
+                {t('Описание проекта BY Maps в исследовательском портфолио.')}
+              </a>
+            </>
+          )}
         </p>
         <div className="land-cta">
           <a href="https://www.linkedin.com/in/sergei-audzeichyk" target="_blank" rel="noreferrer" className="btn">LinkedIn</a>
