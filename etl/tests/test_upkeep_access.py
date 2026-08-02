@@ -20,7 +20,7 @@ def test_g9_graph_loader_identical_function():
 
 
 def test_target_categories_defined():
-    assert TARGET_CATEGORIES == ("school", "fap", "post", "bank", "station")
+    assert TARGET_CATEGORIES == ("school", "fap", "post_office", "bank", "station")
 
 
 def test_compute_target_travel_times_toy():
@@ -40,6 +40,15 @@ def test_compute_target_travel_times_empty_raises():
     import pytest
     with pytest.raises(ValueError):
         compute_target_travel_times({}, {}, [])
+
+
+def test_compute_target_travel_times_skips_far_points():
+    adj = {1: [(2, 10.0)], 2: [(1, 10.0)]}
+    coords = {1: (53.0, 27.0), 2: (53.01, 27.01)}
+    # одна валидная цель (узел 2) + одна точка за много градусов от графа
+    # (снап должен упасть на assert >15км и быть пропущен, не уронить весь расчёт)
+    dist = compute_target_travel_times(adj, coords, [(53.01, 27.01), (10.0, 10.0)])
+    assert dist[2] == 0.0
 
 
 def test_belt_report():
