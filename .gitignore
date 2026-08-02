@@ -23,3 +23,7 @@ data/tmp/
 video/nightlights-reel/renders/
 video/nightlights-reel/audio/*.wav
 video/nightlights-reel/audio/takes/
+# INF-16 BEGIN
+# PBF Беларуси для etl/upkeep_network.py не вендорится (URL+sha256 - data/raw/osm/registry.csv)
+data/raw/osm/*.pbf
+# INF-16 END
