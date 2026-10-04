@@ -1,0 +1,122 @@
+[
+ {
+  "metric": "dL_1319_r-astraviecki",
+  "value": 0.710469
+ },
+ {
+  "metric": "dL_1319_r-minski",
+  "value": -0.161533
+ },
+ {
+  "metric": "dL_1319_r-smalavicki",
+  "value": 0.280372
+ },
+ {
+  "metric": "dO_1319_r-astraviecki",
+  "value": 0.150774
+ },
+ {
+  "metric": "dO_1319_r-minski",
+  "value": 0.373833
+ },
+ {
+  "metric": "dO_1319_r-smalavicki",
+  "value": 0.096189
+ },
+ {
+  "metric": "gates_passed_v1_v5",
+  "value": 5
+ },
+ {
+  "metric": "h1_confirmed",
+  "value": 1
+ },
+ {
+  "metric": "h1_rho",
+  "value": 0.7895
+ },
+ {
+  "metric": "h1_robust_2000_2020_rho",
+  "value": 0.9056
+ },
+ {
+  "metric": "h1_sign_agree",
+  "value": 109
+ },
+ {
+  "metric": "h2_confirmed",
+  "value": 0
+ },
+ {
+  "metric": "h2_p",
+  "value": 0.15334
+ },
+ {
+  "metric": "h2_rho",
+  "value": -0.132
+ },
+ {
+  "metric": "h2_robust_dmsp_rho",
+  "value": -0.176
+ },
+ {
+  "metric": "h3_confirmed",
+  "value": 0
+ },
+ {
+  "metric": "h3_rho",
+  "value": 0.0296
+ },
+ {
+  "metric": "h4_confirmed",
+  "value": 0
+ },
+ {
+  "metric": "h4_ratio",
+  "value": 1.193
+ },
+ {
+  "metric": "minsk_share_ghs_2020",
+  "value": 0.1916
+ },
+ {
+  "metric": "minsk_share_official_2020",
+  "value": 0.2149
+ },
+ {
+  "metric": "n_og_1990_2020",
+  "value": 117
+ },
+ {
+  "metric": "n_raions",
+  "value": 118
+ },
+ {
+  "metric": "posthoc_belt_60_120_dL",
+  "value": 0.2373
+ },
+ {
+  "metric": "posthoc_level_rho_2019",
+  "value": 0.8658
+ },
+ {
+  "metric": "posthoc_light_up_pop_down",
+  "value": 65
+ },
+ {
+  "metric": "posthoc_median_dL_1319",
+  "value": 0.1017
+ },
+ {
+  "metric": "posthoc_median_dO_1319",
+  "value": -0.0609
+ },
+ {
+  "metric": "posthoc_persistence_rho",
+  "value": -0.2406
+ },
+ {
+  "metric": "v4_light_rho_2018_2019",
+  "value": 0.9757
+ }
+]
