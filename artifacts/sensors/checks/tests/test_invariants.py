@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Инварианты INF-21 (автономно, без pytest).
+"""Инварианты INF-22 (автономно, без pytest).
 
 Повторяют блокирующие гейты пререгистрации V-1…V-5 (с поправкой 1 от
 2026-10-04) и фиксируют вердикты, включая опровержения H2-H4.
@@ -39,7 +39,7 @@ def main() -> None:
     assert "пост-хок" in ph["disclaimer"].lower()
     assert min(ph["level_rho_light_vs_pop"].values()) >= 0.80
     assert ph["median_dO_1319"] < 0 < ph["median_dL_1319"]
-    print("Инварианты INF-21: все выполнены.")
+    print("Инварианты INF-22: все выполнены.")
 
 
 if __name__ == "__main__":

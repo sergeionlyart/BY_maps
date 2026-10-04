@@ -22,7 +22,7 @@ export default function SexratioArtifactBody() {
   return (
     <div className="page">
       <div className="page-breadcrumb">
-        <Link href={p('/artifacts')}>{t('Артефакты')}</Link> · INF-20
+        <Link href={p('/artifacts')}>{t('Артефакты')}</Link> · INF-21
       </div>
       <h1>{t('Пакет: Карта, где не хватает мужчин')}</h1>
       <p className="page-lead">

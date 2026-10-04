@@ -145,6 +145,26 @@
    "research_url": "https://by-population-maps.vercel.app/research/seam"
   },
   {
+   "file": "by-maps-sensors-v1.0.0.zip",
+   "url": "https://by-population-maps.vercel.app/artifacts/by-maps-sensors-v1.0.0.zip",
+   "size_bytes": 315886,
+   "sha256": "94bf1a48e7f82eddf036f16abb2420bfffb7fd8c65d3eca3c88313d7415051fe",
+   "version": "1.0.0",
+   "code": "INF-22",
+   "title_ru": "Второй сенсор",
+   "research_url": "https://by-population-maps.vercel.app/research/sensors"
+  },
+  {
+   "file": "by-maps-sexratio-v1.0.0.zip",
+   "url": "https://by-population-maps.vercel.app/artifacts/by-maps-sexratio-v1.0.0.zip",
+   "size_bytes": 1482035,
+   "sha256": "037a6ab141c3911b6cd8e03291982cd94b650a5821049ec80c0b7821c022f5ce",
+   "version": "1.0.0",
+   "code": "INF-21",
+   "title_ru": "Карта, где не хватает мужчин",
+   "research_url": "https://by-population-maps.vercel.app/research/sexratio"
+  },
+  {
    "file": "by-maps-shocks-v1.0.0.zip",
    "url": "https://by-population-maps.vercel.app/artifacts/by-maps-shocks-v1.0.0.zip",
    "size_bytes": 116252,

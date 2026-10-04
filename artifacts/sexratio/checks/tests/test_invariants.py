@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Инварианты INF-20 (автономно, без pytest).
+"""Инварианты INF-21 (автономно, без pytest).
 
 Повторяют блокирующие гейты пререгистрации S-1…S-6 (с поправками от
 2026-10-04) и фиксируют главные выводы, включая опровержение H1.
@@ -40,7 +40,7 @@ def main() -> None:
     assert "пост-хок" in ph["disclaimer"].lower()
     assert ph["census_perimeter_h1"]["n"] == 118
     assert ph["census_perimeter_h1"]["spearman_rho"] < 0
-    print("Инварианты INF-20: все выполнены.")
+    print("Инварианты INF-21: все выполнены.")
 
 
 if __name__ == "__main__":

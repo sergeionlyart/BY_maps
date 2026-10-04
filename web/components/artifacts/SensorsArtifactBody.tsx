@@ -22,7 +22,7 @@ export default function SensorsArtifactBody() {
   return (
     <div className="page">
       <div className="page-breadcrumb">
-        <Link href={p('/artifacts')}>{t('Артефакты')}</Link> · INF-21
+        <Link href={p('/artifacts')}>{t('Артефакты')}</Link> · INF-22
       </div>
       <h1>{t('Пакет: Второй сенсор')}</h1>
       <p className="page-lead">

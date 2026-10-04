@@ -1,4 +1,4 @@
-"""Тесты INF-21 (sensors): гейты V-1…V-5, формулы, окна, вердикты.
+"""Тесты INF-22 (sensors): гейты V-1…V-5, формулы, окна, вердикты.
 
 Пререгистрация: docs/preregistration/sensors-v0.1.md (с поправкой 1 от
 2026-10-04: окна O/G 1990-2020 — без Дрибинского района).
@@ -111,7 +111,7 @@ def test_export_and_csv(res):
     for k in ("version", "code", "territories", "findings", "gates", "posthoc",
               "summary", "windows"):
         assert k in exported, k
-    assert exported["code"] == "INF-21"
+    assert exported["code"] == "INF-22"
     assert len(exported["territories"]) == 118
     import csv
     with open(CURATED / "sensors.csv", encoding="utf-8") as f:

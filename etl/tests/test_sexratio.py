@@ -1,4 +1,4 @@
-"""Тесты INF-20 (sexratio): гейты S-1…S-6, формулы, периметры, форма экспорта.
+"""Тесты INF-21 (sexratio): гейты S-1…S-6, формулы, периметры, форма экспорта.
 
 Пререгистрация: docs/preregistration/sexratio-v0.1.md (с тремя датированными
 поправками от 2026-10-04 к гейтам S-2, S-4, S-6 — тесты проверяют именно
@@ -209,7 +209,7 @@ def test_export_shape(exported):
     for key in ("version", "code", "territories", "findings", "gates",
                 "posthoc", "age_groups", "node_years", "core_scenario"):
         assert key in exported, key
-    assert exported["code"] == "INF-20"
+    assert exported["code"] == "INF-21"
     assert exported["age_groups"] == AGE_GROUPS
 
 

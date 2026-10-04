@@ -1,4 +1,4 @@
-# Проверяемый пакет INF-21 «Второй сенсор».
+# Проверяемый пакет INF-22 «Второй сенсор».
 # Сборка: python -m etl.artifacts.build sensors
 
 id: sensors

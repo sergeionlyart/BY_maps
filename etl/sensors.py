@@ -1,4 +1,4 @@
-"""INF-21 `sensors`: «Второй сенсор» — сходятся ли три измерения населения.
+"""INF-22 `sensors`: «Второй сенсор» — сходятся ли три измерения населения.
 
 Вопрос: показывают ли официальная статистика, спутниковая модель расселения
 GHS-POP и ночные огни одну и ту же географию убывания населения по 118 районам
@@ -376,7 +376,7 @@ def build() -> dict:
                        for k, s in r["series"].items()}
 
     return {
-        "version": VERSION, "code": "INF-21",
+        "version": VERSION, "code": "INF-22",
         "preregistration": "docs/preregistration/sensors-v0.1.md",
         "epochs": EPOCHS,
         "windows": {"OG": list(WIN_OG), "OG_robust": list(WIN_OG_ROBUST),
@@ -412,7 +412,7 @@ def main() -> None:
                               sort_keys=True) + "\n")
     p = write_csv(res)
     g = res["gates"]
-    print(f"INF-21 sensors v{VERSION}")
+    print(f"INF-22 sensors v{VERSION}")
     print("  гейты: " + "  ".join(f"{k} {'ok' if g[k]['pass'] else 'FAIL'}"
                                     for k in ("V-1", "V-2", "V-3", "V-4", "V-5")))
     for h, v in res["findings"].items():

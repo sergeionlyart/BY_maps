@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { RESEARCH } from './research';
 
 describe('реестр исследований', () => {
-  it('слаги уникальны; коды — INF-01..09 + ML + INF-12 + INF-13 + INF-15 + INF-20 + INF-20 + INF-21', () => {
+  it('слаги уникальны; коды — INF-01..09 + ML + INF-12 + INF-13 + INF-15 + INF-20 + INF-21 + INF-22', () => {
     const slugs = RESEARCH.map((r) => r.slug);
     expect(new Set(slugs).size).toBe(slugs.length);
     /* INF-15 BEGIN */
@@ -14,8 +14,8 @@ describe('реестр исследований', () => {
       'INF-13',
       'INF-15',
       /* INF-20 BEGIN */ 'INF-20', /* INF-20 END */
-      'INF-20',
       'INF-21',
+      'INF-22',
     ]);
     /* INF-15 END */
   });

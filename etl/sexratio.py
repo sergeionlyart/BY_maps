@@ -1,4 +1,4 @@
-"""INF-20 `sexratio`: карта, где не хватает мужчин.
+"""INF-21 `sexratio`: карта, где не хватает мужчин.
 
 Вопрос: где в Беларуси не хватает мужчин, а где — женщин; как половая
 диспропорция распределена по возрастам и 118 районам от переписи 2009 года до
@@ -609,7 +609,7 @@ def build() -> dict:
 
     return {
         "version": VERSION,
-        "code": "INF-20",
+        "code": "INF-21",
         "posthoc": posthoc,
         "preregistration": "docs/preregistration/sexratio-v0.1.md",
         "age_groups": AGE_GROUPS,
@@ -666,7 +666,7 @@ def main() -> None:
     csv_path = write_csv(res)
 
     g = res["gates"]
-    print(f"INF-20 sexratio v{VERSION}")
+    print(f"INF-21 sexratio v{VERSION}")
     print(f"  гейты: S-1 {'ok' if g['S-1']['pass'] else 'FAIL'}"
           f"  S-2 {'ok' if g['S-2']['pass'] else 'FAIL'}"
           f" ({g['S-2']['country_sex_ratio_2019']} м на 100 ж, страна 2019)"
