@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { DataFile } from '@/lib/types';
-import { useT } from '@/lib/i18n';
+import { useLang, useT } from '@/lib/i18n';
 import { DIV_MID, DIV_NEG, DIV_POS, SEQ } from '@/lib/scales';
 import MethodDrawer from './MethodDrawer';
 
@@ -276,6 +276,27 @@ function AgeProfile({ groups, census, current, currentYear, isModel }: {
           {currentYear}{isModel ? ` — ${t('модель')}` : ''}
         </span>
       </div>
+    </div>
+  );
+}
+
+/* ----------------------------------------------------------- видеоверсия */
+
+/** Рилс R-S1 (1080×1920, 42 с, RU/BE): tools/render_reel_sexratio.py, все
+ *  числа в кадрах — из того же sexratio.json. Здесь — перекодировка CRF 18;
+ *  каноническая CBR-версия не версионируется. preload="none": ролик не
+ *  тянется, пока читатель не нажал play. */
+function Reel() {
+  const t = useT();
+  const base = useLang() === 'be' ? '/video/reel_sexratio_be' : '/video/reel_sexratio_ru';
+  return (
+    <div className="chart-block pen-reel-block">
+      <div className="chart-title">{t('Видеоверсия исследования — 42 секунды')}</div>
+      <video className="pen-reel" src={`${base}.mp4`} poster={`${base}.webp`}
+        controls playsInline preload="none" width={1080} height={1920} />
+      <p className="hint pen-reel-caption">
+        {t('Ролик собран из тех же данных, что и эта страница, и показывает опровержение главной гипотезы отдельной сценой.')}
+      </p>
     </div>
   );
 }
@@ -582,6 +603,8 @@ export default function SexRatioView() {
           {PH.census_perimeter_h1.spearman_rho.toFixed(3)} (p = {PH.census_perimeter_h1.spearman_p.toFixed(4)}). {t('Мужской перевес сильнее в малых районах: ρ по людности =')} {PH.size_effect.spearman_rho.toFixed(3)}.
         </div>
       </div>
+
+      <Reel />
 
       <div className="chart-block">
         <div className="chart-title">

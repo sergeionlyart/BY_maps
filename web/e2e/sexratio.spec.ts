@@ -183,3 +183,17 @@ test('раздел виден в индексах исследований и а
   }
   expect(errors).toEqual([]);
 });
+
+test('видеоверсия: блок есть, ролик не грузится до нажатия, файлы на месте (RU/BE)', async ({ page, request }) => {
+  for (const [path, lang] of [['/research/sexratio', 'ru'], ['/be/research/sexratio', 'be']] as const) {
+    await page.goto(path);
+    await ready(page);
+    const video = page.locator('video.pen-reel');
+    await expect(video).toHaveAttribute('preload', 'none');
+    await expect(video).toHaveAttribute('src', `/video/reel_sexratio_${lang}.mp4`);
+    for (const ext of ['mp4', 'webp']) {
+      const r = await request.get(`/video/reel_sexratio_${lang}.${ext}`);
+      expect(r.status(), `${lang}.${ext}`).toBe(200);
+    }
+  }
+});
