@@ -1637,6 +1637,7 @@ a.service-card:hover .sc-cta { text-decoration: underline; }
 .gv-layer-toggles { font-size: 13px; opacity: 0.92; }
 .gv-layer-toggles .btn { padding: 5px 12px; font-size: 13px; }
 .gv-metric-switch { display: inline-flex; gap: 6px; flex-wrap: wrap; }
+.gv-metric-switch .btn.active { background: var(--accent); color: #fff; border-color: transparent; }
 .gv-toggle { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; cursor: pointer; }
 .gv-toolbar-hint { min-height: 1.4em; margin: 0 0 2px; }
 .gv-map { width: 100%; height: 62vh; min-height: 380px; max-height: 640px; border-radius: 10px; overflow: hidden; border: 1px solid var(--border); }

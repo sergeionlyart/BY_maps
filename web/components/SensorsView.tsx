@@ -139,7 +139,7 @@ function Scatter({ pts, xLabel, yLabel, names, selected, onSelect }: {
   const [ref, width] = useWidth(420);
   const [hover, setHover] = useState<string | null>(null);
   const height = 300;
-  const M = { top: 10, right: 12, bottom: 40, left: 48 };
+  const M = { top: 10, right: 12, bottom: 40, left: 62 };
   const xs = pts.map((p) => p.x), ys = pts.map((p) => p.y);
   const pad = (a: number, b: number) => [a - (b - a) * 0.06, b + (b - a) * 0.06];
   const [x0, x1] = pad(Math.min(...xs, 0), Math.max(...xs, 0));
@@ -147,18 +147,21 @@ function Scatter({ pts, xLabel, yLabel, names, selected, onSelect }: {
   const iw = width - M.left - M.right, ih = height - M.top - M.bottom;
   const X = (v: number) => M.left + ((v - x0) / (x1 - x0)) * iw;
   const Y = (v: number) => M.top + ih - ((v - y0) / (y1 - y0)) * ih;
-  const ticks = (a: number, b: number) => [-0.4, -0.2, 0, 0.2, 0.4, 0.6].filter((v) => v >= a && v <= b);
+  // засечки — круглые проценты, переведённые в лог-единицы оси
+  const ticks = (a: number, b: number) => [-50, -25, 0, 25, 50, 100, 200]
+    .map((p) => ({ p, v: Math.log(1 + p / 100) })).filter(({ v }) => v >= a && v <= b);
+  const tl = (p: number) => (p === 0 ? '0' : `${p > 0 ? '+' : '−'}${Math.abs(p)}%`);
   const hp = hover ? pts.find((p) => p.id === hover) : null;
   return (
     <div className="chart-svg-wrap" ref={ref}>
       <svg width={width} height={height} role="img" aria-label={`${xLabel} / ${yLabel}`}>
         <line x1={X(0)} x2={X(0)} y1={M.top} y2={M.top + ih} stroke="var(--baseline)" />
         <line x1={M.left} x2={width - M.right} y1={Y(0)} y2={Y(0)} stroke="var(--baseline)" />
-        {ticks(x0, x1).map((v) => (
-          <text key={'x' + v} x={X(v)} y={height - 24} textAnchor="middle" fontSize="10" fill="var(--muted)">{fmtPct(v).replace(' ', '')}</text>
+        {ticks(x0, x1).map(({ p, v }) => (
+          <text key={'x' + p} x={X(v)} y={height - 24} textAnchor="middle" fontSize="10" fill="var(--muted)">{tl(p)}</text>
         ))}
-        {ticks(y0, y1).map((v) => (
-          <text key={'y' + v} x={M.left - 6} y={Y(v) + 3} textAnchor="end" fontSize="10" fill="var(--muted)">{fmtPct(v).replace(' ', '')}</text>
+        {ticks(y0, y1).map(({ p, v }) => (
+          <text key={'y' + p} x={M.left - 6} y={Y(v) + 3} textAnchor="end" fontSize="10" fill="var(--muted)">{tl(p)}</text>
         ))}
         <text x={M.left + iw / 2} y={height - 6} textAnchor="middle" fontSize="10.5" fill="var(--ink-2)">{xLabel}</text>
         <text x={12} y={M.top + ih / 2} textAnchor="middle" fontSize="10.5" fill="var(--ink-2)"
