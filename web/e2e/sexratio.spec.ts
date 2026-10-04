@@ -60,9 +60,12 @@ test('плитка женского перевеса берёт числа из 
   const tile = page.locator('.stat-tile').nth(1);
   await expect(tile).toContainText('95');
   await expect(tile).toContainText('23');
-  await expect(tile).toContainText('8');
-  await expect(tile).toContainText('13');
   await expect(tile).not.toContainText('почти все пригороды');
+  // разбивка вынесена строкой под плитки (на телефоне плитка не вытягивается)
+  const breakdown = page.locator('p.hint', { hasText: 'районов с женским перевесом' });
+  await expect(breakdown).toContainText('23');
+  await expect(breakdown).toContainText('включают свой областной город');
+  await expect(breakdown).toContainText('13');
 });
 
 test('ползунок: 2019 — перепись, 2036 — модель с пометкой', async ({ page }) => {
@@ -95,7 +98,10 @@ test('deep-link ?sel= открывает профиль района и пред
   await page.goto('/research/sexratio?sel=r-ivacevicki');
   await ready(page);
   await expect(page.locator('.chart-block .chart-title').nth(1)).toContainText('Ивацевичский');
-  await expect(page.locator('.chart-legend')).toContainText('перепись 2019');
+  const legend = page.locator('.chart-legend');
+  await expect(legend).toContainText('перепись 2019');
+  // при выбранном 2019 вторая линия — 2009, а не дубль 2019
+  await expect(legend).toContainText('2009');
   await expect(page.locator('.gv-story-caveat')).toContainText('закрытых учреждений');
   expect(errors).toEqual([]);
 });

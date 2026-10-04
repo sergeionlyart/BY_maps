@@ -228,7 +228,7 @@ function AgeProfile({ groups, census, current, currentYear, isModel }: {
     .map((v, i) => (v == null ? null : `${X(i).toFixed(1)} ${Y(v).toFixed(1)}`))
     .filter(Boolean).map((p, i) => `${i ? 'L' : 'M'}${p}`).join('');
 
-  const ticks = [40, 60, 80, 100, 120].filter((v) => v >= y0 && v <= y1);
+  const ticks = [20, 40, 60, 80, 100, 120, 140, 160, 180].filter((v) => v >= y0 && v <= y1);
 
   return (
     <div className="chart-svg-wrap" ref={wrapRef}>
@@ -243,7 +243,9 @@ function AgeProfile({ groups, census, current, currentYear, isModel }: {
               fill="var(--muted)">{v}</text>
           </g>
         ))}
-        <text x={M.left + 4} y={Y(100) - 5} fontSize="9.5" fill="var(--muted)">
+        {/* подпись справа: к старшим возрастам линии уходят далеко ниже 100 */}
+        <text x={width - M.right} y={Y(100) - 5} textAnchor="end" fontSize="9.5"
+          fill="var(--muted)">
           {t('паритет 100')}
         </text>
         {groups.map((g, i) => (i % 2 === 0 ? (
@@ -345,8 +347,11 @@ export default function SexRatioView() {
   const PH = data.posthoc;
   const rec = sel ? data.territories[sel] : null;
   const recSum = sel ? summaryFor(sel) : undefined;
+  // Сравниваемая серия профиля: выбранный год; если выбран сам 2019 —
+  // перепись 2009, иначе обе линии совпадут и опорная скроется под второй.
+  const cmpYear = year === 2019 ? 2009 : year;
   const profCur = rec
-    ? (isModel ? rec.forecast_profile[String(year)] : rec.profile[String(year)])
+    ? (isModel ? rec.forecast_profile[String(cmpYear)] : rec.profile[String(cmpYear)])
     : null;
 
   const FS = data.female_surplus_2019;
@@ -395,22 +400,26 @@ export default function SexRatioView() {
           <div className="st-label">{t('Мужской перевес в 25–39')}</div>
           <div className="st-value">{FS.n_male_surplus} {t('из')} {FS.n_male_surplus + FS.n}</div>
           <div className="st-delta">
-            {t('районов. В остальных')} {FS.n} {t('— женский перевес:')} {FS.hosted_city}{' '}
-            {t('включают свой областной город,')} {FS.minsk_belt_30min}{' '}
-            {t('— пригороды Минска, ещё')} {FS.other}{' '}
-            {t('— прочие районы, из них в Гомельской области —')} {FS.other_by_oblast['BY-HO'] ?? 0}
+            {t('районов; в остальных')} {FS.n} {t('— женский')}
           </div>
         </div>
         <div className="stat-tile">
           <div className="st-label">{t('В возрасте 70+')}</div>
           <div className="st-value">{F.H4.median_r70_2019.toFixed(1)}</div>
           <div className="st-delta">
-            {t('мужчин на 100 женщин — медиана районов; максимум по стране')}{' '}
+            {t('мужчин на 100 женщин — медиана районов; максимум среди районов')}{' '}
             {F.H4.max_r70_2019.toFixed(1)}, {t('к 2046 медиана растёт до')}{' '}
             {F.H4.median_r70_2046.toFixed(1)}
           </div>
         </div>
       </div>
+
+      <p className="hint">
+        {t('Из')} {FS.n} {t('районов с женским перевесом в 25–39')} {FS.hosted_city}{' '}
+        {t('включают свой областной город,')} {FS.minsk_belt_30min}{' '}
+        {t('— пригороды Минска, ещё')} {FS.other}{' '}
+        {t('— прочие районы, из них в Гомельской области —')} {FS.other_by_oblast['BY-HO'] ?? 0}.
+      </p>
 
       <div className="gv-play-row">
         <button className="play-btn gv-play-big" onClick={() => {
@@ -493,7 +502,7 @@ export default function SexRatioView() {
           </div>
           {rec && profCur ? (
             <AgeProfile groups={data.age_groups} census={rec.profile['2019']}
-              current={profCur} currentYear={year} isModel={isModel} />
+              current={profCur} currentYear={cmpYear} isModel={isModel} />
           ) : (
             <p className="hint">
               {t('Профиль показывает, где именно в возрастах возникает перекос: в молодых возрастах он обычно мужской, после 60 — резко женский.')}
