@@ -1,0 +1,1379 @@
+{
+"head": {
+"vars": [
+"item",
+"lv",
+"ru",
+"coord",
+"cap",
+"capLv",
+"capCoord",
+"inception",
+"dissolved"
+]
+},
+"results": {
+"bindings": [
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q104036"
+},
+"capLv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Ventspils"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q858852"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(21.564444444 57.389722222)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Вентспилсский район"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Ventspils rajons"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(21.533333333 57.416666666)"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2009-01-01T00:00:00Z"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q167668"
+},
+"capLv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Liepāja"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q843678"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(21.011111111 56.508333333)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Лиепайский район"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Liepājas rajons"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(21.013888888 56.511666666)"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q180379"
+},
+"capLv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Rēzekne"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q858857"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.330833333 56.506666666)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Резекненский район"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Rēzeknes rajons"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.337588888 56.509313888)"
+},
+"inception": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "1949-12-31T00:00:00Z"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2009-01-01T00:00:00Z"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q191120"
+},
+"capLv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Jēkabpils"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q843675"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(25.866388888 56.4975)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Екабпилсский район"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Jēkabpils rajons"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(25.85 56.5)"
+},
+"inception": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "1949-12-31T00:00:00Z"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2009-07-01T00:00:00Z"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q218402"
+},
+"capLv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Balvi"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q603324"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.266666666 57.129166666)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Балвский район"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Balvu rajons"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.263888888 57.13)"
+},
+"inception": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "1949-01-01T00:00:00Z"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2009-01-01T00:00:00Z"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q291333"
+},
+"capLv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Alūksne"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q771190"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.050277777 57.423888888)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Алуксненский район"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Alūksnes rajons"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.0 57.416666666)"
+},
+"inception": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "1949-01-01T00:00:00Z"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2009-01-01T00:00:00Z"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q411715"
+},
+"capLv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Aizkraukle"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q842236"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(25.255 56.600833333)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Айзкраукльский район"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Aizkraukles rajons"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(25.25 56.65)"
+},
+"inception": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "1967-01-10T00:00:00Z"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2009-07-01T00:00:00Z"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q987161"
+},
+"capLv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Nereta"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4317471"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(25.307777777 56.204444444)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Неретский район"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Neretas rajons"
+},
+"inception": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "1949-01-01T00:00:00Z"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "1956-01-01T00:00:00Z"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q166684"
+},
+"capLv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Limbaži"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q823393"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(24.713055555 57.514722222)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Лимбажский район"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Limbažu rajons"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(24.716666666 57.516666666)"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q107582"
+},
+"capLv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Cēsis"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q845282"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(25.274722222 57.313055555)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Цесисский район"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Cēsu rajons"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(25.266666666 57.316666666)"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q849141"
+},
+"capLv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Varakļāni"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4103560"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(26.755 56.607777777)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Вараклянский район"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Varakļānu rajons"
+},
+"inception": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "1949-01-01T00:00:00Z"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "1956-01-01T00:00:00Z"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q840823"
+},
+"capLv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Saulkrasti"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4409124"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(24.416388888 57.263611111)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Саулкрастский район"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Saulkrastu rajons"
+},
+"inception": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "1949-01-01T00:00:00Z"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "1956-01-01T00:00:00Z"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q498256"
+},
+"capLv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Bauska"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q845273"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(24.1875 56.406666666)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Бауский район"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Bauskas rajons"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(24.183333333 56.4)"
+},
+"inception": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "1949-01-01T00:00:00Z"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2009-01-01T00:00:00Z"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q420333"
+},
+"capLv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Aknīste"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4059704"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(25.741111111 56.162222222)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Акнистский район"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Aknīstes rajons"
+},
+"inception": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "1949-01-01T00:00:00Z"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "1956-01-01T00:00:00Z"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q432829"
+},
+"capLv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Alsunga"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4062881"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(21.566666666 56.980277777)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Алсунгский район"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Alsungas rajons"
+},
+"inception": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "1949-01-01T00:00:00Z"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "1956-01-01T00:00:00Z"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q636935"
+},
+"capLv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Tukums"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q843542"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(23.15352 56.9687895)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Тукумсский район"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Tukuma rajons"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(23.15 56.966666666)"
+},
+"inception": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "1949-01-01T00:00:00Z"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2009-01-01T00:00:00Z"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q520405"
+},
+"capLv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Talsi"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q843562"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(22.588888888 57.244722222)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Талсинский район"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Talsu rajons"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(22.6 57.25)"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q638592"
+},
+"capLv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Krāslava"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q733450"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.164444444 55.895555555)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Краславский район"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Krāslavas rajons"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.166666666 55.883333333)"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q731915"
+},
+"capLv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Ogre"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q843567"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(24.604722222 56.816944444)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Огрский район"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Ogres rajons"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(24.605555555 56.818611111)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q246562"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Лудзенский район"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Ludzas rajons"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.716666666 56.55)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q569307"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Мадонский район"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Madonas rajons"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(26.216666666 56.85)"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2009-01-01T00:00:00Z"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q692623"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Рижский район"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Rīgas rajons"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(24.106389 56.948889)"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2009-01-01T00:00:00Z"
+},
+"inception": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "1949-12-31T00:00:00Z"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q745143"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Даугавпилсский район"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Daugavpils rajons"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(26.533333333 55.883333333)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q843399"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Салдусский район"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Saldus rajons"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(22.5 56.666666666)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q843546"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Валмиерский район"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Valmieras rajons"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(25.4 57.55)"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2009-01-01T00:00:00Z"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q843551"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Кулдигский район"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Kuldīgas rajons"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(21.971666666 56.968611111)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q845269"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Прейльский район"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Preiļu rajons"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(26.716666666 56.3)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q845276"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Добельский район"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Dobeles rajons"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(23.266666666 56.616666666)"
+},
+"inception": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "1949-12-31T00:00:00Z"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q845279"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Валкский район"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Valkas rajons"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(26.01 57.775)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q851848"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Елгавский район"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Jelgavas rajons"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(23.712777777 56.65)"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2009-07-01T00:00:00Z"
+},
+"inception": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "1949-12-31T00:00:00Z"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2451571"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Курземский район"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Kurzemes rajons"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(24.029045 56.996623)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2560805"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Центральный район"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Centra rajons"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(24.118333333 56.951111111)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2563668"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Северный район"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Ziemeļu rajons"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(24.116666666 57.033333333)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4149001"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Гривский район"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Grīvas rajons"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "1955-01-01T00:00:00Z"
+},
+"inception": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "1949-01-01T00:00:00Z"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q15218660"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Bebru rajons"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(25.89055556 56.49222222)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q16353768"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Центральный район"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Centra rajons"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.335681 56.51385)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q16354405"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Южный район"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Dienvidu rajons"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.325717 56.49617)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q16356888"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Северный район"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Ziemeļu rajons"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.344504 56.533051)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q55656713"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Vaivaru-Asaru-Mellužu-Pumpuru-Jaundubultu vasarnīcu rajons"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(23.715629956 56.963170487)"
+},
+"inception": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "1801-01-01T00:00:00Z"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q55657611"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Vecbulduru zvejniekciems un vasarnīcu rajons"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(23.866563767 56.977903347)"
+},
+"inception": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "1801-01-01T00:00:00Z"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q55660878"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Priedaines vasarnīcu rajons"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(23.892 56.9738)"
+},
+"inception": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "1901-01-01T00:00:00Z"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q65118173"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Юго-Западный район"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Dienvidrietumu rajons"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(21.002222222 56.488888888)"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q753010"
+},
+"capLv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Gulbene"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q845286"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(26.756388888 57.175)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Гулбенский район"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Gulbenes rajons"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(26.761111111 57.1725)"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q835771"
+},
+"capLv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Jaunjelgava"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4539642"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(25.081388888 56.6175)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Яунелгавский район"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Jaunjelgavas rajons"
+},
+"inception": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "1949-01-01T00:00:00Z"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "1956-01-01T00:00:00Z"
+}
+}
+]
+},
+"_query": "SELECT ?item ?lv ?ru ?coord ?cap ?capLv ?capCoord ?inception ?dissolved WHERE {\n  ?item wdt:P17 wd:Q211 ; rdfs:label ?lv .\n  FILTER(lang(?lv)=\"lv\" && STRENDS(?lv, \" rajons\"))\n  OPTIONAL { ?item rdfs:label ?ru FILTER(lang(?ru)=\"ru\") }\n  OPTIONAL { ?item wdt:P625 ?coord }\n  OPTIONAL { ?item wdt:P36 ?cap . ?cap wdt:P625 ?capCoord . OPTIONAL { ?cap rdfs:label ?capLv FILTER(lang(?capLv)=\"lv\") } }\n  OPTIONAL { ?item wdt:P571 ?inception }\n  OPTIONAL { ?item wdt:P576 ?dissolved }\n}",
+"_accessed": "2026-10-04T06:03:25Z"
+}

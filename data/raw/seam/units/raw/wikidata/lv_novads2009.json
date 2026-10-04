@@ -1,0 +1,1179 @@
+{
+"head": {
+"vars": [
+"item",
+"lv",
+"ru",
+"coord",
+"cap",
+"capLv",
+"capCoord",
+"inception",
+"dissolved",
+"atvk"
+]
+},
+"results": {
+"bindings": [
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q203375"
+},
+"capLv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Zilupe"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q3274762"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.1225 56.385555555)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Зилупский край"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Zilupes novads"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.1212 56.3873)"
+},
+"inception": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2002-01-01T00:00:00Z"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2021-06-30T00:00:00Z"
+},
+"atvk": {
+"type": "literal",
+"value": "0681801"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q638592"
+},
+"capLv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Krāslava"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1831695"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.164444444 55.895555555)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Краславский край"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Krāslavas novads"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.16666667 55.9)"
+},
+"inception": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2001-01-01T00:00:00Z"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2021-06-30T00:00:00Z"
+},
+"atvk": {
+"type": "literal",
+"value": "0600202"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q638592"
+},
+"capLv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Krāslava"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q97231555"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.164444444 55.895555555)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Краславский край"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Krāslavas novads"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.416666666 56.0)"
+},
+"inception": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2021-07-01T00:00:00Z"
+},
+"atvk": {
+"type": "literal",
+"value": "0032000"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q218402"
+},
+"capLv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Balvi"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2018672"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.266666666 57.129166666)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Балвский край"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Balvu novads"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.25 57.13333333)"
+},
+"inception": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2009-07-01T00:00:00Z"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2021-06-30T00:00:00Z"
+},
+"atvk": {
+"type": "literal",
+"value": "0380200"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q580373"
+},
+"capLv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Ilūkste"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2025473"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(26.296666666 55.978055555)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Илукстский край"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Ilūkstes novads"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(26.3 55.98333333)"
+},
+"inception": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2003-01-01T00:00:00Z"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2021-06-30T00:00:00Z"
+},
+"atvk": {
+"type": "literal",
+"value": "0440801"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q372999"
+},
+"capLv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Aglona"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2045300"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.016666666 56.123333333)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Аглонский край"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Aglonas novads"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.014265 56.126132)"
+},
+"inception": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2009-07-01T00:00:00Z"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2021-06-30T00:00:00Z"
+},
+"atvk": {
+"type": "literal",
+"value": "0604300"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q218402"
+},
+"capLv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Balvi"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q97230143"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.266666666 57.129166666)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Балвский край"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Balvu novads"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.416666666 57.083333333)"
+},
+"inception": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2021-07-01T00:00:00Z"
+},
+"atvk": {
+"type": "literal",
+"value": "0024000"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q849156"
+},
+"capLv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Līvāni"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2277489"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(26.176111111 56.353888888)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Ливанский край"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Līvānu novads"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(26.333333333 56.366666666)"
+},
+"inception": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "1999-01-01T00:00:00Z"
+},
+"atvk": {
+"type": "literal",
+"value": "0036000"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q849147"
+},
+"capLv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Kārsava"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2395952"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.673888888 56.786666666)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Карсавский край"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Kārsavas novads"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.68472222 56.78388889)"
+},
+"inception": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2009-07-01T00:00:00Z"
+},
+"atvk": {
+"type": "literal",
+"value": "0681000"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2021-06-30T00:00:00Z"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q744259"
+},
+"capLv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Ludza"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q932445"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.721111111 56.543888888)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Лудзенский край"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Ludzas novads"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.71666667 56.55)"
+},
+"inception": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2009-07-01T00:00:00Z"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2021-06-30T00:00:00Z"
+},
+"atvk": {
+"type": "literal",
+"value": "0680200"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q757101"
+},
+"capLv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Dagda"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2361131"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.536944444 56.094722222)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Дагдский край"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Dagdas novads"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.666666666 56.166666666)"
+},
+"inception": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2009-07-01T00:00:00Z"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2021-06-30T00:00:00Z"
+},
+"atvk": {
+"type": "literal",
+"value": "0601000"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q744259"
+},
+"capLv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Ludza"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q97231943"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.721111111 56.543888888)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Лудзенский край"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Ludzas novads"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.833333333 56.533333333)"
+},
+"inception": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2021-07-01T00:00:00Z"
+},
+"atvk": {
+"type": "literal",
+"value": "0037000"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q7917870"
+},
+"capLv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Vecvārkava"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1023757"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(26.50833333 56.19833333)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Варкавский край"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Vārkavas novads"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(26.658333333 56.275)"
+},
+"inception": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2009-07-01T00:00:00Z"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2021-06-30T00:00:00Z"
+},
+"atvk": {
+"type": "literal",
+"value": "0769101"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2174949"
+},
+"capLv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Rugāji"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1837354"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.126944444 56.999444444)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Ругайский край"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Rugāju novads"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.12972222 57.00083333)"
+},
+"inception": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2009-07-01T00:00:00Z"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2021-06-30T00:00:00Z"
+},
+"atvk": {
+"type": "literal",
+"value": "0387500"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q15218695"
+},
+"capLv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Blonti"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1955102"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.775 56.61333333)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Циблский край"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Ciblas novads"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.883333333 56.55)"
+},
+"inception": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2009-07-01T00:00:00Z"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2021-06-30T00:00:00Z"
+},
+"atvk": {
+"type": "literal",
+"value": "0684901"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q942401"
+},
+"capLv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Riebiņi"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2106159"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(26.7975 56.339444444)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Риебиньский край"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Riebiņu novads"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(26.801111111 56.341388888)"
+},
+"inception": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2009-07-01T00:00:00Z"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2021-06-30T00:00:00Z"
+},
+"atvk": {
+"type": "literal",
+"value": "0766300"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q858476"
+},
+"capLv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Preiļi"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2277469"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(26.724722222 56.294166666)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Прейльский край"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Preiļu novads"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(26.716666666 56.3)"
+},
+"inception": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2009-07-01T00:00:00Z"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2021-06-30T00:00:00Z"
+},
+"atvk": {
+"type": "literal",
+"value": "0760202"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q858476"
+},
+"capLv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Preiļi"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q97232413"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(26.724722222 56.294166666)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Прейльский край"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Preiļu novads"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(26.75 56.333333333)"
+},
+"inception": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2021-07-01T00:00:00Z"
+},
+"atvk": {
+"type": "literal",
+"value": "0042000"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q180379"
+},
+"capLv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Rēzekne"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1518841"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.330833333 56.506666666)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Резекненский край"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Rēzeknes novads"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.216666666 56.483333333)"
+},
+"inception": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2009-07-01T00:00:00Z"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2021-06-30T00:00:00Z"
+},
+"atvk": {
+"type": "literal",
+"value": "0780200"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q180379"
+},
+"capLv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Rēzekne"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q97232589"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.330833333 56.506666666)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Резекненский край"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Rēzeknes novads"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.25 56.5)"
+},
+"inception": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2021-07-01T00:00:00Z"
+},
+"atvk": {
+"type": "literal",
+"value": "0043000"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q80021"
+},
+"capLv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Daugavpils"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q960572"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(26.516111111 55.871388888)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Даугавпилсский край"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Daugavpils novads"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(26.7 55.883333333)"
+},
+"inception": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2009-07-01T00:00:00Z"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2021-06-30T00:00:00Z"
+},
+"atvk": {
+"type": "literal",
+"value": "0440200"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q26441"
+},
+"capLv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Viļaka"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1869075"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.672222222 57.184166666)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Вилякский край"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Viļakas novads"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.6667 57.1667)"
+},
+"inception": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2009-07-01T00:00:00Z"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2021-06-30T00:00:00Z"
+},
+"atvk": {
+"type": "literal",
+"value": "0381600"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q30941626"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Rugāju novads"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q836513"
+},
+"capLv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Viļāni"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2018681"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(26.925277777 56.552777777)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Вилянский край"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Viļānu novads"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(26.9167 56.6667)"
+},
+"inception": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2009-07-01T00:00:00Z"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2021-06-30T00:00:00Z"
+},
+"atvk": {
+"type": "literal",
+"value": "0781800"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q805759"
+},
+"capLv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Baltinava"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2361012"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.644722222 56.944722222)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Балтинавский край"
+},
+"lv": {
+"xml:lang": "lv",
+"type": "literal",
+"value": "Baltinavas novads"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.65 56.95)"
+},
+"inception": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2009-07-01T00:00:00Z"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2021-06-30T00:00:00Z"
+},
+"atvk": {
+"type": "literal",
+"value": "0384400"
+}
+}
+]
+},
+"_query": "SELECT ?item ?lv ?ru ?coord ?cap ?capLv ?capCoord ?inception ?dissolved ?atvk WHERE {\n  VALUES ?lv { \"Aglonas novads\"@lv \"Baltinavas novads\"@lv \"Balvu novads\"@lv \"Ciblas novads\"@lv \"Dagdas novads\"@lv \"Daugavpils novads\"@lv \"Ilūkstes novads\"@lv \"Kārsavas novads\"@lv \"Krāslavas novads\"@lv \"Līvānu novads\"@lv \"Ludzas novads\"@lv \"Preiļu novads\"@lv \"Rēzeknes novads\"@lv \"Riebiņu novads\"@lv \"Rugāju novads\"@lv \"Vārkavas novads\"@lv \"Viļakas novads\"@lv \"Viļānu novads\"@lv \"Zilupes novads\"@lv }\n  ?item rdfs:label ?lv .\n  OPTIONAL { ?item rdfs:label ?ru FILTER(lang(?ru)=\"ru\") }\n  OPTIONAL { ?item wdt:P625 ?coord }\n  OPTIONAL { ?item wdt:P36 ?cap . ?cap wdt:P625 ?capCoord . OPTIONAL { ?cap rdfs:label ?capLv FILTER(lang(?capLv)=\"lv\") } }\n  OPTIONAL { ?item wdt:P571 ?inception }\n  OPTIONAL { ?item wdt:P576 ?dissolved }\n  OPTIONAL { ?item wdt:P1115 ?atvk }\n}",
+"_accessed": "2026-10-04T06:03:30Z"
+}

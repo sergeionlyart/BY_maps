@@ -10,6 +10,7 @@ const ARTIFACT_SLUGS = [
   'monotowns', 'chernobyl', 'nightlights', 'shocks', 'ml', 'forecast', 'pyramid',
   'urban-overhang',
   /* INF-13 BEGIN */ 'pension', /* INF-13 END */
+  /* INF-20 BEGIN */ 'seam', /* INF-20 END */
 ];
 
 /** Канонические RU-пути всех индексируемых страниц (BE-двойник добавляется автоматически). */
@@ -25,6 +26,7 @@ function ruPaths(): string[] {
     '/methodology',
     '/article',
     '/article/grid',
+    /* INF-20 BEGIN */ '/article/seam', /* INF-20 END */
     '/about',
     '/goals',
     '/author',

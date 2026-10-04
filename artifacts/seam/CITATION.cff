@@ -1,0 +1,40 @@
+cff-version: 1.2.0
+message: "Цитируйте конкретную версию пакета"
+title: "Шов на карте: Беларусь и соседи по обе стороны границы (проверяемый пакет)"
+type: dataset
+version: 1.0.0
+date-released: "2026-10-04"
+authors:
+  - name: "Проект «Население Беларуси, 1897–2026»"
+url: "https://by-population-maps.vercel.app/research/seam"
+repository-code: "https://github.com/sergeionlyart/BY_maps"
+identifiers:
+  - type: other
+    value: "artifact-seam-v1.0.0"
+    description: "git-тег релиза пакета"
+license: CC-BY-4.0
+references:
+  - type: dataset
+    title: "World Settlement Footprint Evolution"
+    authors:
+      - name: "German Aerospace Center (DLR)"
+  - type: dataset
+    title: "GHSL Data Package 2023 (GHS-BUILT-S R2023A, GHS-POP R2023A)"
+    authors:
+      - name: "European Commission, Joint Research Centre"
+  - type: dataset
+    title: "Harmonization of DMSP and VIIRS nighttime light data from 1992-2024 at the global scale (version 10)"
+    authors:
+      - family-names: "Li"
+        given-names: "Xuecao"
+    doi: "10.6084/m9.figshare.9828827.v10"
+  - type: article
+    title: "Global maps of cropland extent and change show accelerated cropland expansion in the twenty-first century"
+    authors:
+      - family-names: "Potapov"
+        given-names: "Peter"
+    journal: "Nature Food"
+    volume: 3
+    start: 19
+    end: 28
+    year: 2022

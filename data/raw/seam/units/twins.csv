@@ -1,0 +1,149 @@
+twin_group,country,unit_id,unit_name,year,population,source
+braslav_ignalina_kraslava,BY,r-braslauski,Браславский район,1989,35711,BY_maps:data.json(pop)
+braslav_ignalina_kraslava,BY,r-braslauski,Браславский район,1999,36123,BY_maps:data.json(pop)
+braslav_ignalina_kraslava,BY,r-braslauski,Браславский район,2009,29175,BY_maps:data.json(pop)
+braslav_ignalina_kraslava,BY,r-braslauski,Браславский район,2019,24679,BY_maps:data.json(pop)
+braslav_ignalina_kraslava,BY,r-braslauski,Браславский район,2026,22349,BY_maps:data.json(pop)
+braslav_ignalina_kraslava,LT,LT-SSR-ignalinskij_r,"Игналинский район (1989, вкл. г. Снечкус = Висагинас)",1989,59089,Demoscope:sng89_reg1
+braslav_ignalina_kraslava,LT,LT-45,Ignalinos r. sav.,1996,24772,OSP:S3R167_M3010214
+braslav_ignalina_kraslava,LT,LT-45,Ignalinos r. sav.,2001,23033,OSP:S3R167_M3010214
+braslav_ignalina_kraslava,LT,LT-45,Ignalinos r. sav.,2011,18468,OSP:S3R167_M3010214
+braslav_ignalina_kraslava,LT,LT-45,Ignalinos r. sav.,2021,14782,OSP:S3R167_M3010214
+braslav_ignalina_kraslava,LT,LT-45,Ignalinos r. sav.,2026,13127,OSP:S3R167_M3010214
+braslav_ignalina_kraslava,LT,LT-30,Visagino sav. (г. Снечкус в 1989 входил в Игналинский район),1996,31340,OSP:S3R167_M3010214
+braslav_ignalina_kraslava,LT,LT-30,Visagino sav. (г. Снечкус в 1989 входил в Игналинский район),2001,29697,OSP:S3R167_M3010214
+braslav_ignalina_kraslava,LT,LT-30,Visagino sav. (г. Снечкус в 1989 входил в Игналинский район),2011,22708,OSP:S3R167_M3010214
+braslav_ignalina_kraslava,LT,LT-30,Visagino sav. (г. Снечкус в 1989 входил в Игналинский район),2021,19633,OSP:S3R167_M3010214
+braslav_ignalina_kraslava,LT,LT-30,Visagino sav. (г. Снечкус в 1989 входил в Игналинский район),2026,19075,OSP:S3R167_M3010214
+braslav_ignalina_kraslava,LT,LT-45+LT-30,Ignalinos r. + Visagino sav. (≈ территория Игналинского района 1989),1996,56112,сумма: OSP:S3R167_M3010214 (LT-45 + LT-30)
+braslav_ignalina_kraslava,LT,LT-45+LT-30,Ignalinos r. + Visagino sav. (≈ территория Игналинского района 1989),2001,52730,сумма: OSP:S3R167_M3010214 (LT-45 + LT-30)
+braslav_ignalina_kraslava,LT,LT-45+LT-30,Ignalinos r. + Visagino sav. (≈ территория Игналинского района 1989),2011,41176,сумма: OSP:S3R167_M3010214 (LT-45 + LT-30)
+braslav_ignalina_kraslava,LT,LT-45+LT-30,Ignalinos r. + Visagino sav. (≈ территория Игналинского района 1989),2021,34415,сумма: OSP:S3R167_M3010214 (LT-45 + LT-30)
+braslav_ignalina_kraslava,LT,LT-45+LT-30,Ignalinos r. + Visagino sav. (≈ территория Игналинского района 1989),2026,32202,сумма: OSP:S3R167_M3010214 (LT-45 + LT-30)
+braslav_ignalina_kraslava,LV,LV-SSR-kraslavskij_r,Краславский район (1989),1989,41453,Demoscope:sng89_reg1
+braslav_ignalina_kraslava,LV,LV0600202,Krāslava novads (деление 2009–2021),1990,25318,CSP:IRS030
+braslav_ignalina_kraslava,LV,LV0600202,Krāslava novads (деление 2009–2021),2000,22900,CSP:IRS030
+braslav_ignalina_kraslava,LV,LV0600202,Krāslava novads (деление 2009–2021),2011,17559,CSP:IRS030
+braslav_ignalina_kraslava,LV,LV0600202,Krāslava novads (деление 2009–2021),2021,13533,CSP:IRS030
+braslav_ignalina_kraslava,LV,LV0600202,Krāslava novads (деление 2009–2021),2022,13165,CSP:IRS030
+braslav_ignalina_kraslava,LV,LV0601000,Dagda novads (деление 2009–2021),1990,12778,CSP:IRS030
+braslav_ignalina_kraslava,LV,LV0601000,Dagda novads (деление 2009–2021),2000,11178,CSP:IRS030
+braslav_ignalina_kraslava,LV,LV0601000,Dagda novads (деление 2009–2021),2011,8309,CSP:IRS030
+braslav_ignalina_kraslava,LV,LV0601000,Dagda novads (деление 2009–2021),2021,6475,CSP:IRS030
+braslav_ignalina_kraslava,LV,LV0601000,Dagda novads (деление 2009–2021),2022,6285,CSP:IRS030
+braslav_ignalina_kraslava,LV,LV0604300,Aglona novads (деление 2009–2021),1990,6141,CSP:IRS030
+braslav_ignalina_kraslava,LV,LV0604300,Aglona novads (деление 2009–2021),2000,5549,CSP:IRS030
+braslav_ignalina_kraslava,LV,LV0604300,Aglona novads (деление 2009–2021),2011,3958,CSP:IRS030
+braslav_ignalina_kraslava,LV,LV0604300,Aglona novads (деление 2009–2021),2021,3042,CSP:IRS030
+braslav_ignalina_kraslava,LV,LV0604300,Aglona novads (деление 2009–2021),2022,2954,CSP:IRS030
+braslav_ignalina_kraslava,LV,LV0600202+LV0601000+LV0604300,"Krāslava+Dagda+Aglona novads (Краславский rajons в границах 2009 г., ATVK 060…)",1990,44237,сумма: CSP:IRS030 (LV0600202 + LV0601000 + LV0604300)
+braslav_ignalina_kraslava,LV,LV0600202+LV0601000+LV0604300,"Krāslava+Dagda+Aglona novads (Краславский rajons в границах 2009 г., ATVK 060…)",2000,39627,сумма: CSP:IRS030 (LV0600202 + LV0601000 + LV0604300)
+braslav_ignalina_kraslava,LV,LV0600202+LV0601000+LV0604300,"Krāslava+Dagda+Aglona novads (Краславский rajons в границах 2009 г., ATVK 060…)",2011,29826,сумма: CSP:IRS030 (LV0600202 + LV0601000 + LV0604300)
+braslav_ignalina_kraslava,LV,LV0600202+LV0601000+LV0604300,"Krāslava+Dagda+Aglona novads (Краславский rajons в границах 2009 г., ATVK 060…)",2021,23050,сумма: CSP:IRS030 (LV0600202 + LV0601000 + LV0604300)
+braslav_ignalina_kraslava,LV,LV0600202+LV0601000+LV0604300,"Krāslava+Dagda+Aglona novads (Краславский rajons в границах 2009 г., ATVK 060…)",2022,22404,сумма: CSP:IRS030 (LV0600202 + LV0601000 + LV0604300)
+grodno_sokolka,BY,r-hrodzienski,"Гродненский район (полигон, вкл. г. Гродно)",1989,341487,BY_maps:data.json(pop)
+grodno_sokolka,BY,r-hrodzienski,"Гродненский район (полигон, вкл. г. Гродно)",1999,369675,BY_maps:data.json(pop)
+grodno_sokolka,BY,r-hrodzienski,"Гродненский район (полигон, вкл. г. Гродно)",2009,382065,BY_maps:data.json(pop)
+grodno_sokolka,BY,r-hrodzienski,"Гродненский район (полигон, вкл. г. Гродно)",2019,406127,BY_maps:data.json(pop)
+grodno_sokolka,BY,r-hrodzienski,"Гродненский район (полигон, вкл. г. Гродно)",2026,412736,BY_maps:data.json(pop)
+grodno_sokolka,BY,r-hrodzienski#admin,"Гродненский район (адм., без г. Гродно)",1989,70952,BY_maps:data.json(popAdmin)
+grodno_sokolka,BY,r-hrodzienski#admin,"Гродненский район (адм., без г. Гродно)",1999,68053,BY_maps:data.json(popAdmin)
+grodno_sokolka,BY,r-hrodzienski#admin,"Гродненский район (адм., без г. Гродно)",2009,54525,BY_maps:data.json(popAdmin)
+grodno_sokolka,BY,r-hrodzienski#admin,"Гродненский район (адм., без г. Гродно)",2019,50195,BY_maps:data.json(popAdmin)
+grodno_sokolka,BY,r-hrodzienski#admin,"Гродненский район (адм., без г. Гродно)",2026,47834,BY_maps:data.json(popAdmin)
+grodno_sokolka,PL,PL-2011 (powiat sokólski),Powiat sokólski — сумма 10 гмин,1988,80988,сумма: GUS_BDL 60641 (1995–2025) / 196130 (1988)
+grodno_sokolka,PL,PL-2011 (powiat sokólski),Powiat sokólski — сумма 10 гмин,1995,80506,сумма: GUS_BDL 60641 (1995–2025) / 196130 (1988)
+grodno_sokolka,PL,PL-2011 (powiat sokólski),Powiat sokólski — сумма 10 гмин,2002,74606,сумма: GUS_BDL 60641 (1995–2025) / 196130 (1988)
+grodno_sokolka,PL,PL-2011 (powiat sokólski),Powiat sokólski — сумма 10 гмин,2011,71678,сумма: GUS_BDL 60641 (1995–2025) / 196130 (1988)
+grodno_sokolka,PL,PL-2011 (powiat sokólski),Powiat sokólski — сумма 10 гмин,2021,62775,сумма: GUS_BDL 60641 (1995–2025) / 196130 (1988)
+grodno_sokolka,PL,PL-2011 (powiat sokólski),Powiat sokólski — сумма 10 гмин,2025,59827,сумма: GUS_BDL 60641 (1995–2025) / 196130 (1988)
+grodno_sokolka,PL,PL-2011013,Dąbrowa Białostocka (гмина powiatu sokólskiego),1988,13798,GUS_BDL:196130
+grodno_sokolka,PL,PL-2011013,Dąbrowa Białostocka (гмина powiatu sokólskiego),1995,14112,GUS_BDL:60641
+grodno_sokolka,PL,PL-2011013,Dąbrowa Białostocka (гмина powiatu sokólskiego),2002,13063,GUS_BDL:60641
+grodno_sokolka,PL,PL-2011013,Dąbrowa Białostocka (гмина powiatu sokólskiego),2011,12515,GUS_BDL:60641
+grodno_sokolka,PL,PL-2011013,Dąbrowa Białostocka (гмина powiatu sokólskiego),2021,10398,GUS_BDL:60641
+grodno_sokolka,PL,PL-2011013,Dąbrowa Białostocka (гмина powiatu sokólskiego),2025,9818,GUS_BDL:60641
+grodno_sokolka,PL,PL-2011022,Janów (гмина powiatu sokólskiego),1988,5179,GUS_BDL:196130
+grodno_sokolka,PL,PL-2011022,Janów (гмина powiatu sokólskiego),1995,4867,GUS_BDL:60641
+grodno_sokolka,PL,PL-2011022,Janów (гмина powiatu sokólskiego),2002,4543,GUS_BDL:60641
+grodno_sokolka,PL,PL-2011022,Janów (гмина powiatu sokólskiego),2011,4419,GUS_BDL:60641
+grodno_sokolka,PL,PL-2011022,Janów (гмина powiatu sokólskiego),2021,3822,GUS_BDL:60641
+grodno_sokolka,PL,PL-2011022,Janów (гмина powiatu sokólskiego),2025,3599,GUS_BDL:60641
+grodno_sokolka,PL,PL-2011032,Korycin (гмина powiatu sokólskiego),1988,3913,GUS_BDL:196130
+grodno_sokolka,PL,PL-2011032,Korycin (гмина powiatu sokólskiego),1995,3772,GUS_BDL:60641
+grodno_sokolka,PL,PL-2011032,Korycin (гмина powiatu sokólskiego),2002,3626,GUS_BDL:60641
+grodno_sokolka,PL,PL-2011032,Korycin (гмина powiatu sokólskiego),2011,3456,GUS_BDL:60641
+grodno_sokolka,PL,PL-2011032,Korycin (гмина powiatu sokólskiego),2021,3054,GUS_BDL:60641
+grodno_sokolka,PL,PL-2011032,Korycin (гмина powiatu sokólskiego),2025,3007,GUS_BDL:60641
+grodno_sokolka,PL,PL-2011043,Krynki (гмина powiatu sokólskiego),1988,4145,GUS_BDL:196130
+grodno_sokolka,PL,PL-2011043,Krynki (гмина powiatu sokólskiego),1995,4090,GUS_BDL:60641
+grodno_sokolka,PL,PL-2011043,Krynki (гмина powiatu sokólskiego),2002,3636,GUS_BDL:60641
+grodno_sokolka,PL,PL-2011043,Krynki (гмина powiatu sokólskiego),2011,3317,GUS_BDL:60641
+grodno_sokolka,PL,PL-2011043,Krynki (гмина powiatu sokólskiego),2021,2805,GUS_BDL:60641
+grodno_sokolka,PL,PL-2011043,Krynki (гмина powiatu sokólskiego),2025,2625,GUS_BDL:60641
+grodno_sokolka,PL,PL-2011052,Kuźnica (гмина powiatu sokólskiego),1988,5229,GUS_BDL:196130
+grodno_sokolka,PL,PL-2011052,Kuźnica (гмина powiatu sokólskiego),1995,4967,GUS_BDL:60641
+grodno_sokolka,PL,PL-2011052,Kuźnica (гмина powiatu sokólskiego),2002,4450,GUS_BDL:60641
+grodno_sokolka,PL,PL-2011052,Kuźnica (гмина powiatu sokólskiego),2011,4291,GUS_BDL:60641
+grodno_sokolka,PL,PL-2011052,Kuźnica (гмина powiatu sokólskiego),2021,3726,GUS_BDL:60641
+grodno_sokolka,PL,PL-2011052,Kuźnica (гмина powiatu sokólskiego),2025,3519,GUS_BDL:60641
+grodno_sokolka,PL,PL-2011062,Nowy Dwór (гмина powiatu sokólskiego),1988,3567,GUS_BDL:196130
+grodno_sokolka,PL,PL-2011062,Nowy Dwór (гмина powiatu sokólskiego),1995,3352,GUS_BDL:60641
+grodno_sokolka,PL,PL-2011062,Nowy Dwór (гмина powiatu sokólskiego),2002,3066,GUS_BDL:60641
+grodno_sokolka,PL,PL-2011062,Nowy Dwór (гмина powiatu sokólskiego),2011,2847,GUS_BDL:60641
+grodno_sokolka,PL,PL-2011062,Nowy Dwór (гмина powiatu sokólskiego),2021,2258,GUS_BDL:60641
+grodno_sokolka,PL,PL-2011062,Nowy Dwór (гмина powiatu sokólskiego),2025,2095,GUS_BDL:60641
+grodno_sokolka,PL,PL-2011072,Sidra (гмина powiatu sokólskiego),1988,4715,GUS_BDL:196130
+grodno_sokolka,PL,PL-2011072,Sidra (гмина powiatu sokólskiego),1995,4448,GUS_BDL:60641
+grodno_sokolka,PL,PL-2011072,Sidra (гмина powiatu sokólskiego),2002,4115,GUS_BDL:60641
+grodno_sokolka,PL,PL-2011072,Sidra (гмина powiatu sokólskiego),2011,3705,GUS_BDL:60641
+grodno_sokolka,PL,PL-2011072,Sidra (гмина powiatu sokólskiego),2021,3104,GUS_BDL:60641
+grodno_sokolka,PL,PL-2011072,Sidra (гмина powiatu sokólskiego),2025,2979,GUS_BDL:60641
+grodno_sokolka,PL,PL-2011083,Sokółka (гмина powiatu sokólskiego),1988,27642,GUS_BDL:196130
+grodno_sokolka,PL,PL-2011083,Sokółka (гмина powiatu sokólskiego),1995,28620,GUS_BDL:60641
+grodno_sokolka,PL,PL-2011083,Sokółka (гмина powiatu sokólskiego),2002,26995,GUS_BDL:60641
+grodno_sokolka,PL,PL-2011083,Sokółka (гмина powiatu sokólskiego),2011,26589,GUS_BDL:60641
+grodno_sokolka,PL,PL-2011083,Sokółka (гмина powiatu sokólskiego),2021,24353,GUS_BDL:60641
+grodno_sokolka,PL,PL-2011083,Sokółka (гмина powiatu sokólskiego),2025,23417,GUS_BDL:60641
+grodno_sokolka,PL,PL-2011093,Suchowola (гмина powiatu sokólskiego),1988,8175,GUS_BDL:196130
+grodno_sokolka,PL,PL-2011093,Suchowola (гмина powiatu sokólskiego),1995,8062,GUS_BDL:60641
+grodno_sokolka,PL,PL-2011093,Suchowola (гмина powiatu sokólskiego),2002,7542,GUS_BDL:60641
+grodno_sokolka,PL,PL-2011093,Suchowola (гмина powiatu sokólskiego),2011,7282,GUS_BDL:60641
+grodno_sokolka,PL,PL-2011093,Suchowola (гмина powiatu sokólskiego),2021,6464,GUS_BDL:60641
+grodno_sokolka,PL,PL-2011093,Suchowola (гмина powiatu sokólskiego),2025,6112,GUS_BDL:60641
+grodno_sokolka,PL,PL-2011102,Szudziałowo (гмина powiatu sokólskiego),1988,4625,GUS_BDL:196130
+grodno_sokolka,PL,PL-2011102,Szudziałowo (гмина powiatu sokólskiego),1995,4216,GUS_BDL:60641
+grodno_sokolka,PL,PL-2011102,Szudziałowo (гмина powiatu sokólskiego),2002,3570,GUS_BDL:60641
+grodno_sokolka,PL,PL-2011102,Szudziałowo (гмина powiatu sokólskiego),2011,3257,GUS_BDL:60641
+grodno_sokolka,PL,PL-2011102,Szudziałowo (гмина powiatu sokólskiego),2021,2791,GUS_BDL:60641
+grodno_sokolka,PL,PL-2011102,Szudziałowo (гмина powiatu sokólskiego),2025,2656,GUS_BDL:60641
+stolin_dubrovica_zarechnoe,BY,r-stolinski,Столинский район,1989,91812,BY_maps:data.json(pop)
+stolin_dubrovica_zarechnoe,BY,r-stolinski,Столинский район,1999,89026,BY_maps:data.json(pop)
+stolin_dubrovica_zarechnoe,BY,r-stolinski,Столинский район,2009,80695,BY_maps:data.json(pop)
+stolin_dubrovica_zarechnoe,BY,r-stolinski,Столинский район,2019,72161,BY_maps:data.json(pop)
+stolin_dubrovica_zarechnoe,BY,r-stolinski,Столинский район,2026,66836,BY_maps:data.json(pop)
+stolin_dubrovica_zarechnoe,UA,UA-RIV-dubrovickij_r,"Дубровицкий район (Демоскоп, границы 1989)",1989,56178,Demoscope:sng89_reg1
+stolin_dubrovica_zarechnoe,UA,UA-RIV-zarechnenskij_r,"Заречненский район (Демоскоп, границы 1989)",1989,37081,Demoscope:sng89_reg1
+stolin_dubrovica_zarechnoe,UA,UA-RIV-dubrovickij_old,Дубровицький район (старый; 1989 в границах 2001),1989,56200,Ukrcensus2001:estimated
+stolin_dubrovica_zarechnoe,UA,UA-RIV-dubrovickij_old,Дубровицький район (старый; 1989 в границах 2001),2001,50900,Ukrcensus2001:estimated
+stolin_dubrovica_zarechnoe,UA,UA-RIV-dubrovickij_old,Дубровицький район (старый; 1989 в границах 2001),2009,48585,Ukrstat:chnas_2011
+stolin_dubrovica_zarechnoe,UA,UA-RIV-dubrovickij_old,Дубровицький район (старый; 1989 в границах 2001),2020,46727,Ukrstat:zb_chuselnist_2020
+stolin_dubrovica_zarechnoe,UA,UA-RIV-zarichnenskij_old,Зарічненський район (старый; 1989 в границах 2001),1989,37100,Ukrcensus2001:estimated
+stolin_dubrovica_zarechnoe,UA,UA-RIV-zarichnenskij_old,Зарічненський район (старый; 1989 в границах 2001),2001,36100,Ukrcensus2001:estimated
+stolin_dubrovica_zarechnoe,UA,UA-RIV-zarichnenskij_old,Зарічненський район (старый; 1989 в границах 2001),2009,35104,Ukrstat:chnas_2011
+stolin_dubrovica_zarechnoe,UA,UA-RIV-zarichnenskij_old,Зарічненський район (старый; 1989 в границах 2001),2020,34722,Ukrstat:zb_chuselnist_2020
+rossony_sebezh_nevel,BY,r-rasonski,Россонский район,1989,15387,BY_maps:data.json(pop)
+rossony_sebezh_nevel,BY,r-rasonski,Россонский район,1999,15178,BY_maps:data.json(pop)
+rossony_sebezh_nevel,BY,r-rasonski,Россонский район,2009,11514,BY_maps:data.json(pop)
+rossony_sebezh_nevel,BY,r-rasonski,Россонский район,2019,9307,BY_maps:data.json(pop)
+rossony_sebezh_nevel,BY,r-rasonski,Россонский район,2026,7888,BY_maps:data.json(pop)
+rossony_sebezh_nevel,RU,RU-PSK-sebezhskij_r,Себежский район / муниципальный район,1989,26926,Demoscope:rus89_reg1
+rossony_sebezh_nevel,RU,RU-PSK-sebezhskij_r,Себежский район / муниципальный район,2002,25473,Rosstat:VPN2002_T1.4
+rossony_sebezh_nevel,RU,RU-PSK-sebezhskij_r,Себежский район / муниципальный район,2010,21674,Rosstat:VPN2010_T11
+rossony_sebezh_nevel,RU,RU-PSK-sebezhskij_r,Себежский район / муниципальный район,2021,19103,Rosstat:VPN2021_T5
+rossony_sebezh_nevel,RU,RU-PSK-sebezhskij_r,Себежский район / муниципальный район,2025,18046,Rosstat:BD_PMO_8112027
+rossony_sebezh_nevel,RU,RU-PSK-nevelskij_r,Невельский район / муниципальный округ,1989,38951,Demoscope:rus89_reg1
+rossony_sebezh_nevel,RU,RU-PSK-nevelskij_r,Невельский район / муниципальный округ,2002,31419,Rosstat:VPN2002_T1.4
+rossony_sebezh_nevel,RU,RU-PSK-nevelskij_r,Невельский район / муниципальный округ,2010,26657,Rosstat:VPN2010_T11
+rossony_sebezh_nevel,RU,RU-PSK-nevelskij_r,Невельский район / муниципальный округ,2021,21554,Rosstat:VPN2021_T5
+rossony_sebezh_nevel,RU,RU-PSK-nevelskij_r,Невельский район / муниципальный округ,2025,20047,Rosstat:BD_PMO_8112027

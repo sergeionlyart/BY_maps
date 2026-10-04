@@ -1,0 +1,857 @@
+country,unit_id,unit_name,lon,lat,coord_source
+BY,r-akciabrski,Октябрьский район,28.915589,52.641433,centroid:web/public/data/geo/adm2.geojson
+BY,r-arshanski,Оршанский район,30.365305,54.541767,centroid:web/public/data/geo/adm2.geojson
+BY,r-arshanski#admin,Оршанский район (адм. район),30.365305,54.541767,centroid:web/public/data/geo/adm2.geojson (полигон района с городом)
+BY,r-ashmianski,Ошмянский район,25.910686,54.376722,centroid:web/public/data/geo/adm2.geojson
+BY,r-asipovicki,Осиповичский район,28.663537,53.340136,centroid:web/public/data/geo/adm2.geojson
+BY,r-astraviecki,Островецкий район,26.047698,54.753504,centroid:web/public/data/geo/adm2.geojson
+BY,r-babrujski,Бобруйский район,29.218309,53.066444,centroid:web/public/data/geo/adm2.geojson
+BY,r-babrujski#admin,Бобруйский район (адм. район),29.218309,53.066444,centroid:web/public/data/geo/adm2.geojson (полигон района с городом)
+BY,r-baranavicki,Барановичский район,25.906615,53.156411,centroid:web/public/data/geo/adm2.geojson
+BY,r-baranavicki#admin,Барановичский район (адм. район),25.906615,53.156411,centroid:web/public/data/geo/adm2.geojson (полигон района с городом)
+BY,r-barysauski,Борисовский район,28.544532,54.325389,centroid:web/public/data/geo/adm2.geojson
+BY,r-bialynicki,Белыничский район,29.695138,53.92811,centroid:web/public/data/geo/adm2.geojson
+BY,r-biarezinski,Березинский район,29.04751,53.829142,centroid:web/public/data/geo/adm2.geojson
+BY,r-biarozauski,Березовский район,25.02239,52.493881,centroid:web/public/data/geo/adm2.geojson
+BY,r-bierastavicki,Берестовицкий район,23.960177,53.259824,centroid:web/public/data/geo/adm2.geojson
+BY,r-bieshankovicki,Бешенковичский район,29.5111,55.046598,centroid:web/public/data/geo/adm2.geojson
+BY,r-brahinski,Брагинский район,30.362708,51.649091,centroid:web/public/data/geo/adm2.geojson
+BY,r-braslauski,Браславский район,26.971429,55.561519,centroid:web/public/data/geo/adm2.geojson
+BY,r-brescki,Брестский район,23.72405,51.980487,centroid:web/public/data/geo/adm2.geojson
+BY,r-brescki#admin,Брестский район (адм. район),23.72405,51.980487,centroid:web/public/data/geo/adm2.geojson (полигон района с городом)
+BY,r-buda-kashalouski,Буда-Кошелёвский район,30.567359,52.708614,centroid:web/public/data/geo/adm2.geojson
+BY,r-bychauski,Быховский район,30.2377,53.477448,centroid:web/public/data/geo/adm2.geojson
+BY,r-chacherski,Чечерский район,31.007791,52.94104,centroid:web/public/data/geo/adm2.geojson
+BY,r-chashnicki,Чашникский район,29.154973,54.740246,centroid:web/public/data/geo/adm2.geojson
+BY,r-chavuski,Чаусский район,30.914326,53.795501,centroid:web/public/data/geo/adm2.geojson
+BY,r-chervienski,Червенский район,28.437538,53.745377,centroid:web/public/data/geo/adm2.geojson
+BY,r-cherykauski,Чериковский район,31.373411,53.58078,centroid:web/public/data/geo/adm2.geojson
+BY,r-chocimski,Хотимский район,32.457379,53.381253,centroid:web/public/data/geo/adm2.geojson
+BY,r-chojnicki,Хойникский район,29.943133,51.839627,centroid:web/public/data/geo/adm2.geojson
+BY,r-dobrushski,Добрушский район,31.481122,52.343715,centroid:web/public/data/geo/adm2.geojson
+BY,r-dokshycki,Докшицкий район,27.891835,54.847916,centroid:web/public/data/geo/adm2.geojson
+BY,r-drahichynski,Дрогичинский район,25.065019,52.158998,centroid:web/public/data/geo/adm2.geojson
+BY,r-drybinski,Дрибинский район,30.969107,54.074993,centroid:web/public/data/geo/adm2.geojson
+BY,r-dubrovienski,Дубровенский район,30.857706,54.600222,centroid:web/public/data/geo/adm2.geojson
+BY,r-dziarzhynski,Дзержинский район,27.151249,53.691297,centroid:web/public/data/geo/adm2.geojson
+BY,r-dziatlauski,Дятловский район,25.38277,53.426278,centroid:web/public/data/geo/adm2.geojson
+BY,r-hancavicki,Ганцевичский район,26.511081,52.675298,centroid:web/public/data/geo/adm2.geojson
+BY,r-haradocki,Городокский район,30.097902,55.617816,centroid:web/public/data/geo/adm2.geojson
+BY,r-hluski,Глусский район,28.686203,52.890744,centroid:web/public/data/geo/adm2.geojson
+BY,r-hlybocki,Глубокский район,27.8751,55.181285,centroid:web/public/data/geo/adm2.geojson
+BY,r-homielski,Гомельский район,30.966267,52.320312,centroid:web/public/data/geo/adm2.geojson
+BY,r-homielski#admin,Гомельский район (адм. район),30.966267,52.320312,centroid:web/public/data/geo/adm2.geojson (полигон района с городом)
+BY,r-horacki,Горецкий район,30.980728,54.292403,centroid:web/public/data/geo/adm2.geojson
+BY,r-hrodzienski,Гродненский район,23.967016,53.708117,centroid:web/public/data/geo/adm2.geojson
+BY,r-hrodzienski#admin,Гродненский район (адм. район),23.967016,53.708117,centroid:web/public/data/geo/adm2.geojson (полигон района с городом)
+BY,r-iujeuski,Ивьевский район,25.912455,53.990087,centroid:web/public/data/geo/adm2.geojson
+BY,r-ivacevicki,Ивацевичский район,25.564065,52.673933,centroid:web/public/data/geo/adm2.geojson
+BY,r-ivanauski,Ивановский район,25.560664,52.162522,centroid:web/public/data/geo/adm2.geojson
+BY,r-jelski,Ельский район,28.899202,51.69811,centroid:web/public/data/geo/adm2.geojson
+BY,r-kalinkavicki,Калинковичский район,29.442514,52.234482,centroid:web/public/data/geo/adm2.geojson
+BY,r-kamianiecki,Каменецкий район,23.659759,52.409607,centroid:web/public/data/geo/adm2.geojson
+BY,r-kapylski,Копыльский район,27.102752,53.121261,centroid:web/public/data/geo/adm2.geojson
+BY,r-karelicki,Кореличский район,26.243133,53.492975,centroid:web/public/data/geo/adm2.geojson
+BY,r-karmianski,Кормянский район,30.838402,53.130526,centroid:web/public/data/geo/adm2.geojson
+BY,r-kasciukovicki,Костюковичский район,32.010063,53.266697,centroid:web/public/data/geo/adm2.geojson
+BY,r-kirauski,Кировский район,29.569057,53.317253,centroid:web/public/data/geo/adm2.geojson
+BY,r-klecki,Клецкий район,26.686566,52.947659,centroid:web/public/data/geo/adm2.geojson
+BY,r-klichauski,Кличевский район,29.353828,53.534204,centroid:web/public/data/geo/adm2.geojson
+BY,r-klimavicki,Климовичский район,32.048471,53.598324,centroid:web/public/data/geo/adm2.geojson
+BY,r-kobrynski,Кобринский район,24.508996,52.158308,centroid:web/public/data/geo/adm2.geojson
+BY,r-krasnapolski,Краснопольский район,31.388448,53.284238,centroid:web/public/data/geo/adm2.geojson
+BY,r-kruhlanski,Круглянский район,29.71238,54.196981,centroid:web/public/data/geo/adm2.geojson
+BY,r-krupski,Крупский район,29.16292,54.331259,centroid:web/public/data/geo/adm2.geojson
+BY,r-krychauski,Кричевский район,31.628068,53.741238,centroid:web/public/data/geo/adm2.geojson
+BY,r-lachavicki,Ляховичский район,26.180775,52.917529,centroid:web/public/data/geo/adm2.geojson
+BY,r-lahojski,Логойский район,27.812256,54.359873,centroid:web/public/data/geo/adm2.geojson
+BY,r-lelchycki,Лельчицкий район,28.125377,51.784965,centroid:web/public/data/geo/adm2.geojson
+BY,r-lepielski,Лепельский район,28.67015,54.836015,centroid:web/public/data/geo/adm2.geojson
+BY,r-lidski,Лидский район,25.259226,53.797209,centroid:web/public/data/geo/adm2.geojson
+BY,r-lojeuski,Лоевский район,30.647055,51.970962,centroid:web/public/data/geo/adm2.geojson
+BY,r-loznienski,Лиозненский район,30.686195,55.016309,centroid:web/public/data/geo/adm2.geojson
+BY,r-lubanski,Любанский район,28.1031,52.717602,centroid:web/public/data/geo/adm2.geojson
+BY,r-luniniecki,Лунинецкий район,26.956256,52.353369,centroid:web/public/data/geo/adm2.geojson
+BY,r-mahilouski,Могилёвский район,30.287213,53.837456,centroid:web/public/data/geo/adm2.geojson
+BY,r-mahilouski#admin,Могилёвский район (адм. район),30.287213,53.837456,centroid:web/public/data/geo/adm2.geojson (полигон района с городом)
+BY,r-maladziechanski,Молодечненский район,26.900935,54.242551,centroid:web/public/data/geo/adm2.geojson
+BY,r-malarycki,Малоритский район,24.088319,51.810053,centroid:web/public/data/geo/adm2.geojson
+BY,r-mastouski,Мостовский район,24.594001,53.402004,centroid:web/public/data/geo/adm2.geojson
+BY,r-mazyrski,Мозырский район,29.02821,51.983122,centroid:web/public/data/geo/adm2.geojson
+BY,r-miadzielski,Мядельский район,26.952801,54.834489,centroid:web/public/data/geo/adm2.geojson
+BY,r-mijorski,Миорский район,27.805041,55.58835,centroid:web/public/data/geo/adm2.geojson
+BY,r-minski,Минский район,27.512023,53.933032,centroid:web/public/data/geo/adm2.geojson (центроид вне полигона)
+BY,r-mscislauski,Мстиславский район,31.520953,54.008051,centroid:web/public/data/geo/adm2.geojson
+BY,r-naraulanski,Наровлянский район,29.489855,51.616132,centroid:web/public/data/geo/adm2.geojson
+BY,r-navahrudski,Новогрудский район,25.86029,53.660904,centroid:web/public/data/geo/adm2.geojson
+BY,r-niasvizhski,Несвижский район,26.606526,53.231443,centroid:web/public/data/geo/adm2.geojson
+BY,r-pastauski,Поставский район,26.910605,55.103837,centroid:web/public/data/geo/adm2.geojson
+BY,r-pietrykauski,Петриковский район,28.567963,52.285268,centroid:web/public/data/geo/adm2.geojson
+BY,r-pinski,Пинский район,26.166645,52.192416,centroid:web/public/data/geo/adm2.geojson
+BY,r-pinski#admin,Пинский район (адм. район),26.166645,52.192416,centroid:web/public/data/geo/adm2.geojson (полигон района с городом)
+BY,r-polacki,Полоцкий район,28.845437,55.52126,centroid:web/public/data/geo/adm2.geojson
+BY,r-polacki#admin,Полоцкий район (адм. район),28.845437,55.52126,centroid:web/public/data/geo/adm2.geojson (полигон района с городом)
+BY,r-pruzhanski,Пружанский район,24.455255,52.657397,centroid:web/public/data/geo/adm2.geojson
+BY,r-puchavicki,Пуховичский район,28.00633,53.477332,centroid:web/public/data/geo/adm2.geojson
+BY,r-rahachouski,Рогачёвский район,30.171207,53.127031,centroid:web/public/data/geo/adm2.geojson
+BY,r-rasonski,Россонский район,28.865751,55.889132,centroid:web/public/data/geo/adm2.geojson
+BY,r-rechycki,Речицкий район,30.243226,52.311021,centroid:web/public/data/geo/adm2.geojson
+BY,r-salihorski,Солигорский район,27.461806,52.663627,centroid:web/public/data/geo/adm2.geojson
+BY,r-sharkoushchynski,Шарковщинский район,27.539046,55.383213,centroid:web/public/data/geo/adm2.geojson
+BY,r-shchuchynski,Щучинский район,24.688195,53.698206,centroid:web/public/data/geo/adm2.geojson
+BY,r-shklouski,Шкловский район,30.375912,54.164777,centroid:web/public/data/geo/adm2.geojson
+BY,r-shumilinski,Шумилинский район,29.467557,55.319053,centroid:web/public/data/geo/adm2.geojson
+BY,r-siennienski,Сенненский район,29.90052,54.809066,centroid:web/public/data/geo/adm2.geojson
+BY,r-slauharadski,Славгородский район,30.913625,53.440394,centroid:web/public/data/geo/adm2.geojson
+BY,r-slonimski,Слонимский район,25.26448,53.071531,centroid:web/public/data/geo/adm2.geojson
+BY,r-slucki,Слуцкий район,27.597952,53.087826,centroid:web/public/data/geo/adm2.geojson
+BY,r-smalavicki,Смолевичский район,28.144743,54.001818,centroid:web/public/data/geo/adm2.geojson
+BY,r-smalavicki#admin,Смолевичский район (адм. район),28.144743,54.001818,centroid:web/public/data/geo/adm2.geojson (полигон района с городом)
+BY,r-smarhonski,Сморгонский район,26.395417,54.49901,centroid:web/public/data/geo/adm2.geojson
+BY,r-staradarozhski,Стародорожский район,28.222588,53.045043,centroid:web/public/data/geo/adm2.geojson
+BY,r-staubcouski,Столбцовский район,26.651075,53.626752,centroid:web/public/data/geo/adm2.geojson
+BY,r-stolinski,Столинский район,27.058184,51.925736,centroid:web/public/data/geo/adm2.geojson
+BY,r-svietlahorski,Светлогорский район,29.503247,52.651235,centroid:web/public/data/geo/adm2.geojson
+BY,r-svislacki,Свислочский район,24.253323,52.915865,centroid:web/public/data/geo/adm2.geojson
+BY,r-talachynski,Толочинский район,29.74622,54.445768,centroid:web/public/data/geo/adm2.geojson
+BY,r-ushacki,Ушачский район,28.65895,55.134238,centroid:web/public/data/geo/adm2.geojson
+BY,r-uzdzienski,Узденский район,27.299824,53.443849,centroid:web/public/data/geo/adm2.geojson
+BY,r-valozhynski,Воложинский район,26.610026,54.039496,centroid:web/public/data/geo/adm2.geojson
+BY,r-vaukavyski,Волковысский район,24.383691,53.187253,centroid:web/public/data/geo/adm2.geojson
+BY,r-viciebski,Витебский район,30.381057,55.268404,centroid:web/public/data/geo/adm2.geojson
+BY,r-viciebski#admin,Витебский район (адм. район),30.381057,55.268404,centroid:web/public/data/geo/adm2.geojson (полигон района с городом)
+BY,r-vierchniadzvinski,Верхнедвинский район,28.120522,55.872471,centroid:web/public/data/geo/adm2.geojson
+BY,r-vietkauski,Ветковский район,31.259547,52.709261,centroid:web/public/data/geo/adm2.geojson
+BY,r-vilejski,Вилейский район,27.129665,54.53138,centroid:web/public/data/geo/adm2.geojson
+BY,r-voranauski,Вороновский район,25.142181,54.071984,centroid:web/public/data/geo/adm2.geojson
+BY,r-zelvienski,Зельвенский район,24.842284,53.142229,centroid:web/public/data/geo/adm2.geojson
+BY,r-zhabinkauski,Жабинковский район,24.063685,52.18779,centroid:web/public/data/geo/adm2.geojson
+BY,r-zhlobinski,Жлобинский район,29.951469,52.812268,centroid:web/public/data/geo/adm2.geojson
+BY,r-zhytkavicki,Житковичский район,27.800517,52.242445,centroid:web/public/data/geo/adm2.geojson
+PL,PL-0601011,Międzyrzec Podlaski,22.783282,51.980782,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0601021,Terespol,23.617746,52.073621,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0601032,Biała Podlaska,23.112072,52.036323,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84); центроид вне полигона (гмина-кольцо вокруг города)
+PL,PL-0601042,Drelów,22.897229,51.921668,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0601052,Janów Podlaski,23.22571,52.192215,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84); в PRG TERYT 0601053 (gm. miejsko-wiejska) — тип сменился после 31.12.2025
+PL,PL-0601062,Kodeń,23.58347,51.926679,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0601072,Konstantynów,23.104584,52.20803,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0601082,Leśna Podlaska,23.034507,52.126142,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0601092,Łomazy,23.198237,51.902096,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0601102,Międzyrzec Podlaski,22.762903,52.014622,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0601113,Piszczac,23.397108,51.960495,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0601122,Rokitno,23.326278,52.130825,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0601132,Rossosz,23.108874,51.847667,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0601142,Sławatycze,23.550607,51.791246,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0601152,Sosnówka,23.342741,51.752979,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0601162,Terespol,23.553966,52.070027,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0601172,Tuczna,23.429894,51.85744,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0601182,Wisznice,23.178515,51.77713,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0601192,Zalesie,23.411268,52.057374,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0602011,Biłgoraj,22.711241,50.538532,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0602022,Aleksandrów,22.891161,50.469713,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0602032,Biłgoraj,22.678416,50.543488,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84); центроид вне полигона (гмина-кольцо вокруг города)
+PL,PL-0602042,Biszcza,22.628535,50.418943,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0602053,Frampol,22.733043,50.659118,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0602063,Goraj,22.705407,50.727647,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0602073,Józefów,23.054406,50.489063,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0602082,Księżpol,22.770438,50.423946,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0602092,Łukowa,22.966819,50.396462,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0602102,Obsza,22.984042,50.3315,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0602112,Potok Górny,22.514416,50.398399,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0602123,Tarnogród,22.750801,50.330262,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0602132,Tereszpol,22.886155,50.552055,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0602143,Turobin,22.738452,50.818556,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0603011,Rejowiec Fabryczny,23.244994,51.119356,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0603022,Białopole,23.784696,50.969457,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0603032,Chełm,23.446888,51.141608,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84); центроид вне полигона (гмина-кольцо вокруг города)
+PL,PL-0603042,Dorohusk,23.736152,51.150821,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0603052,Dubienka,23.85692,51.034688,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0603062,Kamień,23.606994,51.097431,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0603072,Leśniowice,23.505116,50.99725,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0603082,Rejowiec Fabryczny,23.154947,51.132825,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0603092,Ruda-Huta,23.614351,51.230458,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0603102,Sawin,23.448923,51.289811,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0603113,Siedliszcze,23.164469,51.199443,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0603122,Wierzbica,23.302953,51.271812,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0603132,Wojsławice,23.556979,50.930741,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0603142,Żmudź,23.681523,51.034572,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0603153,Rejowiec,23.294305,51.102408,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0604011,Hrubieszów,23.887249,50.807788,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0604022,Dołhobyczów,24.00721,50.535207,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0604032,Horodło,23.997968,50.900907,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0604042,Hrubieszów,23.903822,50.815163,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84); центроид вне полигона (гмина-кольцо вокруг города)
+PL,PL-0604052,Mircze,23.91078,50.642487,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0604062,Trzeszczany,23.72735,50.822594,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0604072,Uchanie,23.691246,50.894971,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0604082,Werbkowice,23.752789,50.724315,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0605012,Batorz,22.478816,50.863014,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0605022,Chrzanów,22.606332,50.779227,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0605032,Dzwola,22.550183,50.663816,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0605042,Godziszów,22.491012,50.772833,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0605053,Janów Lubelski,22.383532,50.656865,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0605063,Modliborzyce,22.326715,50.750124,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0605072,Potok Wielki,22.215752,50.758621,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0606011,Krasnystaw,23.166703,50.98707,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0606022,Fajsławice,22.947183,51.072572,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0606032,Gorzków,22.982633,50.950957,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0606043,Izbica,23.149585,50.893917,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0606052,Krasnystaw,23.161326,51.0018,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84); центроид вне полигона (гмина-кольцо вокруг города)
+PL,PL-0606062,Kraśniczyn,23.353341,50.930828,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0606072,Łopiennik Górny,23.065994,51.050705,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0606092,Rudnik,22.953144,50.863977,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0606102,Siennica Różana,23.344438,51.009261,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0606112,Żółkiewka,22.846182,50.901385,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0607011,Kraśnik,22.207785,50.942801,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0607023,Annopol,21.887569,50.893339,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0607032,Dzierzkowice,22.071796,50.95245,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0607042,Gościeradów,22.000703,50.862242,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0607052,Kraśnik,22.251462,50.909264,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0607062,Szastarka,22.344325,50.842739,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0607072,Trzydnik Duży,22.151915,50.853727,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0607083,Urzędów,22.136392,51.011159,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0607092,Wilkołaz,22.316771,50.998977,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0607102,Zakrzówek,22.402214,50.934856,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0608011,Lubartów,22.609016,51.460481,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0608022,Abramów,22.285316,51.467362,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0608032,Firlej,22.486187,51.565312,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0608042,Jeziorzany,22.267169,51.619859,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0608053,Kamionka,22.448101,51.452494,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0608063,Kock,22.423007,51.65298,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0608072,Lubartów,22.586886,51.440006,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0608082,Michów,22.338591,51.542922,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0608092,Niedźwiada,22.707085,51.5259,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0608103,Ostrów Lubelski,22.83456,51.462382,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0608112,Ostrówek,22.59552,51.595521,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0608122,Serniki,22.724207,51.435666,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0608132,Uścimów,22.93973,51.476538,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0609013,Bełżyce,22.256205,51.166211,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0609022,Borzechów,22.273397,51.070527,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0609033,Bychawa,22.541274,50.997353,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0609042,Garbów,22.346642,51.369241,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0609052,Głusk,22.615057,51.165295,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0609062,Jabłonna,22.637247,51.085395,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0609072,Jastków,22.403397,51.297748,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0609082,Konopnica,22.417961,51.217278,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0609092,Krzczonów,22.722314,51.005581,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0609102,Niedrzwica Duża,22.388526,51.117885,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0609112,Niemce,22.55507,51.34518,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0609122,Strzyżewice,22.459865,51.065293,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0609132,Wojciechów,22.243143,51.236163,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0609142,Wólka,22.692296,51.283718,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0609152,Wysokie,22.688609,50.913545,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0609162,Zakrzew,22.564547,50.896635,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0610012,Cyców,23.139698,51.306345,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0610022,Ludwin,22.95403,51.374846,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0610033,Łęczna,22.865335,51.304641,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0610042,Milejów,22.946191,51.223891,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0610052,Puchaczów,23.008781,51.297449,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0610062,Spiczyn,22.755035,51.355218,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0611011,Łuków,22.380725,51.929085,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0611021,Stoczek Łukowski,21.957997,51.958614,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0611032,Adamów,22.211231,51.716031,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0611042,Krzywda,22.12516,51.791947,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0611052,Łuków,22.344367,51.941721,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84); центроид вне полигона (гмина-кольцо вокруг города)
+PL,PL-0611062,Serokomla,22.316424,51.68988,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0611072,Stanin,22.192604,51.882448,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0611082,Stoczek Łukowski,22.015249,51.953114,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0611083,Stoczek Łukowski,22.077743,51.949087,"centroid:PRG GUGiK WFS A03_Granice_gmin, объединение PL-0611011+PL-0611082 (взвеш. по площади)"
+PL,PL-0611092,Trzebieszów,22.52415,51.995983,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0611102,Wojcieszków,22.337163,51.779762,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0611112,Wola Mysłowska,21.979551,51.85527,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0612012,Chodel,22.150848,51.09478,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0612023,Józefów nad Wisłą,21.908412,51.02005,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0612032,Karczmiska,22.002609,51.241786,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0612042,Łaziska,21.848006,51.153323,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0612053,Opole Lubelskie,21.984564,51.116293,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0612063,Poniatowa,22.098469,51.209589,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0612072,Wilków,21.886595,51.250187,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0613012,Dębowa Kłoda,23.038431,51.593584,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0613022,Jabłoń,23.067083,51.706686,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0613032,Milanów,22.915494,51.722558,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0613043,Parczew,22.895025,51.614111,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0613052,Podedwórze,23.225057,51.663705,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0613062,Siemień,22.765796,51.623016,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0613072,Sosnowica,23.092798,51.498123,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0614011,Puławy,21.976301,51.425495,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0614022,Baranów,22.169953,51.540988,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0614032,Janowiec,21.888886,51.337653,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0614043,Kazimierz Dolny,21.992748,51.321129,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0614053,Końskowola,22.07471,51.405192,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0614063,Kurów,22.175514,51.403026,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0614072,Markuszów,22.257084,51.384335,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0614083,Nałęczów,22.229261,51.303491,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0614092,Puławy,21.895256,51.453408,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0614103,Wąwolnica,22.12434,51.303567,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0614112,Żyrzyn,22.05792,51.508783,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0615011,Radzyń Podlaski,22.627774,51.777095,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0615022,Borki,22.496639,51.729381,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0615033,Czemierniki,22.64445,51.670336,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0615042,Kąkolewnica,22.666562,51.903475,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0615052,Komarówka Podlaska,22.959813,51.830864,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0615062,Radzyń Podlaski,22.620991,51.794333,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84); центроид вне полигона (гмина-кольцо вокруг города)
+PL,PL-0615072,Ulan-Majorat,22.471829,51.834365,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0615082,Wohyń,22.792407,51.764698,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0616011,Dęblin,21.873557,51.571759,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0616022,Kłoczew,21.96994,51.735823,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0616032,Nowodwór,22.103836,51.662853,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0616043,Ryki,21.949326,51.630181,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0616052,Stężyca,21.745606,51.608446,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0616062,Ułęż,22.118309,51.602035,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0617011,Świdnik,22.685415,51.219139,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0617022,Mełgiew,22.787434,51.226993,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0617033,Piaski,22.805066,51.134485,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0617042,Rybczewice,22.852522,51.023211,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0617052,Trawniki,22.989325,51.144997,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0618011,Tomaszów Lubelski,23.427444,50.449611,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0618022,Bełżec,23.428498,50.376217,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0618032,Jarczów,23.604955,50.4407,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0618042,Krynice,23.405975,50.577129,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0618053,Lubycza Królewska,23.568771,50.341016,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0618063,Łaszczów,23.718642,50.528927,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0618072,Rachanie,23.556929,50.544167,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0618082,Susiec,23.204522,50.428598,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0618092,Tarnawatka,23.396641,50.524916,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0618102,Telatyn,23.871239,50.530395,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0618112,Tomaszów Lubelski,23.431507,50.454828,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84); центроид вне полигона (гмина-кольцо вокруг города)
+PL,PL-0618123,Tyszowce,23.668133,50.625967,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0618132,Ulhówek,23.811216,50.439652,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0619011,Włodawa,23.529123,51.539715,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0619022,Hanna,23.464867,51.697745,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0619032,Hańsk,23.415774,51.412622,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0619042,Stary Brus,23.27261,51.494405,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0619052,Urszulin,23.186745,51.406835,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0619062,Włodawa,23.526175,51.529029,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84); центроид вне полигона (гмина-кольцо вокруг города)
+PL,PL-0619072,Wola Uhruska,23.599154,51.352703,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0619082,Wyryki,23.34693,51.565447,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0620012,Adamów,23.185521,50.599485,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0620022,Grabowiec,23.546054,50.831618,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0620032,Komarów-Osada,23.505946,50.637545,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0620043,Krasnobród,23.205441,50.5355,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0620052,Łabunie,23.35846,50.655473,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0620062,Miączyn,23.553385,50.74063,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0620072,Nielisz,23.05641,50.805862,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0620082,Radecznica,22.837062,50.707774,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0620092,Sitno,23.395668,50.743211,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0620102,Skierbieszów,23.363801,50.849195,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0620112,Stary Zamość,23.215992,50.821407,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0620122,Sułów,22.955335,50.758621,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0620133,Szczebrzeszyn,23.013578,50.696217,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0620142,Zamość,23.206597,50.705792,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0620153,Zwierzyniec,22.998851,50.612114,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0661011,Biała Podlaska,23.142015,52.030007,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0662011,Chełm,23.484909,51.136128,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0663011,Lublin,22.556598,51.225735,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-0664011,Zamość,23.258625,50.720808,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2001011,Augustów,23.010246,53.847693,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2001022,Augustów,22.926247,53.83111,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2001032,Bargłów Kościelny,22.813233,53.747936,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2001043,Lipsk,23.447524,53.752964,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2001052,Nowinka,23.006086,53.95224,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2001062,Płaska,23.300854,53.873795,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2001072,Sztabin,23.105983,53.719896,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2002013,Choroszcz,22.947258,53.128244,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2002023,Czarna Białostocka,23.245165,53.314554,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2002032,Dobrzyniewo Duże,23.01484,53.23256,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2002042,Gródek,23.656909,53.120857,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2002052,Juchnowiec Kościelny,23.152426,52.997392,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2002063,Łapy,22.866853,53.00519,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2002073,Michałowo,23.6896,53.005881,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2002082,Poświętne,22.824005,52.906244,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2002093,Supraśl,23.369352,53.21804,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2002103,Suraż,23.001759,52.941263,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2002112,Turośń Kościelna,23.012929,53.030908,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2002123,Tykocin,22.758313,53.189641,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2002133,Wasilków,23.188798,53.225766,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2002143,Zabłudów,23.33466,53.012524,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2002152,Zawady,22.570627,53.166956,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2002162,Grabówka,23.305042,53.139471,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2003011,Bielsk Podlaski,23.19088,52.765205,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2003021,Brańsk,22.839112,52.762888,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2003032,Bielsk Podlaski,23.185006,52.792746,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84); центроид вне полигона (гмина-кольцо вокруг города)
+PL,PL-2003042,Boćki,23.051532,52.635724,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2003052,Brańsk,22.848894,52.740854,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84); центроид вне полигона (гмина-кольцо вокруг города)
+PL,PL-2003062,Orla,23.289584,52.675743,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2003072,Rudka,22.712327,52.723216,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2003082,Wyszki,22.976442,52.848317,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2004011,Grajewo,22.455068,53.640107,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2004022,Grajewo,22.517119,53.57701,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2004032,Radziłów,22.443856,53.424498,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2004043,Rajgród,22.651978,53.678366,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2004053,Szczuczyn,22.283959,53.56665,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2004062,Wąsosz,22.343798,53.497311,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2005011,Hajnówka,23.568929,52.735484,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2005022,Białowieża,23.807515,52.710478,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2005032,Czeremcha,23.347131,52.504364,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2005042,Czyże,23.427231,52.801174,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2005052,Dubicze Cerkiewne,23.476964,52.637866,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2005062,Hajnówka,23.601429,52.717657,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2005073,Kleszczele,23.331798,52.582728,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2005082,Narew,23.503424,52.908792,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2005092,Narewka,23.772645,52.848794,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2006011,Kolno,21.933612,53.401685,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2006022,Grabowo,22.167692,53.474606,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2006032,Kolno,21.943781,53.428758,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2006042,Mały Płock,21.999523,53.304621,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2006053,Stawiski,22.155576,53.365183,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2006062,Turośl,21.71905,53.40768,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2007013,Jedwabne,22.34812,53.297787,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2007022,Łomża,22.102743,53.127816,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2007032,Miastkowo,21.807157,53.142703,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2007043,Nowogród,21.893983,53.216105,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2007052,Piątnica,22.170745,53.213752,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2007062,Przytuły,22.310492,53.372127,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2007072,Śniadowo,21.965541,53.058033,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2007082,Wizna,22.352621,53.196914,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2007092,Zbójna,21.759496,53.260257,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2008013,Goniądz,22.754526,53.532281,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2008022,Jasionówka,23.033151,53.392122,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2008032,Jaświły,22.958725,53.502703,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2008043,Knyszyn,22.952027,53.333394,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2008052,Krypno,22.826967,53.271926,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2008063,Mońki,22.797135,53.398626,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2008072,Trzcianne,22.598822,53.309647,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2009011,Sejny,23.345883,54.109154,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2009022,Giby,23.328836,53.992094,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2009032,Krasnopol,23.189689,54.1119,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2009042,Puńsk,23.2309,54.227543,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2009052,Sejny,23.405028,54.117781,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2010011,Siemiatycze,22.866712,52.420984,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2010023,Drohiczyn,22.641032,52.459372,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2010032,Dziadkowice,22.91868,52.561862,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2010042,Grodzisk,22.754344,52.595344,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2010052,Mielnik,23.101412,52.353607,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2010062,Milejczyce,23.139275,52.528027,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2010072,Nurzec-Stacja,23.13406,52.442749,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2010082,Perlejewo,22.561523,52.568734,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2010092,Siemiatycze,22.856317,52.453919,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2011013,Dąbrowa Białostocka,23.315399,53.638606,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2011022,Janów,23.280423,53.451916,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2011032,Korycin,23.124312,53.434576,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2011043,Krynki,23.76843,53.217402,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2011052,Kuźnica,23.611266,53.502641,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2011062,Nowy Dwór,23.520916,53.65318,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2011072,Sidra,23.457362,53.540467,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2011083,Sokółka,23.491235,53.389409,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2011093,Suchowola,23.123472,53.58352,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2011102,Szudziałowo,23.616554,53.291527,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2012012,Bakałarzewo,22.700602,54.089074,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2012022,Filipów,22.624936,54.182547,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2012032,Jeleniewo,22.896326,54.217083,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2012042,Przerośl,22.712547,54.239595,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2012052,Raczki,22.786901,53.994559,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2012062,Rutka-Tartak,22.964667,54.317868,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2012072,Suwałki,22.956466,54.08882,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84); центроид вне полигона (гмина-кольцо вокруг города)
+PL,PL-2012082,Szypliszki,23.06312,54.229205,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2012092,Wiżajny,22.857626,54.341266,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2013011,Wysokie Mazowieckie,22.509973,52.925514,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2013023,Ciechanowiec,22.565143,52.660156,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2013033,Czyżew,22.351843,52.825237,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2013042,Klukowo,22.540493,52.758326,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2013052,Kobylin-Borzymy,22.666045,53.084648,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2013062,Kulesze Kościelne,22.517921,53.005983,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2013072,Nowe Piekuty,22.692371,52.867438,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2013082,Sokoły,22.729402,53.010426,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2013093,Szepietowo,22.55805,52.841513,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2013102,Wysokie Mazowieckie,22.486087,52.930753,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2014011,Zambrów,22.245685,52.977254,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2014022,Kołaki Kościelne,22.360487,53.0236,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2014032,Rutki,22.438098,53.108952,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2014042,Szumowo,22.099302,52.904303,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2014052,Zambrów,22.194164,52.985104,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2061011,Białystok,23.158831,53.132212,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2062011,Łomża,22.058451,53.174342,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+PL,PL-2063011,Suwałki,22.931708,54.099925,centroid:PRG GUGiK WFS A03_Granice_gmin (EPSG:2180→WGS84)
+LT,LT-11,Alytaus m. sav.,24.05,54.4,wikidata:Q3685407 P625
+LT,LT-12,Birštono sav.,24.033611,54.584722,wikidata:Q2015893 P625
+LT,LT-13,Vilniaus m. sav.,25.28,54.687222,wikidata:Q923117 P36→Q216 P625 (у самоуправления нет P625)
+LT,LT-15,Druskininkų sav.,23.966667,54.016667,wikidata:Q669649 P625
+LT,LT-18,Marijampolės sav.,23.358889,54.56,wikidata:Q1931377 P625
+LT,LT-19,Kauno m. sav.,23.933333,54.9,wikidata:Q928938 P625
+LT,LT-21,Klaipėdos m. sav.,21.1175,55.71722,wikidata:Q16456513 P625
+LT,LT-23,Neringos sav.,21.116667,55.555556,wikidata:Q9305847 P625
+LT,LT-25,Palangos m. sav.,21.066667,55.916667,wikidata:Q3685410 P625
+LT,LT-27,Panevėžio m. sav.,24.35,55.733333,wikidata:Q3685412 P625
+LT,LT-29,Šiaulių m. sav.,23.316667,55.928056,wikidata:Q4993831 P625
+LT,LT-30,Visagino sav.,26.5086,55.5867,wikidata:Q2558824 P625
+LT,LT-32,Akmenės r. sav.,22.7539,56.2561,wikidata:Q1023041 P625
+LT,LT-33,Alytaus r. sav.,24.05,54.4,wikidata:Q769940 P36→Q450625 P625 (у самоуправления нет P625)
+LT,LT-34,Anykščių r. sav.,25.1,55.533333,wikidata:Q2089772 P625
+LT,LT-36,Biržų r. sav.,24.8125,56.2828,wikidata:Q763504 P625
+LT,LT-38,Varėnos r. sav.,24.566667,54.216667,wikidata:Q1351747 P625
+LT,LT-39,Vilkaviškio r. sav.,22.983333,54.583333,wikidata:Q2021318 P625
+LT,LT-41,Vilniaus r. sav.,25.5,54.733333,wikidata:Q118903 P625
+LT,LT-42,Elektrėnų sav.,24.7,54.733333,wikidata:Q2089777 P625
+LT,LT-43,Zarasų r. sav.,26.166667,55.666667,wikidata:Q664415 P625
+LT,LT-45,Ignalinos r. sav.,26.233333,55.333333,wikidata:Q2069330 P625
+LT,LT-46,Jonavos r. sav.,24.283333,55.083333,wikidata:Q1351768 P625
+LT,LT-47,Joniškio r. sav.,23.6,56.233333,wikidata:Q610133 P625
+LT,LT-48,Kalvarijos sav.,23.185,54.393056,wikidata:Q1461987 P625
+LT,LT-49,Kaišiadorių r. sav.,24.45,54.866667,wikidata:Q2069320 P625
+LT,LT-52,Kauno r. sav.,23.833333,55.0,wikidata:Q1351722 P625
+LT,LT-53,Kėdainių r. sav.,23.951944,55.315,wikidata:Q46786 P625
+LT,LT-54,Kelmės r. sav.,22.85,55.666667,wikidata:Q1387044 P625
+LT,LT-55,Klaipėdos r. sav.,21.4,55.7,wikidata:Q141132 P625
+LT,LT-56,Kretingos r. sav.,21.3833,55.8833,wikidata:Q156560 P625
+LT,LT-57,Kupiškio r. sav.,25.016667,55.833333,wikidata:Q2089791 P625
+LT,LT-58,Kazlų Rūdos sav.,23.463889,54.763889,wikidata:Q1461972 P625
+LT,LT-59,Lazdijų r. sav.,23.65,54.166667,wikidata:Q2069342 P625
+LT,LT-61,Mažeikių r. sav.,22.266667,56.25,wikidata:Q313132 P625
+LT,LT-62,Molėtų r. sav.,25.433333,55.216667,wikidata:Q2089785 P625
+LT,LT-63,Pagėgių sav.,21.973889,55.131111,wikidata:Q2283574 P625
+LT,LT-65,Pakruojo r. sav.,23.883333,56.033333,wikidata:Q1657116 P625
+LT,LT-66,Panevėžio r. sav.,24.35,55.65,wikidata:Q1351758 P625
+LT,LT-67,Pasvalio r. sav.,24.383333,56.05,wikidata:Q1461920 P625
+LT,LT-68,Plungės r. sav.,21.85,55.916667,wikidata:Q404943 P625
+LT,LT-69,Prienų r. sav.,23.95,54.666667,wikidata:Q47090 P625
+LT,LT-71,Radviliškio r. sav.,23.533333,55.816667,wikidata:Q1755961 P625
+LT,LT-72,Raseinių r. sav.,23.15,55.383333,wikidata:Q2069355 P625
+LT,LT-73,Rokiškio r. sav.,25.566667,55.95,wikidata:Q766969 P625
+LT,LT-74,Rietavo sav.,21.951944,55.725,wikidata:Q712011 P625
+LT,LT-75,Skuodo r. sav.,21.516667,56.266667,wikidata:Q219115 P625
+LT,LT-77,Tauragės r. sav.,22.283333,55.25,wikidata:Q2071640 P625
+LT,LT-78,Telšių r. sav.,22.383333,55.883333,wikidata:Q588916 P625
+LT,LT-79,Trakų r. sav.,24.783333,54.55,wikidata:Q1987743 P625
+LT,LT-81,Ukmergės r. sav.,24.766667,55.266667,wikidata:Q68929 P625
+LT,LT-82,Utenos r. sav.,25.666667,55.5,wikidata:Q2089798 P625
+LT,LT-84,Šakių r. sav.,23.1,54.933333,wikidata:Q2021307 P625
+LT,LT-85,Šalčininkų r. sav.,25.366667,54.333333,wikidata:Q1799182 P625
+LT,LT-86,Švenčionių r. sav.,26.166667,55.116667,wikidata:Q1813849 P625
+LT,LT-87,Šilalės r. sav.,22.183333,55.491667,wikidata:Q677400 P36→Q391582 P625 (у самоуправления нет P625)
+LT,LT-88,Šilutės r. sav.,21.483333,55.35,wikidata:Q282098 P625
+LT,LT-89,Širvintų r. sav.,24.916667,55.016667,wikidata:Q58882 P625
+LT,LT-91,Šiaulių r. sav.,23.15,55.983333,wikidata:Q1417346 P625
+LT,LT-94,Jurbarko r. sav.,22.916667,55.2,wikidata:Q2089815 P625
+LT,LT-SSR-akmyanskij_r,Акмянский район,22.883333,56.316667,wikidata:Q1023041 P36→Q835848 P625 (райцентр)
+LT,LT-SSR-alitusskij_r,Алитусский район,24.05,54.4,wikidata:Q769940 P36→Q450625 P625 (райцентр)
+LT,LT-SSR-anikshchyajskij_r,Аникщяйский район,25.107222,55.534444,wikidata:Q2089772 P36→Q505416 P625 (райцентр)
+LT,LT-SSR-birzhajskij_r,Биржайский район,24.75,56.2,wikidata:Q763504 P36→Q804035 P625 (райцентр)
+LT,LT-SSR-g_alitus,г. Алитус,24.05,54.4,wikidata:Q450625 P625 (город; столица Q3685407)
+LT,LT-SSR-g_birshtonas,г. Бирштонас,24.033333,54.6,wikidata:Q185555 P625 (город; столица Q2015893)
+LT,LT-SSR-g_druskininkaj,г. Друскининкай,23.9725,54.020556,wikidata:Q1261509 P625 (город; столица Q669649)
+LT,LT-SSR-g_kapsukas,г. Капсукас (ныне г. Мариямполе),23.354444,54.556667,wikidata:Q1351046 P625 (город; столица Q1931377)
+LT,LT-SSR-g_kaunas,г. Каунас,23.933333,54.9,wikidata:Q4115712 P625 (город; столица Q928938)
+LT,LT-SSR-g_klajpeda,г. Клайпеда,21.135,55.7125,wikidata:Q776965 P625 (город; столица Q16456513)
+LT,LT-SSR-g_neringa,г. Неринга,21.1,55.5,wikidata:Q27892 P625 (город; столица Q9305847)
+LT,LT-SSR-g_palanga,г. Паланга,21.066667,55.916667,wikidata:Q2047414 P625 (город; столица Q3685410)
+LT,LT-SSR-g_panevezhis,г. Паневежис,24.363889,55.725,wikidata:Q1719466 P625 (город; столица Q3685412)
+LT,LT-SSR-g_shyaulyaj,г. Шяуляй,23.316667,55.928056,wikidata:Q134712 P625 (город; столица Q4993831)
+LT,LT-SSR-g_vilnyus,г. Вильнюс,25.28,54.687222,wikidata:Q216 P625 (город; столица Q923117)
+LT,LT-SSR-ignalinskij_r,Игналинский район,26.156667,55.34,wikidata:Q2069330 P36→Q658218 P625 (райцентр)
+LT,LT-SSR-ionavskij_r,Ионавский район,24.280556,55.072222,wikidata:Q1351768 P36→Q743218 P625 (райцентр)
+LT,LT-SSR-ionishkskij_r,Ионишкский район,23.616667,56.233333,wikidata:Q610133 P36→Q847715 P625 (райцентр)
+LT,LT-SSR-kajshyadorskij_r,Кайшядорский район,24.45,54.85,wikidata:Q2069320 P36→Q614855 P625 (райцентр)
+LT,LT-SSR-kapsukskij_r,Капсукский район,23.354444,54.556667,wikidata:Q1931377 P36→Q1351046 P625 (райцентр)
+LT,LT-SSR-kaunasskij_r,Каунасский район,23.933333,54.9,wikidata:Q1351722 P36→Q4115712 P625 (райцентр)
+LT,LT-SSR-kedajnskij_r,Кедайнский район,23.966667,55.283333,wikidata:Q46786 P36→Q735138 P625 (райцентр)
+LT,LT-SSR-kelmeskij_r,Кельмеский район,22.933333,55.633333,wikidata:Q1387044 P36→Q658230 P625 (райцентр)
+LT,LT-SSR-klajpedskij_r,Клайпедский район,21.4,55.7,wikidata:Q141132 P36→Q259272 P625 (райцентр)
+LT,LT-SSR-kretingskij_r,Кретингский район,21.247172,55.894211,wikidata:Q156560 P36→Q1788115 P625 (райцентр)
+LT,LT-SSR-kupishkskij_r,Купишкский район,24.96667,55.83333,wikidata:Q2089791 P36→Q820024 P625 (райцентр)
+LT,LT-SSR-lazdijskij_r,Лаздийский район,23.516667,54.234722,wikidata:Q2069342 P36→Q923643 P625 (райцентр)
+LT,LT-SSR-mazhejkskij_r,Мажейкский район,22.336111,56.311111,wikidata:Q313132 P36→Q203675 P625 (райцентр)
+LT,LT-SSR-moletskij_r,Молетский район,25.416667,55.233333,wikidata:Q2089785 P36→Q957530 P625 (райцентр)
+LT,LT-SSR-pakruojskij_r,Пакруойский район,23.85,55.983333,wikidata:Q1657116 P36→Q1004302 P625 (райцентр)
+LT,LT-SSR-panevezhskij_r,Паневежский район,24.363889,55.725,wikidata:Q1351758 P36→Q1719466 P625 (райцентр)
+LT,LT-SSR-pasvalskij_r,Пасвальский район,24.4,56.061111,wikidata:Q1461920 P36→Q945484 P625 (райцентр)
+LT,LT-SSR-plungeskij_r,Плунгеский район,21.85,55.916667,wikidata:Q404943 P36→Q977255 P625 (райцентр)
+LT,LT-SSR-prenajskij_r,Пренайский район,23.95,54.633333,wikidata:Q47090 P36→Q499318 P625 (райцентр)
+LT,LT-SSR-radvilishkskij_r,Радвилишкский район,23.55,55.8,wikidata:Q1755961 P36→Q318686 P625 (райцентр)
+LT,LT-SSR-rasejnskij_r,Расейнский район,23.116667,55.366667,wikidata:Q2069355 P36→Q658562 P625 (райцентр)
+LT,LT-SSR-rokishkskij_r,Рокишкский район,25.583333,55.966667,wikidata:Q766969 P36→Q1693963 P625 (райцентр)
+LT,LT-SSR-shakyajskij_r,Шакяйский район,23.044444,54.955556,wikidata:Q2021307 P36→Q390969 P625 (райцентр)
+LT,LT-SSR-shalchininkskij_r,Шальчининкский район,25.380556,54.311111,wikidata:Q1799182 P36→Q391011 P625 (райцентр)
+LT,LT-SSR-shilalskij_r,Шилальский район,22.183333,55.491667,wikidata:Q677400 P36→Q391582 P625 (райцентр)
+LT,LT-SSR-shilutskij_r,Шилутский район,21.483333,55.35,wikidata:Q282098 P36→Q391626 P625 (райцентр)
+LT,LT-SSR-shirvintskij_r,Ширвинтский район,24.95,55.05,wikidata:Q58882 P36→Q391764 P625 (райцентр)
+LT,LT-SSR-shvenchenskij_r,Швенченский район,26.155556,55.133333,wikidata:Q1813849 P36→Q137863 P625 (райцентр)
+LT,LT-SSR-shyaulyajskij_r,Шяуляйский район,23.316667,55.928056,wikidata:Q1417346 P36→Q134712 P625 (райцентр)
+LT,LT-SSR-skuodasskij_r,Скуодасский район,21.533333,56.266667,wikidata:Q219115 P36→Q1004290 P625 (райцентр)
+LT,LT-SSR-tauragskij_r,Таурагский район,22.283333,55.25,wikidata:Q2071640 P36→Q193787 P625 (райцентр)
+LT,LT-SSR-telshyajskij_r,Тельшяйский район,22.25,55.983333,wikidata:Q588916 P36→Q2222616 P625 (райцентр)
+LT,LT-SSR-trakajskij_r,Тракайский район,24.933333,54.633333,wikidata:Q1987743 P36→Q191015 P625 (райцентр)
+LT,LT-SSR-ukmergskij_r,Укмергский район,24.766667,55.25,wikidata:Q68929 P36→Q213127 P625 (райцентр)
+LT,LT-SSR-utenskij_r,Утенский район,25.6,55.5,wikidata:Q2089798 P36→Q189157 P625 (райцентр)
+LT,LT-SSR-varenskij_r,Варенский район,24.566667,54.216667,wikidata:Q1351747 P36→Q835843 P625 (райцентр)
+LT,LT-SSR-vilkavishkskij_r,Вилкавишкский район,23.033333,54.666667,wikidata:Q2021318 P36→Q852272 P625 (райцентр)
+LT,LT-SSR-vilnyusskij_r,Вильнюсский район,25.28,54.687222,wikidata:Q118903 P36→Q216 P625 (райцентр)
+LT,LT-SSR-yurbarkskij_r,Юрбаркский район,22.766667,55.083333,wikidata:Q2089815 P36→Q835838 P625 (райцентр)
+LT,LT-SSR-zarasajskij_r,Зарасайский район,26.247222,55.730556,wikidata:Q664415 P36→Q147750 P625 (райцентр)
+LV,LV-SSR-aluksnenskij_r,Алуксненский район,27.050278,57.423889,wikidata:Q771190 P36→Q291333 P625 (райцентр)
+LV,LV-SSR-balvskij_r,Балвский район,27.266667,57.129167,wikidata:Q603324 P36→Q218402 P625 (райцентр)
+LV,LV-SSR-bauskij_r,Бауский район,24.1875,56.406667,wikidata:Q845273 P36→Q498256 P625 (райцентр)
+LV,LV-SSR-cesisskij_r,Цесисский район,25.274722,57.313056,wikidata:Q845282 P36→Q107582 P625 (райцентр)
+LV,LV-SSR-daugavpilsskij_r,Даугавпилсский район,26.533333,55.883333,wikidata:Q745143 P625 (у района нет P36)
+LV,LV-SSR-dobelskij_r,Добельский район,23.266667,56.616667,wikidata:Q845276 P625 (у района нет P36)
+LV,LV-SSR-ekabpilsskij_r,Екабпилсский район,25.866389,56.4975,wikidata:Q843675 P36→Q191120 P625 (райцентр)
+LV,LV-SSR-elgavskij_r,Елгавский район,23.712778,56.65,wikidata:Q851848 P625 (у района нет P36)
+LV,LV-SSR-g_daugavpils,г. Даугавпилс,26.516111,55.871389,wikidata:Q80021 P625 (город)
+LV,LV-SSR-g_elgava,г. Елгава,23.724444,56.652222,wikidata:Q179830 P625 (город)
+LV,LV-SSR-g_liepaya,г. Лиепая,21.011111,56.508333,wikidata:Q167668 P625 (город)
+LV,LV-SSR-g_rezekne,г. Резекне,27.330833,56.506667,wikidata:Q180379 P625 (город)
+LV,LV-SSR-g_riga,г. Рига,24.106944,56.9475,wikidata:Q1773 P625 (город)
+LV,LV-SSR-g_ventspils,г. Вентспилс,21.564444,57.389722,wikidata:Q104036 P625 (город)
+LV,LV-SSR-g_yurmala,г. Юрмала,23.722111,56.9665,wikidata:Q178382 P625 (город)
+LV,LV-SSR-gulbenskij_r,Гулбенский район,26.756389,57.175,wikidata:Q845286 P36→Q753010 P625 (райцентр)
+LV,LV-SSR-kraslavskij_r,Краславский район,27.164444,55.895556,wikidata:Q733450 P36→Q638592 P625 (райцентр)
+LV,LV-SSR-kuldigskij_r,Кулдигский район,21.971667,56.968611,wikidata:Q843551 P625 (у района нет P36)
+LV,LV-SSR-liepajskij_r,Лиепайский район,21.011111,56.508333,wikidata:Q843678 P36→Q167668 P625 (райцентр)
+LV,LV-SSR-limbazhskij_r,Лимбажский район,24.713056,57.514722,wikidata:Q823393 P36→Q166684 P625 (райцентр)
+LV,LV-SSR-ludzenskij_r,Лудзенский район,27.716667,56.55,wikidata:Q246562 P625 (у района нет P36)
+LV,LV-SSR-madonskij_r,Мадонский район,26.216667,56.85,wikidata:Q569307 P625 (у района нет P36)
+LV,LV-SSR-ogrskij_r,Огрский район,24.604722,56.816944,wikidata:Q843567 P36→Q731915 P625 (райцентр)
+LV,LV-SSR-prejlskij_r,Прейльский район,26.716667,56.3,wikidata:Q845269 P625 (у района нет P36)
+LV,LV-SSR-rezeknenskij_r,Резекненский район,27.330833,56.506667,wikidata:Q858857 P36→Q180379 P625 (райцентр)
+LV,LV-SSR-rizhskij_r,Рижский район,24.106389,56.948889,wikidata:Q692623 P625 (у района нет P36)
+LV,LV-SSR-saldusskij_r,Салдусский район,22.5,56.666667,wikidata:Q843399 P625 (у района нет P36)
+LV,LV-SSR-stuchkinskij_r,Стучкинский район,25.255,56.600833,wikidata:Q842236 P36→Q411715 P625 (райцентр)
+LV,LV-SSR-talsinskij_r,Талсинский район,22.588889,57.244722,wikidata:Q843562 P36→Q520405 P625 (райцентр)
+LV,LV-SSR-tukumskij_r,Тукумский район,23.15352,56.968789,wikidata:Q843542 P36→Q636935 P625 (райцентр)
+LV,LV-SSR-valkskij_r,Валкский район,26.01,57.775,wikidata:Q845279 P625 (у района нет P36)
+LV,LV-SSR-valmierskij_r,Валмиерский район,25.4,57.55,wikidata:Q843546 P625 (у района нет P36)
+LV,LV-SSR-ventspilsskij_r,Вентспилсский район,21.564444,57.389722,wikidata:Q858852 P36→Q104036 P625 (райцентр)
+LV,LV0050000,Daugavpils,26.516111,55.871389,wikidata:Q80021 P625 (город)
+LV,LV0210000,Rēzekne,27.330833,56.506667,wikidata:Q180379 P625 (город)
+LV,LV0380200,Balvi municipality,27.25,57.133333,"wikidata:Q2018672 P625 (новад 2009–2021, сопоставлен P1115(ATVK))"
+LV,LV0381600,Viļaka municipality,27.6667,57.1667,"wikidata:Q1869075 P625 (новад 2009–2021, сопоставлен P1115(ATVK))"
+LV,LV0384400,Baltinava municipality,27.65,56.95,"wikidata:Q2361012 P625 (новад 2009–2021, сопоставлен P1115(ATVK))"
+LV,LV0387500,Rugāji municipality,27.129722,57.000833,"wikidata:Q1837354 P625 (новад 2009–2021, сопоставлен P1115(ATVK))"
+LV,LV0440200,Daugavpils municipality,26.7,55.883333,"wikidata:Q960572 P625 (новад 2009–2021, сопоставлен P1115(ATVK))"
+LV,LV0440801,Ilūkste municipality,26.3,55.983333,"wikidata:Q2025473 P625 (новад 2009–2021, сопоставлен P1115(ATVK))"
+LV,LV0600202,Krāslava municipality,27.166667,55.9,"wikidata:Q1831695 P625 (новад 2009–2021, сопоставлен P1115(ATVK))"
+LV,LV0601000,Dagda municipality,27.666667,56.166667,"wikidata:Q2361131 P625 (новад 2009–2021, сопоставлен P1115(ATVK))"
+LV,LV0604300,Aglona municipality,27.014265,56.126132,"wikidata:Q2045300 P625 (новад 2009–2021, сопоставлен P1115(ATVK))"
+LV,LV0680200,Ludza municipality,27.716667,56.55,"wikidata:Q932445 P625 (новад 2009–2021, сопоставлен P1115(ATVK))"
+LV,LV0681000,Kārsava municipality,27.684722,56.783889,"wikidata:Q2395952 P625 (новад 2009–2021, сопоставлен P1115(ATVK))"
+LV,LV0681801,Zilupe municipality,28.1212,56.3873,"wikidata:Q3274762 P625 (новад 2009–2021, сопоставлен P1115(ATVK))"
+LV,LV0684901,Cibla municipality,27.883333,56.55,"wikidata:Q1955102 P625 (новад 2009–2021, сопоставлен P1115(ATVK))"
+LV,LV0760202,Preiļi municipality,26.716667,56.3,"wikidata:Q2277469 P625 (новад 2009–2021, сопоставлен P1115(ATVK))"
+LV,LV0761201,Līvāni municipality,26.333333,56.366667,"wikidata:Q2277489 P625 (новад 2009–2021, сопоставлен по названию)"
+LV,LV0766300,Riebiņi municipality,26.801111,56.341389,"wikidata:Q2106159 P625 (новад 2009–2021, сопоставлен P1115(ATVK))"
+LV,LV0769101,Vārkava municipality,26.658333,56.275,"wikidata:Q1023757 P625 (новад 2009–2021, сопоставлен P1115(ATVK))"
+LV,LV0780200,Rēzekne municipality,27.216667,56.483333,"wikidata:Q1518841 P625 (новад 2009–2021, сопоставлен P1115(ATVK))"
+LV,LV0781800,Viļāni municipality,26.9167,56.6667,"wikidata:Q2018681 P625 (новад 2009–2021, сопоставлен P1115(ATVK))"
+RU,RU-BRY-brasovskij_r,Брасовский район,34.5776,52.565,wikidata:Q2545989 P36→Q2374909 P625 (райцентр)
+RU,RU-BRY-bryanskij_gs,Брянский горсовет,34.366667,53.2425,wikidata:Q2801 P625 (город)
+RU,RU-BRY-bryanskij_r,Брянский район,34.072222,53.304167,wikidata:Q2534488 P36→Q4139763 P625 (райцентр)
+RU,RU-BRY-dubrovskij_r,Дубровский район,33.507222,53.690833,wikidata:Q2717120 P36→Q1965217 P625 (райцентр)
+RU,RU-BRY-dyatkovskij_r,Дятьковский район,34.333333,53.6,wikidata:Q2737405 P36→Q135559 P625 (райцентр)
+RU,RU-BRY-g_dyatkovo,г. Дятьково,34.333333,53.6,wikidata:Q135559 P625 (город)
+RU,RU-BRY-g_novozybkov,г. Новозыбков,31.933333,52.533333,wikidata:Q174138 P625 (город)
+RU,RU-BRY-gordeevskij_r,Гордеевский район,31.976944,52.958333,wikidata:Q2708342 P36→Q985188 P625 (райцентр)
+RU,RU-BRY-karachevskij_r,Карачевский район,34.983333,53.116667,wikidata:Q2708362 P36→Q145115 P625 (райцентр)
+RU,RU-BRY-kletnyanskij_r,Клетнянский район,33.217222,53.389722,wikidata:Q2708368 P36→Q942749 P625 (райцентр)
+RU,RU-BRY-klimovskij_r,Климовский район,32.192222,52.380556,wikidata:Q2708316 P36→Q1383599 P625 (райцентр)
+RU,RU-BRY-klincovskij_gs,Клинцовский горсовет,32.236111,52.752778,wikidata:Q153715 P625 (город)
+RU,RU-BRY-klincovskij_r,Клинцовский район (сельское население),32.236111,52.752778,wikidata:Q2737400 P36→Q153715 P625 (райцентр)
+RU,RU-BRY-komarichskij_r,Комаричский район,34.8,52.416667,wikidata:Q2708373 P36→Q608363 P625 (райцентр)
+RU,RU-BRY-krasnogorskij_r,Красногорский район,31.602222,52.999444,wikidata:Q2628244 P36→Q2637747 P625 (райцентр)
+RU,RU-BRY-mglinskij_r,Мглинский район,32.848333,53.061111,wikidata:Q2708381 P36→Q158393 P625 (райцентр)
+RU,RU-BRY-navlinskij_r,Навлинский район,34.498889,52.828056,wikidata:Q952845 P36→Q1024230 P625 (райцентр)
+RU,RU-BRY-novozybkovskij_go,Новозыбковский городской округ,31.933333,52.533333,wikidata:Q174138 P625 (город); центр округа
+RU,RU-BRY-novozybkovskij_r,Новозыбковский район (сельское население),31.933333,52.533333,wikidata:Q2534592 P36→Q174138 P625 (райцентр)
+RU,RU-BRY-pochepskij_r,Почепский район,33.45,52.933333,wikidata:Q2708394 P36→Q183145 P625 (райцентр)
+RU,RU-BRY-pogarskij_r,Погарский район,33.25,52.55,wikidata:Q2717125 P36→Q2628088 P625 (райцентр)
+RU,RU-BRY-rognedinskij_r,Рогнединский район,33.5576,53.80147,wikidata:Q2709719 P36→Q2374886 P625 (райцентр)
+RU,RU-BRY-sevskij_r,Севский район,34.493889,52.15,wikidata:Q2708354 P36→Q193917 P625 (райцентр)
+RU,RU-BRY-starodubskij_r,Стародубский район,32.766667,52.583333,wikidata:Q2708324 P36→Q196483 P625 (райцентр)
+RU,RU-BRY-surazhskij_r,Суражский район,32.4,53.016667,wikidata:Q2708294 P36→Q196516 P625 (райцентр)
+RU,RU-BRY-suzemskij_r,Суземский район,34.078889,52.319722,wikidata:Q2708348 P36→Q1966003 P625 (райцентр)
+RU,RU-BRY-trubchevskij_r,Трубчевский район,33.766667,52.583333,wikidata:Q2708335 P36→Q196700 P625 (райцентр)
+RU,RU-BRY-unechskij_r,Унечский район,32.683333,52.85,wikidata:Q1069990 P36→Q196827 P625 (райцентр)
+RU,RU-BRY-vygonichskij_r,Выгоничский район,34.066667,53.1,wikidata:Q2534501 P36→Q2628133 P625 (райцентр)
+RU,RU-BRY-zhiryatinskij_r,Жирятинский район (сельское население),33.729167,53.225,wikidata:Q2708312 P36→Q4180601 P625 (райцентр)
+RU,RU-BRY-zhukovskij_r,Жуковский район,33.728056,53.533889,wikidata:Q2628016 P36→Q136411 P625 (райцентр)
+RU,RU-BRY-zlynkovskij_r,Злынковский район,31.733333,52.433333,wikidata:Q2708286 P36→Q140117 P625 (райцентр)
+RU,RU-PSK-bezhanickij_r,Бежаницкий район,29.883333,56.966667,wikidata:Q2706893 P36→Q2008933 P625 (райцентр)
+RU,RU-PSK-dedovichskij_r,Дедовичский район,29.95,57.55,wikidata:Q2706908 P36→Q989537 P625 (райцентр)
+RU,RU-PSK-dnovskij_r,Дновский район,29.966667,57.833333,wikidata:Q2723473 P36→Q135370 P625 (райцентр)
+RU,RU-PSK-g_ostrov,г. Остров,28.35,57.333333,wikidata:Q176773 P625 (город)
+RU,RU-PSK-g_pskov,г. Псков,28.333333,57.816667,wikidata:Q2214 P625 (город)
+RU,RU-PSK-g_velikie_luki,г. Великие Луки,30.516667,56.35,wikidata:Q101825 P625 (город)
+RU,RU-PSK-gdovskij_r,Гдовский район,27.816667,58.75,wikidata:Q2723487 P36→Q134396 P625 (райцентр)
+RU,RU-PSK-krasnogorodskij_r,Красногородский район,28.280833,56.828889,wikidata:Q2706904 P36→Q3739436 P625 (райцентр)
+RU,RU-PSK-kuninskij_r,Куньинский район,30.966667,56.283333,wikidata:Q2533424 P36→Q3736951 P625 (райцентр)
+RU,RU-PSK-loknyanskij_r,Локнянский район,30.15,56.833333,wikidata:Q2706899 P36→Q3740846 P625 (райцентр)
+RU,RU-PSK-nevelskij_r,Невельский район,29.933333,56.016667,wikidata:Q2723504 P36→Q165773 P625 (райцентр)
+RU,RU-PSK-novorzhevskij_r,Новоржевский район,29.333333,57.033333,wikidata:Q2706889 P36→Q175209 P625 (райцентр)
+RU,RU-PSK-novosokolnicheskij_r,Новосокольнический район,30.15,56.333333,wikidata:Q2533365 P36→Q175353 P625 (райцентр)
+RU,RU-PSK-opocheckij_r,Опочецкий район,28.65,56.716667,wikidata:Q1122648 P36→Q145906 P625 (райцентр)
+RU,RU-PSK-ostrovskij_r,Островский район (сельское население),28.35,57.333333,wikidata:Q2628853 P36→Q176773 P625 (райцентр)
+RU,RU-PSK-palkinskij_r,Палкинский район,28.0125,57.540833,wikidata:Q2706882 P36→Q3739373 P625 (райцентр)
+RU,RU-PSK-pechorskij_r,Печорский район,27.6,57.816667,wikidata:Q2534084 P36→Q179407 P625 (райцентр)
+RU,RU-PSK-plyusskij_r,Плюсский район,29.36,58.428889,wikidata:Q2706869 P36→Q3739471 P625 (райцентр)
+RU,RU-PSK-porhovskij_r,Порховский район,29.55,57.766667,wikidata:Q2629904 P36→Q183106 P625 (райцентр)
+RU,RU-PSK-pskovskij_r,Псковский район (сельское население),28.333333,57.816667,wikidata:Q2706915 P36→Q2214 P625 (райцентр)
+RU,RU-PSK-pushkino_gorskij_r,Пушкино-Горский район,28.916667,57.016667,wikidata:Q1146500 P36→Q3743663 P625 (райцентр)
+RU,RU-PSK-pustoshkinskij_r,Пустошкинский район,29.366667,56.333333,wikidata:Q2533406 P36→Q184242 P625 (райцентр)
+RU,RU-PSK-pytalovskij_r,Пыталовский район,27.916667,57.066667,wikidata:Q2533375 P36→Q184361 P625 (райцентр)
+RU,RU-PSK-sebezhskij_r,Себежский район,28.483333,56.283333,wikidata:Q366986 P36→Q193641 P625 (райцентр)
+RU,RU-PSK-strugo_krasnenskij_r,Струго-Красненский район,29.111389,58.2675,wikidata:Q2706863 P36→Q3738786 P625 (райцентр)
+RU,RU-PSK-usvyatskij_r,Усвятский район,30.755556,55.748611,wikidata:Q2533385 P36→Q2625702 P625 (райцентр)
+RU,RU-PSK-velikolukskij_r,Великолукский район (сельское население),30.516667,56.35,wikidata:Q2573291 P36→Q101825 P625 (райцентр)
+RU,RU-SMO-demidovskij_r,Демидовский район,31.516667,55.266667,wikidata:Q2606910 P36→Q134790 P625 (райцентр)
+RU,RU-SMO-dorogobuzhskij_r,Дорогобужский район,33.307778,54.92,wikidata:Q2708441 P36→Q135446 P625 (райцентр)
+RU,RU-SMO-duhovshchinskij_r,Духовщинский район,32.416667,55.2,wikidata:Q2638847 P36→Q135543 P625 (райцентр)
+RU,RU-SMO-elninskij_r,Ельнинский район,33.166667,54.566667,wikidata:Q2427629 P36→Q102364 P625 (райцентр)
+RU,RU-SMO-ershichskij_r,Ершичский район,32.75417,53.6725,wikidata:Q2384730 P36→Q4176860 P625 (райцентр)
+RU,RU-SMO-g_gagarin,г. Гагарин,35.0,55.55,wikidata:Q134318 P625 (город)
+RU,RU-SMO-g_roslavl,г. Рославль,32.856944,53.949167,wikidata:Q193328 P625 (город)
+RU,RU-SMO-g_safonovo,г. Сафоново,33.25,55.1,wikidata:Q193575 P625 (город)
+RU,RU-SMO-g_smolensk,г. Смоленск,32.045278,54.782778,wikidata:Q2337 P625 (город)
+RU,RU-SMO-g_vyazma,г. Вязьма,34.285,55.210278,wikidata:Q102307 P625 (город)
+RU,RU-SMO-g_yarcevo,г. Ярцево,32.683333,55.066667,wikidata:Q199004 P625 (город)
+RU,RU-SMO-gagarinskij_r,Гагаринский район (сельское население),35.0,55.55,wikidata:Q1983158 P36→Q134318 P625 (райцентр)
+RU,RU-SMO-glinkovskij_r,Глинковский район (сельское население),32.878056,54.640556,wikidata:Q2708033 P36→Q4139785 P625 (райцентр)
+RU,RU-SMO-hislavichskij_r,Хиславичский район,32.15,54.183333,wikidata:Q2708307 P36→Q1965458 P625 (райцентр)
+RU,RU-SMO-holm_zhirkovskij_r,Холм-Жирковский район,33.466667,55.516667,wikidata:Q2217191 P36→Q4499127 P625 (райцентр)
+RU,RU-SMO-kardymovskij_r,Кардымовский район,32.431111,54.890278,wikidata:Q2638827 P36→Q4214846 P625 (райцентр)
+RU,RU-SMO-krasninskij_r,Краснинский район,31.435,54.56,wikidata:Q2419281 P36→Q658905 P625 (райцентр)
+RU,RU-SMO-monastyrshchinskij_r,Монастырщинский район,31.833333,54.35,wikidata:Q2708279 P36→Q4301468 P625 (райцентр)
+RU,RU-SMO-novoduginskij_r,Новодугинский район,34.298056,55.630556,wikidata:Q2216875 P36→Q4323678 P625 (райцентр)
+RU,RU-SMO-pochinkovskij_r,Починковский район,32.45,54.4,wikidata:Q2445494 P36→Q183162 P625 (райцентр)
+RU,RU-SMO-roslavlskij_r,Рославльский район,32.856944,53.949167,wikidata:Q2638901 P36→Q193328 P625 (райцентр)
+RU,RU-SMO-rudnyanskij_r,Руднянский район,31.066667,54.95,wikidata:Q2380292 P36→Q193388 P625 (райцентр)
+RU,RU-SMO-safonovskij_r,Сафоновский район,33.25,55.1,wikidata:Q2218153 P36→Q193575 P625 (райцентр)
+RU,RU-SMO-shumyachskij_r,Шумячский район,32.424167,53.858333,wikidata:Q2638874 P36→Q4358386 P625 (райцентр)
+RU,RU-SMO-smolenskij_r,Смоленский район (сельское население),32.045278,54.782778,wikidata:Q1193104 P36→Q2337 P625 (райцентр)
+RU,RU-SMO-sychevskij_r,Сычевский район,34.273611,55.825278,wikidata:Q1993180 P36→Q196533 P625 (райцентр)
+RU,RU-SMO-temkinskij_r,Темкинский район (сельское население),35.011944,55.0775,wikidata:Q1992399 P36→Q4468065 P625 (райцентр)
+RU,RU-SMO-ugranskij_r,Угранский район,34.326667,54.777778,wikidata:Q2218169 P36→Q3514597 P625 (райцентр)
+RU,RU-SMO-velizhskij_r,Велижский район,31.2,55.6,wikidata:Q2708302 P36→Q132960 P625 (райцентр)
+RU,RU-SMO-vyazemskij_r,Вяземский район (сельское население),34.285,55.210278,wikidata:Q2445430 P36→Q102307 P625 (райцентр)
+RU,RU-SMO-yarcevskij_r,Ярцевский район (сельское население),32.683333,55.066667,wikidata:Q2218616 P36→Q199004 P625 (райцентр)
+UA,UA-CHN-bahmachskij_r,Бахмачский район,32.816278,51.181,wikidata:Q2991929 P36→Q149144 P625 (райцентр)
+UA,UA-CHN-bobrovickij_r,Бобровицкий район,31.385972,50.742444,wikidata:Q3007462 P36→Q149166 P625 (райцентр)
+UA,UA-CHN-borznyanskij_r,Борзнянский район,32.426111,51.253861,wikidata:Q2991962 P36→Q148912 P625 (райцентр)
+UA,UA-CHN-chernigivskij_old,"Чернігівський район (старый, до 17.07.2020)",31.294722,51.493889,wikidata:Q2991543 P36→Q157053 P625 (райцентр)
+UA,UA-CHN-chernigovskij_r,Черниговский район,31.294722,51.493889,wikidata:Q2991543 P36→Q157053 P625 (райцентр)
+UA,UA-CHN-g_chernigov,г. Чернигов,31.294722,51.493889,wikidata:Q157053 P625 (город)
+UA,UA-CHN-g_nezhin,г. Нежин,31.8805,51.047361,wikidata:Q952457 P625 (город)
+UA,UA-CHN-g_priluki,г. Прилуки,32.4,50.6,wikidata:Q1000404 P625 (город)
+UA,UA-CHN-gorodnyanskij_old,"Городнянський район (старый, до 17.07.2020)",31.595361,51.892444,wikidata:Q2991910 P36→Q1020058 P625 (райцентр)
+UA,UA-CHN-gorodnyanskij_r,Городнянский район,31.595361,51.892444,wikidata:Q2991910 P36→Q1020058 P625 (райцентр)
+UA,UA-CHN-ichnyanskij_r,Ичнянский район,32.4,50.85,wikidata:Q2991901 P36→Q149201 P625 (райцентр)
+UA,UA-CHN-koropskij_r,Коропский район,32.950833,51.566111,wikidata:Q2991945 P36→Q1493180 P625 (райцентр)
+UA,UA-CHN-koryukovskij_r,Корюковский район,32.249694,51.775278,wikidata:Q2991950 P36→Q149181 P625 (райцентр)
+UA,UA-CHN-kozeleckij_r,Козелецкий район,31.114722,50.916389,wikidata:Q2992452 P36→Q1669868 P625 (райцентр)
+UA,UA-CHN-kulikovskij_r,Куликовский район,31.643611,51.374722,wikidata:Q668461 P36→Q1019869 P625 (райцентр)
+UA,UA-CHN-menskij_r,Менский район,32.216667,51.516667,wikidata:Q2991978 P36→Q149596 P625 (райцентр)
+UA,UA-CHN-nezhinskij_r,Нежинский район,31.8805,51.047361,wikidata:Q2991957 P36→Q952457 P625 (райцентр)
+UA,UA-CHN-nosovskij_r,Носовский район,31.58,50.93,wikidata:Q582804 P36→Q1020112 P625 (райцентр)
+UA,UA-CHN-novgorod_severskij_r,Новгород-Северский район,33.266667,51.997222,wikidata:Q2991593 P36→Q147758 P625 (райцентр)
+UA,UA-CHN-prilukskij_r,Прилукский район,32.4,50.6,wikidata:Q2991937 P36→Q1000404 P625 (райцентр)
+UA,UA-CHN-repkinskij_r,Репкинский район,31.092833,51.804667,wikidata:Q2991588 P36→Q2154590 P625 (райцентр)
+UA,UA-CHN-ripkinskij_old,"Ріпкинський район (старый, до 17.07.2020)",31.092833,51.804667,wikidata:Q2991588 P36→Q2154590 P625 (райцентр)
+UA,UA-CHN-semenovskij_r,Семеновский район,32.5797,52.1772,wikidata:Q1997033 P36→Q149155 P625 (райцентр)
+UA,UA-CHN-shchorskij_r,Щорский район,31.944556,51.819611,wikidata:Q2651417 P36→Q148990 P625 (райцентр)
+UA,UA-CHN-sosnickij_r,Сосницкий район,32.501667,51.522222,wikidata:Q968564 P36→Q1718330 P625 (райцентр)
+UA,UA-CHN-srebnyanskij_r,Сребнянский район,32.923064,50.660781,wikidata:Q655238 P36→Q2473601 P625 (райцентр)
+UA,UA-CHN-talalaevskij_r,Талалаевский район,33.148481,50.829914,wikidata:Q2991554 P36→Q1019861 P625 (райцентр)
+UA,UA-CHN-varvinskij_r,Варвинский район,32.716667,50.483333,wikidata:Q2991976 P36→Q1973753 P625 (райцентр)
+UA,UA-KIO-baryshevskij_r,Барышевский район,31.328611,50.370278,wikidata:Q2995514 P36→Q763787 P625 (райцентр)
+UA,UA-KIO-belocerkovskij_r,Белоцерковский район,30.116667,49.795556,wikidata:Q2618954 P36→Q33342 P625 (райцентр)
+UA,UA-KIO-boguslavskij_r,Богуславский район,30.883333,49.55,wikidata:Q2619251 P36→Q1936339 P625 (райцентр)
+UA,UA-KIO-borispolskij_gs,Бориспольский горсовет,30.95,50.35,wikidata:Q158910 P625 (город)
+UA,UA-KIO-borispolskij_r,Бориспольский район (сельское население),30.95,50.35,wikidata:Q2618937 P36→Q158910 P625 (райцентр)
+UA,UA-KIO-borodyanskij_r,Бородянский район,29.925806,50.647361,wikidata:Q2883763 P36→Q2997894 P625 (райцентр)
+UA,UA-KIO-brovarskij_r,Броварский район,30.79,50.511111,wikidata:Q2619304 P36→Q841026 P625 (райцентр)
+UA,UA-KIO-fastovskij_r,Фастовский район,29.918056,50.074722,wikidata:Q2996192 P36→Q161984 P625 (райцентр)
+UA,UA-KIO-g_belaya_cerkov,г. Белая Церковь,30.116667,49.795556,wikidata:Q33342 P625 (город)
+UA,UA-KIO-g_brovary,г. Бровары,30.79,50.511111,wikidata:Q841026 P625 (город)
+UA,UA-KIO-g_fastov,г. Фастов,29.918056,50.074722,wikidata:Q161984 P625 (город)
+UA,UA-KIO-g_pereyaslav_hmelnickij,г. Переяслав-Хмельницкий,31.445,50.065,wikidata:Q639839 P625 (город)
+UA,UA-KIO-g_slavutich,г. Славутич,30.756944,51.520556,wikidata:Q70231 P625 (город)
+UA,UA-KIO-g_vasilkov,г. Васильков,30.321667,50.1775,wikidata:Q997421 P625 (город)
+UA,UA-KIO-irpenskij_gs,Ирпенский горсовет,30.25,50.516667,wikidata:Q71727 P625 (город)
+UA,UA-KIO-ivankivskij_old,"Іванківський район (старый, до 17.07.2020)",29.904722,50.932778,wikidata:Q2492610 P36→Q797423 P625 (райцентр)
+UA,UA-KIO-ivankovskij_r,Иванковский район,29.904722,50.932778,wikidata:Q2492610 P36→Q797423 P625 (райцентр)
+UA,UA-KIO-kagarlykskij_r,Кагарлыкский район,30.809167,49.852222,wikidata:Q2996222 P36→Q1947441 P625 (райцентр)
+UA,UA-KIO-kievo_svyatoshinskij_r,Киево-Святошинский район,30.523611,50.45,wikidata:Q2996231 P36→Q1899 P625 (райцентр)
+UA,UA-KIO-makarovskij_r,Макаровский район,29.807194,50.46475,wikidata:Q2996236 P36→Q2641614 P625 (райцентр)
+UA,UA-KIO-mironovskij_r,Мироновский район,30.983333,49.65,wikidata:Q2997759 P36→Q2235493 P625 (райцентр)
+UA,UA-KIO-obuhovskij_r,Обуховский район,30.626889,50.110917,wikidata:Q2996207 P36→Q1011303 P625 (райцентр)
+UA,UA-KIO-pereyaslav_hmelnickij_r,Переяслав-Хмельницкий район (сельское население),31.445,50.065,wikidata:Q2996148 P36→Q639839 P625 (райцентр)
+UA,UA-KIO-polesskij_r,Полесский район,29.736389,51.193056,wikidata:Q2996211 P36→Q4387344 P625 (райцентр)
+UA,UA-KIO-poliskij_old,"Поліський район (старый, до 17.07.2020)",29.736389,51.193056,wikidata:Q2996211 P36→Q4387344 P625 (райцентр)
+UA,UA-KIO-rakitnyanskij_r,Ракитнянский район,30.475111,49.689708,wikidata:Q2997697 P36→Q653642 P625 (райцентр)
+UA,UA-KIO-skvirskij_r,Сквирский район,29.683333,49.733333,wikidata:Q2996242 P36→Q70598 P625 (райцентр)
+UA,UA-KIO-stavishchenskij_r,Ставищенский район,30.191667,49.391389,wikidata:Q65405 P36→Q65270 P625 (райцентр)
+UA,UA-KIO-tarashchanskij_r,Таращанский район,30.5,49.55,wikidata:Q65354 P36→Q65380 P625 (райцентр)
+UA,UA-KIO-tetievskij_r,Тетиевский район,29.69,49.370833,wikidata:Q2996176 P36→Q70602 P625 (райцентр)
+UA,UA-KIO-vasilkovskij_r,Васильковский район,30.321667,50.1775,wikidata:Q2996203 P36→Q997421 P625 (райцентр)
+UA,UA-KIO-volodarskij_r,Володарский район,29.915278,49.52,wikidata:Q2996198 P36→Q2619331 P625 (райцентр)
+UA,UA-KIO-vyshgorodskij_r,Вышгородский район,30.485333,50.583278,wikidata:Q2996122 P36→Q1004257 P625 (райцентр)
+UA,UA-KIO-yagotinskij_r,Яготинский район,31.781667,50.256944,wikidata:Q2619280 P36→Q997434 P625 (райцентр)
+UA,UA-KIO-zgurovskij_r,Згуровский район,31.773917,50.497594,wikidata:Q2996151 P36→Q2652440 P625 (райцентр)
+UA,UA-RIV-bereznovskij_r,Березновский район,26.75,51.0,wikidata:Q2992459 P36→Q148910 P625 (райцентр)
+UA,UA-RIV-chervonoarmejskij_r,Червоноармейский район,25.25,50.133333,wikidata:Q2992446 P36→Q1020069 P625 (райцентр)
+UA,UA-RIV-dubnovskij_r,Дубновский район,25.735,50.393056,wikidata:Q2992467 P36→Q932184 P625 (райцентр)
+UA,UA-RIV-dubrovickij_old,"Дубровицький район (старый, до 17.07.2020)",26.566667,51.566667,wikidata:Q2992431 P36→Q205765 P625 (райцентр)
+UA,UA-RIV-dubrovickij_r,Дубровицкий район,26.566667,51.566667,wikidata:Q2992431 P36→Q205765 P625 (райцентр)
+UA,UA-RIV-g_dubno,г. Дубно,25.735,50.393056,wikidata:Q932184 P625 (город)
+UA,UA-RIV-g_kuznecovsk,г. Кузнецовск,25.850833,51.34,wikidata:Q997541 P625 (город)
+UA,UA-RIV-g_rovno,г. Ровно,26.251389,50.619722,wikidata:Q156739 P625 (город)
+UA,UA-RIV-goshchanskij_r,Гощанский район,26.675253,50.598586,wikidata:Q2342436 P36→Q786622 P625 (райцентр)
+UA,UA-RIV-koreckij_r,Корецкий район,27.166667,50.616667,wikidata:Q2342326 P36→Q997398 P625 (райцентр)
+UA,UA-RIV-kostopolskij_r,Костопольский район,26.443056,50.883333,wikidata:Q2991916 P36→Q148985 P625 (райцентр)
+UA,UA-RIV-mlinovskij_r,Млиновский район,25.606667,50.513889,wikidata:Q2992440 P36→Q2658207 P625 (райцентр)
+UA,UA-RIV-ostrozhskij_r,Острожский район,26.516667,50.333333,wikidata:Q2342348 P36→Q140671 P625 (райцентр)
+UA,UA-RIV-rokitnivskij_old,"Рокитнівський район (старый, до 17.07.2020)",27.244612,51.263057,wikidata:Q525865 P36→Q2162658 P625 (райцентр)
+UA,UA-RIV-rokitnovskij_r,Рокитновский район,27.244612,51.263057,wikidata:Q525865 P36→Q2162658 P625 (райцентр)
+UA,UA-RIV-rovenskij_r,Ровенский район,26.251389,50.619722,wikidata:Q2347421 P36→Q156739 P625 (райцентр)
+UA,UA-RIV-sarnenskij_r,Сарненский район,26.633056,51.326944,wikidata:Q602395 P36→Q997512 P625 (райцентр)
+UA,UA-RIV-vladimireckij_r,Владимирецкий район,26.14,51.420833,wikidata:Q388079 P36→Q2658213 P625 (райцентр)
+UA,UA-RIV-zarechnenskij_r,Заречненский район,25.928333,51.846111,wikidata:Q2991974 P36→Q4303188 P625 (райцентр)
+UA,UA-RIV-zarichnenskij_old,"Зарічненський район (старый, до 17.07.2020)",25.928333,51.846111,wikidata:Q2991974 P36→Q4303188 P625 (райцентр)
+UA,UA-RIV-zdolbunovskij_r,Здолбуновский район,26.243194,50.524694,wikidata:Q2347567 P36→Q148979 P625 (райцентр)
+UA,UA-VOL-g_kovel,г. Ковель,24.716667,51.216667,wikidata:Q156704 P625 (город)
+UA,UA-VOL-g_luck,г. Луцк,25.324444,50.747778,wikidata:Q7550 P625 (город)
+UA,UA-VOL-g_vladimir_volynskij,г. Владимир-Волынский,24.322222,50.848056,wikidata:Q33544 P625 (город)
+UA,UA-VOL-gorohovskij_r,Гороховский район,24.765,50.499444,wikidata:Q920446 P36→Q148974 P625 (райцентр)
+UA,UA-VOL-ivanichevskij_r,Иваничевский район,24.166667,50.733333,wikidata:Q2471912 P36→Q591719 P625 (райцентр)
+UA,UA-VOL-kamen_kashirskij_r,Камень-Каширский район,24.960556,51.624167,wikidata:Q2469595 P36→Q1000461 P625 (райцентр)
+UA,UA-VOL-kivercovskij_r,Киверцовский район,25.461389,50.833056,wikidata:Q2469630 P36→Q148890 P625 (райцентр)
+UA,UA-VOL-kovelskij_r,Ковельский район,24.716667,51.216667,wikidata:Q2469551 P36→Q156704 P625 (райцентр)
+UA,UA-VOL-lokachinskij_r,Локачинский район,24.637222,50.738333,wikidata:Q2619385 P36→Q1996325 P625 (райцентр)
+UA,UA-VOL-luckij_r,Луцкий район,25.324444,50.747778,wikidata:Q2469622 P36→Q7550 P625 (райцентр)
+UA,UA-VOL-lyubeshivskij_old,"Любешівський район (старый, до 17.07.2020)",25.499167,51.763056,wikidata:Q2469653 P36→Q2639317 P625 (райцентр)
+UA,UA-VOL-lyubeshovskij_r,Любешовский район,25.499167,51.763056,wikidata:Q2469653 P36→Q2639317 P625 (райцентр)
+UA,UA-VOL-lyubomlskij_r,Любомльский район,24.040833,51.215833,wikidata:Q2469583 P36→Q974468 P625 (райцентр)
+UA,UA-VOL-manevichskij_r,Маневичский район,25.550278,51.2925,wikidata:Q2469641 P36→Q1014310 P625 (райцентр)
+UA,UA-VOL-novovolynskij_gs,Нововолынский горсовет,24.166667,50.733333,wikidata:Q591719 P625 (город)
+UA,UA-VOL-ratnivskij_old,"Ратнівський район (старый, до 17.07.2020)",24.533333,51.65,wikidata:Q2394505 P36→Q1385480 P625 (райцентр)
+UA,UA-VOL-ratnovskij_r,Ратновский район,24.533333,51.65,wikidata:Q2394505 P36→Q1385480 P625 (райцентр)
+UA,UA-VOL-rozhishchenskij_r,Рожищенский район,25.27,50.913056,wikidata:Q2469571 P36→Q148896 P625 (райцентр)
+UA,UA-VOL-shackij_old,"Шацький район (старый, до 17.07.2020)",23.929722,51.487778,wikidata:Q2394520 P36→Q2638835 P625 (райцентр)
+UA,UA-VOL-starovyzhevskij_r,Старовыжевский район,24.437253,51.439603,wikidata:Q2469562 P36→Q2445553 P625 (райцентр)
+UA,UA-VOL-turijskij_r,Турийский район,24.533333,51.083333,wikidata:Q2469611 P36→Q1996528 P625 (райцентр)
+UA,UA-VOL-vladimir_volynskij_r,Владимир-Волынский район,24.322222,50.848056,wikidata:Q980009 P36→Q33544 P625 (райцентр)
+UA,UA-ZHY-andrushevskij_r,Андрушевский район,29.016667,50.016667,wikidata:Q2620681 P36→Q148909 P625 (райцентр)
+UA,UA-ZHY-baranovskij_r,Барановский район,27.666667,50.3,wikidata:Q2620688 P36→Q148917 P625 (райцентр)
+UA,UA-ZHY-berdichevskij_r,Бердичевский район,28.6,49.891944,wikidata:Q962724 P36→Q158799 P625 (райцентр)
+UA,UA-ZHY-chernyahovskij_r,Черняховский район,28.665278,50.455,wikidata:Q2620426 P36→Q872377 P625 (райцентр)
+UA,UA-ZHY-chervonoarmejskij_r,Червоноармейский район,28.277778,50.466389,wikidata:Q2620082 P36→Q2641647 P625 (райцентр)
+UA,UA-ZHY-chudnovskij_r,Чудновский район,28.096944,50.052778,wikidata:Q2620113 P36→Q149271 P625 (райцентр)
+UA,UA-ZHY-dzerzhinskij_r,Дзержинский район,27.939167,50.151667,wikidata:Q2620663 P36→Q2629338 P625 (райцентр)
+UA,UA-ZHY-emilchinskij_r,Емильчинский район,27.802778,50.870833,wikidata:Q2620703 P36→Q2641633 P625 (райцентр)
+UA,UA-ZHY-g_berdichev,г. Бердичев,28.6,49.891944,wikidata:Q158799 P625 (город)
+UA,UA-ZHY-g_korosten,г. Коростень,28.65,50.95,wikidata:Q158904 P625 (город)
+UA,UA-ZHY-g_novograd_volynskij,г. Новоград-Волынский,27.633333,50.583333,wikidata:Q149024 P625 (город)
+UA,UA-ZHY-g_zhitomir,г. Житомир,28.657778,50.254444,wikidata:Q156713 P625 (город)
+UA,UA-ZHY-korostenskij_r,Коростенский район (сельское население),28.65,50.95,wikidata:Q601121 P36→Q158904 P625 (райцентр)
+UA,UA-ZHY-korostyshevskij_r,Коростышевский район,29.059167,50.318611,wikidata:Q2995775 P36→Q149190 P625 (райцентр)
+UA,UA-ZHY-luginskij_r,Лугинский район,28.383333,51.066667,wikidata:Q2620746 P36→Q2652141 P625 (райцентр)
+UA,UA-ZHY-lyubarskij_r,Любарский район,27.758333,49.921389,wikidata:Q2620696 P36→Q2652151 P625 (райцентр)
+UA,UA-ZHY-malinskij_r,Малинский район,29.27,50.768889,wikidata:Q2620713 P36→Q148997 P625 (райцентр)
+UA,UA-ZHY-narodichskij_r,Народичский район,29.081394,51.202317,wikidata:Q2620669 P36→Q2603008 P625 (райцентр)
+UA,UA-ZHY-narodickij_old,"Народицький район (старый, до 17.07.2020)",29.081394,51.202317,wikidata:Q2620669 P36→Q2603008 P625 (райцентр)
+UA,UA-ZHY-novograd_volynskij_r,Новоград-Волынский район,27.633333,50.583333,wikidata:Q2620718 P36→Q149024 P625 (райцентр)
+UA,UA-ZHY-olevskij_old,"Олевський район (старый, до 17.07.2020)",27.648056,51.227778,wikidata:Q2619261 P36→Q913143 P625 (райцентр)
+UA,UA-ZHY-olevskij_r,Олевский район,27.648056,51.227778,wikidata:Q2619261 P36→Q913143 P625 (райцентр)
+UA,UA-ZHY-ovruchskij_r,Овручский район,28.808056,51.324444,wikidata:Q676909 P36→Q27039 P625 (райцентр)
+UA,UA-ZHY-ovruckij_old,"Овруцький район (старый, до 17.07.2020)",28.808056,51.324444,wikidata:Q676909 P36→Q27039 P625 (райцентр)
+UA,UA-ZHY-popelnyanskij_r,Попельнянский район,29.459444,49.945833,wikidata:Q2620090 P36→Q2652368 P625 (райцентр)
+UA,UA-ZHY-radomyshlskij_r,Радомышльский район,29.233333,50.494722,wikidata:Q951829 P36→Q149163 P625 (райцентр)
+UA,UA-ZHY-ruzhinskij_r,Ружинский район,29.221389,49.723333,wikidata:Q2619287 P36→Q2641606 P625 (райцентр)
+UA,UA-ZHY-volodarsko_volynskij_r,Володарско-Волынский район,28.45,50.6,wikidata:Q2494465 P36→Q2993479 P625 (райцентр)
+UA,UA-ZHY-zhitomirskij_r,Житомирский район,28.657778,50.254444,wikidata:Q2620750 P36→Q156713 P625 (райцентр)

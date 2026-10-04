@@ -1,0 +1,2412 @@
+{
+"head": {
+"vars": [
+"item",
+"lt",
+"ru",
+"coord",
+"cap",
+"capLt",
+"capCoord",
+"type",
+"dissolved"
+]
+},
+"results": {
+"bindings": [
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q216"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Vilnius"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q118903"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(25.28 54.687222222)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Вильнюсское районное самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Vilniaus rajono savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(25.5 54.733333333)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q17301072"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q216"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Vilnius"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q923117"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(25.28 54.687222222)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Вильнюсское городское самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Vilniaus miesto savivaldybė"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q17166803"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q134712"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Šiauliai"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1417346"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(23.316666666 55.928055555)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Шяуляйское районное самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Šiaulių rajono savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(23.15 55.983333333)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q17301072"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q134712"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Šiauliai"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4993831"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(23.316666666 55.928055555)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Шяуляйское городское самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Šiaulių miesto savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(23.316666666 55.928055555)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q17166803"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q3657"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Rietavas"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q712011"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(21.927777777 55.725)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Ретавское самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Rietavo savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(21.951944444 55.725)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1363145"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q27892"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Neringa"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q9305847"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(21.1 55.5)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Нерингское самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Neringos savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(21.11666667 55.55555556)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1363145"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q137863"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Švenčionys"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1813849"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(26.155555555 55.133333333)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Швенчёнское районное самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Švenčionių rajono savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(26.166666666 55.116666666)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q17301072"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q147750"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Zarasai"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q664415"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(26.247222222 55.730555555)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Зарасайское районное самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Zarasų rajono savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(26.166666666 55.666666666)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q17301072"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q185555"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Birštonas"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2015893"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(24.033333333 54.6)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Бирштонское самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Birštono savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(24.033611111 54.584722222)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1363145"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q191015"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Trakai"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1987743"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(24.933333333 54.633333333)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Тракайское районное самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Trakų rajono savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(24.783333333 54.55)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q17301072"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q189157"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Utena"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2089798"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(25.6 55.5)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Утенское районное самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Utenos rajono savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(25.666666666 55.5)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q17301072"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q203675"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Mažeikiai"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q313132"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(22.336111111 56.311111111)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Мажейкяйской районное самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Mažeikių rajono savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(22.266666666 56.25)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q17301072"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q193787"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Tauragė"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2071640"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(22.283333333 55.25)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Таурагское районное самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Tauragės rajono savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(22.283333333 55.25)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q17301072"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q318686"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Radviliškis"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1755961"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(23.55 55.8)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Радвилишкское районное самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Radviliškio rajono savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(23.533333333 55.816666666)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q17301072"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q390969"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Šakiai"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2021307"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(23.044444444 54.955555555)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Шакяйское районное самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Šakių rajono savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(23.1 54.933333333)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q17301072"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q286554"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Elektrėnai"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2089777"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(24.661230555 54.788611111)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Электренское самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Elektrėnų savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(24.7 54.733333333)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1363145"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q391011"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Šalčininkai"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1799182"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(25.380555555 54.311111111)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Шальчининкское районное самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Šalčininkų rajono savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(25.366666666 54.333333333)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q17301072"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q213127"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Ukmergė"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q68929"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(24.766666666 55.25)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Укмергское районное самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Ukmergės rajono savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(24.766666666 55.266666666)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q17301072"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q203892"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Visaginas"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2558824"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(26.433333333 55.6)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Висагинское самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Visagino savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(26.5086 55.5867)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1363145"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q499318"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Prienai"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q47090"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(23.95 54.633333333)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Пренайское районное самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Prienų rajono savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(23.95 54.666666666)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q17301072"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q391626"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Šilutė"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q282098"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(21.483333333 55.35)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Шилутское районное самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Šilutės rajono savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(21.483333333 55.35)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q17301072"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q391582"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Šilalė"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q677400"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(22.183333333 55.491666666)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Шилальское районное самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Šilalės rajono savivaldybė"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q17301072"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q391764"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Širvintos"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q58882"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(24.95 55.05)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Ширвинтское районное самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Širvintų rajono savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(24.916666666 55.016666666)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q17301072"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q450625"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Alytus"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q769940"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(24.05 54.4)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Алитусское районное самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Alytaus rajono savivaldybė"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q17301072"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q450625"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Alytus"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q3685407"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(24.05 54.4)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Алитусское городское самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Alytaus miesto savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(24.05 54.4)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q17166803"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q614855"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Kaišiadorys"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2069320"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(24.45 54.85)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Кайшядорское районное самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Kaišiadorių rajono savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(24.45 54.866666666)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q17301072"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q505416"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Anykščiai"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2089772"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(25.107222222 55.534444444)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Аникщяйское районное самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Anykščių rajono savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(25.1 55.533333333)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q17301072"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q643376"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Pagėgiai"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2283574"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(21.905555555 55.136111111)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Пагегское самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Pagėgių savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(21.973888888 55.131111111)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1363145"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q259272"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Gargždai"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q141132"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(21.4 55.7)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Клайпедское районное самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Klaipėdos rajono savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(21.4 55.7)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q17301072"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q658230"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Kelmė"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1387044"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(22.933333333 55.633333333)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Кельмеское районное самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Kelmės rajono savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(22.85 55.666666666)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q17301072"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q658218"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Ignalina"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2069330"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(26.156666666 55.34)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Игналинское районное самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Ignalinos rajono savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(26.233333333 55.333333333)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q17301072"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q658562"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Raseiniai"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2069355"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(23.116666666 55.366666666)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Расейнское районное самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Raseinių rajono savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(23.15 55.383333333)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q17301072"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q735138"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Kėdainiai"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q46786"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(23.966666666 55.283333333)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Кедайнское районное самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Kėdainių rajono savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(23.951944444 55.315)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q17301072"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q743218"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Jonava"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1351768"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(24.280555555 55.072222222)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Ионавское районное самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Jonavos rajono savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(24.283333333 55.083333333)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q17301072"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q776965"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Klaipėda"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q16456513"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(21.135 55.7125)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Клайпедское городское самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Klaipėdos miesto savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(21.1175 55.71722)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q17166803"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q804035"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Biržai"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q763504"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(24.75 56.2)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Биржайский район"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Biržų rajono savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(24.8125 56.2828)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q17301072"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q835848"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Naujoji Akmenė"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1023041"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(22.883333333 56.316666666)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Акмянское районное самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Akmenės rajono savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(22.7539 56.2561)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q17301072"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q835843"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Varėna"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1351747"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(24.566666666 54.216666666)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Варенское районное самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Varėnos rajono savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(24.566666666 54.216666666)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q17301072"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q820024"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Kupiškis"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2089791"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(24.96667 55.83333)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Купишкское районное самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Kupiškio rajono savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(25.016666666 55.833333333)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q17301072"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q835838"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Jurbarkas"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2089815"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(22.766666666 55.083333333)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Юрбаркское районное самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Jurbarko rajono savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(22.916666666 55.2)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q17301072"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q847715"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Joniškis"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q610133"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(23.616666666 56.233333333)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Ионишкское районное самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Joniškio rajono savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(23.6 56.233333333)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q17301072"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q852272"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Vilkaviškis"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2021318"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(23.033333333 54.666666666)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Вилкавишкское районное самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Vilkaviškio rajono savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(22.983333333 54.583333333)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q17301072"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q923643"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Lazdijai"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2069342"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(23.516666666 54.234722222)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Лаздийское районное самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Lazdijų rajono savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(23.65 54.166666666)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q17301072"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q945484"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Pasvalys"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1461920"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(24.4 56.061111111)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Пасвальское районное самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Pasvalio rajono savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(24.383333333 56.05)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q17301072"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q945473"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Kazlų Rūda"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1461972"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(23.486502777 54.749188888)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Казлу-Рудское самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Kazlų Rūdos savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(23.463888888 54.763888888)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1363145"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q957530"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Molėtai"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2089785"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(25.416666666 55.233333333)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Молетское районное самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Molėtų rajono savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(25.433333333 55.216666666)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q17301072"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1004290"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Skuodas"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q219115"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(21.533333333 56.266666666)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Скуодасское районное самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Skuodo rajono savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(21.516666666 56.266666666)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q17301072"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q977255"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Plungė"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q404943"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(21.85 55.916666666)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Плунгеское районное самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Plungės rajono savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(21.85 55.916666666)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q17301072"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1261509"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Druskininkai"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q669649"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(23.9725 54.020555555)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Друскининкайское самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Druskininkų savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(23.966666666 54.016666666)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1363145"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1004298"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Kalvarija"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1461987"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(23.228055555 54.414722222)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Калварийское самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Kalvarijos savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(23.185 54.393055555)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1363145"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1004302"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Pakruojis"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1657116"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(23.85 55.983333333)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Пакруойское районное самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Pakruojo rajono savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(23.883333333 56.033333333)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q17301072"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1693963"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Rokiškis"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q766969"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(25.583333333 55.966666666)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Рокишкское районное самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Rokiškio rajono savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(25.566666666 55.95)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q17301072"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1719466"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Panevėžys"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1351758"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(24.363888888 55.725)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Паневежское районное самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Panevėžio rajono savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(24.35 55.65)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q17301072"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1719466"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Panevėžys"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q3685412"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(24.363888888 55.725)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Паневежское городское самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Panevėžio miesto savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(24.35 55.733333)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q17166803"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1788115"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Kretinga"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q156560"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(21.247172222 55.894211111)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Кретингское районное самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Kretingos rajono savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(21.3833 55.8833)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q17301072"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2047414"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Palanga"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q3685410"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(21.066666666 55.916666666)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Палангское городское самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Palangos miesto savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(21.066666666 55.916666666)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q17166803"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2222616"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Telšiai"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q588916"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(22.25 55.98333333)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Тельшяйское районное самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Telšių rajono savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(22.383333333 55.883333333)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q17301072"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1351046"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Marijampolė"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1931377"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(23.354444444 54.556666666)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Мариямпольское самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Marijampolės savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(23.358888888 54.56)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1363145"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1351046"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Marijampolė"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q16459845"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(23.354444444 54.556666666)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Мариямпольский район"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Marijampolės rajono savivaldybė"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q131749582"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "1999-12-21T00:00:00Z"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4115712"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Kaunas"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q928938"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(23.933333333 54.9)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Каунасское городское самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Kauno miesto savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(23.933333 54.9)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q17166803"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4115712"
+},
+"capLt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Kaunas"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1351722"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(23.933333333 54.9)"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Каунасское районное самоуправление"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Kauno rajono savivaldybė"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(23.833333333 55.0)"
+},
+"type": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q17301072"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1363145"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "самоуправление Литвы"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "Lietuvos savivaldybė"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q131749582"
+},
+"lt": {
+"xml:lang": "lt",
+"type": "literal",
+"value": "buvusi Lietuvos savivaldybė"
+}
+}
+]
+},
+"_query": "SELECT ?item ?lt ?ru ?coord ?cap ?capLt ?capCoord ?type ?dissolved WHERE {\n  ?item wdt:P17 wd:Q37 ; rdfs:label ?lt .\n  FILTER(lang(?lt)=\"lt\" && STRENDS(?lt, \"savivaldybė\"))\n  OPTIONAL { ?item rdfs:label ?ru FILTER(lang(?ru)=\"ru\") }\n  OPTIONAL { ?item wdt:P625 ?coord }\n  OPTIONAL { ?item wdt:P36 ?cap . ?cap wdt:P625 ?capCoord . OPTIONAL { ?cap rdfs:label ?capLt FILTER(lang(?capLt)=\"lt\") } }\n  OPTIONAL { ?item wdt:P31 ?type }\n  OPTIONAL { ?item wdt:P576 ?dissolved }\n}",
+"_accessed": "2026-10-04T06:00:44Z"
+}

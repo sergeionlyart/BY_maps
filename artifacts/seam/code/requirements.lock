@@ -1,0 +1,9 @@
+# Python >= 3.10. Внешних зависимостей НЕТ - расчёт (code/build.py), загрузка
+# (code/fetch.py), инварианты и сверка используют только стандартную
+# библиотеку (csv, gzip, json, math, hashlib, urllib, argparse, pathlib).
+# Проверено на CPython 3.11.5 (macOS).
+#
+# Исключение - справочный тяжёлый шаг code/extract/seam_extract.py (растры ->
+# таблица ячеек), который run.sh НЕ запускает; ему нужны:
+#   numpy, rasterio, shapely (см. requirements-raster.txt репозитория проекта).
+# Файл присутствует для соответствия ARTIFACT_STANDARD.md §3.

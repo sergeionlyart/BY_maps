@@ -1,0 +1,264 @@
+# Декларативное описание проверяемого пакета INF-20 `seam`
+# (ARTIFACT_STANDARD.md v1.0). Сборка: python -m etl.artifacts.build seam
+#
+# ВАЖНО: data/final/* сборщик КОПИРУЕТ с диска - перед сборкой пересчитайте их:
+#   python3 artifacts/seam/code/build.py --cells data/raw/seam/cells.csv.gz \
+#       --units-dir data/raw/seam/units
+# (то же, что etl/seam.py; при тех же входах seam.json совпадает с
+# web/public/data/seam.json побайтно).
+
+id: seam
+title: "Шов на карте: Беларусь и соседи по обе стороны границы"
+version: "1.0.0"
+released: "2026-10-04"
+landing_url: "https://by-population-maps.vercel.app/research/seam"
+authors:
+  - "Проект «Население Беларуси, 1897–2026»"
+
+# files: path - путь внутри пакета; from - путь в репозитории (иначе
+# берётся из artifacts/seam/<path>); role: raw|intermediate|final|code|params|docs
+files:
+  - { path: README.md, role: docs }
+  - { path: CHANGELOG.md, role: docs }
+  - { path: AGENT.md, role: docs }
+  - { path: LIMITATIONS.md, role: docs }
+  - { path: PROVENANCE.md, role: docs }
+  - { path: CITATION.cff, role: docs }
+  - { path: LICENSE.md, role: docs }
+  - { path: PREREGISTRATION.md, from: docs/preregistration/seam-v0.1.md, role: docs }
+  - { path: sources/registry.csv, role: docs }
+  - { path: sources/registry_files.csv, role: docs }
+  - { path: sources/raw/cells.csv.gz, from: data/raw/seam/cells.csv.gz,
+      role: raw, license: "CC BY 4.0 (производная BY Maps из WSF/GHSL/Li et al./VNL/GLAD - CC BY 4.0 и др., см. LICENSE.md)" }
+  - { path: sources/raw/neighbors_adm0.geojson, from: data/raw/seam/neighbors_adm0.geojson,
+      role: raw, license: "geoBoundaries gbOpen ADM0: по странам ODbL 1.0 / CC BY 4.0 / Other - Humanitarian (см. properties)" }
+  - { path: sources/raw/cities50k.json, from: data/raw/seam/cities50k.json,
+      role: raw, license: "CC BY 4.0 (GeoNames cities15000, выжимка)" }
+  # H5 (официальное население единиц, описательно): таблицы сборки BY Maps; сырые
+  # ответы API (data/raw/seam/units/raw/) не вендорятся - их sha256 в raw/manifest.csv проекта
+  - { path: sources/raw/units/units_population.csv, from: data/raw/seam/units/units_population.csv,
+      role: raw, license: "официальная статистика (Белстат/BY Maps, GUS, OSP, CSP, Росстат, Госстат Украины, Демоскоп) - со ссылкой на источники; сборка CC BY 4.0" }
+  - { path: sources/raw/units/units_geo.csv, from: data/raw/seam/units/units_geo.csv,
+      role: raw, license: "центроиды: geoBoundaries/BY Maps, GUGiK PRG, Wikidata (CC0); сборка CC BY 4.0" }
+  - { path: sources/raw/units/twins.csv, from: data/raw/seam/units/twins.csv,
+      role: raw, license: "официальная статистика (см. units_population.csv); сборка CC BY 4.0" }
+  - { path: sources/raw/units/checks.csv, from: data/raw/seam/units/checks.csv,
+      role: raw, license: "CC BY 4.0 (самопроверки сборки BY Maps)" }
+  - { path: sources/raw/units/SOURCES.md, from: data/raw/seam/units/SOURCES.md,
+      role: docs, license: "CC BY 4.0 (описание источников официальных рядов, BY Maps)" }
+  - { path: code/build.py, role: code }
+  - { path: code/fetch.py, role: code }
+  - { path: code/verify.py, role: code }
+  - { path: code/run.sh, role: code }
+  - { path: code/requirements.lock, role: code }
+  - { path: code/extract/seam_extract.py, from: etl/seam_extract.py, role: code }
+  - { path: params/assumptions.yaml, role: params }
+  - { path: checks/tests/test_invariants.py, role: code }
+  - { path: data/final/seam.json, role: final, license: "CC BY 4.0" }
+  - { path: data/final/estimates.csv, role: final, license: "CC BY 4.0" }
+  - { path: data/final/seam_results.md, role: final, license: "CC BY 4.0" }
+  - { path: data/final/computed_results.json, role: final, license: "CC BY 4.0" }
+
+sources:
+  - id: wsf_evolution
+    url: "https://download.geoservice.dlr.de/WSF_EVO/"
+    description: "World Settlement Footprint Evolution v1 (DLR): год появления застройки 1985–2015, 30 м, 24 тайла"
+    license: "CC BY 4.0"
+    accessed: "2026-10-04"
+    vendored: "производная: колонки wsf_* в sources/raw/cells.csv.gz; пофайловые URL+sha256 - sources/registry_files.csv"
+    fetch: "python3 code/fetch.py --source wsf_evolution"
+  - id: ghsl_built_s_r2023a
+    url: "https://human-settlement.emergency.copernicus.eu/ghs_buS2023.php"
+    description: "GHS-BUILT-S R2023A, 1 км, эпохи 1975/1990/2000/2015/2020"
+    license: "CC BY 4.0 (European Commission, JRC)"
+    accessed: "2026-10-04"
+    vendored: "производная: колонки built_*"
+    fetch: "python3 code/fetch.py --source ghsl_built_s_r2023a"
+  - id: ghsl_pop_r2023a
+    url: "https://human-settlement.emergency.copernicus.eu/ghs_pop2023.php"
+    description: "GHS-POP R2023A, 1 км, эпохи 1990/2000/2020 - только контроль"
+    license: "CC BY 4.0 (European Commission, JRC)"
+    accessed: "2026-10-04"
+    vendored: "производная: колонки pop_*"
+    fetch: "python3 code/fetch.py --source ghsl_pop_r2023a"
+  - id: li_ntl_v10
+    url: "https://doi.org/10.6084/m9.figshare.9828827.v10"
+    description: "Li et al. гармонизированный ряд DMSP/VIIRS 1992–2024, версия 10"
+    license: "CC BY 4.0"
+    accessed: "2026-10-04"
+    vendored: "производная: колонки li_*"
+    fetch: "python3 code/fetch.py --source li_ntl_v10"
+  - id: vnl_v21_zenodo
+    url: "https://zenodo.org/records/17294744"
+    description: "EOG VIIRS VNL v2.1 annual average 500 м (зеркало OpenGeoHub), 2014/2019/2024; чтение по сети"
+    license: "CC BY 4.0 (зеркало); EOG VNL - свободное использование с цитированием"
+    accessed: "2026-10-04"
+    vendored: "производная: колонки vnl_*"
+    fetch: "python3 code/fetch.py --source vnl_v21_zenodo"
+  - id: glad_cropland
+    url: "https://glad.umd.edu/dataset/croplands"
+    description: "GLAD Global cropland extent 30 м (Potapov et al. 2022, Nature Food 3:19-28), 2003 и 2019"
+    license: "открытый доступ с цитированием Potapov et al. (2022); условия - на странице набора"
+    accessed: "2026-10-04"
+    vendored: "производная: колонки crop_*"
+    fetch: "python3 code/fetch.py --source glad_cropland"
+  - id: geonames_cities15000
+    url: "https://download.geonames.org/export/dump/cities15000.zip"
+    description: "GeoNames cities15000; в расчёте - города от 50 тыс. жителей"
+    license: "CC BY 4.0"
+    accessed: "2026-10-04"
+    sha256: "4d91d34a56966f1b6c7ae192e171bd721b47f7b86848955679ed20bd032d4aba"
+    vendored: "sources/raw/cities50k.json (выжимка)"
+    fetch: "python3 code/fetch.py --source geonames_cities15000"
+  - id: geoboundaries_adm0
+    url: "https://www.geoboundaries.org/"
+    description: "geoBoundaries gbOpen ADM0 (упрощённые) POL, LTU, LVA, RUS, UKR"
+    license: "по странам: ODbL 1.0 (LTU, RUS, UKR), CC BY 4.0 (LVA), Other - Humanitarian (POL)"
+    accessed: "2026-10-04"
+    sha256: "8b36026fa9ad7dfc8d5e3c5ad5aba4e08d01900ea0dbab6da9bc7933f897f97f"
+    vendored: "sources/raw/neighbors_adm0.geojson"
+  - id: bymaps_cells
+    url: "https://github.com/sergeionlyart/BY_maps/blob/master/etl/seam_extract.py"
+    description: "Таблица ячеек 1 км в полосе ±52 км (производная BY Maps), 234 491 строка"
+    license: "CC BY 4.0"
+    accessed: "2026-10-04"
+    sha256: "9cd83b3aa5a1d1a28a959924bf10eb19123cca92a04178cb4751fe3e4f82dc82"
+    vendored: "sources/raw/cells.csv.gz"
+    fetch: "code/extract/seam_extract.py (в репозитории проекта: SEAM_RAW=<папка> python -m etl.seam_extract)"
+  - id: bymaps_units
+    url: "https://github.com/sergeionlyart/BY_maps/tree/master/data/raw/seam/units"
+    description: "Официальная численность населения административных единиц приграничья (сборка BY Maps 2026-10-04): районы BY, гмины PL, самоуправления LT, новады LV, районы RU и UA"
+    license: "официальная статистика стран - со ссылкой на источники; сборка CC BY 4.0"
+    accessed: "2026-10-04"
+    vendored: "sources/raw/units/units_population.csv, units_geo.csv, twins.csv, checks.csv"
+  - id: bymaps_data_json
+    url: "https://by-population-maps.vercel.app/data/data.json"
+    description: "Ряды районов Беларуси проекта: переписи 1989, 1999, 2009, 2019 и оценка Белстата на 2026 (pop-stat.mashke.org; 1989 - Демоскоп)"
+    license: "CC BY 4.0 (обработка BY Maps); первоисточник - официальная статистика"
+    accessed: "2026-10-04"
+    vendored: "строки country = BY в sources/raw/units/units_population.csv"
+  - id: gus_bdl
+    url: "https://bdl.stat.gov.pl/api/v1/data/by-variable/60641"
+    description: "GUS, Bank Danych Lokalnych: население гмин (var 60641, 1995–2025) и NSP-1988 (var 196130), Подляское и Люблинское воеводства"
+    license: "открытые данные GUS, со ссылкой на источник"
+    accessed: "2026-10-04"
+    vendored: "строки country = PL"
+  - id: osp_lt
+    url: "https://osp-rs.stat.gov.lt/rest_json/data/S3R167_M3010214"
+    description: "Статистика Литвы (OSP), население самоуправлений на 1 января, 1996–2026"
+    license: "открытые данные OSP, со ссылкой на источник"
+    accessed: "2026-10-04"
+    vendored: "строки country = LT"
+  - id: csp_lv
+    url: "https://data.stat.gov.lv/api/v1/en/OSP_PUB/POP/IR/A_IR/IRS030"
+    description: "Статистика Латвии (CSP), IRS030: население новадов Латгалии (деление 2009 г.), 1990–2022"
+    license: "открытые данные CSP, со ссылкой на источник"
+    accessed: "2026-10-04"
+    vendored: "строки country = LV"
+  - id: demoscope_1989
+    url: "http://demoscope.ru/weekly/ssp/sng89_reg1.php"
+    description: "Демоскоп Weekly: итоги переписи 1989 по районам (ЛитССР, ЛатССР, приграничные области РСФСР и УССР; также rus89_reg1.php)"
+    license: "публикация ИД НИУ ВШЭ; первичные данные - перепись 1989"
+    accessed: "2026-10-04"
+    vendored: "строки с source = Demoscope:*"
+  - id: rosstat
+    url: "https://rosstat.gov.ru/"
+    description: "Росстат: переписи 2002, 2010, 2021 (приграничные районы) и БД ПМО (показатель 8112027, оценка на 1 января 2025)"
+    license: "официальная статистика"
+    accessed: "2026-10-04"
+    vendored: "строки country = RU с source = Rosstat:*"
+  - id: ukrstat
+    url: "https://ukrstat.gov.ua/"
+    description: "Перепись Украины 2001 (1989 и 2001 в границах 2001 г.) и Госстат Украины: наличное население на 1 января 2009 и 2020"
+    license: "официальная статистика; издания Госстата - CC BY 4.0"
+    accessed: "2026-10-04"
+    vendored: "строки country = UA с source = Ukrcensus2001:* / Ukrstat:*"
+  - id: wikidata_coords
+    url: "https://query.wikidata.org/sparql"
+    description: "Координаты единиц LT, LV, RU, UA и единиц переписи 1989 (для привязки к полосе)"
+    license: "CC0"
+    accessed: "2026-10-04"
+    vendored: "sources/raw/units/units_geo.csv (coord_source)"
+
+entrypoints:
+  reproduce: "code/run.sh"
+  verify: "python3 checks/tests/test_invariants.py"
+
+environment:
+  python: ">=3.10"
+  lock: "code/requirements.lock"
+  seed: null            # расчёт детерминирован, случайности нет
+
+# Контрольные значения: ключевые tau лендинга (основная спецификация) с
+# допуском 0.001 (расчёт детерминирован; запас - на платформенное округление
+# float), число ячеек и вердикты H1–H5 - точно, медианы H5 - с допуском 0.01. ТОЛЬКО числа: валидатор
+# сравнивает abs(got - value) <= tolerance.
+expected_results:
+  - { metric: tau_C_0319_PL, value: 0.2965, tolerance: 0.001,
+      description: "скачок изменения доли пашни GLAD 2003→2019, п.п., Польша минус Беларусь (основная спецификация)" }
+  - { metric: tau_C_0319_LT, value: 13.369, tolerance: 0.001,
+      description: "скачок изменения доли пашни GLAD 2003→2019, п.п., Литва минус Беларусь (основная спецификация)" }
+  - { metric: tau_C_0319_LV, value: 6.93317, tolerance: 0.001,
+      description: "скачок изменения доли пашни GLAD 2003→2019, п.п., Латвия минус Беларусь (основная спецификация)" }
+  - { metric: tau_C_0319_RU, value: -5.13913, tolerance: 0.001,
+      description: "скачок изменения доли пашни GLAD 2003→2019, п.п., Россия минус Беларусь (основная спецификация)" }
+  - { metric: tau_C_0319_UA, value: -1.91877, tolerance: 0.001,
+      description: "скачок изменения доли пашни GLAD 2003→2019, п.п., Украина минус Беларусь (основная спецификация)" }
+  - { metric: tau_lvl_crop19_RU, value: -17.60968, tolerance: 0.001,
+      description: "скачок уровня доли пашни 2019, п.п., Россия минус Беларусь" }
+  - { metric: tau_lvl_crop19_UA, value: -13.43047, tolerance: 0.001,
+      description: "скачок уровня доли пашни 2019, п.п., Украина минус Беларусь" }
+  - { metric: tau_L_1924_UA, value: -0.26797, tolerance: 0.001,
+      description: "скачок огней 2019→2024, Δln(1+DN), Украина минус Беларусь (H4; война)" }
+  - { metric: tau_B_9015_PL, value: -0.13654, tolerance: 0.001,
+      description: "скачок роста застройки WSF 1990→2015, Δln, Польша минус Беларусь (H1)" }
+  - { metric: tau_B_9015_LT, value: 0.38723, tolerance: 0.001,
+      description: "скачок роста застройки WSF 1990→2015, Δln, Литва минус Беларусь (H1)" }
+  - { metric: tau_B_9015_LV, value: 0.05889, tolerance: 0.001,
+      description: "скачок роста застройки WSF 1990→2015, Δln, Латвия минус Беларусь (H1)" }
+  - { metric: tau_B_9015_RU, value: -0.06997, tolerance: 0.001,
+      description: "скачок роста застройки WSF 1990→2015, Δln, Россия минус Беларусь (H1)" }
+  - { metric: tau_B_9015_UA, value: -0.03146, tolerance: 0.001,
+      description: "скачок роста застройки WSF 1990→2015, Δln, Украина минус Беларусь (H1)" }
+  - { metric: tau_I_2019_PL, value: -0.13909, tolerance: 0.001,
+      description: "скачок яркости VIIRS 2019 при равной застройке и населении, Польша минус Беларусь (H3)" }
+  - { metric: tau_I_2019_LT, value: 0.043, tolerance: 0.001,
+      description: "скачок яркости VIIRS 2019 при равной застройке и населении, Литва минус Беларусь (H3)" }
+  - { metric: tau_I_2019_LV, value: -0.0054, tolerance: 0.001,
+      description: "скачок яркости VIIRS 2019 при равной застройке и населении, Латвия минус Беларусь (H3)" }
+  - { metric: tau_I_2019_RU, value: 0.01686, tolerance: 0.001,
+      description: "скачок яркости VIIRS 2019 при равной застройке и населении, Россия минус Беларусь (H3)" }
+  - { metric: tau_I_2019_UA, value: -0.04771, tolerance: 0.001,
+      description: "скачок яркости VIIRS 2019 при равной застройке и населении, Украина минус Беларусь (H3)" }
+  - { metric: cells_total, value: 234491, tolerance: 0,
+      description: "ячеек 1 км в полосе ±52 км вокруг пяти границ (таблица sources/raw/cells.csv.gz)" }
+  - { metric: verdict_H1, value: 0.0, tolerance: 0,
+      description: "вердикт H1 (государство против географии: скачок в росте застройки) по правилам пререгистрации: 1 подтверждена, 0.5 частично, 0 не подтверждена" }
+  - { metric: verdict_H2, value: 0.0, tolerance: 0,
+      description: "вердикт H2 (удержание пашни) по правилам пререгистрации: 1 подтверждена, 0.5 частично, 0 не подтверждена" }
+  - { metric: verdict_H3, value: 0.0, tolerance: 0,
+      description: "вердикт H3 (огни ≠ благосостояние) по правилам пререгистрации: 1 подтверждена, 0.5 частично, 0 не подтверждена" }
+  - { metric: verdict_H4, value: 1.0, tolerance: 0,
+      description: "вердикт H4 (огни на украинском участке после 2019 года) по правилам пререгистрации: 1 подтверждена, 0.5 частично, 0 не подтверждена" }
+  - { metric: h5_nb_median_PL, value: -0.697, tolerance: 0.01,
+      description: "H5: медиана годового темпа населения единиц соседа (Польша) в полосе 0–50 км, %/год, окно перепись к переписи" }
+  - { metric: h5_by_median_PL, value: -0.909, tolerance: 0.01,
+      description: "H5: медиана годового темпа населения белорусских районов напротив (Польша), %/год" }
+  - { metric: h5_nb_median_LT, value: -1.897, tolerance: 0.01,
+      description: "H5: медиана годового темпа населения единиц соседа (Литва) в полосе 0–50 км, %/год, окно перепись к переписи" }
+  - { metric: h5_by_median_LT, value: -1.423, tolerance: 0.01,
+      description: "H5: медиана годового темпа населения белорусских районов напротив (Литва), %/год" }
+  - { metric: h5_nb_median_LV, value: -2.107, tolerance: 0.01,
+      description: "H5: медиана годового темпа населения единиц соседа (Латвия) в полосе 0–50 км, %/год, окно перепись к переписи" }
+  - { metric: h5_by_median_LV, value: -1.633, tolerance: 0.01,
+      description: "H5: медиана годового темпа населения белорусских районов напротив (Латвия), %/год" }
+  - { metric: h5_nb_median_RU, value: -1.729, tolerance: 0.01,
+      description: "H5: медиана годового темпа населения единиц соседа (Россия) в полосе 0–50 км, %/год, окно перепись к переписи" }
+  - { metric: h5_by_median_RU, value: -1.676, tolerance: 0.01,
+      description: "H5: медиана годового темпа населения белорусских районов напротив (Россия), %/год" }
+  - { metric: h5_nb_median_UA, value: -0.851, tolerance: 0.01,
+      description: "H5: медиана годового темпа населения единиц соседа (Украина) в полосе 0–50 км, %/год, окно перепись к переписи" }
+  - { metric: h5_by_median_UA, value: -1.103, tolerance: 0.01,
+      description: "H5: медиана годового темпа населения белорусских районов напротив (Украина), %/год" }
+  - { metric: verdict_H5, value: 1.0, tolerance: 0,
+      description: "вердикт H5 (официальное население, описательно): 1 подтверждена, 0.5 частично, 0 не подтверждена" }

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mes:Structure xmlns:footer="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message/footer" xmlns:mes="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:com="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common" xmlns:str="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message https://osp-rs.stat.gov.lt/xsd_scheme/SDMXMessage.xsd http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common https://osp-rs.stat.gov.lt/xsd_scheme/SDMXCommon.xsd http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic https://osp-rs.stat.gov.lt/xsd_scheme/SDMXDataGeneric.xsd">
+   <mes:Header>
+      <mes:ID>34A08D23DCD14822AE1D0D54D10D9288</mes:ID>
+      <mes:Test>true</mes:Test>
+      <mes:Prepared>2026-10-04T09:22:17.607000000+03:00</mes:Prepared>
+      <mes:Sender id="unknown" />
+      <mes:Receiver id="not_supplied" />
+   </mes:Header>
+   <mes:Structures><str:Dataflows><str:Dataflow id="S3R167_M3010214" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=LSD:S3R167_M3010214(1.0)" isExternalReference="false" agencyID="LSD" isFinal="false" version="1.0"><com:Name xml:lang="lt">S3R167 - Nuolatinių gyventojų skaičius metų pradžioje</com:Name><com:Name xml:lang="en">S3R167 - Resident population at the beginning of the year</com:Name><com:Description xml:lang="lt">Administracinė teritorija | Gyvenamoji vietovė (1996 - 2026) (Atnaujinta: 2026-05-07)</com:Description><com:Description xml:lang="en">Administrative territory | Place of residence (1996 - 2026) (Was renewed: 2026-05-07)</com:Description><str:Structure><Ref id="M3010214" package="datastructure" class="DataStructure" agencyID="LSD" version="1.0"></Ref></str:Structure></str:Dataflow></str:Dataflows>
+  </mes:Structures>
+</mes:Structure>

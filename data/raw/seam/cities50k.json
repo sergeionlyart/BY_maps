@@ -1,0 +1,653 @@
+[
+ {
+  "name": "Horad Zhodzina",
+  "lon": 28.3331,
+  "lat": 54.0985,
+  "pop": 62983,
+  "cc": "BY"
+ },
+ {
+  "name": "Zhlobin",
+  "lon": 30.024,
+  "lat": 52.8926,
+  "pop": 76304,
+  "cc": "BY"
+ },
+ {
+  "name": "Vitebsk",
+  "lon": 30.2049,
+  "lat": 55.1904,
+  "pop": 358927,
+  "cc": "BY"
+ },
+ {
+  "name": "Svetlogorsk",
+  "lon": 29.7389,
+  "lat": 52.6329,
+  "pop": 61812,
+  "cc": "BY"
+ },
+ {
+  "name": "Slutsk",
+  "lon": 27.54159,
+  "lat": 53.01522,
+  "pop": 58995,
+  "cc": "BY"
+ },
+ {
+  "name": "Soligorsk",
+  "lon": 27.53583,
+  "lat": 52.78981,
+  "pop": 96418,
+  "cc": "BY"
+ },
+ {
+  "name": "Rechytsa",
+  "lon": 30.3916,
+  "lat": 52.3617,
+  "pop": 64733,
+  "cc": "BY"
+ },
+ {
+  "name": "Polotsk",
+  "lon": 28.7856,
+  "lat": 55.4879,
+  "pop": 79285,
+  "cc": "BY"
+ },
+ {
+  "name": "Pinsk",
+  "lon": 26.06726,
+  "lat": 52.12153,
+  "pop": 123283,
+  "cc": "BY"
+ },
+ {
+  "name": "Orsha",
+  "lon": 30.40365,
+  "lat": 54.51362,
+  "pop": 101662,
+  "cc": "BY"
+ },
+ {
+  "name": "Novopolotsk",
+  "lon": 28.59308,
+  "lat": 55.52618,
+  "pop": 95370,
+  "cc": "BY"
+ },
+ {
+  "name": "Minsk",
+  "lon": 27.56653,
+  "lat": 53.90019,
+  "pop": 1742124,
+  "cc": "BY"
+ },
+ {
+  "name": "Mazyr",
+  "lon": 29.21631,
+  "lat": 52.04162,
+  "pop": 104517,
+  "cc": "BY"
+ },
+ {
+  "name": "Maladziečna",
+  "lon": 26.854,
+  "lat": 54.3167,
+  "pop": 87339,
+  "cc": "BY"
+ },
+ {
+  "name": "Mahilyow",
+  "lon": 30.34044,
+  "lat": 53.90876,
+  "pop": 352896,
+  "cc": "BY"
+ },
+ {
+  "name": "Lida",
+  "lon": 25.29972,
+  "lat": 53.88333,
+  "pop": 103262,
+  "cc": "BY"
+ },
+ {
+  "name": "Kobryn",
+  "lon": 24.3563,
+  "lat": 52.21173,
+  "pop": 52235,
+  "cc": "BY"
+ },
+ {
+  "name": "Hrodna",
+  "lon": 23.82887,
+  "lat": 53.6758,
+  "pop": 363718,
+  "cc": "BY"
+ },
+ {
+  "name": "Homyel'",
+  "lon": 30.9754,
+  "lat": 52.4345,
+  "pop": 501193,
+  "cc": "BY"
+ },
+ {
+  "name": "Brest",
+  "lon": 23.71749,
+  "lat": 52.10894,
+  "pop": 347138,
+  "cc": "BY"
+ },
+ {
+  "name": "Barysaw",
+  "lon": 28.505,
+  "lat": 54.2279,
+  "pop": 133700,
+  "cc": "BY"
+ },
+ {
+  "name": "Baranovichi",
+  "lon": 26.00775,
+  "lat": 53.13255,
+  "pop": 170039,
+  "cc": "BY"
+ },
+ {
+  "name": "Bobruysk",
+  "lon": 29.20548,
+  "lat": 53.14676,
+  "pop": 205502,
+  "cc": "BY"
+ },
+ {
+  "name": "Vilnius",
+  "lon": 25.2798,
+  "lat": 54.68916,
+  "pop": 542366,
+  "cc": "LT"
+ },
+ {
+  "name": "Šiauliai",
+  "lon": 23.31667,
+  "lat": 55.93333,
+  "pop": 99462,
+  "cc": "LT"
+ },
+ {
+  "name": "Panevėžys",
+  "lon": 24.35983,
+  "lat": 55.73186,
+  "pop": 85885,
+  "cc": "LT"
+ },
+ {
+  "name": "Kaunas",
+  "lon": 23.90909,
+  "lat": 54.90156,
+  "pop": 289380,
+  "cc": "LT"
+ },
+ {
+  "name": "Dainava (Kaunas)",
+  "lon": 23.96831,
+  "lat": 54.91525,
+  "pop": 70000,
+  "cc": "LT"
+ },
+ {
+  "name": "Riga",
+  "lon": 24.10589,
+  "lat": 56.946,
+  "pop": 742572,
+  "cc": "LV"
+ },
+ {
+  "name": "Jūrmala",
+  "lon": 23.77038,
+  "lat": 56.968,
+  "pop": 52001,
+  "cc": "LV"
+ },
+ {
+  "name": "Jelgava",
+  "lon": 23.71278,
+  "lat": 56.65,
+  "pop": 54834,
+  "cc": "LV"
+ },
+ {
+  "name": "Daugavpils",
+  "lon": 26.53333,
+  "lat": 55.88333,
+  "pop": 78126,
+  "cc": "LV"
+ },
+ {
+  "name": "Zamość",
+  "lon": 23.25196,
+  "lat": 50.72314,
+  "pop": 66034,
+  "cc": "PL"
+ },
+ {
+  "name": "Tarnobrzeg",
+  "lon": 21.67937,
+  "lat": 50.57304,
+  "pop": 50459,
+  "cc": "PL"
+ },
+ {
+  "name": "Suwałki",
+  "lon": 22.93087,
+  "lat": 54.11175,
+  "pop": 69222,
+  "cc": "PL"
+ },
+ {
+  "name": "Stalowa Wola",
+  "lon": 22.05334,
+  "lat": 50.58286,
+  "pop": 66495,
+  "cc": "PL"
+ },
+ {
+  "name": "Siedlce",
+  "lon": 22.29006,
+  "lat": 52.16772,
+  "pop": 77185,
+  "cc": "PL"
+ },
+ {
+  "name": "Rzeszów",
+  "lon": 21.99901,
+  "lat": 50.04132,
+  "pop": 198317,
+  "cc": "PL"
+ },
+ {
+  "name": "Ostrołęka",
+  "lon": 21.57566,
+  "lat": 53.08621,
+  "pop": 53740,
+  "cc": "PL"
+ },
+ {
+  "name": "Mielec",
+  "lon": 21.4239,
+  "lat": 50.28709,
+  "pop": 59509,
+  "cc": "PL"
+ },
+ {
+  "name": "Lublin",
+  "lon": 22.57009,
+  "lat": 51.25058,
+  "pop": 336339,
+  "cc": "PL"
+ },
+ {
+  "name": "Łomża",
+  "lon": 22.05935,
+  "lat": 53.17806,
+  "pop": 62019,
+  "cc": "PL"
+ },
+ {
+  "name": "Ełk",
+  "lon": 22.36469,
+  "lat": 53.82824,
+  "pop": 55769,
+  "cc": "PL"
+ },
+ {
+  "name": "Chełm",
+  "lon": 23.4716,
+  "lat": 51.14312,
+  "pop": 60231,
+  "cc": "PL"
+ },
+ {
+  "name": "Białystok",
+  "lon": 23.16433,
+  "lat": 53.13333,
+  "pop": 295683,
+  "cc": "PL"
+ },
+ {
+  "name": "Biała Podlaska",
+  "lon": 23.11652,
+  "lat": 52.03238,
+  "pop": 57541,
+  "cc": "PL"
+ },
+ {
+  "name": "Yartsevo",
+  "lon": 32.69693,
+  "lat": 55.06491,
+  "pop": 52706,
+  "cc": "RU"
+ },
+ {
+  "name": "Velikiye Luki",
+  "lon": 30.54377,
+  "lat": 56.34063,
+  "pop": 103149,
+  "cc": "RU"
+ },
+ {
+  "name": "Smolensk",
+  "lon": 32.05088,
+  "lat": 54.77826,
+  "pop": 330025,
+  "cc": "RU"
+ },
+ {
+  "name": "Roslavl’",
+  "lon": 32.86409,
+  "lat": 53.95387,
+  "pop": 56971,
+  "cc": "RU"
+ },
+ {
+  "name": "Klintsy",
+  "lon": 32.23905,
+  "lat": 52.76033,
+  "pop": 66336,
+  "cc": "RU"
+ },
+ {
+  "name": "Zhytomyr",
+  "lon": 28.67913,
+  "lat": 50.26235,
+  "pop": 261624,
+  "cc": "UA"
+ },
+ {
+  "name": "Vyhurivshchyna-Troyeshchyna",
+  "lon": 30.60251,
+  "lat": 50.51137,
+  "pop": 240000,
+  "cc": "UA"
+ },
+ {
+  "name": "Shostka",
+  "lon": 33.47283,
+  "lat": 51.86434,
+  "pop": 73197,
+  "cc": "UA"
+ },
+ {
+  "name": "Rivne",
+  "lon": 26.23695,
+  "lat": 50.62036,
+  "pop": 243873,
+  "cc": "UA"
+ },
+ {
+  "name": "Pryluky",
+  "lon": 32.38382,
+  "lat": 50.59525,
+  "pop": 52553,
+  "cc": "UA"
+ },
+ {
+  "name": "Zvyahel",
+  "lon": 27.60884,
+  "lat": 50.59141,
+  "pop": 55925,
+  "cc": "UA"
+ },
+ {
+  "name": "Nizhyn",
+  "lon": 31.88844,
+  "lat": 51.04772,
+  "pop": 66983,
+  "cc": "UA"
+ },
+ {
+  "name": "Lutsk",
+  "lon": 25.35024,
+  "lat": 50.75784,
+  "pop": 215986,
+  "cc": "UA"
+ },
+ {
+  "name": "Kyiv",
+  "lon": 30.5238,
+  "lat": 50.45466,
+  "pop": 2952301,
+  "cc": "UA"
+ },
+ {
+  "name": "Kovel",
+  "lon": 24.70077,
+  "lat": 51.21548,
+  "pop": 67575,
+  "cc": "UA"
+ },
+ {
+  "name": "Korosten",
+  "lon": 28.63859,
+  "lat": 50.9512,
+  "pop": 61496,
+  "cc": "UA"
+ },
+ {
+  "name": "Konotop",
+  "lon": 33.2004,
+  "lat": 51.23251,
+  "pop": 84787,
+  "cc": "UA"
+ },
+ {
+  "name": "Irpin",
+  "lon": 30.24037,
+  "lat": 50.52201,
+  "pop": 65167,
+  "cc": "UA"
+ },
+ {
+  "name": "Sheptytskyi",
+  "lon": 24.23935,
+  "lat": 50.39403,
+  "pop": 64297,
+  "cc": "UA"
+ },
+ {
+  "name": "Chernihiv",
+  "lon": 31.28656,
+  "lat": 51.50541,
+  "pop": 282747,
+  "cc": "UA"
+ },
+ {
+  "name": "Brovary",
+  "lon": 30.79106,
+  "lat": 50.51097,
+  "pop": 109806,
+  "cc": "UA"
+ },
+ {
+  "name": "Boryspil",
+  "lon": 30.95263,
+  "lat": 50.35051,
+  "pop": 64117,
+  "cc": "UA"
+ },
+ {
+  "name": "Bohuniya",
+  "lon": 28.60962,
+  "lat": 50.27691,
+  "pop": 147324,
+  "cc": "UA"
+ },
+ {
+  "name": "Obolon",
+  "lon": 30.5055,
+  "lat": 50.5132,
+  "pop": 239500,
+  "cc": "UA"
+ },
+ {
+  "name": "Borshchahivka",
+  "lon": 30.3899,
+  "lat": 50.4316,
+  "pop": 179900,
+  "cc": "UA"
+ },
+ {
+  "name": "Holosiyiv",
+  "lon": 30.55178,
+  "lat": 50.34433,
+  "pop": 62200,
+  "cc": "UA"
+ },
+ {
+  "name": "Pechersk",
+  "lon": 30.52348,
+  "lat": 50.44441,
+  "pop": 100900,
+  "cc": "UA"
+ },
+ {
+  "name": "Svyatoshyn",
+  "lon": 30.34612,
+  "lat": 50.46341,
+  "pop": 53000,
+  "cc": "UA"
+ },
+ {
+  "name": "Dniprovskyi",
+  "lon": 30.60146,
+  "lat": 50.45366,
+  "pop": 357900,
+  "cc": "UA"
+ },
+ {
+  "name": "Desna",
+  "lon": 30.68228,
+  "lat": 50.52207,
+  "pop": 368500,
+  "cc": "UA"
+ },
+ {
+  "name": "Shevchenkivskyi",
+  "lon": 30.46576,
+  "lat": 50.46408,
+  "pop": 220077,
+  "cc": "UA"
+ },
+ {
+  "name": "Nyvky",
+  "lon": 30.40593,
+  "lat": 50.46461,
+  "pop": 71700,
+  "cc": "UA"
+ },
+ {
+  "name": "Pozniaky",
+  "lon": 30.62352,
+  "lat": 50.40259,
+  "pop": 104400,
+  "cc": "UA"
+ },
+ {
+  "name": "Darnytsya",
+  "lon": 30.69534,
+  "lat": 50.41596,
+  "pop": 343384,
+  "cc": "UA"
+ },
+ {
+  "name": "Voskresenka",
+  "lon": 30.6032,
+  "lat": 50.48481,
+  "pop": 84200,
+  "cc": "UA"
+ },
+ {
+  "name": "Vynohradar",
+  "lon": 30.42452,
+  "lat": 50.51429,
+  "pop": 57500,
+  "cc": "UA"
+ },
+ {
+  "name": "Vidradnyi",
+  "lon": 30.42231,
+  "lat": 50.43194,
+  "pop": 69800,
+  "cc": "UA"
+ },
+ {
+  "name": "Chokolivka",
+  "lon": 30.44732,
+  "lat": 50.42444,
+  "pop": 73600,
+  "cc": "UA"
+ },
+ {
+  "name": "Darnytskyi Masyv",
+  "lon": 30.62759,
+  "lat": 50.44311,
+  "pop": 68900,
+  "cc": "UA"
+ },
+ {
+  "name": "Lisovyi Masyv",
+  "lon": 30.63113,
+  "lat": 50.4725,
+  "pop": 87300,
+  "cc": "UA"
+ },
+ {
+  "name": "Shulyavka",
+  "lon": 30.4531,
+  "lat": 50.45356,
+  "pop": 62200,
+  "cc": "UA"
+ },
+ {
+  "name": "Mykilska Borshchahivka",
+  "lon": 30.37442,
+  "lat": 50.42638,
+  "pop": 127400,
+  "cc": "UA"
+ },
+ {
+  "name": "Kharkivskyi Masyv",
+  "lon": 30.66006,
+  "lat": 50.40848,
+  "pop": 93700,
+  "cc": "UA"
+ },
+ {
+  "name": "Desnyanskyi",
+  "lon": 31.3168,
+  "lat": 51.50631,
+  "pop": 179600,
+  "cc": "UA"
+ },
+ {
+  "name": "Novozavodskyi",
+  "lon": 31.25634,
+  "lat": 51.4893,
+  "pop": 179600,
+  "cc": "UA"
+ },
+ {
+  "name": "Korolyov",
+  "lon": 28.70013,
+  "lat": 50.24487,
+  "pop": 114034,
+  "cc": "UA"
+ },
+ {
+  "name": "Pivdenna Borshchahivka",
+  "lon": 30.40396,
+  "lat": 50.41059,
+  "pop": 50500,
+  "cc": "UA"
+ }
+]
