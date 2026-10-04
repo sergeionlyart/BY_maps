@@ -162,4 +162,16 @@ export const RESEARCH: ResearchEntry[] = [
     artifact: { file: 'by-maps-sexratio-v1.0.0.zip', version: '1.0.0', sizeKb: 1447 },
   },
   /* INF-20 END */
+  /* INF-21 BEGIN */
+  {
+    slug: 'sensors',
+    code: 'INF-21',
+    title: 'Второй сенсор',
+    question:
+      'Согласуется ли официальная численность районов Беларуси с двумя независимыми датчиками — спутниковой раскладкой населения GHS-POP и ночными огнями? Спутник подтверждает официальный ряд (ρ = 0,79 за 1990–2020), а свет как прибор изменений населения не работает: три из четырёх заранее заявленных гипотез опровергнуты.',
+    status: 'published',
+    stage: 10,
+    artifact: { file: 'by-maps-sensors-v1.0.0.zip', version: '1.0.0', sizeKb: 0 },
+  },
+  /* INF-21 END */
 ];
