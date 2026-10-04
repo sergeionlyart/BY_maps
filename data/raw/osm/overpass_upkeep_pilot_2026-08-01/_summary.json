@@ -1,0 +1,34 @@
+{
+ "school": {
+  "status": "ok",
+  "n": 4912
+ },
+ "fap_health": {
+  "status": "ok",
+  "n": 2627
+ },
+ "post_office": {
+  "status": "ok",
+  "n": 2731
+ },
+ "bank": {
+  "status": "ok",
+  "n": 2890
+ },
+ "station": {
+  "status": "ok",
+  "n": 1540
+ },
+ "cafe_restaurant": {
+  "status": "ok",
+  "n": 8016
+ },
+ "shop_retail": {
+  "status": "ok",
+  "n": 18374
+ },
+ "amenity_ladder_leisure": {
+  "status": "ok",
+  "n": 1768
+ }
+}

@@ -1,0 +1,137 @@
+{
+ "national_totals": {
+  "school": 4912,
+  "fap_health": 2627,
+  "post_office": 2731,
+  "bank": 2890,
+  "station": 1540,
+  "cafe_restaurant": 8016,
+  "shop_retail": 18374,
+  "amenity_ladder_leisure": 1768
+ },
+ "pilot_raion_counts": {
+  "r-ushacki": {
+   "school": 12,
+   "fap_health": 4,
+   "post_office": 4,
+   "bank": 3,
+   "station": 0,
+   "cafe_restaurant": 4,
+   "shop_retail": 32,
+   "amenity_ladder_leisure": 1
+  },
+  "r-bieshankovicki": {
+   "school": 7,
+   "fap_health": 3,
+   "post_office": 2,
+   "bank": 3,
+   "station": 0,
+   "cafe_restaurant": 6,
+   "shop_retail": 34,
+   "amenity_ladder_leisure": 0
+  },
+  "r-karelicki": {
+   "school": 14,
+   "fap_health": 8,
+   "post_office": 3,
+   "bank": 8,
+   "station": 0,
+   "cafe_restaurant": 12,
+   "shop_retail": 51,
+   "amenity_ladder_leisure": 1
+  },
+  "r-talachynski": {
+   "school": 14,
+   "fap_health": 2,
+   "post_office": 9,
+   "bank": 3,
+   "station": 10,
+   "cafe_restaurant": 15,
+   "shop_retail": 80,
+   "amenity_ladder_leisure": 0
+  },
+  "r-uzdzienski": {
+   "school": 20,
+   "fap_health": 9,
+   "post_office": 12,
+   "bank": 6,
+   "station": 0,
+   "cafe_restaurant": 11,
+   "shop_retail": 86,
+   "amenity_ladder_leisure": 5
+  },
+  "r-astraviecki": {
+   "school": 19,
+   "fap_health": 6,
+   "post_office": 10,
+   "bank": 8,
+   "station": 3,
+   "cafe_restaurant": 19,
+   "shop_retail": 79,
+   "amenity_ladder_leisure": 7
+  },
+  "r-horacki": {
+   "school": 16,
+   "fap_health": 7,
+   "post_office": 7,
+   "bank": 10,
+   "station": 7,
+   "cafe_restaurant": 12,
+   "shop_retail": 69,
+   "amenity_ladder_leisure": 1
+  },
+  "r-biarozauski": {
+   "school": 27,
+   "fap_health": 8,
+   "post_office": 20,
+   "bank": 21,
+   "station": 8,
+   "cafe_restaurant": 32,
+   "shop_retail": 131,
+   "amenity_ladder_leisure": 4
+  },
+  "r-zhlobinski": {
+   "school": 35,
+   "fap_health": 15,
+   "post_office": 25,
+   "bank": 26,
+   "station": 26,
+   "cafe_restaurant": 33,
+   "shop_retail": 155,
+   "amenity_ladder_leisure": 8
+  },
+  "r-minski": {
+   "school": 139,
+   "fap_health": 104,
+   "post_office": 110,
+   "bank": 161,
+   "station": 26,
+   "cafe_restaurant": 410,
+   "shop_retail": 787,
+   "amenity_ladder_leisure": 116
+  }
+ },
+ "pilot_raions": [
+  "r-ushacki",
+  "r-bieshankovicki",
+  "r-karelicki",
+  "r-talachynski",
+  "r-uzdzienski",
+  "r-astraviecki",
+  "r-horacki",
+  "r-biarozauski",
+  "r-zhlobinski",
+  "r-minski"
+ ],
+ "categories": [
+  "school",
+  "fap_health",
+  "post_office",
+  "bank",
+  "station",
+  "cafe_restaurant",
+  "shop_retail",
+  "amenity_ladder_leisure"
+ ],
+ "method": "point-in-polygon (shapely .contains/.intersects), geometry = etl.geo.build_raion_geoms (import, not fork)"
+}

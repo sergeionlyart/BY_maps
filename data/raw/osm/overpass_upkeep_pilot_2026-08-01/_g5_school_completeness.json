@@ -1,0 +1,74 @@
+{
+ "table": [
+  {
+   "raion": "r-ushacki",
+   "osm_2026": 12,
+   "official": 5,
+   "official_year": "2023 (на начало уч. года)",
+   "ratio_osm_over_official": 2.4
+  },
+  {
+   "raion": "r-bieshankovicki",
+   "osm_2026": 7,
+   "official": 7,
+   "official_year": "2023 (на начало уч. года)",
+   "ratio_osm_over_official": 1.0
+  },
+  {
+   "raion": "r-karelicki",
+   "osm_2026": 14,
+   "official": 11,
+   "official_year": "2024/25",
+   "ratio_osm_over_official": 1.27
+  },
+  {
+   "raion": "r-talachynski",
+   "osm_2026": 14,
+   "official": 9,
+   "official_year": "2023 (на начало уч. года)",
+   "ratio_osm_over_official": 1.56
+  },
+  {
+   "raion": "r-uzdzienski",
+   "osm_2026": 20,
+   "official": 14,
+   "official_year": "2024/25",
+   "ratio_osm_over_official": 1.43
+  },
+  {
+   "raion": "r-astraviecki",
+   "osm_2026": 19,
+   "official": 16,
+   "official_year": "2024/25",
+   "ratio_osm_over_official": 1.19
+  },
+  {
+   "raion": "r-horacki",
+   "osm_2026": 16,
+   "official": 15,
+   "official_year": "2024/25",
+   "ratio_osm_over_official": 1.07
+  },
+  {
+   "raion": "r-biarozauski",
+   "osm_2026": 27,
+   "official": 26,
+   "official_year": "2024/25",
+   "ratio_osm_over_official": 1.04
+  },
+  {
+   "raion": "r-zhlobinski",
+   "osm_2026": 35,
+   "official": 35,
+   "official_year": "2024/25",
+   "ratio_osm_over_official": 1.0
+  },
+  {
+   "raion": "r-minski",
+   "osm_2026": 139,
+   "official": 54,
+   "official_year": "2024/25",
+   "ratio_osm_over_official": 2.57
+  }
+ ]
+}

@@ -1,0 +1,74 @@
+{
+ "topic": "INF-16: недостающая привязка район→орган для РЭС/газа (Горецкий РЭС; газ Жлобинского и Бешенковичского районов; точная привязка филиала газа/РЭС для Кореличского и Островецкого районов)",
+ "search_queries_tried": [
+  "Горецкий РЭС Могилевэнерго электрические сети Горки район",
+  "Жлобинский участок газового хозяйства Гомельоблгаз",
+  "Бешенковичи газовое хозяйство Витебскоблгаз филиал",
+  "Кореличский район РЭС Гродноэнерго электрические сети",
+  "Островецкий район РЭС Гродноэнерго электрические сети Островец",
+  "WebFetch mogilev.energo.by/.../gorki.php",
+  "WebFetch gomeloblgaz.by/about/structura/",
+  "WebFetch oblgas.by/.../besenkovicskii-raion-gazosnabzenia",
+  "WebFetch energo.grodno.by (lidskie-electroseti, branch/lidskie-electroseti, oshmyanskie-electroseti, main page) — all timed out repeatedly",
+  "WebFetch gas.grodno.by/contacts/branches-contacts/ (main + lidagas-contacts + smorgongas-contacts)",
+  "WebFetch mogilevenergo.by/about/organizatsionnaya-struktura-rup-mogilyevenergo.php",
+  "duckduckgo.com/html search: Сморгонские электрические сети Гродноэнерго Островецкий (hit CAPTCHA on repeat)",
+  "duckduckgo.com/html search: Гродноэнерго структура филиалы список районы электрических сетей",
+  "duckduckgo.com/html search: Ошмянские электрические сети (CAPTCHA blocked)",
+  "yandex.by search: Ошмянские электрические сети Островецкий (CAPTCHA blocked)",
+  "bing.com search: Островецкий район электрических сетей филиал Ошмянские (irrelevant results)"
+ ],
+ "honest_assessment": "6 of 7 requested sub-items are now sourced, most from official domains (mogilev.energo.by, gomeloblgaz.by, oblgas.by, gas.grodno.by). One remains a genuine gap: the exact filial-level parent of \"Островецкий район электрических сетей\" (РУП Гродноэнерго) could not be confirmed — the base organization/address is well-corroborated by multiple independent directories, but I could not determine, despite extended search via WebFetch/DuckDuckGo/Bing (WebSearch quota was exhausted mid-task), whether it sits under one of Гродноэнерго's 4 electric-network filials (Гродненские/Волковысские/Лидские/Ошмянские) or reports directly — the naming pattern across sources suggests the latter but that is inference, not a confirmed org-chart citation. Also flagging one unresolved discrepancy: two different addresses appear for Горецкий РЭС across sources (official mogilev.energo.by admin-procedures page says ул. Якубовского 32; several independent directories agree with each other on ул. Мира 61а) — not reconciled, reported as-is rather than silently picking one. energo.grodno.by (the primary official site for Гродноэнерго structure) was unreachable on every attempt (timeouts), so Korelichi RES filial attribution rests on directory corroboration rather than a primary-source fetch, unlike the other 5 confirmed items which have at least one official-domain source.",
+ "coverage_estimate": "6 of 7 sub-items fully sourced (Горецкий РЭС, Жлобинский газ, Бешенковичский газ, Кореличский газ, Кореличский РЭС, Островецкий газ); 1 of 7 partial (Островецкий РЭС — org/address confirmed, filial-parent not confirmed).",
+ "items_found": [
+  {
+   "name": "Горецкий РЭС, филиал «Могилевские электрические сети» РУП «Могилевэнерго»",
+   "raion_or_city": "Горецкий район, г. Горки",
+   "category": "РЭС (электроэнерго)",
+   "source_url": "https://mogilev.energo.by/administrativnye-protsedury/grazhdanam/gorki.php",
+   "notes": "Официальный адрес по этому источнику: ул. Якубовского, 32. Директории (b2b.by, wk3.ru, chinovniki.info) независимо друг от друга указывают другой адрес: ул. Мира, 61а — расхождение не устранено. Принадлежность к филиалу «Могилевские электрические сети» подтверждена также структурной страницей mogilevenergo.by (9 районов электросетей в филиале)."
+  },
+  {
+   "name": "ПУ «Жлобингаз», филиал РПУП «Гомельоблгаз»",
+   "raion_or_city": "Жлобинский район, г. Жлобин",
+   "category": "газоснабжение",
+   "source_url": "https://gomeloblgaz.by/about/structura/?SECTION_ID=61",
+   "notes": "Адрес: ул. Северная, 13, Жлобин. В составе ПУ также Октябрьский и Светлогорский РГС. Подтверждено доп. источником zhlobin.spravka.by."
+  },
+  {
+   "name": "Бешенковичский район газоснабжения — структурное подразделение ПУ «Чашникигаз», филиал УП «Витебскоблгаз»",
+   "raion_or_city": "Бешенковичский район, г.п. Бешенковичи",
+   "category": "газоснабжение",
+   "source_url": "https://www.oblgas.by/ru/struktura-predpriyatiya/besenkovicskii-raion-gazosnabzenia",
+   "notes": "Адрес: ул. Романова, 37. Руководитель: Матвеев Виталий Владимирович. Официальный сайт УП «Витебскоблгаз»."
+  },
+  {
+   "name": "Кореличский РГС, в составе ПУ «Лидагаз», филиал УП «Гроднооблгаз»",
+   "raion_or_city": "Кореличский район, г.п. Кореличи",
+   "category": "газоснабжение",
+   "source_url": "https://gas.grodno.by/contacts/branches-contacts/lidagas-contacts/",
+   "notes": "Адрес: 231430, г.п. Кореличи, ул. Красноармейская, 1а. Email: korelichi@gas.grodno.by. Официальный сайт УП «Гроднооблгаз»."
+  },
+  {
+   "name": "Кореличский район электрических сетей, филиал «Лидские электрические сети» РУП «Гродноэнерго»",
+   "raion_or_city": "Кореличский район, г.п. Кореличи",
+   "category": "РЭС (электроэнерго)",
+   "source_url": "https://gmc.by/154044-korelichskii-raion-elektricheskih-setei-rup-grodnoenergo.html",
+   "notes": "Адрес: ул. Гастелло, 48. Принадлежность к филиалу «Лидские электрические сети» подтверждена заголовками нескольких независимых директорий (1info.by, stroybirzha.by), но не первичным сайтом energo.grodno.by (недоступен для WebFetch — таймаут на всех попытках)."
+  },
+  {
+   "name": "Островецкий РГС, в составе ПУ «Сморгоньгаз», филиал УП «Гроднооблгаз»",
+   "raion_or_city": "Островецкий район, г. Островец",
+   "category": "газоснабжение",
+   "source_url": "https://gas.grodno.by/contacts/branches-contacts/smorgongas-contacts/",
+   "notes": "Адрес: 231210, г. Островец, ул. Береговая, 7. Официальный сайт УП «Гроднооблгаз»."
+  },
+  {
+   "name": "Островецкий район электрических сетей, РУП «Гродноэнерго» (филиал-родитель НЕ подтверждён)",
+   "raion_or_city": "Островецкий район, г. Островец",
+   "category": "РЭС (электроэнерго) — частично найдено",
+   "source_url": "https://www.b2b.by/ostroveckij-rajon-elektricheskix-setej-rup-grodnoenergo-317803.html",
+   "notes": "Адрес: Комсомольская ул., 32. Базовая организация подтверждена 4+ независимыми источниками (b2b.by, Yandex Maps, gmc.by, jsprav.ru), но ни один не называет филиал-посредник (в отличие от Кореличского РЭС, где везде явно указано «ф-л Лидские электрические сети»). Гродноэнерго имеет 4 электросетевых филиала (Гродненские/Волковысские/Лидские/Ошмянские) — принадлежность Островца ни к одному из них не подтверждена; возможно, это самостоятельная единица (как и соседний Сморгонский РЭС, который тоже упоминается без филиала-родителя). НЕ ЗАСЧИТЫВАТЬ как решённый пункт — точная привязка не найдена, несмотря на целевой поиск (see search_queries_tried)."
+  }
+ ]
+}
