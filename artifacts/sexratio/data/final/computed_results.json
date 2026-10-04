@@ -1,0 +1,114 @@
+[
+ {
+  "metric": "country_sex_ratio_2019",
+  "value": 85.96
+ },
+ {
+  "metric": "female_surplus_raions_2019",
+  "value": 23
+ },
+ {
+  "metric": "gates_passed_s1_s6",
+  "value": 6
+ },
+ {
+  "metric": "h1_confirmed",
+  "value": 0
+ },
+ {
+  "metric": "h1_median_r2539_2019",
+  "value": 104.76
+ },
+ {
+  "metric": "h1_spearman_p",
+  "value": 0.001333
+ },
+ {
+  "metric": "h1_spearman_rho",
+  "value": -0.2967
+ },
+ {
+  "metric": "h2_brest_r2539_2019",
+  "value": 86.99
+ },
+ {
+  "metric": "h2_confirmed",
+  "value": 1
+ },
+ {
+  "metric": "h2_minsk_r2539_2019",
+  "value": 94.46
+ },
+ {
+  "metric": "h3_confirmed",
+  "value": 1
+ },
+ {
+  "metric": "h3_raions_migration_dominant",
+  "value": 117
+ },
+ {
+  "metric": "h4_confirmed",
+  "value": 1
+ },
+ {
+  "metric": "h4_max_r70_2019",
+  "value": 51.15
+ },
+ {
+  "metric": "h4_median_r70_2019",
+  "value": 40.14
+ },
+ {
+  "metric": "h4_median_r70_2046",
+  "value": 51.39
+ },
+ {
+  "metric": "n_raions",
+  "value": 118
+ },
+ {
+  "metric": "posthoc_census_perimeter_rho",
+  "value": -0.3156
+ },
+ {
+  "metric": "posthoc_narrow_age_spikes",
+  "value": 6
+ },
+ {
+  "metric": "posthoc_size_rho",
+  "value": -0.2999
+ },
+ {
+  "metric": "r2539_2019_r-brescki",
+  "value": 87.9
+ },
+ {
+  "metric": "r2539_2019_r-ivacevicki",
+  "value": 137.46
+ },
+ {
+  "metric": "r2539_2019_r-minski",
+  "value": 91.28
+ },
+ {
+  "metric": "r70_2019_r-brescki",
+  "value": 45.26
+ },
+ {
+  "metric": "r70_2019_r-ivacevicki",
+  "value": 38.18
+ },
+ {
+  "metric": "r70_2019_r-minski",
+  "value": 46.42
+ },
+ {
+  "metric": "s4_census_median_0_4",
+  "value": 105.84
+ },
+ {
+  "metric": "s6_net_residual",
+  "value": 95651.7
+ }
+]

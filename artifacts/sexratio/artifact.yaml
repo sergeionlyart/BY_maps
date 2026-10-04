@@ -1,0 +1,128 @@
+# Проверяемый пакет INF-21 «Карта, где не хватает мужчин».
+# Сборка: python -m etl.artifacts.build sexratio
+
+id: sexratio
+title: "Соотношение полов по 17 возрастным группам и 118 районам Беларуси, 2009–2056: где не хватает мужчин и почему"
+version: "1.0.0"
+released: "2026-10-04"
+landing_url: "https://by-population-maps.vercel.app/research/sexratio"
+authors:
+  - "Проект «Население Беларуси, 1897–2026»"
+
+files:
+  - { path: README.md, role: docs }
+  - { path: CHANGELOG.md, role: docs }
+  - { path: AGENT.md, role: docs }
+  - { path: LIMITATIONS.md, role: docs }
+  - { path: VALIDATION.md, role: docs }
+  - { path: PROVENANCE.md, role: docs }
+  - { path: CITATION.cff, role: docs }
+  - { path: LICENSE.md, role: docs }
+  - { path: claims.yaml, role: docs }
+  - { path: PREREGISTRATION.md, from: docs/preregistration/sexratio-v0.1.md, role: docs }
+  - { path: METHODS.md, from: web/public/content/methods/sexratio.md, role: docs }
+  - { path: sources/registry.csv, role: docs }
+  # входы (все завендорены в репозитории; sha256 — в реестре)
+  - { path: data/curated/age2009.csv, from: data/curated/age2009.csv, role: raw, license: "открытые данные Белстата" }
+  - { path: data/curated/age2019.csv, from: data/curated/age2019.csv, role: raw, license: "открытые данные Белстата" }
+  - { path: data/curated/forecast_age_raion_v2026_4.json, from: data/curated/forecast_age_raion_v2026_4.json, role: intermediate, license: "CC BY 4.0" }
+  - { path: data/curated/mortality.csv, from: data/curated/mortality.csv, role: raw, license: "HMD/OWID, CC BY 4.0" }
+  - { path: data/curated/travel_times.csv, from: data/curated/travel_times.csv, role: intermediate, license: "CC BY 4.0" }
+  - { path: web/public/data/data.json, from: web/public/data/data.json, role: intermediate, license: "CC BY 4.0" }
+  # код
+  - { path: etl/__init__.py, from: artifacts/sexratio/shims/etl_init.py, role: code }
+  - { path: etl/common.py, from: artifacts/sexratio/shims/common.py, role: code }
+  - { path: etl/sexratio.py, from: etl/sexratio.py, role: code }
+  - { path: params/assumptions.yaml, role: params }
+  - { path: code/run.sh, role: code }
+  - { path: code/verify.py, role: code }
+  - { path: code/requirements.lock, role: code }
+  - { path: checks/tests/test_invariants.py, role: code }
+  # итоговые данные — ровно те, что на лендинге
+  - { path: data/final/computed_results.json, role: final, license: "CC BY 4.0" }
+  - { path: web/public/data/sexratio.json, from: web/public/data/sexratio.json, role: final, license: "CC BY 4.0" }
+  - { path: data/curated/sexratio.csv, from: data/curated/sexratio.csv, role: final, license: "CC BY 4.0" }
+
+sources:
+  - id: census_olap_f201n
+    url: "https://census.belstat.gov.by/saiku"
+    description: "Переписи 2009 и 2019, OLAP-куб F201N: возраст x пол x город/село по районам (через data/curated/age2009.csv, age2019.csv)"
+    license: "открытые данные Белстата"
+    accessed: "2026-07-11"
+  - id: hmd_owid
+    url: "https://catalog.ourworldindata.org/garden/hmd/2025-10-22/hmd/life_tables.parquet"
+    description: "Таблицы смертности Беларуси (Human Mortality Database, зеркало OWID), 1959-2018"
+    license: "CC BY 4.0"
+    accessed: "2026-07-11"
+  - id: project_internal
+    url: "https://github.com/sergeionlyart/BY_maps"
+    description: "Прогноз v2026.4 по районам и полу, времена в пути INF-04, ряды населения data.json — расчёты проекта"
+    license: "CC BY 4.0"
+    accessed: "2026-10-04"
+
+entrypoints:
+  reproduce: "code/run.sh"
+  verify: "python3 checks/tests/test_invariants.py"
+
+environment:
+  python: ">=3.10"
+  lock: "code/requirements.lock"
+  seed: null   # расчёт детерминирован, случайности нет
+
+expected_results:
+  - { metric: country_sex_ratio_2019, value: 85.96, tolerance: 0.005,
+      description: "мужчин на 100 женщин, страна, перепись 2019 (официально 85,94)" }
+  - { metric: female_surplus_raions_2019, value: 23, tolerance: 0,
+      description: "районов с женским перевесом в 25-39, 2019" }
+  - { metric: gates_passed_s1_s6, value: 6, tolerance: 0,
+      description: "вычислимых гейтов пройдено из 6" }
+  - { metric: h1_confirmed, value: 0, tolerance: 0,
+      description: "H1 (мужской перевес 25-39 растёт с удалённостью от Минска): 0 = ОПРОВЕРГНУТА" }
+  - { metric: h1_median_r2539_2019, value: 104.76, tolerance: 0.005,
+      description: "медиана соотношения 25-39 по 118 районам, 2019 (порог H1 > 105)" }
+  - { metric: h1_spearman_p, value: 0.001333, tolerance: 0.000001,
+      description: "p для rho H1 (нормальное приближение)" }
+  - { metric: h1_spearman_rho, value: -0.2967, tolerance: 0.0001,
+      description: "rho Спирмена с временем до Минска (предсказывался знак +, порог 0,30)" }
+  - { metric: h2_brest_r2539_2019, value: 86.99, tolerance: 0.005,
+      description: "Брест, 25-39, 2019 — самый женский облцентр" }
+  - { metric: h2_confirmed, value: 1, tolerance: 0,
+      description: "H2 (женский перевес 25-39 в городских ядрах): 1 = подтверждена" }
+  - { metric: h2_minsk_r2539_2019, value: 94.46, tolerance: 0.005,
+      description: "Минск, 25-39, 2019" }
+  - { metric: h3_confirmed, value: 1, tolerance: 0,
+      description: "H3 (разрыв 25-39 не смертностный): 1 = подтверждена, слаба по построению" }
+  - { metric: h3_raions_migration_dominant, value: 117, tolerance: 0,
+      description: "районов с преобладанием не-смертностного вклада (порог 79)" }
+  - { metric: h4_confirmed, value: 1, tolerance: 0,
+      description: "H4 (в 70+ мужчин нет нигде; разрыв сокращается): 1 = подтверждена" }
+  - { metric: h4_max_r70_2019, value: 51.15, tolerance: 0.005,
+      description: "максимум соотношения 70+ по районам, 2019 (порог 60)" }
+  - { metric: h4_median_r70_2019, value: 40.14, tolerance: 0.005,
+      description: "медиана 70+, 2019" }
+  - { metric: h4_median_r70_2046, value: 51.39, tolerance: 0.005,
+      description: "медиана 70+, 2046, base:official" }
+  - { metric: n_raions, value: 118, tolerance: 0,
+      description: "районов в расчёте" }
+  - { metric: posthoc_census_perimeter_rho, value: -0.3156, tolerance: 0.0001,
+      description: "пост-хок: rho H1 на переписном периметре — тот же знак" }
+  - { metric: posthoc_narrow_age_spikes, value: 6, tolerance: 0,
+      description: "пост-хок: районов с узким возрастным мужским пиком" }
+  - { metric: posthoc_size_rho, value: -0.2999, tolerance: 0.0001,
+      description: "пост-хок: rho с людностью района 25-39" }
+  - { metric: r2539_2019_r-brescki, value: 87.9, tolerance: 0.005,
+      description: "Брестский (с Брестом): 25-39, 2019" }
+  - { metric: r2539_2019_r-ivacevicki, value: 137.46, tolerance: 0.005,
+      description: "Ивацевичский (узкий пик, 137,5): 25-39, 2019" }
+  - { metric: r2539_2019_r-minski, value: 91.28, tolerance: 0.005,
+      description: "Минский: 25-39, 2019" }
+  - { metric: r70_2019_r-brescki, value: 45.26, tolerance: 0.005,
+      description: "Брестский (с Брестом): 70+, 2019" }
+  - { metric: r70_2019_r-ivacevicki, value: 38.18, tolerance: 0.005,
+      description: "Ивацевичский (узкий пик, 137,5): 70+, 2019" }
+  - { metric: r70_2019_r-minski, value: 46.42, tolerance: 0.005,
+      description: "Минский: 70+, 2019" }
+  - { metric: s4_census_median_0_4, value: 105.84, tolerance: 0.005,
+      description: "гейт S-4: медиана соотношения 0-4 по районам, перепись 2019" }
+  - { metric: s6_net_residual, value: 95651.7, tolerance: 0.1,
+      description: "гейт S-6: страновой остаток передвижки 2009->2019, человек" }

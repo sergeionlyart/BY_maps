@@ -1,0 +1,109 @@
+# INF-22 «Второй сенсор» (sensors) — реестр главных утверждений.
+# Схема (по образцу artifacts/sexratio/claims.yaml): DATA — прямо в источнике;
+# CALC — детерминированное преобразование данных фиксированной формулой;
+# INTERPRETATION — содержательный вердикт по гипотезе; LIMITATION —
+# ограничение, способное изменить прочтение; POSTHOC — расчёт после получения
+# данных, не замороженный пререгистрацией: объясняет, но не подтверждает.
+# Канонические числа — data/final/computed_results.json (30 метрик) и
+# web/public/data/sensors.json; правило сверки — AGENT.md.
+
+version: "1.0.0"
+frozen_metrics: 2026-10-04       # PREREGISTRATION.md, заморожено коммитом a90d5e7, поправка 1 — 2236c51
+horizon: { start: 1990, end: 2024 }
+
+claims:
+
+  - claim_id: C-001
+    text: >-
+      Доля Минска в населении страны выросла с 15,8 % в 1990 году до 21,5 % в
+      2020 по официальному ряду и с 14,1 % до 19,2 % по спутниковой раскладке
+      GHS-POP.
+    type: CALC
+    metric_ids: [minsk_share_official_2020, minsk_share_ghs_2020]
+    source_result: { file: web/public/data/sensors.json, filter: "summary.minsk_share" }
+
+  - claim_id: C-002
+    text: >-
+      Гипотеза H1 подтверждена: официальный ряд и GHS-POP согласны в том, какие
+      районы теряют долю населения за 1990→2020 — ρ Спирмена = 0,7895 по 117
+      районам при пороге 0,60; знак изменения совпадает в 109 из 117.
+    type: INTERPRETATION
+    metric_ids: [h1_confirmed, h1_rho, h1_sign_agree, n_og_1990_2020]
+    source_result: { file: data/final/computed_results.json, filter: "h1_rho == 0.7895" }
+
+  - claim_id: C-003
+    text: >-
+      Согласие H1 устойчиво: на окне 2000→2020 по всем 118 районам ρ = 0,9056.
+    type: CALC
+    metric_ids: [h1_robust_2000_2020_rho]
+    source_result: { file: data/final/computed_results.json, filter: "h1_robust_2000_2020_rho" }
+
+  - claim_id: C-004
+    text: >-
+      Гипотеза H2 опровергнута заранее заданным критерием: изменение доли
+      района в ночном свете за 2013→2019 с изменением доли в населении не
+      связано — ρ = −0,132 (p = 0,15) при пороге 0,40; на сегменте DMSP
+      1992→2011 ρ = −0,176.
+    type: INTERPRETATION
+    metric_ids: [h2_confirmed, h2_rho, h2_p, h2_robust_dmsp_rho]
+    source_result: { file: data/final/computed_results.json, filter: "h2_rho == -0.132" }
+
+  - claim_id: C-005
+    text: >-
+      Опровержение H2 не создано гармонизацией INF-08: на сырых радиансах VIIRS
+      ρ = −0,133; доли INF-08 и сырые радиансы расходятся не более чем на 1,53 %.
+    type: CALC
+    metric_ids: [h2_rho]
+    source_result: { file: web/public/data/sensors.json, filter: "summary.vnl_raw_vs_lshare_max_pct" }
+
+  - claim_id: C-006
+    text: >-
+      Гипотеза H3 опровергнута: расхождение «официальный ряд − спутник» не
+      связано с удалённостью района от облцентра (ρ = 0,03, p = 0,75); признака
+      «бумажного населения» периферии нет.
+    type: INTERPRETATION
+    metric_ids: [h3_confirmed, h3_rho]
+    source_result: { file: data/final/computed_results.json, filter: "h3_rho == 0.0296" }
+
+  - claim_id: C-007
+    text: >-
+      Гипотеза H4 опровергнута: после 2021 года медианное годовое расхождение
+      света и официального ряда выросло в 1,193 раза при пороге 1,25.
+    type: INTERPRETATION
+    metric_ids: [h4_confirmed, h4_ratio]
+    source_result: { file: data/final/computed_results.json, filter: "h4_ratio == 1.193" }
+
+  - claim_id: C-008
+    text: >-
+      Пост-хок: по уровням свет и население согласны (ρ = 0,87 в 2019), по
+      изменениям — нет: в 65 районах из 118 доля в свете за 2013→2019 росла, а
+      доля в населении падала; медианный район — население −5,9 %, свет +10,7 %.
+    type: POSTHOC
+    metric_ids: [posthoc_level_rho_2019, posthoc_light_up_pop_down, posthoc_median_dO_1319, posthoc_median_dL_1319]
+    source_result: { file: web/public/data/sensors.json, filter: "posthoc" }
+
+  - claim_id: C-009
+    text: >-
+      Пост-хок: изменения света антиперсистентны (ρ = −0,24 между 2013→2016 и
+      2016→2019); сильнее всего свет растёт в поясе 60–120 минут от Минска
+      (медиана +26,8 %).
+    type: POSTHOC
+    metric_ids: [posthoc_persistence_rho, posthoc_belt_60_120_dL]
+    source_result: { file: web/public/data/sensors.json, filter: "posthoc.belts_minsk" }
+
+  - claim_id: C-010
+    text: >-
+      GHS-POP не полностью независим от официальной статистики: он раскладывает
+      по застройке переписные итоги; согласие H1 не доказывает точность
+      официального ряда.
+    type: LIMITATION
+    metric_ids: []
+    source_result: { file: LIMITATIONS.md, filter: "пункт 1" }
+
+  - claim_id: C-011
+    text: >-
+      Свет измеряет активность, а не людей: Островецкий район удвоил долю в
+      свете за 2013→2019 (Δ = 0,71) при росте доли в населении на 16 %.
+    type: LIMITATION
+    metric_ids: [dL_1319_r-astraviecki, dO_1319_r-astraviecki]
+    source_result: { file: data/final/computed_results.json, filter: "dL_1319_r-astraviecki" }

@@ -34,6 +34,12 @@ export const ARTIFACT_SEO: Record<string, ArtifactSeo> = {
   /* INF-20 BEGIN */
   seam: { ru: 'Шов на карте: разрывы на пяти границах Беларуси по спутниковым данным', be: 'Шво на карце: разрывы на пяці межах Беларусі па спадарожнікавых даных', file: 'by-maps-seam-v1.0.0.zip', version: '1.0.0' },
   /* INF-20 END */
+  /* INF-21 BEGIN */
+  sexratio: { ru: 'Соотношение полов по районам Беларуси, 2009–2056', be: 'Суадносіны полаў па раёнах Беларусі, 2009–2056', file: 'by-maps-sexratio-v1.0.0.zip', version: '1.0.0' },
+  /* INF-21 END */
+  /* INF-22 BEGIN */
+  sensors: { ru: 'Сверка официальной численности районов Беларуси с GHS-POP и ночными огнями, 1990–2024', be: 'Зверка афіцыйнай колькасці насельніцтва раёнаў Беларусі з GHS-POP і начнымі агнямі, 1990–2024', file: 'by-maps-sensors-v1.0.0.zip', version: '1.0.0' },
+  /* INF-22 END */
 };
 
 /** Предметные title/description для metadata (задача 8). */

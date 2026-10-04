@@ -1,0 +1,131 @@
+# Проверяемый пакет INF-22 «Второй сенсор».
+# Сборка: python -m etl.artifacts.build sensors
+
+id: sensors
+title: "Второй сенсор: сверка официальной численности 118 районов Беларуси со спутниковой раскладкой GHS-POP и ночными огнями, 1990–2024"
+version: "1.0.0"
+released: "2026-10-04"
+landing_url: "https://by-population-maps.vercel.app/research/sensors"
+authors:
+  - "Проект «Население Беларуси, 1897–2026»"
+
+files:
+  - { path: README.md, role: docs }
+  - { path: CHANGELOG.md, role: docs }
+  - { path: AGENT.md, role: docs }
+  - { path: LIMITATIONS.md, role: docs }
+  - { path: VALIDATION.md, role: docs }
+  - { path: PROVENANCE.md, role: docs }
+  - { path: CITATION.cff, role: docs }
+  - { path: LICENSE.md, role: docs }
+  - { path: claims.yaml, role: docs }
+  - { path: PREREGISTRATION.md, from: docs/preregistration/sensors-v0.1.md, role: docs }
+  - { path: METHODS.md, from: web/public/content/methods/sensors.md, role: docs }
+  - { path: sources/registry.csv, role: docs }
+  # входы (все завендорены в репозитории; sha256 — в реестре)
+  - { path: data/raw/grid/reconciliation.csv, from: data/raw/grid/reconciliation.csv, role: intermediate, license: "GHS-POP CC BY 4.0 (JRC); официальный ряд — Белстат с указанием источника" }
+  - { path: web/public/data/nightlights_v2.json, from: web/public/data/nightlights_v2.json, role: intermediate, license: "CC BY 4.0 (производная DMSP/VNL)" }
+  - { path: data/raw/nightlights/zonal_vnl.csv, from: data/raw/nightlights/zonal_vnl.csv, role: raw, license: "CC BY 4.0 (EOG VNL/OpenGeoHub, производная)" }
+  - { path: web/public/data/data.json, from: web/public/data/data.json, role: intermediate, license: "CC BY 4.0" }
+  - { path: data/curated/travel_times.csv, from: data/curated/travel_times.csv, role: intermediate, license: "CC BY 4.0" }
+  # код
+  - { path: etl/__init__.py, from: artifacts/sensors/shims/etl_init.py, role: code }
+  - { path: etl/common.py, from: artifacts/sensors/shims/common.py, role: code }
+  - { path: etl/sensors.py, from: etl/sensors.py, role: code }
+  - { path: params/assumptions.yaml, role: params }
+  - { path: code/run.sh, role: code }
+  - { path: code/verify.py, role: code }
+  - { path: code/requirements.lock, role: code }
+  - { path: checks/tests/test_invariants.py, role: code }
+  # итоговые данные — ровно те, что на лендинге
+  - { path: data/final/computed_results.json, role: final, license: "CC BY 4.0" }
+  - { path: web/public/data/sensors.json, from: web/public/data/sensors.json, role: final, license: "CC BY 4.0" }
+  - { path: data/curated/sensors.csv, from: data/curated/sensors.csv, role: final, license: "CC BY 4.0" }
+
+sources:
+  - id: ghs_pop_r2023a
+    url: "https://human-settlement.emergency.copernicus.eu/download.php?ds=pop"
+    description: "GHS-POP R2023A, эпохи 1975-2020, просуммирован по полигонам районов в INF-15 (через data/raw/grid/reconciliation.csv)"
+    license: "CC BY 4.0 (Schiavina, Freire, MacManus 2023, European Commission JRC)"
+    accessed: "2026-07-26"
+  - id: nightlights_inf08
+    url: "https://by-population-maps.vercel.app/artifacts/nightlights"
+    description: "Гармонизированные доли ночной светимости DMSP + VIIRS по районам (INF-08; Li et al. calDMSP, EOG VIIRS VNL v2.1)"
+    license: "CC BY 4.0"
+    accessed: "2026-07-26"
+  - id: project_internal
+    url: "https://github.com/sergeionlyart/BY_maps"
+    description: "Ряды населения data.json (Белстат / pop-stat.mashke.org), времена в пути INF-04 — расчёты проекта"
+    license: "CC BY 4.0"
+    accessed: "2026-10-04"
+
+entrypoints:
+  reproduce: "code/run.sh"
+  verify: "python3 checks/tests/test_invariants.py"
+
+environment:
+  python: ">=3.10"
+  lock: "code/requirements.lock"
+  seed: null   # расчёт детерминирован, случайности нет
+
+expected_results:
+  - { metric: dL_1319_r-astraviecki, value: 0.710469, tolerance: 0.000001,
+      description: "Островецкий: изменение доли в свете 2013->2019 (стройка и пуск БелАЭС), ln" }
+  - { metric: dL_1319_r-minski, value: -0.161533, tolerance: 0.000001,
+      description: "Минский район: изменение доли в свете 2013->2019, ln" }
+  - { metric: dL_1319_r-smalavicki, value: 0.280372, tolerance: 0.000001,
+      description: "Смолевичский: изменение доли в свете 2013->2019, ln" }
+  - { metric: dO_1319_r-astraviecki, value: 0.150774, tolerance: 0.000001,
+      description: "Островецкий: изменение доли в официальном ряду 2013->2019, ln" }
+  - { metric: dO_1319_r-minski, value: 0.373833, tolerance: 0.000001,
+      description: "Минский район: изменение доли в официальном ряду 2013->2019, ln" }
+  - { metric: dO_1319_r-smalavicki, value: 0.096189, tolerance: 0.000001,
+      description: "Смолевичский: изменение доли в официальном ряду 2013->2019, ln" }
+  - { metric: gates_passed_v1_v5, value: 5, tolerance: 0,
+      description: "вычислимых гейтов пройдено из 5" }
+  - { metric: h1_confirmed, value: 1, tolerance: 0,
+      description: "H1 (статистика и спутник согласны в изменениях долей, 1990-2020): 1 = подтверждена" }
+  - { metric: h1_rho, value: 0.7895, tolerance: 0.0001,
+      description: "rho Спирмена dO vs dG, 1990-2020, 117 районов (порог 0,60)" }
+  - { metric: h1_robust_2000_2020_rho, value: 0.9056, tolerance: 0.0001,
+      description: "робастность H1: окно 2000-2020, 118 районов" }
+  - { metric: h1_sign_agree, value: 109, tolerance: 0,
+      description: "районов из 117 с совпадающим знаком изменения доли" }
+  - { metric: h2_confirmed, value: 0, tolerance: 0,
+      description: "H2 (свет следует за населением, 2013-2019): 0 = ОПРОВЕРГНУТА" }
+  - { metric: h2_p, value: 0.15334, tolerance: 0.00001,
+      description: "p для rho H2 (нормальное приближение)" }
+  - { metric: h2_rho, value: -0.132, tolerance: 0.0001,
+      description: "rho Спирмена dO vs dL, 2013-2019 (порог 0,40)" }
+  - { metric: h2_robust_dmsp_rho, value: -0.176, tolerance: 0.0001,
+      description: "робастность H2 на DMSP 1992-2011" }
+  - { metric: h3_confirmed, value: 0, tolerance: 0,
+      description: "H3 («бумажное население» периферии): 0 = ОПРОВЕРГНУТА" }
+  - { metric: h3_rho, value: 0.0296, tolerance: 0.0001,
+      description: "rho расхождения O-G с временем до облцентра (порог 0,25)" }
+  - { metric: h4_confirmed, value: 0, tolerance: 0,
+      description: "H4 (расхождение свет/статистика после 2021 выросло): 0 = ОПРОВЕРГНУТА" }
+  - { metric: h4_ratio, value: 1.193, tolerance: 0.001,
+      description: "отношение медианных годовых |dL-dO| 2021-2024 / 2013-2019 (порог 1,25)" }
+  - { metric: minsk_share_ghs_2020, value: 0.1916, tolerance: 0.0001,
+      description: "доля Минска в стране по GHS-POP, 2020" }
+  - { metric: minsk_share_official_2020, value: 0.2149, tolerance: 0.0001,
+      description: "доля Минска в стране по официальному ряду, 2020" }
+  - { metric: n_og_1990_2020, value: 117, tolerance: 0,
+      description: "районов в окне 1990-2020 (без Дрибинского, поправка 1)" }
+  - { metric: n_raions, value: 118, tolerance: 0,
+      description: "районов в расчёте" }
+  - { metric: posthoc_belt_60_120_dL, value: 0.2373, tolerance: 0.0001,
+      description: "пост-хок: медиана dL в поясе 60-120 мин от Минска (+26,8 %)" }
+  - { metric: posthoc_level_rho_2019, value: 0.8658, tolerance: 0.0001,
+      description: "пост-хок: rho уровней доли в свете и в населении, 2019" }
+  - { metric: posthoc_light_up_pop_down, value: 65, tolerance: 0,
+      description: "пост-хок: районов, где доля в свете росла, а в населении падала, 2013-2019" }
+  - { metric: posthoc_median_dL_1319, value: 0.1017, tolerance: 0.0001,
+      description: "пост-хок: медиана dL 2013-2019 (+10,7 %)" }
+  - { metric: posthoc_median_dO_1319, value: -0.0609, tolerance: 0.0001,
+      description: "пост-хок: медиана dO 2013-2019 (-5,9 %)" }
+  - { metric: posthoc_persistence_rho, value: -0.2406, tolerance: 0.0001,
+      description: "пост-хок: rho изменений света 2013-2016 и 2016-2019 (антиперсистентность)" }
+  - { metric: v4_light_rho_2018_2019, value: 0.9757, tolerance: 0.0001,
+      description: "гейт V-4: rho долей света 2018 и 2019" }
