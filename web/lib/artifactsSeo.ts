@@ -31,6 +31,9 @@ export const ARTIFACT_SEO: Record<string, ArtifactSeo> = {
   /* INF-15 BEGIN */
   grid: { ru: 'Полотно: карта расселения Беларуси по сетке 1 км, 1975–2050', be: 'Палатно: карта расселення Беларусі па сетцы 1 км, 1975–2050', file: 'by-maps-grid-v1.3.0.zip', version: '1.3.0' },
   /* INF-15 END */
+  /* INF-20 BEGIN */
+  seam: { ru: 'Шов на карте: разрывы на пяти границах Беларуси по спутниковым данным', be: 'Шво на карце: разрывы на пяці межах Беларусі па спадарожнікавых даных', file: 'by-maps-seam-v1.0.0.zip', version: '1.0.0' },
+  /* INF-20 END */
 };
 
 /** Предметные title/description для metadata (задача 8). */

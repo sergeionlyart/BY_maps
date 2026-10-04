@@ -1,0 +1,5962 @@
+{
+"head": {
+"vars": [
+"item",
+"ru",
+"c",
+"coord",
+"maxpop"
+]
+},
+"results": {
+"bindings": [
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2214"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Псков"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.333333333 57.816666666)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "185486"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2801"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Брянск"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(34.366666666 53.2425)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "372123"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q591719"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Нововолынск"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(24.166666666 50.733333333)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "49772"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q952457"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Нежин"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(31.8805 51.047361111)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "66981"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q997421"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Васильков"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(30.321666666 50.1775)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "37696"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q997541"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Вараш"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(25.850833333 51.34)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "41711"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1771329"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Брянск"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(34.17638889 53.21416667)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2719297"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Псков"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.398333333 57.785)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4097516"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Брянск"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(46.997394444 44.326377777)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "985"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4104916"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Васильков"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(26.13 48.993333333)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4104917"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Васильков"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(31.315555555 48.978888888)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4316200"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Нежин"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(31.8886075 51.0179844)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q16716710"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Славутич"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(30.7529932 51.515345)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q18401285"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Брянск"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(106.848333333 52.026111111)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "1075"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q30005986"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Псков"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.33333 57.816667)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q30005986"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Псков"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.333333333 57.833333333)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q30006233"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Владимир-Волынский"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(24.333333333 50.85)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2684"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Владимир"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(40.405833333 56.128611111)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "341579"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q33544"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Владимир"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(24.322222 50.848056)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "37910"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q53999"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(30.041666666 59.265833333)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "253"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q102307"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Вязьма"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(34.285 55.210277777)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "49932"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q176773"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.35 57.333333333)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "20923"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1000404"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Прилуки"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(32.4 50.6)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "53395"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1113259"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(33.697777777 53.566666666)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "29"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1581489"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Вязьма"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(33.555 55.470555555)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1581489"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Вязьма"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(33.558611111 55.473333333)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1581489"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Вязьма"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(34.192719444 55.465030555)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1975880"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Вязьма"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(40.3129 56.9773)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1975880"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Вязьма"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(41.0241 56.6092)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1975880"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Вязьма"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(41.006111111 56.626388888)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2066695"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(37.616666666 55.744444444)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q3986783"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Прилуки"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(39.283333333 59.888055555)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "0"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4015799"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Владимир"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(102.652777777 53.473333333)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "908"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4029569"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(33.686388888 53.568888888)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4106420"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Великие Луки"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(34.164470952 50.745695063)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4106421"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Великие Луки"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(30.558333333 56.339444444)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4113022"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Владимир"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(40.42042 56.12994)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4130370"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Вязьма"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(34.317226 55.19761)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4130371"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Вязьма"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(35.313949 56.540369)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4130371"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Вязьма"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(35.823347 56.478933)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4130371"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Вязьма"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(35.8225 56.479722222)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4167653"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(30.31416667 59.96277778)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4378575"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Прилуки"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(39.88944444 59.26388889)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4378576"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Прилуки"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(38.52 60.163055555)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "0"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4378577"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Прилуки"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(39.116666666 63.233333333)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "103"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4378578"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Прилуки"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.863611111 51.461666666)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4378580"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Прилуки"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(36.182542507 47.75186564)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4378584"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Прилуки"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(131.830555555 44.338888888)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "522"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4378592"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Прилуки"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(32.38375 50.581916666)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q13643561"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Прилуки"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(38.041388888 57.365)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q13650894"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Прилуки"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(45.450555555 60.584722222)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "7"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q13651464"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Прилуки"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(45.450555555 60.584722222)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "5"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q18797992"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Прилуки"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(31.31861 56.13306)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "13"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q18797995"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Прилуки"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(37.881944444 54.851388888)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "23"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q18797998"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Прилуки"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(43.76336 61.361578)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "102"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q21668805"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Вязьма"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(35.018423 54.157802)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "12"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q24637310"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Вязьма"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(37.96 52.85)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "8"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q27456806"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Прилуки"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(95.72972 57.75111)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "154"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q27531712"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Прилуки"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(42.380277777 61.306944444)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "86"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q30006419"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Прилуки"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(32.4 50.6)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q30046761"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Великие Луки"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(30.53472 56.34)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4338746"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(37.76 59.841388888)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "0"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4338747"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(32.683333333 51.2)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4338749"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(37.881388888 60.553611111)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "70"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4338750"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(24.595833333 49.928333333)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4338751"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(37.802222222 59.471111111)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "10"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4338752"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(25.9225 51.289166666)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4338753"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(29.195277777 60.925833333)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "92"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4338754"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(36.537222222 61.137777777)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "0"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4338758"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(26.017222222 50.418055555)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4338761"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.802222222 51.292777777)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4338763"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(24.626666666 49.158611111)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "183"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4338765"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(25.546388888 50.986666666)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "228"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4338767"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(30.386388888 49.674444444)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4338768"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(37.845 55.586944444)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "1048"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4338768"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(37.847222222 55.586944444)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "1048"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4338769"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(23.9611 49.4097)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "151"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4338769"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(23.961111111 49.409722222)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "151"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4338774"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(25.217777777 50.333333333)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4338775"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(33.472222222 54.038888888)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4338777"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(64.873855555 56.986055555)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "46"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4338778"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(23.346111111 49.626388888)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "710"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4338779"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(32.234166666 54.670555555)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4338780"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(36.576111111 58.729444444)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "0"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4338781"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(24.169722222 50.393888888)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "1849"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4338783"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(25.580833333 49.4875)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "1726"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4338784"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(38.466666666 59.1375)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "3"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4338787"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.317039 57.354525)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q12136759"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(34.898055555 59.854444444)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "4"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q12136810"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(33.695 59.588611111)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "6"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q13649854"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(30.183888888 55.878611111)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "5"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q13651664"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(35.559166666 58.726111111)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "4"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q15342599"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(49.943707 58.199715)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "0"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q15965983"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(29.5614 58.3464)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "20"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q16022288"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.5614 58.2875)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "1"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q16022292"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(36.8642 61.8192)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "8"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q16710500"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(39.370833333 48.719722222)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q16912933"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(31.830833333 60.046111111)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "321"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q18407075"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(32.640277777 60.144444444)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "248"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q18794817"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(29.49889 56.84417)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "0"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q18794830"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(37.547777777 58.857777777)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "10"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q18794831"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(29.48806 56.60972)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "9"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q18794833"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(40.962811 61.676294)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "25"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q18794835"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(45.67091 63.57512)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "117"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q18794838"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(29.61833 56.53222)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "0"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q18794841"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.646969 58.479155)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "12"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q18794842"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(38.012777777 56.709444444)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "185"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q18794844"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(33.120833333 59.4675)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "241"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q18794845"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(32.898611111 59.861944444)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "186"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q18794846"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(42.842875 64.246521)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "1"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q19693834"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(47.01583333 60.26333333)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q19848286"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(40.9310675 56.3428575)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "58"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q19900258"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(36.909553 58.569734)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "44"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q20129796"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(42.620811 56.898461)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "86"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q20637439"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(40.355565 57.091722)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "125"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q20674156"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(40.359761 57.298175)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q21852852"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(37.072762 54.879479)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "85"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q23873134"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(37.185679 52.302109)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "186"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q23873155"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(37.739034 52.550995)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "374"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q23953503"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(36.468663 52.318812)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "4"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2337"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Смоленск"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(32.045277777 54.782777777)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "310460"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q153715"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Клинцы"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(32.236111111 52.752777777)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "61153"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q156713"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Житомир"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.657777777 50.254444444)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "261624"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q157053"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Чернигов"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(31.294722222 51.493888888)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "286899"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q193328"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Рославль"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(32.856944444 53.949166666)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "43208"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q199004"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Ярцево"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(32.683333333 55.066666666)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "39801"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q932184"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Дубно"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(25.735 50.393055555)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "37545"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2059562"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Чернигов"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(31.267222222 51.485833333)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4169333"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Дубно"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.2725 57.99)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "0"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4169335"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Дубно"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.511388888 51.524166666)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4169335"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Дубно"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.5114 51.5242)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4223948"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Клинцы"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(35.230833333 53.804722222)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "26"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4223950"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Клинцы"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(32.370833333 48.429444444)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4223955"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Клинцы"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(25.915555555 50.377222222)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4352910"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Смоленск"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(32.034444444 54.797777777)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4424995"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Смоленск"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(32.033333333 54.766666666)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4424995"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Смоленск"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(32.05 54.783)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4424995"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Смоленск"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(32.05 54.783333)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4539066"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Ярцево"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(35.575063888 59.5114)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "4"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4539067"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Ярцево"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(40.281944444 60.474444444)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "4"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4539068"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Ярцево"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(36.048611111 58.75)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "146"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4539069"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Ярцево"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(37.1196 55.397080555)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "34"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4539070"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Ярцево"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(90.222 60.245)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "1610"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4539072"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Ярцево"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(42.288611111 59.947777777)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "9"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4539073"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Ярцево"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(37.516666666 59.345277777)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "4"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4539075"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Ярцево"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(32.656666666 55.066666666)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q8071268"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Житомир"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.7386 50.2706)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q14927665"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Клинцы"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(32.2333 52.735)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q16723468"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Ярцево"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(37.26111111 56.21527778)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "23"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q18407112"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Дубно"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(31.970833333 60.22)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "282"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q18780443"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Клинцы"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(34.567244 52.02063)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "45"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q18808073"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Ярцево"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(43.835244 57.909413)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "52"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q18808074"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Ярцево"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(42.147103 55.557964)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "157"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q18808075"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Ярцево"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(29.9 56.57278)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "0"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q18808076"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Ярцево"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.64389 56.57639)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "0"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q18808077"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Ярцево"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.83222 57.43028)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "0"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q18808080"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Ярцево"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(38.240277777 55.230555555)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "2"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q19693643"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Ярцево"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(47.482269 60.742274)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "12"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q19869099"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Ярцево"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(41.5623307 55.7877466)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "20"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q20638054"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Ярцево"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(43.012207 57.3366)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "0"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q21674360"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Ярцево"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(32.544585246 52.60964588)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q21854744"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Ярцево"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(35.742178 54.733816)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "23"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q28506837"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Клинцы"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(52.80083 53.08667)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "84"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q28522963"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(68.903082 59.043052)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "9"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q28525560"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(54.31028 59.24056)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "70"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q29402306"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Ярцево"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(33.183114 58.738899)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "88"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q29402648"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(33.38333 59.05611)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "0"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q29402650"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(33.675 58.80083)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "0"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q29404292"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(30.775222 57.860149)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "12"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q29404820"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(33.91944 58.22083)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "0"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q29404995"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(30.53056 58.48417)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "19"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q29404996"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(30.57639 58.65)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "98"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q29567518"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Ярцево"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(31.803523 57.895611)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "0"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q29568061"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(33.06083 57.45333)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "5"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q30007283"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Житомир"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.666666666 50.25)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q30007593"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Дубно"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(25.75 50.416666666)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q30007994"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Клинцы"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(32.25 52.75)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q30007994"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Клинцы"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(32.266667 52.766667)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q37749446"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(32.105 55.884722222)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q43526784"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(43.202964 48.730404)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "246"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q97340758"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Дубно"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.0472 58.441)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q108785133"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(29.86472 56.00917)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "8"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q108785200"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(31.760278 56.540278)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q108785850"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(47.023748 60.462983)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "1"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q108785907"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Остров"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(47.015622 60.263482)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "1"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q110259167"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Житомир"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(72.573589 54.154316)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q114704035"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Клинцы"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(33.189139 59.506096)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q7550"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Луцк"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(25.324444444 50.747777777)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "215986"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q33342"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Белая Церковь"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(30.116666666 49.795555555)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "208944"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q70231"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Славутич"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(30.756944444 51.520555555)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "25030"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q71727"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Ирпень"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(30.25 50.516666666)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "56806"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q134318"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Гагарин"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(35.0 55.55)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "25374"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q135559"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Дятьково"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(34.333333333 53.6)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "25255"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q149024"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Звягель"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.633333333 50.583333333)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "55086"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q156704"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Ковель"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(24.716666666 51.216666666)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "67575"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q156739"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Ровно"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(26.251388888 50.619722222)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "245289"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q158799"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Бердичев"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.6 49.891944444)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "73046"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q158904"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Коростень"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.65 50.95)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "61496"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q158910"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Борисполь"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(30.95 50.35)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "62281"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q161984"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Фастов"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(29.918055555 50.074722222)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "45907"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q174138"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Новозыбков"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(31.933333333 52.533333333)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "37852"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q193575"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Сафоново"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(33.25 55.1)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "36779"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q477677"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Борисполь"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(30.893333333 50.344722222)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q639839"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Переяслав"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(31.445 50.065)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "27088"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q815248"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Белая Церковь"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(23.933333333 47.95)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "3024"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q841026"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Бровары"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(30.79 50.511111111)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "109473"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q892999"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Бровары"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(30.813055555 50.514444444)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q942940"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Ирпень"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(29.1856 50.116)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q942940"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Ирпень"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(30.3681 50.7444)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1187208"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Сафоново"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(33.283333333 69.058055555)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "7661"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2098439"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Славутич"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(30.604166666 50.394166666)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4096654"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Бровары"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(25.458554701 48.96532765)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4131382"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Гагарин"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(34.985954098 55.543868794)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4234008"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Коростень"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(31.410833333 51.216944444)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4409302"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Сафоново"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(37.181111111 59.393333333)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "0"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4409304"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Сафоново"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(32.367777777 55.520277777)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4409306"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Сафоново"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(40.608888888 52.142777777)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "11"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4409307"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Сафоново"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(34.538333333 54.945555555)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "6"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4409308"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Сафоново"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(30.591388888 56.027222222)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "4"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4409310"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Сафоново"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(33.247637 55.105676)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q5290612"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Ровно"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(26.2387035 50.6286171)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q12086516"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Белая Церковь"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(30.10975 49.812111111)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q12113206"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Коростень"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.634722222 50.956944444)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q12150802"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Сафоново"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(34.527222222 59.566944444)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "0"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q13206900"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Сафоново"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(61.99028 55.34861)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "167"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q13655740"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Сафоново"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(45.537682 58.416841)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "126"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q13663889"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Гагарин"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(45.380277777 59.653055555)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "3"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q14927666"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Новозыбков"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(31.9469 52.5228)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q16022772"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Сафоново"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(47.6903 65.6722)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "207"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q16694987"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Сафоново"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(37.25138889 56.3)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "76"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q18800092"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Сафоново"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(41.575663 58.525138)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "11"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q18800096"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Сафоново"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(45.657261 61.631424)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "0"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q18800097"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Сафоново"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.49389 56.9075)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "2"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q18800098"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Сафоново"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(30.97667 55.91083)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "14"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q18800101"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Сафоново"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(38.2825 55.551388888)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "1109"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q18800102"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Сафоново"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.707646 56.404025)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "0"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q18800103"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Сафоново"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(37.398611111 55.0625)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "0"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q19613977"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Борисполь"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(128.567861111 51.048305555)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "323"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q19677374"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Сафоново"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(43.501205 58.433391)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "0"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q19848385"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Сафоново"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(39.380343 56.1731408)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "4"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q19887252"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Сафоново"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(42.3896313 55.8315052)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "11"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q20589896"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Сафоново"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(48.645848 55.866637)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q21344435"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Фастов"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(36.067 50.72)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "6"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q23877690"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Ровно"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(36.047048 53.778793)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "250"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q23878346"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Сафоново"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(36.40806 52.86333)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "1"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q24324332"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Фастов"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(44.20694 49.07472)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "132"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q25397021"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Дятьково"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(34.323909 53.610091)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q25509242"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Сафоново"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(73.727301 56.194145)"
+},
+"maxpop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "616"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q30006366"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Белая Церковь"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(30.116666666 49.783333333)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q30007554"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Ковель"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(24.716666666 51.216666666)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q30007573"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Новоград-Волынский"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.616666666 50.6)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q30046845"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Коростень"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.65 50.95)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q30046993"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Фастов"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(29.916666 50.083333)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q30047000"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Новозыбков"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(31.93333 52.533333)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q124308511"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Сафоново"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(38.205533 55.724458)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q130289353"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Белая Церковь"
+},
+"c": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(133.181474 44.718441)"
+}
+}
+]
+},
+"_query": "SELECT ?item ?ru ?c ?coord (MAX(?pop) AS ?maxpop) WHERE {\n  VALUES ?ru { \"Псков\"@ru \"Великие Луки\"@ru \"Остров\"@ru \"Брянск\"@ru \"Дятьково\"@ru \"Клинцы\"@ru \"Новозыбков\"@ru \"Смоленск\"@ru \"Вязьма\"@ru \"Гагарин\"@ru \"Рославль\"@ru \"Сафоново\"@ru \"Ярцево\"@ru \"Луцк\"@ru \"Владимир-Волынский\"@ru \"Владимир\"@ru \"Ковель\"@ru \"Нововолынск\"@ru \"Житомир\"@ru \"Бердичев\"@ru \"Коростень\"@ru \"Новоград-Волынский\"@ru \"Звягель\"@ru \"Белая Церковь\"@ru \"Борисполь\"@ru \"Бровары\"@ru \"Васильков\"@ru \"Ирпень\"@ru \"Переяслав-Хмельницкий\"@ru \"Переяслав\"@ru \"Фастов\"@ru \"Славутич\"@ru \"Ровно\"@ru \"Ровне\"@ru \"Дубно\"@ru \"Кузнецовск\"@ru \"Вараш\"@ru \"Чернигов\"@ru \"Нежин\"@ru \"Прилуки\"@ru }\n  ?item rdfs:label ?ru ; wdt:P17 ?c ; wdt:P625 ?coord .\n  FILTER(?c IN (wd:Q159, wd:Q212))\n  OPTIONAL { ?item wdt:P1082 ?pop }\n} GROUP BY ?item ?ru ?c ?coord",
+"_accessed": "2026-10-04T06:12:09Z"
+}

@@ -134,9 +134,10 @@ test('RU: меню «Статьи» видно на /article/grid, текуща�
   await expect(menu).toBeVisible();
   await expect(menu.locator('.content-toc-title')).toHaveText('Статьи');
   const items = menu.locator('li');
-  await expect(items).toHaveCount(2);
+  await expect(items).toHaveCount(3);
   await expect(menu.locator('.content-toc-current')).toHaveText('Страна не вымирает. Она переезжает');
-  await expect(menu.locator('a')).toHaveAttribute('href', '/article');
+  await expect(menu.locator('a[href="/article"]')).toHaveCount(1);
+  await expect(menu.locator('a[href="/article/seam"]')).toHaveCount(1);
   expect(errors).toEqual([]);
 });
 
@@ -144,7 +145,7 @@ test('RU: меню «Статьи» на /article ведёт на /article/grid'
   await page.goto('/article');
   const menu = page.locator('.content-toc-articles');
   await expect(menu.locator('.content-toc-current')).toHaveText('Страна, которая стягивается к столице');
-  await expect(menu.locator('a')).toHaveAttribute('href', '/article/grid');
+  await expect(menu.locator('a[href="/article/grid"]')).toHaveCount(1);
 });
 
 test('BE: меню «Статьи» переведено на обеих страницах', async ({ page }) => {
@@ -152,12 +153,13 @@ test('BE: меню «Статьи» переведено на обеих стр�
   const menu1 = page.locator('.content-toc-articles');
   await expect(menu1.locator('.content-toc-title')).toHaveText('Артыкулы');
   await expect(menu1.locator('.content-toc-current')).toHaveText('Краіна, якая сцягваецца да сталіцы');
-  await expect(menu1.locator('a')).toHaveAttribute('href', '/be/article/grid');
+  await expect(menu1.locator('a[href="/be/article/grid"]')).toHaveCount(1);
 
   await page.goto(PAGE_BE);
   const menu2 = page.locator('.content-toc-articles');
   await expect(menu2.locator('.content-toc-current')).toHaveText('Краіна не вымірае. Яна пераязджае');
-  await expect(menu2.locator('a')).toHaveAttribute('href', '/be/article');
+  await expect(menu2.locator('a[href="/be/article"]')).toHaveCount(1);
+  await expect(menu2.locator('a[href="/be/article/seam"]')).toHaveText('Шво на карце: што бачна на межах Беларусі з космасу');
 });
 
 test('навигация: вкладка "Статьи" (мн. число), активна на /article/grid тоже', async ({ page }) => {

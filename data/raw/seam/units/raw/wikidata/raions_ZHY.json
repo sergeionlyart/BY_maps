@@ -1,0 +1,2145 @@
+{
+"head": {
+"vars": [
+"item",
+"ru",
+"uk",
+"coord",
+"cap",
+"capRu",
+"capCoord",
+"dissolved"
+]
+},
+"results": {
+"bindings": [
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q148997"
+},
+"capRu": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Малин"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2620713"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(29.27 50.768888888)"
+},
+"uk": {
+"xml:lang": "uk",
+"type": "literal",
+"value": "Малинський район"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Малинский район"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(29.180081458 50.841262646)"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2020-07-19T00:00:00Z"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q149024"
+},
+"capRu": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Звягель"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2620718"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.633333333 50.583333333)"
+},
+"uk": {
+"xml:lang": "uk",
+"type": "literal",
+"value": "Новоград-Волинський район"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Новоград-Волынский район"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.733333333 50.633333333)"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2020-07-19T00:00:00Z"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q149024"
+},
+"capRu": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Звягель"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q63087680"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.633333333 50.583333333)"
+},
+"uk": {
+"xml:lang": "uk",
+"type": "literal",
+"value": "Виборчий округ 65"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Избирательный округ 65"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.8107 50.6262)"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q148997"
+},
+"capRu": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Малин"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q63087681"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(29.27 50.768888888)"
+},
+"uk": {
+"xml:lang": "uk",
+"type": "literal",
+"value": "Виборчий округ 66"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Избирательный округ 66"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9718 50.7693)"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q149024"
+},
+"capRu": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Звягель"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q102451616"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.633333333 50.583333333)"
+},
+"uk": {
+"xml:lang": "uk",
+"type": "literal",
+"value": "Звягельський район"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Звягельский район"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.75 50.65)"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q149271"
+},
+"capRu": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Чуднов"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2620113"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.096944444 50.052777777)"
+},
+"uk": {
+"xml:lang": "uk",
+"type": "literal",
+"value": "Чуднівський район"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Чудновский район"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.1264 50.0447)"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2020-07-19T00:00:00Z"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q149271"
+},
+"capRu": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Чуднов"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2620113"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.096944444 50.052777777)"
+},
+"uk": {
+"xml:lang": "uk",
+"type": "literal",
+"value": "Чуднівський район"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Чудновский район"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.1264 50.0447)"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2020-07-19T00:00:00Z"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q156713"
+},
+"capRu": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Житомир"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2620750"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.657777777 50.254444444)"
+},
+"uk": {
+"xml:lang": "uk",
+"type": "literal",
+"value": "Житомирський район"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Житомирский район"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.6486 50.2047)"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2020-07-19T00:00:00Z"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q156713"
+},
+"capRu": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Житомир"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2620750"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.657777777 50.254444444)"
+},
+"uk": {
+"xml:lang": "uk",
+"type": "literal",
+"value": "Житомирський район"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Житомирский район"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.6486 50.2047)"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2020-07-19T00:00:00Z"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q156713"
+},
+"capRu": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Житомир"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q63087677"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.657777777 50.254444444)"
+},
+"uk": {
+"xml:lang": "uk",
+"type": "literal",
+"value": "Виборчий округ 62"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Избирательный округ 62"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.6735 50.259)"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q149271"
+},
+"capRu": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Чуднов"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q63087682"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.096944444 50.052777777)"
+},
+"uk": {
+"xml:lang": "uk",
+"type": "literal",
+"value": "Виборчий округ 67"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Избирательный округ 67"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.2887 50.0612)"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q156713"
+},
+"capRu": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Житомир"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q102463833"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.657777777 50.254444444)"
+},
+"uk": {
+"xml:lang": "uk",
+"type": "literal",
+"value": "Житомирський район"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Житомирский район"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.63966263 50.25048241)"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q158799"
+},
+"capRu": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Бердичев"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q962724"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.6 49.891944444)"
+},
+"uk": {
+"xml:lang": "uk",
+"type": "literal",
+"value": "Бердичівський район"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Бердичевский район"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.6117 49.9344)"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2020-07-19T00:00:00Z"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q158799"
+},
+"capRu": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Бердичев"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q63087678"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.6 49.891944444)"
+},
+"uk": {
+"xml:lang": "uk",
+"type": "literal",
+"value": "Виборчий округ 63"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Избирательный округ 63"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9915 49.8842)"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q158799"
+},
+"capRu": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Бердичев"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q102446300"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.6 49.891944444)"
+},
+"uk": {
+"xml:lang": "uk",
+"type": "literal",
+"value": "Бердичівський район"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Бердичевский район"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.693657 49.868542)"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q158904"
+},
+"capRu": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Коростень"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q601121"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.65 50.95)"
+},
+"uk": {
+"xml:lang": "uk",
+"type": "literal",
+"value": "Коростенський район"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Коростенский район"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.6625 50.8897)"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2020-07-19T00:00:00Z"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q872377"
+},
+"capRu": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Черняхов"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2620426"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.665277777 50.455)"
+},
+"uk": {
+"xml:lang": "uk",
+"type": "literal",
+"value": "Черняхівський район"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Черняховский район"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.6786 50.4567)"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2020-07-19T00:00:00Z"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q158904"
+},
+"capRu": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Коростень"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q63087679"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.65 50.95)"
+},
+"uk": {
+"xml:lang": "uk",
+"type": "literal",
+"value": "Виборчий округ 64"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Избирательный округ 64"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.3042 51.1995)"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q158904"
+},
+"capRu": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Коростень"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q102456379"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.65 50.95)"
+},
+"uk": {
+"xml:lang": "uk",
+"type": "literal",
+"value": "Коростенський район"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Коростенский район"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.45 51.15)"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q913143"
+},
+"capRu": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Олевск"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2619261"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.648055555 51.227777777)"
+},
+"uk": {
+"xml:lang": "uk",
+"type": "literal",
+"value": "Олевський район"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Олевский район"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.6528 51.2242)"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2020-07-19T00:00:00Z"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q946994"
+},
+"capRu": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Брусилов"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2620734"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(29.533333333 50.283333333)"
+},
+"uk": {
+"xml:lang": "uk",
+"type": "literal",
+"value": "Брусилівський район"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Брусиловский район"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(29.5372 50.2872)"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2020-07-19T00:00:00Z"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q946994"
+},
+"capRu": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Брусилов"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2620734"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(29.533333333 50.283333333)"
+},
+"uk": {
+"xml:lang": "uk",
+"type": "literal",
+"value": "Брусилівський район"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Брусиловский район"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(29.5372 50.2872)"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2020-07-19T00:00:00Z"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2022610"
+},
+"capRu": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Базар"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q19692772"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(29.293611111 51.043888888)"
+},
+"uk": {
+"xml:lang": "uk",
+"type": "literal",
+"value": "Базарський район"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Базарский район"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(29.276013414 51.0438752)"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "1959-01-21T00:00:00Z"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2641606"
+},
+"capRu": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Ружин"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2619287"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(29.221388888 49.723333333)"
+},
+"uk": {
+"xml:lang": "uk",
+"type": "literal",
+"value": "Ружинський район"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Ружинский район"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(29.2272 49.7233)"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2020-07-19T00:00:00Z"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2641606"
+},
+"capRu": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Ружин"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2619287"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(29.221388888 49.723333333)"
+},
+"uk": {
+"xml:lang": "uk",
+"type": "literal",
+"value": "Ружинський район"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Ружинский район"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(29.2272 49.7233)"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2020-07-19T00:00:00Z"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2629338"
+},
+"capRu": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Романов"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2620663"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.939166666 50.151666666)"
+},
+"uk": {
+"xml:lang": "uk",
+"type": "literal",
+"value": "Романівський район"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Романовский район"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.9331 50.1533)"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2020-07-19T00:00:00Z"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2603008"
+},
+"capRu": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Народичи"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2620669"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(29.081394444 51.202316666)"
+},
+"uk": {
+"xml:lang": "uk",
+"type": "literal",
+"value": "Народицький район"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Народичский район"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(29.0747 51.2058)"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2020-07-19T00:00:00Z"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2603008"
+},
+"capRu": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Народичи"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2620669"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(29.081394444 51.202316666)"
+},
+"uk": {
+"xml:lang": "uk",
+"type": "literal",
+"value": "Народицький район"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Народичский район"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(29.0747 51.2058)"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2020-07-19T00:00:00Z"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2641633"
+},
+"capRu": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Емильчино"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2620703"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.802777777 50.870833333)"
+},
+"uk": {
+"xml:lang": "uk",
+"type": "literal",
+"value": "Ємільчинський район"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Емильчинский район"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.8078 50.8769)"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2020-07-19T00:00:00Z"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2067940"
+},
+"capRu": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Потиевка"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q12142921"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.964444444 50.619722222)"
+},
+"uk": {
+"xml:lang": "uk",
+"type": "literal",
+"value": "Потіївський район"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Потиевский район"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.964444444 50.619722222)"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "1959-01-21T00:00:00Z"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q148917"
+},
+"capRu": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Барановка"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2620688"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.666666666 50.3)"
+},
+"uk": {
+"xml:lang": "uk",
+"type": "literal",
+"value": "Баранівський район"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Барановский район"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.7458 50.3039)"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2020-07-19T00:00:00Z"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q148917"
+},
+"capRu": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Барановка"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2620688"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.666666666 50.3)"
+},
+"uk": {
+"xml:lang": "uk",
+"type": "literal",
+"value": "Баранівський район"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Барановский район"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.7458 50.3039)"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2020-07-19T00:00:00Z"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q27039"
+},
+"capRu": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Овруч"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q676909"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.808055555 51.324444444)"
+},
+"uk": {
+"xml:lang": "uk",
+"type": "literal",
+"value": "Овруцький район"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Овручский район"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.8139 51.3217)"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2020-07-19T00:00:00Z"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q148909"
+},
+"capRu": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Андрушёвка"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2620681"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(29.016666666 50.016666666)"
+},
+"uk": {
+"xml:lang": "uk",
+"type": "literal",
+"value": "Андрушівський район"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Андрушёвский район"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9803 50.0083)"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2020-07-19T00:00:00Z"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2641647"
+},
+"capRu": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Пулины"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2620082"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.277777777 50.466388888)"
+},
+"uk": {
+"xml:lang": "uk",
+"type": "literal",
+"value": "Пулинський район"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Пулинский район"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.2756 50.4744)"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2020-07-19T00:00:00Z"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2641647"
+},
+"capRu": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Пулины"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2620082"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.277777777 50.466388888)"
+},
+"uk": {
+"xml:lang": "uk",
+"type": "literal",
+"value": "Пулинський район"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Пулинский район"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.2756 50.4744)"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2020-07-19T00:00:00Z"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2652368"
+},
+"capRu": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Попельня"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2620090"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(29.459444444 49.945833333)"
+},
+"uk": {
+"xml:lang": "uk",
+"type": "literal",
+"value": "Попільнянський район"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Попельнянский район"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(29.4531 49.9453)"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2020-07-19T00:00:00Z"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2652151"
+},
+"capRu": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Любар"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2620696"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.758333333 49.921388888)"
+},
+"uk": {
+"xml:lang": "uk",
+"type": "literal",
+"value": "Любарський район"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Любарский район"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.7553 49.9222)"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2020-07-19T00:00:00Z"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2652151"
+},
+"capRu": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Любар"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2620696"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.758333333 49.921388888)"
+},
+"uk": {
+"xml:lang": "uk",
+"type": "literal",
+"value": "Любарський район"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Любарский район"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.7553 49.9222)"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2020-07-19T00:00:00Z"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2652141"
+},
+"capRu": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Лугины"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2620746"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.383333333 51.066666666)"
+},
+"uk": {
+"xml:lang": "uk",
+"type": "literal",
+"value": "Лугинський район"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Лугинский район"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.3931 51.0808)"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2020-07-19T00:00:00Z"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q149163"
+},
+"capRu": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Радомышль"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q951829"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(29.233333333 50.494722222)"
+},
+"uk": {
+"xml:lang": "uk",
+"type": "literal",
+"value": "Радомишльський район"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Радомышльский район"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(29.2333 50.4989)"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2020-07-19T00:00:00Z"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q149190"
+},
+"capRu": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Коростышев"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2995775"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(29.059166666 50.318611111)"
+},
+"uk": {
+"xml:lang": "uk",
+"type": "literal",
+"value": "Коростишівський район"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Коростышевский район"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(29.0661 50.3147)"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2020-07-19T00:00:00Z"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2980446"
+},
+"capRu": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Чоповичи"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q16723411"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.9525 50.833333333)"
+},
+"uk": {
+"xml:lang": "uk",
+"type": "literal",
+"value": "Чоповицький район"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Чоповичский район"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "1957-11-28T00:00:00Z"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2670476"
+},
+"capRu": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Городница"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q19692888"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.318333333 50.809444444)"
+},
+"uk": {
+"xml:lang": "uk",
+"type": "literal",
+"value": "Городницький район"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Городницкий район"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "1957-11-28T00:00:00Z"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2980432"
+},
+"capRu": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Корнин"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q20078021"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(29.535833333 50.095277777)"
+},
+"uk": {
+"xml:lang": "uk",
+"type": "literal",
+"value": "Корнинський район"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Корнинский район"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "1957-11-28T00:00:00Z"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(29.502372613 50.0838013)"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2980432"
+},
+"capRu": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Корнин"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q20078021"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(29.5375 50.083888888)"
+},
+"uk": {
+"xml:lang": "uk",
+"type": "literal",
+"value": "Корнинський район"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Корнинский район"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "1957-11-28T00:00:00Z"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(29.502372613 50.0838013)"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2670459"
+},
+"capRu": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Иванополь"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q20097581"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.215555555 49.858611111)"
+},
+"uk": {
+"xml:lang": "uk",
+"type": "literal",
+"value": "Янушпільський район"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Янушпольский район"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "1957-11-28T00:00:00Z"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.180480613 49.8585337)"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2993479"
+},
+"capRu": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Хорошев"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2494465"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.45 50.6)"
+},
+"uk": {
+"xml:lang": "uk",
+"type": "literal",
+"value": "Хорошівський район"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Хорошевский район"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.4447 50.6047)"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "2020-07-19T00:00:00Z"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2993483"
+},
+"capRu": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Довбыш"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4931455"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.989475 50.372238888)"
+},
+"uk": {
+"xml:lang": "uk",
+"type": "literal",
+"value": "Мархлевський польський національний район"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Довбышский район"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "1957-11-28T00:00:00Z"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4077969"
+},
+"capRu": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Бараши"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q19692779"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.030833333 50.715555555)"
+},
+"uk": {
+"xml:lang": "uk",
+"type": "literal",
+"value": "Барашівський район"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Барашевский район"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.995790113 50.7155418)"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "1962-12-30T00:00:00Z"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q3878279"
+},
+"capRu": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Словечно"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q20093105"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.354444444 51.381111111)"
+},
+"uk": {
+"xml:lang": "uk",
+"type": "literal",
+"value": "Словечанський район"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Словечанский район"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.319364713 51.3811378)"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "1962-12-30T00:00:00Z"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4464054"
+},
+"capRu": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Троянов"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q20098724"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(28.523055555 50.113333333)"
+},
+"uk": {
+"xml:lang": "uk",
+"type": "literal",
+"value": "Троянівський район"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Трояновский район"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "1957-11-28T00:00:00Z"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4364117"
+},
+"capRu": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Пищов"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q97621352"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.316944444 50.605555555)"
+},
+"uk": {
+"xml:lang": "uk",
+"type": "literal",
+"value": "Ярунський район"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Ярунский район"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.466111 50.543333)"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "1958-06-04T00:00:00Z"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2993483"
+},
+"capRu": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Довбыш"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q98389450"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.989475 50.372238888)"
+},
+"uk": {
+"xml:lang": "uk",
+"type": "literal",
+"value": "Довбишський район"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Довбышский район"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.961409312 50.3555673)"
+}
+},
+{
+"cap": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q4539028"
+},
+"capRu": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Ярунь"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q97621352"
+},
+"capCoord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.466111111 50.543333333)"
+},
+"uk": {
+"xml:lang": "uk",
+"type": "literal",
+"value": "Ярунський район"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Ярунский район"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.466111 50.543333)"
+},
+"dissolved": {
+"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+"type": "literal",
+"value": "1958-06-04T00:00:00Z"
+}
+}
+]
+},
+"_query": "SELECT ?item ?ru ?uk ?coord ?cap ?capRu ?capCoord ?dissolved WHERE {\n  ?item p:P131/ps:P131 wd:Q40637 ; rdfs:label ?ru .\n  FILTER(lang(?ru)=\"ru\" && (CONTAINS(?ru, \"район\") || CONTAINS(?ru, \"округ\")))\n  OPTIONAL { ?item rdfs:label ?uk FILTER(lang(?uk)=\"uk\") }\n  OPTIONAL { ?item wdt:P625 ?coord }\n  OPTIONAL { ?item wdt:P36 ?cap . ?cap wdt:P625 ?capCoord . OPTIONAL { ?cap rdfs:label ?capRu FILTER(lang(?capRu)=\"ru\") } }\n  OPTIONAL { ?item wdt:P576 ?dissolved }\n}",
+"_accessed": "2026-10-04T06:02:17Z"
+}

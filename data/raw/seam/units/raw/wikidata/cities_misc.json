@@ -1,0 +1,516 @@
+{
+"head": {
+"vars": [
+"item",
+"en",
+"ru",
+"coord",
+"pop"
+]
+},
+"results": {
+"bindings": [
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q33544"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Владимир"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Volodymyr"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(24.322222 50.848056)"
+},
+"pop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "37910"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q80021"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Даугавпилс"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Daugavpils"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(26.516111111 55.871388888)"
+},
+"pop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "77486"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q1773"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Рига"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Riga"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(24.106944444 56.9475)"
+},
+"pop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "588911"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q37961575"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Рига"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Riga"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(70.605 55.731666666)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q7920360"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Вентспилс"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Ventspils"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(21.597455089 57.393605483)"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q18798911"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Рига"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Riga"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(50.022472222 53.685722222)"
+},
+"pop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "51"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q104036"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Вентспилс"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Ventspils"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(21.564444444 57.389722222)"
+},
+"pop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "32479"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q167668"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Лиепая"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Liepāja"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(21.011111111 56.508333333)"
+},
+"pop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "66746"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q101825"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "городской округ Великие Луки"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Velikiye Luki"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(30.516666666 56.35)"
+},
+"pop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "84655"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q179830"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Елгава"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Jelgava"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(23.724444444 56.652222222)"
+},
+"pop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "54408"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q180379"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Резекне"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Rēzekne"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.330833333 56.506666666)"
+},
+"pop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "25978"
+}
+},
+{
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q178382"
+},
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Юрмала"
+},
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Jūrmala"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(23.722111111 56.9665)"
+},
+"pop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "52926"
+}
+},
+{
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Riga"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q3709884"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(-77.883888888 43.069444444)"
+},
+"pop": {
+"datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+"type": "literal",
+"value": "5586"
+}
+},
+{
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Volodymyr"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q12090407"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(24.3347 50.8417)"
+}
+},
+{
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Riga"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q18427474"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(13.99015 42.17308)"
+}
+},
+{
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Riga"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q19468177"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(4.5128 51.8553)"
+}
+},
+{
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Riga"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q19468178"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(6.0549 52.4818)"
+}
+},
+{
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Riga"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q19468180"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(5.0959 51.8892)"
+}
+},
+{
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Rēzekne"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q20404277"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(27.219967 56.557117)"
+}
+},
+{
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Jūrmala"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q27487286"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(23.695277777 56.951944444)"
+}
+},
+{
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Daugavpils"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q33670491"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(26.538888888 55.881388888)"
+}
+},
+{
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Liepāja"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q33690190"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(21.036666666 56.541944444)"
+}
+},
+{
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Riga"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q104821852"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(-99.650277777 38.950555555)"
+}
+},
+{
+"en": {
+"xml:lang": "en",
+"type": "literal",
+"value": "Riga"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q136348574"
+},
+"coord": {
+"datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+"type": "literal",
+"value": "Point(-83.8249404 41.8092159)"
+}
+}
+]
+},
+"_query": "SELECT ?item ?en ?ru ?coord ?pop WHERE {\n  VALUES ?en { \"Velikiye Luki\"@en \"Velikie Luki\"@en \"Volodymyr\"@en \"Riga\"@en \"Ventspils\"@en \"Daugavpils\"@en \"Jelgava\"@en \"Liepāja\"@en \"Rēzekne\"@en \"Jūrmala\"@en }\n  ?item rdfs:label ?en ; wdt:P625 ?coord .\n  OPTIONAL { ?item rdfs:label ?ru FILTER(lang(?ru)=\"ru\") }\n  OPTIONAL { ?item wdt:P1082 ?pop }\n}",
+"_accessed": "2026-10-04T06:12:26Z"
+}

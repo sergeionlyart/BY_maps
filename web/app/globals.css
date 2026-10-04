@@ -1976,3 +1976,11 @@ a.service-card:hover .sc-cta { text-decoration: underline; }
   border: 1px solid var(--border);
 }
 .pen-reel-caption { margin-top: 10px; }
+
+/* INF-20 BEGIN: «Шов на карте» (components/SeamView.tsx) */
+.seam-table td.seam-wrap { white-space: normal; min-width: 180px; line-height: 1.45; }
+.seam-gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
+.seam-gallery figure { margin: 0; }
+.seam-gallery img { display: block; width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--border); }
+.seam-gallery figcaption { margin-top: 6px; font-size: 12.5px; line-height: 1.45; color: var(--ink-2); }
+/* INF-20 END */

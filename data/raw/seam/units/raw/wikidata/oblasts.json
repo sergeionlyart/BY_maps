@@ -1,0 +1,135 @@
+{
+"head": {
+"vars": [
+"item",
+"ru",
+"country"
+]
+},
+"results": {
+"bindings": [
+{
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Псковская область"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2218"
+},
+"country": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+}
+},
+{
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Смоленская область"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2347"
+},
+"country": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+}
+},
+{
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Брянская область"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q2810"
+},
+"country": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q159"
+}
+},
+{
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Житомирская область"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q40637"
+},
+"country": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+}
+},
+{
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Волынская область"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q167859"
+},
+"country": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+}
+},
+{
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Черниговская область"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q167874"
+},
+"country": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+}
+},
+{
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Киевская область"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q170036"
+},
+"country": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+}
+},
+{
+"ru": {
+"xml:lang": "ru",
+"type": "literal",
+"value": "Ровненская область"
+},
+"item": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q174187"
+},
+"country": {
+"type": "uri",
+"value": "http://www.wikidata.org/entity/Q212"
+}
+}
+]
+},
+"_query": "SELECT ?item ?ru ?country WHERE {\n  VALUES ?ru { \"Псковская область\"@ru \"Смоленская область\"@ru \"Брянская область\"@ru \"Волынская область\"@ru \"Ровненская область\"@ru \"Житомирская область\"@ru \"Киевская область\"@ru \"Черниговская область\"@ru }\n  ?item rdfs:label ?ru ; wdt:P17 ?country .\n}",
+"_accessed": "2026-10-04T06:01:26Z"
+}
