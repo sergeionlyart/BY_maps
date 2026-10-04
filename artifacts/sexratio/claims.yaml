@@ -1,0 +1,120 @@
+# INF-20 «Карта, где не хватает мужчин» (sexratio) — реестр главных утверждений.
+# Схема (по образцу artifacts/pension/claims.yaml): DATA — прямо в источнике;
+# CALC — детерминированное преобразование данных фиксированной формулой;
+# MODEL — зависит от допущения, не наблюдаемого напрямую (всё, что опирается
+# на прогнозные узлы 2026+, и декомпозиция, опирающаяся на страновые таблицы
+# смертности вместо районных); INTERPRETATION — содержательный вердикт по
+# гипотезе; LIMITATION — ограничение, способное изменить прочтение; POSTHOC —
+# расчёт после получения данных, не замороженный пререгистрацией: объясняет,
+# но не подтверждает. Канонические числа — data/final/computed_results.json
+# (28 метрик) и web/public/data/sexratio.json; правило сверки — AGENT.md.
+
+version: "1.0.0"
+frozen_metrics: 2026-10-04       # PREREGISTRATION.md, заморожено коммитом 35c1bc2
+primary_series: "base:official"
+horizon: { start: 2009, end: 2056 }
+
+claims:
+
+  - claim_id: C-001
+    text: >-
+      В Беларуси по переписи 2019 года на 100 женщин приходится 85,96 мужчины
+      во всех возрастах (официальный итог 4 350 718 / 5 062 728 = 85,94).
+    type: DATA
+    metric_ids: [country_sex_ratio_2019]
+    source_result: { file: data/final/computed_results.json, filter: "country_sex_ratio_2019 == 85.96" }
+
+  - claim_id: C-002
+    text: >-
+      В возрасте 25–39 мужчин больше, чем женщин, в 95 районах из 118; женский
+      перевес — в 23 районах, из них 8 содержат свой областной город, 2 —
+      пригороды Минска, 13 — прочие районы (8 в Гомельской области).
+    type: CALC
+    metric_ids: [female_surplus_raions_2019]
+    source_result: { file: web/public/data/sexratio.json, filter: "female_surplus_2019" }
+
+  - claim_id: C-003
+    text: >-
+      Гипотеза H1 — мужской перевес в 25–39 растёт с удалённостью района от
+      Минска — опровергнута заранее заданным критерием: медиана 104,76 при
+      пороге 105, ранговая корреляция с временем в пути ρ = −0,297 (p = 0,0013)
+      при пороге ρ ≥ +0,30. Знак обратный предсказанному.
+    type: INTERPRETATION
+    verdict: refuted
+    metric_ids: [h1_confirmed, h1_median_r2539_2019, h1_spearman_rho, h1_spearman_p]
+    source_result: { file: data/final/computed_results.json, filter: "h1_confirmed == 0" }
+
+  - claim_id: C-004
+    text: >-
+      Гипотеза H2 подтверждена: в Минске (94,46) и всех пяти областных центрах
+      (Брест 86,99 — минимум) в возрасте 25–39 мужчин меньше, чем женщин, и
+      меньше, чем в медианном районе (104,76).
+    type: INTERPRETATION
+    verdict: confirmed
+    metric_ids: [h2_confirmed, h2_minsk_r2539_2019, h2_brest_r2539_2019]
+    source_result: { file: data/final/computed_results.json, filter: "h2_confirmed == 1" }
+
+  - claim_id: C-005
+    text: >-
+      Гипотеза H3 подтверждена: в 117 районах из 118 половой разрыв когорт,
+      которым в 2019 году 25–39 лет, создан преимущественно не-смертностными
+      причинами (нетто-миграция плюс расхождение охвата переписей).
+    type: MODEL
+    verdict: confirmed
+    metric_ids: [h3_confirmed, h3_raions_migration_dominant]
+    depends_on: [L-001, L-002, L-003]
+    source_result: { file: data/final/computed_results.json, filter: "h3_raions_migration_dominant == 117" }
+
+  - claim_id: C-006
+    text: >-
+      Гипотеза H4 подтверждена: в возрасте 70+ ни в одном районе мужчин не
+      больше 51,15 на 100 женщин, медиана 40,14; к 2046 году медиана растёт до
+      51,39 (базовый сценарий).
+    type: MODEL
+    verdict: confirmed
+    note: "часть за 2019 — DATA; рост к 2046 — MODEL (прогноз v2026.4)"
+    metric_ids: [h4_confirmed, h4_max_r70_2019, h4_median_r70_2019, h4_median_r70_2046]
+    source_result: { file: data/final/computed_results.json, filter: "h4_confirmed == 1" }
+
+  - claim_id: P-001
+    text: >-
+      Связь соотношения 25–39 с удалённостью немонотонна: медиана по поясам
+      времени до Минска 99,4 → 106,3 → 106,6 → 107,3 (90–120 мин) → 103,7.
+    type: POSTHOC
+    note: "объясняет опровержение H1; цитировать как результат нельзя"
+    source_result: { file: web/public/data/sexratio.json, filter: "posthoc.belts_median_r2539" }
+
+  - claim_id: P-002
+    text: >-
+      Обратный знак H1 не создан выбором периметра: на переписном периметре
+      (район без города) ρ = −0,316, p = 0,0006.
+    type: POSTHOC
+    metric_ids: [posthoc_census_perimeter_rho]
+    source_result: { file: data/final/computed_results.json, filter: "posthoc_census_perimeter_rho == -0.3156" }
+
+  - claim_id: P-003
+    text: >-
+      Шесть районов имеют узкий возрастной мужской пик в одном типе местности —
+      подпись населения закрытых учреждений; состав этого населения по данным
+      пакета не проверяется.
+    type: POSTHOC
+    metric_ids: [posthoc_narrow_age_spikes]
+    source_result: { file: data/final/computed_results.json, filter: "posthoc_narrow_age_spikes == 6" }
+
+limitations:
+
+  - claim_id: L-001
+    text: "Остаток передвижки — не только миграция, но и недоучёт переписи и разница определений 2009/2019."
+    type: LIMITATION
+
+  - claim_id: L-002
+    text: "Таблицы смертности страновые: где районная смертность выше, смертностная часть занижена, миграционная завышена."
+    type: LIMITATION
+
+  - claim_id: L-003
+    text: "Внешней проверки декомпозиции нет: разреза внутренней миграции по полу в проекте нет."
+    type: LIMITATION
+
+  - claim_id: L-004
+    text: "H3 слаба по построению: в 15–39 смертность мала, миграционный остаток почти автоматически больше."
+    type: LIMITATION

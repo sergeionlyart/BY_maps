@@ -4,7 +4,7 @@
 Исполнитель: ИИ-агент по поручению владельца.
 
 Раздел: `/research/sexratio` и `/be/research/sexratio`; пакет:
-`/artifacts/sexratio`, `by-maps-sexratio-v1.0.0.zip` (1444 КБ).
+`/artifacts/sexratio`, `by-maps-sexratio-v1.0.0.zip` (1447 КБ).
 
 ---
 
@@ -33,7 +33,7 @@
 | Данные для страницы | `web/public/data/sexratio.json`, `data/curated/sexratio.csv` |
 | Методблок, 8 полей, RU и BE | `web/public/content/methods/sexratio.md`, `be/sexratio.md` |
 | Страница раздела, RU и BE | `web/components/SexRatioView.tsx`, `web/app/research/sexratio`, `web/app/be/research/sexratio` |
-| Проверяемый пакет, 28 контрольных метрик | `artifacts/sexratio/`, `web/public/artifacts/by-maps-sexratio-v1.0.0.zip` |
+| Проверяемый пакет, 28 контрольных метрик, реестр утверждений `claims.yaml` | `artifacts/sexratio/`, `web/public/artifacts/by-maps-sexratio-v1.0.0.zip` |
 | Посадочная пакета, RU и BE | `/artifacts/sexratio`, `/be/artifacts/sexratio` |
 | Регистрация в индексах исследований и артефактов | `web/lib/research.ts`, `web/lib/artifactsSeo.ts` |
 | BE-словарь интерфейса | `web/lib/be-dict.ts`, блок `INF-20` |
@@ -114,7 +114,7 @@
 | e2e `sexratio.spec.ts` | 42/42 |
 | Гейты пререгистрации S-1…S-6 | пройдены |
 | S-7 (байт-воспроизводимость в CI) | локально — да; в CI до пакета очередь не доходит, см. раздел 7 |
-| S-8 (BE-паритет) | 69 строк в `be-dict.ts`, методблок и посадочные на обоих языках |
+| S-8 (BE-паритет) | 71 строка в `be-dict.ts`, методблок и посадочные на обоих языках |
 
 ## 7. Известные проблемы вне рамок этой работы
 
@@ -153,9 +153,10 @@
 2. **Методблок из 8 полей + проверяемый пакет с AGENT.md, байт-воспроизводимость.**
    Да — методблок RU/BE; пакет с AGENT.md, воспроизводится байт-в-байт и из
    архива. Оговорка по CI — раздел 7, пункт 1.
-3. **Классы утверждений DATA / CALC / MODEL / INTERPRETATION.** Частично:
-   классы указаны в пререгистрации (раздел 5) и методблоке, но отдельного
-   `claims.yaml`, как в пакете INF-13, нет. Это пробел пакета.
+3. **Классы утверждений DATA / CALC / MODEL / INTERPRETATION.** Да —
+   `artifacts/sexratio/claims.yaml`: 9 утверждений (DATA, CALC, MODEL,
+   INTERPRETATION и отдельный класс POSTHOC для расчётов после данных) и 4
+   ограничения, каждое со ссылкой на контрольную метрику.
 4. **Разделение «факт / модель» в кадре.** Да — ползунок с зонами наблюдения
    и модели, бейдж «МОДЕЛЬ» на прогнозных годах, штриховая линия профиля.
 5. **Рилсы RU и BE в безопасной зоне 4:5.** См. раздел «Рилс».

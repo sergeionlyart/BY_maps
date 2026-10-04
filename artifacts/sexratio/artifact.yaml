@@ -18,6 +18,7 @@ files:
   - { path: PROVENANCE.md, role: docs }
   - { path: CITATION.cff, role: docs }
   - { path: LICENSE.md, role: docs }
+  - { path: claims.yaml, role: docs }
   - { path: PREREGISTRATION.md, from: docs/preregistration/sexratio-v0.1.md, role: docs }
   - { path: METHODS.md, from: web/public/content/methods/sexratio.md, role: docs }
   - { path: sources/registry.csv, role: docs }

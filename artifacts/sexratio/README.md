@@ -41,3 +41,4 @@ bash code/run.sh   # Python >= 3.10, только стандартная биб�
 | `VALIDATION.md` | гейты S-1…S-8, что исправлено и почему |
 | `LIMITATIONS.md` | где выводы применять нельзя |
 | `AGENT.md` | инструкция для аудита ИИ-агентом |
+| `claims.yaml` | реестр утверждений с классами DATA / CALC / MODEL / INTERPRETATION / POSTHOC |
