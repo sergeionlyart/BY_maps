@@ -9,10 +9,9 @@ import json
 import pytest
 
 from etl.common import ROOT
-from etl.sexratio import (AGE_GROUPS, CORE_SCENARIO, FERTILE, OLD,
+from etl.sexratio import (AGE_GROUPS, CORE_SCENARIO, FERTILE, HOSTED, OLD,
                           _group_survival, _load_survival, _median, _ranks,
                           _ratio, _spearman, build)
-from etl.wages import HOSTED
 
 OUT = ROOT / "web" / "public" / "data"
 CURATED = ROOT / "data" / "curated"
@@ -184,6 +183,15 @@ def test_every_raion_present_and_has_both_census_years(res):
             assert row["summary"][y]["r2539"] is not None, (rid, y)
         assert row["forecast_summary"][CORE_SCENARIO], rid
         assert row["be"] and row["ru"], rid
+
+
+def test_hosted_copy_matches_wages():
+    """Локальная копия карты районов-хостов обязана совпадать с etl.wages.
+
+    Пакет sexratio автономен и зарплатный модуль не тянет, поэтому карта
+    скопирована — расхождение копий молча сломало бы периметры."""
+    from etl.wages import HOSTED as WAGES_HOSTED
+    assert HOSTED == WAGES_HOSTED
 
 
 def test_hosted_perimeter_rule_is_applied(res):

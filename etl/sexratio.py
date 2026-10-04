@@ -30,7 +30,18 @@ import math
 from pathlib import Path
 
 from .common import ROOT, OUT
-from .wages import HOSTED
+
+# Районы-хосты: в переписных файлах район ИСКЛЮЧАЕТ свой город областного
+# подчинения, а в прогнозе и в data.json — включает. Локальная копия карты из
+# etl.wages (пакет sexratio не тянет зарплатный модуль и его сырьё);
+# синхронизация закреплена тестом test_hosted_copy_matches_wages.
+HOSTED = {
+    "r-babrujski": "c-babrujsk", "r-baranavicki": "c-baranavichy",
+    "r-brescki": "c-brest", "r-homielski": "c-homiel",
+    "r-hrodzienski": "c-hrodna", "r-mahilouski": "c-mahilou",
+    "r-pinski": "c-pinsk", "r-polacki": "c-navapolack",
+    "r-smalavicki": "c-zhodzina", "r-viciebski": "c-viciebsk",
+}
 
 CURATED = ROOT / "data" / "curated"
 VERSION = "1.0.0"
