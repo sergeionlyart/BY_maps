@@ -12,7 +12,9 @@ import { test, expect, type Page } from '@playwright/test';
 function collectErrors(page: Page) {
   const errors: string[] = [];
   page.on('console', (m) => {
-    if (m.type() === 'error') errors.push(m.text());
+    // фавиконку исключаем так же, как в обработчике ответов ниже: полный
+    // Chromium запрашивает /favicon.ico, headless-shell — нет
+    if (m.type() === 'error' && !m.location().url.includes('favicon')) errors.push(m.text());
   });
   page.on('pageerror', (e) => errors.push(String(e)));
   page.on('response', (r) => {
@@ -161,4 +163,17 @@ test('reduced-motion: воспроизведение не стартует са�
   await ready(page);
   await page.waitForTimeout(1500);
   await expect(page.locator('.gv-year-label')).toContainText('2019');
+});
+
+test('раздел виден в индексах исследований и артефактов (RU/BE)', async ({ page }) => {
+  const errors = collectErrors(page);
+  for (const path of ['/research', '/be/research']) {
+    await page.goto(path);
+    await expect(page.locator(`a[href$="/research/sexratio"]`).first()).toBeVisible();
+  }
+  for (const path of ['/artifacts', '/be/artifacts']) {
+    await page.goto(path);
+    await expect(page.locator(`a[href$="/artifacts/sexratio"]`).first()).toBeVisible();
+  }
+  expect(errors).toEqual([]);
 });
