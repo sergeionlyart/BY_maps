@@ -50,6 +50,10 @@ interface SexRatioData {
   node_years: number[];
   core_scenario: string;
   country: { sex_ratio_2019: number | null };
+  female_surplus_2019: {
+    n: number; n_male_surplus: number; hosted_city: number;
+    minsk_belt_30min: number; other: number; other_by_oblast: Record<string, number>;
+  };
   territories: Record<string, Territory>;
   cities: Record<string, { ru: string; be: string; summary: Record<string, Summary> }>;
   findings: {
@@ -345,8 +349,7 @@ export default function SexRatioView() {
     ? (isModel ? rec.forecast_profile[String(year)] : rec.profile[String(year)])
     : null;
 
-  const maleSurplus = Object.values(data.territories)
-    .filter((x) => (x.summary['2019'].gap ?? 0) > 0).length;
+  const FS = data.female_surplus_2019;
   const spikeIds = new Set(PH.narrow_age_male_spike.map((s) => s.id));
 
   const legend = metric === 'r2539'
@@ -390,8 +393,13 @@ export default function SexRatioView() {
         </div>
         <div className="stat-tile">
           <div className="st-label">{t('Мужской перевес в 25–39')}</div>
-          <div className="st-value">{maleSurplus} {t('из')} 118</div>
-          <div className="st-delta">{t('районов; в остальных 23 — женский, и это почти все пригороды крупных городов')}</div>
+          <div className="st-value">{FS.n_male_surplus} {t('из')} {FS.n_male_surplus + FS.n}</div>
+          <div className="st-delta">
+            {t('районов. В остальных')} {FS.n} {t('— женский перевес:')} {FS.hosted_city}{' '}
+            {t('включают свой областной город,')} {FS.minsk_belt_30min}{' '}
+            {t('— пригороды Минска, ещё')} {FS.other}{' '}
+            {t('— прочие районы, из них в Гомельской области —')} {FS.other_by_oblast['BY-HO'] ?? 0}
+          </div>
         </div>
         <div className="stat-tile">
           <div className="st-label">{t('В возрасте 70+')}</div>

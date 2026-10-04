@@ -490,6 +490,27 @@ def build() -> dict:
     h4["verdict"] = ("confirmed" if h4["none_above_60"] and h4["median_rises"]
                      else "refuted")
 
+    # --- описательная разбивка районов с женским перевесом в 25-39 (2019) --
+    # Не гипотеза, а состав группы: страница описывает его словами, и числа
+    # берутся отсюда, а не пишутся в текст руками.
+    fem = [r for r in raions if territories[r]["summary"]["2019"]["gap"] < 0]
+    fem_hosted = [r for r in fem if r in HOSTED]
+    fem_minsk = [r for r in fem if r not in HOSTED
+                 and (territories[r]["min_minsk"] or 0) <= 30.0]
+    fem_other = [r for r in fem if r not in HOSTED and r not in fem_minsk]
+    by_obl: dict[str, int] = {}
+    for r in fem_other:
+        by_obl[territories[r]["oblast"]] = by_obl.get(territories[r]["oblast"], 0) + 1
+    female_surplus = {
+        "n": len(fem), "n_male_surplus": len(raions) - len(fem),
+        "hosted_city": len(fem_hosted),
+        "minsk_belt_30min": len(fem_minsk),
+        "other": len(fem_other),
+        "other_by_oblast": dict(sorted(by_obl.items(), key=lambda kv: -kv[1])),
+        "ids": {"hosted_city": fem_hosted, "minsk_belt_30min": fem_minsk,
+                "other": fem_other},
+    }
+
     # ---------------- ПОСТ-ХОК (не пререгистрировано) --------------------
     # H1 опровергнута: знак корреляции обратный предсказанному. Ниже —
     # диагностика, ПОЧЕМУ, помеченная как пост-хок: эти расчёты не были
@@ -591,6 +612,7 @@ def build() -> dict:
         "forecast_version": fc["version"],
         "onset_thresholds": {"high": ONSET_HIGH, "low": ONSET_LOW},
         "country": {"sex_ratio_2019": country_ratio},
+        "female_surplus_2019": female_surplus,
         "territories": territories,
         "cities": cities,
         "findings": {"H1": h1, "H2": h2, "H3": h3, "H4": h4},

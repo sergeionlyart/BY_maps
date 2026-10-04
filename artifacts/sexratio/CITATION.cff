@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "Цитируйте конкретную версию пакета"
+title: "Соотношение полов по районам Беларуси, 2009–2056: где не хватает мужчин (проверяемый пакет)"
+type: dataset
+version: 1.0.0
+date-released: "2026-10-04"
+authors:
+  - name: "Проект «Население Беларуси, 1897–2026»"
+url: "https://by-population-maps.vercel.app/research/sexratio"
+repository-code: "https://github.com/sergeionlyart/BY_maps"
+identifiers:
+  - type: other
+    value: "artifact-sexratio-v1.0.0"
+    description: "git-тег релиза пакета"
+license: CC-BY-4.0
