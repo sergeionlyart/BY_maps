@@ -77,11 +77,11 @@ expected_results:
       description: "вычислимых гейтов пройдено из 6" }
   - { metric: h1_confirmed, value: 0, tolerance: 0,
       description: "H1 (мужской перевес 25-39 растёт с удалённостью от Минска): 0 = ОПРОВЕРГНУТА" }
-  - { metric: h1_median_r2539_2019, value: 104.77, tolerance: 0.005,
+  - { metric: h1_median_r2539_2019, value: 104.76, tolerance: 0.005,
       description: "медиана соотношения 25-39 по 118 районам, 2019 (порог H1 > 105)" }
-  - { metric: h1_spearman_p, value: 0.001346, tolerance: 0.000001,
+  - { metric: h1_spearman_p, value: 0.001333, tolerance: 0.000001,
       description: "p для rho H1 (нормальное приближение)" }
-  - { metric: h1_spearman_rho, value: -0.2964, tolerance: 0.0001,
+  - { metric: h1_spearman_rho, value: -0.2967, tolerance: 0.0001,
       description: "rho Спирмена с временем до Минска (предсказывался знак +, порог 0,30)" }
   - { metric: h2_brest_r2539_2019, value: 86.99, tolerance: 0.005,
       description: "Брест, 25-39, 2019 — самый женский облцентр" }

@@ -17,15 +17,15 @@
  },
  {
   "metric": "h1_median_r2539_2019",
-  "value": 104.77
+  "value": 104.76
  },
  {
   "metric": "h1_spearman_p",
-  "value": 0.001346
+  "value": 0.001333
  },
  {
   "metric": "h1_spearman_rho",
-  "value": -0.2964
+  "value": -0.2967
  },
  {
   "metric": "h2_brest_r2539_2019",

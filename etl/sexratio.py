@@ -189,6 +189,16 @@ def _summary(cells: dict[str, dict[str, float]]) -> dict:
     }
 
 
+def _r2539_exact(cells: dict[str, dict[str, float]]) -> float | None:
+    """Соотношение 25-39 БЕЗ округления — только для статистики (медиана,
+    Спирмен). Округление до сотых до ранжирования создаёт искусственные
+    связки и сдвигает ρ (найдено независимым пересчётом: −0,2964 против
+    верного −0,2967)."""
+    m = sum(cells.get(a, {}).get("m", 0) for a in FERTILE)
+    f = sum(cells.get(a, {}).get("f", 0) for a in FERTILE)
+    return 100.0 * m / f if f > 0 else None
+
+
 def _forecast_cells(node: dict) -> dict[str, dict[str, float]]:
     return {a: {"m": node["m"][i], "f": node["f"][i]}
             for i, a in enumerate(AGE_GROUPS)}
@@ -285,6 +295,7 @@ def build() -> dict:
 
     # --- по районам ------------------------------------------------------
     s1_fails, s5_max_resid = [], 0.0
+    exact2539: dict[str, float | None] = {}   # неокруглённые 25-39, 2019
     # S-4 (поправка 2): соотношение 0-4 проверяется МЕДИАНОЙ по районам, а не
     # по каждому району — в группе 0-4 районные численности слишком малы
     s4_census: list[float] = []
@@ -293,6 +304,7 @@ def build() -> dict:
         cells09 = _perimeter(c09, rid)
         cells19 = _perimeter(c19, rid)
 
+        exact2539[rid] = _r2539_exact(cells19)
         prof = {"2009": _profile(cells09), "2019": _profile(cells19)}
         if prof["2019"][0] is not None:
             s4_census.append(prof["2019"][0])
@@ -447,16 +459,15 @@ def build() -> dict:
                                    "2009": _profile(c09.get(tid, {}))}}
 
     # --- вердикты по гипотезам ------------------------------------------
-    r2539_19 = [territories[r]["summary"]["2019"]["r2539"] for r in raions]
-    r2539_19 = [x for x in r2539_19 if x is not None]
+    r2539_19 = [exact2539[r] for r in raions if exact2539[r] is not None]
     med_2539 = _median(r2539_19)
 
     with_travel = [r for r in raions
                    if territories[r]["min_minsk"] is not None
-                   and territories[r]["summary"]["2019"]["r2539"] is not None]
+                   and exact2539[r] is not None]
     rho, pval = _spearman(
         [territories[r]["min_minsk"] for r in with_travel],
-        [territories[r]["summary"]["2019"]["r2539"] for r in with_travel])
+        [exact2539[r] for r in with_travel])
     h1 = {"median_r2539_2019": round(med_2539, 2),
           "threshold_median": 105.0,
           "spearman_rho": round(rho, 4), "spearman_p": round(pval, 6),
