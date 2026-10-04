@@ -25,7 +25,7 @@ fcffd75a2794cb1156d9c545a647394a6ceade9ca5d473e3c3f6aaf00d5b03dd  by-maps-mlchal
 bfb536a17c8e9d7f1ed23f285cccb91d7605f1f7df062da9b008a3cd265ddbda  by-maps-nightlights-v2.1.2.zip
 073182a37880b6824cda1b11fe25ed4019a1fcb0d3be9ab0d820177d116c270f  by-maps-pension-v1.0.0.zip
 f1012f1c59f26fb81c26066c929b32465415b397edf08e6b26e86f221fb736af  by-maps-pyramid-v1.0.0.zip
-4bd3f83a0f6cbeee18ba97d7973ca5d8a316a375a552e49a35c61a548afe84ac  by-maps-seam-v1.0.0.zip
+ff12b4b9162b4d7cd226824ce136dfed7cb22d029fe2348c4648097aee95809c  by-maps-seam-v1.0.0.zip
 94bf1a48e7f82eddf036f16abb2420bfffb7fd8c65d3eca3c88313d7415051fe  by-maps-sensors-v1.0.0.zip
 037a6ab141c3911b6cd8e03291982cd94b650a5821049ec80c0b7821c022f5ce  by-maps-sexratio-v1.0.0.zip
 e77b0911a0714036ad2722f99ece12b23fd5cecc02153260a662d97be0c4bdb3  by-maps-shocks-v1.0.0.zip

@@ -159,7 +159,7 @@ export const RESEARCH: ResearchEntry[] = [
       'Видна ли государственная граница Беларуси из космоса — в полях, застройке и ночных огнях по обе стороны пяти границ? Разрывная регрессия по 234 тысячам квадратов 1 км: шов есть в пашне, но не в росте застройки и не в яркости огней при равной застройке.',
     status: 'published',
     stage: 11,
-    artifact: { file: 'by-maps-seam-v1.0.0.zip', version: '1.0.0', sizeKb: 11666 },
+    artifact: { file: 'by-maps-seam-v1.0.0.zip', version: '1.0.0', sizeKb: 11667 },
   },
   /* INF-20 END */
   /* INF-21 BEGIN */

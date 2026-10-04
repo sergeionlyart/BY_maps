@@ -66,7 +66,7 @@ OUTCOMES = {
     "L_1419": ("Огни (VIIRS-ряд Li), 2014→2019, Δln(1+DN)", lambda r: ln1(r["li_2019"]) - ln1(r["li_2014"]), "L", False),
     "L_1924": ("Огни (VIIRS-ряд Li), 2019→2024, Δln(1+DN)", lambda r: ln1(r["li_2024"]) - ln1(r["li_2019"]), "L", False),
     "C_0319": ("Доля пашни GLAD, 2003→2019, п.п.", lambda r: 100.0 * (r["crop_2019"] - r["crop_2003"]), "C", False),
-    "I_2019": ("Огни VIIRS 2019, ln(0,1+нВт) при равной застройке", lambda r: math.log(0.1 + max(r["vnl_2019"], 0.0)), "I", False),
+    "I_2019": ("Огни VIIRS 2019, ln(0,1+нВт) при равной застройке и населении", lambda r: math.log(0.1 + max(r["vnl_2019"], 0.0)), "I", False),
     # уровни — контекст, не гипотезы
     "lvl_crop19": ("Уровень: доля пашни 2019, %", lambda r: 100.0 * r["crop_2019"], "level", False),
     "lvl_wsf15": ("Уровень: застройка WSF 2015, ln(1+м²)", lambda r: ln1(r["wsf_2015"]), "level", False),

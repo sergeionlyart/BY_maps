@@ -137,8 +137,8 @@
   {
    "file": "by-maps-seam-v1.0.0.zip",
    "url": "https://by-population-maps.vercel.app/artifacts/by-maps-seam-v1.0.0.zip",
-   "size_bytes": 11946965,
-   "sha256": "4bd3f83a0f6cbeee18ba97d7973ca5d8a316a375a552e49a35c61a548afe84ac",
+   "size_bytes": 11947282,
+   "sha256": "ff12b4b9162b4d7cd226824ce136dfed7cb22d029fe2348c4648097aee95809c",
    "version": "1.0.0",
    "code": "INF-20",
    "title_ru": "Шов на карте: Беларусь и соседи по обе стороны границы",
