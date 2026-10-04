@@ -1,0 +1,343 @@
+{
+  "indicator": "10102000017",
+  "indicator_name": "Численность занятого населения в среднем за период",
+  "source": "dataportal.belstat.gov.by/osids-public-api (завендорено в data/raw/wages/)",
+  "unit": "210 (человек)",
+  "territories": {
+    "total": 128,
+    "raions": 118,
+    "cities_oblast_subordination": 10
+  },
+  "years_with_data": [
+    2010,
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "completeness": {
+    "territories_with_gaps": {},
+    "yoy_change": [
+      {
+        "from": 2010,
+        "to": 2011,
+        "median_pct": -0.96,
+        "min_pct": -4.5,
+        "max_pct": 6.2
+      },
+      {
+        "from": 2011,
+        "to": 2012,
+        "median_pct": -2.44,
+        "min_pct": -7.0,
+        "max_pct": 4.8
+      },
+      {
+        "from": 2012,
+        "to": 2013,
+        "median_pct": -2.03,
+        "min_pct": -8.3,
+        "max_pct": 7.6
+      },
+      {
+        "from": 2013,
+        "to": 2014,
+        "median_pct": -1.75,
+        "min_pct": -7.3,
+        "max_pct": 8.5
+      },
+      {
+        "from": 2014,
+        "to": 2015,
+        "median_pct": -1.25,
+        "min_pct": -6.2,
+        "max_pct": 5.5
+      },
+      {
+        "from": 2015,
+        "to": 2016,
+        "median_pct": -2.4,
+        "min_pct": -7.0,
+        "max_pct": 3.7
+      },
+      {
+        "from": 2016,
+        "to": 2017,
+        "median_pct": -1.96,
+        "min_pct": -6.7,
+        "max_pct": 4.1
+      },
+      {
+        "from": 2017,
+        "to": 2018,
+        "median_pct": -1.2,
+        "min_pct": -4.8,
+        "max_pct": 3.7
+      },
+      {
+        "from": 2018,
+        "to": 2019,
+        "median_pct": -1.81,
+        "min_pct": -7.1,
+        "max_pct": 5.1
+      },
+      {
+        "from": 2019,
+        "to": 2020,
+        "median_pct": -0.83,
+        "min_pct": -5.1,
+        "max_pct": 5.6
+      },
+      {
+        "from": 2020,
+        "to": 2021,
+        "median_pct": -1.25,
+        "min_pct": -5.0,
+        "max_pct": 2.7
+      },
+      {
+        "from": 2021,
+        "to": 2022,
+        "median_pct": -1.7,
+        "min_pct": -5.9,
+        "max_pct": 1.6
+      },
+      {
+        "from": 2022,
+        "to": 2023,
+        "median_pct": -2.08,
+        "min_pct": -7.8,
+        "max_pct": 0.6
+      },
+      {
+        "from": 2023,
+        "to": 2024,
+        "median_pct": -1.44,
+        "min_pct": -5.9,
+        "max_pct": 4.0
+      }
+    ],
+    "breaks_over_15pct": []
+  },
+  "workplace_vs_residence_test": {
+    "denominator": "население 15-64, перепись 2019",
+    "n": 128,
+    "median": 0.6191,
+    "min": {
+      "name": "Гомельский район",
+      "ratio": 0.4965
+    },
+    "max": {
+      "name": "Барановичский район",
+      "ratio": 0.9398
+    },
+    "count_above_1": 0,
+    "minsk_suburbs": [
+      {
+        "territory_id": "r-puchavicki",
+        "name": "Пуховичский район",
+        "employed_2019": 26121.0,
+        "working_age_2019": 45727,
+        "ratio": 0.5712
+      },
+      {
+        "territory_id": "r-lahojski",
+        "name": "Логойский район",
+        "employed_2019": 15235.0,
+        "working_age_2019": 25719,
+        "ratio": 0.5924
+      },
+      {
+        "territory_id": "r-dziarzhynski",
+        "name": "Дзержинский район",
+        "employed_2019": 33443.0,
+        "working_age_2019": 47128,
+        "ratio": 0.7096
+      },
+      {
+        "territory_id": "r-smalavicki",
+        "name": "Смолевичский район",
+        "employed_2019": 25514.0,
+        "working_age_2019": 34517,
+        "ratio": 0.7392
+      },
+      {
+        "territory_id": "r-minski",
+        "name": "Минский район",
+        "employed_2019": 152087.0,
+        "working_age_2019": 172751,
+        "ratio": 0.8804
+      }
+    ],
+    "minsk_suburb_ranks": {
+      "Пуховичский район": "19/128",
+      "Логойский район": "33/128",
+      "Дзержинский район": "116/128",
+      "Смолевичский район": "120/128",
+      "Минский район": "127/128"
+    },
+    "lowest_10": [
+      {
+        "territory_id": "r-homielski",
+        "name": "Гомельский район",
+        "employed_2019": 22951.0,
+        "working_age_2019": 46222,
+        "ratio": 0.4965
+      },
+      {
+        "territory_id": "r-vilejski",
+        "name": "Вилейский район",
+        "employed_2019": 16867.0,
+        "working_age_2019": 32678,
+        "ratio": 0.5162
+      },
+      {
+        "territory_id": "r-cherykauski",
+        "name": "Чериковский район",
+        "employed_2019": 4634.0,
+        "working_age_2019": 8866,
+        "ratio": 0.5227
+      },
+      {
+        "territory_id": "r-chervienski",
+        "name": "Червенский район",
+        "employed_2019": 12149.0,
+        "working_age_2019": 22751,
+        "ratio": 0.534
+      },
+      {
+        "territory_id": "r-loznienski",
+        "name": "Лиозненский район",
+        "employed_2019": 5745.0,
+        "working_age_2019": 10674,
+        "ratio": 0.5382
+      },
+      {
+        "territory_id": "r-slauharadski",
+        "name": "Славгородский район",
+        "employed_2019": 4622.0,
+        "working_age_2019": 8530,
+        "ratio": 0.5419
+      },
+      {
+        "territory_id": "r-babrujski",
+        "name": "Бобруйский район",
+        "employed_2019": 6539.0,
+        "working_age_2019": 12005,
+        "ratio": 0.5447
+      },
+      {
+        "territory_id": "r-karmianski",
+        "name": "Кормянский район",
+        "employed_2019": 5152.0,
+        "working_age_2019": 9407,
+        "ratio": 0.5477
+      },
+      {
+        "territory_id": "r-krasnapolski",
+        "name": "Краснопольский район",
+        "employed_2019": 3506.0,
+        "working_age_2019": 6398,
+        "ratio": 0.548
+      },
+      {
+        "territory_id": "r-mscislauski",
+        "name": "Мстиславский район",
+        "employed_2019": 7536.0,
+        "working_age_2019": 13619,
+        "ratio": 0.5533
+      }
+    ],
+    "highest_10": [
+      {
+        "territory_id": "r-niasvizhski",
+        "name": "Несвижский район",
+        "employed_2019": 18619.0,
+        "working_age_2019": 25984,
+        "ratio": 0.7166
+      },
+      {
+        "territory_id": "r-smalavicki",
+        "name": "Смолевичский район",
+        "employed_2019": 25514.0,
+        "working_age_2019": 34517,
+        "ratio": 0.7392
+      },
+      {
+        "territory_id": "c-brest",
+        "name": "Брест",
+        "employed_2019": 172654.0,
+        "working_age_2019": 230776,
+        "ratio": 0.7481
+      },
+      {
+        "territory_id": "r-salihorski",
+        "name": "Солигорский район",
+        "employed_2019": 68698.0,
+        "working_age_2019": 90041,
+        "ratio": 0.763
+      },
+      {
+        "territory_id": "r-viciebski",
+        "name": "Витебский район",
+        "employed_2019": 18032.0,
+        "working_age_2019": 23287,
+        "ratio": 0.7743
+      },
+      {
+        "territory_id": "r-shklouski",
+        "name": "Шкловский район",
+        "employed_2019": 14051.0,
+        "working_age_2019": 17563,
+        "ratio": 0.8
+      },
+      {
+        "territory_id": "r-hrodzienski",
+        "name": "Гродненский район",
+        "employed_2019": 25916.0,
+        "working_age_2019": 31989,
+        "ratio": 0.8102
+      },
+      {
+        "territory_id": "r-mahilouski",
+        "name": "Могилёвский район",
+        "employed_2019": 23028.0,
+        "working_age_2019": 27845,
+        "ratio": 0.827
+      },
+      {
+        "territory_id": "r-minski",
+        "name": "Минский район",
+        "employed_2019": 152087.0,
+        "working_age_2019": 172751,
+        "ratio": 0.8804
+      },
+      {
+        "territory_id": "r-baranavicki",
+        "name": "Барановичский район",
+        "employed_2019": 17402.0,
+        "working_age_2019": 18516,
+        "ratio": 0.9398
+      }
+    ]
+  },
+  "perimeter_gap": {
+    "missing": "г. Минск (BY-HM)",
+    "reason": "страна/области/Минск отчитываются в unit 211 (тыс. человек); запрос одного unit молча отбрасывает другой уровень",
+    "sum_128_territories": {
+      "2010": 3607742,
+      "2019": 3246508,
+      "2024": 3106319
+    }
+  }
+}
