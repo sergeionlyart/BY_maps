@@ -19,6 +19,17 @@ export default function MLChallengerArtifactBody() {
 
       <h2>{t('Версии')}</h2>
       <div className="card">
+        <div className="card-code">v1.0.1 · 2026-10-11 · {t('git-тег')} artifact-mlchallenger-v1.0.1</div>
+        <p>
+          {t('Техническая пересборка: этап 0 INF-13 добавил в вендоренный etl/forecast/sub.py выгрузку районной возрастной детали прогноза. Функции, которые использует challenger, не затронуты; числовые результаты не изменились — все контрольные метрики и допуски идентичны v1.0.0.')}
+        </p>
+        <div className="card-foot">
+          <a href="/artifacts/by-maps-mlchallenger-v1.0.1.zip" download>
+            ⬇ by-maps-mlchallenger-v1.0.1.zip (873 КБ)
+          </a>
+        </div>
+      </div>
+      <div className="card">
         <div className="card-code">v1.0.0 · 2026-07-12 · {t('git-тег')} artifact-mlchallenger-v1.0.0</div>
         <p>
           {t('Первый релиз (этап 8). Бустинг предсказывает 33% дисперсии CCR-остатка вне выборки (OOF R²=0,33; повторная CV 0,30–0,34; перестановочный нуль p=0,005), из них +13 п.п. — экзогенный сигнал над структурой. Доминирует миграционное сальдо 2015–2019 (единственный признак явно вне нуль-полосы): когортная модель структурно не видит миграционную динамику — недооценивает пригороды с притоком (Смолевичский +8,7%), переоценивает районы прошлого бума (Минский −9,2%). MAPE (понижено): CCR 2,19% → CCR+ML 1,67% → наив 2,84%. Честность встроена: LOO-по-областям CV, перестановочный нуль, инвариант «на перемешанной мишени сигнала нет». 16 контрольных метрик.')}
@@ -31,7 +42,7 @@ export default function MLChallengerArtifactBody() {
       </div>
 
       <h2>{t('Состав')}</h2>
-      <pre><code>{`by-maps-mlchallenger-v1.0.0/
+      <pre><code>{`by-maps-mlchallenger-v1.0.1/
 ├── README.md · AGENT.md · LIMITATIONS.md · PROVENANCE.md · CHANGELOG.md
 ├── manifest.json                     машиночитаемое описание (sha256, допуски)
 ├── sources/registry.csv              провенанс 12 признаков (INF-03/04/05/08 + WP-F1)
@@ -47,7 +58,7 @@ export default function MLChallengerArtifactBody() {
 └── checks/                           инварианты (в т.ч. «нет ложного сигнала»), метрики`}</code></pre>
 
       <h2>{t('Быстрая проверка')}</h2>
-      <pre><code>{`unzip by-maps-mlchallenger-v1.0.0.zip && cd by-maps-mlchallenger-v1.0.0
+      <pre><code>{`unzip by-maps-mlchallenger-v1.0.1.zip && cd by-maps-mlchallenger-v1.0.1
 bash code/run.sh          # только стандартная библиотека Python >= 3.10, ~5 минут
 # == 1/3 Панель + CCR-остаток + бустинг + перестановочный нуль ==
 # == 2/3 Инварианты ==   (в т.ч.: на перемешанной мишени OOF R2 падает в нуль-полосу)

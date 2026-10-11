@@ -1,6 +1,6 @@
 {
  "project": "BY Maps — Население Беларуси, 1897–2026",
- "generated": "2026-10-04",
+ "generated": "2026-10-11",
  "base_url": "https://by-population-maps.vercel.app",
  "note": "Контрольные суммы соответствуют состоянию репозитория/сайта на дату generated. Каждый пакет содержит AGENT.md с заданиями для LLM-агентов.",
  "site_data": [
@@ -15,11 +15,11 @@
  ],
  "packages": [
   {
-   "file": "by-maps-access-v1.0.0.zip",
-   "url": "https://by-population-maps.vercel.app/artifacts/by-maps-access-v1.0.0.zip",
-   "size_bytes": 14284335,
-   "sha256": "bd4085f4f6f2c44b792aa9a2e7117d035ad80694c9b8546fc51ed762e96b6493",
-   "version": "1.0.0",
+   "file": "by-maps-access-v1.0.1.zip",
+   "url": "https://by-population-maps.vercel.app/artifacts/by-maps-access-v1.0.1.zip",
+   "size_bytes": 14285490,
+   "sha256": "20714e6d6644d04f0137cb4560e66614cd5e52eecb5c77f5779e5dd8b858a321",
+   "version": "1.0.1",
    "code": "INF-04",
    "title_ru": "Транспортная доступность",
    "research_url": "https://by-population-maps.vercel.app/research/access"
@@ -45,21 +45,21 @@
    "research_url": "https://by-population-maps.vercel.app/research/chernobyl"
   },
   {
-   "file": "by-maps-forecast-v1.3.1.zip",
-   "url": "https://by-population-maps.vercel.app/artifacts/by-maps-forecast-v1.3.1.zip",
-   "size_bytes": 2101093,
-   "sha256": "3b421742f47b2b54e66842d0412a746322f144cf11a70ca9f34a8a3cb62880ac",
-   "version": "1.3.1",
+   "file": "by-maps-forecast-v1.3.2.zip",
+   "url": "https://by-population-maps.vercel.app/artifacts/by-maps-forecast-v1.3.2.zip",
+   "size_bytes": 2103206,
+   "sha256": "6b71ecf4c8cb8b2d8c0d8330f2b4b62a7cdf669039bf79f67e5fd7a5e8b4adbb",
+   "version": "1.3.2",
    "code": "FORECAST",
    "title_ru": "Прогноз населения 2026–2075 (v2026.4)",
    "research_url": "https://by-population-maps.vercel.app/artifacts/forecast"
   },
   {
-   "file": "by-maps-grid-v1.3.0.zip",
-   "url": "https://by-population-maps.vercel.app/artifacts/by-maps-grid-v1.3.0.zip",
-   "size_bytes": 19318753,
-   "sha256": "6e9e6eb37296558b599fdddf9ff4f3caa3e8bfde9d73dc891f990051cba8f4e0",
-   "version": "1.3.0",
+   "file": "by-maps-grid-v1.3.1.zip",
+   "url": "https://by-population-maps.vercel.app/artifacts/by-maps-grid-v1.3.1.zip",
+   "size_bytes": 19322073,
+   "sha256": "ebf544e0b71481e6cfa035e6a744479f0f2343f675b368f9e84f1815b964a173",
+   "version": "1.3.1",
    "code": "INF-15",
    "title_ru": "Полотно: карта расселения Беларуси по сетке 1 км",
    "research_url": "https://by-population-maps.vercel.app/research/grid"
@@ -75,11 +75,11 @@
    "research_url": "https://by-population-maps.vercel.app/research/migration"
   },
   {
-   "file": "by-maps-mlchallenger-v1.0.0.zip",
-   "url": "https://by-population-maps.vercel.app/artifacts/by-maps-mlchallenger-v1.0.0.zip",
-   "size_bytes": 893296,
-   "sha256": "fcffd75a2794cb1156d9c545a647394a6ceade9ca5d473e3c3f6aaf00d5b03dd",
-   "version": "1.0.0",
+   "file": "by-maps-mlchallenger-v1.0.1.zip",
+   "url": "https://by-population-maps.vercel.app/artifacts/by-maps-mlchallenger-v1.0.1.zip",
+   "size_bytes": 894446,
+   "sha256": "70eaccfcb039f823e481d32ebcfb03be19a2bb892e99404e79f11f650dbbbeac",
+   "version": "1.0.1",
    "code": "ML",
    "title_ru": "ML-челленджер модели районов",
    "research_url": "https://by-population-maps.vercel.app/research/ml"
@@ -187,6 +187,13 @@
  ],
  "archive_versions": [
   {
+   "file": "by-maps-access-v1.0.0.zip",
+   "url": "https://by-population-maps.vercel.app/artifacts/by-maps-access-v1.0.0.zip",
+   "size_bytes": 14284335,
+   "sha256": "bd4085f4f6f2c44b792aa9a2e7117d035ad80694c9b8546fc51ed762e96b6493",
+   "version": "1.0.0"
+  },
+  {
    "file": "by-maps-aging-v1.0.0.zip",
    "url": "https://by-population-maps.vercel.app/artifacts/by-maps-aging-v1.0.0.zip",
    "size_bytes": 727360,
@@ -243,6 +250,13 @@
    "version": "1.3.0"
   },
   {
+   "file": "by-maps-forecast-v1.3.1.zip",
+   "url": "https://by-population-maps.vercel.app/artifacts/by-maps-forecast-v1.3.1.zip",
+   "size_bytes": 2101093,
+   "sha256": "3b421742f47b2b54e66842d0412a746322f144cf11a70ca9f34a8a3cb62880ac",
+   "version": "1.3.1"
+  },
+  {
    "file": "by-maps-grid-v1.0.0.zip",
    "url": "https://by-population-maps.vercel.app/artifacts/by-maps-grid-v1.0.0.zip",
    "size_bytes": 4084134,
@@ -262,6 +276,20 @@
    "size_bytes": 4113818,
    "sha256": "05b72ab2bbc639dfcb9f92d29fcd9e0e895016b2d1f710aa00400a355ae86312",
    "version": "1.2.0"
+  },
+  {
+   "file": "by-maps-grid-v1.3.0.zip",
+   "url": "https://by-population-maps.vercel.app/artifacts/by-maps-grid-v1.3.0.zip",
+   "size_bytes": 19318753,
+   "sha256": "6e9e6eb37296558b599fdddf9ff4f3caa3e8bfde9d73dc891f990051cba8f4e0",
+   "version": "1.3.0"
+  },
+  {
+   "file": "by-maps-mlchallenger-v1.0.0.zip",
+   "url": "https://by-population-maps.vercel.app/artifacts/by-maps-mlchallenger-v1.0.0.zip",
+   "size_bytes": 893296,
+   "sha256": "fcffd75a2794cb1156d9c545a647394a6ceade9ca5d473e3c3f6aaf00d5b03dd",
+   "version": "1.0.0"
   },
   {
    "file": "by-maps-nightlights-v1.0.0.zip",

@@ -3,8 +3,8 @@
 
 id: access
 title: "Транспортная доступность районов Беларуси: травел-тайм по графу OSM, пояса, «тень Минска» и закрытая граница с ЕС"
-version: "1.0.0"
-released: "2026-07-11"
+version: "1.0.1"
+released: "2026-10-11"
 landing_url: "https://by-population-maps.vercel.app/research/access"
 authors:
   - "Проект «Население Беларуси, 1897–2026»"

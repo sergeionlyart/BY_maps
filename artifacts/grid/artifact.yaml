@@ -3,8 +3,8 @@
 
 id: grid
 title: "Полотно: карта расселения Беларуси по сетке 1 км, 1975–2050"
-version: "1.3.0"
-released: "2026-07-28"
+version: "1.3.1"
+released: "2026-10-11"
 landing_url: "https://by-population-maps.vercel.app/research/grid"
 authors:
   - "Проект «Население Беларуси, 1897–2026»"

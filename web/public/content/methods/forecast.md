@@ -150,4 +150,4 @@ out-of-sample бэктеста с гейтами; полная воспроиз�
 
 ---
 
-*Версия прогноза: v2026.4 · [Скачать проверяемый пакет (ZIP)](/artifacts/by-maps-forecast-v1.3.1.zip) · [Отчёт о валидации](https://github.com/sergeionlyart/BY_maps/blob/master/docs/notes/validation.md) · [Об артефактах](/artifacts)*
+*Версия прогноза: v2026.4 · [Скачать проверяемый пакет (ZIP)](/artifacts/by-maps-forecast-v1.3.2.zip) · [Отчёт о валидации](https://github.com/sergeionlyart/BY_maps/blob/master/docs/notes/validation.md) · [Об артефактах](/artifacts)*

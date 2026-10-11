@@ -19,6 +19,17 @@ export default function AccessArtifactBody() {
 
       <h2>{t('Версии')}</h2>
       <div className="card">
+        <div className="card-code">v1.0.1 · 2026-10-11 · {t('git-тег')} artifact-access-v1.0.1</div>
+        <p>
+          {t('Техническая пересборка: доработка INF-15 дописала в общий реестр источников OSM (вендоренный sources/registry.csv) две строки о слое рек пакета grid. В расчётах доступности они не участвуют; числовые результаты не изменились — все контрольные метрики и допуски идентичны v1.0.0.')}
+        </p>
+        <div className="card-foot">
+          <a href="/artifacts/by-maps-access-v1.0.1.zip" download>
+            ⬇ by-maps-access-v1.0.1.zip (13,9 МБ)
+          </a>
+        </div>
+      </div>
+      <div className="card">
         <div className="card-code">v1.0.0 · 2026-07-11 · {t('git-тег')} artifact-access-v1.0.0</div>
         <p>
           {t('Первый релиз. «Тень Минска» в сырых медианах: кольцо 1,5–2,5 ч — дно (−14,2%), дальняя периферия — −12,5%; после контроля зарплаты пояса статистически слабы. Граница: 13 легковых переходов (2019) → 4 (надир 2024–2025) → 6 (июль 2026). 17 контрольных метрик.')}
@@ -31,7 +42,7 @@ export default function AccessArtifactBody() {
       </div>
 
       <h2>{t('Состав')}</h2>
-      <pre><code>{`by-maps-access-v1.0.0/
+      <pre><code>{`by-maps-access-v1.0.1/
 ├── README.md · AGENT.md · LIMITATIONS.md · PROVENANCE.md · CHANGELOG.md
 ├── manifest.json                    машиночитаемое описание (sha256, допуски)
 ├── sources/registry.csv             OSM: версия PBF, md5, параметры графа
@@ -47,7 +58,7 @@ export default function AccessArtifactBody() {
 └── checks/                          инварианты, ожидаемые результаты, chksums`}</code></pre>
 
       <h2>{t('Быстрая проверка')}</h2>
-      <pre><code>{`unzip by-maps-access-v1.0.0.zip && cd by-maps-access-v1.0.0
+      <pre><code>{`unzip by-maps-access-v1.0.1.zip && cd by-maps-access-v1.0.1
 bash code/run.sh          # только стандартная библиотека Python >= 3.10
 # == 1/3 Травел-таймы (Дейкстра), пояса, профиль, регрессия ==
 # == 2/3 Инварианты ==

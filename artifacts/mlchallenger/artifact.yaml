@@ -4,8 +4,8 @@
 
 id: mlchallenger
 title: "ML-challenger: где структурная модель районов систематически ошибается (градиентный бустинг на CCR-остатке, окно 2019-2026)"
-version: "1.0.0"
-released: "2026-07-12"
+version: "1.0.1"
+released: "2026-10-11"
 landing_url: "https://by-population-maps.vercel.app/research/ml"
 authors:
   - "Проект «Население Беларуси, 1897-2026»"

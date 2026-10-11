@@ -1,4 +1,5 @@
 bd4085f4f6f2c44b792aa9a2e7117d035ad80694c9b8546fc51ed762e96b6493  by-maps-access-v1.0.0.zip
+20714e6d6644d04f0137cb4560e66614cd5e52eecb5c77f5779e5dd8b858a321  by-maps-access-v1.0.1.zip
 1d2fb37f9fd78ded2b84bd0770013bce2fda12207f68c4d7f4cbd301375bee52  by-maps-aging-v1.0.0.zip
 c2a7aa94bba6e149785ed67a8b9d49262a40221c7c5e6c5f4db7981f3fa5e782  by-maps-aging-v1.0.1.zip
 6fad08863edaf113742c70b04e918b851bf1e882a9ab3508d226249b6d997c4b  by-maps-aging-v1.0.2.zip
@@ -10,12 +11,15 @@ c9d8ef85623610cb8f0ed6651d69c327239449eb42169b11ef442c54b47698d6  by-maps-foreca
 47a5ce5bcfb59b98d5ff6a293c9a801bea7dda357976d3ce7a73610d58947486  by-maps-forecast-v1.2.0.zip
 a693b3663ad5ac5197bbae0da7b4badd9388e2a7f8ec25d28378e6a6fa494a58  by-maps-forecast-v1.3.0.zip
 3b421742f47b2b54e66842d0412a746322f144cf11a70ca9f34a8a3cb62880ac  by-maps-forecast-v1.3.1.zip
+6b71ecf4c8cb8b2d8c0d8330f2b4b62a7cdf669039bf79f67e5fd7a5e8b4adbb  by-maps-forecast-v1.3.2.zip
 5bae40d6c0073f8c6fbd66ececfb2932e14f4ce824c0617943832cd9f54a15cf  by-maps-grid-v1.0.0.zip
 111bea520eb2102734ace41b98347e3c1e5e1b87da28a90e5b11e056bf027421  by-maps-grid-v1.1.0.zip
 05b72ab2bbc639dfcb9f92d29fcd9e0e895016b2d1f710aa00400a355ae86312  by-maps-grid-v1.2.0.zip
 6e9e6eb37296558b599fdddf9ff4f3caa3e8bfde9d73dc891f990051cba8f4e0  by-maps-grid-v1.3.0.zip
+ebf544e0b71481e6cfa035e6a744479f0f2343f675b368f9e84f1815b964a173  by-maps-grid-v1.3.1.zip
 8c4ac37956bb202e6200e038eb9cd0e90fec58affa5a8c2d1bc2a4c573d2a155  by-maps-migration-v1.0.0.zip
 fcffd75a2794cb1156d9c545a647394a6ceade9ca5d473e3c3f6aaf00d5b03dd  by-maps-mlchallenger-v1.0.0.zip
+70eaccfcb039f823e481d32ebcfb03be19a2bb892e99404e79f11f650dbbbeac  by-maps-mlchallenger-v1.0.1.zip
 952d247e35451572067b19cef800e24391ab29d79164eaef38b41df3ec30911e  by-maps-monotowns-v1.0.0.zip
 3dc56a7b0e128dcf3959d19c53c2dffdce5d757e32f095a4cb68c7c7c64be748  by-maps-nightlights-divergence-v1.0.0.zip
 473d430482023f4787712bb6b0ab163c20ab1d963a37a52db625caa87c6b89d7  by-maps-nightlights-v1.0.0.zip

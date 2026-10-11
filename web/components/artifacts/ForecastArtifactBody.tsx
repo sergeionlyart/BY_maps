@@ -19,6 +19,17 @@ export default function ForecastArtifactBody() {
 
       <h2>{t('Версии')}</h2>
       <div className="card">
+        <div className="card-code">v1.3.2 · 2026-10-11 · {t('git-тег')} artifact-forecast-v1.3.2 · {t('прогноз')} v2026.4</div>
+        <p>
+          {t('Техническая пересборка: этап 0 INF-13 добавил в вендоренные etl/forecast/sub.py и run.py выгрузку районной возрастной детали прогноза. Числовые результаты прогноза не изменились — все контрольные метрики и допуски идентичны v1.3.0 и v1.3.1.')}
+        </p>
+        <div className="card-foot">
+          <a href="/artifacts/by-maps-forecast-v1.3.2.zip" download>
+            ⬇ by-maps-forecast-v1.3.2.zip (2053 КБ)
+          </a>
+        </div>
+      </div>
+      <div className="card">
         <div className="card-code">v1.3.1 · 2026-07-16 · {t('git-тег')} artifact-forecast-v1.3.1 · {t('прогноз')} v2026.4</div>
         <p>
           {t('Техническая пересборка: релиз INF-11 добавил в вендоренный etl/forecast/run.py экспорт возрастных структур CCMPP (для датасета пирамиды). Числовые результаты прогноза не изменились — все контрольные метрики и допуски идентичны v1.3.0.')}
@@ -85,8 +96,8 @@ export default function ForecastArtifactBody() {
         </div>
       </div>
 
-      <h2>{t('Состав')} (v1.3.1)</h2>
-      <pre><code>{`by-maps-forecast-v1.3.1/
+      <h2>{t('Состав')} (v1.3.2)</h2>
+      <pre><code>{`by-maps-forecast-v1.3.2/
 ├── README.md · AGENT.md · LIMITATIONS.md · PROVENANCE.md · CHANGELOG.md
 ├── manifest.json                    машиночитаемое описание (sha256, допуски)
 ├── sources/registry.csv             реестр 18 первоисточников (WP-F1)
@@ -109,7 +120,7 @@ export default function ForecastArtifactBody() {
 └── checks/                          инварианты, ожидаемые результаты, chksums`}</code></pre>
 
       <h2>{t('Быстрая проверка')}</h2>
-      <pre><code>{`unzip by-maps-forecast-v1.3.1.zip && cd by-maps-forecast-v1.3.1
+      <pre><code>{`unzip by-maps-forecast-v1.3.2.zip && cd by-maps-forecast-v1.3.2
 pip install -r code/requirements.lock   # PyYAML
 bash code/run.sh
 # == 1/7 Реконструкция оттока (WP-F3): интервал и adjustment.csv ==

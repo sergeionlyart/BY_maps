@@ -53,7 +53,7 @@ export const RESEARCH: ResearchEntry[] = [
       'Пригород (<45 мин) растёт, кольцо 1,5–2,5 ч убывает быстрее всего? Как закрытие границ с ЕС изменило положение западных районов?',
     status: 'published',
     stage: 6,
-    artifact: { file: 'by-maps-access-v1.0.0.zip', version: '1.0.0', sizeKb: 13950 },
+    artifact: { file: 'by-maps-access-v1.0.1.zip', version: '1.0.1', sizeKb: 13950 },
   },
   {
     slug: 'migration',
@@ -114,7 +114,7 @@ export const RESEARCH: ResearchEntry[] = [
     status: 'published',
     stage: 8,
     artifactSlug: 'mlchallenger',
-    artifact: { file: 'by-maps-mlchallenger-v1.0.0.zip', version: '1.0.0', sizeKb: 872 },
+    artifact: { file: 'by-maps-mlchallenger-v1.0.1.zip', version: '1.0.1', sizeKb: 873 },
   },
   {
     slug: 'urban-overhang',
@@ -147,7 +147,7 @@ export const RESEARCH: ResearchEntry[] = [
       'Как устроено расселение Беларуси без административных границ — сеткой в один километр — с 1975 по 2020 год и куда оно идёт до 2050-го? Люди концентрируются быстрее, чем пустеет территория — но проверка независимым сенсором (ночные огни) не подтвердила совпадение направления изменений, поэтому вывод подаётся как открытый вопрос.',
     status: 'published',
     stage: 10,
-    artifact: { file: 'by-maps-grid-v1.3.0.zip', version: '1.3.0', sizeKb: 18865 },
+    artifact: { file: 'by-maps-grid-v1.3.1.zip', version: '1.3.1', sizeKb: 18869 },
   },
   /* INF-15 END */
   /* INF-20 BEGIN */

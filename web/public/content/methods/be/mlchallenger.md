@@ -93,5 +93,5 @@ OOF R² поўнай мадэлі супраць чыстага CCR = **0,33**; 
 
 ---
 
-[Спампаваць правяральны пакет (ZIP)](/artifacts/by-maps-mlchallenger-v1.0.0.zip) ·
-даследаванне ML, v1.0.0 · пакет by-maps-mlchallenger v1.0.0
+[Спампаваць правяральны пакет (ZIP)](/artifacts/by-maps-mlchallenger-v1.0.1.zip) ·
+даследаванне ML, v1.0.0 · пакет by-maps-mlchallenger v1.0.1

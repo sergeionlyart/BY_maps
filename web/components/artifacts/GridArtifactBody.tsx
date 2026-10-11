@@ -19,6 +19,17 @@ export default function GridArtifactBody() {
 
       <h2>{t('Версии')}</h2>
       <div className="card">
+        <div className="card-code">v1.3.1 · 2026-10-11 · {t('git-тег')} artifact-grid-v1.3.1</div>
+        <p>
+          {t('PATCH: исправление документации пакета. Архив v1.3.0 был собран с устаревшими CHANGELOG.md (без записи о v1.3.0) и DATA_DICTIONARY.md (редакция v1.2.0, без C-006/C-007); v1.3.1 включает актуальные редакции. Данные, код и все 72 контрольные метрики идентичны v1.3.0.')}
+        </p>
+        <div className="card-foot">
+          <a href="/artifacts/by-maps-grid-v1.3.1.zip" download>
+            ⬇ by-maps-grid-v1.3.1.zip
+          </a>
+        </div>
+      </div>
+      <div className="card">
         <div className="card-code">v1.3.0 · 2026-07-28 · {t('git-тег')} artifact-grid-v1.3.0</div>
         <p>
           {t('MINOR: режим «История» расширен до 9 шагов — новый слой рек и матрица «река × дорога» (шаги 3-5), третья («полесская») группа опустевших районов на шаге 6. Гипотеза C-006 (растёт только пересечение реки и дороги) подтверждена направленно, но остаётся открытым вопросом. Гипотеза C-007 (максимум плотности в 2-5 км от реки, не у воды) — ОПРОВЕРГНУТА собственным заранее заданным критерием: доля населения у самой воды (0-2 км) больше, чем в 2-5 км, из-за нескольких крупных городов на берегу (см. CHANGELOG.md, D-015). Свободный режим: тумблеры для всех новых слоёв, таблица всех 119 территорий с сортировкой/CSV. 72 контрольных метрики (было 51), выводы C-1…C-5 не изменились.')}
@@ -64,7 +75,7 @@ export default function GridArtifactBody() {
       </div>
 
       <h2>{t('Состав')}</h2>
-      <pre><code>{`by-maps-grid-v1.3.0/
+      <pre><code>{`by-maps-grid-v1.3.1/
 ├── README.md · AGENT.md · LIMITATIONS.md · PROVENANCE.md · METHODS.md
 ├── VALIDATION.md · DATA_DICTIONARY.md · EXECUTIVE_BRIEF.md · CHANGELOG.md
 ├── PREREGISTRATION.md · claims.yaml · CITATION.cff · LICENSE.md
@@ -83,7 +94,7 @@ export default function GridArtifactBody() {
 └── checks/                          инварианты, ожидаемые результаты, chksums`}</code></pre>
 
       <h2>{t('Быстрая проверка')}</h2>
-      <pre><code>{`unzip by-maps-grid-v1.3.0.zip && cd by-maps-grid-v1.3.0
+      <pre><code>{`unzip by-maps-grid-v1.3.1.zip && cd by-maps-grid-v1.3.1
 bash code/run.sh          # только стандартная библиотека Python >= 3.10
 # == 1/3 Пересчёт контрольных метрик из sources/raw ==
 # == 2/3 Инварианты данных ==

@@ -172,8 +172,21 @@ def main() -> None:
     slugs = all_slugs() if args.all else [args.slug]
     if not slugs or slugs == [None]:
         ap.error("укажите slug или --all")
+    # --check не останавливается на первом расхождении: в CI нужен полный
+    # список невоспроизводимых пакетов, а не только первый по алфавиту
+    failed = []
     for slug in slugs:
-        build(slug, check=args.check)
+        try:
+            build(slug, check=args.check)
+        except SystemExit as e:
+            if not args.check:
+                raise
+            print(f"FAIL --check: {e}", file=sys.stderr)
+            failed.append(slug)
+    if failed:
+        raise SystemExit(
+            f"--check: не воспроизводятся {len(failed)} из {len(slugs)} "
+            f"пакетов: {', '.join(failed)}")
 
 
 if __name__ == "__main__":

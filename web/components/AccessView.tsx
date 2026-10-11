@@ -283,7 +283,7 @@ export default function AccessView() {
     <div>
       <div className="controls" style={{ marginBottom: 6 }}>
         <MethodDrawer slug="access" />
-        <a className="btn" href="/artifacts/by-maps-access-v1.0.0.zip" download>
+        <a className="btn" href="/artifacts/by-maps-access-v1.0.1.zip" download>
           ⬇ {T('Проверяемый пакет (ZIP)')}
         </a>
       </div>
